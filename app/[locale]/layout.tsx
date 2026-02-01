@@ -20,6 +20,7 @@ type Props = {
 };
 
 import { SITE_CONFIG, QUIZ_SEO_CONFIG } from '@/config/site';
+import MobileContainer from '@/app/components/MobileContainer';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -92,7 +93,9 @@ export default async function LocaleLayout({
         {/* 5. Wrapowanie aplikacji w Provider */}
         <NextIntlClientProvider messages={messages}>
             <FacebookPixelProvider pixelId={SITE_CONFIG.fbPixelId} />
-            <main className="site">{children}</main>
+            <MobileContainer>
+              {children}
+            </MobileContainer>
         </NextIntlClientProvider>
       </body>
     </html>

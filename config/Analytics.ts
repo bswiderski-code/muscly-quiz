@@ -13,6 +13,7 @@ export const ANALYTICS_CONFIG = {
     QUIZ_COMPLETED: 'quiz_completed', // CompleteRegistration
 
     // Ecommerce Events
+    VIEW_ITEM: 'view_item', // ViewContent
     INITIATE_CHECKOUT: 'initiate_checkout', // InitiateCheckout
     PURCHASE: 'purchase', // Purchase
   },

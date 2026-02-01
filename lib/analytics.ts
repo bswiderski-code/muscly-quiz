@@ -32,8 +32,7 @@ export const trackEvent = (
 
   // Map to Facebook Pixel events
   const fbEventMap: Record<string, any> = {
-    'quiz_started': 'Lead',
-    'quiz_completed': 'CompleteRegistration',
+    'view_item': 'ViewContent',
     'initiate_checkout': 'InitiateCheckout',
     'purchase': 'Purchase',
   };

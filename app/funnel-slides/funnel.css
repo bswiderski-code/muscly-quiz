@@ -10,7 +10,7 @@
   --funnel-input-w: clamp(118px, 34vw, 170px);
   --funnel-dash: clamp(36px, 14vw, 52px);
   --funnel-gap: clamp(24px, 10vw, 38px);
-  --funnel-max-w: 600px;
+  --funnel-max-w: 480px;
   --funnel-input-fs: clamp(20px, 5vw, 24px);
   --funnel-big-value-fs: 48px;
   --funnel-xl-value-fs: 64px;
@@ -427,7 +427,7 @@
 .funnel-choices {
   display: flex;
   justify-content: center;
-  gap: clamp(16px, 3vw, 24px);
+  gap: clamp(8px, 2vw, 16px);
   margin-top: 16px;
   width: 100%;
 }
@@ -450,7 +450,7 @@
   padding: 0;
   cursor: pointer;
   display: block;
-  min-width: clamp(140px, 35vw, 280px);
+  min-width: clamp(140px, 35vw, 210px);
 }
 
 .funnel-choice-btn img {

@@ -1,3 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
 /* === Tokens === */
 :root {
   --background: #ffffff;
@@ -70,19 +77,22 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /* === Global layout wrapper (ALWAYS CENTERED to middle of screen view) === */
+/* .site removed in favor of MobileContainer */
+/* 
 .site {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Content starts from top, not vertically centered */
+  justify-content: flex-start;
   width: 100vw;
   max-width: 100vw;
   overflow-x: hidden;
-  position: relative; /* Ensure pseudo-elements are positioned relative to .site */
-  margin: 0 auto; /* Additional horizontal centering safeguard */
-  padding: 0; /* Ensure no unwanted padding */
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
 }
+*/
 .site > * {
   width: 100%;
   max-width: var(--max-w);
@@ -128,30 +138,13 @@ main {
 }
 
 /* Drop shadow on the entire page, but don't force page to expand */
+/* Shadows handled by MobileContainer */
+/*
 .site::before,
 .site::after {
-  content: "";
-  position: fixed; /* Fixed so it covers the viewport, not just the content */
-  top: 0;
-  bottom: 0;
-  width: 10px;
-  background: rgba(0, 0, 0, 0.0);
-  pointer-events: none;
-  z-index: 9999;
-  height: 100%; /* <-- cover full scrollable height, not just viewport */
-  left: 0; /* default, overridden below */
-  right: auto; /* default, overridden below */
+  ...
 }
-.site::before {
-  left: 0;
-  right: auto;
-  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.1);
-}
-.site::after {
-  left: auto;
-  right: 0;
-  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1);
-}
+*/
 
 /* === Components / Utilities === */
 .h1 {
@@ -240,28 +233,7 @@ main {
   width: 100% !important;
 }
 
-/* === FINAL CENTERING ENFORCEMENT === */
-/* Absolutely ensure ALL content is centered to the middle of screen view */
-.site {
-  /* Triple-reinforce centering */
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-}
-
-/* Ensure no page can override centering */
-.site > div,
-.site > main,
-.site > section,
-.site > article,
-.site > aside {
-  margin: 0 auto !important;
-  width: 100% !important;
-  max-width: var(--max-w) !important;
-  box-sizing: border-box !important;
-  display: block !important;
-}
+/* Legacy centering enforcement removed in favor of MobileContainer */
 
 .outline-box {
   border: 3px solid #111;

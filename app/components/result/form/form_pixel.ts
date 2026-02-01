@@ -1,5 +1,5 @@
 import { sendGTMEvent } from '@next/third-parties/google'
-import { trackInitiateCheckout } from '@/lib/analytics'
+import { trackInitiateCheckout, trackEvent } from '@/lib/analytics'
 import { funnelDefinitions, type LocalePricingKey } from '@/lib/funnels/funnelDefinitions'
 import type { Locale, CheckoutProvider } from '@/i18n/config'
 
@@ -44,8 +44,15 @@ export function trackViewItemEvent(params: { funnelKey: string; locale: Locale; 
 	const bundle = pricing?.workout_bundle
 	if (!bundle) return
 
-	sendGTMEvent({
-		event: 'view_item',
+	trackEvent('VIEW_ITEM', {
+		// FB Pixel properties
+		currency: bundle.currency,
+		value: bundle.amount,
+		content_ids: [bundle.description], // using description as ID proxy for now
+		content_name: bundle.description,
+		content_type: 'product',
+
+		// GTM properties (nested)
 		ecommerce: {
 			currency: bundle.currency,
 			value: bundle.amount,
