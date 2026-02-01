@@ -105,7 +105,7 @@ export default function Page({ onlyGoBack = false }: { onlyGoBack?: boolean }) {
         <h2 className="funnel-title">
           <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} /> 
         </h2>
-        <div className={`${funnel === 'kalistenika' ? 'kalistenika-text' : 'funnel-result-cross'} ${isAnimating ? "animated" : ""}`} style={funnel === 'kalistenika' ? { fontSize: '48px' } : undefined}>{animatedBmi}</div>
+        <div className={`funnel-result-cross ${isAnimating ? "animated" : ""}`}>{animatedBmi}</div>
         <div className="funnel-result-quote">{bmiCategory}</div>
 
         <div className="funnel-result-illustration">

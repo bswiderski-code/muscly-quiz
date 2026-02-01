@@ -46,7 +46,7 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
   const isHomePlan = Boolean(locationValue && locationValue !== 'gym');
 
   // Get configuration for this funnel
-  const summaryConfig = getAnswersSummaryConfig(resolvedFunnel ?? 'plan');
+  const summaryConfig = getAnswersSummaryConfig(resolvedFunnel ?? 'workout');
 
   const backLinkHref = useMemo(() => {
     if (!resolvedFunnel) return null;

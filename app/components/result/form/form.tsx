@@ -49,7 +49,7 @@ export default function CheckoutForm({
   const productsT = useTranslations('CheckoutProducts');
 
   // Get result page config for funnel-specific customization
-  const resultConfig = getResultPageConfig(funnelKey || 'plan');
+  const resultConfig = getResultPageConfig(funnelKey || 'workout');
   const checkoutIntroImage = resultConfig.checkoutIntroImage;
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
@@ -78,7 +78,7 @@ export default function CheckoutForm({
 
   useEffect(() => {
     trackViewItemEvent({
-      funnelKey: funnelKey ?? 'plan',
+      funnelKey: funnelKey ?? 'workout',
       locale,
       marketCurrency,
     });
@@ -148,13 +148,12 @@ export default function CheckoutForm({
     });
   }
 
-  const pricing = getLocalizedPricing(funnelKey ?? 'plan', locale, marketCurrency);
-  const isCalisthenicsFunnel = funnelKey === 'kalistenika';
+  const pricing = getLocalizedPricing(funnelKey ?? 'workout', locale, marketCurrency);
   const soloOffer = pricing?.workout_solo;
   const bundleOffer = pricing?.workout_bundle;
 
-  const checkoutSoloCopy = (productsT.raw(isCalisthenicsFunnel ? 'calisthenics_solo' : 'workout_solo') as { productName?: string; buttonSvg?: string }) ?? {};
-  const checkoutBundleCopy = (productsT.raw(isCalisthenicsFunnel ? 'calisthenics_bundle' : 'workout_bundle') as { productName?: string; buttonSvg?: string }) ?? {};
+  const checkoutSoloCopy = (productsT.raw('workout_solo') as { productName?: string; buttonSvg?: string }) ?? {};
+  const checkoutBundleCopy = (productsT.raw('workout_bundle') as { productName?: string; buttonSvg?: string }) ?? {};
   const defaultSoloButton = (checkoutSoloCopy.buttonSvg || "/btns/{locale}/workout_bef.svg").replace('{locale}', locale);
   const defaultBundleButton = (checkoutBundleCopy.buttonSvg || "/btns/{locale}/bundle_bef.svg").replace('{locale}', locale);
 
@@ -174,10 +173,10 @@ export default function CheckoutForm({
             buttonSvg={defaultSoloButton}
             onBeforePay={() =>
               trackBeginCheckoutEvent({
-                funnelKey: funnelKey ?? 'plan',
+                funnelKey: funnelKey ?? 'workout',
                 locale,
                 marketCurrency,
-                kind: isCalisthenicsFunnel ? 'calisthenics_solo' : 'workout_solo',
+                kind: 'workout_solo',
                 checkoutProvider,
               })
             }
@@ -196,10 +195,10 @@ export default function CheckoutForm({
             buttonSvg={defaultBundleButton}
             onBeforePay={() =>
               trackBeginCheckoutEvent({
-                funnelKey: funnelKey ?? 'plan',
+                funnelKey: funnelKey ?? 'workout',
                 locale,
                 marketCurrency,
-                kind: isCalisthenicsFunnel ? 'calisthenics_bundle' : 'workout_bundle',
+                kind: 'workout_bundle',
                 checkoutProvider,
               })
             }
@@ -220,10 +219,10 @@ export default function CheckoutForm({
             buttonSvg={defaultSoloButton}
             onBeforePay={() =>
               trackBeginCheckoutEvent({
-                funnelKey: funnelKey ?? 'plan',
+                funnelKey: funnelKey ?? 'workout',
                 locale,
                 marketCurrency,
-                kind: isCalisthenicsFunnel ? 'calisthenics_solo' : 'workout_solo',
+                kind: 'workout_solo',
                 checkoutProvider,
               })
             }
@@ -241,10 +240,10 @@ export default function CheckoutForm({
             buttonSvg={defaultBundleButton}
             onBeforePay={() =>
               trackBeginCheckoutEvent({
-                funnelKey: funnelKey ?? 'plan',
+                funnelKey: funnelKey ?? 'workout',
                 locale,
                 marketCurrency,
-                kind: isCalisthenicsFunnel ? 'calisthenics_bundle' : 'workout_bundle',
+                kind: 'workout_bundle',
                 checkoutProvider,
               })
             }
@@ -256,7 +255,7 @@ export default function CheckoutForm({
 
   return (
     <div className={styles.container}>
-      <CheckoutIntro funnelKey={funnelKey ?? 'plan'} locale={locale} imageSrc={checkoutIntroImage} />
+      <CheckoutIntro funnelKey={funnelKey ?? 'workout'} locale={locale} imageSrc={checkoutIntroImage} />
 
       <ContactForm
         name={name}

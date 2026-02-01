@@ -2,23 +2,16 @@ import type { FunnelKey } from '@/lib/funnels/funnels'
 import { pickFunnel } from '@/app/funnel-slides/_config/helpers'
 
 export type GenderStepConfig = {
-  translationNamespace: 'Gender' | 'KalistenikaGender'
+  translationNamespace: 'Gender'
   assets: {
     maleImageSrc: string // supports `{locale}`
     femaleImageSrc: string // supports `{locale}`
   }
 }
 
-const CONFIG: { plan: GenderStepConfig } & Partial<Record<FunnelKey, GenderStepConfig>> = {
-  plan: {
+const CONFIG: { workout: GenderStepConfig } & Partial<Record<FunnelKey, GenderStepConfig>> = {
+  workout: {
     translationNamespace: 'Gender',
-    assets: {
-      maleImageSrc: '/btns/{locale}/male.svg',
-      femaleImageSrc: '/btns/{locale}/female.svg',
-    },
-  },
-  kalistenika: {
-    translationNamespace: 'KalistenikaGender',
     assets: {
       maleImageSrc: '/btns/{locale}/male.svg',
       femaleImageSrc: '/btns/{locale}/female.svg',

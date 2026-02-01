@@ -25,11 +25,7 @@ const defaultConfig: WeightConfig = {
 };
 
 const funnelConfigs: Partial<Record<FunnelKey, Partial<WeightConfig>>> = {
-  kalistenika: {
-    buttonExpandSrc: '/btns/{locale}/v_expand.svg', // can be changed to v_expand.svg if it exists later
-    burningBicepsImage: '/vectors/v_burning_biceps.svg',
-  },
-  plan: {
+  workout: {
     buttonExpandSrc: '/btns/{locale}/expand.svg',
   },
 };
@@ -41,5 +37,3 @@ export function getWeightConfig(funnelKey: FunnelKey): WeightConfig {
     ...funnelConfig,
   };
 }
-
-

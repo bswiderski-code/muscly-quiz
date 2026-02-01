@@ -16,13 +16,9 @@
       "productName": "Piano Calisthenics + dieta (pacchetto)",
       "buttonSvg": "/btns/{locale}/bundle_bef.svg"
     },
-    "plan": {
+    "workout": {
       "buttonSvg": "/vectors/exercises/incline_smith.svg",
       "description": "Ritira<br />il tuo piano<br />di allenamento!"
-    },
-    "kalistenika": {
-      "buttonSvg": "/vectors/exercises/incline_smith.svg",
-      "description": "Ritira<br />il tuo piano<br />di calisthenics!"
     }
   },
   "ReviewsWidget": {
@@ -43,11 +39,11 @@
       "title": "Piano di allenamento | Trener Strzykawa",
       "description": "Crea un piano di allenamento su misura per te. Breve questionario, risultati in pochi minuti."
     },
-    "plan": {
+    "workout": {
       "title": "Piano di allenamento professionale - personalizzato per te",
       "description": "Cerchi una scheda di allenamento efficace? Preparerò per te un programma basato sulle tue risposte."
     },
-    "planForm": {
+    "workoutForm": {
       "title": "Modulo del piano | Trener Strzykawa",
       "description": "Rispondi alle domande per adattare il piano ai tuoi obiettivi."
     }
@@ -64,7 +60,7 @@
       "alt": "Donna"
     }
   },
-  "PlanPage": {
+  "WorkoutPage": {
     "homeLabel": "Homepage Trener Strzykawa",
     "titleHtml": "Il tuo <span style='font-weight: 800'>piano di allenamento</span><br />personale",
     "heroAlt": "",
@@ -81,25 +77,6 @@
       "homeUrl": "https://trenerstrzykawa.pl/",
       "privacyUrl": "https://trenerstrzykawa.pl/polityka-prywatnosci/",
       "termsUrl": "https://trenerstrzykawa.pl/regulamin/"
-    }
-  },
-  "KalistenikaPage": {
-    "homeLabel": "Calisthenics Home Page",
-    "titleHtml": "Your own<br /><span style='font-weight: 800'>calisthenics plan</span>",
-    "heroAlt": "",
-    "description": "Build incredible strength and physique using only your body weight.\n<em>Complete the quiz in 2 minutes.</em>",
-    "button": "Start training",
-    "privacy": "Privacy Policy",
-    "terms": "Termini e Condizioni",
-    "assets": {
-      "logo": "/{locale}/needle/logo-long.svg",
-      "logoHeight": "50",
-      "headerContainerHeight": "65",
-      "heroImage": "/vectors/t_eagle.svg",
-      "btnImage": "/btns/{locale}/create_plan_btn.svg",
-      "homeUrl": "https://trenerzyla.pl/",
-      "privacyUrl": "https://trenerzyla.pl/privacy",
-      "termsUrl": "https://trenerzyla.pl/terms"
     }
   },
   "DietGoal": {
@@ -505,8 +482,7 @@
     "errorTitle": "Nessun dato per questo funnel.",
     "errorDescription": "Contattaci all'indirizzo: support@trenerstrzykawa.pl",
     "faq": {
-      "title": "Domande<br/>Frequenti:",
-      "kalistenikaTitle": "Domande<br/>Frequenti<br/><span class=\"kalistenika-text\">CALISTENICA:</span>"
+      "title": "Domande<br/>Frequenti:"
     }
   },
   "BMIBOX": {
@@ -665,7 +641,9 @@
     "noData": "-"
   },
   "Carousel": {
-    "plan": {
+    "indicatorNote": "Attenzione! Questo non è l'intero piano, solo 4 pagine di esempio.",
+    "pageLabel": "Pagina {current}/{total}",
+    "workout": {
       "slides": [
         {
           "img": "/example_training/{locale}/plan/sample-1.png",
@@ -688,33 +666,7 @@
           "caption": "Piano di progressione per i prossimi 3 mesi – pagina 7"
         }
       ]
-    },
-    "kalistenika": {
-      "slides": [
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-1.png",
-          "alt": "Maciej Calisthenics 1",
-          "caption": "Introduzione al piano di calisthenics – pagina 1"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-2.png",
-          "alt": "Maciej Calisthenics 2",
-          "caption": "Guida agli esercizi di calisthenics – pagina 2"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-5.png",
-          "alt": "Maciej Calisthenics 3",
-          "caption": "Piano di allenamento calisthenics – pagina 5"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-7.png",
-          "alt": "Maciej Calisthenics 4",
-          "caption": "Progressi in calisthenics – pagina 7"
-        }
-      ]
-    },
-    "indicatorNote": "Attenzione! Questo non è l'intero piano, solo 4 pagine di esempio.",
-    "pageLabel": "Pagina {current}/{total}"
+    }
   },
   "OrderPage": {
     "logoHref": "https://trenerstrzykawa.pl/",

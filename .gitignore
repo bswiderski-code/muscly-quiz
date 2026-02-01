@@ -30,6 +30,12 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# bun
+bun.lockb
+.bun-build
+.bunconfig
+bunfig.toml
+
 
 # vercel
 .vercel

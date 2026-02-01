@@ -16,13 +16,9 @@
       "productName": "Calisthenics Plan + Diet (bundle)",
       "buttonSvg": "/btns/{locale}/bundle_bef.svg"
     },
-    "plan": {
+    "workout": {
       "buttonSvg": "/vectors/exercises/incline_smith.svg",
       "description": "Get<br />your training<br />plan!"
-    },
-    "kalistenika": {
-      "buttonSvg": "/vectors/exercises/incline_smith.svg",
-      "description": "Get<br />your calisthenics<br />plan!"
     }
   },
   "ReviewsWidget": {
@@ -43,11 +39,11 @@
       "title": "Training Plan | Coach Plate",
       "description": "Create a workout plan tailored to you. Short quiz, results in minutes."
     },
-    "plan": {
+    "workout": {
       "title": "Professional training plan - personalized for you",
       "description": "Looking for an effective workout routine? I'll prepare a set based on your answers."
     },
-    "planForm": {
+    "workoutForm": {
       "title": "Plan Form | Coach Plate",
       "description": "Answer the questions to tailor the plan to your goals."
     }
@@ -64,7 +60,7 @@
       "alt": "Female"
     }
   },
-  "PlanPage": {
+  "WorkoutPage": {
     "homeLabel": "Coach Plate Home Page",
     "titleHtml": "Your custom<br /><span style='font-weight: 800'>training plan</span>",
     "heroAlt": "",
@@ -81,25 +77,6 @@
       "homeUrl": "https://coachplate.com/",
       "privacyUrl": "https://coachplate.com/privacy",
       "termsUrl": "https://coachplate.com/terms"
-    }
-  },
-  "KalistenikaPage": {
-    "homeLabel": "Calisthenics Home Page",
-    "titleHtml": "Your custom<br /><span style='font-weight: 800'>calisthenics plan</span>",
-    "heroAlt": "",
-    "description": "Build incredible strength and physique using only your body weight.\n<em>Complete the quiz in 2 minutes.</em>",
-    "button": "Start training",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "assets": {
-      "logo": "/{locale}/needle/logo-long.svg",
-      "logoHeight": "50",
-      "headerContainerHeight": "40",
-      "heroImage": "/vectors/t_eagle.svg",
-      "btnImage": "/btns/{locale}/create_plan_btn.svg",
-      "homeUrl": "https://trenerzyla.pl/",
-      "privacyUrl": "https://trenerzyla.pl/privacy",
-      "termsUrl": "https://trenerzyla.pl/terms"
     }
   },
   "DietGoal": {
@@ -500,26 +477,10 @@
       "imageSrc": "/btns/{locale}/get_your.svg",
       "alt": "Get plan"
     },
-    "kalistenika": {
-      "title": "<b>Your Training Plan</b><br /><span class=\"kalistenika-text\" style=\"font-size: 40px; line-height: 1.1;\">CALISTHENICS</span><br />is ready!",
-      "subtitle": "<span style=\"font-size: 28px; font-weight: 400;\">Quick Summary</span><br /><span class=\"kalistenika-text\" style=\"font-size: 32px; font-weight: 700;\">of Your results</span>",
-      "intro1": "Created based on <b>Your answers</b> by an <b>advanced training algorithm</b><br />designed specifically for <b>physique building</b> using <b>body weight</b>.",
-      "joinAthletes": "Join <b><span class=\"kalistenika-text\">{count}</span> <span class=\"kalistenika-text\">calisthenics enthusiasts</span></b> who are <b>already using</b> their <b>personalized plan!</b>",
-      "analyzeList": {
-        "aktywnosc": "Your <b>activity level</b>",
-        "cel": "Your <b>goal</b> (cut / bulk)",
-        "wiek": "Your <b>age</b>",
-        "doswiadczenie": "<b>Calisthenics experience</b>",
-        "time": "<b>Time</b> you have available",
-        "strengths": "<b>Strengths and weaknesses of your physique</b>"
-      },
-      "purchaseTitle": "What will you get in your Calisthenics Plan?"
-    },
     "errorTitle": "No data for this funnel.",
     "errorDescription": "Contact us at: support@trenerstrzykawa.pl",
     "faq": {
-      "title": "Frequently<br/>Asked Questions:",
-      "kalistenikaTitle": "Frequently<br/>Asked Questions<br/><span class=\"kalistenika-text\">CALISTHENICS:</span>"
+      "title": "Frequently<br/>Asked Questions:"
     }
   },
   "BMIBOX": {
@@ -678,7 +639,9 @@
     "noData": "-"
   },
   "Carousel": {
-    "plan": {
+    "indicatorNote": "Note! This is not the full plan, just 4 sample pages.",
+    "pageLabel": "Page {current}/{total}",
+    "workout": {
       "slides": [
         {
           "img": "/example_training/{locale}/plan/sample-1.png",
@@ -701,33 +664,7 @@
           "caption": "Progression plan for the next 3 months – page 7"
         }
       ]
-    },
-    "kalistenika": {
-      "slides": [
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-1.png",
-          "alt": "Maciej Calisthenics 1",
-          "caption": "Introduction to the calisthenics plan – page 1"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-2.png",
-          "alt": "Maciej Calisthenics 2",
-          "caption": "Guide to calisthenics exercises – page 2"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-5.png",
-          "alt": "Maciej Calisthenics 3",
-          "caption": "Calisthenics training plan – page 5"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-7.png",
-          "alt": "Maciej Calisthenics 4",
-          "caption": "Progress in calisthenics – page 7"
-        }
-      ]
-    },
-    "indicatorNote": "Note! This is not the full plan, just 4 sample pages.",
-    "pageLabel": "Page {current}/{total}"
+    }
   },
   "OrderPage": {
     "logoHref": "https://coachplate.com/",
@@ -853,9 +790,6 @@
       "frequency": "{value}x/week",
       "fitness": "{value}/10",
       "sleep": "{value} hours"
-    },
-    "kalistenika": {
-      "buttonImage": "/btns/{locale}/v_answers_summary.svg"
     }
   },
   "MissingSteps": {

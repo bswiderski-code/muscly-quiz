@@ -8,22 +8,18 @@ export type EquipmentConfig = {
   canBeEmpty: boolean;
 };
 
-const defaultEquipmentValues = ['none', 'bands', 'dumbbells', 'barbell', 'bench'] as const;
+const mergedEquipmentValues = ['none', 'bands', 'dumbbells', 'barbell', 'bench', 'pullup_bar', 'dip_bar'] as const;
 
 const defaultConfig: EquipmentConfig = {
   translationNamespace: 'Equipment',
-  equipmentValues: defaultEquipmentValues,
+  equipmentValues: mergedEquipmentValues,
   multiSelect: true,
   canBeEmpty: true,
 };
 
 const funnelConfigs: Partial<Record<FunnelKey, Partial<EquipmentConfig>>> = {
-  kalistenika: {
-    translationNamespace: 'KalistenikaEquipment',
-    equipmentValues: ['none', 'bands', 'pullup_bar', 'dip_bar'] as const,
-  },
-  plan: {
-    equipmentValues: ['none', 'bands', 'dumbbells', 'barbell', 'bench'] as const,
+  workout: {
+    equipmentValues: mergedEquipmentValues,
   },
 };
 

@@ -119,7 +119,7 @@ export const useFunnelStore = create<State>()(
       getLanguage: () => get().language,
     }),
     {
-      name: 'plan-answers',
+      name: 'workout-answers',
       storage: createJSONStorage(() => localStorage),
       version: 4,
       // migrate persisted state from older versions to the current shape

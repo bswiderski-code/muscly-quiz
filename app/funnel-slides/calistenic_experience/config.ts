@@ -9,13 +9,8 @@ export type CalistenicExperienceStepConfig = {
   }
 }
 
-const CONFIG: { plan: CalistenicExperienceStepConfig } & Partial<Record<FunnelKey, CalistenicExperienceStepConfig>> = {
-  plan: {
-    translationNamespace: 'CalistenicExperienceStep',
-    levelValues: ['none', 'just_started', 'some_experience', 'advanced'] as const,
-    ui: { layout: 'buttons' },
-  },
-  kalistenika: {
+const CONFIG: { workout: CalistenicExperienceStepConfig } & Partial<Record<FunnelKey, CalistenicExperienceStepConfig>> = {
+  workout: {
     translationNamespace: 'CalistenicExperienceStep',
     levelValues: ['none', 'just_started', 'some_experience', 'advanced'] as const,
     ui: { layout: 'buttons' },

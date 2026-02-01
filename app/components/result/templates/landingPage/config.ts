@@ -19,8 +19,8 @@ export type FunnelLandingConfig = {
 };
 
 export const funnelLandingConfigs: Record<FunnelKey, FunnelLandingConfig> = {
-  plan: {
-    translationNamespace: 'PlanPage',
+  workout: {
+    translationNamespace: 'WorkoutPage',
     assets: {
       logo: '/{locale}/needle/logo-long.svg',
       heroImage: '/vectors/t_eagle.svg',
@@ -30,21 +30,6 @@ export const funnelLandingConfigs: Record<FunnelKey, FunnelLandingConfig> = {
       btnWidth: 1000,
       btnHeight: 72,
       homeUrl: 'https://trenerstrzykawa.pl/',
-      privacyUrl: 'https://trenerstrzykawa.pl/polityka-prywatnosci/',
-      termsUrl: 'https://trenerstrzykawa.pl/regulamin/',
-    },
-  },
-  kalistenika: {
-    translationNamespace: 'KalistenikaPage',
-    assets: {
-      logo: '/{locale}/vein/logo-long.svg',
-      heroImage: '/vectors/v_posing.svg',
-      heroWidth: 213,
-      heroHeight: 266,
-      btnImage: '/btns/{locale}/v_create.svg',
-      btnWidth: 1000,
-      btnHeight: 72,
-      homeUrl: 'https://trenerzyla.pl/',
       privacyUrl: 'https://trenerstrzykawa.pl/polityka-prywatnosci/',
       termsUrl: 'https://trenerstrzykawa.pl/regulamin/',
     },

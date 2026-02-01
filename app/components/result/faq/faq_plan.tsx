@@ -19,7 +19,7 @@ export default function FAQPlan() {
   };
   const lang = langMap[locale.toLowerCase()] || 'EN';
 
-  const header = currentFunnel === 'kalistenika' ? t.raw('faq.kalistenikaTitle') : t.raw('faq.title');
+  const header = t.raw('faq.title');
 
   const faqs = FAQS.filter(faq => faq.language === lang);
 

@@ -31,12 +31,9 @@ export function getLocalizedPricing(funnelKey: string, locale: Locale, marketCur
 	const entry = def.pricing[pick]!
 	const currency = entry.currency || marketCurrency
 
-	// For kalistenika funnel, use calisthenics products, otherwise use workout products
-	const isCalisthenicsFunnel = funnelKey === 'kalistenika'
-
 	return {
-		workout_solo: { ...(isCalisthenicsFunnel ? entry.calisthenics_solo : entry.workout_solo), currency },
-		workout_bundle: { ...(isCalisthenicsFunnel ? entry.calisthenics_bundle : entry.workout_bundle), currency },
+		workout_solo: { ...entry.workout_solo, currency },
+		workout_bundle: { ...entry.workout_bundle, currency },
 		calisthenics_solo: { ...entry.calisthenics_solo, currency },
 		calisthenics_bundle: { ...entry.calisthenics_bundle, currency },
 	}

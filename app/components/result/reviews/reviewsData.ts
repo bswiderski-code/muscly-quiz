@@ -21,7 +21,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-03"),
     language: "PL",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-05"),
     language: "PL",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-07"),
     language: "PL",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 4,
@@ -54,7 +54,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-09"),
     language: "PL",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 5,
@@ -65,7 +65,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-11"),
     language: "PL",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 6,
@@ -76,7 +76,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-13"),
     language: "PL",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 7,
@@ -87,7 +87,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-15"),
     language: "PL",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 8,
@@ -98,7 +98,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-17"),
     language: "PL",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 9,
@@ -109,7 +109,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-19"),
     language: "PL",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 10,
@@ -120,7 +120,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-21"),
     language: "PL",
-    funnel: "plan",
+    funnel: "workout",
   },
   // --- Polish Reviews (Kalistenika) ---
   {
@@ -132,7 +132,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-11-28"),
     language: "PL",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 12,
@@ -143,7 +143,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-12-05"),
     language: "PL",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 13,
@@ -154,7 +154,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-12-12"),
     language: "PL",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 14,
@@ -165,7 +165,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-12-20"),
     language: "PL",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 15,
@@ -176,7 +176,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-12-29"),
     language: "PL",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 16,
@@ -187,7 +187,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-02"),
     language: "PL",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 17,
@@ -198,7 +198,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-04"),
     language: "PL",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 18,
@@ -209,7 +209,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-07"),
     language: "PL",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 19,
@@ -220,7 +220,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-09"),
     language: "PL",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 20,
@@ -231,7 +231,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-10"),
     language: "PL",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   // --- English Reviews (Starts at ID 21 now) ---
   {
@@ -243,7 +243,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-22"),
     language: "EN",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 22,
@@ -254,7 +254,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-23"),
     language: "EN",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 23,
@@ -265,7 +265,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-24"),
     language: "EN",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 24,
@@ -276,7 +276,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-25"),
     language: "EN",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 25,
@@ -287,7 +287,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-27"),
     language: "EN",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 26,
@@ -298,7 +298,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-28"),
     language: "EN",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 27,
@@ -309,7 +309,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-30"),
     language: "EN",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 28,
@@ -320,7 +320,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-12-01"),
     language: "EN",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 29,
@@ -331,7 +331,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-12-03"),
     language: "EN",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 30,
@@ -342,7 +342,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-12-04"),
     language: "EN",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 31,
@@ -353,7 +353,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-12-06"),
     language: "EN",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 32,
@@ -364,7 +364,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-12-08"),
     language: "EN",
-    funnel: "plan",
+    funnel: "workout",
   },
   // --- English Reviews (Calisthenics) ---
   {
@@ -376,7 +376,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-11-28"),
     language: "EN",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 34,
@@ -387,7 +387,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-12-05"),
     language: "EN",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 35,
@@ -398,7 +398,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-12-12"),
     language: "EN",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 36,
@@ -409,7 +409,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-12-20"),
     language: "EN",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 37,
@@ -420,7 +420,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-12-29"),
     language: "EN",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 38,
@@ -431,7 +431,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-02"),
     language: "EN",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 39,
@@ -442,7 +442,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-04"),
     language: "EN",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 40,
@@ -453,7 +453,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-07"),
     language: "EN",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 41,
@@ -464,7 +464,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-09"),
     language: "EN",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 42,
@@ -475,7 +475,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-10"),
     language: "EN",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   // --- Romanian Reviews ---
   {
@@ -487,7 +487,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-10-14"),
     language: "RO",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 44,
@@ -498,7 +498,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-10-22"),
     language: "RO",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 45,
@@ -509,7 +509,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-02"),
     language: "RO",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 46,
@@ -520,7 +520,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-06"),
     language: "RO",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 47,
@@ -531,7 +531,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-12"),
     language: "RO",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 48,
@@ -542,7 +542,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-18"),
     language: "RO",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 49,
@@ -553,7 +553,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-23"),
     language: "RO",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 50,
@@ -564,7 +564,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-11-28"),
     language: "RO",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 51,
@@ -575,7 +575,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-12-03"),
     language: "RO",
-    funnel: "plan",
+    funnel: "workout",
   },
   {
     id: 52,
@@ -586,7 +586,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-12-07"),
     language: "RO",
-    funnel: "plan",
+    funnel: "workout",
   },
   // --- Romanian Reviews (Calisthenics) ---
   {
@@ -598,7 +598,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-11-28"),
     language: "RO",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 54,
@@ -609,7 +609,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-12-05"),
     language: "RO",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 55,
@@ -620,7 +620,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-12-12"),
     language: "RO",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 56,
@@ -631,7 +631,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-12-20"),
     language: "RO",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 57,
@@ -642,7 +642,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2024-12-29"),
     language: "RO",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 58,
@@ -653,7 +653,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-02"),
     language: "RO",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 59,
@@ -664,7 +664,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-04"),
     language: "RO",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 60,
@@ -675,7 +675,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-07"),
     language: "RO",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 61,
@@ -686,7 +686,7 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-09"),
     language: "RO",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
   {
     id: 62,
@@ -697,6 +697,6 @@ export const reviews: Review[] = [
     verified: true,
     date: new Date("2025-01-10"),
     language: "RO",
-    funnel: "kalistenika",
+    funnel: "workout",
   },
 ];

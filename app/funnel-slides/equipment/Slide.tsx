@@ -43,7 +43,7 @@ export default function Page() {
 	const options = useMemo(() => {
 		const rawOptions = t.raw('options') as Record<string, OptionCopy>;
 		return config.equipmentValues.map((key) => {
-			const description = (funnelKey === 'kalistenika' && key !== 'none')
+			const description = (key !== 'none')
 				? ''
 				: (rawOptions[key]?.description ?? '');
 

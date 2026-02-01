@@ -11,11 +11,7 @@ const defaultConfig: NextButtonConfig = {
 };
 
 const funnelConfigs: Partial<Record<FunnelKey, Partial<NextButtonConfig>>> = {
-  kalistenika: {
-    imageSrc: '/btns/{locale}/v_next.svg',
-    alt: 'Start training',
-  },
-  plan: {
+  workout: {
     imageSrc: '/btns/{locale}/next.svg',
     alt: 'Create plan',
   },

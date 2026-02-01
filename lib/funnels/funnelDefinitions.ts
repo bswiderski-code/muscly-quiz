@@ -117,10 +117,10 @@ const sharedPricing: Partial<Record<LocalePricingKey, LocalePricing>> = {
  * - `steps.order` must be a list of valid StepId values.
  */
 export const funnelDefinitions = {
-  plan: {
-    slug: { pl: 'plan', en: 'plan', fr: 'plan', de: 'plan', ro: 'plan' },
-    resultSlug: { pl: 'plan', en: 'plan', fr: 'plan', de: 'plan', ro: 'plan' },
-    translationNamespace: 'PlanPage',
+  workout: {
+    slug: { pl: 'workout', en: 'workout', fr: 'workout', de: 'workout', ro: 'workout' },
+    resultSlug: { pl: 'workout', en: 'workout', fr: 'workout', de: 'workout', ro: 'workout' },
+    translationNamespace: 'WorkoutPage',
     allowedDomains: undefined, // Available on all domains
     item: 'plan_treningowy',
     pricePLN: 3999, // 39.99 PLN; change anytime
@@ -130,20 +130,24 @@ export const funnelDefinitions = {
       [
         'gender',
         'diet_goal',
-        'bodyfat',
         'height',
         'weight',
         'age',
-        'activity',
+        'bodyfat',
         'bmi',
+        'activity',
         'location',
         'equipment',
         'experience',
         'difficulty',
         'priority',
         'frequency',
+        'duration',
         'fitness',
         'sleep',
+        'pushups',
+        'pullups',
+        'calistenic_experience',
       ] as const,
       [
         {
@@ -152,36 +156,6 @@ export const funnelDefinitions = {
         },
       ]
     ),
-    resultTemplate: 'standard',
-  },
-  kalistenika: {
-    slug: { pl: 'kalistenika', en: 'calisthenics', fr: 'calisthenie', de: 'kalisthenik', ro: 'calistenice' },
-    resultSlug: { pl: 'kalistenika', en: 'calisthenics', fr: 'calisthenie', de: 'kalisthenik', ro: 'calistenice' },
-    translationNamespace: 'KalistenikaPage',
-    allowedDomains: ['trenerzyla.pl'],
-    item: 'plan_kalistenika',
-    pricePLN: 3999,
-    currency: 'PLN',
-    pricing: sharedPricing,
-    forcedAnswers: { gender: 'M' },
-    steps: stepsFor([
-      'diet_goal',
-      'equipment',
-      'priority',
-      'height',
-      'bodyfat',
-      'weight',
-      'age',
-      'activity',
-      'bmi',
-      'pushups',
-      'pullups',
-      'calistenic_experience',
-      'frequency',
-      'duration',
-      'fitness',
-      'sleep',
-    ] as const),
     resultTemplate: 'standard',
   },
 } satisfies Record<string, FunnelDefinition>

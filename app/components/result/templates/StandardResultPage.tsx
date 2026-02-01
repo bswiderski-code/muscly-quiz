@@ -41,7 +41,7 @@ export default function StandardResultPage() {
   const funnelSlug = Array.isArray(params?.funnel) ? params.funnel[0] : params?.funnel
 
   const resolvedFunnel = useMemo(
-    () => resolveFunnelKeyByResultSlug(funnelSlug ?? 'plan', locale) ?? 'plan',
+    () => resolveFunnelKeyByResultSlug(funnelSlug ?? 'workout', locale) ?? 'workout',
     [funnelSlug, locale],
   )
 
@@ -141,7 +141,7 @@ export default function StandardResultPage() {
   const imageHeight = config.purchaseImageHeight[locale] || config.purchaseImageHeight.default;
 
   useEffect(() => {
-    if (answers && sessionId && resolvedFunnel === 'kalistenika') {
+    if (answers && sessionId) {
       fetch('/api/funnel/save', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -699,7 +699,7 @@ export default function StandardResultPage() {
 
       <div className="reports-wrap" style={{ textAlign: 'center', marginTop: 8 }}>
         <div className="reports-box">
-          <span className={resolvedFunnel === 'kalistenika' ? 'reports-highlight kalistenika-text' : 'reports-highlight'}>
+          <span className="reports-highlight">
             {reportCount !== null ? `${reportCount} ${t('reportNote1')}` : '...'}
           </span>
           <br />

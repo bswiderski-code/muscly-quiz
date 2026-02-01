@@ -115,7 +115,7 @@ export async function POST(req: NextRequest) {
       sessionId,
       amount: Math.round(Number(amountPln) * 100), // e.g. 1,23 => 123
       currency: (market.currency.toUpperCase() as Currency) || Currency.PLN,
-      description: (typeof productName === 'string' && productName.trim()) ? productName.trim() : (description || 'plan'),
+      description: (typeof productName === 'string' && productName.trim()) ? productName.trim() : (description || 'workout'),
       email,
       country: (market.market.toUpperCase() as Country) || Country.Poland,
       language: (market.locale.toUpperCase() as Language) || Language.PL,
@@ -135,7 +135,7 @@ export async function POST(req: NextRequest) {
         sid: sessionId,
         // order.amount is in grosze (e.g. 123 for 1.23 PLN) — store as Float PLN
         amount: order.amount / 100,
-        description: description || 'plan', // use incoming description from frontend
+        description: description || 'workout', // use incoming description from frontend
         currency: String(order.currency),
         status: 'pending',
         name: name ?? '',

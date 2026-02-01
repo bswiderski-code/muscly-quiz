@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({
       item_id: checkout.id,
-      item_name: checkout.description || 'plan',
+      item_name: checkout.description || 'workout',
       price: checkout.amount,
       currency: checkout.currency || 'PLN',
       amount: checkout.amount,

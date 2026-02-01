@@ -8,7 +8,7 @@ interface EmblaCarouselProps {
   funnelKey?: string;
 }
 
-export function EmblaCarousel({ funnelKey = 'plan' }: EmblaCarouselProps) {
+export function EmblaCarousel({ funnelKey = 'workout' }: EmblaCarouselProps) {
   const t = useTranslations('Carousel');
   const funnelConfig = t.raw(funnelKey) as { slides: Array<{ img: string; alt: string; caption: string }> };
   const slides = funnelConfig?.slides || [];

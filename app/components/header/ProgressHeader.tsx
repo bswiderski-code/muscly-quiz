@@ -62,7 +62,7 @@ export default function ProgressHeader({ currentIdx, onBack, className, funnel: 
 
   const handleBack = () => {
     if (currentIdx === 0) {
-      router.push({ pathname: '/[funnel]', params: { funnel: funnelSlug } } as any);
+      window.location.href = `https://musclepals.com/${locale}`;
       return;
     }
     if (onBack) {

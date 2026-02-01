@@ -11,17 +11,8 @@ export type LocationStepConfig = {
   }
 }
 
-const CONFIG: { plan: LocationStepConfig } & Partial<Record<FunnelKey, LocationStepConfig>> = {
-  plan: {
-    translationNamespace: 'Location',
-    assets: {
-      gymImageSrc: '/btns/{locale}/atgym.svg',
-      homeImageSrc: '/btns/{locale}/athome.svg',
-      bandsPanelYesImageSrc: '/btns/{locale}/tak_btn.svg',
-      bandsPanelNoImageSrc: '/btns/{locale}/nie_btn.svg',
-    },
-  },
-  kalistenika: {
+const CONFIG: { workout: LocationStepConfig } & Partial<Record<FunnelKey, LocationStepConfig>> = {
+  workout: {
     translationNamespace: 'Location',
     assets: {
       gymImageSrc: '/btns/{locale}/atgym.svg',

@@ -1,11 +1,11 @@
 import type { FunnelKey } from '@/lib/funnels/funnels'
 
 /**
- * Pick a funnel-specific config, falling back to `plan`.
+ * Pick a funnel-specific config, falling back to `workout`.
  * Keep configs explicit per funnel (easy to manage all funnels in one file).
  */
-export function pickFunnel<T>(funnel: FunnelKey, byFunnel: { plan: T } & Partial<Record<FunnelKey, T>>): T {
-  return byFunnel[funnel] ?? byFunnel.plan
+export function pickFunnel<T>(funnel: FunnelKey, byFunnel: { workout: T } & Partial<Record<FunnelKey, T>>): T {
+  return byFunnel[funnel] ?? byFunnel.workout
 }
 
 /**

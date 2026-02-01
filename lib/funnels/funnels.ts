@@ -72,14 +72,14 @@ export const getDefaultFunnelForLocale = (locale: Locale): FunnelKey => {
     const firstFunnel = marketInfo.funnels[0] as FunnelKey;
     if (FUNNELS[firstFunnel]) return firstFunnel;
   }
-  return 'plan'; // Ultimate fallback
+  return 'workout'; // Ultimate fallback
 }
 
 /**
  * Deprecated: use getDefaultFunnelForLocale instead.
  */
 export const getDefaultFunnelForHost = (host: string | null | undefined): FunnelKey => {
-  return 'plan'; 
+  return 'workout'; 
 }
 
 /**

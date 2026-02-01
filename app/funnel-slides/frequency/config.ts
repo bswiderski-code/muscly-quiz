@@ -5,12 +5,9 @@ export type FrequencyStepConfig = {
   translationNamespace: string
 }
 
-const CONFIG: { plan: FrequencyStepConfig } & Partial<Record<FunnelKey, FrequencyStepConfig>> = {
-  plan: {
+const CONFIG: { workout: FrequencyStepConfig } & Partial<Record<FunnelKey, FrequencyStepConfig>> = {
+  workout: {
     translationNamespace: 'Frequency',
-  },
-  kalistenika: {
-    translationNamespace: 'KalistenikaFrequency',
   },
 }
 

@@ -51,9 +51,6 @@ export interface ResultPageConfig {
   ctaButtonAltKey: string;
 }
 
-// -------------------------------------------------------------------------
-// 1. DEFAULT CONFIGURATION (Plan Funnel)
-// -------------------------------------------------------------------------
 const DEFAULT_RESULT_CONFIG: ResultPageConfig = {
   // Images
   introBicepImage: "/vectors/bmibiceps.svg",
@@ -112,47 +109,12 @@ const DEFAULT_RESULT_CONFIG: ResultPageConfig = {
   ctaButtonAltKey: "ctaButton.alt",
 };
 
-// -------------------------------------------------------------------------
-// 2. FUNNEL-SPECIFIC OVERRIDES
-// -------------------------------------------------------------------------
 const FUNNEL_RESULT_CONFIGS: Partial<Record<FunnelKey, Partial<ResultPageConfig>>> = {
-  // --- Gym/Plan Funnel ---
-  plan: {
+  workout: {
     // Uses all default values from needle set
   },
-
-  // --- Kalistenika Funnel ---
-  kalistenika: {
-    // Kalistenika uses the 'vein' asset set
-    introBicepImage: "/vectors/v_bmibiceps.svg",
-    trustImage: "/{locale}/vein/why-trust.svg",
-    purchaseImage: "/{locale}/vein/product-description.svg",
-    sampleImage: "/{locale}/vein/sample_guy.svg",
-    ctaButtonImage: "/btns/{locale}/v_get_your.svg",
-    
-    // Example: Override alt text for kalistenika
-    introBicepAlt: "Kalistenika Biceps",
-    
-    // Layout adjustments for kalistenika if needed
-    containerMaxWidth: 800,
-
-    // Translation Overrides for Kalistenika
-    titleKey: "kalistenika.title",
-    subtitleKey: "kalistenika.subtitle",
-    answersButtonImage: "kalistenika.buttonImage",
-    checkoutIntroImage: "/vectors/exercises/v_pushup.svg",
-    intro1Key: "kalistenika.intro1",
-    joinAthletesKey: "kalistenika.joinAthletes",
-    analyzeListKey: "kalistenika.analyzeList",
-    purchaseTitleKey: "kalistenika.purchaseTitle",
-  },
-
-  // --- Add more funnels here as they are created ---
 };
 
-// -------------------------------------------------------------------------
-// 3. HELPER FUNCTION
-// -------------------------------------------------------------------------
 export function getResultPageConfig(funnelKey: FunnelKey): ResultPageConfig {
   const funnelConfig = FUNNEL_RESULT_CONFIGS[funnelKey] || {};
   return {

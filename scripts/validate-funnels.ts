@@ -92,7 +92,7 @@ function check() {
       usedSlugs[locale].add(slug)
 
       // Check conflict with reserved paths
-      // If we have a path '/plan', and a funnel slug 'plan', it might be ambiguous depending on routing order.
+      // If we have a path '/workout', and a funnel slug 'workout', it might be ambiguous depending on routing order.
       // Usually static routes take precedence, so the funnel would be unreachable.
       const potentialPath = `/${slug}`
       if (reservedPaths.includes(potentialPath)) {

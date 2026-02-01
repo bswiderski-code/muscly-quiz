@@ -14,13 +14,8 @@ export type PullupsStepConfig = {
   }
 }
 
-const CONFIG: { plan: PullupsStepConfig } & Partial<Record<FunnelKey, PullupsStepConfig>> = {
-  plan: {
-    translationNamespace: 'PullupsStep',
-    ui: { inputType: 'select', optionValues: ['0', '1-3', '4-6', '7-10', '10+'] as const },
-    validation: { required: true },
-  },
-  kalistenika: {
+const CONFIG: { workout: PullupsStepConfig } & Partial<Record<FunnelKey, PullupsStepConfig>> = {
+  workout: {
     translationNamespace: 'PullupsStep',
     ui: { inputType: 'select', optionValues: ['0', '1-3', '4-6', '7-10', '10+'] as const },
     validation: { required: true },

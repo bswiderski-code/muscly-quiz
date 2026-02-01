@@ -19,9 +19,7 @@ const defaultConfig: AgeConfig = {
 };
 
 const funnelConfigs: Partial<Record<FunnelKey, Partial<AgeConfig>>> = {
-  kalistenika: {
-    translationNamespace: 'KalistenikaAge',
-  },
+  workout: {},
 };
 
 export function getAgeConfig(funnelKey: FunnelKey): AgeConfig {
@@ -31,5 +29,3 @@ export function getAgeConfig(funnelKey: FunnelKey): AgeConfig {
     ...funnelConfig,
   };
 }
-
-

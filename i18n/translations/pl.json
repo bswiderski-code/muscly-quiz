@@ -16,13 +16,9 @@
       "productName": "Plan kalisteniki + dieta (bundle)",
       "buttonSvg": "/btns/{locale}/bundle_bef.svg"
     },
-    "plan": {
+    "workout": {
       "buttonSvg": "/vectors/exercises/incline_smith.svg",
       "description": "Odbierz<br />swój plan<br />treningowy!"
-    },
-    "kalistenika": {
-      "buttonSvg": "/vectors/exercises/incline_smith.svg",
-      "description": "Odbierz<br />swój plan<br />kalisteniki!"
     }
   },
   "ReviewsWidget": {
@@ -43,11 +39,11 @@
       "title": "Plan treningowy | Trener Strzykawa",
       "description": "Stwórz plan treningowy dopasowany do Ciebie. Krótka ankieta, wynik w kilka minut."
     },
-    "plan": {
+    "workout": {
       "title": "Profesjonalny plan treningowy - personalizowany dla Ciebie",
       "description": "Szukasz skutecznego planu ćwiczeń? Przygotuję dla Ciebie zestaw oparty o Twoje odpowiedzi."
     },
-    "planForm": {
+    "workoutForm": {
       "title": "Formularz planu | Trener Strzykawa",
       "description": "Odpowiedz na pytania, aby dopasować plan do Twoich celów."
     }
@@ -64,7 +60,7 @@
       "alt": "Kobieta"
     }
   },
-  "PlanPage": {
+  "WorkoutPage": {
     "homeLabel": "Strona główna Trener Strzykawa",
     "titleHtml": "Twój własny<br /><span style='font-weight: 800'>plan treningowy</span>",
     "heroAlt": "",
@@ -79,25 +75,6 @@
       "heroImage": "/vectors/t_eagle.svg",
       "btnImage": "/btns/{locale}/create_plan_btn.svg",
       "homeUrl": "https://trenerstrzykawa.pl/",
-      "privacyUrl": "https://trenerstrzykawa.pl/polityka-prywatnosci/",
-      "termsUrl": "https://trenerstrzykawa.pl/regulamin/"
-    }
-  },
-  "KalistenikaPage": {
-    "homeLabel": "Strona główna Kalistenika",
-    "titleHtml": "Zbuduj wymarzoną<br />sylwetkę dzięki<br /><span class='kalistenika-text'>KALISTENICE</span>",
-    "heroAlt": "",
-    "description": "<i>Trenuj bez <span style=\"font-weight: 600\">profesjonalnego sprzętu</span> i osiągaj <span style=\"font-weight: 600\">wymarzone efekty</span>!</i><br />Uzupełnij krótką ankietę, a stworzę dla Ciebie idealny plan treningowy!",
-    "button": "Rozpocznij trening",
-    "privacy": "Polityka Prywatności",
-    "terms": "Regulamin",
-    "assets": {
-      "logo": "/{locale}/needle/logo-long.svg",
-      "logoHeight": "38",
-      "headerContainerHeight": "40",
-      "heroImage": "/vectors/t_eagle.svg",
-      "btnImage": "/btns/{locale}/create_plan_btn.svg",
-      "homeUrl": "https://trenerzyla.pl/",
       "privacyUrl": "https://trenerstrzykawa.pl/polityka-prywatnosci/",
       "termsUrl": "https://trenerstrzykawa.pl/regulamin/"
     }
@@ -248,270 +225,6 @@
       "hard_work": "Bardzo dużo trenuję lub mam ciężką pracę fizyczną. 🏋️‍♂️"
     }
   },
-  "KalistenikaAge": {
-    "title": "Ile masz <span style=\"font-weight: bold\">lat?</span>",
-    "placeholder": "__",
-    "ariaLabel": "Wiek",
-    "unit": "lat",
-    "12-14": {
-      "message": "Masz ogromny potencjał!",
-      "description": "To najlepszy czas, by zbudować <b>solidne fundamenty!</b> Teraz Twoje ciało dopiero się rozwija, więc kluczem są nawyki i nauka techniki, nie ogromne ciężary."
-    },
-    "15-20": {
-      "message": "Idealny wiek, by poważnie zabrać się za trening!",
-      "description": "Organizm szybko się regeneruje, więc możesz robić duże postępy, przy dobrze zaplanowanych ćwiczeniach i odżywianiu."
-    },
-    "21-30": {
-      "message": "To czas, kiedy możesz zbudować naprawdę świetną formę!",
-      "description": "Masz już świadomość swojego ciała - teraz wystarczy dobrze dobrany plan, żeby ruszyć efekty na nowy poziom."
-    }
-  },
-  "KalistenikaGender": {
-    "title": "Jakiej <b>płci</b> jesteś?",
-    "ariaLabel": "Wybór płci",
-    "male": {
-      "label": "Wybierz mężczyznę",
-      "alt": "Mężczyzna"
-    },
-    "female": {
-      "label": "Wybierz kobietę",
-      "alt": "Kobieta"
-    }
-  },
-  "KalistenikaHeight": {
-    "title": "Ile masz <span class=\"kalistenika-text\">wzrostu?</span>",
-    "alt": "Ile masz wzrostu?",
-    "unit": "cm",
-    "placeholder": "___",
-    "errorMsg": "Podaj swój prawdziwy wzrost.",
-    "ariaLabel": "Wzrost"
-  },
-  "KalistenikaDietGoal": {
-    "title": "Co chciałbyś<br /><span class=\"kalistenika-text\">osiągnąć?</span>",
-    "titleAria": "Co chciałbyś osiągnąć?",
-    "bulk": {
-      "label": "Chcę nabrać",
-      "alt": "Chcę nabrać masę mięśniową",
-      "description": "Skupiasz się na budowie nowej masy mięśniowej, waga rośnie."
-    },
-    "cut": {
-      "label": "Chcę zredukować",
-      "alt": "Chcę zredukować tłuszcz",
-      "description": "Tracisz na wadze, znika tłuszcz i uwydatniasz istniejące już mięśnie."
-    }
-  },
-  "KalistenikaBodyfat": {
-    "title": "Wybierz swój poziom<br /><span style=\"font-weight: 700\">tkanki tłuszczowej</span>",
-    "alt": "Sylwetka dla wybranego poziomu tkanki tłuszczowej",
-    "stepsDataMale": [
-      {
-        "value": "5-9",
-        "label": "5-9%",
-        "info": "To ekstremalnie niski poziom tkanki tłuszczowej. Sylwetka jest bardzo muskularna i definicja mięśni jest doskonała."
-      },
-      {
-        "value": "10-14",
-        "label": "10-14%",
-        "info": "To bardzo niski poziom tkanki tłuszczowej. Sylwetka jest szczupła, mięśnie są wyraźnie widoczne."
-      },
-      {
-        "value": "15-19",
-        "label": "15-19%",
-        "info": "To zdrowy, sportowy poziom tkanki tłuszczowej. Mięśnie są widoczne, ale sylwetka nie jest wychudzona."
-      },
-      {
-        "value": "20-24",
-        "label": "20-24%",
-        "info": "To niski poziom tkanki tłuszczowej. Sylwetka jest szczupła, mięśnie są widoczne."
-      },
-      {
-        "value": "25-29",
-        "label": "25-29%",
-        "info": "To umiarkowany poziom tkanki tłuszczowej. Sylwetka jest pełniejsza, mięśnie są mniej widoczne."
-      },
-      {
-        "value": "30-34",
-        "label": "30-34%",
-        "info": "To wyższy poziom tkanki tłuszczowej. Sylwetka jest zaokrąglona, mięśnie są niewidoczne."
-      },
-      {
-        "value": "35-39",
-        "label": "35-39%",
-        "info": "To wysoki poziom tkanki tłuszczowej. Sylwetka jest bardzo zaokrąglona."
-      },
-      {
-        "value": ">40",
-        "label": ">40%",
-        "info": "To bardzo wysoki poziom tkanki tłuszczowej. Sylwetka jest otyła."
-      }
-    ],
-    "stepsDataFemale": [
-      {
-        "value": "10-14",
-        "label": "10-14%",
-        "info": "Bardzo niska zawartość tkanki tłuszczowej, typowa dla zawodniczek sportów sylwetkowych. Może wiązać się z zaburzeniami hormonalnymi i brakiem miesiączki."
-      },
-      {
-        "value": "15-19",
-        "label": "15-19%",
-        "info": "Niska zawartość tkanki tłuszczowej, często spotykana u aktywnych kobiet i sportsmenek. Sylwetka bardzo szczupła, z wyraźnie zarysowanymi mięśniami."
-      },
-      {
-        "value": "20-24",
-        "label": "20-24%",
-        "info": "Zdrowy, sportowy poziom tkanki tłuszczowej. Sylwetka szczupła, ale kobieca. Najczęściej spotykany u aktywnych kobiet."
-      },
-      {
-        "value": "25-29",
-        "label": "25-29%",
-        "info": "Przeciętny poziom tkanki tłuszczowej. Sylwetka naturalna, lekko zaokrąglona, bez wyraźnej definicji mięśni."
-      },
-      {
-        "value": "30-39",
-        "label": "30-39%",
-        "info": "Podwyższony poziom tkanki tłuszczowej. Sylwetka wyraźnie zaokrąglona, możliwe problemy zdrowotne związane z nadmiarem tłuszczu."
-      },
-      {
-        "value": ">40",
-        "label": ">40%",
-        "info": "Bardzo wysoki poziom tkanki tłuszczowej. Wskazane konsultacje zdrowotne i zmiana stylu życia."
-      }
-    ]
-  },
-  "KalistenikaBMI": {
-    "title": "Twoje <span>BMI</span> to:",
-    "category": {
-      "unknown": "Nieznana kategoria",
-      "starvation": "Wygłodzenie",
-      "emaciation": "Wychudzenie",
-      "underweight": "Niedowaga",
-      "normal": "Pożądana masa ciała",
-      "overweight": "Nadwaga",
-      "obesityI": "Otyłość I stopnia",
-      "obesityII": "Otyłość II stopnia (duża)",
-      "obesityIII": "Otyłość III stopnia (chorobliwa)"
-    },
-    "description": {
-      "unknown": "Nie można określić kategorii BMI.",
-      "starvation": "Organizm jest silnie osłabiony z powodu bardzo dużego niedoboru masy ciała.",
-      "emaciation": "Ciało jest wyraźnie osłabione, mięśnie i tkanki nie mają wystarczającego odżywienia.",
-      "underweight": "Masa ciała jest zbyt niska. Organizm nie jest właściwie chroniony przed chorobami i gorzej znosi wysiłek fizyczny.",
-      "normal": "Organizm nie jest ani przeciążony nadmierną ilością tkanki tłuszczowej, ani osłabiony jej niedoborem.",
-      "overweight": "Pojawia się nadmiar tkanki tłuszczowej, który zaczyna obciążać organizm.",
-      "obesityI": "Nadmiar tkanki tłuszczowej wyraźnie przeciąża organizm i zwiększa ryzyko chorób.",
-      "obesityII": "Organizm jest mocno przeciążony. Wzrasta ryzyko poważnych chorób przewlekłych i ograniczenie sprawności fizycznej.",
-      "obesityIII": "Bardzo duża ilość tkanki tłuszczowej poważnie zagraża zdrowiu i życiu."
-    },
-    "conclusion": "Idealny moment na budowanie mięśni!",
-    "nextStepAlt": "Przejdź do następnego kroku"
-  },
-  "KalistenikaPriority": {
-    "title1": "Na rozbudowie których<br />partii zależy ci<br />",
-    "title2": "<span class=\"kalistenika-text\">NAJBARDZIEJ?</span>",
-    "subtitle": "(Plan obejmuje wszystkie partie mięśniowe, ale możesz wybrać te, które chcesz <b>priorytetyzować</b>)",
-    "warning": "UWAGA! Możesz zaznaczyć max. 2 partie",
-    "partNames": {
-      "shoulders": "Barki",
-      "chest": "Klatka",
-      "triceps": "Triceps",
-      "biceps": "Biceps",
-      "back": "Plecy",
-      "legs": "Nogi",
-      "abs": "Brzuch",
-      "forearms": "Przedramiona",
-      "glutes": "Pośladki"
-    },
-    "ariaLabelSelected": "Priorytet: {name} zaznaczony",
-    "ariaLabelUnselected": "Priorytet: {name} niezaznaczony",
-    "imageAltSelected": "{name} — zaznaczono",
-    "imageAltUnselected": "{name} — nie zaznaczono"
-  },
-  "KalistenikaFrequency": {
-    "title1": "Ile razy w<br />tygodniu chcesz<br />",
-    "title2": "<span class=\"kalistenika-text\">TRENOWAĆ?</span>",
-    "dayLabelSingular": "dzień",
-    "dayLabelPlural": "dni",
-    "steps": [
-      {
-        "value": "1",
-        "label": "1 raz w tygodniu"
-      },
-      {
-        "value": "2",
-        "label": "2 razy w tygodniu"
-      },
-      {
-        "value": "3",
-        "label": "3 razy w tygodniu"
-      },
-      {
-        "value": "4",
-        "label": "4 razy w tygodniu"
-      },
-      {
-        "value": "5",
-        "label": "5 razy w tygodniu"
-      }
-    ],
-    "daySingular": "trening",
-    "dayPlural": "treningi",
-    "dayPluralFew": "treningi"
-  },
-  "KalistenikaFitness": {
-    "title1": "Jak oceniłbyś swoją<br /><span class=\"kalistenika-text\">sprawność fizyczną</span><br />w skali od 1 do 10?"
-  },
-  "KalistenikaSleep": {
-    "title": "Ile czasu<br /><span style=\"font-weight: 700\">poświęcasz na sen?</span>",
-    "steps": [
-      {
-        "value": "lt6",
-        "label": "< 6 godzin"
-      },
-      {
-        "value": "7-8",
-        "label": "7-8 godzin"
-      },
-      {
-        "value": "9-12",
-        "label": "9-12 godzin"
-      },
-      {
-        "value": "gt12",
-        "label": "> 12 godzin"
-      }
-    ],
-    "messages": [
-      "Ciężko o dobrą regenerację przy takiej ilości snu... Pamiętaj by nad tym pracować :)",
-      "Dobra ilość snu — regeneracja wspiera trening i zdrowie.",
-      "Bardzo dobra ilość snu — regeneracja optymalna.",
-      "Zbyt dużo snu może oznaczać nieregularność — obserwuj samopoczucie."
-    ]
-  },
-  "KalistenikaDuration": {
-    "title1": "Wybierz czas<br />jednego ",
-    "title2": "<span class=\"kalistenika-text\">treningu</span>",
-    "minuteLabelSingular": "minuta",
-    "minuteLabelPluralFew": "minuty",
-    "minuteLabelPlural": "minut",
-    "steps": [
-      {
-        "value": "30",
-        "label": "30 min"
-      },
-      {
-        "value": "45",
-        "label": "45 min"
-      },
-      {
-        "value": "60",
-        "label": "60 min"
-      },
-      {
-        "value": "90",
-        "label": "90 min"
-      }
-    ]
-  },
   "BMI": {
     "title": "Twoje <span>BMI</span> to:",
     "category": {
@@ -632,30 +345,6 @@
       "dip_bar": {
         "label": "Poręcze do dipów.",
         "description": "Poręcze umożliwią wykonywanie dipów i innych ćwiczeń na mięśnie trójgłowe ramienia."
-      }
-    },
-    "errorMsg": "Zaznacz przynajmniej jedną opcję sprzętu, by przejść dalej."
-  },
-  "KalistenikaEquipment": {
-    "title": "Jaki <span class=\"kalistenika-text\">sprzęt</span> masz do dyspozycji?",
-    "subtitle": "(możesz zaznaczyć więcej<br />niż jedną opcję)",
-    "ariaLabelGroup": "Wybór sprzętu do kalisteniki", 
-    "options": {
-      "none": {
-        "label": "Nie mam żadnego sprzętu. 🚫",
-        "description": "<b>Bez obaw!</b> Sprzęt to tylko dodatek. Dzięki temu planowi będziesz mógł ćwiczyć i rozwijać się bez niego ;)"
-      },
-      "bands": {
-        "label": "Gumy oporowe.",
-        "description": "Pomogą w progresji do trudniejszych ćwiczeń lub dodadzą oporu."
-      },
-      "pullup_bar": {
-        "label": "Drążek do podciągania.",
-        "description": "Niezbędny do budowania silnych pleców i ramion."
-      },
-      "dip_bar": {
-        "label": "Poręcze do dipów.",
-        "description": "Kluczowe do rozwoju klatki piersiowej i tricepsów."
       }
     },
     "errorMsg": "Zaznacz przynajmniej jedną opcję sprzętu, by przejść dalej."
@@ -844,26 +533,10 @@
       "imageSrc": "/btns/{locale}/get_your.svg",
       "alt": "Odbierz plan"
     },
-    "kalistenika": {
-      "title": "<span style=\"font-size: 24px; font-weight: 700;\">Twój Plan Treningowy</span><br /><span class=\"kalistenika-text\" style=\"font-size: 40px; line-height: 1.1;\">KALISTENIKI</span><br />jest gotowy!",
-      "subtitle": "<span style=\"font-size: 28px; font-weight: 400;\">Szybkie Podsumowanie</span><br /><span class=\"kalistenika-text\" style=\"font-size: 32px; font-weight: 700;\">Twoich wyników</span>",
-      "intro1": "Stworzony na podstawie<br /><b>Twoich odpowiedzi</b> przez<br/><b>zaawansowany algorytm treningowy</b><br />zaprojektowany specjalnie do<br /><b>budowy sylwetki</b> przy użyciu <b>masy własnego ciała</b>.",
-      "joinAthletes": "Dołącz do <b><span class=\"kalistenika-text\">{count}</span> <span class=\"kalistenika-text\">sportowców</span></b>, którzy <b>już korzystają</b> ze swojego <b>personalizowanego planu!</b>",
-      "analyzeList": {
-        "aktywnosc": "Twój <b>poziom aktywności</b>",
-        "cel": "Twój <b>cel</b> (redukcja / masa)",
-        "wiek": "Twój <b>wiek</b>",
-        "doswiadczenie": "<b>Doświadczenie w kalistenice</b>",
-        "time": "<b>Czas</b>, którym dysponujesz",
-        "strengths": "<b>Mocne i słabe strony sylwetki</b>"
-      },
-      "purchaseTitle": "Co otrzymasz w swoim Planie Kalisteniki?"
-    },
     "errorTitle": "Brak danych dla tego lejka.",
     "errorDescription": "Skontaktuj się z nami pod adresem: support@trenerstrzykawa.pl",
     "faq": {
-      "title": "Najczęściej<br/>zadawane pytania:",
-      "kalistenikaTitle": "Najczęściej<br/>zadawane pytania<br/><span class=\"kalistenika-text\">KALISTENIKI:</span>"
+      "title": "Najczęściej<br/>zadawane pytania:"
     }
   },
   "BMIBOX": {
@@ -1022,7 +695,9 @@
     "noData": "-"
   },
   "Carousel": {
-    "plan": {
+    "indicatorNote": "Uwaga! To nie jest cały plan treningowy, tylko 4 przykładowe strony.",
+    "pageLabel": "Strona {current}/{total}",
+    "workout": {
       "slides": [
         {
           "img": "/example_training/{locale}/plan/sample-1.png",
@@ -1045,33 +720,7 @@
           "caption": "Plan progresji na najbliższe 3 miesiące – strona 7"
         }
       ]
-    },
-    "kalistenika": {
-      "slides": [
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-1.png",
-          "alt": "Maciej kalistenik 1",
-          "caption": "Wstęp do planu kalisteniki – strona 1"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-2.png",
-          "alt": "Maciej kalistenik 2",
-          "caption": "Poradnik ćwiczeń kalistenicznych – strona 2"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-5.png",
-          "alt": "Maciej kalistenik 3",
-          "caption": "Plan treningowy kalisteniki – strona 5"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-7.png",
-          "alt": "Maciej kalistenik 4",
-          "caption": "Postępy w kalistenice – strona 7"
-        }
-      ]
-    },
-    "indicatorNote": "Uwaga! To nie jest cały plan treningowy, tylko 4 przykładowe strony.",
-    "pageLabel": "Strona {current}/{total}"
+    }
   },
   "OrderPage": {
     "logoHref": "https://trenerstrzykawa.pl/",
@@ -1207,9 +856,6 @@
       "pullups": "Umiem zrobić {value} podciągnięć.",
       "pullups_none": "Nie umiem jeszcze zrobić ani jednego podciągnięcia.",
       "duration": "{value} minut"
-    },
-    "kalistenika": {
-      "buttonImage": "/btns/{locale}/v_answers_summary.svg"
     }
   },
   "MissingSteps": {

@@ -16,13 +16,9 @@
       "productName": "Calisthenics Plan + Ernährung (Bundle)",
       "buttonSvg": "/btns/{locale}/bundle_bef.svg"
     },
-    "plan": {
+    "workout": {
       "buttonSvg": "/vectors/exercises/incline_smith.svg",
       "description": "Hol dir<br />deinen<br />Trainingsplan!"
-    },
-    "kalistenika": {
-      "buttonSvg": "/vectors/exercises/incline_smith.svg",
-      "description": "Hol dir<br />deinen<br />Kalisthenik-Plan!"
     }
   },
   "ReviewsWidget": {
@@ -43,11 +39,11 @@
       "title": "Trainingsplan | Coach Hantel",
       "description": "Erstelle einen Trainingsplan, der zu dir passt. Kurzes Quiz, Ergebnis in wenigen Minuten."
     },
-    "plan": {
+    "workout": {
       "title": "Professioneller Trainingsplan - personalisiert für dich",
       "description": "Suchst du einen effektiven Trainingsplan? Ich erstelle ein Set basierend auf deinen Antworten."
     },
-    "planForm": {
+    "workoutForm": {
       "title": "Plan-Formular | Coach Hantel",
       "description": "Beantworte die Fragen, um den Plan an deine Ziele anzupassen."
     }
@@ -64,7 +60,7 @@
       "alt": "Frau"
     }
   },
-  "PlanPage": {
+  "WorkoutPage": {
     "homeLabel": "Startseite Coach Hantel",
     "titleHtml": "Dein eigener<br /><span style='font-weight: 800'>Trainingsplan</span>",
     "heroAlt": "",
@@ -81,25 +77,6 @@
       "homeUrl": "https://trenerstrzykawa.pl/",
       "privacyUrl": "https://trenerstrzykawa.pl/polityka-prywatnosci/",
       "termsUrl": "https://trenerstrzykawa.pl/regulamin/"
-    }
-  },
-  "KalistenikaPage": {
-    "homeLabel": "Calisthenics Home Page",
-    "titleHtml": "Your own<br /><span style='font-weight: 800'>calisthenics plan</span>",
-    "heroAlt": "",
-    "description": "Build incredible strength and physique using only your body weight.\n<em>Complete the quiz in 2 minutes.</em>",
-    "button": "Start training",
-    "privacy": "Datenschutzerklärung",
-    "terms": "AGB",
-    "assets": {
-      "logo": "/{locale}/needle/logo-long.svg",
-      "logoHeight": "50",
-      "headerContainerHeight": "40",
-      "heroImage": "/vectors/t_eagle.svg",
-      "btnImage": "/btns/{locale}/create_plan_btn.svg",
-      "homeUrl": "https://trenerzyla.pl/",
-      "privacyUrl": "https://trenerzyla.pl/privacy",
-      "termsUrl": "https://trenerzyla.pl/terms"
     }
   },
   "DietGoal": {
@@ -505,8 +482,7 @@
     "errorTitle": "Keine Daten für diesen Funnel.",
     "errorDescription": "Kontaktiere uns unter: support@trenerstrzykawa.pl",
     "faq": {
-      "title": "Häufig gestellte<br/>Fragen:",
-      "kalistenikaTitle": "Häufig gestellte<br/>Fragen<br/><span class=\"kalistenika-text\">KALISTHENIK:</span>"
+      "title": "Häufig gestellte<br/>Fragen:"
     }
   },
   "BMIBOX": {
@@ -665,7 +641,9 @@
     "noData": "-"
   },
   "Carousel": {
-    "plan": {
+    "indicatorNote": "Achtung! Das ist nicht der ganze Plan, nur 4 Beispielseiten.",
+    "pageLabel": "Seite {current}/{total}",
+    "workout": {
       "slides": [
         {
           "img": "/example_training/{locale}/plan/sample-1.png",
@@ -688,33 +666,7 @@
           "caption": "Progressionsplan für die nächsten 3 Monate – Seite 7"
         }
       ]
-    },
-    "kalistenika": {
-      "slides": [
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-1.png",
-          "alt": "Maciej Calisthenics 1",
-          "caption": "Einführung in den Calisthenics-Plan – Seite 1"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-2.png",
-          "alt": "Maciej Calisthenics 2",
-          "caption": "Anleitung für Calisthenics-Übungen – Seite 2"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-5.png",
-          "alt": "Maciej Calisthenics 3",
-          "caption": "Calisthenics-Trainingsplan – Seite 5"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-7.png",
-          "alt": "Maciej Calisthenics 4",
-          "caption": "Fortschritte in Calisthenics – Seite 7"
-        }
-      ]
-    },
-    "indicatorNote": "Achtung! Das ist nicht der ganze Plan, nur 4 Beispielseiten.",
-    "pageLabel": "Seite {current}/{total}"
+    }
   },
   "OrderPage": {
     "logoHref": "https://trenerstrzykawa.pl/",

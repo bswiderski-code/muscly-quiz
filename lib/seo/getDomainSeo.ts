@@ -30,13 +30,13 @@ async function getLocaleFallbackSeo(locale: string): Promise<DomainSeoConfig> {
       title: t('home.title'),
       description: t('home.description'),
     },
-    plan: {
-      title: t('plan.title'),
-      description: t('plan.description'),
+    workout: {
+      title: t('workout.title'),
+      description: t('workout.description'),
     },
-    planForm: {
-      title: t('planForm.title'),
-      description: t('planForm.description'),
+    workoutForm: {
+      title: t('workoutForm.title'),
+      description: t('workoutForm.description'),
     },
   };
 }
@@ -68,15 +68,15 @@ export async function getDomainSeoTitle(
     return seo.funnels[pageType].title;
   }
   
-  if (pageType === 'plan' && seo.plan) {
-    return seo.plan.title;
+  if (pageType === 'workout' && seo.workout) {
+    return seo.workout.title;
   }
   
   if (pageType === 'home' && seo.home) {
     return seo.home.title;
   }
-  if (pageType === 'planForm' && seo.planForm) {
-    return seo.planForm.title;
+  if (pageType === 'workoutForm' && seo.workoutForm) {
+    return seo.workoutForm.title;
   }
   
   return '';
@@ -98,15 +98,15 @@ export async function getDomainSeoDescription(
     return seo.funnels[pageType].description;
   }
   
-  if (pageType === 'plan' && seo.plan) {
-    return seo.plan.description;
+  if (pageType === 'workout' && seo.workout) {
+    return seo.workout.description;
   }
   
   if (pageType === 'home' && seo.home) {
     return seo.home.description;
   }
-  if (pageType === 'planForm' && seo.planForm) {
-    return seo.planForm.description;
+  if (pageType === 'workoutForm' && seo.workoutForm) {
+    return seo.workoutForm.description;
   }
   
   return '';

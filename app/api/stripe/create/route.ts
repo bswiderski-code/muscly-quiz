@@ -156,7 +156,7 @@ export async function POST(req: Request) {
       data: {
         sid: sessionId,
         amount: amount,
-        description: description || 'plan',
+        description: description || 'workout',
         currency: String(safeCurrency).toUpperCase(),
         status: 'pending',
         name: name ?? '',

@@ -2,15 +2,15 @@ import type { FunnelKey } from '@/lib/funnels/funnels'
 import { pickFunnel } from '@/app/funnel-slides/_config/helpers'
 
 export type DietGoalStepConfig = {
-  translationNamespace: 'DietGoal' | 'KalistenikaDietGoal'
+  translationNamespace: 'DietGoal'
   assets: {
     bulk: { male: string; female: string } // supports `{locale}`
     cut: { male: string; female: string } // supports `{locale}`
   }
 }
 
-const CONFIG: { plan: DietGoalStepConfig } & Partial<Record<FunnelKey, DietGoalStepConfig>> = {
-  plan: {
+const CONFIG: { workout: DietGoalStepConfig } & Partial<Record<FunnelKey, DietGoalStepConfig>> = {
+  workout: {
     translationNamespace: 'DietGoal',
     assets: {
       bulk: {
@@ -20,19 +20,6 @@ const CONFIG: { plan: DietGoalStepConfig } & Partial<Record<FunnelKey, DietGoalS
       cut: {
         male: '/btns/{locale}/want_cut.svg',
         female: '/btns/{locale}/want_cut_f.svg',
-      },
-    },
-  },
-  kalistenika: {
-    translationNamespace: 'KalistenikaDietGoal',
-    assets: {
-      bulk: {
-        male: '/btns/{locale}/v_bulk.svg',
-        female: '/btns/{locale}/v_bulk.svg',
-      },
-      cut: {
-        male: '/btns/{locale}/v_cut.svg',
-        female: '/btns/{locale}/v_cut.svg',
       },
     },
   },

@@ -1,11 +1,11 @@
 export type DomainSeoConfig = {
   appTitle: string;
   home: { title: string; description: string };
-  // Funnel-specific SEO - keyed by funnel key (e.g., 'plan')
+  // Funnel-specific SEO - keyed by funnel key (e.g., 'workout')
   funnels?: Record<string, { title: string; description: string }>;
-  // Legacy support for 'plan' key (deprecated, use funnels instead)
-  plan?: { title: string; description: string };
-  planForm?: { title: string; description: string };
+  // Legacy support for 'workout' key (deprecated, use funnels instead)
+  workout?: { title: string; description: string };
+  workoutForm?: { title: string; description: string };
 };
 
 /**
@@ -20,20 +20,16 @@ export const localeSeoMap: Record<string, DomainSeoConfig> = {
       description: 'Stwórz plan treningowy dopasowany do Ciebie. Krótka ankieta, wynik w kilka minut.',
     },
     funnels: {
-      kalistenika: {
-        title: 'Plan Kalisteniki - Trener Żyła',
-        description: 'Spersonalizowany program kalisteniki dopasowany do Twojego poziomu i sprzętu.',
-      },
-      plan: {
+      workout: {
         title: 'Profesjonalny plan treningowy - personalizowany dla Ciebie',
         description: 'Szukasz skutecznego planu ćwiczeń? Przygotuję dla Ciebie zestaw oparty o Twoje odpowiedzi.',
       },
     },
-    plan: {
+    workout: {
       title: 'Profesjonalny plan treningowy - personalizowany dla Ciebie',
       description: 'Szukasz skutecznego planu ćwiczeń? Przygotuję dla Ciebie zestaw oparty o Twoje odpowiedzi.',
     },
-    planForm: {
+    workoutForm: {
       title: 'Formularz planu | Trener Strzykawa',
       description: 'Odpowiedz na pytania, aby dopasować plan do Twoich celów.',
     },
@@ -44,11 +40,11 @@ export const localeSeoMap: Record<string, DomainSeoConfig> = {
       title: 'Workout plan | Coach Plate',
       description: 'Create a workout plan tailored to you. Quick survey, results in minutes.',
     },
-    plan: {
+    workout: {
       title: 'Workout plan – survey | Coach Plate',
       description: 'Fill out a short survey and generate your workout plan.',
     },
-    planForm: {
+    workoutForm: {
       title: 'Plan form | Coach Plate',
       description: 'Answer a few questions so we can match the plan to your goals.',
     },
@@ -59,11 +55,11 @@ export const localeSeoMap: Record<string, DomainSeoConfig> = {
       title: 'Plan d\'entraînement | Coach Muscu',
       description: 'Crée un plan d\'entraînement adapté à toi. Questionnaire rapide, résultat en quelques minutes.',
     },
-    plan: {
+    workout: {
       title: 'Plan d\'entraînement – questionnaire | Coach Muscu',
       description: 'Réponds à un court questionnaire et génère ton plan d\'entraînement.',
     },
-    planForm: {
+    workoutForm: {
       title: 'Formulaire du plan | Coach Muscu',
       description: 'Réponds à quelques questions pour adapter le plan à tes objectifs.',
     },
@@ -74,11 +70,11 @@ export const localeSeoMap: Record<string, DomainSeoConfig> = {
       title: 'Trainingsplan | Coach Hantel',
       description: 'Erstelle einen Trainingsplan, der zu dir passt. Kurzer Fragebogen, Ergebnis in wenigen Minuten.',
     },
-    plan: {
+    workout: {
       title: 'Trainingsplan – Fragebogen | Coach Hantel',
       description: 'Fülle einen kurzen Fragebogen aus und erstelle deinen Trainingsplan.',
     },
-    planForm: {
+    workoutForm: {
       title: 'Plan-Formular | Coach Hantel',
       description: 'Beantworte ein paar Fragen, damit der Plan zu deinen Zielen passt.',
     },
@@ -89,11 +85,11 @@ export const localeSeoMap: Record<string, DomainSeoConfig> = {
       title: 'Plan Antrenament | Antrenor Tănc',
       description: 'Creează un plan de antrenament personalizat pentru tine. Chestionar rapid, rezultate în câteva minute.',
     },
-    plan: {
+    workout: {
       title: 'Plan de Antrenament Profesional - Personalizat pentru Tine',
       description: 'Cauți un program de exerciții eficiente? Voi crea un program bazat pe răspunsurile tale.',
     },
-    planForm: {
+    workoutForm: {
       title: 'Formular Plan | Antrenor Tănc',
       description: 'Răspunde la întrebări pentru a personaliza planul în funcție de obiectivele tale.',
     },

@@ -2,7 +2,7 @@ import type { FunnelKey } from '@/lib/funnels/funnels'
 import { pickFunnel } from '@/app/funnel-slides/_config/helpers'
 
 export type BmiStepConfig = {
-  translationNamespace: 'BMI' | 'KalistenikaBMI'
+  translationNamespace: 'BMI'
   cssFile?: string
   showCalculation: boolean
   categoryRanges: Array<[number, number]>
@@ -16,8 +16,8 @@ export type BmiStepConfig = {
   }
 }
 
-const CONFIG: { plan: BmiStepConfig } & Partial<Record<FunnelKey, BmiStepConfig>> = {
-  plan: {
+const CONFIG: { workout: BmiStepConfig } & Partial<Record<FunnelKey, BmiStepConfig>> = {
+  workout: {
     translationNamespace: 'BMI',
     showCalculation: true,
     categoryRanges: [
@@ -33,24 +33,6 @@ const CONFIG: { plan: BmiStepConfig } & Partial<Record<FunnelKey, BmiStepConfig>
     illustration: {
       width: 600,
       height: 240,
-    },
-  },
-  kalistenika: {
-    translationNamespace: 'KalistenikaBMI',
-    showCalculation: true,
-    categoryRanges: [
-      [0, 18.5],
-      [18.5, 24.9],
-      [25, 29.9],
-      [30, Number.POSITIVE_INFINITY],
-    ],
-    assets: {
-      nextStepImg: '/btns/{locale}/v_lets_go.svg',
-      illustrationImg: '/vectors/v_meat.svg',
-    },
-    illustration: {
-      width: 600,
-      height: 210,
     },
   },
 }

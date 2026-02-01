@@ -9,7 +9,7 @@ type LocalizedPathMap = Partial<Record<(typeof locales)[number], string>>;
 // Provide base definitions; any missing locales will reuse the English path, then default locale.
 const basePathnames: Record<string, LocalizedPathMap> = {
   '/': { pl: '/', en: '/', fr: '/', de: '/' },
-  '/plan': { pl: '/plan', en: '/plan', fr: '/plan', de: '/plan' },
+  '/workout': { pl: '/workout', en: '/workout', fr: '/workout', de: '/workout' },
   '/[funnel]': { pl: '/[funnel]', en: '/[funnel]', fr: '/[funnel]', de: '/[funnel]' },
   '/[funnel]/[step]': { pl: '/[funnel]/[step]', en: '/[funnel]/[step]', fr: '/[funnel]/[step]', de: '/[funnel]/[step]' },
   '/wynik/[funnel]/[sessionId]': { pl: '/wynik/[funnel]/[sessionId]', en: '/result/[funnel]/[sessionId]', fr: '/result/[funnel]/[sessionId]', de: '/result/[funnel]/[sessionId]' },

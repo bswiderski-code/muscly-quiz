@@ -55,7 +55,7 @@ export async function GET(req: Request) {
         // 3. Create the order
         const order = await tx.orders.create({
           data: {
-            item: checkout.description ?? 'plan',
+            item: checkout.description ?? 'workout',
             name: checkout.name ?? '',
             email: checkout.email ?? '',
             checkoutId: checkout.id,

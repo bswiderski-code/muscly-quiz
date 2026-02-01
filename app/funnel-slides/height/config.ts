@@ -1,4 +1,3 @@
-
 import type { FunnelKey } from '@/lib/funnels/funnels';
 
 export type HeightConfig = {
@@ -30,13 +29,7 @@ const defaultConfig: HeightConfig = {
 };
 
 const funnelConfigs: Partial<Record<FunnelKey, Partial<HeightConfig>>> = {
-  kalistenika: {
-    translationNamespace: 'KalistenikaHeight',
-    images: {
-      male: '/vectors/v_height.svg',
-      female: '/vectors/v_height.svg',
-    },
-  },
+  workout: {},
 };
 
 export function getHeightConfig(funnelKey: FunnelKey): HeightConfig {
@@ -46,4 +39,3 @@ export function getHeightConfig(funnelKey: FunnelKey): HeightConfig {
     ...funnelConfig,
   };
 }
-

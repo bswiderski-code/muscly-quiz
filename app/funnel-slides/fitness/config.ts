@@ -2,12 +2,11 @@ import type { FunnelKey } from '@/lib/funnels/funnels'
 import { pickFunnel } from '@/app/funnel-slides/_config/helpers'
 
 export type FitnessStepConfig = {
-  translationNamespace: 'Fitness' | 'KalistenikaFitness'
+  translationNamespace: 'Fitness'
 }
 
-const CONFIG: { plan: FitnessStepConfig } & Partial<Record<FunnelKey, FitnessStepConfig>> = {
-  plan: { translationNamespace: 'Fitness' },
-  kalistenika: { translationNamespace: 'KalistenikaFitness' },
+const CONFIG: { workout: FitnessStepConfig } & Partial<Record<FunnelKey, FitnessStepConfig>> = {
+  workout: { translationNamespace: 'Fitness' },
 }
 
 export function getFitnessConfig(funnel: FunnelKey): FitnessStepConfig {

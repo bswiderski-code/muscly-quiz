@@ -85,7 +85,7 @@ export async function POST(req: NextRequest) {
     if (checkout) {
       await prisma.orders.create({
         data: {
-          item: checkout.description ?? 'plan',
+          item: checkout.description ?? 'workout',
           name: checkout.name ?? '',
           email: checkout.email ?? '',
           checkoutId: checkout.id,

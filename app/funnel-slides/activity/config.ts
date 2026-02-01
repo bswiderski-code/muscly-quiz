@@ -5,9 +5,8 @@ export type ActivityStepConfig = {
   translationNamespace: 'Activity'
 }
 
-const CONFIG: { plan: ActivityStepConfig } & Partial<Record<FunnelKey, ActivityStepConfig>> = {
-  plan: { translationNamespace: 'Activity' },
-  kalistenika: { translationNamespace: 'Activity' },
+const CONFIG: { workout: ActivityStepConfig } & Partial<Record<FunnelKey, ActivityStepConfig>> = {
+  workout: { translationNamespace: 'Activity' },
 }
 
 export function getActivityConfig(funnel: FunnelKey): ActivityStepConfig {

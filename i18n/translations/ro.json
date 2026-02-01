@@ -16,13 +16,9 @@
       "productName": "Plan Calisthenics + dietă (pachet)",
       "buttonSvg": "/btns/ro/bundle_bef.svg"
     },
-    "plan": {
+    "workout": {
       "buttonSvg": "/vectors/exercises/incline_smith.svg",
       "description": "Ia-ți<br />planul de<br />antrenament!"
-    },
-    "kalistenika": {
-      "buttonSvg": "/vectors/exercises/incline_smith.svg",
-      "description": "Ia-ți<br />planul de<br />calisthenics!"
     }
   },
   "ReviewsWidget": {
@@ -43,11 +39,11 @@
       "title": "Plan de antrenament | Antrenor Tanc",
       "description": "Creează un plan de antrenament potrivit pentru tine. Chestionar scurt, rezultatul în câteva minute."
     },
-    "plan": {
+    "workout": {
       "title": "Plan de antrenament profesional - personalizat pentru tine",
       "description": "Cauți un plan de exerciții eficient? Voi pregăti pentru tine un set bazat pe răspunsurile tale."
     },
-    "planForm": {
+    "workoutForm": {
       "title": "Formular plan | Antrenor Tanc",
       "description": "Răspunde la întrebări pentru a adapta planul la obiectivele tale."
     }
@@ -64,7 +60,7 @@
       "alt": "Femeie"
     }
   },
-  "PlanPage": {
+  "WorkoutPage": {
     "homeLabel": "Pagina principală Antrenor Tanc",
     "titleHtml": "Propriul tău<br /><span style='font-weight: 800'>plan de antrenament</span>",
     "heroAlt": "",
@@ -81,25 +77,6 @@
       "homeUrl": "https://antrenortanc.ro/",
       "privacyUrl": "/privacy",
       "termsUrl": "/terms"
-    }
-  },
-  "KalistenikaPage": {
-    "homeLabel": "Calisthenics Home Page",
-    "titleHtml": "Your own<br /><span style='font-weight: 800'>calisthenics plan</span>",
-    "heroAlt": "",
-    "description": "Build incredible strength and physique using only your body weight.\n<em>Complete the quiz in 2 minutes.</em>",
-    "button": "Start training",
-    "privacy": "Politica de Confidențialitate",
-    "terms": "Termeni și Condiții",
-    "assets": {
-      "logo": "/{locale}/needle/logo-long.svg",
-      "logoHeight": "50",
-      "headerContainerHeight": "40",
-      "heroImage": "/vectors/t_eagle.svg",
-      "btnImage": "/btns/{locale}/create_plan_btn.svg",
-      "homeUrl": "https://trenerzyla.pl/",
-      "privacyUrl": "https://trenerzyla.pl/privacy",
-      "termsUrl": "https://trenerzyla.pl/terms"
     }
   },
   "DietGoal": {
@@ -505,8 +482,7 @@
     "errorTitle": "Lipsă date pentru acest funnel.",
     "errorDescription": "Contactează-ne la adresa: support@antrenortanc.ro",
     "faq": {
-      "title": "Întrebări<br/>Frecvente:",
-      "kalistenikaTitle": "Întrebări<br/>Frecvente<br/><span class=\"kalistenika-text\">CALISTENICE:</span>"
+      "title": "Întrebări<br/>Frecvente:"
     }
   },
   "BMIBOX": {
@@ -665,7 +641,9 @@
     "noData": "-"
   },
   "Carousel": {
-    "plan": {
+    "indicatorNote": "Atenție! Acesta nu este tot planul de antrenament, ci doar 4 pagini de exemplu.",
+    "pageLabel": "Pagina {current}/{total}",
+    "workout": {
       "slides": [
         {
           "img": "/example_training/{locale}/plan/sample-1.png",
@@ -688,33 +666,7 @@
           "caption": "Planul de progresie pentru următoarele 3 luni – pagina 7"
         }
       ]
-    },
-    "kalistenika": {
-      "slides": [
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-1.png",
-          "alt": "Maciej Calisthenics 1",
-          "caption": "Introducere în planul de calisthenics – pagina 1"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-2.png",
-          "alt": "Maciej Calisthenics 2",
-          "caption": "Ghid pentru exercițiile de calisthenics – pagina 2"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-5.png",
-          "alt": "Maciej Calisthenics 3",
-          "caption": "Planul de antrenament calisthenics – pagina 5"
-        },
-        {
-          "img": "/example_training/{locale}/kalistenika/sample-7.png",
-          "alt": "Maciej Calisthenics 4",
-          "caption": "Progres în calisthenics – pagina 7"
-        }
-      ]
-    },
-    "indicatorNote": "Atenție! Acesta nu este tot planul de antrenament, ci doar 4 pagini de exemplu.",
-    "pageLabel": "Pagina {current}/{total}"
+    }
   },
   "OrderPage": {
     "logoHref": "https://antrenortanc.ro/",

@@ -10,19 +10,8 @@ export type ExperienceStepConfig = {
   }
 }
 
-const CONFIG: { plan: ExperienceStepConfig } & Partial<Record<FunnelKey, ExperienceStepConfig>> = {
-  plan: {
-    translationNamespace: 'Experience',
-    assets: {
-      imageByValue: {
-        none: '/vectors/exercises/hammer_dumbell.svg',
-        just_started: '/vectors/exercises/seated_ohp.svg',
-        some_experience: '/vectors/exercises/cable_upper.svg',
-        advanced: '/vectors/exercises/chest_fly.svg',
-      },
-    },
-  },
-  kalistenika: {
+const CONFIG: { workout: ExperienceStepConfig } & Partial<Record<FunnelKey, ExperienceStepConfig>> = {
+  workout: {
     translationNamespace: 'Experience',
     assets: {
       imageByValue: {

@@ -18,14 +18,8 @@ export type AnswersSummaryConfig = {
   }
 }
 
-const CONFIG: { plan: AnswersSummaryConfig } & Partial<Record<FunnelKey, AnswersSummaryConfig>> = {
-  plan: {
-    hiddenKeys: new Set(['bmi', 'usedMetric', 'weight_raw', 'weight_goal_raw', 'height_raw']),
-    conditionalRules: {
-      equipmentOnlyForHome: true,
-    },
-  },
-  kalistenika: {
+const CONFIG: { workout: AnswersSummaryConfig } & Partial<Record<FunnelKey, AnswersSummaryConfig>> = {
+  workout: {
     hiddenKeys: new Set(['bmi', 'usedMetric', 'weight_raw', 'weight_goal_raw', 'height_raw']),
     conditionalRules: {
       equipmentOnlyForHome: true,
@@ -37,5 +31,5 @@ const CONFIG: { plan: AnswersSummaryConfig } & Partial<Record<FunnelKey, Answers
  * Get the answers summary configuration for a specific funnel
  */
 export function getAnswersSummaryConfig(funnel: FunnelKey): AnswersSummaryConfig {
-  return CONFIG[funnel] || CONFIG.plan
+  return CONFIG[funnel] || CONFIG.workout
 }
