@@ -21,30 +21,35 @@ export function getMissingSteps(
 
   const order = getStepOrder(funnel)
   const skipRules = FUNNELS[funnel]?.steps.skipRules ?? []
-  
+
+  // Calculate which steps should be skipped based on current answers
   // Calculate which steps should be skipped based on current answers
   const skippedSteps = new Set<StepId>()
   for (const rule of skipRules) {
-    const triggerValue = answers[rule.trigger.step as keyof FunnelAnswers]
-    if (triggerValue !== undefined && String(triggerValue) === rule.trigger.value) {
+    const allTriggersMatch = rule.trigger.every(t => {
+      const value = answers[t.step as keyof FunnelAnswers]
+      return value !== undefined && String(value) === t.value
+    })
+
+    if (allTriggersMatch) {
       rule.skip.forEach(s => skippedSteps.add(s))
     }
   }
 
   const missing: StepId[] = []
-  
+
   for (const stepId of order) {
     // Skip if step is tagged as nonselective or notalways
     const tag = STEP_TAGS[stepId]
     if (tag === 'nonselective' || tag === 'notalways') {
       continue
     }
-    
+
     // Skip if step is skipped due to skip rules
     if (skippedSteps.has(stepId)) {
       continue
     }
-    
+
     // Check if step value is missing
     const value = answers[stepId as keyof FunnelAnswers]
     // Check for undefined, null, empty string, or whitespace-only string
@@ -52,7 +57,7 @@ export function getMissingSteps(
       missing.push(stepId)
     }
   }
-  
+
   return missing
 }
 

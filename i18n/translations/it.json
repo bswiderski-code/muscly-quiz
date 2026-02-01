@@ -34,9 +34,9 @@
     "of5": "/5"
   },
   "Seo": {
-    "appTitle": "Trener Strzykawa",
+    "appTitle": "Musclepals",
     "home": {
-      "title": "Piano di allenamento | Trener Strzykawa",
+      "title": "Piano di allenamento | Musclepals",
       "description": "Crea un piano di allenamento su misura per te. Breve questionario, risultati in pochi minuti."
     },
     "workout": {
@@ -44,7 +44,7 @@
       "description": "Cerchi una scheda di allenamento efficace? Preparerò per te un programma basato sulle tue risposte."
     },
     "workoutForm": {
-      "title": "Modulo del piano | Trener Strzykawa",
+      "title": "Modulo del piano | Musclepals",
       "description": "Rispondi alle domande per adattare il piano ai tuoi obiettivi."
     }
   },
@@ -61,7 +61,7 @@
     }
   },
   "WorkoutPage": {
-    "homeLabel": "Homepage Trener Strzykawa",
+    "homeLabel": "Homepage Musclepals",
     "titleHtml": "Il tuo <span style='font-weight: 800'>piano di allenamento</span><br />personale",
     "heroAlt": "",
     "description": "Completa un breve sondaggio e creerò per te il piano di allenamento ideale!\n<em>Ti ci vorranno 2-3 minuti.</em>",
@@ -623,7 +623,7 @@
     "timerPromo1": "Promozione per",
     "timerPromo2": "nuovi<br />utenti",
     "timerPromo3": "termina tra:",
-    "timerImageAlt": "Trener Strzykawa in posa",
+    "timerImageAlt": "Musclepals in posa",
     "successMsg": "Il tuo ordine è stato elaborato con successo.",
     "paymentNote": "Riceverai il piano entro <b>2 minuti</b> dal pagamento."
   },
@@ -817,6 +817,28 @@
       "contactEmail": "support@trenerstrzykawa.pl"
     }
   },
+  "PushupsStep": {
+    "title": "Quante <span class=\"kalistenika-text\">flessioni</span> riesci a fare in una volta sola?",
+    "placeholder": "es. 15",
+    "options": {
+      "0-5": "0-5 flessioni",
+      "6-10": "6-10 flessioni",
+      "11-20": "11-20 flessioni",
+      "21-30": "21-30 flessioni",
+      "30+": "Più di 30 flessioni"
+    }
+  },
+  "PullupsStep": {
+    "title": "Quante <span class=\"kalistenika-text\">trazioni</span> riesci a fare in una volta sola?",
+    "placeholder": "es. 5",
+    "options": {
+      "0": "Ancora nessuna",
+      "1-3": "1-3 trazioni",
+      "4-6": "4-6 trazioni",
+      "7-10": "7-10 trazioni",
+      "10+": "Più di 10 trazioni"
+    }
+  },
   "CalistenicExperienceStep": {
     "title": "Qual è la tua <span class=\"kalistenika-text\">esperienza</span> con il calisthenics?",
     "options": {
@@ -831,5 +853,32 @@
       "some_experience": "Mi alleno regolarmente. Eseguo trazioni (più di 5) e dip senza problemi. Voglio passare al livello successivo (es. Muscle Up, L-sit).",
       "advanced": "Le basi sono solo riscaldamento per me. So fare il Muscle Up e lavoro su skill statiche (Front Lever, Planche) o dinamica avanzata."
     }
+  },
+  "DurationStep": {
+    "title1": "Scegli la <b>durata</b>",
+    "title2": "di un <b>allenamento</b>",
+    "steps": [
+      {
+        "value": "30",
+        "label": "30"
+      },
+      {
+        "value": "45",
+        "label": "45"
+      },
+      {
+        "value": "60",
+        "label": "60"
+      },
+      {
+        "value": "90",
+        "label": "90"
+      }
+    ],
+    "minuteLabelSingular": "minuto",
+    "minuteLabelPluralFew": "minuti",
+    "minuteLabelPlural": "minuti",
+    "info": "Il tempo di allenamento ottimale è di <i><b>45-60 minuti</b></i>. Ricorda che la <b>qualità</b> delle serie è più importante della <b>quantità</b>.",
+    "recommended": "(raccomandato)"
   }
 }

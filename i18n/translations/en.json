@@ -34,9 +34,9 @@
     "of5": "/5"
   },
   "Seo": {
-    "appTitle": "Coach Plate",
+    "appTitle": "Musclepals",
     "home": {
-      "title": "Training Plan | Coach Plate",
+      "title": "Training Plan | Musclepals",
       "description": "Create a workout plan tailored to you. Short quiz, results in minutes."
     },
     "workout": {
@@ -44,7 +44,7 @@
       "description": "Looking for an effective workout routine? I'll prepare a set based on your answers."
     },
     "workoutForm": {
-      "title": "Plan Form | Coach Plate",
+      "title": "Plan Form | Musclepals",
       "description": "Answer the questions to tailor the plan to your goals."
     }
   },
@@ -61,7 +61,7 @@
     }
   },
   "WorkoutPage": {
-    "homeLabel": "Coach Plate Home Page",
+    "homeLabel": "Musclepals Home Page",
     "titleHtml": "Your custom<br /><span style='font-weight: 800'>training plan</span>",
     "heroAlt": "",
     "description": "Complete a short quiz, and I'll create the perfect training plan for you!\n<em>It'll take you 2-3 minutes.</em>",
@@ -621,7 +621,7 @@
     "timerPromo1": "Promotion for",
     "timerPromo2": "new<br />users",
     "timerPromo3": "ends in:",
-    "timerImageAlt": "Flexing Coach Plate",
+    "timerImageAlt": "Flexing Musclepals",
     "successMsg": "Your order has been processed successfully.",
     "paymentNote": "You will receive the plan within <b>2 minutes</b> of payment."
   },
@@ -819,6 +819,28 @@
       "contactEmail": "support@trenerstrzykawa.pl"
     }
   },
+  "PushupsStep": {
+    "title": "How many <span class=\"kalistenika-text\">pushups</span> can you do in one go?",
+    "placeholder": "e.g. 15",
+    "options": {
+      "0-5": "0-5 pushups",
+      "6-10": "6-10 pushups",
+      "11-20": "11-20 pushups",
+      "21-30": "21-30 pushups",
+      "30+": "More than 30 pushups"
+    }
+  },
+  "PullupsStep": {
+    "title": "How many <span class=\"kalistenika-text\">pullups</span> can you do in one go?",
+    "placeholder": "e.g. 5",
+    "options": {
+      "0": "None yet",
+      "1-3": "1-3 pullups",
+      "4-6": "4-6 pullups",
+      "7-10": "7-10 pullups",
+      "10+": "More than 10 pullups"
+    }
+  },
   "CalistenicExperienceStep": {
     "title": "What is your <span class=\"kalistenika-text\">experience</span> with calisthenics?",
     "options": {
@@ -833,5 +855,32 @@
       "some_experience": "Training regularly. Can comfortably do pullups (over 5) and dips. Want to level up (e.g. Muscle Up, L-sit).",
       "advanced": "Basics are just a warmup. Can do Muscle Up and work on difficult statics (Front Lever, Planche) or advanced dynamics."
     }
+  },
+  "DurationStep": {
+    "title1": "Select <b>training</b>",
+    "title2": "<b>duration</b>",
+    "steps": [
+      {
+        "value": "30",
+        "label": "30"
+      },
+      {
+        "value": "45",
+        "label": "45"
+      },
+      {
+        "value": "60",
+        "label": "60"
+      },
+      {
+        "value": "90",
+        "label": "90"
+      }
+    ],
+    "minuteLabelSingular": "minute",
+    "minuteLabelPluralFew": "minutes",
+    "minuteLabelPlural": "minutes",
+    "info": "Optimal training time is <i><b>45-60 minutes</b></i>. Remember that <b>quality</b> of sets is more important than <b>quantity</b>.",
+    "recommended": "(recommended)"
   }
 }

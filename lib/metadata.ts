@@ -125,19 +125,7 @@ export function createMetadata(options: MetadataOptions): Metadata {
   return metadata;
 }
 
-export function funnelLandingMetadata(options: Omit<MetadataOptions, "robots">): Metadata {
-  return createMetadata({
-    ...options,
-    robots: {
-      index: false,
-      follow: false,
-      googleBot: {
-        index: false,
-        follow: false,
-      },
-    },
-  });
-}
+
 
 export function funnelStepMetadata(options: Omit<MetadataOptions, "robots">): Metadata {
   return createMetadata({
@@ -154,4 +142,72 @@ export function funnelStepMetadata(options: Omit<MetadataOptions, "robots">): Me
       },
     },
   });
+}
+
+import { localeMetadata, type MetadataConfig } from '@/config/metadata';
+
+/**
+ * Get locale-specific metadata configuration.
+ */
+export async function getMetadataConfig(locale: string): Promise<MetadataConfig> {
+  return localeMetadata[locale] || localeMetadata['en'];
+}
+
+/**
+ * Get app title for a locale.
+ */
+export async function getAppTitle(locale: string): Promise<string> {
+  const seo = await getMetadataConfig(locale);
+  return seo.appTitle;
+}
+
+/**
+ * Get SEO title for a specific page type or funnel.
+ */
+export async function getSeoTitle(
+  locale: string,
+  pageType: 'home' | 'planForm' | string
+): Promise<string> {
+  const seo = await getMetadataConfig(locale);
+
+  if (pageType === 'home') {
+    return seo.home.title;
+  }
+  if (pageType === 'planForm') {
+    return seo.planForm.title;
+  }
+
+  if (seo.funnels && seo.funnels[pageType]) {
+    return seo.funnels[pageType].title;
+  }
+
+  // Legacy support for 'workout'
+  if (pageType === 'workout' && seo.funnels?.workout) {
+    return seo.funnels.workout.title;
+  }
+
+  return '';
+}
+
+/**
+ * Get SEO description for a specific page type or funnel.
+ */
+export async function getSeoDescription(
+  locale: string,
+  pageType: 'home' | 'planForm' | string
+): Promise<string> {
+  const seo = await getMetadataConfig(locale);
+
+  if (pageType === 'home') {
+    return seo.home.description;
+  }
+  if (pageType === 'planForm') {
+    return seo.planForm.description;
+  }
+
+  if (seo.funnels && seo.funnels[pageType]) {
+    return seo.funnels[pageType].description;
+  }
+
+  return '';
 }

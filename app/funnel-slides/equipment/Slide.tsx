@@ -8,10 +8,11 @@ import { useStepController } from '@/lib/useStepController';
 import type { StepId } from '@/lib/steps/stepIds.ts';
 import { useTranslations } from 'next-intl';
 import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
-import { getEquipmentConfig } from './config';
 import "../funnel.css";
 
 const stepId: StepId = 'equipment';
+
+const EQUIPMENT_VALUES = ['none', 'bands', 'dumbbells', 'barbell', 'bench', 'pullup_bar', 'dip_bar'] as const;
 
 type OptionCopy = {
 	label: string;
@@ -20,14 +21,13 @@ type OptionCopy = {
 
 export default function Page() {
 	const funnelKey = useCurrentFunnel();
-	const config = getEquipmentConfig(funnelKey);
-	const t = useTranslations(config.translationNamespace);
+	const t = useTranslations('Equipment');
 	const { idx, total, goPrev, select, value, isPending } = useStepController(stepId);
 
-	type EquipmentValue = typeof config.equipmentValues[number];
+	type EquipmentValue = typeof EQUIPMENT_VALUES[number];
 
 	function isEquipmentValue(value: string): value is EquipmentValue {
-		return (config.equipmentValues as readonly string[]).includes(value);
+		return (EQUIPMENT_VALUES as readonly string[]).includes(value);
 	}
 
 	function deserializeSelection(raw: string): EquipmentValue[] {
@@ -42,7 +42,7 @@ export default function Page() {
 
 	const options = useMemo(() => {
 		const rawOptions = t.raw('options') as Record<string, OptionCopy>;
-		return config.equipmentValues.map((key) => {
+		return EQUIPMENT_VALUES.map((key) => {
 			const description = (key !== 'none')
 				? ''
 				: (rawOptions[key]?.description ?? '');
@@ -53,7 +53,7 @@ export default function Page() {
 				description,
 			};
 		});
-	}, [t, config.equipmentValues, funnelKey]);
+	}, [t, funnelKey]);
 	const hasSelection = selected.length > 0;
 	const serializedSelection = selected.join('|');
 
@@ -86,14 +86,14 @@ export default function Page() {
 						details: opt.description,
 						exclusive: opt.value === 'none',
 					}))}
-					value={(selected.length ? selected.join(',') : '')}
+					value={selected.join(',')}
 					onChange={(v) => {
-						const pipe = v ? v.split(',').map((s) => s.trim()).filter(Boolean).join('|') : '';
+						const pipe = v.split(',').map((s) => s.trim()).filter(Boolean).join('|');
 						select(pipe, { advance: false });
 					}}
 					name="equipment"
-					multi={config.multiSelect}
-					canBeEmpty={config.canBeEmpty}
+					multi={true}
+					canBeEmpty={true}
 				/>
 
 				<div className="funnel-submit-wrap">

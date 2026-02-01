@@ -5,7 +5,6 @@ import ProgressHeader from "@/app/components/header/ProgressHeader";
 import NextButton from "@/app/components/funnels/NextButton";
 import type { StepId } from '@/lib/steps/stepIds.ts';
 import { useTranslations } from 'next-intl';
-import { getAgeConfig } from './config';
 import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
 import "../funnel.css";
 
@@ -13,8 +12,7 @@ const stepId: StepId = "age";
 
 export default function Page() {
   const funnel = useCurrentFunnel();
-  const config = getAgeConfig(funnel);
-  const t = useTranslations(config.translationNamespace);
+  const t = useTranslations('Age');
   const { idx, total, value, select, goPrev, isPending } = useStepController(stepId);
 
   const getAgeKey = (ageValue: number): string | null => {

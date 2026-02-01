@@ -34,9 +34,9 @@
     "of5": "/5"
   },
   "Seo": {
-    "appTitle": "Trener Strzykawa",
+    "appTitle": "Musclepals",
     "home": {
-      "title": "Plan treningowy | Trener Strzykawa",
+      "title": "Plan treningowy | Musclepals",
       "description": "Stwórz plan treningowy dopasowany do Ciebie. Krótka ankieta, wynik w kilka minut."
     },
     "workout": {
@@ -44,7 +44,7 @@
       "description": "Szukasz skutecznego planu ćwiczeń? Przygotuję dla Ciebie zestaw oparty o Twoje odpowiedzi."
     },
     "workoutForm": {
-      "title": "Formularz planu | Trener Strzykawa",
+      "title": "Formularz planu | Musclepals",
       "description": "Odpowiedz na pytania, aby dopasować plan do Twoich celów."
     }
   },
@@ -61,7 +61,7 @@
     }
   },
   "WorkoutPage": {
-    "homeLabel": "Strona główna Trener Strzykawa",
+    "homeLabel": "Strona główna Musclepals",
     "titleHtml": "Twój własny<br /><span style='font-weight: 800'>plan treningowy</span>",
     "heroAlt": "",
     "description": "Uzupełnij krótką ankietę, a stworzę dla Ciebie idealny plan treningowy!\n<em>Zajmie ci to 2-3 minuty.</em>",
@@ -480,13 +480,29 @@
     }
   },
   "DurationStep": {
-    "title": "Wybierz czas jednego treningu",
-    "options": {
-      "30": "30 min",
-      "45": "45 minut",
-      "60": "1 godzina",
-      "90": "1,5 godziny"
-    },
+    "title1": "Wybierz <b>czas</b>",
+    "title2": "jednego <b>treningu</b>",
+    "steps": [
+      {
+        "value": "30",
+        "label": "30"
+      },
+      {
+        "value": "45",
+        "label": "45"
+      },
+      {
+        "value": "60",
+        "label": "60"
+      },
+      {
+        "value": "90",
+        "label": "90"
+      }
+    ],
+    "minuteLabelSingular": "minuta",
+    "minuteLabelPluralFew": "minuty",
+    "minuteLabelPlural": "minut",
     "info": "Optymalny czas treningu to <i><b>45-60 minut</b></i>. Pamiętaj, że <b>jakość</b> serii jest ważniejsza niż ich <b>ilość</b>.",
     "recommended": "(rekomendowane)"
   },
@@ -677,7 +693,7 @@
     "timerPromo1": "Promocja dla",
     "timerPromo2": "nowych<br />użytkowników",
     "timerPromo3": "koniec za:",
-    "timerImageAlt": "Napięty Trener Strzykawa",
+    "timerImageAlt": "Napięty Musclepals",
     "successMsg": "Twoje zamówienie zostało pomyślnie przetworzone.",
     "paymentNote": "Plan otrzymasz w przeciągu <b>2 minut</b> od dokonania płatności."
   },

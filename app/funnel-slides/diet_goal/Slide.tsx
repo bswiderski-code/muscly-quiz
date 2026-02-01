@@ -6,8 +6,18 @@ import { useCurrentFunnel } from '@/lib/funnels/funnelContext'
 import ProgressHeader from '@/app/components/header/ProgressHeader'
 import { useLocale, useTranslations } from 'next-intl';
 import "../funnel.css";
-import { getDietGoalConfig } from './config'
-import { withLocale } from '@/app/funnel-slides/_config/helpers'
+import { withLocale } from '@/lib/imagePath'
+
+const ASSETS = {
+  bulk: {
+    male: '/btns/{locale}/want_bulk.svg',
+    female: '/btns/{locale}/want_bulk_f.svg',
+  },
+  cut: {
+    male: '/btns/{locale}/want_cut.svg',
+    female: '/btns/{locale}/want_cut_f.svg',
+  },
+};
 
 const stepId: StepId = 'diet_goal'
 
@@ -16,18 +26,17 @@ export default function Page() {
   const { value: gender } = useStepController('gender' as StepId);
   const funnel = useCurrentFunnel();
   const locale = useLocale();
-  const config = getDietGoalConfig(funnel);
-  const t = useTranslations(config.translationNamespace);
+  const t = useTranslations('DietGoal');
 
   const bulkSrc =
     gender === 'F'
-      ? withLocale(config.assets.bulk.female, locale)
-      : withLocale(config.assets.bulk.male, locale);
+      ? withLocale(ASSETS.bulk.female, locale)
+      : withLocale(ASSETS.bulk.male, locale);
 
   const cutSrc =
     gender === 'F'
-      ? withLocale(config.assets.cut.female, locale)
-      : withLocale(config.assets.cut.male, locale);
+      ? withLocale(ASSETS.cut.female, locale)
+      : withLocale(ASSETS.cut.male, locale);
 
   return (
     <main className="funnel-page">

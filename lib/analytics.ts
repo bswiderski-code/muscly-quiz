@@ -44,7 +44,7 @@ export const trackEvent = (
   }
 };
 
-export const trackQuizStarted = () => trackEvent('QUIZ_STARTED');
+
 export const trackQuizCompleted = (data?: any) => trackEvent('QUIZ_COMPLETED', data);
 export const trackInitiateCheckout = (data?: any) => trackEvent('INITIATE_CHECKOUT', data);
 export const trackPurchase = (data?: any) => trackEvent('PURCHASE', data);

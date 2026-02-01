@@ -8,11 +8,19 @@ import ProgressHeader from "@/app/components/header/ProgressHeader";
 import NextButton from "@/app/components/funnels/NextButton";
 import { useTranslations, useLocale } from 'next-intl';
 import NextImage from "next/image";
-import { getPriorityConfig } from './config'
-import { withLocale } from '@/app/funnel-slides/_config/helpers'
+import { withLocale } from '@/lib/imagePath'
 import "../funnel.css";
 
 const stepId: StepId = "priority";
+
+const PRIORITIES = {
+  male: ['shoulders', 'chest', 'triceps', 'biceps', 'back', 'legs', 'abs', 'forearms'],
+  female: ['legs', 'glutes', 'abs', 'chest', 'triceps', 'biceps', 'back', 'shoulders'],
+} as const;
+
+const ASSETS = {
+  imageBasePath: '/priorities/needle/{locale}',
+};
 
 function parseStored(v?: string): string[] {
   return v ? String(v).split(",").filter(Boolean) : [];
@@ -22,11 +30,10 @@ export default function Page() {
   const { value: gender } = useStepController('gender' as StepId);
   const funnel = useCurrentFunnel();
   const locale = useLocale();
-  const config = getPriorityConfig(funnel);
-  const t = useTranslations(config.translationNamespace);
+  const t = useTranslations('Priority');
   const { idx, total, value, select, goPrev } = useStepController(stepId);
 
-  const priorities = gender === 'F' ? config.prioritiesFemale : config.prioritiesMale;
+  const priorities = gender === 'F' ? PRIORITIES.female : PRIORITIES.male;
 
   const selected = useMemo(() => parseStored(value), [value]);
   const selectedSet = useMemo(() => new Set(selected), [selected]);
@@ -39,15 +46,14 @@ export default function Page() {
     }
   }, [value, select]);
 
-  const imagePath = `${withLocale(config.assets.imageBasePath, locale)}/`; 
+  const imagePath = `${withLocale(ASSETS.imageBasePath, locale)}/`; 
   useEffect(() => {
-    if (!config.preloadImages) return;
     priorities.forEach((name) => {
       new globalThis.Image().src = `${imagePath}/unselected/${name}_priority_btn.svg`;
       new globalThis.Image().src = `${imagePath}/selected/${name}_priority_btn.svg`;
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [imagePath, priorities, config.preloadImages]);
+  }, [imagePath, priorities]);
 
   function toggle(name: string) {
     const has = selectedSet.has(name);

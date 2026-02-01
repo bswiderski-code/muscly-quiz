@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const baseUrl = await getBaseUrlFromHeaders();
 
   return createMetadata({
-    title: "Termeni și condiții - Trener Strzykawa",
+    title: "Termeni și condiții - Musclepals",
     description: "Regulamentul magazinului online, politici de retur și informații legale.",
     canonicalPath: "/terms",
     locale,
@@ -24,13 +24,13 @@ export default async function TermsPage() {
   return (
     <div style={{ padding: 24, boxSizing: "border-box" }}>
       <div className="card stack-16">
-        <h1 className="h1">TERMENI ȘI CONDIȚII AI MAGAZINULUI ONLINE TRENER STRZYKAWA</h1>
+        <h1 className="h1">TERMENI ȘI CONDIȚII AI MAGAZINULUI ONLINE MUSCLEPALS</h1>
 
         <div className="nunito-regular" style={{ lineHeight: 1.6 }}>
           <p>
             În cazul oricăror probleme cu comanda, trimiteți un mesaj la adresa de e-mail:{" "}
-            <a href="mailto:support@trenerstrzykawa.pl" style={{ textDecoration: "underline", fontWeight: "bold" }}>
-              support@trenerstrzykawa.pl
+            <a href="mailto:support@musclepals.com" style={{ textDecoration: "underline", fontWeight: "bold" }}>
+              support@musclepals.com
             </a>
           </p>
           <p>
@@ -40,13 +40,13 @@ export default async function TermsPage() {
           <h3 style={{ marginTop: "24px", marginBottom: "12px", fontWeight: "bold" }}>§ 1. Dispoziții generale și definiții</h3>
           <ol style={{ paddingLeft: "20px", margin: 0 }}>
             <li style={{ marginBottom: "8px" }}>
-              Prezenții Termeni și Condiții stabilesc regulile de utilizare a Magazinului Online disponibil la adresa https://trenerstrzykawa.pl, în special regulile privind încheierea contractelor de vânzare a Conținutului digital și a Produselor Personalizate, regulile de plată, livrare și procedura de reclamație.
+              Prezenții Termeni și Condiții stabilesc regulile de utilizare a Magazinului Online disponibil la adresa https://musclepals.com, în special regulile privind încheierea contractelor de vânzare a Conținutului digital și a Produselor Personalizate, regulile de plată, livrare și procedura de reclamație.
             </li>
             <li style={{ marginBottom: "8px" }}>
               Definițiile utilizate în Termeni și Condiții înseamnă:
               <ul style={{ marginTop: "8px" }}>
                 <li>
-                  <strong>Vânzător (Profesionist):</strong> Szymon Świderski care desfășoară activitate economică la adresa: ul. Polna 16/40, 26‑200 Końskie, Polonia, NIP (Cod fiscal): 6582003346, REGON: 542587327, e‑mail: trener@trenerstrzykawa.pl, tel.: +48 665 417 983.
+                  <strong>Vânzător (Profesionist):</strong> Szymon Świderski care desfășoară activitate economică la adresa: ul. Polna 16/40, 26‑200 Końskie, Polonia, NIP (Cod fiscal): 6582003346, REGON: 542587327, e‑mail: support@musclepals.com, tel.: +48 665 417 983.
                 </li>
                 <li>
                   <strong>Client:</strong> persoana fizică, persoana juridică sau unitatea organizatorică fără personalitate juridică, care efectuează o achiziție în Magazin.
@@ -64,7 +64,7 @@ export default async function TermsPage() {
                   <strong>Serviciu Digital:</strong> serviciu prestat pe cale electronică, de ex. accesul la un curs online în panoul clientului.
                 </li>
                 <li>
-                  <strong>Magazin:</strong> serviciul online administrat de Vânzător la adresa https://trenerstrzykawa.pl.
+                  <strong>Magazin:</strong> serviciul online administrat de Vânzător la adresa https://musclepals.com.
                 </li>
               </ul>
             </li>
@@ -152,7 +152,7 @@ export default async function TermsPage() {
               <br />
               În cazul E-book-urilor standard (nepersonalizate), Consumatorul se poate retrage din contract în termen de 14 zile.
               <ul style={{ marginTop: "8px" }}>
-                <li>Pentru a exercita dreptul de retragere, Consumatorul trebuie să informeze Vânzătorul cu privire la decizia sa printr-o declarație neechivocă trimisă la adresa de e-mail: <strong>trener@trenerstrzykawa.pl</strong>.</li>
+                <li>Pentru a exercita dreptul de retragere, Consumatorul trebuie să informeze Vânzătorul cu privire la decizia sa printr-o declarație neechivocă trimisă la adresa de e-mail: <strong>support@musclepals.com</strong>.</li>
                 <li>În declarație trebuie menționate: numele și prenumele, numărul comenzii, data achiziției și adresa de e-mail utilizată la comandă.</li>
                 <li>Vânzătorul va efectua rambursarea plății folosind aceeași metodă de plată utilizată de Consumator, în termen de până la 14 zile de la primirea declarației.</li>
               </ul>
@@ -171,7 +171,7 @@ export default async function TermsPage() {
               <strong>Termenul de valabilitate a Garanției:</strong> Posibilitatea de a utiliza Garanția de Satisfacție se activează abia după trecerea a 14 zile de la data plasării comenzii. Clientul are apoi la dispoziție o lună (30 de zile) pentru a notifica dorința de a utiliza această opțiune (adică notificările sunt acceptate în perioada cuprinsă între a 15-a și a 45-a zi de la momentul achiziției).
             </li>
             <li style={{ marginBottom: "8px" }}>
-              <strong>Procedura de notificare:</strong> Pentru a beneficia de Garanție, Clientul este obligat să contacteze Vânzătorul, trimițând un mesaj la adresa de e-mail dedicată: <a href="mailto:support@trenerstrzykawa.pl" style={{textDecoration: 'underline'}}>support@trenerstrzykawa.pl</a>.
+              <strong>Procedura de notificare:</strong> Pentru a beneficia de Garanție, Clientul este obligat să contacteze Vânzătorul, trimițând un mesaj la adresa de e-mail dedicată: <a href="mailto:support@musclepals.com" style={{textDecoration: 'underline'}}>support@musclepals.com</a>.
               <ul style={{ marginTop: "8px" }}>
                 <li>În conținutul mesajului, Clientul trebuie să menționeze clar că solicită „garanția”.</li>
                 <li>Acest lucru este crucial pentru a distinge acest proces de returul standard (retragerea din contract), care în cazul produselor personalizate nu se acordă prin efectul legii. Notificările care conțin doar informația despre dorința de „retur” pot fi respinse în baza § 6 alin. 2 din Regulament, dacă nu invocă în mod direct Garanția Voluntară de Satisfacție.</li>
@@ -192,7 +192,7 @@ export default async function TermsPage() {
               Dacă produsul nu este conform cu contractul (de ex. fișierul este deteriorat, nu poate fi deschis, lipsesc pagini, link-ul nu a fost primit), Consumatorul poate depune o reclamație.
             </li>
             <li style={{ marginBottom: "8px" }}>
-              Reclamațiile trebuie depuse pe cale electronică la adresa: <strong>trener@trenerstrzykawa.pl</strong>.
+              Reclamațiile trebuie depuse pe cale electronică la adresa: <strong>support@musclepals.com</strong>.
             </li>
             <li style={{ marginBottom: "8px" }}>
               Notificarea reclamației trebuie să conțină: numărul comenzii, descrierea defectului și data constatării acestuia.

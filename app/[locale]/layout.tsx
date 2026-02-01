@@ -9,7 +9,7 @@ import { createMetadata } from '@/lib/metadata';
 import { getPathname } from '@/i18n/routing';
 import { getBaseUrlFromHeaders } from '@/lib/requestBaseUrl';
 import { getBaseUrlForLocale, getEffectiveHost, getMarketForLocale, type Locale } from '@/i18n/config';
-import { getDomainSeoTitle, getDomainSeoDescription, getDomainAppTitle } from '@/lib/seo/getDomainSeo';
+import { getAppTitle } from '@/lib/metadata';
 import FacebookPixelProvider from '@/lib/FacebookPixelProvider';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 import "./globals.css"; // Wyjście katalog wyżej do globals.css
@@ -19,17 +19,22 @@ type Props = {
   params: Promise<{ locale: string }>; // W Next 15 params to Promise
 };
 
-import { SITE_CONFIG, QUIZ_SEO_CONFIG } from '@/config/site';
+import { SITE_CONFIG } from '@/config/site';
 import MobileContainer from '@/app/components/MobileContainer';
+import { localeMetadata } from '@/config/metadata';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  const locales = QUIZ_SEO_CONFIG.locales;
-  const seo = locales[locale as keyof typeof locales] || locales.en;
+  
+  // Get metadata for the current locale or fallback to English
+  const seo = localeMetadata[locale] || localeMetadata.en;
+  
+  // Use home page metadata for the main layout/entry point
+  const { title, description } = seo.home;
   
   const base = createMetadata({
-    title: seo.title,
-    description: seo.description,
+    title,
+    description,
     locale,
     baseUrl: SITE_CONFIG.baseUrl,
   });
@@ -47,7 +52,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
           url: seo.ogImage,
           width: 1200,
           height: 630,
-          alt: seo.title,
+          alt: title,
         },
       ],
     },
@@ -75,7 +80,7 @@ export default async function LocaleLayout({
   const host = getIncomingHost(h);
   const effectiveHost = getEffectiveHost(host) ?? host;
   const market = getMarketForLocale(locale as Locale);
-  const appTitle = await getDomainAppTitle(effectiveHost, locale);
+  const appTitle = await getAppTitle(locale);
 
   return (
     <html lang={locale} suppressHydrationWarning>

@@ -1,13 +1,10 @@
 import type { Metadata } from 'next'
 import type React from 'react'
 import { notFound } from 'next/navigation'
-import { headers } from 'next/headers'
-import { funnelStepMetadata } from '@/lib/metadata'
+import { funnelStepMetadata, getSeoTitle, getSeoDescription } from '@/lib/metadata'
 import { getPathname, redirect } from '@/i18n/routing'
 import { getBaseUrlFromHeaders } from '@/lib/requestBaseUrl'
-import { getDomainSeoTitle, getDomainSeoDescription } from '@/lib/seo/getDomainSeo'
 import { FunnelProvider } from '@/lib/funnels/funnelContext'
-import { getIncomingHost } from '@/lib/domain/incomingHost'
 import {
   getFirstStep,
   getFunnelSlug,
@@ -43,12 +40,10 @@ function buildCanonicalHref(funnel: FunnelKey, step: StepId, locale: string) {
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { locale, funnel, step } = await params
   const funnelKey = resolveFunnelKey(funnel, locale)
-  const h = await headers()
-  const host = getIncomingHost(h)
   const baseUrl = await getBaseUrlFromHeaders()
   
-  const title = await getDomainSeoTitle(host, locale, 'planForm')
-  const description = await getDomainSeoDescription(host, locale, 'planForm')
+  const title = await getSeoTitle(locale, 'planForm')
+  const description = await getSeoDescription(locale, 'planForm')
 
   if (!funnelKey) {
     const base = funnelStepMetadata({

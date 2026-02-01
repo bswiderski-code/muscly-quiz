@@ -7,7 +7,6 @@ import StepRangeSlider from '@/app/components/funnels/StepRangeSlider';
 import NextButton from '@/app/components/funnels/NextButton';
 import { useEffect, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
-import { getFrequencyConfig } from './config';
 import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
 import "../funnel.css";
 
@@ -20,8 +19,7 @@ interface StepData {
 
 export default function Page() {
   const funnel = useCurrentFunnel();
-  const config = getFrequencyConfig(funnel);
-  const t = useTranslations(config.translationNamespace);
+  const t = useTranslations('Frequency');
   const { idx, total, value, select, goPrev } = useStepController(stepId);
 
   const steps: StepData[] = useMemo(

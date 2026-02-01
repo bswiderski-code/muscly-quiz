@@ -1,5 +1,4 @@
-import { defaultLocale, type Locale, getEffectiveHost, getMarketForLocale } from '@/i18n/config'
-import { getDomainLookupHost } from '@/lib/domain/host'
+import { defaultLocale, type Locale, getMarketForLocale } from '@/i18n/config'
 import type { LocalizedStringMap } from '../steps/stepSlugs'
 import type { StepId } from '../steps/stepIds'
 import { funnelDefinitions, type FunnelDefinition } from './funnelDefinitions'
@@ -67,25 +66,20 @@ export const getFirstStep = (funnel: FunnelKey): StepId => {
  * Get the default funnel for a locale.
  */
 export const getDefaultFunnelForLocale = (locale: Locale): FunnelKey => {
-  const marketInfo = getMarketForLocale(locale);
-  if (marketInfo.funnels && marketInfo.funnels.length > 0) {
-    const firstFunnel = marketInfo.funnels[0] as FunnelKey;
-    if (FUNNELS[firstFunnel]) return firstFunnel;
-  }
-  return 'workout'; // Ultimate fallback
+  // Always default to workout since it's the only one for now
+  return 'workout';
 }
 
 /**
  * Deprecated: use getDefaultFunnelForLocale instead.
  */
 export const getDefaultFunnelForHost = (host: string | null | undefined): FunnelKey => {
-  return 'workout'; 
+  return 'workout';
 }
 
 /**
- * Check if a funnel is allowed on the given domain/locale.
- * Since we have one domain now, we primarily check if the funnel exists
- * and if it's assigned to the market/locale.
+ * Check if a funnel is allowed.
+ * Since we have one domain now, we primarily check if the funnel exists.
  */
 export const isFunnelAllowedOnDomain = (funnel: FunnelKey, host: string | null | undefined): boolean => {
   return !!FUNNELS[funnel];

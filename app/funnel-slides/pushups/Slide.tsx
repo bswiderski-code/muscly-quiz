@@ -7,25 +7,24 @@ import { useStepController } from '@/lib/useStepController';
 import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
 import { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
-import { getPushupsConfig } from './config';
 import "../funnel.css";
 
 const stepId = 'pushups';
 
+const PUSHUPS_OPTIONS = ['0-5', '6-10', '11-20', '21-30', '30+'] as const;
+
 export default function Page() {
   const funnel = useCurrentFunnel();
-  const config = getPushupsConfig(funnel);
-  const t = useTranslations(config.translationNamespace);
+  const t = useTranslations('PushupsStep');
   const { idx, total, value, select, goPrev, goNext } = useStepController(stepId);
   const [isValid, setIsValid] = useState<boolean>(true);
 
   const options: SelectOption[] = useMemo(() => {
-    const values = config.ui.optionValues || [];
-    return values.map(key => ({
+    return PUSHUPS_OPTIONS.map(key => ({
       value: key,
       label: <span style={{ fontSize: '18px' }}>{t(`options.${key}`)}</span>
     }));
-  }, [t, config.ui.optionValues]);
+  }, [t]);
 
   const handleNext = () => {
     if (!isValid) return;

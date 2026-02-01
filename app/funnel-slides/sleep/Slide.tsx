@@ -6,7 +6,6 @@ import ProgressHeader from '@/app/components/header/ProgressHeader';
 import StepRangeSlider from '@/app/components/funnels/StepRangeSlider';
 import NextButton from '@/app/components/funnels/NextButton';
 import { useTranslations } from 'next-intl';
-import { getSleepConfig } from './config';
 import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
 import { useMemo } from 'react';
 import "../funnel.css";
@@ -20,8 +19,7 @@ interface StepData {
 
 export default function Page() {
   const funnel = useCurrentFunnel();
-  const config = getSleepConfig(funnel);
-  const t = useTranslations(config.translationNamespace);
+  const t = useTranslations('Sleep');
   const { idx, total, value, select, goPrev } = useStepController(stepId);
 
   const steps: StepData[] = useMemo(() => t.raw('steps') as unknown as StepData[], [t]);

@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const baseUrl = await getBaseUrlFromHeaders();
 
   return createMetadata({
-    title: "Politica de confidențialitate - Trener Strzykawa",
+    title: "Politica de confidențialitate - Musclepals",
     description: "Informații despre prelucrarea datelor cu caracter personal (RGPD), cookie-uri și utilizarea AI.",
     canonicalPath: "/privacy",
     locale,
@@ -24,14 +24,14 @@ export default async function PrivacyPage() {
   return (
     <div style={{ padding: 24, boxSizing: "border-box" }}>
       <div className="card stack-16">
-        <h1 className="h1">POLITICA DE CONFIDENȚIALITATE A SERVICIULUI TRENERSTRZYKAWA.PL</h1>
+        <h1 className="h1">POLITICA DE CONFIDENȚIALITATE A SERVICIULUI MUSCLEPALS.COM</h1>
 
         <div className="nunito-regular" style={{ lineHeight: 1.6 }}>
           <p>
             <strong>În vigoare de la: 4 ianuarie 2026</strong>
           </p>
           <p>
-            Această Politică de Confidențialitate are scopul de a explica modul în care colectăm, stocăm și prelucrăm datele dumneavoastră cu caracter personal în legătură cu utilizarea site-ului nostru web (inclusiv subdomeniile: start.trenerstrzykawa.pl, kalkulator.trenerstrzykawa.pl și pagina principală). Confidențialitatea dumneavoastră este o prioritate pentru noi, motiv pentru care ne asigurăm de securitatea datelor dumneavoastră în conformitate cu RGPD (Regulamentul General privind Protecția Datelor).
+            Această Politică de Confidențialitate are scopul de a explica modul în care colectăm, stocăm și prelucrăm datele dumneavoastră cu caracter personal în legătură cu utilizarea site-ului nostru web (inclusiv subdomeniile: start.musclepals.com, kalkulator.musclepals.com și pagina principală). Confidențialitatea dumneavoastră este o prioritate pentru noi, motiv pentru care ne asigurăm de securitatea datelor dumneavoastră în conformitate cu RGPD (Regulamentul General privind Protecția Datelor).
           </p>
 
           <h3 style={{ marginTop: "24px", marginBottom: "12px", fontWeight: "bold" }}>1. Operatorul de Date cu Caracter Personal</h3>
@@ -44,7 +44,7 @@ export default async function PrivacyPage() {
             REGON: 542587327
           </p>
           <p>
-            Contact pentru probleme legate de protecția datelor: <a href="mailto:trener@trenerstrzykawa.pl" style={{ textDecoration: "underline", fontWeight: "bold" }}>trener@trenerstrzykawa.pl</a>
+            Contact pentru probleme legate de protecția datelor: <a href="mailto:support@musclepals.com" style={{ textDecoration: "underline", fontWeight: "bold" }}>support@musclepals.com</a>
           </p>
 
           <h3 style={{ marginTop: "24px", marginBottom: "12px", fontWeight: "bold" }}>2. Scopurile și temeiurile legale ale prelucrării datelor</h3>
@@ -140,7 +140,7 @@ export default async function PrivacyPage() {
 
           <h3 style={{ marginTop: "24px", marginBottom: "12px", fontWeight: "bold" }}>10. Contact</h3>
           <p>
-            Pentru probleme legate de datele cu caracter personal, scrieți-ne la: <a href="mailto:trener@trenerstrzykawa.pl" style={{ textDecoration: "underline" }}>trener@trenerstrzykawa.pl</a>.
+            Pentru probleme legate de datele cu caracter personal, scrieți-ne la: <a href="mailto:support@musclepals.com" style={{ textDecoration: "underline" }}>support@musclepals.com</a>.
           </p>
         </div>
 

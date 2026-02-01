@@ -21,7 +21,7 @@ export type SkipRule = {
   trigger: {
     step: StepId
     value: string
-  }
+  }[] // Changed to array for AND logic
   skip: StepId[]
 }
 
@@ -151,9 +151,16 @@ export const funnelDefinitions = {
       ] as const,
       [
         {
-          trigger: { step: 'location', value: 'gym' },
-          skip: ['equipment'],
+          trigger: [{ step: 'location', value: 'gym' }],
+          skip: ['equipment']
         },
+        {
+          trigger: [
+            { step: 'gender', value: 'M' },
+            { step: 'location', value: 'house' }
+          ],
+          skip: ['pullups', 'calistenic_experience']
+        }
       ]
     ),
     resultTemplate: 'standard',

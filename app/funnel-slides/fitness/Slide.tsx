@@ -7,7 +7,6 @@ import StepRangeSlider from '@/app/components/funnels/StepRangeSlider';
 import NextButton from '@/app/components/funnels/NextButton';
 import { useMemo } from 'react';
 import { useTranslations } from 'next-intl';
-import { getFitnessConfig } from './config';
 import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
 import "../funnel.css";
 
@@ -15,8 +14,7 @@ const stepId: StepId = 'fitness';
 
 export default function Page() {
   const funnel = useCurrentFunnel();
-  const config = getFitnessConfig(funnel);
-  const t = useTranslations(config.translationNamespace);
+  const t = useTranslations('Fitness');
   const { idx, total, value, select, goPrev } = useStepController(stepId);
   const { value: gender } = useStepController('gender' as StepId);
 

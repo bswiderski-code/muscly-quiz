@@ -829,6 +829,28 @@
       "contactEmail": "support@antrenortanc.ro"
     }
   },
+  "PushupsStep": {
+    "title": "Câte <span class=\"kalistenika-text\">flotări</span> poți face dintr-o dată?",
+    "placeholder": "ex. 15",
+    "options": {
+      "0-5": "0-5 flotări",
+      "6-10": "6-10 flotări",
+      "11-20": "11-20 flotări",
+      "21-30": "21-30 flotări",
+      "30+": "Peste 30 flotări"
+    }
+  },
+  "PullupsStep": {
+    "title": "Câte <span class=\"kalistenika-text\">tracțiuni</span> poți face dintr-o dată?",
+    "placeholder": "ex. 5",
+    "options": {
+      "0": "Niciuna încă",
+      "1-3": "1-3 tracțiuni",
+      "4-6": "4-6 tracțiuni",
+      "7-10": "7-10 tracțiuni",
+      "10+": "Peste 10 tracțiuni"
+    }
+  },
   "CalistenicExperienceStep": {
     "title": "Care este <span class=\"kalistenika-text\">experiența</span> ta cu calisthenics?",
     "options": {
@@ -843,5 +865,32 @@
       "some_experience": "Mă antrenez regulat. Fac tracțiuni (peste 5) și dip-uri fără probleme. Vreau să trec la nivelul următor (ex: Muscle Up, L-sit).",
       "advanced": "Bazele sunt doar încălzire pentru mine. Pot face Muscle Up și lucrez la elemente statice (Front Lever, Planche) sau dinamică avansată."
     }
+  },
+  "DurationStep": {
+    "title1": "Alegeți <b>durata</b>",
+    "title2": "unui <b>antrenament</b>",
+    "steps": [
+      {
+        "value": "30",
+        "label": "30"
+      },
+      {
+        "value": "45",
+        "label": "45"
+      },
+      {
+        "value": "60",
+        "label": "60"
+      },
+      {
+        "value": "90",
+        "label": "90"
+      }
+    ],
+    "minuteLabelSingular": "minut",
+    "minuteLabelPluralFew": "minute",
+    "minuteLabelPlural": "minute",
+    "info": "Durata optimă de antrenament este de <i><b>45-60 de minute</b></i>. Amintiți-vă că <b>calitatea</b> seriilor este mai importantă decât <b>cantitatea</b>.",
+    "recommended": "(recomandat)"
   }
 }

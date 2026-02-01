@@ -6,19 +6,22 @@ import { useCurrentFunnel } from '@/lib/funnels/funnelContext'
 import ProgressHeader from '@/app/components/header/ProgressHeader'
 import { useLocale, useTranslations } from 'next-intl';
 import "../funnel.css";
-import { getLocationConfig } from './config'
-import { withLocale } from '@/app/funnel-slides/_config/helpers'
+import { withLocale } from '@/lib/imagePath'
 
 const stepId: StepId = 'location';
+
+const ASSETS = {
+  gymImageSrc: '/btns/{locale}/atgym.svg',
+  homeImageSrc: '/btns/{locale}/athome.svg',
+};
 
 export default function Page() {
   const funnel = useCurrentFunnel();
   const locale = useLocale();
-  const config = getLocationConfig(funnel);
-  const t = useTranslations(config.translationNamespace);
+  const t = useTranslations('Location');
   const { idx, total, value, select, goPrev, isPending } = useStepController(stepId);
-  const gymSrc = withLocale(config.assets.gymImageSrc, locale);
-  const homeSrc = withLocale(config.assets.homeImageSrc, locale);
+  const gymSrc = withLocale(ASSETS.gymImageSrc, locale);
+  const homeSrc = withLocale(ASSETS.homeImageSrc, locale);
 
   function handleSelectGym() {
     select('gym');

@@ -68,8 +68,13 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
     if (!answers) return new Set<StepId>()
     const skipped = new Set<StepId>()
     for (const rule of skipRules) {
-      const triggerValue = answers[rule.trigger.step as keyof FunnelAnswers]
-      if (triggerValue !== undefined && String(triggerValue) === rule.trigger.value) {
+      // Check if ALL triggers match (AND logic)
+      const allTriggersMatch = rule.trigger.every(t => {
+        const value = answers[t.step as keyof FunnelAnswers]
+        return value !== undefined && String(value) === t.value
+      })
+
+      if (allTriggersMatch) {
         rule.skip.forEach(s => skipped.add(s))
       }
     }
@@ -94,7 +99,7 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
     const currentAnswers = planEntry ?? {}
     const val = selectedValue !== undefined ? selectedValue : value
     const nextAnswers = { ...currentAnswers, [field]: val }
-    
+
     const skipped = getSkippedSteps(nextAnswers)
 
     let nextIdx = idx + 1
@@ -113,9 +118,9 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
   const hrefForStep = (target: StepId | null) =>
     target
       ? ({
-          pathname: '/[funnel]/[step]',
-          params: { funnel: funnelSlug, step: getStepSlug(funnel, target, locale) },
-        } as const)
+        pathname: '/[funnel]/[step]',
+        params: { funnel: funnelSlug, step: getStepSlug(funnel, target, locale) },
+      } as const)
       : null
 
   const prevHref = hrefForStep(effectivePrevStepId)

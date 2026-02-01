@@ -9,7 +9,7 @@ export const ANALYTICS_CONFIG = {
 
   events: {
     // Engagement Events
-    QUIZ_STARTED: 'quiz_started', // Lead
+
     QUIZ_COMPLETED: 'quiz_completed', // CompleteRegistration
 
     // Ecommerce Events

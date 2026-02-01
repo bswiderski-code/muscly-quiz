@@ -7,21 +7,24 @@ import ProgressHeader from "@/app/components/header/ProgressHeader";
 import Image from "next/image";
 import "../funnel.css";
 import { useLocale, useTranslations } from "next-intl";
-import { getGenderConfig } from "./config";
-import { withLocale } from "@/app/funnel-slides/_config/helpers";
+import { withLocale } from "@/lib/imagePath";
 
 const stepId: StepId = "gender";
+
+const ASSETS = {
+  maleImageSrc: '/btns/{locale}/male.svg',
+  femaleImageSrc: '/btns/{locale}/female.svg',
+};
 
 export default function Page() {
    const { idx, total, value, select, goPrev, isPending } = useStepController(stepId);
    
    const funnel = useCurrentFunnel();
    const locale = useLocale();
-   const config = getGenderConfig(funnel);
-   const t = useTranslations(config.translationNamespace);
+   const t = useTranslations('Gender');
 
-   const maleSrc = withLocale(config.assets.maleImageSrc, locale);
-   const femaleSrc = withLocale(config.assets.femaleImageSrc, locale);
+   const maleSrc = withLocale(ASSETS.maleImageSrc, locale);
+   const femaleSrc = withLocale(ASSETS.femaleImageSrc, locale);
 
    return (
 	   <main className="funnel-page">

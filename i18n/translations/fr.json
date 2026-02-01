@@ -817,6 +817,28 @@
       "contactEmail": "support@trenerstrzykawa.pl"
     }
   },
+  "PushupsStep": {
+    "title": "Combien de <span class=\"kalistenika-text\">pompes</span> pouvez-vous faire d'un coup ?",
+    "placeholder": "ex. 15",
+    "options": {
+      "0-5": "0-5 pompes",
+      "6-10": "6-10 pompes",
+      "11-20": "11-20 pompes",
+      "21-30": "21-30 pompes",
+      "30+": "Plus de 30 pompes"
+    }
+  },
+  "PullupsStep": {
+    "title": "Combien de <span class=\"kalistenika-text\">tractions</span> pouvez-vous faire d'un coup ?",
+    "placeholder": "ex. 5",
+    "options": {
+      "0": "Aucune pour l'instant",
+      "1-3": "1-3 tractions",
+      "4-6": "4-6 tractions",
+      "7-10": "7-10 tractions",
+      "10+": "Plus de 10 tractions"
+    }
+  },
   "CalistenicExperienceStep": {
     "title": "Quelle est ton <span class=\"kalistenika-text\">expérience</span> en calisthenics ?",
     "options": {
@@ -831,5 +853,32 @@
       "some_experience": "Je m'entraîne régulièrement. Je fais facilement des tractions (plus de 5) et des dips. Je veux passer au niveau supérieur (ex: Muscle Up, L-sit).",
       "advanced": "Les bases sont un échauffement pour moi. Je maîtrise le Muscle Up et je travaille sur des figures statiques (Front Lever, Planche) ou de la dynamique avancée."
     }
+  },
+  "DurationStep": {
+    "title1": "Choisissez la <b>durée</b>",
+    "title2": "d'un <b>entraînement</b>",
+    "steps": [
+      {
+        "value": "30",
+        "label": "30"
+      },
+      {
+        "value": "45",
+        "label": "45"
+      },
+      {
+        "value": "60",
+        "label": "60"
+      },
+      {
+        "value": "90",
+        "label": "90"
+      }
+    ],
+    "minuteLabelSingular": "minute",
+    "minuteLabelPluralFew": "minutes",
+    "minuteLabelPlural": "minutes",
+    "info": "La durée optimale d'entraînement est de <i><b>45-60 minutes</b></i>. N'oubliez pas que la <b>qualité</b> des séries est plus importante que la <b>quantité</b>.",
+    "recommended": "(recommandé)"
   }
 }

@@ -34,9 +34,9 @@
     "of5": "/5"
   },
   "Seo": {
-    "appTitle": "Coach Hantel",
+    "appTitle": "Musclepals",
     "home": {
-      "title": "Trainingsplan | Coach Hantel",
+      "title": "Trainingsplan | Musclepals",
       "description": "Erstelle einen Trainingsplan, der zu dir passt. Kurzes Quiz, Ergebnis in wenigen Minuten."
     },
     "workout": {
@@ -44,7 +44,7 @@
       "description": "Suchst du einen effektiven Trainingsplan? Ich erstelle ein Set basierend auf deinen Antworten."
     },
     "workoutForm": {
-      "title": "Plan-Formular | Coach Hantel",
+      "title": "Plan-Formular | Musclepals",
       "description": "Beantworte die Fragen, um den Plan an deine Ziele anzupassen."
     }
   },
@@ -61,7 +61,7 @@
     }
   },
   "WorkoutPage": {
-    "homeLabel": "Startseite Coach Hantel",
+    "homeLabel": "Startseite Musclepals",
     "titleHtml": "Dein eigener<br /><span style='font-weight: 800'>Trainingsplan</span>",
     "heroAlt": "",
     "description": "Fülle das kurze Quiz aus und ich erstelle den perfekten Trainingsplan für dich!\n<em>Das dauert nur 2-3 Minuten.</em>",
@@ -623,7 +623,7 @@
     "timerPromo1": "Angebot für",
     "timerPromo2": "neue<br />Nutzer",
     "timerPromo3": "endet in:",
-    "timerImageAlt": "Coach Hantel angespannt",
+    "timerImageAlt": "Musclepals angespannt",
     "successMsg": "Deine Bestellung wurde erfolgreich bearbeitet.",
     "paymentNote": "Du erhältst den Plan innerhalb von <b>2 Minuten</b> nach der Zahlung."
   },
@@ -817,6 +817,28 @@
       "contactEmail": "support@trenerstrzykawa.pl"
     }
   },
+  "PushupsStep": {
+    "title": "Wie viele <span class=\"kalistenika-text\">Liegestütze</span> schaffst du am Stück?",
+    "placeholder": "z.B. 15",
+    "options": {
+      "0-5": "0-5 Liegestütze",
+      "6-10": "6-10 Liegestütze",
+      "11-20": "11-20 Liegestütze",
+      "21-30": "21-30 Liegestütze",
+      "30+": "Über 30 Liegestütze"
+    }
+  },
+  "PullupsStep": {
+    "title": "Wie viele <span class=\"kalistenika-text\">Klimmzüge</span> schaffst du am Stück?",
+    "placeholder": "z.B. 5",
+    "options": {
+      "0": "Noch keine",
+      "1-3": "1-3 Klimmzüge",
+      "4-6": "4-6 Klimmzüge",
+      "7-10": "7-10 Klimmzüge",
+      "10+": "Über 10 Klimmzüge"
+    }
+  },
   "CalistenicExperienceStep": {
     "title": "Welche <span class=\"kalistenika-text\">Erfahrung</span> hast du mit Calisthenics?",
     "options": {
@@ -831,5 +853,32 @@
       "some_experience": "Ich trainiere regelmäßig. Ich schaffe Klimmzüge (über 5) und Dips problemlos. Ich möchte auf das nächste Level (z.B. Muscle Up, L-Sit).",
       "advanced": "Die Grundlagen sind für mich nur zum Aufwärmen. Ich kann den Muscle Up und arbeite an schwierigen statischen Elementen (Front Lever, Planche) oder fortgeschrittener Dynamik."
     }
+  },
+  "DurationStep": {
+    "title1": "Wähle die <b>Dauer</b>",
+    "title2": "einer <b>Trainingseinheit</b>",
+    "steps": [
+      {
+        "value": "30",
+        "label": "30"
+      },
+      {
+        "value": "45",
+        "label": "45"
+      },
+      {
+        "value": "60",
+        "label": "60"
+      },
+      {
+        "value": "90",
+        "label": "90"
+      }
+    ],
+    "minuteLabelSingular": "Minute",
+    "minuteLabelPluralFew": "Minuten",
+    "minuteLabelPlural": "Minuten",
+    "info": "Die optimale Trainingszeit beträgt <i><b>45-60 Minuten</b></i>. Denken Sie daran, dass die <b>Qualität</b> der Sätze wichtiger jest als die <b>Anzahl</b>.",
+    "recommended": "(empfohlen)"
   }
 }

@@ -3,7 +3,7 @@ import { headers } from 'next/headers'
 import type { Locale } from '@/i18n/config'
 import { redirect } from '@/i18n/routing'
 import { getFirstStep, getFunnelSlug, getStepSlug, resolveFunnelKey, isFunnelAllowedOnDomain } from '@/lib/funnels/funnels'
-import { generateFunnelLandingMetadata } from '@/lib/metadata/funnelLandingMetadata'
+
 import type { Metadata } from 'next'
 import { getIncomingHost } from '@/lib/domain/incomingHost'
 
@@ -20,7 +20,9 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     }
   }
 
-  return generateFunnelLandingMetadata(funnelKey, locale)
+  return {
+    robots: { index: false, follow: false },
+  }
 }
 
 export default async function FunnelLandingPageRoute({ params }: { params: Promise<Params> }) {

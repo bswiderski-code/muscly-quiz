@@ -9,16 +9,24 @@ import Image from "next/image";
 import { useLocale, useTranslations } from 'next-intl';
 import "../funnel.css";
 import { useMemo, useEffect, useState } from "react";
-import { getBmiConfig } from './config'
-import { withLocale } from '@/app/funnel-slides/_config/helpers'
+import { withLocale } from '@/lib/imagePath'
 
 const stepId: StepId = "bmi";
+
+const ASSETS = {
+  nextStepImg: '/btns/{locale}/lets_go.svg',
+  illustrationImg: '/vectors/t_meat.svg',
+};
+
+const ILLUSTRATION = {
+  width: 600,
+  height: 240,
+};
 
 export default function Page({ onlyGoBack = false }: { onlyGoBack?: boolean }) {
   const funnel = useCurrentFunnel();
   const locale = useLocale();
-  const config = getBmiConfig(funnel);
-  const t = useTranslations(config.translationNamespace);
+  const t = useTranslations('BMI');
   const { sid, goPrev, goNext } = useStepController(stepId);
 
   const goToPrevStep = () => goPrev();
@@ -110,14 +118,14 @@ export default function Page({ onlyGoBack = false }: { onlyGoBack?: boolean }) {
 
         <div className="funnel-result-illustration">
           <Image
-            src={config.assets.illustrationImg}
+            src={ASSETS.illustrationImg}
             alt=""
-            width={config.illustration.width}
-            height={config.illustration.height}
+            width={ILLUSTRATION.width}
+            height={ILLUSTRATION.height}
             priority
             style={{
-              width: config.illustration.width,
-              height: config.illustration.height,
+              width: ILLUSTRATION.width,
+              height: ILLUSTRATION.height,
               maxWidth: '100%',
               objectFit: 'contain'
             }}
@@ -131,7 +139,7 @@ export default function Page({ onlyGoBack = false }: { onlyGoBack?: boolean }) {
           onClick={goToNextStep}
         >
           <Image
-            src={withLocale(config.assets.nextStepImg, locale)}
+            src={withLocale(ASSETS.nextStepImg, locale)}
             alt={t('nextStepAlt')}
             width={300} 
             height={80} 

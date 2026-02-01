@@ -7,7 +7,7 @@ type StandardPixelEvent =
   | 'ViewContent'
   | 'Purchase'
   | 'InitiateCheckout'
-  | 'Lead'
+
   | 'CompleteRegistration';
 
 let pixelInitialized = false;

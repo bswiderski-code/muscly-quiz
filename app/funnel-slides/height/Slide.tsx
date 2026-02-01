@@ -9,15 +9,18 @@ import NextButton from '@/app/components/funnels/NextButton';
 import { useFunnelStore } from '@/lib/store';
 import { useTranslations, useLocale } from 'next-intl';
 import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
-import { getHeightConfig } from './config';
 
 const stepId: StepId = 'height';
+
+const IMAGES = {
+  male: '/vectors/t_height.svg',
+  female: '/vectors/f_height.svg',
+};
 
 export default function Page() {
   const { value: gender } = useStepController('gender' as StepId);
   const funnelKey = useCurrentFunnel();
-  const config = getHeightConfig(funnelKey);
-  const t = useTranslations(config.translationNamespace);
+  const t = useTranslations('Height');
   const locale = useLocale();
   const { idx, total, goPrev, goNext } = useStepController(stepId);
 
@@ -200,7 +203,7 @@ export default function Page() {
 
         <div className="funnel-input-group">
           <img
-            src={gender === 'F' ? config.images.female : config.images.male}
+            src={gender === 'F' ? IMAGES.female : IMAGES.male}
             alt={t('alt')}
             style={{ width: '140px', height: '359px', marginRight: '20px' }}
           />

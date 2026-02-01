@@ -10,8 +10,18 @@ import type { StepId } from '@/lib/steps/stepIds';
 import { useCurrentFunnel } from '@/lib/funnels/funnelContext'
 import Image from "next/image";
 import { useTranslations, useLocale } from 'next-intl';
-import { getExperienceConfig, type ExperienceStepValue } from './config'
 import "../funnel.css";
+
+const ASSETS = {
+  imageByValue: {
+    none: '/vectors/exercises/hammer_dumbell.svg',
+    just_started: '/vectors/exercises/seated_ohp.svg',
+    some_experience: '/vectors/exercises/cable_upper.svg',
+    advanced: '/vectors/exercises/chest_fly.svg',
+  },
+};
+
+type ExperienceStepValue = 'none' | 'just_started' | 'some_experience' | 'advanced';
 
 const SID = "default";
 const stepId = 'experience';
@@ -23,11 +33,9 @@ interface OptionData {
     alt: string;
 }
 
-
 export default function Page() {
   const funnel = useCurrentFunnel();
-  const config = getExperienceConfig(funnel);
-  const t = useTranslations(config.translationNamespace);
+  const t = useTranslations('Experience');
   const locale = useLocale();
   const { idx, total, goPrev, select, value } = useStepController(stepId);
   const { value: gender } = useStepController('gender' as StepId);
@@ -73,7 +81,7 @@ export default function Page() {
             
           </div>
           <Image
-            src={config.assets.imageByValue[valueKey]}
+            src={ASSETS.imageByValue[valueKey]}
             alt={data.alt}
             width={englishKey === 'none' ? 110 : englishKey === 'just_started' ? 76 : englishKey === 'some_experience' ? 89 : 75}
             height={englishKey === 'none' ? 158 : englishKey === 'just_started' ? 138 : englishKey === 'some_experience' ? 140 : 107}

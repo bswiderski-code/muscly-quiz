@@ -9,17 +9,18 @@ import ProgressHeader from "@/app/components/header/ProgressHeader";
 import NextButton from "@/app/components/funnels/NextButton";
 import { useTranslations, useLocale } from 'next-intl';
 import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
-import { getWeightConfig } from './config';
-import '../funnel.css';
-
 const stepId: StepId = "weight";
+
+const IMAGES = {
+  buttonExpandSrc: '/btns/{locale}/expand.svg',
+  burningBicepsImage: '/vectors/burning_biceps.svg',
+};
 
 export default function Page() {
   const funnel = useCurrentFunnel();
-  const config = getWeightConfig(funnel);
   const { value: gender } = useStepController('gender' as StepId, { funnel });
   const { idx, total, goPrev, goNext, sid } = useStepController(stepId, { funnel });
-  const t = useTranslations(config.translationNamespace);
+  const t = useTranslations('Weight');
   const locale = useLocale();
   const [unit, setUnit] = useState<'kg' | 'lbs'>(() => {
     if (typeof window === 'undefined') return 'kg';
@@ -380,7 +381,7 @@ export default function Page() {
             </small>
 
             <div className={`funnel-art funnel-art--bicep ${bicepVisible ? "slide-in-delayed" : ""}`}>
-              <Image src={config.burningBicepsImage} alt={t('alt2')} width={141} height={147} priority />
+              <Image src={IMAGES.burningBicepsImage} alt={t('alt2')} width={141} height={147} priority />
             </div>
           </section>
         </div>
@@ -421,7 +422,7 @@ export default function Page() {
           ) : (
             <button type="submit" className="funnel-next-btn" disabled={isPending} aria-label={t('buttonExpandAlt')}>
               <Image 
-                src={config.buttonExpandSrc.replace('{locale}', locale)} 
+                src={IMAGES.buttonExpandSrc.replace('{locale}', locale)} 
                 alt={t('buttonExpandAlt')} 
                 width={324} 
                 height={86} 
