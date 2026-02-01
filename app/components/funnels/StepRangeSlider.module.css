@@ -1,0 +1,148 @@
+/* ===== Sizes centralized ===== */
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+
+  /* tooltip tuning (yours kept) */
+  --tooltip-font: 21px;
+  --tooltip-pad-y: 8px;
+  --tooltip-pad-x: 14px;
+  --tooltip-gap: 20px;
+  --tooltip-caret: 16px;
+  --tooltip-caret-gap: -12px;
+
+  /* NEW: geometry tokens */
+  --rail-h: 48px;          /* rail height */
+  --handle-d: 48px;        /* handle diameter (matches rail) */
+}
+
+/* Funnel-specific styling */
+.funnel_kalistenika .handle {
+  background: #63C0FF;
+}
+
+/* Outer rail; --pad is derived from handle size */
+.rail {
+  position: relative;
+  height: var(--rail-h);
+  --pad: calc(var(--handle-d) / 2); /* = 24px when handle is 48px */
+}
+
+/* Stroke/border (unchanged) */
+.rail::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 3px #2b2b2b;
+  pointer-events: none;
+}
+
+/* Background + clipping for the bar */
+.bar {
+  position: absolute; inset: 0;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #efefef;
+  z-index: 1;
+}
+
+/* stroke overlay – sits above bar/fill, below handle/dots */
+.rail::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 3px solid #2b2b2b;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Left side fill – now uses rail height */
+.fill {
+  position: absolute; top: 0; bottom: 0; left: 0;
+  width: var(--fillpx);
+  height: var(--rail-h);
+  background: #7a7a7a;
+  z-index: 1;
+}
+
+/* Track used for pointer math & to place handle/dots inside pads */
+.track {
+  position: absolute; top: 0; bottom: 0;
+  left: var(--pad); right: var(--pad);
+  z-index: 3;
+}
+
+/* Tooltip (kept, unchanged except variables) */
+.tooltip,
+.tooltipBubble,
+.tooltipCaret {
+  display: none !important;
+}
+
+/* Dots (unchanged) */
+.dots { position: absolute; inset: 0; pointer-events: none; }
+.dot {
+  position: absolute; top: 50%; transform: translate(-50%, -50%);
+  width: 22px; height: 22px; border-radius: 50%;
+  border: none; background: transparent; cursor: pointer; pointer-events: auto;
+}
+.dot::before {
+  content: ''; position: absolute; inset: 0; margin: auto;
+  width: 22px; height: 22px; border-radius: 50%;
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.06);
+}
+.dotIdle::after, .dotActive::after {
+  content: ''; position: absolute; inset: 0; margin: auto;
+  width: 14px; height: 14px; border-radius: 50%;
+}
+.dotIdle::after { background: #e6e6e6; box-shadow: inset 0 0 0 2px #cfcfcf; }
+.dotActive::after { background: #828282; box-shadow: inset 0 0 0 2px rgba(0,0,0,.25); }
+
+/* Handle – now 48x48 */
+.handle {
+  position: absolute;
+  left: calc(var(--pct) * 1%);
+  transform: translate(-50%, 0);
+  width: var(--handle-d);
+  height: var(--handle-d);
+  border-radius: 50%;
+  background: #3f3f3f; border: none;
+  box-shadow: inset 0 0 0 6px rgba(0,0,0,.25), 0 2px 6px rgba(0,0,0,.25);
+  cursor: grab;
+}
+.handle:active { cursor: grabbing; }
+
+/* --- Add mobile-friendly adjustments --- */
+@media (max-width: 600px) {
+  .wrapper {
+    max-width: 100vw;
+    min-width: 0;
+  }
+  .rail {
+    height: 48px;
+    --rail-h: 48px;
+    --handle-d: 48px;
+    --pad: 24px;
+  }
+  .fill {
+    height: var(--rail-h);
+  }
+  .handle {
+    width: var(--handle-d);
+    height: var(--handle-d);
+  }
+  .dot {
+    width: 16px;
+    height: 16px;
+  }
+  .dot::before {
+    width: 16px;
+    height: 16px;
+  }
+  .dotIdle::after, .dotActive::after {
+    width: 10px;
+    height: 10px;
+  }
+}

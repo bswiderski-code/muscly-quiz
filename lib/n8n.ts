@@ -1,0 +1,32 @@
+// lib/n8n.ts
+import crypto from 'crypto';
+
+type N8nEvent =
+  | 'checkout.succeeded';
+
+const sendToN8n = async <T extends Record<string, unknown>>(url: string, event: N8nEvent, data: T) => {
+  const secret = process.env.N8N_WEBHOOK_SECRET!;
+  const payload = { event, ...data };
+  const body = JSON.stringify(payload);
+  const signature = crypto.createHmac('sha256', secret).update(body).digest('hex');
+
+  // krótkie połączenie: nie blokujemy głównej ścieżki
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 1500);
+
+  try {
+    await fetch(url, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-signature': signature,
+      },
+      body,
+      signal: controller.signal,
+    }).catch(() => { /* nie przerywaj flow jeśli n8n chwilowo nie odpowie */ });
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+export { sendToN8n };

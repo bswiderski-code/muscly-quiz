@@ -1,0 +1,1242 @@
+{
+  "CheckoutProducts": {
+    "workout_solo": {
+      "productName": "Plan treningowy (solo)",
+      "buttonSvg": "/btns/{locale}/workout_bef.svg"
+    },
+    "workout_bundle": {
+      "productName": "Plan treningowy + dieta (bundle)",
+      "buttonSvg": "/btns/{locale}/bundle_bef.svg"
+    },
+    "calisthenics_solo": {
+      "productName": "Plan kalisteniki (solo)",
+      "buttonSvg": "/btns/{locale}/workout_bef.svg"
+    },
+    "calisthenics_bundle": {
+      "productName": "Plan kalisteniki + dieta (bundle)",
+      "buttonSvg": "/btns/{locale}/bundle_bef.svg"
+    },
+    "plan": {
+      "buttonSvg": "/vectors/exercises/incline_smith.svg",
+      "description": "Odbierz<br />swój plan<br />treningowy!"
+    },
+    "kalistenika": {
+      "buttonSvg": "/vectors/exercises/incline_smith.svg",
+      "description": "Odbierz<br />swój plan<br />kalisteniki!"
+    }
+  },
+  "ReviewsWidget": {
+    "title": "Co kupujący uważają o swoich planach 2 miesiące po zakupie?",
+    "sort_best": "sortowanie - od najlepszych",
+    "sort_worst": "sortowanie - od najgorszych",
+    "sort_newest": "sortowanie - od najnowszych",
+    "sort_oldest": "sortowanie - od najstarszych",
+    "verified": "(zweryfikowany zakup)",
+    "age_suffix": "lat",
+    "aria_label": "Opinie klientów",
+    "average": "średnia ocen",
+    "of5": "/5"
+  },
+  "Seo": {
+    "appTitle": "Trener Strzykawa",
+    "home": {
+      "title": "Plan treningowy | Trener Strzykawa",
+      "description": "Stwórz plan treningowy dopasowany do Ciebie. Krótka ankieta, wynik w kilka minut."
+    },
+    "plan": {
+      "title": "Profesjonalny plan treningowy - personalizowany dla Ciebie",
+      "description": "Szukasz skutecznego planu ćwiczeń? Przygotuję dla Ciebie zestaw oparty o Twoje odpowiedzi."
+    },
+    "planForm": {
+      "title": "Formularz planu | Trener Strzykawa",
+      "description": "Odpowiedz na pytania, aby dopasować plan do Twoich celów."
+    }
+  },
+  "Gender": {
+    "title": "Jakiej <b>płci</b> jesteś?",
+    "ariaLabel": "Wybór płci",
+    "male": {
+      "label": "Wybierz mężczyznę",
+      "alt": "Mężczyzna"
+    },
+    "female": {
+      "label": "Wybierz kobietę",
+      "alt": "Kobieta"
+    }
+  },
+  "PlanPage": {
+    "homeLabel": "Strona główna Trener Strzykawa",
+    "titleHtml": "Twój własny<br /><span style='font-weight: 800'>plan treningowy</span>",
+    "heroAlt": "",
+    "description": "Uzupełnij krótką ankietę, a stworzę dla Ciebie idealny plan treningowy!\n<em>Zajmie ci to 2-3 minuty.</em>",
+    "button": "Stwórz plan treningowy",
+    "privacy": "Polityka Prywatności",
+    "terms": "Regulamin",
+    "assets": {
+      "logo": "/{locale}/needle/logo-long.svg",
+      "logoHeight": "38",
+      "headerContainerHeight": "40",
+      "heroImage": "/vectors/t_eagle.svg",
+      "btnImage": "/btns/{locale}/create_plan_btn.svg",
+      "homeUrl": "https://trenerstrzykawa.pl/",
+      "privacyUrl": "https://trenerstrzykawa.pl/polityka-prywatnosci/",
+      "termsUrl": "https://trenerstrzykawa.pl/regulamin/"
+    }
+  },
+  "KalistenikaPage": {
+    "homeLabel": "Strona główna Kalistenika",
+    "titleHtml": "Zbuduj wymarzoną<br />sylwetkę dzięki<br /><span class='kalistenika-text'>KALISTENICE</span>",
+    "heroAlt": "",
+    "description": "<i>Trenuj bez <span style=\"font-weight: 600\">profesjonalnego sprzętu</span> i osiągaj <span style=\"font-weight: 600\">wymarzone efekty</span>!</i><br />Uzupełnij krótką ankietę, a stworzę dla Ciebie idealny plan treningowy!",
+    "button": "Rozpocznij trening",
+    "privacy": "Polityka Prywatności",
+    "terms": "Regulamin",
+    "assets": {
+      "logo": "/{locale}/needle/logo-long.svg",
+      "logoHeight": "38",
+      "headerContainerHeight": "40",
+      "heroImage": "/vectors/t_eagle.svg",
+      "btnImage": "/btns/{locale}/create_plan_btn.svg",
+      "homeUrl": "https://trenerzyla.pl/",
+      "privacyUrl": "https://trenerstrzykawa.pl/polityka-prywatnosci/",
+      "termsUrl": "https://trenerstrzykawa.pl/regulamin/"
+    }
+  },
+  "DietGoal": {
+    "title": "Jaki jest<br /><b>twój cel?</b>",
+    "titleAria": "Jaki jest twój cel?",
+    "bulk": {
+      "label": "Chcę nabrać",
+      "alt": "Chcę nabrać masę mięśniową",
+      "description": "Skupiasz się na budowie nowej masy mięśniowej, waga rośnie."
+    },
+    "cut": {
+      "label": "Chcę zredukować",
+      "alt": "Chcę zredukować tłuszcz",
+      "description": "Tracisz na wadze, znika tłuszcz i uwydatniasz istniejące już mięśnie."
+    }
+  },
+  "Bodyfat": {
+    "title": "Wybierz swój poziom<br /><b>tkanki tłuszczowej</b>",
+    "alt": "Sylwetka dla wybranego poziomu tkanki tłuszczowej",
+    "stepsDataMale": [
+      {
+        "value": "5-9",
+        "label": "5-9%",
+        "info": "To ekstremalnie niski poziom tkanki tłuszczowej. Sylwetka jest bardzo muskularna i definicja mięśni jest doskonała."
+      },
+      {
+        "value": "10-14",
+        "label": "10-14%",
+        "info": "To bardzo niski poziom tkanki tłuszczowej. Sylwetka jest szczupła, mięśnie są wyraźnie widoczne."
+      },
+      {
+        "value": "15-19",
+        "label": "15-19%",
+        "info": "To zdrowy, sportowy poziom tkanki tłuszczowej. Mięśnie są widoczne, ale sylwetka nie jest wychudzona."
+      },
+      {
+        "value": "20-24",
+        "label": "20-24%",
+        "info": "To niski poziom tkanki tłuszczowej. Sylwetka jest szczupła, mięśnie są widoczne."
+      },
+      {
+        "value": "25-29",
+        "label": "25-29%",
+        "info": "To umiarkowany poziom tkanki tłuszczowej. Sylwetka jest pełniejsza, mięśnie są mniej widoczne."
+      },
+      {
+        "value": "30-34",
+        "label": "30-34%",
+        "info": "To wyższy poziom tkanki tłuszczowej. Sylwetka jest zaokrąglona, mięśnie są niewidoczne."
+      },
+      {
+        "value": "35-39",
+        "label": "35-39%",
+        "info": "To wysoki poziom tkanki tłuszczowej. Sylwetka jest bardzo zaokrąglona."
+      },
+      {
+        "value": ">40",
+        "label": ">40%",
+        "info": "To bardzo wysoki poziom tkanki tłuszczowej. Sylwetka jest otyła."
+      }
+    ],
+    "stepsDataFemale": [
+      {
+        "value": "10-14",
+        "label": "10-14%",
+        "info": "Bardzo niska zawartość tkanki tłuszczowej, typowa dla zawodniczek sportów sylwetkowych. Może wiązać się z zaburzeniami hormonalnymi i brakiem miesiączki."
+      },
+      {
+        "value": "15-19",
+        "label": "15-19%",
+        "info": "Niska zawartość tkanki tłuszczowej, często spotykana u aktywnych kobiet i sportsmenek. Sylwetka bardzo szczupła, z wyraźnie zarysowanymi mięśniami."
+      },
+      {
+        "value": "20-24",
+        "label": "20-24%",
+        "info": "Zdrowy, sportowy poziom tkanki tłuszczowej. Sylwetka szczupła, ale kobieca. Najczęściej spotykany u aktywnych kobiet."
+      },
+      {
+        "value": "25-29",
+        "label": "25-29%",
+        "info": "Przeciętny poziom tkanki tłuszczowej. Sylwetka naturalna, lekko zaokrąglona, bez wyraźnej definicji mięśni."
+      },
+      {
+        "value": "30-39",
+        "label": "30-39%",
+        "info": "Podwyższony poziom tkanki tłuszczowej. Sylwetka wyraźnie zaokrąglona, możliwe problemy zdrowotne związane z nadmiarem tłuszczu."
+      },
+      {
+        "value": ">40",
+        "label": ">40%",
+        "info": "Bardzo wysoki poziom tkanki tłuszczowej. Wskazane konsultacje zdrowotne i zmiana stylu życia."
+      }
+    ]
+  },
+  "Height": {
+    "title": "Ile masz <b>wzrostu?</b>",
+    "alt": "Ile masz wzrostu?",
+    "unit": "cm",
+    "placeholder": "___",
+    "errorMsg": "Podaj swój prawdziwy wzrost.",
+    "ariaLabel": "Wzrost"
+  },
+  "Weight": {
+    "title1": "Ile <b>ważysz?</b>",
+    "title2": "Ile chciałbyś <b>ważyć?</b>",
+    "alt1": "Obecna waga",
+    "alt2": "Waga docelowa",
+    "unit": "kg",
+    "placeholder": "___",
+    "ariaLabel1": "Waga",
+    "ariaLabel2": "Waga docelowa",
+    "error1": "Podaj swoją prawdziwą wagę.",
+    "error2": "Podaj swoją wagę docelową w zakresie 30-300kg.",
+    "errorBulk": "Jeśli Twoim celem jest masa, cel wagowy musi być większy niż obecna waga.",
+    "errorCut": "Jeśli Twoim celem jest redukcja, cel wagowy musi być mniejszy niż obecna waga.",
+    "infoBulk": "Wybierz wagę od {minInfo} w górę.",
+    "infoCut": "Wybierz wagę od {maxInfo} w dół.",
+    "buttonExpandAlt": "Rozwiń"
+  },
+  "Age": {
+    "title": "Ile masz <b>lat?</b>",
+    "placeholder": "__",
+    "ariaLabel": "Wiek",
+    "unit": "lat",
+    "12-14": {
+      "message": "Masz ogromny potencjał!",
+      "description": "To najlepszy czas, by zbudować <b>solidne fundamenty!</b> Teraz Twoje ciało dopiero się rozwija, więc kluczem są nawyki i nauka techniki, nie ogromne ciężary."
+    },
+    "15-20": {
+      "message": "Idealny wiek, by poważnie zabrać się za trening!",
+      "description": "Organizm szybko się regeneruje, więc możesz robić duże postępy, przy dobrze zaplanowanych ćwiczeniach i odżywianiu."
+    },
+    "21-30": {
+      "message": "To czas, kiedy możesz zbudować naprawdę świetną formę!",
+      "description": "Masz już świadomość swojego ciała - teraz wystarczy dobrze dobrany plan, żeby ruszyć efekty na nowy poziom."
+    }
+  },
+  "Activity": {
+    "title": "Jaki jest Twój poziom<b> aktywności fizycznej?</b>",
+    "errorMsg": "Proszę wybrać jedną z opcji przed przejściem dalej.",
+    "options": {
+      "low_activity": "Siedzę większość dnia, mało ruchu. 🛋️",
+      "some_activity": "Trochę się ruszam, ale bez regularnych treningów. 🚶",
+      "light_training": "Trenuję lekko kilka razy w tygodniu. 🏃‍♂️",
+      "regular_training": "Ćwiczę regularnie, jestem w ruchu większość dni. 💪",
+      "hard_work": "Bardzo dużo trenuję lub mam ciężką pracę fizyczną. 🏋️‍♂️"
+    }
+  },
+  "KalistenikaAge": {
+    "title": "Ile masz <span style=\"font-weight: bold\">lat?</span>",
+    "placeholder": "__",
+    "ariaLabel": "Wiek",
+    "unit": "lat",
+    "12-14": {
+      "message": "Masz ogromny potencjał!",
+      "description": "To najlepszy czas, by zbudować <b>solidne fundamenty!</b> Teraz Twoje ciało dopiero się rozwija, więc kluczem są nawyki i nauka techniki, nie ogromne ciężary."
+    },
+    "15-20": {
+      "message": "Idealny wiek, by poważnie zabrać się za trening!",
+      "description": "Organizm szybko się regeneruje, więc możesz robić duże postępy, przy dobrze zaplanowanych ćwiczeniach i odżywianiu."
+    },
+    "21-30": {
+      "message": "To czas, kiedy możesz zbudować naprawdę świetną formę!",
+      "description": "Masz już świadomość swojego ciała - teraz wystarczy dobrze dobrany plan, żeby ruszyć efekty na nowy poziom."
+    }
+  },
+  "KalistenikaGender": {
+    "title": "Jakiej <b>płci</b> jesteś?",
+    "ariaLabel": "Wybór płci",
+    "male": {
+      "label": "Wybierz mężczyznę",
+      "alt": "Mężczyzna"
+    },
+    "female": {
+      "label": "Wybierz kobietę",
+      "alt": "Kobieta"
+    }
+  },
+  "KalistenikaHeight": {
+    "title": "Ile masz <span class=\"kalistenika-text\">wzrostu?</span>",
+    "alt": "Ile masz wzrostu?",
+    "unit": "cm",
+    "placeholder": "___",
+    "errorMsg": "Podaj swój prawdziwy wzrost.",
+    "ariaLabel": "Wzrost"
+  },
+  "KalistenikaDietGoal": {
+    "title": "Co chciałbyś<br /><span class=\"kalistenika-text\">osiągnąć?</span>",
+    "titleAria": "Co chciałbyś osiągnąć?",
+    "bulk": {
+      "label": "Chcę nabrać",
+      "alt": "Chcę nabrać masę mięśniową",
+      "description": "Skupiasz się na budowie nowej masy mięśniowej, waga rośnie."
+    },
+    "cut": {
+      "label": "Chcę zredukować",
+      "alt": "Chcę zredukować tłuszcz",
+      "description": "Tracisz na wadze, znika tłuszcz i uwydatniasz istniejące już mięśnie."
+    }
+  },
+  "KalistenikaBodyfat": {
+    "title": "Wybierz swój poziom<br /><span style=\"font-weight: 700\">tkanki tłuszczowej</span>",
+    "alt": "Sylwetka dla wybranego poziomu tkanki tłuszczowej",
+    "stepsDataMale": [
+      {
+        "value": "5-9",
+        "label": "5-9%",
+        "info": "To ekstremalnie niski poziom tkanki tłuszczowej. Sylwetka jest bardzo muskularna i definicja mięśni jest doskonała."
+      },
+      {
+        "value": "10-14",
+        "label": "10-14%",
+        "info": "To bardzo niski poziom tkanki tłuszczowej. Sylwetka jest szczupła, mięśnie są wyraźnie widoczne."
+      },
+      {
+        "value": "15-19",
+        "label": "15-19%",
+        "info": "To zdrowy, sportowy poziom tkanki tłuszczowej. Mięśnie są widoczne, ale sylwetka nie jest wychudzona."
+      },
+      {
+        "value": "20-24",
+        "label": "20-24%",
+        "info": "To niski poziom tkanki tłuszczowej. Sylwetka jest szczupła, mięśnie są widoczne."
+      },
+      {
+        "value": "25-29",
+        "label": "25-29%",
+        "info": "To umiarkowany poziom tkanki tłuszczowej. Sylwetka jest pełniejsza, mięśnie są mniej widoczne."
+      },
+      {
+        "value": "30-34",
+        "label": "30-34%",
+        "info": "To wyższy poziom tkanki tłuszczowej. Sylwetka jest zaokrąglona, mięśnie są niewidoczne."
+      },
+      {
+        "value": "35-39",
+        "label": "35-39%",
+        "info": "To wysoki poziom tkanki tłuszczowej. Sylwetka jest bardzo zaokrąglona."
+      },
+      {
+        "value": ">40",
+        "label": ">40%",
+        "info": "To bardzo wysoki poziom tkanki tłuszczowej. Sylwetka jest otyła."
+      }
+    ],
+    "stepsDataFemale": [
+      {
+        "value": "10-14",
+        "label": "10-14%",
+        "info": "Bardzo niska zawartość tkanki tłuszczowej, typowa dla zawodniczek sportów sylwetkowych. Może wiązać się z zaburzeniami hormonalnymi i brakiem miesiączki."
+      },
+      {
+        "value": "15-19",
+        "label": "15-19%",
+        "info": "Niska zawartość tkanki tłuszczowej, często spotykana u aktywnych kobiet i sportsmenek. Sylwetka bardzo szczupła, z wyraźnie zarysowanymi mięśniami."
+      },
+      {
+        "value": "20-24",
+        "label": "20-24%",
+        "info": "Zdrowy, sportowy poziom tkanki tłuszczowej. Sylwetka szczupła, ale kobieca. Najczęściej spotykany u aktywnych kobiet."
+      },
+      {
+        "value": "25-29",
+        "label": "25-29%",
+        "info": "Przeciętny poziom tkanki tłuszczowej. Sylwetka naturalna, lekko zaokrąglona, bez wyraźnej definicji mięśni."
+      },
+      {
+        "value": "30-39",
+        "label": "30-39%",
+        "info": "Podwyższony poziom tkanki tłuszczowej. Sylwetka wyraźnie zaokrąglona, możliwe problemy zdrowotne związane z nadmiarem tłuszczu."
+      },
+      {
+        "value": ">40",
+        "label": ">40%",
+        "info": "Bardzo wysoki poziom tkanki tłuszczowej. Wskazane konsultacje zdrowotne i zmiana stylu życia."
+      }
+    ]
+  },
+  "KalistenikaBMI": {
+    "title": "Twoje <span>BMI</span> to:",
+    "category": {
+      "unknown": "Nieznana kategoria",
+      "starvation": "Wygłodzenie",
+      "emaciation": "Wychudzenie",
+      "underweight": "Niedowaga",
+      "normal": "Pożądana masa ciała",
+      "overweight": "Nadwaga",
+      "obesityI": "Otyłość I stopnia",
+      "obesityII": "Otyłość II stopnia (duża)",
+      "obesityIII": "Otyłość III stopnia (chorobliwa)"
+    },
+    "description": {
+      "unknown": "Nie można określić kategorii BMI.",
+      "starvation": "Organizm jest silnie osłabiony z powodu bardzo dużego niedoboru masy ciała.",
+      "emaciation": "Ciało jest wyraźnie osłabione, mięśnie i tkanki nie mają wystarczającego odżywienia.",
+      "underweight": "Masa ciała jest zbyt niska. Organizm nie jest właściwie chroniony przed chorobami i gorzej znosi wysiłek fizyczny.",
+      "normal": "Organizm nie jest ani przeciążony nadmierną ilością tkanki tłuszczowej, ani osłabiony jej niedoborem.",
+      "overweight": "Pojawia się nadmiar tkanki tłuszczowej, który zaczyna obciążać organizm.",
+      "obesityI": "Nadmiar tkanki tłuszczowej wyraźnie przeciąża organizm i zwiększa ryzyko chorób.",
+      "obesityII": "Organizm jest mocno przeciążony. Wzrasta ryzyko poważnych chorób przewlekłych i ograniczenie sprawności fizycznej.",
+      "obesityIII": "Bardzo duża ilość tkanki tłuszczowej poważnie zagraża zdrowiu i życiu."
+    },
+    "conclusion": "Idealny moment na budowanie mięśni!",
+    "nextStepAlt": "Przejdź do następnego kroku"
+  },
+  "KalistenikaPriority": {
+    "title1": "Na rozbudowie których<br />partii zależy ci<br />",
+    "title2": "<span class=\"kalistenika-text\">NAJBARDZIEJ?</span>",
+    "subtitle": "(Plan obejmuje wszystkie partie mięśniowe, ale możesz wybrać te, które chcesz <b>priorytetyzować</b>)",
+    "warning": "UWAGA! Możesz zaznaczyć max. 2 partie",
+    "partNames": {
+      "shoulders": "Barki",
+      "chest": "Klatka",
+      "triceps": "Triceps",
+      "biceps": "Biceps",
+      "back": "Plecy",
+      "legs": "Nogi",
+      "abs": "Brzuch",
+      "forearms": "Przedramiona",
+      "glutes": "Pośladki"
+    },
+    "ariaLabelSelected": "Priorytet: {name} zaznaczony",
+    "ariaLabelUnselected": "Priorytet: {name} niezaznaczony",
+    "imageAltSelected": "{name} — zaznaczono",
+    "imageAltUnselected": "{name} — nie zaznaczono"
+  },
+  "KalistenikaFrequency": {
+    "title1": "Ile razy w<br />tygodniu chcesz<br />",
+    "title2": "<span class=\"kalistenika-text\">TRENOWAĆ?</span>",
+    "dayLabelSingular": "dzień",
+    "dayLabelPlural": "dni",
+    "steps": [
+      {
+        "value": "1",
+        "label": "1 raz w tygodniu"
+      },
+      {
+        "value": "2",
+        "label": "2 razy w tygodniu"
+      },
+      {
+        "value": "3",
+        "label": "3 razy w tygodniu"
+      },
+      {
+        "value": "4",
+        "label": "4 razy w tygodniu"
+      },
+      {
+        "value": "5",
+        "label": "5 razy w tygodniu"
+      }
+    ],
+    "daySingular": "trening",
+    "dayPlural": "treningi",
+    "dayPluralFew": "treningi"
+  },
+  "KalistenikaFitness": {
+    "title1": "Jak oceniłbyś swoją<br /><span class=\"kalistenika-text\">sprawność fizyczną</span><br />w skali od 1 do 10?"
+  },
+  "KalistenikaSleep": {
+    "title": "Ile czasu<br /><span style=\"font-weight: 700\">poświęcasz na sen?</span>",
+    "steps": [
+      {
+        "value": "lt6",
+        "label": "< 6 godzin"
+      },
+      {
+        "value": "7-8",
+        "label": "7-8 godzin"
+      },
+      {
+        "value": "9-12",
+        "label": "9-12 godzin"
+      },
+      {
+        "value": "gt12",
+        "label": "> 12 godzin"
+      }
+    ],
+    "messages": [
+      "Ciężko o dobrą regenerację przy takiej ilości snu... Pamiętaj by nad tym pracować :)",
+      "Dobra ilość snu — regeneracja wspiera trening i zdrowie.",
+      "Bardzo dobra ilość snu — regeneracja optymalna.",
+      "Zbyt dużo snu może oznaczać nieregularność — obserwuj samopoczucie."
+    ]
+  },
+  "KalistenikaDuration": {
+    "title1": "Wybierz czas<br />jednego ",
+    "title2": "<span class=\"kalistenika-text\">treningu</span>",
+    "minuteLabelSingular": "minuta",
+    "minuteLabelPluralFew": "minuty",
+    "minuteLabelPlural": "minut",
+    "steps": [
+      {
+        "value": "30",
+        "label": "30 min"
+      },
+      {
+        "value": "45",
+        "label": "45 min"
+      },
+      {
+        "value": "60",
+        "label": "60 min"
+      },
+      {
+        "value": "90",
+        "label": "90 min"
+      }
+    ]
+  },
+  "BMI": {
+    "title": "Twoje <span>BMI</span> to:",
+    "category": {
+      "unknown": "Nieznana kategoria",
+      "starvation": "Wygłodzenie",
+      "emaciation": "Wychudzenie",
+      "underweight": "Niedowaga",
+      "normal": "Pożądana masa ciała",
+      "overweight": "Nadwaga",
+      "obesityI": "Otyłość I stopnia",
+      "obesityII": "Otyłość II stopnia (duża)",
+      "obesityIII": "Otyłość III stopnia (chorobliwa)"
+    },
+    "description": {
+      "unknown": "Nie można określić kategorii BMI.",
+      "starvation": "Organizm jest silnie osłabiony z powodu bardzo dużego niedoboru masy ciała.",
+      "emaciation": "Ciało jest wyraźnie osłabione, mięśnie i tkanki nie mają wystarczającego odżywienia.",
+      "underweight": "Masa ciała jest zbyt niska. Organizm nie jest właściwie chroniony przed chorobami i gorzej znosi wysiłek fizyczny.",
+      "normal": "Organizm nie jest ani przeciążony nadmierną ilością tkanki tłuszczowej, ani osłabiony jej niedoborem.",
+      "overweight": "Pojawia się nadmiar tkanki tłuszczowej, który zaczyna obciążać organizm.",
+      "obesityI": "Nadmiar tkanki tłuszczowej wyraźnie przeciąża organizm i zwiększa ryzyko chorób.",
+      "obesityII": "Organizm jest mocno przeciążony. Wzrasta ryzyko poważnych chorób przewlekłych i ograniczenie sprawności fizycznej.",
+      "obesityIII": "Bardzo duża ilość tkanki tłuszczowej poważnie zagraża zdrowiu i życiu."
+    },
+    "conclusion": "Idealny moment na budowanie mięśni!",
+    "nextStepAlt": "Przejdź do następnego kroku"
+  },
+  "Location": {
+    "title": "Gdzie zamierzasz<br /><b>trenować?</b>",
+    "ariaLabelGroup": "Lokalizacja treningów",
+    "gym": {
+      "label": "Będę trenował na siłowni",
+      "label_f": "Będę trenowała na siłowni",
+      "alt": "Będę trenował na siłowni",
+      "alt_f": "Będę trenowała na siłowni",
+      "description": "Trening na siłowni z dostępem do szerokiego wyboru sprzętu.",
+      "description_f": "Trening na siłowni z dostępem do szerokiego wyboru sprzętu."
+    },
+    "home": {
+      "label": "Będę trenował w domu",
+      "label_f": "Będę trenowała w domu",
+      "alt": "Będę trenował w domu",
+      "alt_f": "Będę trenowała w domu",
+      "description": "Trening w domu z możliwością dostosowania do dostępnego sprzętu.",
+      "description_f": "Trening w domu z możliwością dostosowania do dostępnego sprzętu."
+    },
+    "bandsPanel": {
+      "question": "Czy masz dostęp do gum oporowych?",
+      "yes": {
+        "label": "Tak - mam gumy",
+        "alt": "Tak"
+      },
+      "no": {
+        "label": "Nie - nie mam gum",
+        "alt": "Nie"
+      }
+    }
+  },
+  "Experience": {
+    "title": "Jakie masz doświadczenie<br /><b>w treningach?</b>",
+    "options": {
+      "none": {
+        "label": "Jeszcze nie zacząłem trenować. 🐣",
+        "description1": "Na początku kluczowe jest nauczenie się <b>poprawnej techniki</b> i <b>zbudowanie regularności</b>.",
+        "description2": "<b>Jednak bez obaw!</b><br />Twój Plan przeprowadzi cię przez to krok po kroku ;)",
+        "alt": "Ćwiczenie"
+      },
+      "just_started": {
+        "label": "Dopiero zacząłem. 🏁",
+        "description1": "<b>Dopiero zaczynasz — super!</b>",
+        "description2": "Na tym etapie organizm szybko reaguje na trening, dlatego skupimy się na <b>nauce techniki</b> i prostych, powtarzalnych nawykach.",
+        "alt": "Ćwiczenie"
+      },
+      "some_experience": {
+        "label": "Już trochę trenuję. 💪",
+        "description1": "<b>Masz już pewne doświadczenie — bomba!</b>",
+        "description2": "To moment, w którym ciało <b>przyzwyczaja się do treningu</b> — dlatego kluczowe jest wprowadzenie planu z <b>konkretną strukturą</b> i <b>progresją</b>.",
+        "alt": "Ćwiczenie"
+      },
+      "advanced": {
+        "label": "Ćwiczę już długo. 🥇",
+        "description1": "<b>Świetna robota!</b> Wiesz już, jak wygląda <b>regularność</b> i <b>konsekwencja</b>.",
+        "description2": "Na tym etapie skupimy się na optymalizacji: <b>precyzyjnym planie</b>, <b>progresji</b> i <b>regeneracji</b>.",
+        "alt": "Ćwiczenie"
+      }
+    },
+    "errorMsg": "Proszę wybrać swoje doświadczenie treningowe przed przejściem dalej."
+  },
+  "Equipment": {
+    "title": "Jaki <b>sprzęt</b> masz do dyspozycji w domu?",
+    "subtitle": "(możesz zaznaczyć więcej niż jedną opcję)",
+    "ariaLabelGroup": "Wybór sprzętu treningowego",
+    "options": {
+      "none": {
+        "label": "Nie mam dostępu do żadnego sprzętu treningowego. 🚫",
+        "description": "Plan oprzemy na ćwiczeniach z masą ciała i prostych elementach wyposażenia domu."
+      },
+      "bands": {
+        "label": "Gumy oporowe.",
+        "description": "Mini bandy i power bandy pozwolą nam dodać opór oraz stopniować trudność ćwiczeń."
+      },
+      "dumbbells": {
+        "label": "Hantle.",
+        "description": "Skorzystamy z wariantów jednoręcznych i oburącz, aby w pełni wykorzystać potencjał hantli."
+      },
+      "barbell": {
+        "label": "Sztanga i ciężar.",
+        "description": "Ułożymy klasyczne boje (przysiady, martwe, wyciskanie) dopasowując objętość do twojego celu."
+      },
+      "bench": {
+        "label": "Ławeczka do wyciskania na klatę.",
+        "description": "Ławeczka umożliwi dodanie ćwiczeń w leżeniu i półskosie, by lepiej ukierunkować bodziec."
+      },
+      "pullup_bar": {
+        "label": "Drążek do podciągania.",
+        "description": "Drążek pozwoli na wykonywanie podciągnięć i innych ćwiczeń kalistenicznych."
+      },
+      "dip_bar": {
+        "label": "Poręcze do dipów.",
+        "description": "Poręcze umożliwią wykonywanie dipów i innych ćwiczeń na mięśnie trójgłowe ramienia."
+      }
+    },
+    "errorMsg": "Zaznacz przynajmniej jedną opcję sprzętu, by przejść dalej."
+  },
+  "KalistenikaEquipment": {
+    "title": "Jaki <span class=\"kalistenika-text\">sprzęt</span> masz do dyspozycji?",
+    "subtitle": "(możesz zaznaczyć więcej<br />niż jedną opcję)",
+    "ariaLabelGroup": "Wybór sprzętu do kalisteniki", 
+    "options": {
+      "none": {
+        "label": "Nie mam żadnego sprzętu. 🚫",
+        "description": "<b>Bez obaw!</b> Sprzęt to tylko dodatek. Dzięki temu planowi będziesz mógł ćwiczyć i rozwijać się bez niego ;)"
+      },
+      "bands": {
+        "label": "Gumy oporowe.",
+        "description": "Pomogą w progresji do trudniejszych ćwiczeń lub dodadzą oporu."
+      },
+      "pullup_bar": {
+        "label": "Drążek do podciągania.",
+        "description": "Niezbędny do budowania silnych pleców i ramion."
+      },
+      "dip_bar": {
+        "label": "Poręcze do dipów.",
+        "description": "Kluczowe do rozwoju klatki piersiowej i tricepsów."
+      }
+    },
+    "errorMsg": "Zaznacz przynajmniej jedną opcję sprzętu, by przejść dalej."
+  },
+  "Difficulty": {
+    "title": "Jaka jest twoja <span style=\"font-weight: 700\">NAJWIĘKSZA</span><br />trudność związana z siłownią?",
+    "errorMsg": "Proszę wybrać jedną z opcji przed przejściem dalej.",
+    "options": {
+      "motivation": "Brakuje mi motywacji do treningów/trzymania diety. 😔",
+      "effects": "Zniechęca mnie to, że nie widzę efektów. ⏳",
+      "insecurity": "Boję się pójść na siłownię, albo czuję się na niej niepewnie. 😟",
+      "diet": "Nie do końca wiem jak trzymać dietę. ❓",
+      "no_difficulty": "Nie mam żadnej z powyższych trudności. ✅"
+    }
+  },
+  "Priority": {
+    "title1": "Na rozbudowie których<br />partii zależy ci<br />",
+    "title2": "<span style=\"font-weight: 700\">NAJBARDZIEJ?</span>",
+    "subtitle": "(Plan obejmuje wszystkie partie mięśniowe, ale możesz wybrać te, które chcesz <b>priorytetyzować</b>)",
+    "warning": "UWAGA! Możesz zaznaczyć max. 2 partie",
+    "partNames": {
+      "shoulders": "Barki",
+      "chest": "Klatka",
+      "triceps": "Triceps",
+      "biceps": "Biceps",
+      "back": "Plecy",
+      "legs": "Nogi",
+      "abs": "Brzuch",
+      "forearms": "Przedramiona",
+      "glutes": "Pośladki"
+    },
+    "ariaLabelSelected": "Priorytet: {name} zaznaczony",
+    "ariaLabelUnselected": "Priorytet: {name} niezaznaczony",
+    "imageAltSelected": "{name} — zaznaczono",
+    "imageAltUnselected": "{name} — nie zaznaczono"
+  },
+  "Frequency": {
+    "title1": "Ile razy w<br />tygodniu chcesz<br />",
+    "title2": "<span style=\"font-weight: 700\">TRENOWAĆ?</span>",
+    "dayLabelSingular": "dzień",
+    "dayLabelPlural": "dni",
+    "steps": [
+      {
+        "value": "1",
+        "label": "1 raz w tygodniu"
+      },
+      {
+        "value": "2",
+        "label": "2 razy w tygodniu"
+      },
+      {
+        "value": "3",
+        "label": "3 razy w tygodniu"
+      },
+      {
+        "value": "4",
+        "label": "4 razy w tygodniu"
+      },
+      {
+        "value": "5",
+        "label": "5 razy w tygodniu"
+      }
+    ],
+    "daySingular": "trening",
+    "dayPlural": "treningi",
+    "dayPluralFew": "treningi"
+  },
+  "Fitness": {
+    "title1": "Jak oceniłbyś swoją<br /><b>sprawność fizyczną</b><br />w skali od 1 do 10?"
+  },
+  "Sleep": {
+    "title": "Ile czasu<br /><span style=\"font-weight: 700\">poświęcasz na sen?</span>",
+    "steps": [
+      {
+        "value": "lt6",
+        "label": "< 6 godzin"
+      },
+      {
+        "value": "7-8",
+        "label": "7-8 godzin"
+      },
+      {
+        "value": "9-12",
+        "label": "9-12 godzin"
+      },
+      {
+        "value": "gt12",
+        "label": "> 12 godzin"
+      }
+    ],
+    "messages": [
+      "Ciężko o dobrą regenerację przy takiej ilości snu... Pamiętaj by nad tym pracować :)",
+      "Dobra ilość snu — regeneracja wspiera trening i zdrowie.",
+      "Bardzo dobra ilość snu — regeneracja optymalna.",
+      "Zbyt dużo snu może oznaczać nieregularność — obserwuj samopoczucie."
+    ]
+  },
+  "PushupsStep": {
+    "title": "Ile <span class=\"kalistenika-text\">pompek</span> jesteś w stanie zrobić za jednym razem?",
+    "placeholder": "np. 15",
+    "options": {
+      "0-5": "0-5 pompek",
+      "6-10": "6-10 pompek",
+      "11-20": "11-20 pompek",
+      "21-30": "21-30 pompek",
+      "30+": "Ponad 30 pompek"
+    }
+  },
+  "PullupsStep": {
+    "title": "Ile <span class=\"kalistenika-text\">podciągnięć</span> jesteś w stanie zrobić za jednym razem?",
+    "placeholder": "np. 5",
+    "options": {
+      "0": "Jeszcze żadnego",
+      "1-3": "1-3 podciągnięcia",
+      "4-6": "4-6 podciągnięć",
+      "7-10": "7-10 podciągnięć",
+      "10+": "Ponad 10 podciągnięć"
+    }
+  },
+  "CalistenicExperienceStep": {
+    "title": "Jakie masz <span class=\"kalistenika-text\">doświadczenie</span> z kalisteniką?",
+    "options": {
+      "none": "Nowy",
+      "just_started": "Początkujący",
+      "some_experience": "Średniozaawansowany",
+      "advanced": "Zaawansowany."
+    },
+    "descriptions": {
+      "none": "Startuję od zera. Nie trenowałem wcześniej regularnie i chcę zbudować podstawową siłę oraz nauczyć się techniki.",
+      "just_started": "Mam już kontakt ze sportem. Potrafię zrobić serię pompek i przysiadów, ale nie podciągam się na drążku wcale lub robię to tylko 1-3 razy.",
+      "some_experience": "Trenuję regularnie. Swobodnie wykonuję serie podciągnięć (powyżej 5) i dipów. Chcę wejść na wyższy poziom (np. nauka Muscle Up, L-sit).",
+      "advanced": "Podstawy to dla mnie rozgrzewka. Potrafię wykonać Muscle Up i pracuję nad trudnymi elementami statycznymi (Front Lever, Planche) lub zaawansowaną dynamiką."
+    }
+  },
+  "DurationStep": {
+    "title": "Wybierz czas jednego treningu",
+    "options": {
+      "30": "30 min",
+      "45": "45 minut",
+      "60": "1 godzina",
+      "90": "1,5 godziny"
+    },
+    "info": "Optymalny czas treningu to <i><b>45-60 minut</b></i>. Pamiętaj, że <b>jakość</b> serii jest ważniejsza niż ich <b>ilość</b>.",
+    "recommended": "(rekomendowane)"
+  },
+  "ResultPage": {
+    "title": "<span style=\"font-size: 36px; font-weight: 700;\">Twój Plan Treningowy</span><br /><span style=\"font-size: 28px; font-weight: 400;\">jest gotowy!</span>",
+    "intro1": "Stworzony na podstawie<br /><b>Twoich 14 odpowiedzi</b> przez<br/><b>zaawansowany algorytm treningowy</b><br />zaprojektowany specjalnie do<br /><b>budowy sylwetki</b> i <b>redukcji tłuszczu</b>.",
+    "intro2": "Otrzymasz <b>indywidualny plan</b><br/>oparty na danych, który powstał<br/>w <b>mniej niż 3 minuty</b> dzięki<br />technologii, która analizuje ponad<br/><b>4 000 kombinacji treningowych</b>.",
+    "subtitle": "<b>Szybkie Podsumowanie</b><br /><span style=\"font-size: 28px; font-weight: 400;\">Twoich wyników</span>",
+    "trustImageAlt": "Dlaczego warto zaufać?",
+    "analyzeTitle": "Algorytm analizuje m.in.:",
+    "analyzeList": {
+      "aktywnosc": "Twój <b>poziom aktywności</b>",
+      "cel": "Twój <b>cel</b> (redukcja / masa)",
+      "wiek": "Twój <b>wiek</b>",
+      "doswiadczenie": "<b>Doświadczenie treningowe</b>",
+      "time": "<b>Czas</b>, którym dysponujesz",
+      "strengths": "<b>Mocne i słabe strony sylwetki</b>"
+    },
+    "conclusion1": "A następnie dobiera <b>konkretny plan treningowy</b>, który pasuje do<b> Twojej sytuacji</b> lepiej niż <b>99% gotowych planów</b> w internecie.",
+    "conclusion2": "To połączenie <b>wiedzy trenera personalnego</b> oraz <b>precyzji systemu</b>, który nie popełnia błędów ani nie zgaduje.",
+    "purchaseTitle": "Co dokładnie otrzymasz po zakupie?",
+    "purchaseImageAlt": "Opis produktu",
+    "sampleBtn": "Zobacz przykładowy plan treningowy!",
+    "sampleTitle": "A oto kilka stron z planu Rafała!",
+    "loadingTitle": "Tworzę Twój plan treningowy...",
+    "loadingSubtitle": "Chwilka cierpliwości, ładuję wszystkie wyniki.",
+    "loadingData": "Brak danych dla tej sesji.",
+    "loadingErrorTitle": "Mamy problem z wczytaniem Twoich danych.",
+    "loadingErrorHtml": "Odśwież stronę i spróbuj ponownie. Jeśli problem nadal występuje, napisz do nas: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
+    "loadingErrorBtn": "/btns/{locale}/once_again.svg",
+    "reportNote1": "wysłanych planów",
+    "reportNote2": "przez ostatnie 24 godziny",
+    "trustImageSrc": "/{locale}/needle/why-trust.svg",
+    "purchaseImageSrc": "/{locale}/needle/product-description.svg",
+    "sampleImageSrc": "/{locale}/needle/sample_guy.svg",
+    "joinAthletes": "Dołącz do <b><u>{count}</u> sportowców</b>, którzy <b>już korzystają</b> ze swojego <b>personalizowanego planu treningowego!</b>",
+    "contactBox": {
+      "title": "Masz jakiekolwiek wątpliwości?",
+      "emailIntro": "Odezwij się:",
+      "emailAddress": "support@trenerstrzykawa.pl",
+      "responseTime": "⏰ Zazwyczaj odpisuję w mniej niż godzinę."
+    },
+    "ctaButton": {
+      "imageSrc": "/btns/{locale}/get_your.svg",
+      "alt": "Odbierz plan"
+    },
+    "kalistenika": {
+      "title": "<span style=\"font-size: 24px; font-weight: 700;\">Twój Plan Treningowy</span><br /><span class=\"kalistenika-text\" style=\"font-size: 40px; line-height: 1.1;\">KALISTENIKI</span><br />jest gotowy!",
+      "subtitle": "<span style=\"font-size: 28px; font-weight: 400;\">Szybkie Podsumowanie</span><br /><span class=\"kalistenika-text\" style=\"font-size: 32px; font-weight: 700;\">Twoich wyników</span>",
+      "intro1": "Stworzony na podstawie<br /><b>Twoich odpowiedzi</b> przez<br/><b>zaawansowany algorytm treningowy</b><br />zaprojektowany specjalnie do<br /><b>budowy sylwetki</b> przy użyciu <b>masy własnego ciała</b>.",
+      "joinAthletes": "Dołącz do <b><span class=\"kalistenika-text\">{count}</span> <span class=\"kalistenika-text\">sportowców</span></b>, którzy <b>już korzystają</b> ze swojego <b>personalizowanego planu!</b>",
+      "analyzeList": {
+        "aktywnosc": "Twój <b>poziom aktywności</b>",
+        "cel": "Twój <b>cel</b> (redukcja / masa)",
+        "wiek": "Twój <b>wiek</b>",
+        "doswiadczenie": "<b>Doświadczenie w kalistenice</b>",
+        "time": "<b>Czas</b>, którym dysponujesz",
+        "strengths": "<b>Mocne i słabe strony sylwetki</b>"
+      },
+      "purchaseTitle": "Co otrzymasz w swoim Planie Kalisteniki?"
+    },
+    "errorTitle": "Brak danych dla tego lejka.",
+    "errorDescription": "Skontaktuj się z nami pod adresem: support@trenerstrzykawa.pl",
+    "faq": {
+      "title": "Najczęściej<br/>zadawane pytania:",
+      "kalistenikaTitle": "Najczęściej<br/>zadawane pytania<br/><span class=\"kalistenika-text\">KALISTENIKI:</span>"
+    }
+  },
+  "BMIBOX": {
+    "yourScore": "Twój wynik to:",
+    "underweight": "niedowaga",
+    "overweight": "nadwaga",
+    "categories": {
+      "lt16": "Wygłodzenie",
+      "lt17": "Wychudzenie",
+      "lt18_5": "Niedowaga",
+      "lt25": "Pożądana masa ciała",
+      "lt30": "Nadwaga",
+      "lt35": "Otyłość I stopnia",
+      "lt40": "Otyłość II stopnia (duża)",
+      "gt40": "Otyłość III stopnia (chorobliwa)"
+    },
+    "descriptions": {
+      "lt16": "Organizm jest silnie osłabiony z powodu bardzo dużego niedoboru masy ciała.",
+      "lt17": "Ciało jest wyraźnie osłabione, mięśnie i tkanki nie mają wystarczającego odżywienia.",
+      "lt18_5": "Masa ciała jest zbyt niska. Organizm nie jest właściwie chroniony przed chorobami i gorzej znosi wysiłek fizyczny.",
+      "lt25": "Organizm nie jest ani przeciążony nadmierną ilością tkanki tłuszczowej, ani osłabiony jej niedoborem.",
+      "lt30": "Pojawia się nadmiar tkanki tłuszczowej, który zaczyna obciążać organizm.",
+      "lt35": "Nadmiar tkanki tłuszczowej wyraźnie przeciąża organizm i zwiększa ryzyko chorób.",
+      "lt40": "Organizm jest mocno przeciążony. Wzrasta ryzyko poważnych chorób przewlekłych i ograniczenie sprawności fizycznej.",
+      "gt40": "Bardzo duża ilość tkanki tłuszczowej poważnie zagraża zdrowiu i życiu."
+    }
+  },
+  "Summary": {
+    "title": "Twój Plan:",
+    "conjunction_and": " i ",
+    "priorities": {
+      "shoulders": "barki",
+      "chest": "klatę",
+      "triceps": "triceps",
+      "biceps": "biceps",
+      "back": "plecy",
+      "legs": "nogi",
+      "forearms": "przedramiona",
+      "abs": "mięśnie brzucha",
+      "glutes": "pośladki",
+      "default": "wszystkie części ciała"
+    },
+    "goals": {
+      "bulk": "budowanie masy mięśniowej",
+      "cut": "redukcję tkanki tłuszczowej"
+    },
+    "frequency": {
+      "intro": "Zapewnia ci <strong>{n}</strong> {days} w tygodniu.",
+      "daySingular": "trening",
+      "dayPlural": "treningi",
+      "dayPluralFew": "treningi",
+      "dayPluralMany": "treningów"
+    },
+    "location": {
+      "housewithout": "Zapewni wydajny trening w <strong>domowych warunkach</strong>.",
+      "housewith": "Zapewni wydajny trening w <strong>domowych warunkach z gumami oporowymi.</strong>",
+      "gym": "",
+      "default": ""
+    },
+    "focus": "Kładzie szczególny nacisk na <strong>{priorities}</strong>.",
+    "goalFocus": "Jest nastawiony na <strong>{goal}</strong>.",
+    "fitnessFocus": "Jest przystosowany do Twojej aktualnej <strong>{fitness}</strong>.",
+    "fitnessFocusText": "sprawności fizycznej",
+    "equipment": {
+      "intro": "Trenuj w domu z wykorzystaniem <strong>{list}</strong>.",
+      "introNone": "Trenuj w domu <strong>bez żadnego dodatkowego sprzętu</strong>.",
+      "map": {
+        "bands": "gum oporowych",
+        "dumbbells": "hantli",
+        "barbell": "sztangi z obciążeniem",
+        "bench": "ławeczki do wyciskania",
+        "none": "braku sprzętu"
+      }
+    },
+    "priority": {
+      "none": "Kładzie szczególny nacisk na <strong>równomierny rozwój masy mięśniowej</strong> w całym ciele.",
+      "one": "Kładzie szczególny nacisk na <strong>{p1}</strong>.",
+      "two": "Kładzie szczególny nacisk na <strong>{p1}</strong> i <strong>{p2}</strong>.",
+      "many": "Kładzie szczególny nacisk na <strong>{list}</strong>."
+    }
+  },
+  "YouVsFuture": {
+    "now": "teraz",
+    "future": "za kilka miesięcy",
+    "weight": "waga:",
+    "muscle": "mięśnie",
+    "fitness": "sprawność fizyczna",
+    "bodyfat": "tkanka tłuszczowa",
+    "activityMap": {
+      "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "Bardzo dużo trenuję lub mam ciężką pracę fizyczną",
+      "Ćwiczę regularnie, jestem w ruchu większość dni": "Ćwiczę regularnie, jestem w ruchu większość dni",
+      "Trenuję lekko kilka razy w tygodniu": "Trenuję lekko kilka razy w tygodniu",
+      "Trochę się ruszam, ale bez regularnych treningów": "Trochę się ruszam, ale bez regularnych treningów",
+      "default": "Siedzę większość dnia, mało ruchu"
+    },
+    "bmiImageMap": {
+      "5-9": "/bodyfat_variants/needle/bodyfat_1.svg",
+      "10-14": "/bodyfat_variants/needle/bodyfat_2.svg",
+      "15-19": "/bodyfat_variants/needle/bodyfat_3.svg",
+      "20-24": "/bodyfat_variants/needle/bodyfat_4.svg",
+      "25-29": "/bodyfat_variants/needle/bodyfat_5.svg",
+      "30-34": "/bodyfat_variants/needle/bodyfat_6.svg",
+      "35-39": "/bodyfat_variants/needle/bodyfat_7.svg",
+      ">40": "/bodyfat_variants/needle/bodyfat_8.svg"
+    },
+    "finalImageSrc": "/bodyfat_variants/needle/gym_rat.svg"
+  },
+  "ReportForm": {
+    "title": "Odbierz<br />swój plan<br />treningowy!",
+    "imageAlt": "Ilustracja maszyny Smitha",
+    "nameLabel": "Jak masz na imię?",
+    "namePlaceholder": "Imię",
+    "emailLabel": "Email (na który otrzymasz plan):",
+    "emailPlaceholder": "adres@email.pl",
+    "agreementText": "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href=\"https://trenerstrzykawa.pl/polityka-prywatnosci/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">polityką prywatności</a>.",
+    "agreementCheckboxHtml": "Akceptuję <a href=\"https://trenerstrzykawa.pl/regulamin/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">regulamin</a> i <a href=\"https://trenerstrzykawa.pl/polityka-prywatnosci/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">politykę prywatności</a>.",
+    "healthDataAgreementHtml": "Zgadzam się na użycie moich danych zdrowotnych i wymiarów (jest to niezbędne do stworzenia planu).",
+    "healthDataAgreementRequiredError": "Proszę zaakceptować zgodę na wykorzystanie danych zdrowotnych, aby kontynuować.",
+    "agreementRequiredError": "Proszę zaakceptować regulamin, aby kontynuować.",
+    "errorMsg1": "Proszę podać poprawne imię i adres e-mail.",
+    "errorMsg2": "Upewnij się, że Twój e-mail jest poprawny. Jeśli tak, kliknij przycisk ponownie.",
+    "errorMsgDomainTypo": "Czy w adresie nie ma literówki? Czy chodziło o: {suggestedEmail}? Jeśli tak, popraw go. Jeśli adres jest poprawny, kliknij przycisk ponownie.",
+    "orText": "albo",
+    "detailsBtn": "Dowiedz się więcej o analizie sylwetki!",
+    "detailsBox1Title": "Pokażę Ci:",
+    "detailsBox1Body": {
+      "training": "Ile kalorii musisz jeść, by skutecznie {goal},",
+      "smart": "Jak trenować mądrzej, a nie ciężej,",
+      "workDiet": "Jak pogodzić szkołę/pracę z dietą,",
+      "progress": "Jak pokonać trudności, które zatrzymują Twój progres."
+    },
+    "detailsBox2Title": "Otrzymasz:",
+    "detailsBox2Body": {
+      "macros": "Dokładne proporcje makroskładników dopasowane do Twojego ciała,",
+      "dietSchema": "Przykładowy schemat Twojej diety, {goalSchema}",
+      "summary": "Szczere podsumowanie Twojej obecnej sytuacji i wskazówki, jak ją poprawić."
+    },
+    "timerPromo1": "Promocja dla",
+    "timerPromo2": "nowych<br />użytkowników",
+    "timerPromo3": "koniec za:",
+    "timerImageAlt": "Napięty Trener Strzykawa",
+    "successMsg": "Twoje zamówienie zostało pomyślnie przetworzone.",
+    "paymentNote": "Plan otrzymasz w przeciągu <b>2 minut</b> od dokonania płatności."
+  },
+  "TDEE": {
+    "title1": "Całkowite zapotrzebowanie kaloryczne",
+    "deficit": "deficyt kaloryczny",
+    "surplus": "nadwyżka kaloryczna",
+    "unit": "kcal/dzień",
+    "mainDescPrefix": "Ta wartość ",
+    "mainDescBold1Cut": "uwzględnia tracenie na wadze",
+    "mainDescBold1Bulk": "uwzględnia przybieranie na wadze",
+    "mainDescSuffix": ". Jest to podstawowa ilość kalorii, jaką musisz spożywać, aby ",
+    "mainDescActionCut": "chudnąć",
+    "mainDescActionBulk": "przybierać na wadze",
+    "noData": "-"
+  },
+  "Carousel": {
+    "plan": {
+      "slides": [
+        {
+          "img": "/example_training/{locale}/plan/sample-1.png",
+          "alt": "Rafał 1",
+          "caption": "Wstęp do planu treningowego – strona 1"
+        },
+        {
+          "img": "/example_training/{locale}/plan/sample-2.png",
+          "alt": "Rafał 2",
+          "caption": "Poradnik, jak korzystać z planu – strona 2"
+        },
+        {
+          "img": "/example_training/{locale}/plan/sample-3.png",
+          "alt": "Rafał 3",
+          "caption": "Początek planu treningowego – strona 5"
+        },
+        {
+          "img": "/example_training/{locale}/plan/sample-5.png",
+          "alt": "Rafał 5",
+          "caption": "Plan progresji na najbliższe 3 miesiące – strona 7"
+        }
+      ]
+    },
+    "kalistenika": {
+      "slides": [
+        {
+          "img": "/example_training/{locale}/kalistenika/sample-1.png",
+          "alt": "Maciej kalistenik 1",
+          "caption": "Wstęp do planu kalisteniki – strona 1"
+        },
+        {
+          "img": "/example_training/{locale}/kalistenika/sample-2.png",
+          "alt": "Maciej kalistenik 2",
+          "caption": "Poradnik ćwiczeń kalistenicznych – strona 2"
+        },
+        {
+          "img": "/example_training/{locale}/kalistenika/sample-5.png",
+          "alt": "Maciej kalistenik 3",
+          "caption": "Plan treningowy kalisteniki – strona 5"
+        },
+        {
+          "img": "/example_training/{locale}/kalistenika/sample-7.png",
+          "alt": "Maciej kalistenik 4",
+          "caption": "Postępy w kalistenice – strona 7"
+        }
+      ]
+    },
+    "indicatorNote": "Uwaga! To nie jest cały plan treningowy, tylko 4 przykładowe strony.",
+    "pageLabel": "Strona {current}/{total}"
+  },
+  "OrderPage": {
+    "logoHref": "https://trenerstrzykawa.pl/",
+    "logoSrc": "/{locale}/needle/logo-long.svg",
+    "logoHeight": "38",
+    "backButtonImage": "/btns/{locale}/backtohomepage.svg",
+    "heroSuccessSrc": "/vectors/t_eagle.svg",
+    "verifyingText": "Weryfikuję płatność...",
+    "processingText": "Przetwarzamy Twoją płatność...",
+    "pendingHtml": "Twoja płatność jest w trakcie weryfikacji.<br /><b>Proszę, nie zamykaj tej strony.</b><br /><br />Jeśli płatność została dokonana, plan trafi na Twój e-mail w ciągu kilku minut.",
+    "loading": "Ładowanie...",
+    "successTitle": "Twoje zamówienie zostało<br />opłacone pomyślnie!",
+    "successImageAlt": "Zamówienie opłacone",
+    "successText1": "Za chwilę pojawi się on na twoim mailu.",
+    "successText2": "(może potrwać do 5 minut)",
+    "successText3": "Sprawdź również spam i zakładkę \"oferty\"",
+    "successText4": "W razie jakichkolwiek problemów, śmiało daj znać!",
+    "successEmail": "support@trenerstrzykawa.pl",
+    "errorTitle": "Mamy problem z<br />przetworzeniem<br />Twojej płatności.",
+    "errorImageAlt": "Raport nieopłacony",
+    "errorText1": "Twoja płatność <b>nie została sfinalizowana</b>, wróć do strony głównej i spróbuj ponownie.",
+    "buttonText": "Wróć do strony głównej",
+    "logoAlt": "trener strzykawa logo",
+    "contactText": "Jeśli uważasz, że jest to pomyłka skontaktuj się ze mną:"
+  },
+  "JoinAthletes": "Dołącz do <b><u>{count}</u> sportowców</b>, którzy <b>już korzystają</b> ze swojego <b>personalizowanego planu treningowego!</b>",
+  "NextButton": {
+    "imageSrc": "/btns/{locale}/next.svg",
+    "alt": "Dalej"
+  },
+  "AnswersSummary": {
+    "buttonImage": "/btns/{locale}/answers_summary.svg",
+    "buttonAlt": "Podsumowanie odpowiedzi",
+    "backLinkText": "Popraw odpowiedź w formularzu",
+    "conjunction_and": "i",
+    "equipmentNotSelected": "Nie wybrano żadnego sprzętu",
+    "locationTypeMap": {
+      "gym": "Siłownia",
+      "house": "Dom"
+    },
+    "equipmentMap": {
+      "none": "Brak",
+      "bands": "Gumy oporowe",
+      "dumbbells": "Hantle",
+      "barbell": "Sztanga",
+      "bench": "Ławka",
+      "pullup_bar": "Drążek do podciągania",
+      "dip_bar": "Poręcze do dipów"
+    },
+    "labels": {
+      "gender": "Płeć",
+      "age": "Wiek",
+      "height": "Wzrost",
+      "weight": "Waga",
+      "weight_goal": "Waga docelowa",
+      "goal": "Cel",
+      "diet_goal": "Cel diety",
+      "bodyfat": "Tkanka tłuszczowa",
+      "activity": "Aktywność",
+      "experience": "Doświadczenie",
+      "difficulty": "Trudność",
+      "location": "Lokalizacja treningów",
+      "equipment": "Sprzęt",
+      "priority": "Priorytet",
+      "frequency": "Częstotliwość",
+      "fitness": "Sprawność",
+      "sleep": "Sen",
+      "pushups": "Pompki",
+      "pullups": "Podciągnięcia",
+      "calistenic_experience": "Doświadczenie (kalistenika)",
+      "duration": "Czas treningu"
+    },
+    "gender": {
+      "male": "Mężczyzna",
+      "M": "Mężczyzna",
+      "female": "Kobieta",
+      "F": "Kobieta",
+      "Kobieta": "Kobieta",
+      "other": "Inna"
+    },
+    "dietGoal": {
+      "bulk": "Nabieranie masy mięśniowej",
+      "cut": "Redukcja tkanki tłuszczowej"
+    },
+    "activityMap": {
+      "low_activity": "Siedzę większość dnia, mało ruchu.",
+      "some_activity": "Trochę się ruszam, ale bez regularnych treningów.",
+      "light_training": "Trenuję lekko kilka razy w tygodniu.",
+      "regular_training": "Ćwiczę regularnie, jestem w ruchu większość dni.",
+      "hard_work": "Bardzo dużo trenuję lub mam ciężką pracę fizyczną."
+    },
+    "experienceMap": {
+      "new": "Nowy",
+      "beginner": "Początkujący",
+      "intermediate": "Już trochę trenuję.",
+      "advanced": "Ćwiczę już długo.",
+      "none": "Jeszcze nie zacząłem trenować.",
+      "just_started": "Dopiero zacząłem.",
+      "some_experience": "Już trochę trenuję."
+    },
+    "difficultyMap": {
+      "motivation": "Brakuje mi motywacji do treningów/trzymania diety.",
+      "effects": "Zniechęca mnie to, że nie widzę efektów.",
+      "insecurity": "Boję się pójść na siłownię, albo czuję się na niej niepewnie.",
+      "diet": "Nie do końca wiem jak trzymać dietę.",
+      "no_difficulty": "Nie mam żadnej z powyższych trudności."
+    },
+    "locationMap": {
+      "gym": "Siłownia",
+      "housewith": "Dom (z gumami oporowymi)",
+      "housewithout": "Dom (bez gum oporowych)"
+    },
+    "priorityMap": {
+      "shoulders": "Barki",
+      "chest": "Klatka",
+      "triceps": "Triceps",
+      "biceps": "Biceps",
+      "back": "Plecy",
+      "legs": "Nogi",
+      "abs": "Mięśnie brzucha",
+      "forearms": "Przedramiona",
+      "glutes": "Pośladki"
+    },
+    "format": {
+      "bodyfat": "{value}%",
+      "height": "{value}cm",
+      "weight": "{value}kg",
+      "age": "{value} lat",
+      "frequency": "{value}x/tydz.",
+      "fitness": "{value}/10",
+      "sleep": "{value} godzin",
+      "pushups": "Umiem zrobić {value} pompek.",
+      "pullups": "Umiem zrobić {value} podciągnięć.",
+      "pullups_none": "Nie umiem jeszcze zrobić ani jednego podciągnięcia.",
+      "duration": "{value} minut"
+    },
+    "kalistenika": {
+      "buttonImage": "/btns/{locale}/v_answers_summary.svg"
+    }
+  },
+  "MissingSteps": {
+    "title": "Niektóre odpowiedzi nie zostały zapisane",
+    "description": "Niestety, oprogramowanie nie zapisało odpowiedzi na pytania: {steps}.<br /><br />Kliknij przycisk poniżej, aby przejść przez te pytania ponownie.",
+    "buttonImage": "/btns/{locale}/once_again.svg",
+    "buttonAlt": "Spróbuj ponownie",
+    "stepLabels": {
+      "gender": "Płeć",
+      "diet_goal": "Cel diety",
+      "bodyfat": "Tkanka tłuszczowa",
+      "height": "Wzrost",
+      "weight": "Waga",
+      "age": "Wiek",
+      "activity": "Aktywność",
+      "location": "Lokalizacja",
+      "experience": "Doświadczenie",
+      "difficulty": "Trudność",
+      "priority": "Priorytet",
+      "frequency": "Częstotliwość",
+      "fitness": "Sprawność",
+      "sleep": "Sen"
+    },
+    "persistentError": {
+      "title": "Problem nadal występuje",
+      "description": "Niestety, problem z zapisem odpowiedzi nadal występuje. To może być błąd techniczny.<br /><br />Skontaktuj się z nami pod adresem: {email}",
+      "contactEmail": "support@trenerstrzykawa.pl"
+    }
+  }
+}

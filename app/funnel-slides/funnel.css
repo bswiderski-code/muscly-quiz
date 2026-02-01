@@ -1,0 +1,622 @@
+:root {
+  /* Common variables extracted from age.css, weight.css, etc. */
+  --funnel-left-pad: clamp(12px, 4vw, 18px);
+  
+  /* UPDATED: Increased size (Was: 24px/6vw/30px) */
+  --funnel-title-size: clamp(32px, 7vw, 42px);
+  --funnel-title-size-sm: clamp(24px, 6vw, 32px);
+  
+  --funnel-input-h: clamp(50px, 8.2vw, 60px);
+  --funnel-input-w: clamp(118px, 34vw, 170px);
+  --funnel-dash: clamp(36px, 14vw, 52px);
+  --funnel-gap: clamp(24px, 10vw, 38px);
+  --funnel-max-w: 600px;
+  --funnel-input-fs: clamp(20px, 5vw, 24px);
+  --funnel-big-value-fs: 48px;
+  --funnel-xl-value-fs: 64px;
+  --funnel-body-fs: 16px;
+  --funnel-small-fs: 14px;
+  
+  /* Art spacing */
+  --art-reaper-space: clamp(100px, 35vw, 170px);
+  --art-bicep-space: clamp(90px, 30vw, 150px);
+  --bicep-overhang: clamp(6px, 2vw, 10px);
+}
+
+/* Standard Page Container for Funnel Slides */
+.funnel-page {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header Wrapper to ensure centering and max-width */
+.funnel-header-wrapper {
+  width: 100%;
+  max-width: var(--funnel-max-w);
+  margin: 0 auto;
+  /* Ensure header doesn't collapse margins */
+  display: block; 
+}
+
+/* 
+   Standard Content Wrapper 
+   Use this to wrap everything below ProgressHeader 
+*/
+.funnel-content {
+  position: relative;
+  width: 100%;
+  max-width: var(--funnel-max-w);
+  margin: 0 auto;
+  
+  /* Consistent spacing from header */
+  padding-top: 8px; 
+  padding-bottom: 32px;
+  
+  /* Default: fluid left padding for alignment with "shrunken" content like in Weight */
+  padding-left: var(--funnel-left-pad); 
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
+/* Modifier for centered content (Age, Height, Gender, etc.) */
+.funnel-content--centered {
+  padding-left: 16px; /* Balanced padding for centered content */
+  padding-right: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 
+   Standard Title 
+   Consistent spacing from Header
+*/
+.funnel-title {
+  font-family: 'Comic Relief', sans-serif;
+  font-size: var(--funnel-title-size);
+  
+  /* UPDATED: Increased line height for better spacing (Was: 1.06) */
+  line-height: 1.2;
+  
+  margin: 0 0 16px 0; /* Standard bottom margin */
+  font-weight: 400; /* Default weight is regular */
+  letter-spacing: -0.2px;
+}
+
+.funnel-title b, 
+.funnel-title strong {
+  font-weight: 900; /* Only tagged words are bold */
+}
+
+.funnel-title--sm {
+  font-family: 'Comic Relief', sans-serif;
+  font-size: var(--funnel-title-size-sm);
+  line-height: 1.1;
+  margin: 0 0 12px 0;
+  font-weight: 400; /* Default weight is regular */
+  letter-spacing: -0.2px;
+}
+
+.funnel-title--sm b,
+.funnel-title--sm strong {
+  font-weight: 900; /* Only tagged words are bold */
+}
+
+/* Form layouts */
+.funnel-form-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.funnel-input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  width: 100%;
+}
+
+/* Input Shell */
+.funnel-input-shell {
+  display: flex;
+  align-items: center;
+  height: var(--funnel-input-h);
+  padding: 0 14px;
+  border: 3px solid #000;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 3px 0 #000;
+  position: relative;
+  font-family: "Comic Relief", sans-serif;
+  max-width: 100%;
+}
+
+.funnel-input-shell--narrow {
+  width: var(--funnel-input-w);
+}
+
+.funnel-input-shell input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 40px 0 0; /* Padding for the unit on the right */
+  font-size: var(--funnel-input-fs);
+  letter-spacing: 0.3px;
+  font-family: inherit;
+  color: inherit;
+  text-align: left; /* Stick to left */
+}
+
+.funnel-input-shell input::placeholder {
+  color: #7a7a7a;
+  letter-spacing: 3px;
+}
+
+.funnel-unit {
+  position: absolute;
+  right: 14px;
+  font-size: var(--funnel-input-fs);
+  font-weight: 800;
+  white-space: nowrap;
+  font-family: inherit;
+  pointer-events: none; /* Don't block input clicks */
+}
+
+/* Unit Switch */
+.funnel-unit-switch-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.funnel-unit-switch {
+  display: flex;
+  background: #fff;
+  border: 3px solid #000;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #000;
+  overflow: hidden;
+  user-select: none;
+}
+
+.funnel-unit-option {
+  padding: 6px 16px;
+  font-size: 16px;
+  font-weight: 800;
+  z-index: 2;
+  transition: color 0.3s ease;
+  font-family: inherit;
+  width: 60px;
+  text-align: center;
+}
+
+.funnel-unit-option.active {
+  color: #fff;
+}
+
+.funnel-switch-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  background: #000;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+/* Art / Illustrations Blocks */
+.funnel-block {
+  position: relative;
+  /* Removed top padding to rely on funnel-content padding for the first block. */
+  padding-bottom: 8px;
+}
+
+.funnel-block--reaper {
+  min-height: calc(var(--art-reaper-space) + 56px);
+  padding-right: var(--art-reaper-space);
+}
+
+.funnel-block--bicep {
+  min-height: calc(var(--art-bicep-space) + 28px);
+  padding-right: calc(var(--art-bicep-space) - var(--bicep-overhang));
+}
+
+.funnel-art {
+  position: absolute;
+  right: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+.funnel-art--reaper {
+  top: -4px;
+  transform-origin: top right;
+  transform: scale(1.04);
+  animation: funnel-slideIn 0.5s ease-out forwards;
+}
+
+.funnel-art--bicep {
+  bottom: -8px;
+  right: calc(0px - var(--bicep-overhang));
+  transform-origin: bottom right;
+  transform: scale(0.94);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.funnel-art--bicep.slide-in-delayed {
+  visibility: visible;
+  animation: funnel-slideInDelayed 0.3s ease-out forwards; /* Reduced from 0.5s to 0.3s */
+  will-change: transform, opacity;
+}
+
+@media (min-width: 430px) {
+  .funnel-art--reaper { transform: scale(1.12); }
+  .funnel-art--bicep { transform: scale(1.06); }
+}
+
+@media (max-width: 340px) {
+  :root {
+    --art-reaper-space: 92px;
+    --art-bicep-space: 84px;
+  }
+  .funnel-art--reaper { transform: scale(0.94); top: 0; }
+  .funnel-art--bicep { transform: scale(0.92); bottom: -2px; }
+}
+
+/* Animations */
+@keyframes funnel-slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes funnel-slideInDelayed {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Divider */
+.funnel-divider {
+  height: 3px; 
+  border: 0; 
+  margin: 10px 0 12px;
+  background-image: repeating-linear-gradient(
+    to right,
+    #000 0 var(--funnel-dash),
+    transparent var(--funnel-dash) calc(var(--funnel-dash) + var(--funnel-gap))
+  );
+}
+
+/* Section 2 Animation */
+.funnel-section2 {
+  overflow: hidden; 
+  max-height: 0; 
+  opacity: 0; 
+  transform: translateY(-8px);
+  transition: max-height 360ms cubic-bezier(0.2,0.7,0.2,1),
+              opacity 260ms ease,
+              transform 360ms cubic-bezier(0.2,0.7,0.2,1);
+  pointer-events: none;
+}
+.funnel-section2.show { 
+  max-height: 700px; 
+  opacity: 1; 
+  transform: none; 
+  pointer-events: auto; 
+}
+
+/* Submit Button Wrapper */
+.funnel-submit-wrap { 
+  display: flex; 
+  justify-content: center; 
+  margin-top: 24px;
+  width: 100%;
+}
+
+/* Additional offsets for non-centered content */
+/* If the parent has left-padding, we might need to compensate if we want full-width centering visually */
+.funnel-content:not(.funnel-content--centered) .funnel-submit-wrap {
+  margin-left: calc(0px - var(--funnel-left-pad)); 
+  width: calc(100% + var(--funnel-left-pad)); 
+}
+
+.funnel-next-btn {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  line-height: 0;
+  transform: scale(0.8);
+}
+.funnel-next-btn:disabled { opacity: .85; }
+
+.funnel-sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* Error Messages */
+.funnel-error {
+  color: red;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.funnel-error--left {
+  text-align: left;
+}
+
+/* Info Box (used in Age, etc.) */
+.funnel-info-box {
+  margin: 16px 16px 0; /* Reduced side margins for better fit on small screens */
+  text-align: center;
+  font-size: var(--funnel-body-fs);
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 1.4;
+  background-color: #525252;
+  border-radius: 12px;
+  border: 3px solid #000;
+  padding: 12px 16px;
+  font-family: "Comic Relief", sans-serif;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: funnel-fadeIn 0.3s ease-out forwards;
+  max-width: 400px;
+}
+
+.funnel-info-box p {
+  margin: 0;
+}
+
+.funnel-info-message {
+  font-weight: bold;
+  font-size: 18px; /* Standardize later if needed */
+}
+
+.funnel-info-description {
+  margin: 8px 0 0;
+  font-size: var(--funnel-small-fs);
+  font-weight: normal;
+}
+
+@keyframes funnel-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Choices Grid (Gender, etc.) */
+.funnel-select-menu {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.funnel-choices {
+  display: flex;
+  justify-content: center;
+  gap: clamp(16px, 3vw, 24px);
+  margin-top: 16px;
+  width: 100%;
+}
+
+.funnel-choice-item {
+  display: grid;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 1;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: funnel-slideInFromBottom 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+.funnel-choice-item:nth-child(1) { animation-delay: 0s; }
+.funnel-choice-item:nth-child(2) { animation-delay: 0.08s; }
+
+.funnel-choice-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  min-width: clamp(140px, 35vw, 280px);
+}
+
+.funnel-choice-btn img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes funnel-slideInFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Stacked Choices (Diet Goal, Location) */
+.funnel-choices--stack {
+  flex-direction: column;
+  align-items: center;
+}
+
+.funnel-choices--stack .funnel-choice-item {
+  width: 100%;
+  max-width: 400px;
+}
+
+.funnel-choices--stack .funnel-choice-btn {
+  width: 100%;
+  min-width: unset;
+}
+
+.funnel-choice-desc {
+  font-family: 'Comic Relief', sans-serif;
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+/* Result / BMI Page specific */
+.funnel-result-cross {
+  font-weight: 700;
+  font-size: var(--funnel-xl-value-fs);
+  margin-bottom: 0px;
+  transition: transform 0.6s cubic-bezier(0, 0.55, 0.45, 1), opacity 0.6s ease;
+}
+.funnel-result-cross.animated {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.funnel-result-quote {
+  font-weight: 400;
+  font-size: 20px; /* Standardize later if needed, but quote usually larger */
+  margin-bottom: 12px;
+}
+
+.funnel-result-text {
+  font-size: var(--funnel-body-fs);
+  line-height: 1.4;
+  max-width: 500px;
+  margin: 8px 0;
+  word-break: break-word;
+  padding: 0 2px;
+}
+
+.funnel-result-illustration {
+  margin: 12px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.funnel-result-cta {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: 0px;
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  height: 90px;
+  max-width: 100%;
+}
+.funnel-result-cta img {
+  width: 85% !important;
+  height: auto !important;
+}
+
+/* Large value display (Frequency, Duration, Fitness, Sleep) */
+.funnel-big-value {
+  font-size: var(--funnel-big-value-fs);
+  font-weight: 700;
+  margin-top: 8px;
+  line-height: 1;
+}
+
+.funnel-big-value--xl {
+  font-size: var(--funnel-xl-value-fs);
+}
+
+/* Slider container */
+.funnel-slider-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px 0;
+  width: 100%;
+}
+
+/* Priority grid */
+.funnel-priority-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+/* Subtitle (Equipment, Bodyfat info, etc.) */
+.funnel-subtitle {
+  font-size: var(--funnel-small-fs);
+  color: #444;
+  margin-top: 8px;
+}
+
+/* Reduced spacing when subtitle directly follows a title */
+.funnel-title + .funnel-subtitle {
+  margin-top: -8px;
+}
+.funnel-title--sm + .funnel-subtitle {
+  margin-top: -4px;
+}
+
+/* Specific Page Overrides */
+/* Height Slide: tight title-to-image gap */
+.funnel-content--height .funnel-title {
+  margin-bottom: 4px;
+}
+.funnel-content--height .funnel-input-group {
+  margin-top: 0;
+}
+
+/* Age Slide: uniform spacing (16px) */
+.funnel-content--age .funnel-title {
+  margin-bottom: 16px;
+}
+.funnel-content--age .funnel-form-centered {
+  margin-top: 0;
+}
+.funnel-content--age .funnel-info-box {
+  margin-top: 16px;
+}
+
+/* Bodyfat Slide: custom spacing */
+.funnel-content--bodyfat {
+  padding-top: 24px; /* Increased from 8px */
+}
+.funnel-content--bodyfat .funnel-title {
+  margin-bottom: 8px; /* Reduced from 16px */
+}
+.funnel-content--bodyfat .funnel-subtitle {
+  margin-top: 0px; /* Reduced from 8px */
+}

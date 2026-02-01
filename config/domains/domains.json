@@ -1,0 +1,56 @@
+{
+  "trenerstrzykawa.pl": {
+    "market": "pl",
+    "locale": "pl",
+    "currency": "PLN",
+    "checkoutProvider": "payu",
+    "gtmId": "GTM-TL3758GN",
+    "facebookPixelId": "2996935407134889",
+    "funnels": ["plan"]
+  },
+  "trenerzyla.pl": {
+    "market": "pl",
+    "locale": "pl",
+    "currency": "PLN",
+    "checkoutProvider": "payu",
+    "gtmId": "GTM-NHSMJ9BH",
+    "facebookPixelId": "1372064037449498",
+    "funnels": ["kalistenika"]
+  },
+  "antrenortanc.ro": {
+    "market": "ro",
+    "locale": "ro",
+    "currency": "RON",
+    "checkoutProvider": "stripe",
+    "gtmId": "GTM-MC5WTFCJ",
+    "facebookPixelId": "1644944776860623",
+    "funnels": ["plan"]
+  },
+  "coachplate.com": {
+    "market": "us",
+    "locale": "en",
+    "currency": "USD",
+    "checkoutProvider": "stripe",
+    "gtmId": "GTM-XXXXXXXX",
+    "facebookPixelId": "XXXXXXXXXXXXXXX",
+    "funnels": ["plan"]
+  },
+  "coachmuscu.fr": {
+    "market": "fr",
+    "locale": "fr",
+    "currency": "EUR",
+    "checkoutProvider": "stripe",
+    "gtmId": "GTM-XXXXXXXX",
+    "facebookPixelId": "XXXXXXXXXXXXXXX",
+    "funnels": ["plan"]
+  },
+  "coachhantel.de": {
+    "market": "de",
+    "locale": "de",
+    "currency": "EUR",
+    "checkoutProvider": "stripe",
+    "gtmId": "GTM-XXXXXXXX",
+    "facebookPixelId": "XXXXXXXXXXXXXXX",
+    "funnels": ["plan"]
+  }
+}

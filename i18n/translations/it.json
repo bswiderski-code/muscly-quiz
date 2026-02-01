@@ -1,0 +1,883 @@
+{
+  "CheckoutProducts": {
+    "workout_solo": {
+      "productName": "Piano di allenamento (solo)",
+      "buttonSvg": "/btns/{locale}/workout_bef.svg"
+    },
+    "workout_bundle": {
+      "productName": "Piano allenamento + dieta (pacchetto)",
+      "buttonSvg": "/btns/{locale}/bundle_bef.svg"
+    },
+    "calisthenics_solo": {
+      "productName": "Piano Calisthenics (solo)",
+      "buttonSvg": "/btns/{locale}/workout_bef.svg"
+    },
+    "calisthenics_bundle": {
+      "productName": "Piano Calisthenics + dieta (pacchetto)",
+      "buttonSvg": "/btns/{locale}/bundle_bef.svg"
+    },
+    "plan": {
+      "buttonSvg": "/vectors/exercises/incline_smith.svg",
+      "description": "Ritira<br />il tuo piano<br />di allenamento!"
+    },
+    "kalistenika": {
+      "buttonSvg": "/vectors/exercises/incline_smith.svg",
+      "description": "Ritira<br />il tuo piano<br />di calisthenics!"
+    }
+  },
+  "ReviewsWidget": {
+    "title": "Cosa ne pensano gli acquirenti 2 mesi dopo l'acquisto?",
+    "sort_best": "ordina - dai migliori",
+    "sort_worst": "ordina - dai peggiori",
+    "sort_newest": "ordina - dai più recenti",
+    "sort_oldest": "ordina - dai più vecchi",
+    "verified": "(acquisto verificato)",
+    "age_suffix": "anni",
+    "aria_label": "Recensioni clienti",
+    "average": "media voti",
+    "of5": "/5"
+  },
+  "Seo": {
+    "appTitle": "Trener Strzykawa",
+    "home": {
+      "title": "Piano di allenamento | Trener Strzykawa",
+      "description": "Crea un piano di allenamento su misura per te. Breve questionario, risultati in pochi minuti."
+    },
+    "plan": {
+      "title": "Piano di allenamento professionale - personalizzato per te",
+      "description": "Cerchi una scheda di allenamento efficace? Preparerò per te un programma basato sulle tue risposte."
+    },
+    "planForm": {
+      "title": "Modulo del piano | Trener Strzykawa",
+      "description": "Rispondi alle domande per adattare il piano ai tuoi obiettivi."
+    }
+  },
+  "Gender": {
+    "title": "Di che <b>sesso</b> sei?",
+    "ariaLabel": "Scelta del sesso",
+    "male": {
+      "label": "Seleziona uomo",
+      "alt": "Uomo"
+    },
+    "female": {
+      "label": "Seleziona donna",
+      "alt": "Donna"
+    }
+  },
+  "PlanPage": {
+    "homeLabel": "Homepage Trener Strzykawa",
+    "titleHtml": "Il tuo <span style='font-weight: 800'>piano di allenamento</span><br />personale",
+    "heroAlt": "",
+    "description": "Completa un breve sondaggio e creerò per te il piano di allenamento ideale!\n<em>Ti ci vorranno 2-3 minuti.</em>",
+    "button": "Crea piano di allenamento",
+    "privacy": "Privacy Policy",
+    "terms": "Termini e Condizioni",
+    "assets": {
+      "logo": "/{locale}/needle/logo-long.svg",
+      "logoHeight": "50",
+      "headerContainerHeight": "65",
+      "heroImage": "/vectors/t_eagle.svg",
+      "btnImage": "/btns/{locale}/create_plan_btn.svg",
+      "homeUrl": "https://trenerstrzykawa.pl/",
+      "privacyUrl": "https://trenerstrzykawa.pl/polityka-prywatnosci/",
+      "termsUrl": "https://trenerstrzykawa.pl/regulamin/"
+    }
+  },
+  "KalistenikaPage": {
+    "homeLabel": "Calisthenics Home Page",
+    "titleHtml": "Your own<br /><span style='font-weight: 800'>calisthenics plan</span>",
+    "heroAlt": "",
+    "description": "Build incredible strength and physique using only your body weight.\n<em>Complete the quiz in 2 minutes.</em>",
+    "button": "Start training",
+    "privacy": "Privacy Policy",
+    "terms": "Termini e Condizioni",
+    "assets": {
+      "logo": "/{locale}/needle/logo-long.svg",
+      "logoHeight": "50",
+      "headerContainerHeight": "65",
+      "heroImage": "/vectors/t_eagle.svg",
+      "btnImage": "/btns/{locale}/create_plan_btn.svg",
+      "homeUrl": "https://trenerzyla.pl/",
+      "privacyUrl": "https://trenerzyla.pl/privacy",
+      "termsUrl": "https://trenerzyla.pl/terms"
+    }
+  },
+  "DietGoal": {
+    "title": "Qual è il<br /><b>tuo obiettivo?</b>",
+    "titleAria": "Qual è il tuo obiettivo?",
+    "bulk": {
+      "label": "Voglio fare massa",
+      "alt": "Voglio aumentare la massa muscolare",
+      "description": "Ti concentri sulla costruzione di nuova massa muscolare, il peso sale."
+    },
+    "cut": {
+      "label": "Voglio definirmi",
+      "alt": "Voglio ridurre il grasso",
+      "description": "Perdi peso, elimini il grasso e metti in risalto i muscoli già esistenti."
+    }
+  },
+  "Bodyfat": {
+    "title": "Seleziona la tua percentuale di<br /><span style=\"font-weight: 700\">massa grassa</span>",
+    "alt": "Fisico per il livello di grasso selezionato",
+    "stepsDataMale": [
+      {
+        "value": "5-9",
+        "label": "5-9%",
+        "info": "È un livello di massa grassa estremamente basso. Il fisico è molto muscoloso e la definizione è eccellente."
+      },
+      {
+        "value": "10-14",
+        "label": "10-14%",
+        "info": "È un livello di massa grassa molto basso. Il fisico è asciutto, i muscoli sono chiaramente visibili."
+      },
+      {
+        "value": "15-19",
+        "label": "15-19%",
+        "info": "È un livello sano e sportivo. I muscoli sono visibili, ma il fisico non è emaciato."
+      },
+      {
+        "value": "20-24",
+        "label": "20-24%",
+        "info": "È un livello di grasso basso. Il fisico è snello, i muscoli si intravedono."
+      },
+      {
+        "value": "25-29",
+        "label": "25-29%",
+        "info": "È un livello moderato. Il fisico è più pieno, i muscoli sono meno visibili."
+      },
+      {
+        "value": "30-34",
+        "label": "30-34%",
+        "info": "È un livello di grasso più alto. Il fisico è arrotondato, i muscoli non sono visibili."
+      },
+      {
+        "value": "35-39",
+        "label": "35-39%",
+        "info": "È un livello di grasso alto. Il fisico è molto arrotondato."
+      },
+      {
+        "value": ">40",
+        "label": ">40%",
+        "info": "È un livello di grasso molto alto. Il fisico è obeso."
+      }
+    ],
+    "stepsDataFemale": [
+      {
+        "value": "10-14",
+        "label": "10-14%",
+        "info": "Massa grassa molto bassa, tipica delle atlete professioniste. Può essere associata a disturbi ormonali e amenorrea."
+      },
+      {
+        "value": "15-19",
+        "label": "15-19%",
+        "info": "Massa grassa bassa, spesso riscontrata in donne attive e sportive. Fisico molto snello con muscoli ben definiti."
+      },
+      {
+        "value": "20-24",
+        "label": "20-24%",
+        "info": "Livello sano e sportivo. Fisico snello ma femminile. Il più comune tra le donne attive."
+      },
+      {
+        "value": "25-29",
+        "label": "25-29%",
+        "info": "Livello medio. Fisico naturale, leggermente arrotondato, senza una chiara definizione muscolare."
+      },
+      {
+        "value": "30-39",
+        "label": "30-39%",
+        "info": "Livello elevato. Fisico chiaramente arrotondato, possibili problemi di salute legati all'eccesso di grasso."
+      },
+      {
+        "value": ">40",
+        "label": ">40%",
+        "info": "Livello molto elevato. Si raccomandano consulti medici e un cambiamento dello stile di vita."
+      }
+    ]
+  },
+  "Height": {
+    "title": "Quanto sei <span style=\"font-weight: bold\">alto?</span>",
+    "alt": "Quanto sei alto?",
+    "unit": "cm",
+    "placeholder": "___",
+    "errorMsg": "Inserisci la tua vera altezza.",
+    "ariaLabel": "Altezza"
+  },
+  "Weight": {
+    "title1": "Quanto pesi?",
+    "title2": "Qual è il tuo peso ideale?",
+    "alt1": "Peso attuale",
+    "alt2": "Peso target",
+    "unit": "kg",
+    "placeholder": "___",
+    "ariaLabel1": "Peso",
+    "ariaLabel2": "Peso target",
+    "error1": "Inserisci il tuo vero peso.",
+    "error2": "Inserisci il tuo peso target nell'intervallo 30-300kg.",
+    "errorBulk": "Se il tuo obiettivo è la massa, il peso target deve essere superiore a quello attuale.",
+    "errorCut": "Se il tuo obiettivo è la definizione, il peso target deve essere inferiore a quello attuale.",
+    "infoBulk": "Scegli un peso da {minInfo} in su.",
+    "infoCut": "Scegli un peso da {maxInfo} in giù.",
+    "buttonExpandAlt": "Espandi"
+  },
+  "Age": {
+    "title": "Quanti anni <span style=\"font-weight: bold\">hai?</span>",
+    "placeholder": "__",
+    "ariaLabel": "Età",
+    "unit": "anni",
+    "12-14": {
+      "message": "Hai un potenziale enorme!",
+      "description": "È il momento migliore per costruire <b>solide basi!</b> Il tuo corpo si sta ancora sviluppando, quindi la chiave sono le abitudini e imparare la tecnica, non i pesi enormi."
+    },
+    "15-20": {
+      "message": "Età ideale per prendere sul serio l'allenamento!",
+      "description": "L'organismo recupera velocemente, quindi puoi fare grandi progressi con esercizi e nutrizione ben pianificati."
+    },
+    "21-30": {
+      "message": "È il momento in cui puoi costruire una forma davvero grandiosa!",
+      "description": "Hai già consapevolezza del tuo corpo - ora basta un piano ben calibrato per portare i risultati a un nuovo livello."
+    }
+  },
+  "Activity": {
+    "title": "Qual è il tuo livello di<span style=\"font-weight: 700\"> attività fisica?</span>",
+    "errorMsg": "Per favore seleziona un'opzione prima di proseguire.",
+    "options": {
+      "low_activity": "Seduto quasi tutto il giorno, poco movimento. 🛋️",
+      "some_activity": "Mi muovo un po', ma senza allenamenti regolari. 🚶",
+      "light_training": "Mi alleno in modo leggero qualche volta a settimana. 🏃‍♂️",
+      "regular_training": "Mi alleno regolarmente, sono attivo la maggior parte dei giorni. 💪",
+      "hard_work": "Mi alleno molto duramente o faccio un lavoro fisico pesante. 🏋️‍♂️"
+    }
+  },
+  "BMI": {
+    "title": "Il tuo <span>BMI</span> è:",
+    "category": {
+      "unknown": "Categoria sconosciuta",
+      "starvation": "Grave magrezza",
+      "emaciation": "Magrezza",
+      "underweight": "Sottopeso",
+      "normal": "Normopeso",
+      "overweight": "Sovrappeso",
+      "obesityI": "Obesità di I grado",
+      "obesityII": "Obesità di II grado (grave)",
+      "obesityIII": "Obesità di III grado (morbosa)"
+    },
+    "description": {
+      "unknown": "Impossibile determinare la categoria BMI.",
+      "starvation": "L'organismo è fortemente indebolito a causa di una gravissima carenza di peso.",
+      "emaciation": "Il corpo è visibilmente indebolito, muscoli e tessuti non hanno sufficiente nutrimento.",
+      "underweight": "Il peso corporeo è troppo basso. L'organismo non è adeguatamente protetto dalle malattie e sopporta peggio lo sforzo fisico.",
+      "normal": "L'organismo non è né sovraccaricato da eccesso di grasso, né indebolito dalla sua carenza.",
+      "overweight": "Compare un eccesso di tessuto adiposo che inizia a gravare sull'organismo.",
+      "obesityI": "L'eccesso di grasso sovraccarica chiaramente l'organismo e aumenta il rischio di malattie.",
+      "obesityII": "L'organismo è fortemente sovraccaricato. Aumenta il rischio di gravi malattie croniche e la limitazione dell'efficienza fisica.",
+      "obesityIII": "Una quantità molto elevata di tessuto adiposo minaccia seriamente la salute e la vita."
+    },
+    "conclusion": "Momento ideale per costruire muscoli!",
+    "nextStepAlt": "Vai al passo successivo"
+  },
+  "Location": {
+    "title": "Dove hai intenzione<br /><b>di allenarti?</b>",
+    "ariaLabelGroup": "Luogo di allenamento",
+    "gym": {
+      "label": "Mi allenerò in palestra",
+      "label_f": "Mi allenerò in palestra",
+      "alt": "Mi allenerò in palestra",
+      "alt_f": "Mi allenerò in palestra",
+      "description": "Allenamento in palestra con accesso a una vasta gamma di attrezzature.",
+      "description_f": "Allenamento in palestra con accesso a una vasta gamma di attrezzature."
+    },
+    "home": {
+      "label": "Mi allenerò a casa",
+      "label_f": "Mi allenerò a casa",
+      "alt": "Mi allenerò a casa",
+      "alt_f": "Mi allenerò a casa",
+      "description": "Allenamento a casa adattato all'attrezzatura disponibile.",
+      "description_f": "Allenamento a casa adattato all'attrezzatura disponibile."
+    },
+    "bandsPanel": {
+      "question": "Hai accesso a elastici/bande di resistenza?",
+      "yes": {
+        "label": "Sì - ho gli elastici",
+        "alt": "Sì"
+      },
+      "no": {
+        "label": "No - non ho elastici",
+        "alt": "No"
+      }
+    }
+  },
+  "Experience": {
+    "title": "Che esperienza hai<br /><span style=\"font-weight: 700\">con l'allenamento?</span>",
+    "options": {
+      "none": {
+        "label": "Non ho ancora iniziato ad allenarmi. 🐣",
+        "description1": "All'inizio la chiave è imparare la <b>tecnica corretta</b> e <b>costruire la regolarità</b>.",
+        "description2": "<b>Ma niente paura!</b><br />Il tuo Piano ti guiderà passo dopo passo ;)",
+        "alt": "Esercizio"
+      },
+      "just_started": {
+        "label": "Ho appena iniziato. 🏁",
+        "description1": "<b>Hai appena iniziato — super!</b>",
+        "description2": "In questa fase il corpo reagisce velocemente all'allenamento, perciò ci concentreremo sull'<b>imparare la tecnica</b> e su abitudini semplici e ripetibili.",
+        "alt": "Esercizio"
+      },
+      "some_experience": {
+        "label": "Mi alleno già un po'. 💪",
+        "description1": "<b>Hai già un po' di esperienza — bomba!</b>",
+        "description2": "È il momento in cui il corpo <b>si abitua all'allenamento</b> — per questo è cruciale introdurre un piano con una <b>struttura concreta</b> e una <b>progressione</b>.",
+        "alt": "Esercizio"
+      },
+      "advanced": {
+        "label": "Mi alleno da tanto tempo. 🥇",
+        "description1": "<b>Ottimo lavoro!</b> Sai già cosa sono la <b>regolarità</b> e la <b>costanza</b>.",
+        "description2": "In questa fase ci concentreremo sull'ottimizzazione: <b>piano preciso</b>, <b>progressione</b> e <b>recupero</b>.",
+        "alt": "Esercizio"
+      }
+    },
+    "errorMsg": "Per favore seleziona la tua esperienza di allenamento prima di proseguire."
+  },
+  "Equipment": {
+    "title": "Che <b>attrezzatura</b> hai a disposizione a casa?",
+    "subtitle": "(puoi selezionare più<br />di un'opzione)",
+    "ariaLabelGroup": "Scelta dell'attrezzatura",
+    "options": {
+      "none": {
+        "label": "Non ho accesso a nessuna attrezzatura. 🚫",
+        "description": "Baseremo il piano su esercizi a corpo libero e semplici oggetti domestici."
+      },
+      "bands": {
+        "label": "Elastici / Bande di resistenza.",
+        "description": "Mini bands e power bands ci permetteranno di aggiungere resistenza e variare la difficoltà."
+      },
+      "dumbbells": {
+        "label": "Manubri.",
+        "description": "Useremo varianti a una o due mani per sfruttare appieno il potenziale dei manubri."
+      },
+      "barbell": {
+        "label": "Bilanciere e pesi.",
+        "description": "Programmeremo i movimenti classici (squat, stacchi, spinte) adattando il volume al tuo obiettivo."
+      },
+      "bench": {
+        "label": "Panca piana.",
+        "description": "La panca permetterà di aggiungere esercizi da sdraiati e inclinati per mirare meglio allo stimolo."
+      }
+    },
+    "errorMsg": "Seleziona almeno un'opzione di attrezzatura per continuare."
+  },
+  "Difficulty": {
+    "title": "Qual è la tua <span style=\"font-weight: 700\">PIÙ GRANDE</span><br />difficoltà legata alla palestra?",
+    "errorMsg": "Per favore seleziona un'opzione prima di proseguire.",
+    "options": {
+      "motivation": "Mi manca la motivazione per allenarmi/seguire la dieta. 😔",
+      "effects": "Mi scoraggio perché non vedo risultati. ⏳",
+      "insecurity": "Ho paura di andare in palestra, o mi sento insicuro lì. 😟",
+      "diet": "Non so bene come gestire la dieta. ❓",
+      "no_difficulty": "Non ho nessuna delle difficoltà sopra elencate. ✅"
+    }
+  },
+  "Priority": {
+    "title1": "A quali parti del corpo<br />tieni di più<br />",
+    "title2": "<span style=\"font-weight: 700\">DA SVILUPPARE?</span>",
+    "subtitle": "(Il piano copre tutti i gruppi muscolari, ma puoi scegliere delle <b>priorità</b>)",
+    "warning": "ATTENZIONE! Puoi selezionare max 2 parti",
+    "partNames": {
+      "shoulders": "Spalle",
+      "chest": "Petto",
+      "triceps": "Tricipiti",
+      "biceps": "Bicipiti",
+      "back": "Schiena",
+      "legs": "Gambe",
+      "abs": "Addominali",
+      "forearms": "Avambracci",
+      "glutes": "Glutei"
+    },
+    "ariaLabelSelected": "Priorità: {name} selezionato",
+    "ariaLabelUnselected": "Priorità: {name} non selezionato",
+    "imageAltSelected": "{name} — selezionato",
+    "imageAltUnselected": "{name} — non selezionato"
+  },
+  "Frequency": {
+    "title1": "Quante volte a<br />settimana vuoi<br />",
+    "title2": "<span style=\"font-weight: 700\">ALLENARTI?</span>",
+    "dayLabelSingular": "giorno",
+    "dayLabelPlural": "giorni",
+    "steps": [
+      {
+        "value": "1",
+        "label": "1 volta a settimana"
+      },
+      {
+        "value": "2",
+        "label": "2 volte a settimana"
+      },
+      {
+        "value": "3",
+        "label": "3 volte a settimana"
+      },
+      {
+        "value": "4",
+        "label": "4 volte a settimana"
+      },
+      {
+        "value": "5",
+        "label": "5 volte a settimana"
+      }
+    ],
+    "daySingular": "allenamento",
+    "dayPlural": "allenamenti",
+    "dayPluralFew": "allenamenti"
+  },
+  "Fitness": {
+    "title1": "Come valuteresti la tua<br /><span style=\"font-weight: 700\">forma fisica</span><br />su una scala da 1 a 10?"
+  },
+  "Sleep": {
+    "title": "Quanto tempo<br /><span style=\"font-weight: 700\">dedichi al sonno?</span>",
+    "steps": [
+      {
+        "value": "lt6",
+        "label": "< 6 ore"
+      },
+      {
+        "value": "7-8",
+        "label": "7-8 ore"
+      },
+      {
+        "value": "9-12",
+        "label": "9-12 ore"
+      },
+      {
+        "value": "gt12",
+        "label": "> 12 ore"
+      }
+    ],
+    "messages": [
+      "È difficile recuperare bene con così poco sonno... Ricordati di lavorarci su :)",
+      "Buona quantità di sonno — il recupero supporta l'allenamento e la salute.",
+      "Ottima quantità di sonno — recupero ottimale.",
+      "Troppo sonno può indicare irregolarità — osserva come ti senti."
+    ]
+  },
+  "ResultPage": {
+    "title1": "Il tuo piano di allenamento",
+    "title2": "è pronto!",
+    "intro1": "Creato sulla base delle<br /><b>Tue 14 risposte</b> da un<br/><b>algoritmo di allenamento avanzato</b><br />progettato appositamente per<br /><b>la costruzione del fisico</b> e <b>la riduzione del grasso</b>.",
+    "intro2": "Riceverai un <b>piano individuale</b><br/>basato sui dati, creato in<br/><b>meno di 3 minuti</b> grazie a<br />una tecnologia che analizza oltre<br/><b>4.000 combinazioni di allenamento</b>.",
+    "subtitle1": "Riepilogo Rapido",
+    "subtitle2": "dei tuoi risultati",
+    "trustImageAlt": "Perché fidarsi?",
+    "analyzeTitle": "L'algoritmo analizza tra l'altro:",
+    "analyzeList": {
+      "aktywnosc": "Il tuo <b>livello di attività</b>",
+      "cel": "Il tuo <b>obiettivo</b> (definizione / massa)",
+      "wiek": "La tua <b>età</b>",
+      "doswiadczenie": "<b>Esperienza di allenamento</b>",
+      "time": "Il <b>tempo</b> a tua disposizione",
+      "strengths": "<b>Punti forti e deboli del fisico</b>"
+    },
+    "conclusion1": "Successivamente seleziona un <b>piano di allenamento concreto</b>, che si adatta alla <b>Tua situazione</b> meglio del <b>99% dei piani pronti</b> su internet.",
+    "conclusion2": "È la combinazione della <b>conoscenza di un personal trainer</b> e della <b>precisione di un sistema</b> che non commette errori e non tira a indovinare.",
+    "purchaseTitle": "Cosa riceverai esattamente dopo l'acquisto?",
+    "purchaseImageAlt": "Descrizione del prodotto",
+    "sampleBtn": "Vedi un esempio di piano di allenamento!",
+    "sampleTitle": "Ed ecco alcune pagine del piano di Rafal!",
+    "loadingTitle": "Sto creando il tuo piano di allenamento...",
+    "loadingSubtitle": "Un attimo di pazienza, sto caricando tutti i risultati.",
+    "loadingData": "Nessun dato per questa sessione.",
+    "loadingErrorTitle": "Abbiamo un problema nel caricare i tuoi dati.",
+    "loadingErrorHtml": "Aggiorna la pagina e riprova. Se il problema persiste, scrivici a: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
+    "loadingErrorBtn": "/btns/{locale}/once_again.svg",
+    "reportNote1": "piani inviati",
+    "reportNote2": "nelle ultime 24 ore",
+    "trustImageSrc": "/{locale}/needle/why-trust.svg",
+    "purchaseImageSrc": "/{locale}/needle/product-description.svg",
+    "sampleImageSrc": "/{locale}/needle/sample_guy.svg",
+    "joinAthletes": "Unisciti a <b><u>{count}</u> atleti</b> che <b>stanno già usando</b> il loro <b>piano di allenamento personalizzato!</b>",
+    "contactBox": {
+      "title": "Hai qualche dubbio?",
+      "emailIntro": "Scrivimi:",
+      "emailAddress": "support@trenerstrzykawa.pl",
+      "responseTime": "⏰ Di solito rispondo in meno di un'ora."
+    },
+    "ctaButton": {
+      "imageSrc": "/btns/{locale}/get_your.svg",
+      "alt": "Ritira il piano"
+    },
+    "errorTitle": "Nessun dato per questo funnel.",
+    "errorDescription": "Contattaci all'indirizzo: support@trenerstrzykawa.pl",
+    "faq": {
+      "title": "Domande<br/>Frequenti:",
+      "kalistenikaTitle": "Domande<br/>Frequenti<br/><span class=\"kalistenika-text\">CALISTENICA:</span>"
+    }
+  },
+  "BMIBOX": {
+    "yourScore": "Il tuo risultato è:",
+    "underweight": "sottopeso",
+    "overweight": "sovrappeso",
+    "categories": {
+      "lt16": "Grave magrezza",
+      "lt17": "Magrezza",
+      "lt18_5": "Sottopeso",
+      "lt25": "Normopeso",
+      "lt30": "Sovrappeso",
+      "lt35": "Obesità di I grado",
+      "lt40": "Obesità di II grado (grave)",
+      "gt40": "Obesità di III grado (morbosa)"
+    },
+    "descriptions": {
+      "lt16": "L'organismo è fortemente indebolito a causa di una gravissima carenza di peso.",
+      "lt17": "Il corpo è visibilmente indebolito, muscoli e tessuti non hanno sufficiente nutrimento.",
+      "lt18_5": "Il peso corporeo è troppo basso. L'organismo non è adeguatamente protetto dalle malattie e sopporta peggio lo sforzo fisico.",
+      "lt25": "L'organismo non è né sovraccaricato da eccesso di grasso, né indebolito dalla sua carenza.",
+      "lt30": "Compare un eccesso di tessuto adiposo che inizia a gravare sull'organismo.",
+      "lt35": "L'eccesso di grasso sovraccarica chiaramente l'organismo e aumenta il rischio di malattie.",
+      "lt40": "L'organismo è fortemente sovraccaricato. Aumenta il rischio di gravi malattie croniche e la limitazione dell'efficienza fisica.",
+      "gt40": "Una quantità molto elevata di tessuto adiposo minaccia seriamente la salute e la vita."
+    }
+  },
+  "Summary": {
+    "title": "Il Tuo Piano:",
+    "conjunction_and": " e ",
+    "priorities": {
+      "shoulders": "le spalle",
+      "chest": "il petto",
+      "triceps": "i tricipiti",
+      "biceps": "i bicipiti",
+      "back": "la schiena",
+      "legs": "le gambe",
+      "forearms": "gli avambracci",
+      "abs": "gli addominali",
+      "glutes": "i glutei",
+      "default": "tutte le parti del corpo"
+    },
+    "goals": {
+      "bulk": "l'aumento della massa muscolare",
+      "cut": "la riduzione del tessuto adiposo"
+    },
+    "frequency": {
+      "intro": "Ti garantisce <strong>{n}</strong> {days} a settimana.",
+      "daySingular": "allenamento",
+      "dayPlural": "allenamenti",
+      "dayPluralFew": "allenamenti",
+      "dayPluralMany": "allenamenti"
+    },
+    "location": {
+      "housewithout": "Garantirà un allenamento efficiente in <strong>condizioni domestiche</strong>.",
+      "housewith": "Garantirà un allenamento efficiente in <strong>condizioni domestiche con elastici.</strong>",
+      "gym": "",
+      "default": ""
+    },
+    "focus": "Pone particolare enfasi su <strong>{priorities}</strong>.",
+    "goalFocus": "È orientato verso <strong>{goal}</strong>.",
+    "fitnessFocus": "È adattato alla tua attuale <strong>{fitness}</strong>.",
+    "fitnessFocusText": "forma fisica",
+    "equipment": {
+      "intro": "Allenati a casa utilizzando <strong>{list}</strong>.",
+      "introNone": "Allenati a casa <strong>senza alcuna attrezzatura aggiuntiva</strong>.",
+      "map": {
+        "bands": "elastici",
+        "dumbbells": "manubri",
+        "barbell": "bilanciere con pesi",
+        "bench": "panca piana",
+        "none": "nessuna attrezzatura"
+      }
+    },
+    "priority": {
+      "none": "Pone particolare enfasi su <strong>uno sviluppo uniforme della massa muscolare</strong> in tutto il corpo.",
+      "one": "Pone particolare enfasi su <strong>{p1}</strong>.",
+      "two": "Pone particolare enfasi su <strong>{p1}</strong> e <strong>{p2}</strong>.",
+      "many": "Pone particolare enfasi su <strong>{list}</strong>."
+    }
+  },
+  "YouVsFuture": {
+    "now": "adesso",
+    "future": "tra qualche mese",
+    "weight": "peso:",
+    "muscle": "muscoli",
+    "fitness": "forma fisica",
+    "bodyfat": "massa grassa",
+    "activityMap": {
+      "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "Mi alleno molto duramente o faccio un lavoro fisico pesante",
+      "Ćwiczę regularnie, jestem w ruchu większość dni": "Mi alleno regolarmente, sono attivo la maggior parte dei giorni",
+      "Trenuję lekko kilka razy w tygodniu": "Mi alleno in modo leggero qualche volta a settimana",
+      "Trochę się ruszam, ale bez regularnych treningów": "Mi muovo un po', ma senza allenamenti regolari",
+      "default": "Seduto quasi tutto il giorno, poco movimento"
+    },
+    "bmiImageMap": {
+      "5-9": "/bodyfat_variants/needle/bodyfat_1.svg",
+      "10-14": "/bodyfat_variants/needle/bodyfat_2.svg",
+      "15-19": "/bodyfat_variants/needle/bodyfat_3.svg",
+      "20-24": "/bodyfat_variants/needle/bodyfat_4.svg",
+      "25-29": "/bodyfat_variants/needle/bodyfat_5.svg",
+      "30-34": "/bodyfat_variants/needle/bodyfat_6.svg",
+      "35-39": "/bodyfat_variants/needle/bodyfat_7.svg",
+      ">40": "/bodyfat_variants/needle/bodyfat_8.svg"
+    },
+    "finalImageSrc": "/bodyfat_variants/needle/gym_rat.svg"
+  },
+  "ReportForm": {
+    "title": "Ritira<br />il tuo piano<br />di allenamento!",
+    "imageAlt": "Illustrazione Smith machine",
+    "nameLabel": "Come ti chiami?",
+    "namePlaceholder": "Nome",
+    "emailLabel": "Email (dove riceverai il piano):",
+    "emailPlaceholder": "indirizzo@email.it",
+    "agreementText": "Acconsento al trattamento dei miei dati personali in conformità con la <a href=\"https://trenerstrzykawa.pl/polityka-prywatnosci/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
+    "agreementCheckboxHtml": "Accetto i <a href=\"https://trenerstrzykawa.pl/regulamin/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">termini</a> e la <a href=\"https://trenerstrzykawa.pl/polityka-prywatnosci/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
+    "healthDataAgreementHtml": "Acconsento all'uso dei miei dati sanitari e misure (è necessario per creare il piano).",
+    "healthDataAgreementRequiredError": "Accetta l'accordo per l'uso dei dati sanitari per continuare.",
+    "agreementRequiredError": "Per favore, accetta i termini per procedere al pagamento.",
+    "errorMsg1": "Per favore, inserisci un nome e un'email validi.",
+    "errorMsg2": "Controlla bene il tuo indirizzo email. Se è corretto, clicca di nuovo per continuare.",
+    "errorMsgDomainTypo": "Errore nell'email? Intendevi {suggestedEmail}? Se sì, correggila. Altrimenti, clicca nuovamente sul pulsante.",
+    "orText": "oppure",
+    "detailsBtn": "Scopri di più sull'analisi BMI/BMR!",
+    "detailsBox1Title": "Ti mostrerò:",
+    "detailsBox1Body": {
+      "training": "Quante calorie devi mangiare per {goal} efficacemente,",
+      "smart": "Come allenarsi in modo intelligente, non solo duro,",
+      "workDiet": "Come conciliare scuola/lavoro con la dieta,",
+      "progress": "Come superare le difficoltà che bloccano i tuoi progressi."
+    },
+    "detailsBox2Title": "Riceverai:",
+    "detailsBox2Body": {
+      "macros": "Le proporzioni esatte dei macronutrienti adatte al tuo corpo,",
+      "dietSchema": "Un esempio di schema per la tua dieta, {goalSchema}",
+      "summary": "Un riassunto onesto della tua situazione attuale e consigli su come migliorarla."
+    },
+    "timerPromo1": "Promozione per",
+    "timerPromo2": "nuovi<br />utenti",
+    "timerPromo3": "termina tra:",
+    "timerImageAlt": "Trener Strzykawa in posa",
+    "successMsg": "Il tuo ordine è stato elaborato con successo.",
+    "paymentNote": "Riceverai il piano entro <b>2 minuti</b> dal pagamento."
+  },
+  "TDEE": {
+    "title1": "Dispendio energetico giornaliero totale",
+    "deficit": "deficit calorico",
+    "surplus": "surplus calorico",
+    "unit": "kcal/giorno",
+    "mainDescPrefix": "Questo valore ",
+    "mainDescBold1Cut": "tiene conto della perdita di peso",
+    "mainDescBold1Bulk": "tiene conto dell'aumento di peso",
+    "mainDescSuffix": ". È la quantità base di calorie che devi consumare per ",
+    "mainDescActionCut": "dimagrire",
+    "mainDescActionBulk": "aumentare di peso",
+    "noData": "-"
+  },
+  "Carousel": {
+    "plan": {
+      "slides": [
+        {
+          "img": "/example_training/{locale}/plan/sample-1.png",
+          "alt": "Rafal 1",
+          "caption": "Introduzione al piano di allenamento – pagina 1"
+        },
+        {
+          "img": "/example_training/{locale}/plan/sample-2.png",
+          "alt": "Rafal 2",
+          "caption": "Guida su come usare il piano – pagina 2"
+        },
+        {
+          "img": "/example_training/{locale}/plan/sample-3.png",
+          "alt": "Rafal 3",
+          "caption": "Inizio del piano di allenamento – pagina 5"
+        },
+        {
+          "img": "/example_training/{locale}/plan/sample-5.png",
+          "alt": "Rafal 5",
+          "caption": "Piano di progressione per i prossimi 3 mesi – pagina 7"
+        }
+      ]
+    },
+    "kalistenika": {
+      "slides": [
+        {
+          "img": "/example_training/{locale}/kalistenika/sample-1.png",
+          "alt": "Maciej Calisthenics 1",
+          "caption": "Introduzione al piano di calisthenics – pagina 1"
+        },
+        {
+          "img": "/example_training/{locale}/kalistenika/sample-2.png",
+          "alt": "Maciej Calisthenics 2",
+          "caption": "Guida agli esercizi di calisthenics – pagina 2"
+        },
+        {
+          "img": "/example_training/{locale}/kalistenika/sample-5.png",
+          "alt": "Maciej Calisthenics 3",
+          "caption": "Piano di allenamento calisthenics – pagina 5"
+        },
+        {
+          "img": "/example_training/{locale}/kalistenika/sample-7.png",
+          "alt": "Maciej Calisthenics 4",
+          "caption": "Progressi in calisthenics – pagina 7"
+        }
+      ]
+    },
+    "indicatorNote": "Attenzione! Questo non è l'intero piano, solo 4 pagine di esempio.",
+    "pageLabel": "Pagina {current}/{total}"
+  },
+  "OrderPage": {
+    "logoHref": "https://trenerstrzykawa.pl/",
+    "logoSrc": "/{locale}/needle/logo-long.svg",
+    "logoHeight": "50",
+    "backButtonImage": "/btns/{locale}/backtohomepage.svg",
+    "heroSuccessSrc": "/vectors/t_eagle.svg",
+    "verifyingText": "Verifica pagamento...",
+    "processingText": "Stiamo elaborando il tuo pagamento...",
+    "pendingHtml": "Il tuo pagamento è in fase di verifica.<br /><b>Per favore, non chiudere questa pagina.</b><br /><br />Se il pagamento è andato a buon fine, il piano arriverà sulla tua email in pochi minuti.",
+    "loading": "Caricamento...",
+    "successTitle": "Il tuo ordine è stato<br />pagato con successo!",
+    "successImageAlt": "Ordine pagato",
+    "successText1": "Arriverà sulla tua email in un attimo.",
+    "successText2": "(può richiedere fino a 5 minuti)",
+    "successText3": "Controlla anche lo spam e la scheda \"offerte/promozioni\"",
+    "successText4": "Se hai qualsiasi problema, fammelo sapere!",
+    "successEmail": "support@trenerstrzykawa.pl",
+    "errorTitle": "Abbiamo un problema<br />nell'elaborare<br />il tuo pagamento.",
+    "errorImageAlt": "Report non pagato",
+    "errorText1": "Il tuo pagamento <b>non è stato finalizzato</b>, torna alla home page e riprova.",
+    "buttonText": "Torna alla home page",
+    "logoAlt": "logo trener strzykawa",
+    "contactText": "Se pensi che sia un errore, contattami:"
+  },
+  "JoinAthletes": "Unisciti a <b><u>{count}</u> atleti</b> che <b>stanno già usando</b> il loro <b>piano di allenamento personalizzato!</b>",
+  "NextButton": {
+    "imageSrc": "/btns/{locale}/next.svg",
+    "alt": "Avanti"
+  },
+  "AnswersSummary": {
+    "buttonImage": "/btns/{locale}/answers_summary.svg",
+    "buttonAlt": "Riepilogo delle risposte",
+    "backLinkText": "Torna a compilare il modulo",
+    "conjunction_and": "e",
+    "equipmentNotSelected": "Nessuna attrezzatura selezionata",
+    "locationTypeMap": {
+      "gym": "Palestra",
+      "house": "Casa"
+    },
+    "equipmentMap": {
+      "none": "Nessuna",
+      "bands": "Elastici",
+      "dumbbells": "Manubri",
+      "barbell": "Bilanciere",
+      "bench": "Panca"
+    },
+    "labels": {
+      "gender": "Sesso",
+      "age": "Età",
+      "height": "Altezza",
+      "weight": "Peso",
+      "weight_goal": "Peso target",
+      "goal": "Obiettivo",
+      "diet_goal": "Obiettivo dieta",
+      "bodyfat": "Massa grassa",
+      "activity": "Attività",
+      "experience": "Esperienza",
+      "difficulty": "Difficoltà",
+      "location": "Luogo allenamento",
+      "equipment": "Attrezzatura",
+      "priority": "Priorità",
+      "frequency": "Frequenza",
+      "fitness": "Forma fisica",
+      "sleep": "Sonno"
+    },
+    "gender": {
+      "male": "Uomo",
+      "M": "Uomo",
+      "female": "Donna",
+      "F": "Donna",
+      "other": "Altro"
+    },
+    "dietGoal": {
+      "bulk": "Aumento massa muscolare",
+      "cut": "Riduzione massa grassa"
+    },
+    "activityMap": {
+      "low_activity": "Seduto quasi tutto il giorno, poco movimento.",
+      "some_activity": "Mi muovo un po', ma senza allenamenti regolari.",
+      "light_training": "Mi alleno in modo leggero qualche volta a settimana.",
+      "regular_training": "Mi alleno regolarmente, sono attivo la maggior parte dei giorni.",
+      "hard_work": "Mi alleno molto duramente o faccio un lavoro fisico pesante."
+    },
+    "experienceMap": {
+      "none": "Non ho ancora iniziato ad allenarmi.",
+      "just_started": "Ho appena iniziato.",
+      "some_experience": "Mi alleno già un po'.",
+      "advanced": "Mi alleno da tanto tempo."
+    },
+    "difficultyMap": {
+      "motivation": "Mi manca la motivazione per allenarmi/seguire la dieta.",
+      "effects": "Mi scoraggio perché non vedo risultati.",
+      "insecurity": "Ho paura di andare in palestra, o mi sento insicuro lì.",
+      "diet": "Non so bene come gestire la dieta.",
+      "no_difficulty": "Non ho nessuna delle difficoltà sopra elencate."
+    },
+    "locationMap": {
+      "gym": "Palestra",
+      "housewith": "Casa (con elastici)",
+      "housewithout": "Casa (senza elastici)"
+    },
+    "priorityMap": {
+      "shoulders": "Spalle",
+      "chest": "Petto",
+      "triceps": "Tricipiti",
+      "biceps": "Bicipiti",
+      "back": "Schiena",
+      "legs": "Gambe",
+      "abs": "Addominali",
+      "forearms": "Avambracci",
+      "glutes": "Glutei"
+    },
+    "format": {
+      "bodyfat": "{value}%",
+      "height": "{value}cm",
+      "weight": "{value}kg",
+      "age": "{value} anni",
+      "frequency": "{value}x/sett.",
+      "fitness": "{value}/10",
+      "sleep": "{value} ore"
+    }
+  },
+  "MissingSteps": {
+    "title": "Alcune risposte non sono state salvate",
+    "description": "Purtroppo il software non ha salvato le risposte alle domande: {steps}.<br /><br />Clicca sul pulsante qui sotto per rispondere nuovamente a queste domande.",
+    "buttonImage": "/btns/{locale}/once_again.svg",
+    "buttonAlt": "Riprova",
+    "stepLabels": {
+      "gender": "Sesso",
+      "diet_goal": "Obiettivo dieta",
+      "bodyfat": "Massa grassa",
+      "height": "Altezza",
+      "weight": "Peso",
+      "age": "Età",
+      "activity": "Attività",
+      "location": "Luogo",
+      "experience": "Esperienza",
+      "difficulty": "Difficoltà",
+      "priority": "Priorità",
+      "frequency": "Frequenza",
+      "fitness": "Forma fisica",
+      "sleep": "Sonno"
+    },
+    "persistentError": {
+      "title": "Il problema persiste",
+      "description": "Purtroppo il problema nel salvare le risposte persiste. Potrebbe essere un errore tecnico.<br /><br />Contattaci all'indirizzo: {email}",
+      "contactEmail": "support@trenerstrzykawa.pl"
+    }
+  },
+  "CalistenicExperienceStep": {
+    "title": "Qual è la tua <span class=\"kalistenika-text\">esperienza</span> con il calisthenics?",
+    "options": {
+      "none": "Nuovo",
+      "just_started": "Principiante",
+      "some_experience": "Intermedio",
+      "advanced": "Avanzato."
+    },
+    "descriptions": {
+      "none": "Inizio da zero. Non mi sono mai allenato regolarmente e voglio costruire forza di base e imparare la tecnica.",
+      "just_started": "Ho già confidenza con lo sport. So fare piegamenti e squat, ma non faccio trazioni o ne faccio solo 1-3.",
+      "some_experience": "Mi alleno regolarmente. Eseguo trazioni (più di 5) e dip senza problemi. Voglio passare al livello successivo (es. Muscle Up, L-sit).",
+      "advanced": "Le basi sono solo riscaldamento per me. So fare il Muscle Up e lavoro su skill statiche (Front Lever, Planche) o dinamica avanzata."
+    }
+  }
+}

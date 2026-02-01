@@ -1,0 +1,71 @@
+// This is your Prisma schema file
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+datasource db {
+  provider = "postgresql"
+  url = env("DATABASE_URL")
+}
+
+// New model for the provided fields.
+// Model name is PascalCase; map to the existing DB table name "training_plans".
+model TrainingPlan {
+  id            Int      @id @default(autoincrement())
+  sid           String   @unique                              // session id
+  amount        Float
+  description   String?
+  currency      String
+  status        String
+  name          String?
+  email         String?
+  age           Int?
+  gender        String?
+  activity      String?
+  bmi           Float?
+  tdee          Int?
+  bodyfat       String?
+  diet_goal     String?
+  frequency     Int?
+  experience    String?
+  location      String?
+  priority      String?
+  equipment     String?
+  sleep         String?
+  fitness_level Int?
+  difficulty    String?
+  weight        Float?
+  height        Float?
+  duration      Int?
+  pushups       String?
+  pullups       String?
+  paymentId     String?
+  createdAt     DateTime @default(now())
+  paymenturl    String?
+
+  @@map("training_plans")
+}
+
+model Orders {
+  id              Int      @id @default(autoincrement())
+  item            String   // opis sprzedanego produktu, np. "raport"
+  name            String
+  email           String
+  checkoutId      Int      // id w tabeli checkoutu (tu: Raport_bmi.id), bez relacji FK
+  checkoutDB      String   // nazwa tabeli, np. "Raport_bmi"
+  sessionId       String
+  amount          Int
+  currency        String   // teraz "PLN"
+  country         String   // teraz "PL"
+  payment_provider String  // teraz "Przelewy24"
+  createdAt       DateTime @default(now())
+  paymentId       String   // dawny token
+  n8n_exec        String?  // może być null
+  deliveredAt     DateTime?
+}
