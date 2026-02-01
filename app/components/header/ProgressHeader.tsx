@@ -75,7 +75,7 @@ export default function ProgressHeader({ currentIdx, onBack, className, funnel: 
       className={className}
       style={{
         display: 'grid',
-        gridTemplateColumns: 'auto 1fr auto',
+        gridTemplateColumns: 'auto 1fr',
         alignItems: 'center',
         gap: 12,
         paddingLeft: 16,
@@ -136,11 +136,6 @@ export default function ProgressHeader({ currentIdx, onBack, className, funnel: 
         >
           {pct >= 7 && `${Math.round(pct)}%`}
         </div>
-      </div>
-
-      {/* Counter */}
-      <div style={{ fontWeight: 600, minWidth: 46, textAlign: 'right' }}>
-        {visibleCurrent + 1}/{visibleTotal}
       </div>
     </div>
   );

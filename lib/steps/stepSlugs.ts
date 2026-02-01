@@ -4,7 +4,7 @@ import type { StepId } from './stepIds'
 export type LocalizedStringMap = Partial<Record<Locale, string>>
 
 export const STEP_SLUGS: Record<StepId, LocalizedStringMap> = {
-  gender: { pl: 'plec', en: 'gender', fr: 'gender', de: 'gender', ro: 'gen' },
+  gender: { pl: 'start', en: 'start', fr: 'start', de: 'start', ro: 'start' },
   diet_goal: { pl: 'cel_diety', en: 'diet_goal', fr: 'diet_goal', de: 'diet_goal', ro: 'obiectiv_dieta' },
   bodyfat: { pl: 'bodyfat', en: 'bodyfat', fr: 'bodyfat', de: 'bodyfat', ro: 'grasime_corporala' },
   height: { pl: 'wzrost', en: 'height', fr: 'height', de: 'height', ro: 'inaltime' },

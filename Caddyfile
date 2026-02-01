@@ -1,0 +1,10 @@
+
+{
+    # Enable local TLS for .local domains
+    local_certs
+}
+
+# apps/page - port 3000
+quiz.musclepals.local {
+    reverse_proxy localhost:3000
+}
