@@ -1,9 +1,3 @@
-import domainRouting from '@/config/domains/domainRouting.json';
-
-type DomainRoutingConfig = {
-  subdomainPrefixes?: string[];
-};
-
 export function normalizeHost(host: string): string {
   // Header can be: "example.com", "example.com:3000", "[::1]:3000", or a comma-separated list.
   const trimmed = host.split(',')[0]?.trim().toLowerCase() ?? '';
@@ -16,8 +10,7 @@ export function normalizeHost(host: string): string {
 }
 
 export function getConfiguredSubdomainPrefixes(): string[] {
-  const raw = (domainRouting as DomainRoutingConfig)?.subdomainPrefixes ?? [];
-  return raw.map((p) => p.toLowerCase().trim()).filter(Boolean);
+  return [];
 }
 
 /**

@@ -7,7 +7,12 @@ import { getCountryForHost, getMarketForHost } from '@/i18n/config';
 import { normalizeGenderMF } from '@/lib/gender/normalizeGenderMF';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+import { getStripeCredentials } from '@/config/credentials';
+
+const isSandbox = process.env.STRIPE_SANDBOX === 'true';
+const creds = getStripeCredentials(isSandbox);
+
+const stripe = new Stripe(creds.secretKey, {
   apiVersion: '2026-01-28.clover',
 });
 

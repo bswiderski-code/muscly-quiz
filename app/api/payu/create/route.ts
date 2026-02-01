@@ -7,12 +7,17 @@ import { getCountryForHost, getMarketForHost } from '@/i18n/config';
 import { normalizeGenderMF } from '@/lib/gender/normalizeGenderMF';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 
+import { getPayUCredentials } from '@/config/credentials';
+
+const isSandbox = process.env.PAYU_SANDBOX === 'true';
+const creds = getPayUCredentials(isSandbox);
+
 const payU = new PayU(
-	Number(process.env.PAYU_CLIENT_ID!),
-	process.env.PAYU_CLIENT_SECRET!,
-	Number(process.env.PAYU_MERCHANT_POS_ID!),
-	process.env.PAYU_SECOND_KEY!,
-	{ sandbox: process.env.PAYU_SANDBOX === 'true' }
+	Number(creds.clientId),
+	creds.clientSecret,
+	Number(creds.merchantPosId),
+	creds.secondKey,
+	{ sandbox: isSandbox }
 );
 
 // Extract best-effort client IP; PayU rejects 0.0.0.0

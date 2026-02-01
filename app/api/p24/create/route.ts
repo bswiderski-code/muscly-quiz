@@ -14,12 +14,17 @@ import { getMarketForHost } from '@/i18n/config';
 import { normalizeGenderMF } from '@/lib/gender/normalizeGenderMF';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 
+import { getP24Credentials } from '@/config/credentials';
+
+const isSandbox = process.env.P24_SANDBOX === 'true';
+const creds = getP24Credentials(isSandbox);
+
 const p24 = new P24(
-  Number(process.env.P24_MERCHANT_ID!),
-  Number(process.env.P24_POS_ID!),
-  process.env.P24_API_KEY!,
-  process.env.P24_CRC!,
-  { sandbox: process.env.P24_SANDBOX === 'true' }
+  Number(creds.merchantId),
+  Number(creds.posId),
+  creds.apiKey,
+  creds.crc,
+  { sandbox: isSandbox }
 );
 
 export async function POST(req: NextRequest) {
@@ -55,21 +60,21 @@ export async function POST(req: NextRequest) {
 
     // Calculate BMI (weight in kg, height in cm)
     let bmi = 0;
-      // Helper to safely parse numbers coming as string (with comma) or number
-      const parseNumber = (val: unknown) => {
-        if (val == null) return 0;
-        if (typeof val === 'number') return val;
-        if (typeof val === 'string') {
-          const normalized = val.replace(',', '.');
-          const n = parseFloat(normalized);
-          return Number.isFinite(n) ? n : 0;
-        }
-        return 0;
-      };
+    // Helper to safely parse numbers coming as string (with comma) or number
+    const parseNumber = (val: unknown) => {
+      if (val == null) return 0;
+      if (typeof val === 'number') return val;
+      if (typeof val === 'string') {
+        const normalized = val.replace(',', '.');
+        const n = parseFloat(normalized);
+        return Number.isFinite(n) ? n : 0;
+      }
+      return 0;
+    };
 
-      const parsedWeight = parseNumber(weight);
-      const parsedHeightCm = parseNumber(height);
-      const parsedAge = parseNumber(age);
+    const parsedWeight = parseNumber(weight);
+    const parsedHeightCm = parseNumber(height);
+    const parsedAge = parseNumber(age);
     let tdee = 0;
     if (parsedWeight > 0 && parsedHeightCm > 0) {
       const heightM = parsedHeightCm / 100;
@@ -166,7 +171,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-  return NextResponse.json({ url: link, paymentId, sessionId });
+    return NextResponse.json({ url: link, paymentId, sessionId });
   } catch (err: unknown) {
     let message = 'Błąd P24';
     if (err instanceof Error) {
