@@ -106,8 +106,8 @@ const sharedPricing: Partial<Record<LocalePricingKey, LocalePricing>> = {
  */
 export const funnelDefinitions = {
   workout: {
-    slug: { pl: 'workout', en: 'workout', fr: 'workout', de: 'workout', ro: 'workout' },
-    resultSlug: { pl: 'workout', en: 'workout', fr: 'workout', de: 'workout', ro: 'workout' },
+    slug: 'workout',
+    resultSlug: 'workout',
     translationNamespace: 'WorkoutPage',
     allowedDomains: undefined, // Available on all domains
     item: 'plan_treningowy',

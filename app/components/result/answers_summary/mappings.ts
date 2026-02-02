@@ -23,6 +23,9 @@ export const ANSWER_EMOJIS: Record<string, string | ((value: any) => string)> = 
   pullups: '🧗',
   calistenic_experience: '🤸',
   duration: '⏱️',
+  bmi: '📊',
+  name: '👤',
+  email: '✉️',
 
   // Value-dependent emojis
   gender: (value: any) => {

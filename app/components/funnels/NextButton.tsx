@@ -40,12 +40,12 @@ const NextButton: React.FC<NextButtonProps> = ({ currentIdx, fieldKey = "", fiel
       setField(sid, fieldKey as any, fieldValue, funnel); // Save any type of value
     }
 
-    // Navigate to the next step or wynik page
+    // Navigate to the next step or result page
     const nextStep = order[currentIdx + 1];
     if (nextStep) {
       router.push({ pathname: '/[funnel]/[step]', params: { funnel: getFunnelSlug(funnel, locale), step: getStepSlug(funnel, nextStep, locale) } } as any);
     } else if (sid) {
-      router.push({ pathname: '/wynik/[funnel]/[sessionId]', params: { funnel: getResultSlug(funnel, locale), sessionId: sid } });
+      router.push({ pathname: '/result/[funnel]/[sessionId]', params: { funnel: getResultSlug(funnel, locale), sessionId: sid } });
     } else {
       console.error("No session ID found.");
     }

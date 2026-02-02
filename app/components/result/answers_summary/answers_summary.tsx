@@ -50,14 +50,23 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
   // Get configuration for this funnel
   const summaryConfig = getAnswersSummaryConfig(resolvedFunnel ?? 'workout');
 
+  const stepOrder = useMemo(() => {
+    if (!resolvedFunnel) return ALL_STEPS;
+    try {
+      return getStepOrder(resolvedFunnel);
+    } catch (e) {
+      console.warn('Failed to get step order for funnel:', resolvedFunnel, e);
+      return ALL_STEPS;
+    }
+  }, [resolvedFunnel]);
+
   const backLinkHref = useMemo(() => {
     if (!resolvedFunnel) return null;
-    const order = getStepOrder(resolvedFunnel);
-    const lastStep = order[order.length - 1];
+    const lastStep = stepOrder[stepOrder.length - 1];
     const funnelPath = getFunnelSlug(resolvedFunnel, locale);
     const stepPath = getStepSlug(resolvedFunnel, lastStep, locale);
     return `/${funnelPath}/${stepPath}`;
-  }, [locale, resolvedFunnel]);
+  }, [locale, resolvedFunnel, stepOrder]);
 
   const getDisplayValue = (key: string, value: any) => {
     if (key === 'gender') return genderMap[value] || value;
@@ -169,16 +178,16 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
               width: '100%',
             }}
           >
-            {ALL_STEPS
+            {stepOrder
               .filter(stepId => {
-                const value = answers[stepId];
+                const value = (answers as any)[stepId];
                 const isVisible = !hiddenKeys.has(stepId) && !(value === undefined || value === '');
                 const conditionalCheck = summaryConfig.conditionalRules?.equipmentOnlyForHome
                   ? (stepId !== 'equipment' || isHomePlan)
                   : true;
                 return isVisible && conditionalCheck;
               })
-              .map(stepId => [stepId, answers[stepId]] as const)
+              .map(stepId => [stepId, (answers as any)[stepId]] as const)
               .map(([key, value]) => {
               const emoji = getAnswerEmoji(key, value);
               const label =

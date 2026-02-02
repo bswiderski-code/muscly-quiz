@@ -1,10 +1,10 @@
-import {defineRouting} from 'next-intl/routing';
-import {createNavigation} from 'next-intl/navigation';
-import {defaultLocale, locales} from './config';
+import { defineRouting } from 'next-intl/routing';
+import { createNavigation } from 'next-intl/navigation';
+import { defaultLocale, locales } from './config';
 
 export const routing = defineRouting({
-    locales,
-    defaultLocale,
+  locales,
+  defaultLocale,
 
   // WAŻNE: To ustawienie zawsze pokazuje prefix językowy w URL (np. /pl/, /en/).
   localePrefix: 'always',
@@ -14,28 +14,16 @@ export const routing = defineRouting({
   // Funnel slugs are defined in lib/funnels/funnelDefinitions.ts
   pathnames: {
     '/': '/',
-    '/privacy': { pl: '/privacy', en: '/privacy', fr: '/privacy', de: '/privacy', ro: '/privacy' },
-    '/terms': { pl: '/terms', en: '/terms', fr: '/terms', de: '/terms', ro: '/terms' },
-    '/[funnel]': { pl: '/[funnel]', en: '/[funnel]', fr: '/[funnel]', de: '/[funnel]', ro: '/[funnel]' },
-    '/[funnel]/[step]': { pl: '/[funnel]/[step]', en: '/[funnel]/[step]', fr: '/[funnel]/[step]', de: '/[funnel]/[step]', ro: '/[funnel]/[step]' },
-    '/wynik/[funnel]/[sessionId]': {
-      pl: '/wynik/[funnel]/[sessionId]',
-      en: '/result/[funnel]/[sessionId]',
-      fr: '/result/[funnel]/[sessionId]',
-      de: '/result/[funnel]/[sessionId]',
-      ro: '/rezultat/[funnel]/[sessionId]'
-    },
-    '/wynik/zamowienie/[sessionId]': {
-      pl: '/wynik/zamowienie/[sessionId]',
-      en: '/result/order/[sessionId]',
-      fr: '/result/order/[sessionId]',
-      de: '/result/order/[sessionId]',
-      ro: '/rezultat/comanda/[sessionId]'
-    },
+    '/privacy': '/privacy',
+    '/terms': '/terms',
+    '/[funnel]': '/[funnel]',
+    '/[funnel]/[step]': '/[funnel]/[step]',
+    '/result/[funnel]/[sessionId]': '/result/[funnel]/[sessionId]',
+    '/result/order/[sessionId]': '/result/order/[sessionId]',
   }
 });
 
 // Eksportujemy nawigację, której będziesz używać w komponentach (Link, redirect, itp.)
 // Zastąp standardowe importy z 'next/link' i 'next/navigation' tymi poniżej.
-export const {Link, redirect, usePathname, useRouter, getPathname} =
+export const { Link, redirect, usePathname, useRouter, getPathname } =
   createNavigation(routing);

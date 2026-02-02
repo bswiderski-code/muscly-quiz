@@ -20,7 +20,7 @@ export type AnswersSummaryConfig = {
 
 const CONFIG: { workout: AnswersSummaryConfig } & Partial<Record<FunnelKey, AnswersSummaryConfig>> = {
   workout: {
-    hiddenKeys: new Set(['bmi', 'usedMetric', 'weight_raw', 'weight_goal_raw', 'height_raw']),
+    hiddenKeys: new Set(['bmi', 'usedMetric', 'used_metric', 'weight_raw', 'weight_goal_raw', 'height_raw']),
     conditionalRules: {
       equipmentOnlyForHome: true,
     },

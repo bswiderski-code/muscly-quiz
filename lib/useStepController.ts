@@ -126,7 +126,7 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
   const prevHref = hrefForStep(effectivePrevStepId)
   const nextHref = hrefForStep(effectiveNextStepId)
   const resultHref = sid
-    ? ({ pathname: '/wynik/[funnel]/[sessionId]', params: { funnel: resultSlug, sessionId: sid } } as const)
+    ? ({ pathname: '/result/[funnel]/[sessionId]', params: { funnel: resultSlug, sessionId: sid } } as const)
     : null
 
   // prefetch neighbors (+result on last step)

@@ -1,833 +1,833 @@
 {
-    "CheckoutProducts": {
-        "workout_solo": {
-            "productName": "Training Plan (solo)"
-        },
-        "workout_bundle": {
-            "productName": "Training Plan + Diet (bundle)"
-        },
-        "workout": {
-            "description": "Get<br />your training<br />plan!"
-        }
+  "CheckoutProducts": {
+    "workout_solo": {
+      "productName": "Training Plan (solo)"
     },
-    "ReviewsWidget": {
-        "title": "What do buyers think of their plans 2 months later?",
-        "sort_best": "sort - by best",
-        "sort_worst": "sort - by worst",
-        "sort_newest": "sort - by newest",
-        "sort_oldest": "sort - by oldest",
-        "verified": "(verified purchase)",
-        "age_suffix": "years old",
-        "aria_label": "Customer reviews",
-        "average": "average rating",
-        "of5": "/5"
+    "workout_bundle": {
+      "productName": "Training Plan + Diet (bundle)"
     },
-    "Seo": {
-        "appTitle": "Musclepals",
-        "home": {
-            "title": "Training Plan | Musclepals",
-            "description": "Create a workout plan tailored to you. Short quiz, results in minutes."
-        },
-        "workout": {
-            "title": "Professional training plan - personalized for you",
-            "description": "Looking for an effective workout routine? I'll prepare a set based on your answers."
-        },
-        "workoutForm": {
-            "title": "Plan Form | Musclepals",
-            "description": "Answer the questions to tailor the plan to your goals."
-        }
-    },
-    "Gender": {
-        "title": "What is your <b>gender?</b>",
-        "ariaLabel": "Gender selection",
-        "male": {
-            "label": "Select Male",
-            "alt": "Male"
-        },
-        "female": {
-            "label": "Select Female",
-            "alt": "Female"
-        }
-    },
-    "WorkoutPage": {
-        "homeLabel": "Musclepals Home Page",
-        "titleHtml": "Your custom<br /><span style='font-weight: 800'>training plan</span>",
-        "heroAlt": "",
-        "description": "Complete a short quiz, and I'll create the perfect training plan for you!\n<em>It'll take you 2-3 minutes.</em>",
-        "button": "Create training plan",
-        "privacy": "Privacy Policy",
-        "terms": "Terms of Service"
-    },
-    "DietGoal": {
-        "title": "What is<br /><b>your goal?</b>",
-        "titleAria": "What is your goal?",
-        "bulk": {
-            "label": "I want to bulk",
-            "alt": "I want to gain muscle mass",
-            "description": "You focus on building new muscle mass, weight goes up."
-        },
-        "cut": {
-            "label": "I want to cut",
-            "alt": "I want to reduce fat",
-            "description": "You lose weight, shed fat, and reveal existing muscle."
-        }
-    },
-    "Bodyfat": {
-        "title": "Select your <br /><b>body fat</b> level",
-        "alt": "Physique for selected body fat level",
-        "stepsDataMale": [
-            {
-                "value": "5-9",
-                "label": "5-9%",
-                "info": "Extremely low body fat. The physique is very muscular, and definition is excellent."
-            },
-            {
-                "value": "10-14",
-                "label": "10-14%",
-                "info": "Very low body fat. The physique is lean, muscles are clearly visible."
-            },
-            {
-                "value": "15-19",
-                "label": "15-19%",
-                "info": "Healthy, athletic body fat level. Muscles are visible, but the body isn't emaciated."
-            },
-            {
-                "value": "20-24",
-                "label": "20-24%",
-                "info": "Low body fat level. Physique is slim, muscles are visible."
-            },
-            {
-                "value": "25-29",
-                "label": "25-29%",
-                "info": "Moderate body fat level. Physique is fuller, muscles are less visible."
-            },
-            {
-                "value": "30-34",
-                "label": "30-34%",
-                "info": "Higher body fat level. Physique is rounded, muscles are not visible."
-            },
-            {
-                "value": "35-39",
-                "label": "35-39%",
-                "info": "High body fat level. The physique is very rounded."
-            },
-            {
-                "value": ">40",
-                "label": ">40%",
-                "info": "Very high body fat level. The physique is obese."
-            }
-        ],
-        "stepsDataFemale": [
-            {
-                "value": "10-14",
-                "label": "10-14%",
-                "info": "Very low body fat content, typical for physique athletes. May be associated with hormonal imbalances and amenorrhea."
-            },
-            {
-                "value": "15-19",
-                "label": "15-19%",
-                "info": "Low body fat content, often seen in active women and athletes. Very slim physique with clearly defined muscles."
-            },
-            {
-                "value": "20-24",
-                "label": "20-24%",
-                "info": "Healthy, athletic body fat level. Slim but feminine physique. Most common among active women."
-            },
-            {
-                "value": "25-29",
-                "label": "25-29%",
-                "info": "Average body fat level. Natural physique, slightly rounded, without clear muscle definition."
-            },
-            {
-                "value": "30-39",
-                "label": "30-39%",
-                "info": "Elevated body fat level. Clearly rounded physique, possible health issues related to excess fat."
-            },
-            {
-                "value": ">40",
-                "label": ">40%",
-                "info": "Very high body fat level. Health consultation and lifestyle changes are recommended."
-            }
-        ]
-    },
-    "Height": {
-        "title": "How tall <b>are you?</b>",
-        "alt": "How tall are you?",
-        "unit": "cm",
-        "placeholder": "___",
-        "errorMsg": "Enter your real height.",
-        "ariaLabel": "Height"
-    },
-    "Weight": {
-        "title1": "How much do you <b>weigh?</b>",
-        "title2": "What is your <b>target weight?</b>",
-        "alt1": "Current weight",
-        "alt2": "Target weight",
-        "unit": "kg",
-        "placeholder": "___",
-        "ariaLabel1": "Weight",
-        "ariaLabel2": "Target weight",
-        "error1": "Enter your real weight.",
-        "error2": "Enter your target weight in the range of 30-300kg.",
-        "errorBulk": "If your goal is to bulk, target weight must be higher than current weight.",
-        "errorCut": "If your goal is to cut, target weight must be lower than current weight.",
-        "infoBulk": "Choose a weight from {minInfo} up.",
-        "infoCut": "Choose a weight from {maxInfo} down.",
-        "buttonExpandAlt": "Expand"
-    },
-    "Age": {
-        "title": "How old <b>are you?</b>",
-        "placeholder": "__",
-        "ariaLabel": "Age",
-        "unit": "years",
-        "12-14": {
-            "message": "You have huge potential!",
-            "description": "This is the best time to build <b>solid foundations!</b> Your body is still developing, so the key is habits and learning technique, not heavy weights."
-        },
-        "15-20": {
-            "message": "Ideal age to get serious about training!",
-            "description": "Your body recovers quickly, so you can make great progress with well-planned exercises and nutrition."
-        },
-        "21-30": {
-            "message": "This is the time to build truly great form!",
-            "description": "You already have body awareness - now you just need a well-tailored plan to take your results to the next level."
-        }
-    },
-    "Activity": {
-        "title": "What is your <b>physical activity level?</b>",
-        "errorMsg": "Please select one of the options before proceeding.",
-        "options": {
-            "low_activity": "I sit most of the day, little movement. 🛋️",
-            "some_activity": "I move a bit, but no regular workouts. 🚶",
-            "light_training": "I train lightly a few times a week. 🏃‍♂️",
-            "regular_training": "I exercise regularly, I'm active most days. 💪",
-            "hard_work": "I train very hard or have a demanding physical job. 🏋️‍♂️"
-        }
-    },
-    "BMI": {
-        "title": "Your <span>BMI</span> is:",
-        "category": {
-            "unknown": "Unknown category",
-            "starvation": "Starvation",
-            "emaciation": "Emaciation",
-            "underweight": "Underweight",
-            "normal": "Normal weight",
-            "overweight": "Overweight",
-            "obesityI": "Obesity Class I",
-            "obesityII": "Obesity Class II (Severe)",
-            "obesityIII": "Obesity Class III (Morbid)"
-        },
-        "description": {
-            "unknown": "BMI category cannot be determined.",
-            "starvation": "The body is severely weakened due to extreme weight deficiency.",
-            "emaciation": "The body is clearly weakened; muscles and tissues lack sufficient nutrition.",
-            "underweight": "Body weight is too low. The organism isn't properly protected against diseases and handles physical exertion poorly.",
-            "normal": "The body is neither burdened by excess body fat nor weakened by its deficiency.",
-            "overweight": "Excess body fat appears, beginning to burden the body.",
-            "obesityI": "Excess body fat clearly burdens the body and increases the risk of diseases.",
-            "obesityII": "The body is heavily burdened. The risk of serious chronic diseases increases, and physical fitness is limited.",
-            "obesityIII": "Very high amount of body fat seriously threatens health and life."
-        },
-        "conclusion": "Perfect moment to build muscle!",
-        "nextStepAlt": "Go to the next step"
-    },
-    "Location": {
-        "title": "Where do you plan to<br /><b>train?</b>",
-        "ariaLabelGroup": "Training location",
-        "gym": {
-            "label": "I will train at the gym",
-            "label_f": "I will train at the gym",
-            "alt": "I will train at the gym",
-            "alt_f": "I will train at the gym",
-            "description": "Training at the gym with access to a wide range of equipment.",
-            "description_f": "Training at the gym with access to a wide range of equipment."
-        },
-        "home": {
-            "label": "I will train at home",
-            "label_f": "I will train at home",
-            "alt": "I will train at home",
-            "alt_f": "I will train at home",
-            "description": "Home training tailored to available equipment.",
-            "description_f": "Home training tailored to available equipment."
-        },
-        "bandsPanel": {
-            "question": "Do you have access to resistance bands?",
-            "yes": {
-                "label": "Yes - I have bands",
-                "alt": "Yes"
-            },
-            "no": {
-                "label": "No - I don't have bands",
-                "alt": "No"
-            }
-        }
-    },
-    "Experience": {
-        "title": "What is your <b>training experience?</b>",
-        "options": {
-            "none": {
-                "label": "Haven't started training yet. 🐣",
-                "description1": "In the beginning, the key is learning <b>proper technique</b> and <b>building consistency</b>.",
-                "description2": "<b>But don't worry!</b><br />Your Plan will guide you through this step by step ;)",
-                "alt": "Exercise"
-            },
-            "just_started": {
-                "label": "Just started. 🏁",
-                "description1": "<b>Just starting — awesome!</b>",
-                "description2": "At this stage, your body responds quickly to training, so we'll focus on <b>learning technique</b> and simple, repeatable habits.",
-                "alt": "Exercise"
-            },
-            "some_experience": {
-                "label": "I train a bit already. 💪",
-                "description1": "<b>You have some experience — bomb!</b>",
-                "description2": "This is the moment your body gets <b>used to training</b> — so it's key to introduce a plan with <b>structure</b> and <b>progression</b>.",
-                "alt": "Exercise"
-            },
-            "advanced": {
-                "label": "I've been training for a long time. 🥇",
-                "description1": "<b>Great job!</b> You already know what <b>regularity</b> and <b>consistency</b> look like.",
-                "description2": "At this stage, we'll focus on optimization: a <b>precise plan</b>, <b>progression</b>, and <b>recovery</b>.",
-                "alt": "Exercise"
-            }
-        },
-        "errorMsg": "Please select your training experience before proceeding."
-    },
-    "Equipment": {
-        "title": "What <b>equipment</b> do you have at home?",
-        "subtitle": "(you can select more<br />than one option)",
-        "ariaLabelGroup": "Equipment selection",
-        "options": {
-            "none": {
-                "label": "No access to any training equipment. 🚫",
-                "description": "We will base the plan on bodyweight exercises and simple household items."
-            },
-            "bands": {
-                "label": "Resistance bands.",
-                "description": "Mini bands and power bands will allow us to add resistance and scale exercise difficulty."
-            },
-            "dumbbells": {
-                "label": "Dumbbells.",
-                "description": "We'll use single and double-hand variations to fully utilize the dumbbells' potential."
-            },
-            "barbell": {
-                "label": "Barbell and weights.",
-                "description": "We'll set up classic lifts (squats, deadlifts, presses) adjusting volume to your goal."
-            },
-            "bench": {
-                "label": "Bench press bench.",
-                "description": "A bench allows adding lying and incline exercises to better target the stimulus."
-            }
-        },
-        "errorMsg": "Select at least one equipment option to proceed."
-    },
-    "Difficulty": {
-        "title": "What is your <span style=\"font-weight: 700\">BIGGEST</span><br />struggle regarding the gym?",
-        "errorMsg": "Please select one of the options before proceeding.",
-        "options": {
-            "motivation": "I lack motivation to train/stick to a diet. 😔",
-            "effects": "I get discouraged by not seeing results. ⏳",
-            "insecurity": "I'm afraid to go to the gym, or I feel insecure there. 😟",
-            "diet": "I don't really know how to stick to a diet. ❓",
-            "no_difficulty": "I don't have any of the above difficulties. ✅"
-        }
-    },
-    "Priority": {
-        "title1": "Which body parts do you<br />care about<br />",
-        "title2": "<span style=\"font-weight: 700\">THE MOST?</span>",
-        "subtitle": "(The plan covers all muscle groups, but you can choose ones to <b>prioritize</b>)",
-        "warning": "ATTENTION! You can select max 2 parts",
-        "partNames": {
-            "shoulders": "Shoulders",
-            "chest": "Chest",
-            "triceps": "Triceps",
-            "biceps": "Biceps",
-            "back": "Back",
-            "legs": "Legs",
-            "abs": "Abs",
-            "forearms": "Forearms",
-            "glutes": "Glutes"
-        },
-        "ariaLabelSelected": "Priority: {name} selected",
-        "ariaLabelUnselected": "Priority: {name} unselected",
-        "imageAltSelected": "{name} — selected",
-        "imageAltUnselected": "{name} — not selected"
-    },
-    "Frequency": {
-        "title1": "How many times a week<br />do you want to<br />",
-        "title2": "<span style=\"font-weight: 700\">TRAIN?</span>",
-        "dayLabelSingular": "day",
-        "dayLabelPlural": "days",
-        "steps": [
-            {
-                "value": "1",
-                "label": "1 time a week"
-            },
-            {
-                "value": "2",
-                "label": "2 times a week"
-            },
-            {
-                "value": "3",
-                "label": "3 times a week"
-            },
-            {
-                "value": "4",
-                "label": "4 times a week"
-            },
-            {
-                "value": "5",
-                "label": "5 times a week"
-            }
-        ],
-        "daySingular": "workout",
-        "dayPlural": "workouts",
-        "dayPluralFew": "workouts"
-    },
-    "Fitness": {
-        "title1": "How would you rate your<br /><span style=\"font-weight: 700\">physical fitness</span><br />on a scale of 1 to 10?"
-    },
-    "Sleep": {
-        "title": "How much time<br /><span style=\"font-weight: 700\">do you spend sleeping?</span>",
-        "steps": [
-            {
-                "value": "lt6",
-                "label": "< 6 hours"
-            },
-            {
-                "value": "7-8",
-                "label": "7-8 hours"
-            },
-            {
-                "value": "9-12",
-                "label": "9-12 hours"
-            },
-            {
-                "value": "gt12",
-                "label": "> 12 hours"
-            }
-        ],
-        "messages": [
-            "It's hard to recover well with this amount of sleep... Remember to work on it :)",
-            "Good amount of sleep — recovery supports training and health.",
-            "Very good amount of sleep — optimal recovery.",
-            "Too much sleep might mean irregularity — monitor how you feel."
-        ]
-    },
-    "ResultPage": {
-        "title": "<span style=\"font-size: 36px; font-weight: 700;\">Your Training Plan</span><br /><span style=\"font-size: 28px; font-weight: 400;\">is ready!</span>",
-        "intro1": "Created based on <b>Your 14 answers</b> by an <b>advanced training algorithm</b><br />designed specifically for <b>physique building</b> and <b>fat reduction</b>.",
-        "intro2": "You will receive an <b>individual plan</b><br/>based on data, created in <b>less than 3 minutes</b> thanks to<br />technology that analyzes over<br/><b>4,000 training combinations</b>.",
-        "subtitle": "<b>Quick Summary</b><br /><span style=\"font-size: 28px; font-weight: 400;\">of Your results</span>",
-        "trustImageAlt": "Why trust us?",
-        "analyzeTitle": "The algorithm analyzes, among others:",
-        "analyzeList": {
-            "aktywnosc": "Your <b>activity level</b>",
-            "cel": "Your <b>goal</b> (cut / bulk)",
-            "wiek": "Your <b>age</b>",
-            "doswiadczenie": "<b>Training experience</b>",
-            "time": "<b>Time</b> you have available",
-            "strengths": "<b>Strengths and weaknesses of your physique</b>"
-        },
-        "conclusion1": "And then selects a <b>specific training plan</b> that fits <b>Your situation</b> better than <b>99% of cookie-cutter plans</b> on the internet.",
-        "conclusion2": "It's a combination of <b>personal trainer knowledge</b> and <b>system precision</b> that makes no mistakes and doesn't guess.",
-        "purchaseTitle": "What exactly will you get after purchase?",
-        "purchaseImageAlt": "Product description",
-        "sampleBtn": "See a sample training plan!",
-        "sampleTitle": "And here are a few pages from Rafael's plan!",
-        "loadingTitle": "Creating your training plan...",
-        "loadingSubtitle": "One moment, loading all results.",
-        "loadingData": "No data for this session.",
-        "loadingErrorTitle": "We're having trouble loading your data.",
-        "loadingErrorHtml": "Refresh the page and try again. If the problem persists, write to us: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
-        "loadingErrorBtn": "once_again",
-        "reportNote1": "plans sent",
-        "reportNote2": "in the last 24 hours",
-        "joinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized training plan!</b>",
-        "contactBox": {
-            "title": "Have any doubts?",
-            "emailIntro": "Hit me up:",
-            "emailAddress": "support@trenerstrzykawa.pl",
-            "responseTime": "⏰ I usually reply in less than an hour."
-        },
-        "ctaButton": {
-            "alt": "Get plan"
-        },
-        "errorTitle": "No data for this funnel.",
-        "errorDescription": "Contact us at: support@trenerstrzykawa.pl",
-        "faq": {
-            "title": "Frequently<br/>Asked Questions:"
-        }
-    },
-    "BMIBOX": {
-        "yourScore": "Your result is:",
-        "underweight": "underweight",
-        "overweight": "overweight",
-        "categories": {
-            "lt16": "Starvation",
-            "lt17": "Emaciation",
-            "lt18_5": "Underweight",
-            "lt25": "Normal weight",
-            "lt30": "Overweight",
-            "lt35": "Obesity Class I",
-            "lt40": "Obesity Class II (Severe)",
-            "gt40": "Obesity Class III (Morbid)"
-        },
-        "descriptions": {
-            "lt16": "The body is severely weakened due to extreme weight deficiency.",
-            "lt17": "The body is clearly weakened; muscles and tissues lack sufficient nutrition.",
-            "lt18_5": "Body weight is too low. The organism isn't properly protected against diseases and handles physical exertion poorly.",
-            "lt25": "The body is neither burdened by excess body fat nor weakened by its deficiency.",
-            "lt30": "Excess body fat appears, beginning to burden the body.",
-            "lt35": "Excess body fat clearly burdens the body and increases the risk of diseases.",
-            "lt40": "The body is heavily burdened. The risk of serious chronic diseases increases, and physical fitness is limited.",
-            "gt40": "Very high amount of body fat seriously threatens health and life."
-        }
-    },
-    "Summary": {
-        "title": "Your Plan:",
-        "conjunction_and": " and ",
-        "priorities": {
-            "shoulders": "shoulders",
-            "chest": "chest",
-            "triceps": "triceps",
-            "biceps": "biceps",
-            "back": "back",
-            "legs": "legs",
-            "forearms": "forearms",
-            "abs": "abs",
-            "glutes": "glutes",
-            "default": "all body parts"
-        },
-        "goals": {
-            "bulk": "building muscle mass",
-            "cut": "reducing body fat"
-        },
-        "frequency": {
-            "intro": "Provides you with <strong>{n}</strong> {days} a week.",
-            "daySingular": "workout",
-            "dayPlural": "workouts",
-            "dayPluralFew": "workouts",
-            "dayPluralMany": "workouts"
-        },
-        "location": {
-            "housewithout": "Ensures efficient training in <strong>home conditions</strong>.",
-            "housewith": "Ensures efficient training in <strong>home conditions with resistance bands.</strong>",
-            "gym": "",
-            "default": ""
-        },
-        "focus": "Places special emphasis on <strong>{priorities}</strong>.",
-        "goalFocus": "Is geared towards <strong>{goal}</strong>.",
-        "fitnessFocus": "Is adapted to your current <strong>{fitness}</strong>.",
-        "fitnessFocusText": "physical fitness",
-        "equipment": {
-            "intro": "Train at home using <strong>{list}</strong>.",
-            "introNone": "Train at home <strong>without any additional equipment</strong>.",
-            "map": {
-                "bands": "resistance bands",
-                "dumbbells": "dumbbells",
-                "barbell": "barbell with weights",
-                "bench": "workout bench",
-                "none": "no equipment"
-            }
-        },
-        "priority": {
-            "none": "Places special emphasis on <strong>balanced muscle mass development</strong> throughout the whole body.",
-            "one": "Places special emphasis on <strong>{p1}</strong>.",
-            "two": "Places special emphasis on <strong>{p1}</strong> and <strong>{p2}</strong>.",
-            "many": "Places special emphasis on <strong>{list}</strong>."
-        }
-    },
-    "YouVsFuture": {
-        "now": "now",
-        "future": "in a few months",
-        "weight": "weight:",
-        "muscle": "muscle",
-        "fitness": "physical fitness",
-        "bodyfat": "body fat",
-        "activityMap": {
-            "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "I train very hard or have a demanding physical job",
-            "Ćwiczę regularnie, jestem w ruchu większość dni": "I exercise regularly, I'm active most days",
-            "Trenuję lekko kilka razy w tygodniu": "I train lightly a few times a week",
-            "Trochę się ruszam, ale bez regularnych treningów": "I move a bit, but no regular workouts"
-        }
-    },
-    "ReportForm": {
-        "title": "Get<br />your training<br />plan!",
-        "imageAlt": "Smith machine illustration",
-        "nameLabel": "What's your name?",
-        "namePlaceholder": "Name",
-        "emailLabel": "Email (where you'll receive the plan):",
-        "emailPlaceholder": "address@email.com",
-        "agreementText": "I agree to the processing of my personal data in accordance with the <a href=\"https://coachplate.com/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
-        "agreementCheckboxHtml": "I accept the <a href=\"https://coachplate.com/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">terms</a> and <a href=\"https://coachplate.com/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
-        "healthDataAgreementHtml": "I agree to the use of my health data and measurements (this is necessary to create the plan).",
-        "healthDataAgreementRequiredError": "Please accept the agreement to use health data to proceed.",
-        "agreementRequiredError": "Please accept the terms to proceed to payment.",
-        "errorMsg1": "Please provide a valid name and email address.",
-        "errorMsg2": "Double-check your email address. If it's correct, click the button again to continue.",
-        "errorMsgDomainTypo": "Typo in email? Did you mean {suggestedEmail}? If so, please correct it. If it's correct, click the button again to continue.",
-        "orText": "or",
-        "detailsBtn": "Learn more about BMI/BMR analysis!",
-        "detailsBox1Title": "I'll show you:",
-        "detailsBox1Body": {
-            "training": "How many calories you need to eat to effectively {goal},",
-            "smart": "How to train smarter, not harder,",
-            "workDiet": "How to balance school/work with diet,",
-            "progress": "How to overcome difficulties stopping your progress."
-        },
-        "detailsBox2Title": "You will receive:",
-        "detailsBox2Body": {
-            "macros": "Exact macro ratios tailored to your body,",
-            "dietSchema": "A sample diet framework for you, {goalSchema}",
-            "summary": "An honest summary of your current situation and tips on how to improve it."
-        },
-        "timerPromo1": "Promotion for",
-        "timerPromo2": "new<br />users",
-        "timerPromo3": "ends in:",
-        "timerImageAlt": "Flexing Musclepals",
-        "successMsg": "Your order has been processed successfully.",
-        "paymentNote": "You will receive the plan within <b>2 minutes</b> of payment."
-    },
-    "TDEE": {
-        "title1": "Total Daily Energy Expenditure",
-        "deficit": "caloric deficit",
-        "surplus": "caloric surplus",
-        "unit": "kcal/day",
-        "mainDescPrefix": "This value ",
-        "mainDescBold1Cut": "accounts for losing weight",
-        "mainDescBold1Bulk": "accounts for gaining weight",
-        "mainDescSuffix": ". This is the base amount of calories you must consume to ",
-        "mainDescActionCut": "lose weight",
-        "mainDescActionBulk": "gain weight",
-        "noData": "-"
-    },
-    "Carousel": {
-        "indicatorNote": "Note! This is not the full plan, just 4 sample pages.",
-        "pageLabel": "Page {current}/{total}",
-        "workout": {
-            "slides": [
-                {
-                    "alt": "Rafael 1",
-                    "caption": "Introduction to the training plan – page 1"
-                },
-                {
-                    "alt": "Rafael 2",
-                    "caption": "Guide on how to use the plan – page 2"
-                },
-                {
-                    "alt": "Rafael 3",
-                    "caption": "Start of the training plan – page 5"
-                },
-                {
-                    "alt": "Rafael 5",
-                    "caption": "Progression plan for the next 3 months – page 7"
-                }
-            ]
-        }
-    },
-    "OrderPage": {
-        "logoHref": "https://coachplate.com/",
-        "verifyingText": "Verifying payment...",
-        "processingText": "Processing your payment...",
-        "pendingHtml": "Your payment is being verified.<br /><b>Please do not close this page.</b><br /><br />If payment was made, the plan will arrive in your email within a few minutes.",
-        "loading": "Loading...",
-        "successTitle": "Your order has been<br />paid successfully!",
-        "successImageAlt": "Order paid",
-        "successText1": "It will appear in your email in a moment.",
-        "successText2": "(may take up to 5 minutes)",
-        "successText3": "Check spam and the \"promotions\" tab as well",
-        "successText4": "If you have any issues, feel free to reach out!",
-        "successEmail": "support@trenerstrzykawa.pl",
-        "errorTitle": "We're having trouble<br />processing<br />your payment.",
-        "errorImageAlt": "Report unpaid",
-        "errorText1": "Your payment <b>was not finalized</b>, return to the main page and try again.",
-        "buttonText": "Return to main page",
-        "logoAlt": "coach plate logo",
-        "contactText": "If you think this is a mistake, contact me:"
-    },
-    "JoinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized training plan!</b>",
-    "NextButton": {
-        "alt": "Next"
-    },
-    "AnswersSummary": {
-        "buttonAlt": "Summary of answers",
-        "backLinkText": "Return to filling the form",
-        "conjunction_and": "and",
-        "equipmentNotSelected": "No equipment selected",
-        "locationTypeMap": {
-            "gym": "Gym",
-            "house": "Home"
-        },
-        "equipmentMap": {
-            "none": "None",
-            "bands": "Resistance bands",
-            "dumbbells": "Dumbbells",
-            "barbell": "Barbell",
-            "bench": "Bench"
-        },
-        "labels": {
-            "gender": "Gender",
-            "age": "Age",
-            "height": "Height",
-            "weight": "Weight",
-            "weight_goal": "Target weight",
-            "goal": "Goal",
-            "diet_goal": "Diet goal",
-            "bodyfat": "Body fat",
-            "activity": "Activity",
-            "experience": "Experience",
-            "difficulty": "Difficulty",
-            "location": "Training location",
-            "equipment": "Equipment",
-            "priority": "Priority",
-            "frequency": "Frequency",
-            "fitness": "Fitness",
-            "sleep": "Sleep",
-            "pushups": "Pushups",
-            "pullups": "Pullups",
-            "calistenic_experience": "Calisthenics experience",
-            "duration": "Training duration"
-        },
-        "gender": {
-            "male": "Male",
-            "M": "Male",
-            "female": "Female",
-            "F": "Female",
-            "other": "Other"
-        },
-        "dietGoal": {
-            "bulk": "Gaining muscle mass",
-            "cut": "Reducing body fat"
-        },
-        "activityMap": {
-            "low_activity": "I sit most of the day, little movement.",
-            "some_activity": "I move a bit, but no regular workouts.",
-            "light_training": "I train lightly a few times a week.",
-            "regular_training": "I exercise regularly, I'm active most days.",
-            "hard_work": "I train very hard or have a demanding physical job."
-        },
-        "experienceMap": {
-            "none": "Haven't started training yet.",
-            "just_started": "Just started.",
-            "some_experience": "I train a bit already.",
-            "advanced": "I've been training for a long time."
-        },
-        "difficultyMap": {
-            "motivation": "I lack motivation to train/stick to a diet.",
-            "effects": "I get discouraged by not seeing results.",
-            "insecurity": "I'm afraid to go to the gym, or I feel insecure there.",
-            "diet": "I don't really know how to stick to a diet.",
-            "no_difficulty": "I don't have any of the above difficulties."
-        },
-        "locationMap": {
-            "gym": "Gym",
-            "housewith": "Home (with resistance bands)",
-            "housewithout": "Home (without resistance bands)"
-        },
-        "priorityMap": {
-            "shoulders": "Shoulders",
-            "chest": "Chest",
-            "triceps": "Triceps",
-            "biceps": "Biceps",
-            "back": "Back",
-            "legs": "Legs",
-            "abs": "Abs",
-            "forearms": "Forearms",
-            "glutes": "Glutes"
-        },
-        "format": {
-            "bodyfat": "{value}%",
-            "height": "{value}cm",
-            "weight": "{value}kg",
-            "age": "{value} years",
-            "frequency": "{value}x/week",
-            "fitness": "{value}/10",
-            "sleep": "{value} hours",
-            "duration": "{count, plural, one {# minute} other {# minutes}}"
-        },
-        "persistentError": {
-            "title": "Problem persists",
-            "description": "Unfortunately, the problem with saving answers persists. It might be a technical error.<br /><br />Contact us at: {email}",
-            "contactEmail": "support@trenerstrzykawa.pl"
-        }
-    },
-    "MissingSteps": {
-        "title": "Some answers were not saved",
-        "description": "Unfortunately, the software didn't save answers to the questions: {steps}.<br /><br />Click the button below to go through these questions again.",
-        "buttonAlt": "Try again",
-        "stepLabels": {
-            "gender": "Gender",
-            "diet_goal": "Diet goal",
-            "bodyfat": "Body fat",
-            "height": "Height",
-            "weight": "Weight",
-            "age": "Age",
-            "activity": "Activity",
-            "location": "Location",
-            "experience": "Experience",
-            "difficulty": "Difficulty",
-            "priority": "Priority",
-            "frequency": "Frequency",
-            "fitness": "Fitness",
-            "sleep": "Sleep"
-        }
-    },
-    "PushupsStep": {
-        "title": "How many <span class=\"kalistenika-text\">pushups</span> can you do in one go?",
-        "placeholder": "e.g. 15",
-        "options": {
-            "0-5": "0-5 pushups",
-            "6-10": "6-10 pushups",
-            "11-20": "11-20 pushups",
-            "21-30": "21-30 pushups",
-            "30+": "More than 30 pushups"
-        }
-    },
-    "PullupsStep": {
-        "title": "How many <span class=\"kalistenika-text\">pullups</span> can you do in one go?",
-        "placeholder": "e.g. 5",
-        "options": {
-            "0": "None yet",
-            "1-3": "1-3 pullups",
-            "4-6": "4-6 pullups",
-            "7-10": "7-10 pullups",
-            "10+": "More than 10 pullups"
-        }
-    },
-    "CalistenicExperienceStep": {
-        "title": "What is your <span class=\"kalistenika-text\">experience</span> with calisthenics?",
-        "options": {
-            "none": "New",
-            "just_started": "Beginner",
-            "some_experience": "Intermediate",
-            "advanced": "Advanced."
-        },
-        "descriptions": {
-            "none": "Starting from zero. Haven't trained regularly before and want to build basic strength and technique.",
-            "just_started": "Already have contact with sports. Can do a set of pushups and squats, but can't pull up at all or only 1-3 times.",
-            "some_experience": "Training regularly. Can comfortably do pullups (over 5) and dips. Want to level up (e.g. Muscle Up, L-sit).",
-            "advanced": "Basics are just a warmup. Can do Muscle Up and work on difficult statics (Front Lever, Planche) or advanced dynamics."
-        }
-    },
-    "DurationStep": {
-        "title1": "Select <b>training</b>",
-        "title2": "<b>duration</b>",
-        "steps": [
-            {
-                "value": "30"
-            },
-            {
-                "value": "45"
-            },
-            {
-                "value": "60"
-            },
-            {
-                "value": "90"
-            }
-        ],
-        "minutes": "{count, plural, one {# minute} other {# minutes}}",
-        "info": "Optimal training time is <i><b>45-60 minutes</b></i>. Remember that <b>quality</b> of sets is more important than <b>quantity</b>.",
-        "recommended": "(recommended)"
+    "workout": {
+      "description": "Get<br />your training<br />plan!"
     }
+  },
+  "ReviewsWidget": {
+    "title": "What do buyers think of their plans 2 months later?",
+    "sort_best": "sort - by best",
+    "sort_worst": "sort - by worst",
+    "sort_newest": "sort - by newest",
+    "sort_oldest": "sort - by oldest",
+    "verified": "(verified purchase)",
+    "age_suffix": "years old",
+    "aria_label": "Customer reviews",
+    "average": "average rating",
+    "of5": "/5"
+  },
+  "Seo": {
+    "appTitle": "Musclepals",
+    "home": {
+      "title": "Training Plan | Musclepals",
+      "description": "Create a workout plan tailored to you. Short quiz, results in minutes."
+    },
+    "workout": {
+      "title": "Professional training plan - personalized for you",
+      "description": "Looking for an effective workout routine? I'll prepare a set based on your answers."
+    },
+    "workoutForm": {
+      "title": "Plan Form | Musclepals",
+      "description": "Answer the questions to tailor the plan to your goals."
+    }
+  },
+  "Gender": {
+    "title": "What is your <b>gender?</b>",
+    "ariaLabel": "Gender selection",
+    "male": {
+      "label": "Select Male",
+      "alt": "Male"
+    },
+    "female": {
+      "label": "Select Female",
+      "alt": "Female"
+    }
+  },
+  "WorkoutPage": {
+    "homeLabel": "Musclepals Home Page",
+    "titleHtml": "Your custom<br /><span style='font-weight: 800'>training plan</span>",
+    "heroAlt": "",
+    "description": "Complete a short quiz, and I'll create the perfect training plan for you!\n<em>It'll take you 2-3 minutes.</em>",
+    "button": "Create training plan",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "DietGoal": {
+    "title": "What is<br /><b>your goal?</b>",
+    "titleAria": "What is your goal?",
+    "bulk": {
+      "label": "I want to bulk",
+      "alt": "I want to gain muscle mass",
+      "description": "You focus on building new muscle mass, weight goes up."
+    },
+    "cut": {
+      "label": "I want to cut",
+      "alt": "I want to reduce fat",
+      "description": "You lose weight, shed fat, and reveal existing muscle."
+    }
+  },
+  "Bodyfat": {
+    "title": "Select your <br /><b>body fat</b> level",
+    "alt": "Physique for selected body fat level",
+    "stepsDataMale": [
+      {
+        "value": "5-9",
+        "label": "5-9%",
+        "info": "Extremely low body fat. The physique is very muscular, and definition is excellent."
+      },
+      {
+        "value": "10-14",
+        "label": "10-14%",
+        "info": "Very low body fat. The physique is lean, muscles are clearly visible."
+      },
+      {
+        "value": "15-19",
+        "label": "15-19%",
+        "info": "Healthy, athletic body fat level. Muscles are visible, but the body isn't emaciated."
+      },
+      {
+        "value": "20-24",
+        "label": "20-24%",
+        "info": "Low body fat level. Physique is slim, muscles are visible."
+      },
+      {
+        "value": "25-29",
+        "label": "25-29%",
+        "info": "Moderate body fat level. Physique is fuller, muscles are less visible."
+      },
+      {
+        "value": "30-34",
+        "label": "30-34%",
+        "info": "Higher body fat level. Physique is rounded, muscles are not visible."
+      },
+      {
+        "value": "35-39",
+        "label": "35-39%",
+        "info": "High body fat level. The physique is very rounded."
+      },
+      {
+        "value": ">40",
+        "label": ">40%",
+        "info": "Very high body fat level. The physique is obese."
+      }
+    ],
+    "stepsDataFemale": [
+      {
+        "value": "10-14",
+        "label": "10-14%",
+        "info": "Very low body fat content, typical for physique athletes. May be associated with hormonal imbalances and amenorrhea."
+      },
+      {
+        "value": "15-19",
+        "label": "15-19%",
+        "info": "Low body fat content, often seen in active women and athletes. Very slim physique with clearly defined muscles."
+      },
+      {
+        "value": "20-24",
+        "label": "20-24%",
+        "info": "Healthy, athletic body fat level. Slim but feminine physique. Most common among active women."
+      },
+      {
+        "value": "25-29",
+        "label": "25-29%",
+        "info": "Average body fat level. Natural physique, slightly rounded, without clear muscle definition."
+      },
+      {
+        "value": "30-39",
+        "label": "30-39%",
+        "info": "Elevated body fat level. Clearly rounded physique, possible health issues related to excess fat."
+      },
+      {
+        "value": ">40",
+        "label": ">40%",
+        "info": "Very high body fat level. Health consultation and lifestyle changes are recommended."
+      }
+    ]
+  },
+  "Height": {
+    "title": "How tall <b>are you?</b>",
+    "alt": "How tall are you?",
+    "unit": "cm",
+    "placeholder": "___",
+    "errorMsg": "Enter your real height.",
+    "ariaLabel": "Height"
+  },
+  "Weight": {
+    "title1": "How much do you <b>weigh?</b>",
+    "title2": "What is your <b>target weight?</b>",
+    "alt1": "Current weight",
+    "alt2": "Target weight",
+    "unit": "kg",
+    "placeholder": "___",
+    "ariaLabel1": "Weight",
+    "ariaLabel2": "Target weight",
+    "error1": "Enter your real weight.",
+    "error2": "Enter your target weight in the range of 30-300kg.",
+    "errorBulk": "If your goal is to bulk, target weight must be higher than current weight.",
+    "errorCut": "If your goal is to cut, target weight must be lower than current weight.",
+    "infoBulk": "Choose a weight from {minInfo} up.",
+    "infoCut": "Choose a weight from {maxInfo} down.",
+    "buttonExpandAlt": "Expand"
+  },
+  "Age": {
+    "title": "How old <b>are you?</b>",
+    "placeholder": "__",
+    "ariaLabel": "Age",
+    "unit": "years",
+    "12-14": {
+      "message": "You have huge potential!",
+      "description": "This is the best time to build <b>solid foundations!</b> Your body is still developing, so the key is habits and learning technique, not heavy weights."
+    },
+    "15-20": {
+      "message": "Ideal age to get serious about training!",
+      "description": "Your body recovers quickly, so you can make great progress with well-planned exercises and nutrition."
+    },
+    "21-30": {
+      "message": "This is the time to build truly great form!",
+      "description": "You already have body awareness - now you just need a well-tailored plan to take your results to the next level."
+    }
+  },
+  "Activity": {
+    "title": "What is your <b>physical activity level?</b>",
+    "errorMsg": "Please select one of the options before proceeding.",
+    "options": {
+      "low_activity": "I sit most of the day, little movement. 🛋️",
+      "some_activity": "I move a bit, but no regular workouts. 🚶",
+      "light_training": "I train lightly a few times a week. 🏃‍♂️",
+      "regular_training": "I exercise regularly, I'm active most days. 💪",
+      "hard_work": "I train very hard or have a demanding physical job. 🏋️‍♂️"
+    }
+  },
+  "BMI": {
+    "title": "Your <span>BMI</span> is:",
+    "category": {
+      "unknown": "Unknown category",
+      "starvation": "Starvation",
+      "emaciation": "Emaciation",
+      "underweight": "Underweight",
+      "normal": "Normal weight",
+      "overweight": "Overweight",
+      "obesityI": "Obesity Class I",
+      "obesityII": "Obesity Class II (Severe)",
+      "obesityIII": "Obesity Class III (Morbid)"
+    },
+    "description": {
+      "unknown": "BMI category cannot be determined.",
+      "starvation": "The body is severely weakened due to extreme weight deficiency.",
+      "emaciation": "The body is clearly weakened; muscles and tissues lack sufficient nutrition.",
+      "underweight": "Body weight is too low. The organism isn't properly protected against diseases and handles physical exertion poorly.",
+      "normal": "The body is neither burdened by excess body fat nor weakened by its deficiency.",
+      "overweight": "Excess body fat appears, beginning to burden the body.",
+      "obesityI": "Excess body fat clearly burdens the body and increases the risk of diseases.",
+      "obesityII": "The body is heavily burdened. The risk of serious chronic diseases increases, and physical fitness is limited.",
+      "obesityIII": "Very high amount of body fat seriously threatens health and life."
+    },
+    "conclusion": "Perfect moment to build muscle!",
+    "nextStepAlt": "Go to the next step"
+  },
+  "Location": {
+    "title": "Where do you plan to<br /><b>train?</b>",
+    "ariaLabelGroup": "Training location",
+    "gym": {
+      "label": "I will train at the gym",
+      "label_f": "I will train at the gym",
+      "alt": "I will train at the gym",
+      "alt_f": "I will train at the gym",
+      "description": "Training at the gym with access to a wide range of equipment.",
+      "description_f": "Training at the gym with access to a wide range of equipment."
+    },
+    "home": {
+      "label": "I will train at home",
+      "label_f": "I will train at home",
+      "alt": "I will train at home",
+      "alt_f": "I will train at home",
+      "description": "Home training tailored to available equipment.",
+      "description_f": "Home training tailored to available equipment."
+    },
+    "bandsPanel": {
+      "question": "Do you have access to resistance bands?",
+      "yes": {
+        "label": "Yes - I have bands",
+        "alt": "Yes"
+      },
+      "no": {
+        "label": "No - I don't have bands",
+        "alt": "No"
+      }
+    }
+  },
+  "Experience": {
+    "title": "What is your <b>training experience?</b>",
+    "options": {
+      "none": {
+        "label": "Haven't started training yet. 🐣",
+        "description1": "In the beginning, the key is learning <b>proper technique</b> and <b>building consistency</b>.",
+        "description2": "<b>But don't worry!</b><br />Your Plan will guide you through this step by step ;)",
+        "alt": "Exercise"
+      },
+      "just_started": {
+        "label": "Just started. 🏁",
+        "description1": "<b>Just starting — awesome!</b>",
+        "description2": "At this stage, your body responds quickly to training, so we'll focus on <b>learning technique</b> and simple, repeatable habits.",
+        "alt": "Exercise"
+      },
+      "some_experience": {
+        "label": "I train a bit already. 💪",
+        "description1": "<b>You have some experience — bomb!</b>",
+        "description2": "This is the moment your body gets <b>used to training</b> — so it's key to introduce a plan with <b>structure</b> and <b>progression</b>.",
+        "alt": "Exercise"
+      },
+      "advanced": {
+        "label": "I've been training for a long time. 🥇",
+        "description1": "<b>Great job!</b> You already know what <b>regularity</b> and <b>consistency</b> look like.",
+        "description2": "At this stage, we'll focus on optimization: a <b>precise plan</b>, <b>progression</b>, and <b>recovery</b>.",
+        "alt": "Exercise"
+      }
+    },
+    "errorMsg": "Please select your training experience before proceeding."
+  },
+  "Equipment": {
+    "title": "What <b>equipment</b> do you have at home?",
+    "subtitle": "(you can select more<br />than one option)",
+    "ariaLabelGroup": "Equipment selection",
+    "options": {
+      "none": {
+        "label": "No access to any training equipment. 🚫",
+        "description": "We will base the plan on bodyweight exercises and simple household items."
+      },
+      "bands": {
+        "label": "Resistance bands.",
+        "description": "Mini bands and power bands will allow us to add resistance and scale exercise difficulty."
+      },
+      "dumbbells": {
+        "label": "Dumbbells.",
+        "description": "We'll use single and double-hand variations to fully utilize the dumbbells' potential."
+      },
+      "barbell": {
+        "label": "Barbell and weights.",
+        "description": "We'll set up classic lifts (squats, deadlifts, presses) adjusting volume to your goal."
+      },
+      "bench": {
+        "label": "Bench press bench.",
+        "description": "A bench allows adding lying and incline exercises to better target the stimulus."
+      }
+    },
+    "errorMsg": "Select at least one equipment option to proceed."
+  },
+  "Difficulty": {
+    "title": "What is your <span style=\"font-weight: 700\">BIGGEST</span><br />struggle regarding the gym?",
+    "errorMsg": "Please select one of the options before proceeding.",
+    "options": {
+      "motivation": "I lack motivation to train/stick to a diet. 😔",
+      "effects": "I get discouraged by not seeing results. ⏳",
+      "insecurity": "I'm afraid to go to the gym, or I feel insecure there. 😟",
+      "diet": "I don't really know how to stick to a diet. ❓",
+      "no_difficulty": "I don't have any of the above difficulties. ✅"
+    }
+  },
+  "Priority": {
+    "title1": "Which body parts do you<br />care about<br />",
+    "title2": "<span style=\"font-weight: 700\">THE MOST?</span>",
+    "subtitle": "(The plan covers all muscle groups, but you can choose ones to <b>prioritize</b>)",
+    "warning": "ATTENTION! You can select max 2 parts",
+    "partNames": {
+      "shoulders": "Shoulders",
+      "chest": "Chest",
+      "triceps": "Triceps",
+      "biceps": "Biceps",
+      "back": "Back",
+      "legs": "Legs",
+      "abs": "Abs",
+      "forearms": "Forearms",
+      "glutes": "Glutes"
+    },
+    "ariaLabelSelected": "Priority: {name} selected",
+    "ariaLabelUnselected": "Priority: {name} unselected",
+    "imageAltSelected": "{name} — selected",
+    "imageAltUnselected": "{name} — not selected"
+  },
+  "Frequency": {
+    "title1": "How many times a week<br />do you want to<br />",
+    "title2": "<span style=\"font-weight: 700\">TRAIN?</span>",
+    "dayLabelSingular": "day",
+    "dayLabelPlural": "days",
+    "steps": [
+      {
+        "value": "1",
+        "label": "1 time a week"
+      },
+      {
+        "value": "2",
+        "label": "2 times a week"
+      },
+      {
+        "value": "3",
+        "label": "3 times a week"
+      },
+      {
+        "value": "4",
+        "label": "4 times a week"
+      },
+      {
+        "value": "5",
+        "label": "5 times a week"
+      }
+    ],
+    "daySingular": "workout",
+    "dayPlural": "workouts",
+    "dayPluralFew": "workouts"
+  },
+  "Fitness": {
+    "title1": "How would you rate your<br /><span style=\"font-weight: 700\">physical fitness</span><br />on a scale of 1 to 10?"
+  },
+  "Sleep": {
+    "title": "How much time<br /><span style=\"font-weight: 700\">do you spend sleeping?</span>",
+    "steps": [
+      {
+        "value": "lt6",
+        "label": "< 6 hours"
+      },
+      {
+        "value": "7-8",
+        "label": "7-8 hours"
+      },
+      {
+        "value": "9-12",
+        "label": "9-12 hours"
+      },
+      {
+        "value": "gt12",
+        "label": "> 12 hours"
+      }
+    ],
+    "messages": [
+      "It's hard to recover well with this amount of sleep... Remember to work on it :)",
+      "Good amount of sleep — recovery supports training and health.",
+      "Very good amount of sleep — optimal recovery.",
+      "Too much sleep might mean irregularity — monitor how you feel."
+    ]
+  },
+  "ResultPage": {
+    "title": "<span style=\"font-size: 36px; font-weight: 700;\">Your Training Plan</span><br /><span style=\"font-size: 28px; font-weight: 400;\">is ready!</span>",
+    "intro1": "Created based on <b>Your 14 answers</b> by an <b>advanced training algorithm</b><br />designed specifically for <b>physique building</b> and <b>fat reduction</b>.",
+    "intro2": "You will receive an <b>individual plan</b><br/>based on data, created in <b>less than 3 minutes</b> thanks to<br />technology that analyzes over<br/><b>4,000 training combinations</b>.",
+    "subtitle": "<b>Quick Summary</b><br /><span style=\"font-size: 28px; font-weight: 400;\">of Your results</span>",
+    "trustImageAlt": "Why trust us?",
+    "analyzeTitle": "The algorithm analyzes, among others:",
+    "analyzeList": {
+      "aktywnosc": "Your <b>activity level</b>",
+      "cel": "Your <b>goal</b> (cut / bulk)",
+      "wiek": "Your <b>age</b>",
+      "doswiadczenie": "<b>Training experience</b>",
+      "time": "<b>Time</b> you have available",
+      "strengths": "<b>Strengths and weaknesses of your physique</b>"
+    },
+    "conclusion1": "And then selects a <b>specific training plan</b> that fits <b>Your situation</b> better than <b>99% of cookie-cutter plans</b> on the internet.",
+    "conclusion2": "It's a combination of <b>personal trainer knowledge</b> and <b>system precision</b> that makes no mistakes and doesn't guess.",
+    "purchaseTitle": "What exactly will you get after purchase?",
+    "purchaseImageAlt": "Product description",
+    "sampleBtn": "See a sample training plan!",
+    "sampleTitle": "And here are a few pages from Rafael's plan!",
+    "loadingTitle": "Creating your training plan...",
+    "loadingSubtitle": "One moment, loading all results.",
+    "loadingData": "No data for this session.",
+    "loadingErrorTitle": "We're having trouble loading your data.",
+    "loadingErrorHtml": "Refresh the page and try again. If the problem persists, write to us: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
+    "loadingErrorBtn": "once_again",
+    "reportNote1": "plans sent",
+    "reportNote2": "in the last 24 hours",
+    "joinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized training plan!</b>",
+    "contactBox": {
+      "title": "Have any doubts?",
+      "emailIntro": "Hit me up:",
+      "emailAddress": "support@trenerstrzykawa.pl",
+      "responseTime": "⏰ I usually reply in less than an hour."
+    },
+    "ctaButton": {
+      "alt": "Get plan"
+    },
+    "errorTitle": "No data for this funnel.",
+    "errorDescription": "Contact us at: support@trenerstrzykawa.pl",
+    "faq": {
+      "title": "Frequently<br/>Asked Questions:"
+    }
+  },
+  "BMIBOX": {
+    "yourScore": "Your result is:",
+    "underweight": "underweight",
+    "overweight": "overweight",
+    "categories": {
+      "lt16": "Starvation",
+      "lt17": "Emaciation",
+      "lt18_5": "Underweight",
+      "lt25": "Normal weight",
+      "lt30": "Overweight",
+      "lt35": "Obesity Class I",
+      "lt40": "Obesity Class II (Severe)",
+      "gt40": "Obesity Class III (Morbid)"
+    },
+    "descriptions": {
+      "lt16": "The body is severely weakened due to extreme weight deficiency.",
+      "lt17": "The body is clearly weakened; muscles and tissues lack sufficient nutrition.",
+      "lt18_5": "Body weight is too low. The organism isn't properly protected against diseases and handles physical exertion poorly.",
+      "lt25": "The body is neither burdened by excess body fat nor weakened by its deficiency.",
+      "lt30": "Excess body fat appears, beginning to burden the body.",
+      "lt35": "Excess body fat clearly burdens the body and increases the risk of diseases.",
+      "lt40": "The body is heavily burdened. The risk of serious chronic diseases increases, and physical fitness is limited.",
+      "gt40": "Very high amount of body fat seriously threatens health and life."
+    }
+  },
+  "Summary": {
+    "title": "Your Plan:",
+    "conjunction_and": " and ",
+    "priorities": {
+      "shoulders": "shoulders",
+      "chest": "chest",
+      "triceps": "triceps",
+      "biceps": "biceps",
+      "back": "back",
+      "legs": "legs",
+      "forearms": "forearms",
+      "abs": "abs",
+      "glutes": "glutes",
+      "default": "all body parts"
+    },
+    "goals": {
+      "bulk": "building muscle mass",
+      "cut": "reducing body fat"
+    },
+    "frequency": {
+      "intro": "Provides you with <strong>{n}</strong> {days} a week.",
+      "daySingular": "workout",
+      "dayPlural": "workouts",
+      "dayPluralFew": "workouts",
+      "dayPluralMany": "workouts"
+    },
+    "location": {
+      "housewithout": "Ensures efficient training in <strong>home conditions</strong>.",
+      "housewith": "Ensures efficient training in <strong>home conditions with resistance bands.</strong>",
+      "gym": "",
+      "default": ""
+    },
+    "focus": "Places special emphasis on <strong>{priorities}</strong>.",
+    "goalFocus": "Is geared towards <strong>{goal}</strong>.",
+    "fitnessFocus": "Is adapted to your current <strong>{fitness}</strong>.",
+    "fitnessFocusText": "physical fitness",
+    "equipment": {
+      "intro": "Train at home using <strong>{list}</strong>.",
+      "introNone": "Train at home <strong>without any additional equipment</strong>.",
+      "map": {
+        "bands": "resistance bands",
+        "dumbbells": "dumbbells",
+        "barbell": "barbell with weights",
+        "bench": "workout bench",
+        "none": "no equipment"
+      }
+    },
+    "priority": {
+      "none": "Places special emphasis on <strong>balanced muscle mass development</strong> throughout the whole body.",
+      "one": "Places special emphasis on <strong>{p1}</strong>.",
+      "two": "Places special emphasis on <strong>{p1}</strong> and <strong>{p2}</strong>.",
+      "many": "Places special emphasis on <strong>{list}</strong>."
+    }
+  },
+  "YouVsFuture": {
+    "now": "now",
+    "future": "in a few months",
+    "weight": "weight:",
+    "muscle": "muscle",
+    "fitness": "physical fitness",
+    "bodyfat": "body fat",
+    "activityMap": {
+      "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "I train very hard or have a demanding physical job",
+      "Ćwiczę regularnie, jestem w ruchu większość dni": "I exercise regularly, I'm active most days",
+      "Trenuję lekko kilka razy w tygodniu": "I train lightly a few times a week",
+      "Trochę się ruszam, ale bez regularnych treningów": "I move a bit, but no regular workouts"
+    }
+  },
+  "ReportForm": {
+    "title": "Get<br />your training<br />plan!",
+    "imageAlt": "Smith machine illustration",
+    "nameLabel": "What's your name?",
+    "namePlaceholder": "Name",
+    "emailLabel": "Email (where you'll receive the plan):",
+    "emailPlaceholder": "address@email.com",
+    "agreementText": "I agree to the processing of my personal data in accordance with the <a href=\"https://coachplate.com/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
+    "agreementCheckboxHtml": "I accept the <a href=\"https://coachplate.com/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">terms</a> and <a href=\"https://coachplate.com/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
+    "healthDataAgreementHtml": "I agree to the use of my health data and measurements (this is necessary to create the plan).",
+    "healthDataAgreementRequiredError": "Please accept the agreement to use health data to proceed.",
+    "agreementRequiredError": "Please accept the terms to proceed to payment.",
+    "errorMsg1": "Please provide a valid name and email address.",
+    "errorMsg2": "Double-check your email address. If it's correct, click the button again to continue.",
+    "errorMsgDomainTypo": "Typo in email? Did you mean {suggestedEmail}? If so, please correct it. If it's correct, click the button again to continue.",
+    "orText": "or",
+    "detailsBtn": "Learn more about BMI/BMR analysis!",
+    "detailsBox1Title": "I'll show you:",
+    "detailsBox1Body": {
+      "training": "How many calories you need to eat to effectively {goal},",
+      "smart": "How to train smarter, not harder,",
+      "workDiet": "How to balance school/work with diet,",
+      "progress": "How to overcome difficulties stopping your progress."
+    },
+    "detailsBox2Title": "You will receive:",
+    "detailsBox2Body": {
+      "macros": "Exact macro ratios tailored to your body,",
+      "dietSchema": "A sample diet framework for you, {goalSchema}",
+      "summary": "An honest summary of your current situation and tips on how to improve it."
+    },
+    "timerPromo1": "Promotion for",
+    "timerPromo2": "new<br />users",
+    "timerPromo3": "ends in:",
+    "timerImageAlt": "Flexing Musclepals",
+    "successMsg": "Your order has been processed successfully.",
+    "paymentNote": "You will receive the plan within <b>2 minutes</b> of payment."
+  },
+  "TDEE": {
+    "title1": "Total Daily Energy Expenditure",
+    "deficit": "caloric deficit",
+    "surplus": "caloric surplus",
+    "unit": "kcal/day",
+    "mainDescPrefix": "This value ",
+    "mainDescBold1Cut": "accounts for losing weight",
+    "mainDescBold1Bulk": "accounts for gaining weight",
+    "mainDescSuffix": ". This is the base amount of calories you must consume to ",
+    "mainDescActionCut": "lose weight",
+    "mainDescActionBulk": "gain weight",
+    "noData": "-"
+  },
+  "Carousel": {
+    "indicatorNote": "Note! This is not the full plan, just 4 sample pages.",
+    "pageLabel": "Page {current}/{total}",
+    "workout": {
+      "slides": [
+        {
+          "alt": "Rafael 1",
+          "caption": "Introduction to the training plan – page 1"
+        },
+        {
+          "alt": "Rafael 2",
+          "caption": "Guide on how to use the plan – page 2"
+        },
+        {
+          "alt": "Rafael 3",
+          "caption": "Start of the training plan – page 5"
+        },
+        {
+          "alt": "Rafael 5",
+          "caption": "Progression plan for the next 3 months – page 7"
+        }
+      ]
+    }
+  },
+  "OrderPage": {
+    "logoHref": "https://coachplate.com/",
+    "verifyingText": "Verifying payment...",
+    "processingText": "Processing your payment...",
+    "pendingHtml": "Your payment is being verified.<br /><b>Please do not close this page.</b><br /><br />If payment was made, the plan will arrive in your email within a few minutes.",
+    "loading": "Loading...",
+    "successTitle": "Your order has been<br />paid successfully!",
+    "successImageAlt": "Order paid",
+    "successText1": "It will appear in your email in a moment.",
+    "successText2": "(may take up to 5 minutes)",
+    "successText3": "Check spam and the \"promotions\" tab as well",
+    "successText4": "If you have any issues, feel free to reach out!",
+    "successEmail": "support@trenerstrzykawa.pl",
+    "errorTitle": "We're having trouble<br />processing<br />your payment.",
+    "errorImageAlt": "Report unpaid",
+    "errorText1": "Your payment <b>was not finalized</b>, return to the main page and try again.",
+    "buttonText": "Return to main page",
+    "logoAlt": "coach plate logo",
+    "contactText": "If you think this is a mistake, contact me:"
+  },
+  "JoinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized training plan!</b>",
+  "NextButton": {
+    "alt": "Next"
+  },
+  "AnswersSummary": {
+    "buttonAlt": "Summary of answers",
+    "backLinkText": "Return to filling the form",
+    "conjunction_and": "and",
+    "equipmentNotSelected": "No equipment selected",
+    "locationTypeMap": {
+      "gym": "Gym",
+      "house": "Home"
+    },
+    "equipmentMap": {
+      "none": "None",
+      "bands": "Resistance bands",
+      "dumbbells": "Dumbbells",
+      "barbell": "Barbell",
+      "bench": "Bench"
+    },
+    "labels": {
+      "gender": "Gender",
+      "age": "Age",
+      "height": "Height",
+      "weight": "Weight",
+      "weight_goal": "Target weight",
+      "goal": "Goal",
+      "diet_goal": "Diet goal",
+      "bodyfat": "Body fat",
+      "activity": "Activity",
+      "experience": "Experience",
+      "difficulty": "Difficulty",
+      "location": "Training location",
+      "equipment": "Equipment",
+      "priority": "Priority",
+      "frequency": "Frequency",
+      "fitness": "Fitness",
+      "sleep": "Sleep",
+      "pushups": "Pushups",
+      "pullups": "Pullups",
+      "calistenic_experience": "Calisthenics experience",
+      "duration": "Training duration"
+    },
+    "gender": {
+      "male": "Male",
+      "M": "Male",
+      "female": "Female",
+      "F": "Female",
+      "other": "Other"
+    },
+    "dietGoal": {
+      "bulk": "Gaining muscle mass",
+      "cut": "Reducing body fat"
+    },
+    "activityMap": {
+      "low_activity": "I sit most of the day, little movement.",
+      "some_activity": "I move a bit, but no regular workouts.",
+      "light_training": "I train lightly a few times a week.",
+      "regular_training": "I exercise regularly, I'm active most days.",
+      "hard_work": "I train very hard or have a demanding physical job."
+    },
+    "experienceMap": {
+      "none": "Haven't started training yet.",
+      "just_started": "Just started.",
+      "some_experience": "I train a bit already.",
+      "advanced": "I've been training for a long time."
+    },
+    "difficultyMap": {
+      "motivation": "I lack motivation to train/stick to a diet.",
+      "effects": "I get discouraged by not seeing results.",
+      "insecurity": "I'm afraid to go to the gym, or I feel insecure there.",
+      "diet": "I don't really know how to stick to a diet.",
+      "no_difficulty": "I don't have any of the above difficulties."
+    },
+    "locationMap": {
+      "gym": "Gym",
+      "housewith": "Home (with resistance bands)",
+      "housewithout": "Home (without resistance bands)"
+    },
+    "priorityMap": {
+      "shoulders": "Shoulders",
+      "chest": "Chest",
+      "triceps": "Triceps",
+      "biceps": "Biceps",
+      "back": "Back",
+      "legs": "Legs",
+      "abs": "Abs",
+      "forearms": "Forearms",
+      "glutes": "Glutes"
+    },
+    "format": {
+      "bodyfat": "{value}%",
+      "height": "{value}cm",
+      "weight": "{value}kg",
+      "age": "{value} years",
+      "frequency": "{value}x/week",
+      "fitness": "{value}/10",
+      "sleep": "{value} hours",
+      "duration": "{count, plural, one {# minute} other {# minutes}}"
+    },
+    "persistentError": {
+      "title": "Problem persists",
+      "description": "Unfortunately, the problem with saving answers persists. It might be a technical error.<br /><br />Contact us at: {email}",
+      "contactEmail": "support@trenerstrzykawa.pl"
+    }
+  },
+  "MissingSteps": {
+    "title": "Some answers were not saved",
+    "description": "Unfortunately, the software didn't save answers to the questions: {steps}.<br /><br />Click the button below to go through these questions again.",
+    "buttonAlt": "Try again",
+    "stepLabels": {
+      "gender": "Gender",
+      "diet_goal": "Diet goal",
+      "bodyfat": "Body fat",
+      "height": "Height",
+      "weight": "Weight",
+      "age": "Age",
+      "activity": "Activity",
+      "location": "Location",
+      "experience": "Experience",
+      "difficulty": "Difficulty",
+      "priority": "Priority",
+      "frequency": "Frequency",
+      "fitness": "Fitness",
+      "sleep": "Sleep"
+    }
+  },
+  "PushupsStep": {
+    "title": "How many <span class=\"kalistenika-text\">pushups</span> can you do in one go?",
+    "placeholder": "e.g. 15",
+    "options": {
+      "0-5": "0-5 pushups",
+      "6-10": "6-10 pushups",
+      "11-20": "11-20 pushups",
+      "21-30": "21-30 pushups",
+      "30+": "More than 30 pushups"
+    }
+  },
+  "PullupsStep": {
+    "title": "How many <span class=\"kalistenika-text\">pullups</span> can you do in one go?",
+    "placeholder": "e.g. 5",
+    "options": {
+      "0": "None yet",
+      "1-3": "1-3 pullups",
+      "4-6": "4-6 pullups",
+      "7-10": "7-10 pullups",
+      "10+": "More than 10 pullups"
+    }
+  },
+  "CalistenicExperienceStep": {
+    "title": "What is your <span class=\"kalistenika-text\">experience</span> with calisthenics?",
+    "options": {
+      "none": "New",
+      "just_started": "Beginner",
+      "some_experience": "Intermediate",
+      "advanced": "Advanced."
+    },
+    "descriptions": {
+      "none": "Starting from zero. Haven't trained regularly before and want to build basic strength and technique.",
+      "just_started": "Already have contact with sports. Can do a set of pushups and squats, but can't pull up at all or only 1-3 times.",
+      "some_experience": "Training regularly. Can comfortably do pullups (over 5) and dips. Want to level up (e.g. Muscle Up, L-sit).",
+      "advanced": "Basics are just a warmup. Can do Muscle Up and work on difficult statics (Front Lever, Planche) or advanced dynamics."
+    }
+  },
+  "DurationStep": {
+    "title1": "Select <b>training</b>",
+    "title2": "<b>duration</b>",
+    "steps": [
+      {
+        "value": "30"
+      },
+      {
+        "value": "45"
+      },
+      {
+        "value": "60"
+      },
+      {
+        "value": "90"
+      }
+    ],
+    "minutes": "{count, plural, one {# minute} other {# minutes}}",
+    "info": "Optimal training time is <i><b>45-60 minutes</b></i>. Remember that <b>quality</b> of sets is more important than <b>quantity</b>.",
+    "recommended": "(recommended)"
+  }
 }

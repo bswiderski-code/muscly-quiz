@@ -124,7 +124,7 @@ export async function POST(req: NextRequest) {
       email,
       country: (market.market.toUpperCase() as Country) || Country.Poland,
       language: (market.locale.toUpperCase() as Language) || Language.PL,
-      urlReturn: `${realOrigin}/wynik/zamowienie/${sessionId}`,
+      urlReturn: `${realOrigin}/result/order/${sessionId}`,
       urlStatus: `${realOrigin}/api/p24/notify`,
       timeLimit: 0,
       encoding: Encoding.UTF8,

@@ -448,14 +448,14 @@
     "contactBox": {
       "title": "Hai qualche dubbio?",
       "emailIntro": "Scrivimi:",
-      "emailAddress": "support@trenerstrzykawa.pl",
+      "emailAddress": "support@musclepals.com",
       "responseTime": "⏰ Di solito rispondo in meno di un'ora."
     },
     "ctaButton": {
       "alt": "Ritira il piano"
     },
     "errorTitle": "Nessun dato per questo funnel.",
-    "errorDescription": "Contattaci all'indirizzo: support@trenerstrzykawa.pl",
+    "errorDescription": "Contattaci all'indirizzo: support@musclepals.com",
     "faq": {
       "title": "Domande<br/>Frequenti:"
     }
@@ -638,7 +638,7 @@
     "successText2": "(può richiedere fino a 5 minuti)",
     "successText3": "Controlla anche lo spam e la scheda \"offerte/promozioni\"",
     "successText4": "Se hai qualsiasi problema, fammelo sapere!",
-    "successEmail": "support@trenerstrzykawa.pl",
+    "successEmail": "support@musclepals.com",
     "errorTitle": "Abbiamo un problema<br />nell'elaborare<br />il tuo pagamento.",
     "errorImageAlt": "Report non pagato",
     "errorText1": "Il tuo pagamento <b>non è stato finalizzato</b>, torna alla home page e riprova.",
@@ -766,7 +766,7 @@
     "persistentError": {
       "title": "Il problema persiste",
       "description": "Purtroppo il problema nel salvare le risposte persiste. Potrebbe essere un errore tecnico.<br /><br />Contattaci all'indirizzo: {email}",
-      "contactEmail": "support@trenerstrzykawa.pl"
+      "contactEmail": "support@musclepals.com"
     }
   },
   "PushupsStep": {
@@ -826,5 +826,9 @@
     "minutes": "{count, plural, one {# minuto} other {# minuti}}",
     "info": "Il tempo di allenamento ottimale è di <i><b>45-60 minuti</b></i>. Ricorda che la <b>qualità</b> delle serie è più importante della <b>quantità</b>.",
     "recommended": "(raccomandato)"
+  },
+  "ReviewsMarquee": {
+    "imageAlt": "User review",
+    "title": "Scopri cosa dicono i nostri clienti"
   }
 }

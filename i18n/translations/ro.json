@@ -448,14 +448,14 @@
     "contactBox": {
       "title": "Ai vreo nelămurire?",
       "emailIntro": "Scrie-mi:",
-      "emailAddress": "support@antrenortanc.ro",
+      "emailAddress": "support@musclepals.com",
       "responseTime": "⏰ De obicei răspund în mai puțin de o oră."
     },
     "ctaButton": {
       "alt": "Ia planul"
     },
     "errorTitle": "Lipsă date pentru acest funnel.",
-    "errorDescription": "Contactează-ne la adresa: support@antrenortanc.ro",
+    "errorDescription": "Contactează-ne la adresa: support@musclepals.com",
     "faq": {
       "title": "Întrebări<br/>Frecvente:"
     }
@@ -639,7 +639,7 @@
     "successText2": "(poate dura până la 5 minute)",
     "successText3": "Verifică și spam-ul sau tab-ul \"oferte/promoții\"",
     "successText4": "Dacă ai orice probleme, dă-mi de știre!",
-    "successEmail": "support@antrenortanc.ro",
+    "successEmail": "support@musclepals.com",
     "errorTitle": "Avem o problemă cu<br />procesarea<br />plății tale.",
     "errorImageAlt": "Raport neplătit",
     "errorText1": "Plata ta <b>nu a fost finalizată</b>, întoarce-te la pagina principală și încearcă din nou.",
@@ -778,7 +778,7 @@
     "persistentError": {
       "title": "Problema persistă",
       "description": "Din păcate, problema cu salvarea răspunsurilor persistă. Ar putea fi o eroare tehnică.<br /><br />Contactează-ne la adresa: {email}",
-      "contactEmail": "support@antrenortanc.ro"
+      "contactEmail": "support@musclepals.com"
     }
   },
   "PushupsStep": {
@@ -838,5 +838,9 @@
     "minutes": "{count, plural, one {# minute} other {# minute}}",
     "info": "Durata optimă de antrenament este de <i><b>45-60 de minute</b></i>. Amintiți-vă că <b>calitatea</b> seriilor este mai importantă decât <b>cantitatea</b>.",
     "recommended": "(recomandat)"
+  },
+  "ReviewsMarquee": {
+    "imageAlt": "User review",
+    "title": "Vedeți ce spun clienții noștri"
   }
 }

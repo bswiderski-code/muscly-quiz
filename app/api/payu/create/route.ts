@@ -134,7 +134,7 @@ export async function POST(req: NextRequest) {
 			notifyUrl: `${realOrigin}/api/payu/notify`,
 			customerIp: getClientIp(req),
 			validityTime: 8035200,
-			continueUrl: `${realOrigin}/wynik/zamowienie/${sessionId}`,
+			continueUrl: `${realOrigin}/result/order/${sessionId}`,
 			description: normalizedDescription,
 			currencyCode: (market.currency as Currency) || Currency.PLN,
 			totalAmount,

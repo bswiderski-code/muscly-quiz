@@ -6,19 +6,14 @@ import { funnelDefinitions, type FunnelDefinition } from './funnelDefinitions'
 export type FunnelKey = keyof typeof funnelDefinitions
 export const FUNNELS: Record<FunnelKey, FunnelDefinition> = funnelDefinitions
 
-const fallback = <T>(map: LocalizedStringMap | undefined, locale?: string): T | undefined => {
-  if (!map) return undefined
-  return (map[(locale as Locale) ?? defaultLocale] ?? map[defaultLocale] ?? Object.values(map)[0]) as T | undefined
-}
-
 export const getFunnelSlug = (funnel: FunnelKey, locale?: string): string => {
-  const slug = fallback<string>(FUNNELS[funnel]?.slug, locale)
+  const slug = FUNNELS[funnel]?.slug
   if (!slug) throw new Error(`Unknown funnel slug for '${funnel}'`)
   return slug
 }
 
 export const getResultSlug = (funnel: FunnelKey, locale?: string): string => {
-  const slug = fallback<string>(FUNNELS[funnel]?.resultSlug ?? FUNNELS[funnel]?.slug, locale)
+  const slug = FUNNELS[funnel]?.resultSlug ?? FUNNELS[funnel]?.slug
   if (!slug) throw new Error(`Unknown result slug for '${funnel}'`)
   return slug
 }
@@ -30,29 +25,27 @@ export const getStepOrder = (funnel: FunnelKey): readonly StepId[] => {
 }
 
 export const getStepSlug = (funnel: FunnelKey, stepId: StepId, locale?: string): string => {
-  const slug = fallback<string>(FUNNELS[funnel]?.steps.slugs[stepId], locale)
+  const slug = FUNNELS[funnel]?.steps.slugs[stepId]
   if (!slug) throw new Error(`Unknown step slug for '${stepId}' in funnel '${funnel}'`)
   return slug
 }
 
 export const resolveFunnelKey = (slug: string, locale?: string): FunnelKey | null => {
   return (Object.keys(FUNNELS) as FunnelKey[]).find((key) => {
-    const target = fallback<string>(FUNNELS[key].slug, locale)
-    return target === slug
+    return FUNNELS[key].slug === slug
   }) ?? null
 }
 
 export const resolveFunnelKeyByResultSlug = (slug: string, locale?: string): FunnelKey | null => {
   return (Object.keys(FUNNELS) as FunnelKey[]).find((key) => {
-    const target = fallback<string>(FUNNELS[key].resultSlug ?? FUNNELS[key].slug, locale)
-    return target === slug
+    return (FUNNELS[key].resultSlug ?? FUNNELS[key].slug) === slug
   }) ?? null
 }
 
 export const resolveStepId = (funnel: FunnelKey, slug: string, locale?: string): StepId | null => {
-  const entries = Object.entries(FUNNELS[funnel]?.steps.slugs ?? {}) as [StepId, LocalizedStringMap][]
-  for (const [stepId, slugs] of entries) {
-    if (fallback<string>(slugs, locale) === slug) return stepId
+  const entries = Object.entries(FUNNELS[funnel]?.steps.slugs ?? {}) as [StepId, string][]
+  for (const [stepId, stepSlug] of entries) {
+    if (stepSlug === slug) return stepId
   }
   return null
 }

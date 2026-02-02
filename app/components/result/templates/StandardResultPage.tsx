@@ -15,7 +15,7 @@ import BMIBOX from '@/app/components/result/BMIBOX'
 import TDEEBOX from '@/app/components/result/TDEEBOX'
 import CheckoutForm from '@/app/components/result/form/form'
 import PlanSummary from '@/app/components/result/PlanSummary'
-import ReviewsWidget from '@/app/components/result/reviews/widget'
+import ReviewsMarquee from '@/app/components/result/ReviewsMarquee'
 import FAQPlan from '@/app/components/result/faq/faq_plan'
 import LanguageSwitcher from '@/app/components/LanguageSwitcher'
 import { DetailsSection } from '@/app/components/result/form/DetailsSection'
@@ -25,11 +25,21 @@ import MissingStepsView from '@/app/components/result/MissingStepsView'
 import { getMissingSteps } from '@/lib/validation/stepValidation'
 import type { StepId } from '@/lib/steps/stepIds'
 
+const reviewImageCounts: Record<string, number> = {
+  bg: 7,
+  cz: 6,
+  en: 6,
+  hu: 7,
+  pl: 11,
+  ro: 8,
+}
+
 export default function StandardResultPage() {
   const router = useRouter()
   const t = useTranslations('ResultPage')
   const planPageT = useTranslations('PlanPage')
   const reportFormT = useTranslations('ReportForm')
+  const reviewsT = useTranslations('ReviewsMarquee')
   const locale = useLocale()
   const privacyUrl = planPageT('assets.privacyUrl')
   const termsUrl = planPageT('assets.termsUrl')
@@ -127,7 +137,7 @@ export default function StandardResultPage() {
     emailAddress: string
     responseTime: string
   }
-  const supportEmail = contactBox?.emailAddress || 'support@trenerstrzykawa.pl'
+  const supportEmail = contactBox?.emailAddress || 'support@musclepals.com'
   
   const replaceLocale = (path: string) => path.replace(/{locale}/g, locale);
 
@@ -708,7 +718,17 @@ export default function StandardResultPage() {
       </div>
 
       <div style={{ marginTop: 32 }}>
-        {config.showReviews && <ReviewsWidget />}
+        {config.showReviews && (
+          <>
+            <h2 style={{ textAlign: 'center', fontWeight: 700, fontSize: 28, marginBottom: 16, lineHeight: 1.2 }}>
+              {reviewsT('title')}
+            </h2>
+            <ReviewsMarquee 
+              locale={reviewImageCounts[locale] ? locale : 'en'} 
+              imageCount={reviewImageCounts[reviewImageCounts[locale] ? locale : 'en'] || 6} 
+            />
+          </>
+        )}
       </div>
       <div style={{ marginTop: 32 }}>
         {config.showFaq && <FAQPlan />}

@@ -521,14 +521,14 @@
     "contactBox": {
       "title": "Masz jakiekolwiek wątpliwości?",
       "emailIntro": "Odezwij się:",
-      "emailAddress": "support@trenerstrzykawa.pl",
+      "emailAddress": "support@musclepals.com",
       "responseTime": "⏰ Zazwyczaj odpisuję w mniej niż godzinę."
     },
     "ctaButton": {
       "alt": "Odbierz plan"
     },
     "errorTitle": "Brak danych dla tego lejka.",
-    "errorDescription": "Skontaktuj się z nami pod adresem: support@trenerstrzykawa.pl",
+    "errorDescription": "Skontaktuj się z nami pod adresem: support@musclepals.com",
     "faq": {
       "title": "Najczęściej<br/>zadawane pytania:"
     }
@@ -712,7 +712,7 @@
     "successText2": "(może potrwać do 5 minut)",
     "successText3": "Sprawdź również spam i zakładkę \"oferty\"",
     "successText4": "W razie jakichkolwiek problemów, śmiało daj znać!",
-    "successEmail": "support@trenerstrzykawa.pl",
+    "successEmail": "support@musclepals.com",
     "errorTitle": "Mamy problem z<br />przetworzeniem<br />Twojej płatności.",
     "errorImageAlt": "Raport nieopłacony",
     "errorText1": "Twoja płatność <b>nie została sfinalizowana</b>, wróć do strony głównej i spróbuj ponownie.",
@@ -854,7 +854,11 @@
     "persistentError": {
       "title": "Problem nadal występuje",
       "description": "Niestety, problem z zapisem odpowiedzi nadal występuje. To może być błąd techniczny.<br /><br />Skontaktuj się z nami pod adresem: {email}",
-      "contactEmail": "support@trenerstrzykawa.pl"
+      "contactEmail": "support@musclepals.com"
     }
+  },
+  "ReviewsMarquee": {
+    "imageAlt": "Recenzja użytkownika",
+    "title": "Sprawdź co mówią o nas klienci"
   }
 }
