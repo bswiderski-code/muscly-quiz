@@ -54,6 +54,27 @@ const paymentLogosByLocale: Record<Locale, PaymentLogo[]> = {
     { src: '/payments/google_pay.svg', alt: 'Google Pay', width: 51, height: 24, showOn: 'android' },
     { src: '/payments/paypal.svg', alt: 'PayPal', width: 60, height: 30 },
   ],
+  cz: [
+    { src: '/payments/visa.svg', alt: 'Visa', width: 46, height: 24 },
+    { src: '/payments/mastercard.svg', alt: 'Mastercard', width: 46, height: 24 },
+    { src: '/payments/apple_pay.svg', alt: 'Apple Pay', width: 44, height: 19, showOn: 'apple' },
+    { src: '/payments/google_pay.svg', alt: 'Google Pay', width: 51, height: 24, showOn: 'android' },
+    { src: '/payments/paypal.svg', alt: 'PayPal', width: 60, height: 30 },
+  ],
+  bg: [
+    { src: '/payments/visa.svg', alt: 'Visa', width: 46, height: 24 },
+    { src: '/payments/mastercard.svg', alt: 'Mastercard', width: 46, height: 24 },
+    { src: '/payments/apple_pay.svg', alt: 'Apple Pay', width: 44, height: 19, showOn: 'apple' },
+    { src: '/payments/google_pay.svg', alt: 'Google Pay', width: 51, height: 24, showOn: 'android' },
+    { src: '/payments/paypal.svg', alt: 'PayPal', width: 60, height: 30 },
+  ],
+  hu: [
+    { src: '/payments/visa.svg', alt: 'Visa', width: 46, height: 24 },
+    { src: '/payments/mastercard.svg', alt: 'Mastercard', width: 46, height: 24 },
+    { src: '/payments/apple_pay.svg', alt: 'Apple Pay', width: 44, height: 19, showOn: 'apple' },
+    { src: '/payments/google_pay.svg', alt: 'Google Pay', width: 51, height: 24, showOn: 'android' },
+    { src: '/payments/paypal.svg', alt: 'PayPal', width: 60, height: 30 },
+  ],
 };
 
 export function PaymentSection({ deviceType, locale, checkoutProvider, offers, separatorText, paymentNoteHtml }: Props) {

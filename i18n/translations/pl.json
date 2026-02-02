@@ -1,23 +1,12 @@
 {
   "CheckoutProducts": {
     "workout_solo": {
-      "productName": "Plan treningowy (solo)",
-      "buttonSvg": "/btns/{locale}/workout_bef.svg"
+      "productName": "Plan treningowy (solo)"
     },
     "workout_bundle": {
-      "productName": "Plan treningowy + dieta (bundle)",
-      "buttonSvg": "/btns/{locale}/bundle_bef.svg"
-    },
-    "calisthenics_solo": {
-      "productName": "Plan kalisteniki (solo)",
-      "buttonSvg": "/btns/{locale}/workout_bef.svg"
-    },
-    "calisthenics_bundle": {
-      "productName": "Plan kalisteniki + dieta (bundle)",
-      "buttonSvg": "/btns/{locale}/bundle_bef.svg"
+      "productName": "Plan treningowy + dieta (bundle)"
     },
     "workout": {
-      "buttonSvg": "/vectors/exercises/incline_smith.svg",
       "description": "Odbierz<br />swój plan<br />treningowy!"
     }
   },
@@ -32,6 +21,15 @@
     "aria_label": "Opinie klientów",
     "average": "średnia ocen",
     "of5": "/5"
+  },
+  "PlanPage": {
+    "title": "Twój plan",
+    "privacy": "Polityka prywatności",
+    "terms": "Regulamin",
+    "assets": {
+      "privacyUrl": "https://trenerstrzykawa.pl/polityka-prywatnosci/",
+      "termsUrl": "https://trenerstrzykawa.pl/regulamin/"
+    }
   },
   "Seo": {
     "appTitle": "Musclepals",
@@ -67,17 +65,7 @@
     "description": "Uzupełnij krótką ankietę, a stworzę dla Ciebie idealny plan treningowy!\n<em>Zajmie ci to 2-3 minuty.</em>",
     "button": "Stwórz plan treningowy",
     "privacy": "Polityka Prywatności",
-    "terms": "Regulamin",
-    "assets": {
-      "logo": "/{locale}/needle/logo-long.svg",
-      "logoHeight": "38",
-      "headerContainerHeight": "40",
-      "heroImage": "/vectors/t_eagle.svg",
-      "btnImage": "/btns/{locale}/create_plan_btn.svg",
-      "homeUrl": "https://trenerstrzykawa.pl/",
-      "privacyUrl": "https://trenerstrzykawa.pl/polityka-prywatnosci/",
-      "termsUrl": "https://trenerstrzykawa.pl/regulamin/"
-    }
+    "terms": "Regulamin"
   },
   "DietGoal": {
     "title": "Jaki jest<br /><b>twój cel?</b>",
@@ -484,25 +472,19 @@
     "title2": "jednego <b>treningu</b>",
     "steps": [
       {
-        "value": "30",
-        "label": "30"
+        "value": "30"
       },
       {
-        "value": "45",
-        "label": "45"
+        "value": "45"
       },
       {
-        "value": "60",
-        "label": "60"
+        "value": "60"
       },
       {
-        "value": "90",
-        "label": "90"
+        "value": "90"
       }
     ],
-    "minuteLabelSingular": "minuta",
-    "minuteLabelPluralFew": "minuty",
-    "minuteLabelPlural": "minut",
+    "minutes": "{count, plural, one {# minuta} few {# minuty} other {# minut}}",
     "info": "Optymalny czas treningu to <i><b>45-60 minut</b></i>. Pamiętaj, że <b>jakość</b> serii jest ważniejsza niż ich <b>ilość</b>.",
     "recommended": "(rekomendowane)"
   },
@@ -532,12 +514,9 @@
     "loadingData": "Brak danych dla tej sesji.",
     "loadingErrorTitle": "Mamy problem z wczytaniem Twoich danych.",
     "loadingErrorHtml": "Odśwież stronę i spróbuj ponownie. Jeśli problem nadal występuje, napisz do nas: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
-    "loadingErrorBtn": "/btns/{locale}/once_again.svg",
+    "loadingErrorBtn": "once_again",
     "reportNote1": "wysłanych planów",
     "reportNote2": "przez ostatnie 24 godziny",
-    "trustImageSrc": "/{locale}/needle/why-trust.svg",
-    "purchaseImageSrc": "/{locale}/needle/product-description.svg",
-    "sampleImageSrc": "/{locale}/needle/sample_guy.svg",
     "joinAthletes": "Dołącz do <b><u>{count}</u> sportowców</b>, którzy <b>już korzystają</b> ze swojego <b>personalizowanego planu treningowego!</b>",
     "contactBox": {
       "title": "Masz jakiekolwiek wątpliwości?",
@@ -546,7 +525,6 @@
       "responseTime": "⏰ Zazwyczaj odpisuję w mniej niż godzinę."
     },
     "ctaButton": {
-      "imageSrc": "/btns/{locale}/get_your.svg",
       "alt": "Odbierz plan"
     },
     "errorTitle": "Brak danych dla tego lejka.",
@@ -645,20 +623,8 @@
       "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "Bardzo dużo trenuję lub mam ciężką pracę fizyczną",
       "Ćwiczę regularnie, jestem w ruchu większość dni": "Ćwiczę regularnie, jestem w ruchu większość dni",
       "Trenuję lekko kilka razy w tygodniu": "Trenuję lekko kilka razy w tygodniu",
-      "Trochę się ruszam, ale bez regularnych treningów": "Trochę się ruszam, ale bez regularnych treningów",
-      "default": "Siedzę większość dnia, mało ruchu"
-    },
-    "bmiImageMap": {
-      "5-9": "/bodyfat_variants/needle/bodyfat_1.svg",
-      "10-14": "/bodyfat_variants/needle/bodyfat_2.svg",
-      "15-19": "/bodyfat_variants/needle/bodyfat_3.svg",
-      "20-24": "/bodyfat_variants/needle/bodyfat_4.svg",
-      "25-29": "/bodyfat_variants/needle/bodyfat_5.svg",
-      "30-34": "/bodyfat_variants/needle/bodyfat_6.svg",
-      "35-39": "/bodyfat_variants/needle/bodyfat_7.svg",
-      ">40": "/bodyfat_variants/needle/bodyfat_8.svg"
-    },
-    "finalImageSrc": "/bodyfat_variants/needle/gym_rat.svg"
+      "Trochę się ruszam, ale bez regularnych treningów": "Trochę się ruszam, ale bez regularnych treningów"
+    }
   },
   "ReportForm": {
     "title": "Odbierz<br />swój plan<br />treningowy!",
@@ -716,22 +682,18 @@
     "workout": {
       "slides": [
         {
-          "img": "/example_training/{locale}/plan/sample-1.png",
           "alt": "Rafał 1",
           "caption": "Wstęp do planu treningowego – strona 1"
         },
         {
-          "img": "/example_training/{locale}/plan/sample-2.png",
           "alt": "Rafał 2",
           "caption": "Poradnik, jak korzystać z planu – strona 2"
         },
         {
-          "img": "/example_training/{locale}/plan/sample-3.png",
           "alt": "Rafał 3",
           "caption": "Początek planu treningowego – strona 5"
         },
         {
-          "img": "/example_training/{locale}/plan/sample-5.png",
           "alt": "Rafał 5",
           "caption": "Plan progresji na najbliższe 3 miesiące – strona 7"
         }
@@ -740,10 +702,6 @@
   },
   "OrderPage": {
     "logoHref": "https://trenerstrzykawa.pl/",
-    "logoSrc": "/{locale}/needle/logo-long.svg",
-    "logoHeight": "38",
-    "backButtonImage": "/btns/{locale}/backtohomepage.svg",
-    "heroSuccessSrc": "/vectors/t_eagle.svg",
     "verifyingText": "Weryfikuję płatność...",
     "processingText": "Przetwarzamy Twoją płatność...",
     "pendingHtml": "Twoja płatność jest w trakcie weryfikacji.<br /><b>Proszę, nie zamykaj tej strony.</b><br /><br />Jeśli płatność została dokonana, plan trafi na Twój e-mail w ciągu kilku minut.",
@@ -764,11 +722,9 @@
   },
   "JoinAthletes": "Dołącz do <b><u>{count}</u> sportowców</b>, którzy <b>już korzystają</b> ze swojego <b>personalizowanego planu treningowego!</b>",
   "NextButton": {
-    "imageSrc": "/btns/{locale}/next.svg",
     "alt": "Dalej"
   },
   "AnswersSummary": {
-    "buttonImage": "/btns/{locale}/answers_summary.svg",
     "buttonAlt": "Podsumowanie odpowiedzi",
     "backLinkText": "Popraw odpowiedź w formularzu",
     "conjunction_and": "i",
@@ -871,7 +827,7 @@
       "pushups": "Umiem zrobić {value} pompek.",
       "pullups": "Umiem zrobić {value} podciągnięć.",
       "pullups_none": "Nie umiem jeszcze zrobić ani jednego podciągnięcia.",
-      "duration": "{value} minut"
+      "duration": "{count, plural, one {# minuta} few {# minuty} other {# minut}}"
     }
   },
   "MissingSteps": {

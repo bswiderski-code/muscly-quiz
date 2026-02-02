@@ -37,7 +37,7 @@ function check() {
   // 2. Check Funnel Definitions & Integrity
   // ==========================================
   console.log('\nChecking funnel definitions...')
-  
+
   // Track used slugs per locale to ensure uniqueness
   const usedSlugs: Record<string, Set<string>> = {}
   for (const locale of locales) {
@@ -51,7 +51,7 @@ function check() {
 
   for (const [key, def] of Object.entries(funnelDefinitions)) {
     console.log(`Validating funnel: ${key}`)
-    
+
     // 2a. Check Steps in Order
     for (const step of def.steps.order) {
       // @ts-ignore
@@ -64,20 +64,20 @@ function check() {
     // 2b. Check Result Handler
     const specificResultPath = path.join(ROOT, 'app', '[locale]', 'wynik', key)
     const dynamicResultPath = path.join(ROOT, 'app', '[locale]', 'wynik', '[funnel]')
-    
+
     if (fs.existsSync(specificResultPath)) {
-        console.log(`  ✅ Result handler found for ${key} (specific folder)`)
+      console.log(`  ✅ Result handler found for ${key} (specific folder)`)
     } else if (fs.existsSync(dynamicResultPath)) {
-        console.log(`  ℹ️  Result handler for ${key} handled by dynamic [funnel] route`)
+      console.log(`  ℹ️  Result handler for ${key} handled by dynamic [funnel] route`)
     } else {
-        console.error(`❌ No result handler found for funnel: ${key}`)
-        errors++
+      console.error(`❌ No result handler found for funnel: ${key}`)
+      errors++
     }
 
     // 2c. Check Translation Completeness & Uniqueness
     for (const locale of locales) {
-      const slug = def.slug[locale]
-      
+      const slug = (def.slug as any)[locale]
+
       if (!slug) {
         console.error(`❌ Funnel ${key} missing slug for locale: ${locale}`)
         errors++
@@ -100,10 +100,10 @@ function check() {
         // We assume the folder name matches the funnel key
         const specificFunnelPage = path.join(ROOT, 'app', '[locale]', '(funnels)', key, 'page.tsx')
         if (fs.existsSync(specificFunnelPage)) {
-             // console.log(`  ℹ️  Funnel ${key} slug '${slug}' matches reserved path, but specific page exists. OK.`)
+          // console.log(`  ℹ️  Funnel ${key} slug '${slug}' matches reserved path, but specific page exists. OK.`)
         } else {
-             console.warn(`⚠️  Warning: Funnel ${key} slug '${slug}' (${locale}) conflicts with reserved path '${potentialPath}' and no specific page found at ${specificFunnelPage}. Funnel might be unreachable via dynamic route.`)
-             warnings++
+          console.warn(`⚠️  Warning: Funnel ${key} slug '${slug}' (${locale}) conflicts with reserved path '${potentialPath}' and no specific page found at ${specificFunnelPage}. Funnel might be unreachable via dynamic route.`)
+          warnings++
         }
       }
     }
@@ -113,7 +113,7 @@ function check() {
   // 3. Check Metadata & SEO Structure
   // ==========================================
   console.log('\nChecking metadata & SEO structure...')
-  
+
   // Check if the main dynamic funnel page exists
   const funnelPagePath = path.join(ROOT, 'app', '[locale]', '(funnels)', '[funnel]', 'page.tsx')
   if (!fs.existsSync(funnelPagePath)) {
@@ -136,10 +136,10 @@ function check() {
   // We can't easily check the sitemap.ts logic dynamically, but we can check if the file exists
   const sitemapPath = path.join(ROOT, 'app', 'sitemap.ts')
   if (fs.existsSync(sitemapPath)) {
-     console.log(`  ✅ sitemap.ts found (Manual verification recommended to ensure it includes funnels)`)
+    console.log(`  ✅ sitemap.ts found (Manual verification recommended to ensure it includes funnels)`)
   } else {
-     console.warn(`⚠️  sitemap.ts not found. SEO might be impacted.`)
-     warnings++
+    console.warn(`⚠️  sitemap.ts not found. SEO might be impacted.`)
+    warnings++
   }
 
   // ==========================================

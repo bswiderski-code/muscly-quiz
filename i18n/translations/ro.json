@@ -1,23 +1,12 @@
 {
   "CheckoutProducts": {
     "workout_solo": {
-      "productName": "Plan de antrenament (solo)",
-      "buttonSvg": "/btns/ro/workout_bef.svg"
+      "productName": "Plan de antrenament (solo)"
     },
     "workout_bundle": {
-      "productName": "Plan antrenament + dietă (pachet)",
-      "buttonSvg": "/btns/ro/bundle_bef.svg"
-    },
-    "calisthenics_solo": {
-      "productName": "Plan Calisthenics (solo)",
-      "buttonSvg": "/btns/ro/workout_bef.svg"
-    },
-    "calisthenics_bundle": {
-      "productName": "Plan Calisthenics + dietă (pachet)",
-      "buttonSvg": "/btns/ro/bundle_bef.svg"
+      "productName": "Plan antrenament + dietă (pachet)"
     },
     "workout": {
-      "buttonSvg": "/vectors/exercises/incline_smith.svg",
       "description": "Ia-ți<br />planul de<br />antrenament!"
     }
   },
@@ -67,17 +56,7 @@
     "description": "Completează un scurt chestionar, iar eu voi crea planul de antrenament ideal pentru tine!\n<em>Îți va lua 2-3 minute.</em>",
     "button": "Creează planul de antrenament",
     "privacy": "Politica de Confidențialitate",
-    "terms": "Termeni și Condiții",
-    "assets": {
-      "logo": "/{locale}/needle/logo-long.svg",
-      "logoHeight": "24",
-      "headerContainerHeight": "40",
-      "heroImage": "/vectors/t_eagle.svg",
-      "btnImage": "/btns/{locale}/create_plan_btn.svg",
-      "homeUrl": "https://antrenortanc.ro/",
-      "privacyUrl": "/privacy",
-      "termsUrl": "/terms"
-    }
+    "terms": "Termeni și Condiții"
   },
   "DietGoal": {
     "title": "Care este<br /><b>obiectivul tău?</b>",
@@ -462,12 +441,9 @@
     "loadingData": "Lipsă date pentru această sesiune.",
     "loadingErrorTitle": "Avem o problemă cu încărcarea datelor tale.",
     "loadingErrorHtml": "Reîncarcă pagina și încearcă din nou. Dacă problema persistă, scrie-ne la: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
-    "loadingErrorBtn": "/btns/{locale}/once_again.svg",
+    "loadingErrorBtn": "once_again",
     "reportNote1": "planuri trimise",
     "reportNote2": "în ultimele 24 de ore",
-    "trustImageSrc": "/{locale}/needle/why-trust.svg",
-    "purchaseImageSrc": "/{locale}/needle/product-description.svg",
-    "sampleImageSrc": "/{locale}/needle/sample_guy.svg",
     "joinAthletes": "Alătură-te celor <b><u>{count}</u> sportivi</b> care <b>deja folosesc</b> propriul lor <b>plan de antrenament personalizat!</b>",
     "contactBox": {
       "title": "Ai vreo nelămurire?",
@@ -476,7 +452,6 @@
       "responseTime": "⏰ De obicei răspund în mai puțin de o oră."
     },
     "ctaButton": {
-      "imageSrc": "/btns/{locale}/get_your.svg",
       "alt": "Ia planul"
     },
     "errorTitle": "Lipsă date pentru acest funnel.",
@@ -575,20 +550,8 @@
       "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "Mă antrenez foarte mult sau am o muncă fizică grea",
       "Ćwiczę regularnie, jestem w ruchu większość dni": "Fac exerciții regulat, sunt în mișcare majoritatea zilelor",
       "Trenuję lekko kilka razy w tygodniu": "Mă antrenez ușor de câteva ori pe săptămână",
-      "Trochę się ruszam, ale bez regularnych treningów": "Mă mișc puțin, dar fără antrenamente regulate",
-      "default": "Stau jos majoritatea zilei, puțină mișcare"
-    },
-    "bmiImageMap": {
-      "5-9": "/bodyfat_variants/needle/bodyfat_1.svg",
-      "10-14": "/bodyfat_variants/needle/bodyfat_2.svg",
-      "15-19": "/bodyfat_variants/needle/bodyfat_3.svg",
-      "20-24": "/bodyfat_variants/needle/bodyfat_4.svg",
-      "25-29": "/bodyfat_variants/needle/bodyfat_5.svg",
-      "30-34": "/bodyfat_variants/needle/bodyfat_6.svg",
-      "35-39": "/bodyfat_variants/needle/bodyfat_7.svg",
-      ">40": "/bodyfat_variants/needle/bodyfat_8.svg"
-    },
-    "finalImageSrc": "/bodyfat_variants/needle/gym_rat.svg"
+      "Trochę się ruszam, ale bez regularnych treningów": "Mă mișc puțin, dar fără antrenamente regulate"
+    }
   },
   "ReportForm": {
     "title": "Ia-ți<br />planul de<br />antrenament!",
@@ -646,22 +609,18 @@
     "workout": {
       "slides": [
         {
-          "img": "/example_training/{locale}/plan/sample-1.png",
           "alt": "Rafal 1",
           "caption": "Introducere în planul de antrenament – pagina 1"
         },
         {
-          "img": "/example_training/{locale}/plan/sample-2.png",
           "alt": "Rafal 2",
           "caption": "Ghid despre cum să folosești planul – pagina 2"
         },
         {
-          "img": "/example_training/{locale}/plan/sample-3.png",
           "alt": "Rafal 3",
           "caption": "Începutul planului de antrenament – pagina 5"
         },
         {
-          "img": "/example_training/{locale}/plan/sample-5.png",
           "alt": "Rafal 5",
           "caption": "Planul de progresie pentru următoarele 3 luni – pagina 7"
         }
@@ -670,10 +629,6 @@
   },
   "OrderPage": {
     "logoHref": "https://antrenortanc.ro/",
-    "logoSrc": "/{locale}/needle/logo-long.svg",
-    "logoHeight": "28",
-    "backButtonImage": "/btns/{locale}/backtohomepage.svg",
-    "heroSuccessSrc": "/vectors/t_eagle.svg",
     "verifyingText": "Verific plata...",
     "processingText": "Procesăm plata ta...",
     "pendingHtml": "Plata ta este în curs de verificare.<br /><b>Te rog, nu închide această pagină.</b><br /><br />Dacă plata a fost efectuată, planul va ajunge pe emailul tău în câteva minute.",
@@ -694,11 +649,9 @@
   },
   "JoinAthletes": "Alătură-te celor <b><u>{count}</u> sportivi</b> care <b>deja folosesc</b> propriul lor <b>plan de antrenament personalizat!</b>",
   "NextButton": {
-    "imageSrc": "/btns/{locale}/next.svg",
     "alt": "Mai departe"
   },
   "AnswersSummary": {
-    "buttonImage": "/btns/{locale}/answers_summary.svg",
     "buttonAlt": "Rezumatul răspunsurilor",
     "backLinkText": "Înapoi la completarea formularului",
     "conjunction_and": "și",
@@ -799,13 +752,12 @@
       "pushups": "Pot face {value} flotări.",
       "pullups": "Pot face {value} tracțiuni.",
       "pullups_none": "Nu pot face încă nicio tracțiune.",
-      "duration": "{value} minute"
+      "duration": "{count, plural, one {# minut} other {# minute}}"
     }
   },
   "MissingSteps": {
     "title": "Unele răspunsuri nu au fost salvate",
     "description": "Din păcate, softul nu a salvat răspunsurile la întrebările: {steps}.<br /><br />Apasă butonul de mai jos pentru a parcurge aceste întrebări din nou.",
-    "buttonImage": "/btns/{locale}/once_again.svg",
     "buttonAlt": "Încearcă din nou",
     "stepLabels": {
       "gender": "Gen",
@@ -871,25 +823,19 @@
     "title2": "unui <b>antrenament</b>",
     "steps": [
       {
-        "value": "30",
-        "label": "30"
+        "value": "30"
       },
       {
-        "value": "45",
-        "label": "45"
+        "value": "45"
       },
       {
-        "value": "60",
-        "label": "60"
+        "value": "60"
       },
       {
-        "value": "90",
-        "label": "90"
+        "value": "90"
       }
     ],
-    "minuteLabelSingular": "minut",
-    "minuteLabelPluralFew": "minute",
-    "minuteLabelPlural": "minute",
+    "minutes": "{count, plural, one {# minute} other {# minute}}",
     "info": "Durata optimă de antrenament este de <i><b>45-60 de minute</b></i>. Amintiți-vă că <b>calitatea</b> seriilor este mai importantă decât <b>cantitatea</b>.",
     "recommended": "(recomandat)"
   }

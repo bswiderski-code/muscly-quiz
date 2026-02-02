@@ -45,8 +45,6 @@ const normalizePlanDescription = (raw: unknown) => {
 	const code = typeof raw === 'string' ? raw.trim() : '';
 	if (code === 'workout_bundle') return 'Personalizowany plan treningowy + raport BMI';
 	if (code === 'workout_solo') return 'Personalizowany plan treningowy';
-	if (code === 'calisthenics_bundle') return 'Personalizowany plan kalisteniki + raport BMI';
-	if (code === 'calisthenics_solo') return 'Personalizowany plan kalisteniki';
 	return code || 'Personalizowany plan treningowy';
 };
 
@@ -124,7 +122,7 @@ export async function POST(req: NextRequest) {
 		}
 
 		const sessionId = randomUUID();
-		const origin = await getBaseUrl(market.locale);
+		const origin = await getBaseUrl(market.locale as any);
 		const realOrigin = (await getRealBaseUrl()) || origin;
 		const totalAmount = Math.round(Number(amountPln) * 100);
 		const normalizedDescription = (typeof productName === 'string' && productName.trim())

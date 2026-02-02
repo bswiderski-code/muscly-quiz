@@ -30,7 +30,7 @@ export default function Page() {
   const defaultIndex = 2; 
   const rememberedIndex = steps.findIndex((s) => s.value === value);
   const sliderIndex = rememberedIndex >= 0 ? rememberedIndex : defaultIndex;
-  const stepLabels = steps.map((s) => s.label);
+  const stepLabels = steps.map((s) => s.label || s.value);
 
   useEffect(() => {
     if (!value) {
@@ -38,14 +38,10 @@ export default function Page() {
     }
   }, [value, select, steps, defaultIndex]);
 
-  const currentStep = steps[sliderIndex];
-  const durationNum = Number(currentStep.value);
+  const currentStepValue = steps[sliderIndex].value;
+  const durationNum = Number(currentStepValue);
 
-  const minutaLabel = durationNum === 1
-    ? t('minuteLabelSingular')
-    : durationNum < 5
-    ? t('minuteLabelPluralFew')
-    : t('minuteLabelPlural');
+  const durationLabel = t('minutes', { count: durationNum });
 
   return (
     <main className="funnel-page">
@@ -60,7 +56,7 @@ export default function Page() {
         </h1>
 
         <div className="funnel-big-value">
-          {durationNum} {minutaLabel}
+          {durationLabel}
         </div>
 
         <div className="funnel-slider-wrap">

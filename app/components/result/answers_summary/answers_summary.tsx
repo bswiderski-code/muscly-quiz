@@ -32,7 +32,9 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
   const priorityMap = t.raw('priorityMap') as Record<string, string>;
   const format = t.raw('format') as Record<string, string>;
 
-  const buttonImageSrc = answersButtonImage ? t.raw(answersButtonImage) : t('buttonImage');
+  const buttonImageSrc = answersButtonImage 
+    ? answersButtonImage.replace('{locale}', locale) 
+    : t('buttonImage');
   const buttonAltText = t('buttonAlt');
   const backLinkText = t('backLinkText');
 
@@ -78,7 +80,7 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
       }
       return formatValue(value, format.pullups || VALUE_FORMATS.pullups);
     }
-    if (key === 'duration') return formatValue(value, format.duration || VALUE_FORMATS.duration);
+    if (key === 'duration') return t('format.duration', { count: Number(value) });
     if (key === 'activity') return activityMap[value] || value;
     if (key === 'experience' || key === 'calistenic_experience') return experienceMap[value] || value;
     if (key === 'difficulty') return difficultyMap[value] || value;

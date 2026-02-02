@@ -113,7 +113,7 @@ export async function POST(req: NextRequest) {
     }
 
     const sessionId = randomUUID();
-    const origin = await getBaseUrl(market.locale);
+    const origin = await getBaseUrl(market.locale as any);
     const realOrigin = (await getRealBaseUrl()) || origin;
 
     const order = {

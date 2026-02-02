@@ -452,7 +452,7 @@ export default function StandardResultPage() {
           alt={config.introBicepAlt}
           width={303}
           height={151}
-          style={{ width: '100%', maxWidth: 303, height: 'auto' }}
+          style={{ width: '100%', maxWidth: 303, height: 'auto', display: 'block', margin: '0 auto' }}
           priority
         />
         <p style={{ fontSize: 19, lineHeight: 1.4, marginTop: 16 }} dangerouslySetInnerHTML={{ __html: t.raw(intro2Key) }} />
@@ -786,7 +786,7 @@ export default function StandardResultPage() {
                 {termsLabel}
               </a>
             </div>
-            <LanguageSwitcher />
+
         </footer>
       </div>
     </>

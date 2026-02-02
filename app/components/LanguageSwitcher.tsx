@@ -11,6 +11,9 @@ const flags: Record<Locale, string> = {
   fr: '🇫🇷',
   de: '🇩🇪',
   ro: '🇷🇴',
+  cz: '🇨🇿',
+  bg: '🇧🇬',
+  hu: '🇭🇺',
 };
 
 export default function LanguageSwitcher() {

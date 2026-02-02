@@ -2,6 +2,8 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { funnelDefinitions } from '@/lib/funnels/funnelDefinitions';
 import type { Locale } from '@/i18n/config';
+import { ASSET_PATHS } from '@/config/imagePaths';
+import { withLocale } from '@/lib/imagePath';
 
 type CheckoutIntroProps = {
   funnelKey: string;
@@ -12,14 +14,8 @@ type CheckoutIntroProps = {
 export default function CheckoutIntro({ funnelKey, locale, imageSrc }: CheckoutIntroProps) {
   const t = useTranslations('CheckoutProducts');
 
-  // Get funnel-specific data
-  const funnelData = funnelDefinitions[funnelKey as keyof typeof funnelDefinitions];
-  if (!funnelData) {
-    return null; // Fallback if funnel data is missing
-  }
-
   // Determine image and text based on funnel and locale
-  const defaultImageSrc = t(`${funnelKey}.buttonSvg`);
+  const defaultImageSrc = withLocale(ASSET_PATHS.resultPage.inclineSmith, locale);
   const finalImageSrc = imageSrc || defaultImageSrc;
   const text = t(`${funnelKey}.description`);
 

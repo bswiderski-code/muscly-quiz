@@ -1,23 +1,12 @@
 {
   "CheckoutProducts": {
     "workout_solo": {
-      "productName": "Training Plan (solo)",
-      "buttonSvg": "/btns/{locale}/workout_bef.svg"
+      "productName": "Training Plan (solo)"
     },
     "workout_bundle": {
-      "productName": "Training Plan + Diet (bundle)",
-      "buttonSvg": "/btns/{locale}/bundle_bef.svg"
-    },
-    "calisthenics_solo": {
-      "productName": "Calisthenics Plan (solo)",
-      "buttonSvg": "/btns/{locale}/workout_bef.svg"
-    },
-    "calisthenics_bundle": {
-      "productName": "Calisthenics Plan + Diet (bundle)",
-      "buttonSvg": "/btns/{locale}/bundle_bef.svg"
+      "productName": "Training Plan + Diet (bundle)"
     },
     "workout": {
-      "buttonSvg": "/vectors/exercises/incline_smith.svg",
       "description": "Get<br />your training<br />plan!"
     }
   },
@@ -32,6 +21,15 @@
     "aria_label": "Customer reviews",
     "average": "average rating",
     "of5": "/5"
+  },
+  "PlanPage": {
+    "title": "Your plan",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "assets": {
+      "privacyUrl": "https://coachplate.com/privacy",
+      "termsUrl": "https://coachplate.com/terms"
+    }
   },
   "Seo": {
     "appTitle": "Musclepals",
@@ -67,17 +65,7 @@
     "description": "Complete a short quiz, and I'll create the perfect training plan for you!\n<em>It'll take you 2-3 minutes.</em>",
     "button": "Create training plan",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "assets": {
-      "logo": "/{locale}/needle/logo-long.svg",
-      "logoHeight": "50",
-      "headerContainerHeight": "40",
-      "heroImage": "/vectors/t_eagle.svg",
-      "btnImage": "/btns/{locale}/create_plan_btn.svg",
-      "homeUrl": "https://coachplate.com/",
-      "privacyUrl": "https://coachplate.com/privacy",
-      "termsUrl": "https://coachplate.com/terms"
-    }
+    "terms": "Terms of Service"
   },
   "DietGoal": {
     "title": "What is<br /><b>your goal?</b>",
@@ -460,12 +448,9 @@
     "loadingData": "No data for this session.",
     "loadingErrorTitle": "We're having trouble loading your data.",
     "loadingErrorHtml": "Refresh the page and try again. If the problem persists, write to us: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
-    "loadingErrorBtn": "/btns/{locale}/once_again.svg",
+    "loadingErrorBtn": "once_again",
     "reportNote1": "plans sent",
     "reportNote2": "in the last 24 hours",
-    "trustImageSrc": "/{locale}/needle/why-trust.svg",
-    "purchaseImageSrc": "/{locale}/needle/product-description.svg",
-    "sampleImageSrc": "/{locale}/needle/sample_guy.svg",
     "joinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized training plan!</b>",
     "contactBox": {
       "title": "Have any doubts?",
@@ -474,7 +459,6 @@
       "responseTime": "⏰ I usually reply in less than an hour."
     },
     "ctaButton": {
-      "imageSrc": "/btns/{locale}/get_your.svg",
       "alt": "Get plan"
     },
     "errorTitle": "No data for this funnel.",
@@ -573,20 +557,8 @@
       "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "I train very hard or have a demanding physical job",
       "Ćwiczę regularnie, jestem w ruchu większość dni": "I exercise regularly, I'm active most days",
       "Trenuję lekko kilka razy w tygodniu": "I train lightly a few times a week",
-      "Trochę się ruszam, ale bez regularnych treningów": "I move a bit, but no regular workouts",
-      "default": "I sit most of the day, little movement"
-    },
-    "bmiImageMap": {
-      "5-9": "/bodyfat_variants/needle/bodyfat_1.svg",
-      "10-14": "/bodyfat_variants/needle/bodyfat_2.svg",
-      "15-19": "/bodyfat_variants/needle/bodyfat_3.svg",
-      "20-24": "/bodyfat_variants/needle/bodyfat_4.svg",
-      "25-29": "/bodyfat_variants/needle/bodyfat_5.svg",
-      "30-34": "/bodyfat_variants/needle/bodyfat_6.svg",
-      "35-39": "/bodyfat_variants/needle/bodyfat_7.svg",
-      ">40": "/bodyfat_variants/needle/bodyfat_8.svg"
-    },
-    "finalImageSrc": "/bodyfat_variants/needle/gym_rat.svg"
+      "Trochę się ruszam, ale bez regularnych treningów": "I move a bit, but no regular workouts"
+    }
   },
   "ReportForm": {
     "title": "Get<br />your training<br />plan!",
@@ -644,22 +616,18 @@
     "workout": {
       "slides": [
         {
-          "img": "/example_training/{locale}/plan/sample-1.png",
           "alt": "Rafael 1",
           "caption": "Introduction to the training plan – page 1"
         },
         {
-          "img": "/example_training/{locale}/plan/sample-2.png",
           "alt": "Rafael 2",
           "caption": "Guide on how to use the plan – page 2"
         },
         {
-          "img": "/example_training/{locale}/plan/sample-3.png",
           "alt": "Rafael 3",
           "caption": "Start of the training plan – page 5"
         },
         {
-          "img": "/example_training/{locale}/plan/sample-5.png",
           "alt": "Rafael 5",
           "caption": "Progression plan for the next 3 months – page 7"
         }
@@ -668,10 +636,6 @@
   },
   "OrderPage": {
     "logoHref": "https://coachplate.com/",
-    "logoSrc": "/{locale}/needle/logo-long.svg",
-    "logoHeight": "50",
-    "backButtonImage": "/btns/{locale}/backtohomepage.svg",
-    "heroSuccessSrc": "/vectors/t_eagle.svg",
     "verifyingText": "Verifying payment...",
     "processingText": "Processing your payment...",
     "pendingHtml": "Your payment is being verified.<br /><b>Please do not close this page.</b><br /><br />If payment was made, the plan will arrive in your email within a few minutes.",
@@ -692,11 +656,9 @@
   },
   "JoinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized training plan!</b>",
   "NextButton": {
-    "imageSrc": "/btns/{locale}/next.svg",
     "alt": "Next"
   },
   "AnswersSummary": {
-    "buttonImage": "/btns/{locale}/answers_summary.svg",
     "buttonAlt": "Summary of answers",
     "backLinkText": "Return to filling the form",
     "conjunction_and": "and",
@@ -789,13 +751,12 @@
       "age": "{value} years",
       "frequency": "{value}x/week",
       "fitness": "{value}/10",
-      "sleep": "{value} hours"
+      "duration": "{count, plural, one {# minute} other {# minutes}}"
     }
   },
   "MissingSteps": {
     "title": "Some answers were not saved",
     "description": "Unfortunately, the software didn't save answers to the questions: {steps}.<br /><br />Click the button below to go through these questions again.",
-    "buttonImage": "/btns/{locale}/once_again.svg",
     "buttonAlt": "Try again",
     "stepLabels": {
       "gender": "Gender",
@@ -861,25 +822,19 @@
     "title2": "<b>duration</b>",
     "steps": [
       {
-        "value": "30",
-        "label": "30"
+        "value": "30"
       },
       {
-        "value": "45",
-        "label": "45"
+        "value": "45"
       },
       {
-        "value": "60",
-        "label": "60"
+        "value": "60"
       },
       {
-        "value": "90",
-        "label": "90"
+        "value": "90"
       }
     ],
-    "minuteLabelSingular": "minute",
-    "minuteLabelPluralFew": "minutes",
-    "minuteLabelPlural": "minutes",
+    "minutes": "{count, plural, one {# minute} other {# minutes}}",
     "info": "Optimal training time is <i><b>45-60 minutes</b></i>. Remember that <b>quality</b> of sets is more important than <b>quantity</b>.",
     "recommended": "(recommended)"
   }

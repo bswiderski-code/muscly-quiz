@@ -8,26 +8,8 @@ import StepRangeSlider from '@/app/components/funnels/StepRangeSlider';
 import { useEffect } from 'react';
 import NextButton from '@/app/components/funnels/NextButton';
 import { useTranslations } from 'next-intl';
-const ASSETS = {
-  maleByValue: {
-    '5-9': '/bodyfat_variants/needle/m_bodyfat_1.svg',
-    '10-14': '/bodyfat_variants/needle/m_bodyfat_2.svg',
-    '15-19': '/bodyfat_variants/needle/m_bodyfat_3.svg',
-    '20-24': '/bodyfat_variants/needle/m_bodyfat_4.svg',
-    '25-29': '/bodyfat_variants/needle/m_bodyfat_5.svg',
-    '30-34': '/bodyfat_variants/needle/m_bodyfat_6.svg',
-    '35-39': '/bodyfat_variants/needle/m_bodyfat_7.svg',
-    '>40': '/bodyfat_variants/needle/m_bodyfat_8.svg',
-  },
-  femaleByValue: {
-    '10-14': '/bodyfat_variants/needle/f_bodyfat_1.svg',
-    '15-19': '/bodyfat_variants/needle/f_bodyfat_2.svg',
-    '20-24': '/bodyfat_variants/needle/f_bodyfat_3.svg',
-    '25-29': '/bodyfat_variants/needle/f_bodyfat_4.svg',
-    '30-39': '/bodyfat_variants/needle/f_bodyfat_5.svg',
-    '>40': '/bodyfat_variants/needle/f_bodyfat_6.svg',
-  },
-};
+import { ASSET_PATHS } from '@/config/imagePaths';
+
 
 const stepId: StepId = 'bodyfat';
 
@@ -52,7 +34,7 @@ export default function Page() {
 
   const STEPS_DATA = isFemale ? FEMALE_STEPS_DATA : MALE_STEPS_DATA;
   const STEPS = STEPS_DATA.map(s => ({ value: s.value, label: s.label }));
-  const imageByValue = isFemale ? ASSETS.femaleByValue : ASSETS.maleByValue;
+  const imageByValue = isFemale ? ASSET_PATHS.bmiImages.female : ASSET_PATHS.bmiImages.male;
   const BF_MAP = new Map(STEPS_DATA.map(s => [s.value, { info: s.info, imageSrc: (imageByValue as Record<string, string>)[s.value] }]));
 
   const DEFAULT_VALUE = isFemale ? '20-24' : '15-19';

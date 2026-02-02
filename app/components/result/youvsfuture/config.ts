@@ -1,3 +1,4 @@
+import { ASSET_PATHS } from "@/config/imagePaths";
 import type { FunnelKey } from "@/lib/funnels/funnels";
 
 export interface YouVsFutureConfig {
@@ -43,28 +44,11 @@ const DEFAULT_CONFIG: YouVsFutureConfig = {
   bmiImgBaseWidth: 680,
   bmiImgBaseHeight: 943,
 
-  maleBodyfatMap: {
-    "5-9": "/bodyfat_variants/needle/m_bodyfat_1.svg",
-    "10-14": "/bodyfat_variants/needle/m_bodyfat_2.svg",
-    "15-19": "/bodyfat_variants/needle/m_bodyfat_3.svg",
-    "20-24": "/bodyfat_variants/needle/m_bodyfat_4.svg",
-    "25-29": "/bodyfat_variants/needle/m_bodyfat_5.svg",
-    "30-34": "/bodyfat_variants/needle/m_bodyfat_6.svg",
-    "35-39": "/bodyfat_variants/needle/m_bodyfat_7.svg",
-    ">40": "/bodyfat_variants/needle/m_bodyfat_8.svg",
-  },
-  maleFinalImage: "/bodyfat_variants/needle/m_final.svg",
+  maleBodyfatMap: { ...ASSET_PATHS.bmiImages.male },
+  maleFinalImage: ASSET_PATHS.bmiImages.final.male,
 
-  femaleBodyfatMap: {
-    "10-14": "/bodyfat_variants/needle/k_bodyfat_1.svg",
-    "15-19": "/bodyfat_variants/needle/k_bodyfat_2.svg",
-    "20-24": "/bodyfat_variants/needle/k_bodyfat_3.svg",
-    "25-29": "/bodyfat_variants/needle/k_bodyfat_4.svg",
-    "30-39": "/bodyfat_variants/needle/k_bodyfat_5.svg",
-    "40+": "/bodyfat_variants/needle/k_bodyfat_6.svg",
-    ">40": "/bodyfat_variants/needle/k_bodyfat_6.svg",
-  },
-  femaleFinalImage: "/bodyfat_variants/needle/f_final.svg",
+  femaleBodyfatMap: { ...ASSET_PATHS.bmiImages.female },
+  femaleFinalImage: ASSET_PATHS.bmiImages.final.female,
 
   lineHeight: 1.2,
   headerFontSize: 18,

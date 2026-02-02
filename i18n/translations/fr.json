@@ -1,23 +1,12 @@
 {
   "CheckoutProducts": {
     "workout_solo": {
-      "productName": "Programme d'entraînement (solo)",
-      "buttonSvg": "/btns/{locale}/workout_bef.svg"
+      "productName": "Programme d'entraînement (solo)"
     },
     "workout_bundle": {
-      "productName": "Programme + Diète (pack)",
-      "buttonSvg": "/btns/{locale}/bundle_bef.svg"
-    },
-    "calisthenics_solo": {
-      "productName": "Programme Calisthenics (solo)",
-      "buttonSvg": "/btns/{locale}/workout_bef.svg"
-    },
-    "calisthenics_bundle": {
-      "productName": "Programme Calisthenics + Diète (pack)",
-      "buttonSvg": "/btns/{locale}/bundle_bef.svg"
+      "productName": "Programme + Diète (pack)"
     },
     "workout": {
-      "buttonSvg": "/vectors/exercises/incline_smith.svg",
       "description": "Obtiens<br />ton programme<br />d'entraînement !"
     }
   },
@@ -67,17 +56,7 @@
     "description": "Réponds à ce court quiz, et je créerai le programme d'entraînement idéal pour toi !\n<em>Ça te prendra 2-3 minutes.</em>",
     "button": "Créer mon programme",
     "privacy": "Politique de Confidentialité",
-    "terms": "CGV",
-    "assets": {
-      "logo": "/{locale}/needle/logo-long.svg",
-      "logoHeight": "50",
-      "headerContainerHeight": "40",
-      "heroImage": "/vectors/t_eagle.svg",
-      "btnImage": "/btns/{locale}/create_plan_btn.svg",
-      "homeUrl": "https://trenerstrzykawa.pl/",
-      "privacyUrl": "https://trenerstrzykawa.pl/polityka-prywatnosci/",
-      "termsUrl": "https://trenerstrzykawa.pl/regulamin/"
-    }
+    "terms": "CGV"
   },
   "DietGoal": {
     "title": "Quel est<br /><b>ton objectif ?</b>",
@@ -462,12 +441,9 @@
     "loadingData": "Pas de données pour cette session.",
     "loadingErrorTitle": "On a un souci pour charger tes données.",
     "loadingErrorHtml": "Rafraîchis la page et réessaie. Si le problème persiste, écris-nous à : <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
-    "loadingErrorBtn": "/btns/{locale}/once_again.svg",
+    "loadingErrorBtn": "once_again",
     "reportNote1": "programmes envoyés",
     "reportNote2": "ces dernières 24 heures",
-    "trustImageSrc": "/{locale}/needle/why-trust.svg",
-    "purchaseImageSrc": "/{locale}/needle/product-description.svg",
-    "sampleImageSrc": "/{locale}/needle/sample_guy.svg",
     "joinAthletes": "Rejoins <b><u>{count}</u> athlètes</b> qui <b>utilisent déjà</b> leur <b>programme d'entraînement personnalisé !</b>",
     "contactBox": {
       "title": "Tu as des doutes ?",
@@ -476,7 +452,6 @@
       "responseTime": "⏰ Je réponds généralement en moins d'une heure."
     },
     "ctaButton": {
-      "imageSrc": "/btns/{locale}/get_your.svg",
       "alt": "Recevoir mon plan"
     },
     "errorTitle": "Pas de données pour ce funnel.",
@@ -575,20 +550,8 @@
       "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "Je m'entraîne très dur ou j'ai un travail physique difficile",
       "Ćwiczę regularnie, jestem w ruchu większość dni": "Je m'entraîne régulièrement, je suis actif la plupart du temps",
       "Trenuję lekko kilka razy w tygodniu": "Je m'entraîne tranquillement quelques fois par semaine",
-      "Trochę się ruszam, ale bez regularnych treningów": "Je bouge un peu, mais pas d'entraînement régulier",
-      "default": "Assis la plupart du temps, peu de mouvement"
-    },
-    "bmiImageMap": {
-      "5-9": "/bodyfat_variants/needle/bodyfat_1.svg",
-      "10-14": "/bodyfat_variants/needle/bodyfat_2.svg",
-      "15-19": "/bodyfat_variants/needle/bodyfat_3.svg",
-      "20-24": "/bodyfat_variants/needle/bodyfat_4.svg",
-      "25-29": "/bodyfat_variants/needle/bodyfat_5.svg",
-      "30-34": "/bodyfat_variants/needle/bodyfat_6.svg",
-      "35-39": "/bodyfat_variants/needle/bodyfat_7.svg",
-      ">40": "/bodyfat_variants/needle/bodyfat_8.svg"
-    },
-    "finalImageSrc": "/bodyfat_variants/needle/gym_rat.svg"
+      "Trochę się ruszam, ale bez regularnych treningów": "Je bouge un peu, mais pas d'entraînement régulier"
+    }
   },
   "ReportForm": {
     "title": "Obtiens<br />ton programme<br />d'entraînement !",
@@ -646,22 +609,18 @@
     "workout": {
       "slides": [
         {
-          "img": "/example_training/{locale}/plan/sample-1.png",
           "alt": "Rafal 1",
           "caption": "Intro au programme d'entraînement – page 1"
         },
         {
-          "img": "/example_training/{locale}/plan/sample-2.png",
           "alt": "Rafal 2",
           "caption": "Guide d'utilisation du programme – page 2"
         },
         {
-          "img": "/example_training/{locale}/plan/sample-3.png",
           "alt": "Rafal 3",
           "caption": "Début du programme d'entraînement – page 5"
         },
         {
-          "img": "/example_training/{locale}/plan/sample-5.png",
           "alt": "Rafal 5",
           "caption": "Plan de progression pour les 3 prochains mois – page 7"
         }
@@ -670,10 +629,6 @@
   },
   "OrderPage": {
     "logoHref": "https://trenerstrzykawa.pl/",
-    "logoSrc": "/{locale}/needle/logo-long.svg",
-    "logoHeight": "50",
-    "backButtonImage": "/btns/{locale}/backtohomepage.svg",
-    "heroSuccessSrc": "/vectors/t_eagle.svg",
     "verifyingText": "Vérification du paiement...",
     "processingText": "Nous traitons ton paiement...",
     "pendingHtml": "Ton paiement est en cours de vérification.<br /><b>S'il te plaît, ne ferme pas cette page.</b><br /><br />Si le paiement est passé, le plan arrivera sur ton email dans quelques minutes.",
@@ -694,11 +649,9 @@
   },
   "JoinAthletes": "Rejoins <b><u>{count}</u> athlètes</b> qui <b>utilisent déjà</b> leur <b>programme d'entraînement personnalisé !</b>",
   "NextButton": {
-    "imageSrc": "/btns/{locale}/next.svg",
     "alt": "Suivant"
   },
   "AnswersSummary": {
-    "buttonImage": "/btns/{locale}/answers_summary.svg",
     "buttonAlt": "Résumé des réponses",
     "backLinkText": "Retour au formulaire",
     "conjunction_and": "et",
@@ -787,13 +740,13 @@
       "age": "{value} ans",
       "frequency": "{value}x/sem.",
       "fitness": "{value}/10",
-      "sleep": "{value} heures"
+      "sleep": "{value} heures",
+      "duration": "{count, plural, one {# minute} other {# minutes}}"
     }
   },
   "MissingSteps": {
     "title": "Certaines réponses n'ont pas été enregistrées",
     "description": "Malheureusement, le logiciel n'a pas enregistré les réponses aux questions : {steps}.<br /><br />Clique sur le bouton ci-dessous pour repasser ces questions.",
-    "buttonImage": "/btns/{locale}/once_again.svg",
     "buttonAlt": "Réessayer",
     "stepLabels": {
       "gender": "Genre",
@@ -859,25 +812,19 @@
     "title2": "d'un <b>entraînement</b>",
     "steps": [
       {
-        "value": "30",
-        "label": "30"
+        "value": "30"
       },
       {
-        "value": "45",
-        "label": "45"
+        "value": "45"
       },
       {
-        "value": "60",
-        "label": "60"
+        "value": "60"
       },
       {
-        "value": "90",
-        "label": "90"
+        "value": "90"
       }
     ],
-    "minuteLabelSingular": "minute",
-    "minuteLabelPluralFew": "minutes",
-    "minuteLabelPlural": "minutes",
+    "minutes": "{count, plural, one {# minute} other {# minutes}}",
     "info": "La durée optimale d'entraînement est de <i><b>45-60 minutes</b></i>. N'oubliez pas que la <b>qualité</b> des séries est plus importante que la <b>quantité</b>.",
     "recommended": "(recommandé)"
   }

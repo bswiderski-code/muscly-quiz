@@ -10,22 +10,20 @@ type OfferPricing = {
 }
 
 type LocalePricing = {
-  currency: string
-  workout_solo: OfferPricing
-  workout_bundle: OfferPricing
-  calisthenics_solo: OfferPricing
-  calisthenics_bundle: OfferPricing
-}
+  currency: string;
+  workout_solo: OfferPricing;
+  workout_bundle: OfferPricing;
+};
 
 export type SkipRule = {
   trigger: {
-    step: StepId
-    value: string
-  }[] // Changed to array for AND logic
-  skip: StepId[]
-}
+    step: StepId;
+    value: string;
+  }[]; // Changed to array for AND logic
+  skip: StepId[];
+};
 
-export type ResultTemplate = 'standard'
+export type ResultTemplate = 'standard';
 
 /**
  * Funnel definition with all configuration in one place.
@@ -38,28 +36,28 @@ export type ResultTemplate = 'standard'
  * - `steps.skipRules`: Conditional logic to skip steps based on answers
  */
 export type FunnelDefinition = {
-  slug: LocalizedStringMap
-  resultSlug?: LocalizedStringMap
-  translationNamespace: string
-  allowedDomains?: string[]
-  item: string
-  pricePLN: number
-  currency: string
-  pricing?: Partial<Record<LocalePricingKey, LocalePricing>>
-  resultTemplate?: ResultTemplate
-  forcedAnswers?: Record<string, string | number>
+  slug: LocalizedStringMap;
+  resultSlug?: LocalizedStringMap;
+  translationNamespace: string;
+  allowedDomains?: string[];
+  item: string;
+  pricePLN: number;
+  currency: string;
+  pricing?: Partial<Record<LocalePricingKey, LocalePricing>>;
+  resultTemplate?: ResultTemplate;
+  forcedAnswers?: Record<string, string | number>;
   steps: {
-    order: readonly StepId[]
-    slugs: Record<StepId, LocalizedStringMap>
-    skipRules?: SkipRule[]
-  }
-}
+    order: readonly StepId[];
+    slugs: Record<StepId, LocalizedStringMap>;
+    skipRules?: SkipRule[];
+  };
+};
 
 const stepsFor = (order: readonly StepId[], skipRules?: SkipRule[]): FunnelDefinition['steps'] => ({
   order,
   slugs: STEP_SLUGS,
   skipRules,
-})
+});
 
 // Shared pricing configuration (can be reused across funnels)
 const sharedPricing: Partial<Record<LocalePricingKey, LocalePricing>> = {
@@ -67,38 +65,28 @@ const sharedPricing: Partial<Record<LocalePricingKey, LocalePricing>> = {
     currency: 'PLN',
     workout_solo: { amount: 35.99, description: 'workout_solo' },
     workout_bundle: { amount: 39.99, description: 'workout_bundle' },
-    calisthenics_solo: { amount: 35.99, description: 'calisthenics_solo' },
-    calisthenics_bundle: { amount: 39.99, description: 'calisthenics_bundle' },
   },
   en: {
     currency: 'USD',
     workout_solo: { amount: 9.99, description: 'workout_solo' },
     workout_bundle: { amount: 11.99, description: 'workout_bundle' },
-    calisthenics_solo: { amount: 9.99, description: 'calisthenics_solo' },
-    calisthenics_bundle: { amount: 11.99, description: 'calisthenics_bundle' },
   },
   de: {
     currency: 'EUR',
     workout_solo: { amount: 9.99, description: 'workout_solo' },
     workout_bundle: { amount: 11.99, description: 'workout_bundle' },
-    calisthenics_solo: { amount: 9.99, description: 'calisthenics_solo' },
-    calisthenics_bundle: { amount: 11.99, description: 'calisthenics_bundle' },
   },
   fr: {
     currency: 'EUR',
     workout_solo: { amount: 9.99, description: 'workout_solo' },
     workout_bundle: { amount: 11.99, description: 'workout_bundle' },
-    calisthenics_solo: { amount: 9.99, description: 'calisthenics_solo' },
-    calisthenics_bundle: { amount: 11.99, description: 'calisthenics_bundle' },
   },
   ro: {
     currency: 'RON',
     workout_solo: { amount: 39.99, description: 'workout_solo' },
     workout_bundle: { amount: 44.99, description: 'workout_bundle' },
-    calisthenics_solo: { amount: 39.99, description: 'calisthenics_solo' },
-    calisthenics_bundle: { amount: 44.99, description: 'calisthenics_bundle' },
   },
-}
+};
 
 /**
  * Funnel definitions - all configuration in one place.

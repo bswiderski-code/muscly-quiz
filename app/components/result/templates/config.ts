@@ -1,4 +1,5 @@
 import type { FunnelKey } from "@/lib/funnels/funnels";
+import { ASSET_PATHS } from "@/config/imagePaths";
 
 export interface ResultPageConfig {
   // --- Images ---
@@ -25,7 +26,7 @@ export interface ResultPageConfig {
   showReviews: boolean;
   showFaq: boolean;
   showContactBox: boolean;
-  
+
   // --- Spacing & Styling ---
   containerMaxWidth: number;
 
@@ -55,11 +56,11 @@ const DEFAULT_RESULT_CONFIG: ResultPageConfig = {
   // Images
   introBicepImage: "/vectors/bmibiceps.svg",
   dividerImage: "/components/dynamic_line.svg",
-  trustImage: "/{locale}/needle/why-trust.svg",
-  purchaseImage: "/{locale}/needle/product-description.svg",
-  sampleImage: "/{locale}/needle/sample_guy.svg",
-  ctaButtonImage: "/btns/{locale}/get_your.svg",
-  loadingErrorBtnImage: "/btns/{locale}/once_again.svg",
+  trustImage: ASSET_PATHS.resultPage.whyTrust,
+  purchaseImage: ASSET_PATHS.resultPage.productDescription,
+  sampleImage: ASSET_PATHS.resultPage.sampleGuy,
+  ctaButtonImage: ASSET_PATHS.buttons.getYourPlan,
+  loadingErrorBtnImage: ASSET_PATHS.buttons.onceAgain,
 
   // Image Alts
   introBicepAlt: "BMI Biceps",
@@ -100,8 +101,8 @@ const DEFAULT_RESULT_CONFIG: ResultPageConfig = {
   sampleBtnKey: "sampleBtn",
   sampleTitleKey: "sampleTitle",
   joinAthletesKey: "joinAthletes",
-  answersButtonImage: "buttonImage",
-  checkoutIntroImage: "/vectors/exercises/incline_smith.svg",
+  answersButtonImage: ASSET_PATHS.buttons.answersSummary,
+  checkoutIntroImage: ASSET_PATHS.resultPage.inclineSmith,
 
   // Alt Text Keys
   trustImageAltKey: "trustImageAlt",

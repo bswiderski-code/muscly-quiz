@@ -3,7 +3,7 @@ import { trackInitiateCheckout, trackEvent } from '@/lib/analytics'
 import { funnelDefinitions, type LocalePricingKey } from '@/lib/funnels/funnelDefinitions'
 import type { Locale, CheckoutProvider } from '@/i18n/config'
 
-type OfferKind = 'workout_solo' | 'workout_bundle' | 'calisthenics_solo' | 'calisthenics_bundle'
+type OfferKind = 'workout_solo' | 'workout_bundle'
 
 type LocalizedOffer = {
 	amount: number
@@ -14,8 +14,6 @@ type LocalizedOffer = {
 type LocalizedPricing = {
 	workout_solo: LocalizedOffer
 	workout_bundle: LocalizedOffer
-	calisthenics_solo: LocalizedOffer
-	calisthenics_bundle: LocalizedOffer
 }
 
 const localeFallbackOrder: LocalePricingKey[] = ['pl', 'en', 'de', 'fr']
@@ -34,8 +32,6 @@ export function getLocalizedPricing(funnelKey: string, locale: Locale, marketCur
 	return {
 		workout_solo: { ...entry.workout_solo, currency },
 		workout_bundle: { ...entry.workout_bundle, currency },
-		calisthenics_solo: { ...entry.calisthenics_solo, currency },
-		calisthenics_bundle: { ...entry.calisthenics_bundle, currency },
 	}
 }
 
