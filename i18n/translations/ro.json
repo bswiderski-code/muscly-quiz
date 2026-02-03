@@ -628,7 +628,7 @@
     }
   },
   "OrderPage": {
-    "logoHref": "https://antrenortanc.ro/",
+    "logoHref": "https://musclepals.com/",
     "verifyingText": "Verific plata...",
     "processingText": "Procesăm plata ta...",
     "pendingHtml": "Plata ta este în curs de verificare.<br /><b>Te rog, nu închide această pagină.</b><br /><br />Dacă plata a fost efectuată, planul va ajunge pe emailul tău în câteva minute.",
@@ -644,8 +644,12 @@
     "errorImageAlt": "Raport neplătit",
     "errorText1": "Plata ta <b>nu a fost finalizată</b>, întoarce-te la pagina principală și încearcă din nou.",
     "buttonText": "Înapoi la pagina principală",
-    "logoAlt": "logo antrenor tanc",
-    "contactText": "Dacă crezi că este o greșeală, contactează-mă:"
+    "logoAlt": "Musclepals",
+    "contactText": "Dacă crezi că este o greșeală, contactează-mă:",
+    "logoSrc": "/ro/needle/logo-long.svg",
+    "logoHeight": "50",
+    "backButtonImage": "/btns/ro/backtohomepage.svg",
+    "heroSuccessSrc": "/ro/needle/sample_guy.svg"
   },
   "JoinAthletes": "Alătură-te celor <b><u>{count}</u> sportivi</b> care <b>deja folosesc</b> propriul lor <b>plan de antrenament personalizat!</b>",
   "NextButton": {

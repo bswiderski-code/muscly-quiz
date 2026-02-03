@@ -628,7 +628,7 @@
     }
   },
   "OrderPage": {
-    "logoHref": "https://trenerstrzykawa.pl/",
+    "logoHref": "https://musclepals.com/",
     "verifyingText": "Vérification du paiement...",
     "processingText": "Nous traitons ton paiement...",
     "pendingHtml": "Ton paiement est en cours de vérification.<br /><b>S'il te plaît, ne ferme pas cette page.</b><br /><br />Si le paiement est passé, le plan arrivera sur ton email dans quelques minutes.",
@@ -644,8 +644,12 @@
     "errorImageAlt": "Rapport non payé",
     "errorText1": "Ton paiement <b>n'a pas été finalisé</b>, retourne à la page d'accueil et réessaie.",
     "buttonText": "Retour à l'accueil",
-    "logoAlt": "logo coach fonte",
-    "contactText": "Si tu penses que c'est une erreur, contacte-moi :"
+    "logoAlt": "Musclepals",
+    "contactText": "Si tu penses que c'est une erreur, contacte-moi :",
+    "logoSrc": "/en/needle/logo-long.svg",
+    "logoHeight": "50",
+    "backButtonImage": "/btns/en/backtohomepage.svg",
+    "heroSuccessSrc": "/en/needle/sample_guy.svg"
   },
   "JoinAthletes": "Rejoins <b><u>{count}</u> athlètes</b> qui <b>utilisent déjà</b> leur <b>programme d'entraînement personnalisé !</b>",
   "NextButton": {

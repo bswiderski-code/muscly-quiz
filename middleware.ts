@@ -1,20 +1,23 @@
 import createMiddleware from 'next-intl/middleware';
-import {NextRequest, NextResponse} from 'next/server';
-import {routing} from './i18n/routing';
+import { NextRequest, NextResponse } from 'next/server';
+import { routing } from './i18n/routing';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
+import { getEffectiveHost } from '@/lib/domain/effectiveHost';
+import { CANONICAL_HOST } from '@/config/site';
 
 export default async function middleware(request: NextRequest) {
   const hostHeader = getIncomingHost(request.headers) ?? '';
-  const hostForChecks = hostHeader.toLowerCase();
+  const effectiveHost = getEffectiveHost(hostHeader) ?? hostHeader;
+  const hostForChecks = effectiveHost.toLowerCase();
 
   // Local dev exception: localhost, *.local, etc.
-  const isLocalDev = 
-    hostForChecks.endsWith('.local') || 
-    hostForChecks.includes('localhost') || 
+  const isLocalDev =
+    hostForChecks.endsWith('.local') ||
+    hostForChecks.includes('localhost') ||
     hostForChecks.includes('127.0.0.1') ||
     hostForChecks.includes('.local:');
 
-  const canonicalHost = 'quiz.musclepals.com';
+  const canonicalHost = CANONICAL_HOST;
 
   // 1. Production rule: Enforce canonical host.
   if (!isLocalDev && hostForChecks !== canonicalHost) {

@@ -1,4 +1,5 @@
 import { getDomainLookupHost, normalizeHost } from '@/lib/domain/host';
+import { CANONICAL_HOST } from '@/config/site';
 
 function normalizeEnvHost(raw: string): string {
   const trimmed = raw.trim();
@@ -50,16 +51,16 @@ function normalizeSuffixToken(token: string): string {
 }
 
 /**
- * Dev-only: allow running on a dev host (DEV_URL) while treating the app as if it was accessed via SPOOFED.
+ * Dev-only: allow running on a dev host (DEV_URL) while treating the app as if it was accessed via CANONICAL_HOST.
  *
  * Env:
  * - DEV_URL: where you actually access the dev server (e.g. ngrok host). Can be a comma/space-separated list.
  *            Also supports wildcard suffix tokens like "*.ngrok-free.app" (or ".ngrok-free.app").
- * - SPOOFED: the host you want the app to behave as (market/locale/seo/etc), e.g. "trenerzyla.pl"
+ * - SPOOFING: set to "true" to enable this behavior.
  *
  * Notes:
  * - In production, spoofing is always disabled.
- * - On localhost/127.0.0.1/[::1], spoofing is allowed as long as SPOOFED is set (no DEV_URL needed).
+ * - On localhost/127.0.0.1/[::1], spoofing is allowed as long as SPOOFING is "true".
  * - On non-localhost hosts, spoofing only applies when DEV_URL matches the current host (or a wildcard suffix).
  */
 export function getEffectiveHost(host: string | null | undefined): string | null {
@@ -71,14 +72,13 @@ export function getEffectiveHost(host: string | null | undefined): string | null
   // Explicitly check for SPOOFING flag
   if (process.env.SPOOFING !== 'true') return host;
 
-  const spoofedRaw = process.env.SPOOFED ?? '';
-  const normalizedSpoofed = normalizeEnvHost(spoofedRaw);
+  const normalizedSpoofed = normalizeEnvHost(CANONICAL_HOST);
   if (!normalizedSpoofed) return host;
 
   const normalizedHost = normalizeHost(host);
   if (!normalizedHost) return host;
 
-  // Localhost development: if SPOOFED is set, always allow spoofing.
+  // Localhost development: if SPOOFING is "true", always allow spoofing.
   if (isLocalhostNormalizedHost(normalizedHost)) {
     return normalizedSpoofed;
   }

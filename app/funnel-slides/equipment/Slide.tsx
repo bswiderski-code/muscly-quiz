@@ -8,11 +8,14 @@ import { useStepController } from '@/lib/useStepController';
 import type { StepId } from '@/lib/steps/stepIds.ts';
 import { useTranslations } from 'next-intl';
 import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
+import { DISABLED_EQUIPMENT } from '@/config/quiz';
 import "../funnel.css";
 
 const stepId: StepId = 'equipment';
 
-const EQUIPMENT_VALUES = ['none', 'bands', 'dumbbells', 'barbell', 'bench', 'pullup_bar', 'dip_bar'] as const;
+const EQUIPMENT_VALUES = ['none', 'bands', 'dumbbells', 'barbell', 'bench', 'pullup_bar', 'dip_bar'].filter(
+	(val) => !DISABLED_EQUIPMENT.includes(val)
+) as readonly string[];
 
 type OptionCopy = {
 	label: string;

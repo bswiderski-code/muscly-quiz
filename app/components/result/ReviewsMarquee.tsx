@@ -26,28 +26,28 @@ export default function ReviewsMarquee({ locale, imageCount }: ReviewsMarqueePro
       `/reviews/${locale.toLowerCase()}/rev${i + 1}.png`
     );
 
-    // Defer the state update to avoid synchronous setState in effect
-    queueMicrotask(() => {
-      const shuffled = [...images];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      setRandomizedImages(shuffled);
-    });
+    const shuffled = [...images];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    setRandomizedImages(shuffled);
   }, [locale, imageCount]);
 
   // Preload images when they become visible
   useEffect(() => {
     if (isVisible && !imagesLoaded && randomizedImages.length > 0) {
+      console.log('[ReviewsMarquee] Starting to preload images:', randomizedImages);
       const imagePromises = randomizedImages.map((src) => {
         return new Promise<string>((resolve, reject) => {
           const img = new window.Image();
           img.onload = () => {
+            console.log('[ReviewsMarquee] Image loaded successfully:', src);
             setLoadedImageUrls((prev) => new Set([...prev, src]));
             resolve(src);
           };
           img.onerror = () => {
+            console.error('[ReviewsMarquee] Failed to load image:', src);
             setLoadedImageUrls((prev) => new Set([...prev, src]));
             reject(src);
           };
@@ -56,20 +56,50 @@ export default function ReviewsMarquee({ locale, imageCount }: ReviewsMarqueePro
       });
 
       Promise.all(imagePromises)
-        .then(() => setTimeout(() => setImagesLoaded(true), 100))
-        .catch(() => setTimeout(() => setImagesLoaded(true), 100));
+        .then(() => {
+          console.log('[ReviewsMarquee] All images preloaded (success or fail)');
+          setTimeout(() => setImagesLoaded(true), 100);
+        })
+        .catch(() => {
+          console.log('[ReviewsMarquee] Some images failed to preload, but marking as loaded anyway');
+          setTimeout(() => setImagesLoaded(true), 100);
+        });
+        
+      // Fallback: set imagesLoaded to true after 2 seconds anyway to ensure visibility
+      const fallbackTimer = setTimeout(() => {
+          if (!imagesLoaded) {
+              console.warn('[ReviewsMarquee] Preloading timeout reached, forcing visibility');
+              setImagesLoaded(true);
+          }
+      }, 2000);
+      return () => clearTimeout(fallbackTimer);
     }
   }, [isVisible, randomizedImages, imagesLoaded]);
 
   // Observer
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
+      ([entry]) => {
+          console.log('[ReviewsMarquee] Intersection change:', entry.isIntersecting);
+          setIsVisible(entry.isIntersecting);
+      },
       { threshold: 0.1 }
     );
     if (scrollerRef.current) observer.observe(scrollerRef.current);
-    return () => observer.disconnect();
-  }, []);
+    
+    // Fallback for cases where IntersectionObserver might fail or in extreme environments
+    const fallbackTimer = setTimeout(() => {
+        if (!isVisible) {
+            console.log('[ReviewsMarquee] Forcing visibility fallback');
+            setIsVisible(true);
+        }
+    }, 1000);
+
+    return () => {
+        observer.disconnect();
+        clearTimeout(fallbackTimer);
+    };
+  }, [isVisible]);
 
   // --- NEW: JS-Based Auto Scroll ---
   useEffect(() => {
@@ -82,7 +112,7 @@ export default function ReviewsMarquee({ locale, imageCount }: ReviewsMarqueePro
       const deltaTime = time - lastTime;
       lastTime = time;
 
-      if (scrollerRef.current && !isDragging && isVisible && imagesLoaded) {
+      if (scrollerRef.current && !isDragging && isVisible) {
         // Adjust this value to change speed (pixels per second)
         // 1px per frame at 60fps is 60px/s. 
         // 45px/s is ~25% slower and very smooth.
@@ -121,7 +151,7 @@ export default function ReviewsMarquee({ locale, imageCount }: ReviewsMarqueePro
 
     animationFrameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrameId);
-  }, [isDragging, isVisible, imagesLoaded]); 
+  }, [isDragging, isVisible]); 
 
   // Mouse/Touch handlers
   const handleStart = (e: React.MouseEvent | React.TouchEvent, clientX: number) => {

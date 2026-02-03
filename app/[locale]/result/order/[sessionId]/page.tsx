@@ -18,7 +18,7 @@ const ZamowieniePageContent = () => {
     if (!sessionId) return;
 
     let attempts = 0;
-    const maxAttempts = 6; // Poll up to 6 times
+    const maxAttempts = 10; // Poll up to 30 times (2 minutes total)
     const pollInterval = 4000; // 4 seconds between polls (max wait = (maxAttempts-1)*interval = 20s)
     let timeoutId: NodeJS.Timeout;
 
@@ -82,8 +82,8 @@ const ZamowieniePageContent = () => {
           return;
         }
 
-        const sha256_email = await hashSHA256(data.email);
-        const sha256_name = await hashSHA256(data.name);
+        const sha256_email = await hashSHA256(data.email || '');
+        const sha256_name = await hashSHA256(data.name || '');
         const purchaseValue = Number(data.amount);
 
         // Send GTM purchase event
@@ -145,33 +145,36 @@ const ZamowieniePageContent = () => {
   }, [sessionId, purchaseEventsSent]);
 
   const assets = {
-    logoHref: t('logoHref'),
-    logoSrc: t('logoSrc'),
+    logoHref: 'https://musclepals.com',
+    logoSrc: '/branding/logo.svg',
     logoHeight: (() => {
+      if (!t.has('logoHeight')) return 50;
       const parsed = Number.parseInt(t('logoHeight'), 10);
       return Number.isFinite(parsed) && parsed > 0 ? parsed : 50;
     })(),
-    backButtonImage: t('backButtonImage'),
-    heroSuccessSrc: t('heroSuccessSrc')
+    backButtonImage: t.has('backButtonImage') ? t('backButtonImage') : '/btns/pl/backtohomepage.svg',
+    heroSuccessSrc: t.has('heroSuccessSrc') ? t('heroSuccessSrc') : '/vectors/t_eagle.svg'
   };
 
   if (status === 'loading' || status === 'pending') {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: '#fff', padding: '0 24px' }}>
-        <div style={{ marginBottom: 8, marginTop: 16, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+        <div style={{ marginBottom: 32, marginTop: 16, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
           <Image src={assets.logoSrc} alt={t('logoAlt')} width={220} height={assets.logoHeight} style={{ width: 'auto', height: assets.logoHeight, maxWidth: '100%' }} />
         </div>
-        <div style={{ marginTop: 24, marginBottom: 18, fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif", fontSize: 22, fontWeight: 700, color: '#111', textAlign: 'center' }}>
+        <div style={{ marginTop: 48, marginBottom: 32, fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif", fontSize: 22, fontWeight: 700, color: '#111', textAlign: 'center' }}>
           {status === 'loading' ? t('verifyingText') : t('processingText')}
         </div>
-        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 60, height: 60, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <svg width="60" height="60" viewBox="0 0 60 60">
-            <circle cx="30" cy="30" r="24" stroke="#111" strokeWidth="4" fill="none" strokeDasharray="38 38" strokeLinecap="round">
-              <animateTransform attributeName="transform" type="rotate" from="0 30 30" to="360 30 30" dur="1s" repeatCount="indefinite" />
-            </circle>
-            <circle cx="30" cy="30" r="10" fill="#fff" stroke="#111" strokeWidth="2" />
-          </svg>
-        </div>
+        {status === 'loading' && (
+          <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 60, height: 60, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <svg width="60" height="60" viewBox="0 0 60 60">
+              <circle cx="30" cy="30" r="24" stroke="#111" strokeWidth="4" fill="none" strokeDasharray="38 38" strokeLinecap="round">
+                <animateTransform attributeName="transform" type="rotate" from="0 30 30" to="360 30 30" dur="1s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="30" cy="30" r="10" fill="#fff" stroke="#111" strokeWidth="2" />
+            </svg>
+          </div>
+        )}
         {status === 'pending' && (
           <>
             <div style={{ marginTop: 24, fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif", fontSize: 16, color: '#111', textAlign: 'center', maxWidth: 340 }}>
@@ -194,7 +197,7 @@ const ZamowieniePageContent = () => {
     return (
       <div style={{ minHeight: '100vh', background: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif", padding: '0 24px' }}>
         <div style={{ maxWidth: 420, width: '100%', marginLeft: 'auto', marginRight: 'auto', padding: 0, boxSizing: 'border-box', textAlign: 'center' }}>
-          <div style={{ marginBottom: 8, marginTop: 16, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+          <div style={{ marginBottom: 32, marginTop: 16, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
             <Image src={assets.logoSrc} alt={t('logoAlt')} width={220} height={assets.logoHeight} style={{ width: 'auto', height: assets.logoHeight, maxWidth: '100%' }} />
           </div>
           <div style={{ fontSize: 32, fontWeight: 700, margin: '16px 0 0 0', color: '#111', lineHeight: 1.18 }}>

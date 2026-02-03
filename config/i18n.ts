@@ -87,7 +87,7 @@ export const LOCALE_CONFIG = {
     },
 } as const satisfies Record<string, Omit<MarketInfo, 'isKnownHost'>>;
 
-export const locales = Object.keys(LOCALE_CONFIG) as Array<keyof typeof LOCALE_CONFIG>;
+export const locales = ['pl'] as const;
 export type Locale = typeof locales[number];
 
 export const defaultLocale: Locale = 'pl';

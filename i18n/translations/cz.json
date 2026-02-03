@@ -624,7 +624,7 @@
     }
   },
   "OrderPage": {
-    "logoHref": "https://coachplate.com/",
+    "logoHref": "https://musclepals.com/",
     "verifyingText": "Verifying payment...",
     "processingText": "Processing your payment...",
     "pendingHtml": "Your payment is being verified.<br /><b>Please do not close this page.</b><br /><br />If payment was made, the plan will arrive in your email within a few minutes.",
@@ -640,8 +640,12 @@
     "errorImageAlt": "Report unpaid",
     "errorText1": "Your payment <b>was not finalized</b>, return to the main page and try again.",
     "buttonText": "Return to main page",
-    "logoAlt": "coach plate logo",
-    "contactText": "If you think this is a mistake, contact me:"
+    "logoAlt": "Musclepals",
+    "contactText": "If you think this is a mistake, contact me:",
+    "logoSrc": "/en/needle/logo-long.svg",
+    "logoHeight": "50",
+    "backButtonImage": "/btns/en/backtohomepage.svg",
+    "heroSuccessSrc": "/en/needle/sample_guy.svg"
   },
   "JoinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized training plan!</b>",
   "NextButton": {

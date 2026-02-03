@@ -722,10 +722,25 @@ export default function StandardResultPage() {
             <h2 style={{ textAlign: 'center', fontWeight: 700, fontSize: 28, marginBottom: 16, lineHeight: 1.2 }}>
               {reviewsT('title')}
             </h2>
-            <ReviewsMarquee 
-              locale={reviewImageCounts[locale] ? locale : 'en'} 
-              imageCount={reviewImageCounts[reviewImageCounts[locale] ? locale : 'en'] || 6} 
-            />
+            {(() => {
+              const baseLocale = locale.split('-')[0].toLowerCase();
+              const effectiveLocale = reviewImageCounts[baseLocale] ? baseLocale : 'en';
+              const effectiveCount = reviewImageCounts[effectiveLocale] || 6;
+              
+              console.log('[Reviews] Resolved ReviewsMarquee props:', { 
+                originalLocale: locale, 
+                baseLocale, 
+                effectiveLocale, 
+                effectiveCount 
+              });
+              
+              return (
+                <ReviewsMarquee 
+                  locale={effectiveLocale} 
+                  imageCount={effectiveCount} 
+                />
+              );
+            })()}
           </>
         )}
       </div>

@@ -701,7 +701,7 @@
     }
   },
   "OrderPage": {
-    "logoHref": "https://trenerstrzykawa.pl/",
+    "logoHref": "https://musclepals.com/",
     "verifyingText": "Weryfikuję płatność...",
     "processingText": "Przetwarzamy Twoją płatność...",
     "pendingHtml": "Twoja płatność jest w trakcie weryfikacji.<br /><b>Proszę, nie zamykaj tej strony.</b><br /><br />Jeśli płatność została dokonana, plan trafi na Twój e-mail w ciągu kilku minut.",
@@ -717,8 +717,12 @@
     "errorImageAlt": "Raport nieopłacony",
     "errorText1": "Twoja płatność <b>nie została sfinalizowana</b>, wróć do strony głównej i spróbuj ponownie.",
     "buttonText": "Wróć do strony głównej",
-    "logoAlt": "trener strzykawa logo",
-    "contactText": "Jeśli uważasz, że jest to pomyłka skontaktuj się ze mną:"
+    "logoAlt": "Musclepals",
+    "contactText": "Jeśli uważasz, że jest to pomyłka skontaktuj się ze mną:",
+    "logoSrc": "/pl/needle/logo-long.svg",
+    "logoHeight": "50",
+    "backButtonImage": "/btns/pl/backtohomepage.svg",
+    "heroSuccessSrc": "/pl/needle/sample_guy.svg"
   },
   "JoinAthletes": "Dołącz do <b><u>{count}</u> sportowców</b>, którzy <b>już korzystają</b> ze swojego <b>personalizowanego planu treningowego!</b>",
   "NextButton": {

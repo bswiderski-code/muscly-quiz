@@ -1,6 +1,7 @@
 import { STEP_SLUGS, type LocalizedStringMap } from '../steps/stepSlugs'
 import type { StepId } from '../steps/stepIds'
 import type { Locale } from '@/i18n/config'
+import { DISABLED_STEPS } from '@/config/quiz'
 
 export type LocalePricingKey = Locale
 
@@ -54,7 +55,7 @@ export type FunnelDefinition = {
 };
 
 const stepsFor = (order: readonly StepId[], skipRules?: SkipRule[]): FunnelDefinition['steps'] => ({
-  order,
+  order: order.filter(stepId => !DISABLED_STEPS.includes(stepId)),
   slugs: STEP_SLUGS,
   skipRules,
 });
@@ -66,6 +67,7 @@ const sharedPricing: Partial<Record<LocalePricingKey, LocalePricing>> = {
     workout_solo: { amount: 35.99, description: 'workout_solo' },
     workout_bundle: { amount: 39.99, description: 'workout_bundle' },
   },
+  /*
   en: {
     currency: 'USD',
     workout_solo: { amount: 9.99, description: 'workout_solo' },
@@ -86,6 +88,7 @@ const sharedPricing: Partial<Record<LocalePricingKey, LocalePricing>> = {
     workout_solo: { amount: 39.99, description: 'workout_solo' },
     workout_bundle: { amount: 44.99, description: 'workout_bundle' },
   },
+  */
 };
 
 /**

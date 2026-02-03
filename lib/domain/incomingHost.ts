@@ -65,9 +65,9 @@ function matchesDevUrl(candidateHost: string, devTokens: string[]): boolean {
  *
  * Why:
  * - In production, `x-forwarded-host` is typically the canonical "real host".
- * - In development (ngrok / reverse proxies / Caddy), `x-forwarded-host` can sometimes be the *spoofed*
+ * - In development (ngrok / reverse proxies / Caddy), `x-forwarded-host` can sometimes be the canonical
  *   website domain, while `host` is the dev tunnel domain. When that happens we must pick the dev domain
- *   so spoofing (DEV_URL -> SPOOFED) can activate reliably.
+ *   so spoofing (DEV_URL -> CANONICAL_HOST) can activate reliably.
  *
  * Behavior:
  * - Production: prefer `x-forwarded-host`, fallback to `host`.
