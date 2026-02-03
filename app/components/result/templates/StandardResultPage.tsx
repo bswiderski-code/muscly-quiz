@@ -437,6 +437,7 @@ export default function StandardResultPage() {
           textAlign: 'center',
           fontWeight: 700,
           fontSize: 32,
+          marginTop: 16,
           marginBottom: 4,
         }}
         dangerouslySetInnerHTML={{ __html: t.raw(titleKey) }}
