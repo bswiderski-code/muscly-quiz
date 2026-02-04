@@ -153,7 +153,7 @@ export default function Page() {
         </div>
 
         <div className="funnel-submit-wrap">
-          <NextButton currentIdx={idx} onClick={() => select(value ?? "", { advance: true })} />
+          <NextButton currentIdx={idx} stepId={stepId} onClick={() => select(value ?? "", { advance: true })} />
         </div>
       </div>
     </main>

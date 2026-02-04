@@ -17,7 +17,6 @@ import TDEEBOX from '@/app/components/result/TDEEBOX'
 import CheckoutForm from '@/app/components/result/form/form'
 import PlanSummary from '@/app/components/result/PlanSummary'
 import ReviewsMarquee from '@/app/components/result/ReviewsMarquee'
-import FAQPlan from '@/app/components/result/faq/faq_plan'
 import { DetailsSection } from '@/app/components/result/form/DetailsSection'
 import { EmblaCarousel } from '@/app/components/result/Carousel/Carousel'
 import AnswersSummary from '@/app/components/result/answers_summary/answers_summary'
@@ -756,7 +755,7 @@ export default function StandardResultPage({ faqSection }: StandardResultPagePro
         )}
       </div>
       <section style={{ marginTop: 48 }}>
-        {config.showFaq && (faqSection || <FAQPlan />)}
+        {config.showFaq && (faqSection)}
         {config.showContactBox && (
         <div
           style={{

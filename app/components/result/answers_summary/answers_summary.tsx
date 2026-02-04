@@ -91,7 +91,7 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
     }
     if (key === 'duration') return t('format.duration', { count: Number(value) });
     if (key === 'activity') return activityMap[value] || value;
-    if (key === 'experience' || key === 'calistenic_experience') return experienceMap[value] || value;
+    if (key === 'experience') return experienceMap[value] || value;
     if (key === 'difficulty') return difficultyMap[value] || value;
     if (key === 'location') {
       const normalized = value === 'gym' ? 'gym' : 'house';

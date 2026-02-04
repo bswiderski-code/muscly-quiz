@@ -21,7 +21,6 @@ export const ANSWER_EMOJIS: Record<string, string | ((value: any) => string)> = 
   sleep: '🛌',
   pushups: '💪',
   pullups: '🧗',
-  calistenic_experience: '🤸',
   duration: '⏱️',
   bmi: '📊',
   name: '👤',

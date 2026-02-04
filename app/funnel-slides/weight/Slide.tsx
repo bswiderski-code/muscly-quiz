@@ -397,6 +397,7 @@ export default function Page() {
             >
               <NextButton
                 currentIdx={idx}
+                stepId={stepId}
                 fieldKey="weight_goal"
                 fieldValue={weightGoal}
                 onClick={() => {

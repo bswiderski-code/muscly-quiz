@@ -452,21 +452,6 @@
       "10+": "Více než 10 shybů"
     }
   },
-  "CalistenicExperienceStep": {
-    "title": "Jaké máš <span class=\"kalistenika-text\">zkušenosti</span> s kalistenikou?",
-    "options": {
-      "none": "Nový",
-      "just_started": "Začátečník",
-      "some_experience": "Středně pokročilý",
-      "advanced": "Pokročilý"
-    },
-    "descriptions": {
-      "none": "Začínám od nuly. Předtím jsem pravidelně netrénoval a chci vybudovat základní sílu a naučit se techniku.",
-      "just_started": "Mám už kontakt se sportem. Zvládnu sérii kliků a dřepů, ale na hrazdě se nepřitáhnu vůbec nebo jen 1-3x.",
-      "some_experience": "Trénuji pravidelně. Zvládám série shybů (přes 5) a dipů. Chci se posunout výš (např. naučit se Muscle Up, L-sit).",
-      "advanced": "Základy jsou pro mě rozcvička. Zvládám Muscle Up a pracuji na těžkých statických prvcích (Front Lever, Planche) nebo pokročilé dynamice."
-    }
-  },
   "DurationStep": {
     "title1": "Vyber <b>délku</b>",
     "title2": "jednoho <b>tréninku</b>",
@@ -762,7 +747,6 @@
       "sleep": "Spánek",
       "pushups": "Kliky",
       "pullups": "Shyby",
-      "calistenic_experience": "Zkušenosti (kalistenika)",
       "duration": "Délka tréninku"
     },
     "gender": {

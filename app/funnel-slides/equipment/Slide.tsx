@@ -102,6 +102,7 @@ export default function Page() {
 				<div className="funnel-submit-wrap">
 					<NextButton
 						currentIdx={idx}
+						stepId={stepId}
 						fieldKey="equipment"
 						fieldValue={serializedSelection}
 						disabled={!hasSelection || isPending}

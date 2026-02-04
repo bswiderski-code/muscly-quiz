@@ -17,8 +17,10 @@ export const ALL_STEPS = [
   'sleep',
   'pushups',
   'pullups',
-  'calistenic_experience',
   'duration',
+  'cardio',
+  'balance',
+  'physique_goal',
 ] as const
 
 export type StepId = typeof ALL_STEPS[number]
@@ -44,6 +46,8 @@ export const STEP_TAGS: Record<StepId, StepTag | undefined> = {
   sleep: undefined,
   pushups: undefined,
   pullups: undefined,
-  calistenic_experience: undefined,
   duration: undefined,
+  cardio: undefined,
+  balance: undefined,
+  physique_goal: undefined,
 }

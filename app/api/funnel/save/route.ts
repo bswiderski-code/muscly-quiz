@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
       bodyfat: (answers.bodyfat as string) ?? null,
       diet_goal: (answers.diet_goal as string) ?? null,
       frequency: parseNumber(answers.frequency),
-      experience: (answers.experience || answers.calistenic_experience || null) as string,
+      experience: (answers.experience || null) as string,
       location: (answers.location as string) ?? null,
       priority: (answers.priority as string) ?? null,
       equipment: (answers.equipment as string) ?? null,

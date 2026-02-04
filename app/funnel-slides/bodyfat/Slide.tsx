@@ -113,7 +113,7 @@ export default function Page() {
         </div>
 
         <div className="funnel-submit-wrap">
-          <NextButton currentIdx={idx} onClick={goNext} />
+          <NextButton currentIdx={idx} stepId={stepId} onClick={goNext} />
         </div>
       </div>
     </main>

@@ -17,7 +17,7 @@ const detectLanguage = () => {
 export type FunnelAnswers = {
   // Dynamic access for any step ID
   [key: string]: string | number | undefined
-  
+
   // Common fields (kept for type safety/autocompletion in components)
   name?: string
   email?: string
@@ -41,7 +41,6 @@ export type FunnelAnswers = {
   duration?: number
   pushups?: string
   pullups?: string
-  calistenic_experience?: string
   usedMetric?: 'us' | 'eu'
   height_raw?: number
   weight_raw?: number

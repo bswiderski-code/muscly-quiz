@@ -229,6 +229,7 @@ export default function Page() {
         >
           <NextButton
             currentIdx={idx}
+            stepId={stepId}
             fieldKey="height"
             fieldValue={Number.isFinite(valueToSave) ? valueToSave : undefined}
             onClick={handleNext} 

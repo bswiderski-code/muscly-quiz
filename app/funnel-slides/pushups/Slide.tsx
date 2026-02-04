@@ -62,6 +62,7 @@ export default function Page() {
         <div className="funnel-submit-wrap">
           <NextButton
             currentIdx={idx}
+            stepId={stepId}
             onClick={handleNext}
             disabled={!isValid}
           />

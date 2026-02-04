@@ -452,21 +452,6 @@
       "10+": "Over 10 pull-ups"
     }
   },
-  "CalistenicExperienceStep": {
-    "title": "What is your <span class=\"kalistenika-text\">experience</span> with calisthenics?",
-    "options": {
-      "none": "New",
-      "just_started": "Beginner",
-      "some_experience": "Intermediate",
-      "advanced": "Advanced"
-    },
-    "descriptions": {
-      "none": "Starting from zero. Haven't trained regularly before, want to build base strength and learn technique.",
-      "just_started": "Have some contact with sports. Can do a set of push-ups/squats, but can't pull up or only do 1-3 reps.",
-      "some_experience": "Training regularly. Can do sets of pull-ups (over 5) and dips. Want to level up (e.g., learn Muscle Up, L-sit).",
-      "advanced": "Basics are a warmup. I can do a Muscle Up and am working on hard static elements (Front Lever, Planche) or advanced dynamics."
-    }
-  },
   "DurationStep": {
     "title1": "Select the <b>duration</b>",
     "title2": "of a single <b>workout</b>",
@@ -762,7 +747,6 @@
       "sleep": "Sleep",
       "pushups": "Push-ups",
       "pullups": "Pull-ups",
-      "calistenic_experience": "Experience (calisthenics)",
       "duration": "Workout duration"
     },
     "gender": {

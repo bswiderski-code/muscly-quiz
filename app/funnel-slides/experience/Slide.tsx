@@ -137,6 +137,7 @@ export default function Page() {
         <div className="funnel-submit-wrap">
           <NextButton 
             currentIdx={idx} 
+            stepId={stepId}
             fieldKey="experience"
             fieldValue={value}
             disabled={!value} 

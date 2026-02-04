@@ -2,6 +2,7 @@ import { STEP_SLUGS, type LocalizedStringMap } from '../steps/stepSlugs'
 import type { StepId } from '../steps/stepIds'
 import type { Locale } from '@/i18n/config'
 import { DISABLED_STEPS } from '@/config/quiz'
+import { FUNNEL_STEPS_ORDER, FUNNEL_SKIP_RULES } from '@/config/funnelFlow'
 
 export type LocalePricingKey = Locale
 
@@ -118,41 +119,8 @@ export const funnelDefinitions = {
     currency: 'PLN',
     pricing: sharedPricing,
     steps: stepsFor(
-      [
-        'gender',
-        'diet_goal',
-        'height',
-        'weight',
-        'age',
-        'bodyfat',
-        'bmi',
-        'activity',
-        'location',
-        'equipment',
-        'experience',
-        'difficulty',
-        'priority',
-        'frequency',
-        'duration',
-        'fitness',
-        'sleep',
-        'pushups',
-        'pullups',
-        'calistenic_experience',
-      ] as const,
-      [
-        {
-          trigger: [{ step: 'location', value: 'gym' }],
-          skip: ['equipment']
-        },
-        {
-          trigger: [
-            { step: 'gender', value: 'M' },
-            { step: 'location', value: 'house' }
-          ],
-          skip: ['pullups', 'calistenic_experience']
-        }
-      ]
+      FUNNEL_STEPS_ORDER,
+      FUNNEL_SKIP_RULES
     ),
     resultTemplate: 'standard',
   },

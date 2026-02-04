@@ -171,7 +171,7 @@ export async function POST(req: NextRequest) {
 				bodyfat: (bodyfat as string) ?? null,
 				diet_goal: (diet_goal as string) ?? null,
 				frequency: frequency ? Math.round(parseNumber(frequency)) : null,
-				experience: (experience || calistenic_experience || null) as string,
+				experience: (experience || null) as string,
 				priority: (priority as string) ?? null,
 				location: (location as string) ?? null,
 				equipment: (equipment as string) ?? null,

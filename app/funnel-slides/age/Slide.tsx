@@ -71,6 +71,7 @@ export default function Page() {
           <div className="funnel-submit-wrap">
             <NextButton
               currentIdx={idx}
+              stepId={stepId}
               fieldKey="age"
               fieldValue={value}
               onClick={() => select(value, { advance: true })}

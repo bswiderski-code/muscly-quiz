@@ -452,413 +452,397 @@
       "10+": "Több mint 10"
     }
   },
-  "CalistenicExperienceStep": {
-    "title": "Milyen <span class=\"kalistenika-text\">tapasztalatod</span> van a saját testsúlyos edzésben?",
-    "options": {
-      "none": "Új vagyok",
-      "just_started": "Kezdő",
-      "some_experience": "Középhaladó",
-      "advanced": "Haladó"
+"DurationStep": {
+  "title1": "Válaszd ki egy",
+  "title2": "<b>edzés időtartamát</b>",
+  "steps": [
+    {
+      "value": "30"
     },
-    "descriptions": {
-      "none": "Nulláról indulok. Korábban nem edzettem rendszeresen, alap erőt szeretnék építeni és megtanulni a technikát.",
-      "just_started": "Van már kapcsolatom a sporttal. Meg tudok csinálni egy sorozat fekvőtámaszt és guggolást, de húzódzkodni nem, vagy csak 1-3 alkalommal tudok.",
-      "some_experience": "Rendszeresen edzek. Szabályosan végzek sorozatokat húzódzkodásból (5 felett) és tolódzkodásból. Szintet szeretnék lépni (pl. Muscle Up, L-sit tanulása).",
-      "advanced": "Az alapok nekem bemelegítés. Megy a Muscle Up és nehéz statikus elemeken (Front Lever, Planche) vagy haladó dinamikán dolgozom."
+    {
+      "value": "45"
+    },
+    {
+      "value": "60"
+    },
+    {
+      "value": "90"
     }
+  ],
+  "minutes": "{count, plural, one {# perc} other {# perc}}",
+  "info": "Az optimális edzésidő <i><b>45-60 perc</b></i>. Ne feledd, a sorozatok <b>minősége</b> fontosabb, mint a <b>mennyisége</b>.",
+  "recommended": "(ajánlott)"
+},
+"ResultPage": {
+  "title": "<span style=\"font-size: 36px; font-weight: 700;\">Az Edzésterved</span><br /><span style=\"font-size: 28px; font-weight: 400;\">elkészült!</span>",
+  "intro1": "A <b>14 válaszod</b> alapján hozta létre<br />egy <b>fejlett edzésalgoritmus</b>,<br />melyet kifejezetten<br /><b>alakformálásra</b> és <b>zsírégetésre</b> terveztek.",
+  "intro2": "Egy <b>adatokon alapuló egyéni tervet</b> kapsz,<br/>amely <b>kevesebb mint 3 perc alatt</b> készült el<br />egy olyan technológiával, amely több mint<br/><b>4 000 edzéskombinációt</b> elemez.",
+  "subtitle": "<b>Gyors Összefoglaló</b><br /><span style=\"font-size: 28px; font-weight: 400;\">az eredményeidről</span>",
+  "trustImageAlt": "Miért bízz bennünk?",
+  "analyzeTitle": "Az algoritmus elemzi többek közt:",
+  "analyzeList": {
+    "aktywnosc": "Az <b>aktivitási szintedet</b>",
+    "cel": "A <b>célodat</b> (fogyás / tömegnövelés)",
+    "wiek": "Az <b>életkorodat</b>",
+    "doswiadczenie": "<b>Edzésmúltadat</b>",
+    "time": "A rendelkezésedre álló <b>időt</b>",
+    "strengths": "<b>Az alkatod erősségeit és gyengeségeit</b>"
   },
-  "DurationStep": {
-    "title1": "Válaszd ki egy",
-    "title2": "<b>edzés időtartamát</b>",
-    "steps": [
-      {
-        "value": "30"
-      },
-      {
-        "value": "45"
-      },
-      {
-        "value": "60"
-      },
-      {
-        "value": "90"
-      }
-    ],
-    "minutes": "{count, plural, one {# perc} other {# perc}}",
-    "info": "Az optimális edzésidő <i><b>45-60 perc</b></i>. Ne feledd, a sorozatok <b>minősége</b> fontosabb, mint a <b>mennyisége</b>.",
-    "recommended": "(ajánlott)"
+  "conclusion1": "Majd kiválaszt egy <b>konkrét edzéstervet</b>, amely jobban illik a <b>te helyzetedhez</b>, mint az interneten található <b>sablon tervek 99%-a</b>.",
+  "conclusion2": "Ez a <b>személyi edzői tudás</b> és a <b>rendszer precizitásának</b> ötvözete, amely nem hibázik és nem tippel.",
+  "purchaseTitle": "Mit kapsz pontosan a vásárlás után?",
+  "purchaseImageAlt": "Termékleírás",
+  "sampleBtn": "Nézd meg a minta edzéstervet!",
+  "sampleTitle": "Íme néhány oldal Rafał tervéből!",
+  "loadingTitle": "Készítem az edzéstervedet...",
+  "loadingSubtitle": "Kis türelmet, betöltöm az összes eredményt.",
+  "loadingData": "Nincs adat ehhez a munkamenethez.",
+  "loadingErrorTitle": "Probléma lépett fel az adataid betöltésekor.",
+  "loadingErrorHtml": "Frissítsd az oldalt és próbáld újra. Ha a probléma továbbra is fennáll, írj nekünk: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
+  "loadingErrorBtn": "once_again",
+  "reportNote1": "elküldött terv",
+  "reportNote2": "az elmúlt 24 órában",
+  "joinAthletes": "Csatlakozz a <b><u>{count}</u> sportolóhoz</b>, akik <b>már használják</b> a <b>személyre szabott edzéstervüket!</b>",
+  "contactBox": {
+    "title": "Bármilyen kételyed van?",
+    "emailIntro": "Írj:",
+    "emailAddress": "support@musclepals.com",
+    "responseTime": "⏰ Általában egy órán belül válaszolok."
   },
-  "ResultPage": {
-    "title": "<span style=\"font-size: 36px; font-weight: 700;\">Az Edzésterved</span><br /><span style=\"font-size: 28px; font-weight: 400;\">elkészült!</span>",
-    "intro1": "A <b>14 válaszod</b> alapján hozta létre<br />egy <b>fejlett edzésalgoritmus</b>,<br />melyet kifejezetten<br /><b>alakformálásra</b> és <b>zsírégetésre</b> terveztek.",
-    "intro2": "Egy <b>adatokon alapuló egyéni tervet</b> kapsz,<br/>amely <b>kevesebb mint 3 perc alatt</b> készült el<br />egy olyan technológiával, amely több mint<br/><b>4 000 edzéskombinációt</b> elemez.",
-    "subtitle": "<b>Gyors Összefoglaló</b><br /><span style=\"font-size: 28px; font-weight: 400;\">az eredményeidről</span>",
-    "trustImageAlt": "Miért bízz bennünk?",
-    "analyzeTitle": "Az algoritmus elemzi többek közt:",
-    "analyzeList": {
-      "aktywnosc": "Az <b>aktivitási szintedet</b>",
-      "cel": "A <b>célodat</b> (fogyás / tömegnövelés)",
-      "wiek": "Az <b>életkorodat</b>",
-      "doswiadczenie": "<b>Edzésmúltadat</b>",
-      "time": "A rendelkezésedre álló <b>időt</b>",
-      "strengths": "<b>Az alkatod erősségeit és gyengeségeit</b>"
-    },
-    "conclusion1": "Majd kiválaszt egy <b>konkrét edzéstervet</b>, amely jobban illik a <b>te helyzetedhez</b>, mint az interneten található <b>sablon tervek 99%-a</b>.",
-    "conclusion2": "Ez a <b>személyi edzői tudás</b> és a <b>rendszer precizitásának</b> ötvözete, amely nem hibázik és nem tippel.",
-    "purchaseTitle": "Mit kapsz pontosan a vásárlás után?",
-    "purchaseImageAlt": "Termékleírás",
-    "sampleBtn": "Nézd meg a minta edzéstervet!",
-    "sampleTitle": "Íme néhány oldal Rafał tervéből!",
-    "loadingTitle": "Készítem az edzéstervedet...",
-    "loadingSubtitle": "Kis türelmet, betöltöm az összes eredményt.",
-    "loadingData": "Nincs adat ehhez a munkamenethez.",
-    "loadingErrorTitle": "Probléma lépett fel az adataid betöltésekor.",
-    "loadingErrorHtml": "Frissítsd az oldalt és próbáld újra. Ha a probléma továbbra is fennáll, írj nekünk: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
-    "loadingErrorBtn": "once_again",
-    "reportNote1": "elküldött terv",
-    "reportNote2": "az elmúlt 24 órában",
-    "joinAthletes": "Csatlakozz a <b><u>{count}</u> sportolóhoz</b>, akik <b>már használják</b> a <b>személyre szabott edzéstervüket!</b>",
-    "contactBox": {
-      "title": "Bármilyen kételyed van?",
-      "emailIntro": "Írj:",
-      "emailAddress": "support@musclepals.com",
-      "responseTime": "⏰ Általában egy órán belül válaszolok."
-    },
-    "ctaButton": {
-      "alt": "Terv átvétele"
-    },
-    "errorTitle": "Nincs adat ehhez a folyamathoz.",
-    "errorDescription": "Lépj kapcsolatba velünk: support@musclepals.com",
-    "faq": {
-      "title": "Gyakran<br/>ismételt kérdések:"
-    }
+  "ctaButton": {
+    "alt": "Terv átvétele"
   },
-  "BMIBOX": {
-    "yourScore": "Az eredményed:",
-    "underweight": "soványság",
-    "overweight": "túlsúly",
-    "categories": {
-      "lt16": "Súlyos soványság",
-      "lt17": "Mérsékelt soványság",
-      "lt18_5": "Enyhe soványság",
-      "lt25": "Normális testsúly",
-      "lt30": "Túlsúly",
-      "lt35": "I. fokú elhízás",
-      "lt40": "II. fokú elhízás",
-      "gt40": "III. fokú elhízás (súlyos)"
-    },
-    "descriptions": {
-      "lt16": "A szervezet erősen legyengült a nagyon súlyos súlyhiány miatt.",
-      "lt17": "A test észrevehetően legyengült, az izmok és szövetek nem kapnak elegendő tápanyagot.",
-      "lt18_5": "A testsúly túl alacsony. A szervezet kevésbé ellenálló a betegségekkel szemben, és rosszabbul bírja a fizikai terhelést.",
-      "lt25": "A szervezetet nem terheli túlzott zsírszövet, és nem is gyengíti annak hiánya.",
-      "lt30": "Megjelenik a felesleges zsírszövet, ami kezdi terhelni a szervezetet.",
-      "lt35": "A felesleges zsírszövet egyértelműen terheli a szervezetet és növeli a betegségek kockázatát.",
-      "lt40": "A szervezet erősen túlterhelt. Nő a súlyos krónikus betegségek kockázata.",
-      "gt40": "A nagyon nagy mennyiségű zsírszövet komolyan veszélyezteti az egészséget és az életet."
-    }
-  },
-  "Summary": {
-    "title": "A Terved:",
-    "conjunction_and": " és ",
-    "priorities": {
-      "shoulders": "váll",
-      "chest": "mellkas",
-      "triceps": "tricepsz",
-      "biceps": "bicepsz",
-      "back": "hát",
-      "legs": "láb",
-      "forearms": "alkar",
-      "abs": "hasizom",
-      "glutes": "farizom",
-      "default": "minden testrész"
-    },
-    "goals": {
-      "bulk": "izomtömeg építését",
-      "cut": "testzsír csökkentését"
-    },
-    "frequency": {
-      "intro": "Heti <strong>{n}</strong> {days} biztosít számodra.",
-      "daySingular": "edzést",
-      "dayPlural": "edzést",
-      "dayPluralFew": "edzést",
-      "dayPluralMany": "edzést"
-    },
-    "location": {
-      "housewithout": "Hatékony edzést biztosít <strong>otthoni körülmények között</strong>.",
-      "housewith": "Hatékony edzést biztosít <strong>otthoni körülmények között, gumiszalagokkal.</strong>",
-      "gym": "",
-      "default": ""
-    },
-    "focus": "Különös hangsúlyt fektet a(z) <strong>{priorities}</strong> fejlesztésére.",
-    "goalFocus": "A(z) <strong>{goal}</strong> a célja.",
-    "fitnessFocus": "A jelenlegi <strong>{fitness}</strong> van igazítva.",
-    "fitnessFocusText": "fizikai erőnlétedhez",
-    "equipment": {
-      "intro": "Eddz otthon <strong>{list}</strong> használatával.",
-      "introNone": "Eddz otthon <strong>mindenféle extra felszerelés nélkül</strong>.",
-      "map": {
-        "bands": "gumiszalagok",
-        "dumbbells": "kézi súlyzók",
-        "barbell": "kétkezes súlyzó",
-        "bench": "fekvőpad",
-        "none": "felszerelés hiánya"
-      }
-    },
-    "priority": {
-      "none": "Különös hangsúlyt fektet az izomtömeg <strong>egyenletes fejlesztésére</strong> az egész testen.",
-      "one": "Különös hangsúlyt fektet a(z) <strong>{p1}</strong> fejlesztésére.",
-      "two": "Különös hangsúlyt fektet a(z) <strong>{p1}</strong> és <strong>{p2}</strong> fejlesztésére.",
-      "many": "Különös hangsúlyt fektet a(z) <strong>{list}</strong> fejlesztésére."
-    }
-  },
-  "YouVsFuture": {
-    "now": "most",
-    "future": "néhány hónap múlva",
-    "weight": "súly:",
-    "muscle": "izmok",
-    "fitness": "erőnlét",
-    "bodyfat": "testzsír",
-    "activityMap": {
-      "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "Nagyon sokat edzek vagy nehéz fizikai munkát végzek",
-      "Ćwiczę regularnie, jestem w ruchu większość dni": "Rendszeresen edzek, a legtöbb nap aktív vagyok",
-      "Trenuję lekko kilka razy w tygodniu": "Hetente párszor könnyedén edzek",
-      "Trochę się ruszam, ale bez regularnych treningów": "Mozgok kicsit, de nincs rendszeres edzés"
-    }
-  },
-  "ReportForm": {
-    "title": "Vedd át<br />az edzés-<br />tervedet!",
-    "imageAlt": "Smith gép illusztráció",
-    "nameLabel": "Hogy hívnak?",
-    "namePlaceholder": "Név",
-    "emailLabel": "Email (amire a tervet kapod):",
-    "emailPlaceholder": "cim@email.hu",
-    "agreementText": "Hozzájárulok személyes adataim kezeléséhez az <a href=\"https://musclepals.com/regional/hu/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">adatvédelmi szabályzat</a> szerint.",
-    "agreementCheckboxHtml": "Elfogadom a <a href=\"https://musclepals.com/regional/hu/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">felhasználási feltételeket</a> és az <a href=\"https://musclepals.com/regional/hu/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">adatvédelmi szabályzatot</a>.",
-    "healthDataAgreementHtml": "Hozzájárulok egészségügyi adataim és méreteim felhasználásához (szükséges a terv elkészítéséhez).",
-    "healthDataAgreementRequiredError": "Kérlek, fogadd el az egészségügyi adatok felhasználására vonatkozó hozzájárulást a folytatáshoz.",
-    "agreementRequiredError": "Kérlek, fogadd el a felhasználási feltételeket a folytatáshoz.",
-    "errorMsg1": "Kérlek, adj meg érvényes nevet és e-mail címet.",
-    "errorMsg2": "Győződj meg róla, hogy az e-mail címed helyes. Ha igen, kattints újra a gombra.",
-    "errorMsgDomainTypo": "Nincs elírás a címben? Erre gondoltál: {suggestedEmail}? Ha igen, javítsd ki. Ha a cím helyes, kattints újra a gombra.",
-    "orText": "vagy",
-    "detailsBtn": "Tudj meg többet az alkatelemzésről!",
-    "detailsBox1Title": "Megmutatom neked:",
-    "detailsBox1Body": {
-      "training": "Hány kalóriát kell enned, hogy hatékonyan {goal},",
-      "smart": "Hogyan eddz okosabban, ne keményebben,",
-      "workDiet": "Hogyan egyeztesd össze az iskolát/munkát a diétával,",
-      "progress": "Hogyan győzd le az akadályokat, amik gátolják a fejlődésedet."
-    },
-    "detailsBox2Title": "Ezt kapod:",
-    "detailsBox2Body": {
-      "macros": "Pontos makrotápanyag arányok a testedre szabva,",
-      "dietSchema": "Egy minta étrend séma, {goalSchema}",
-      "summary": "Őszinte összefoglaló a jelenlegi helyzetedről és tippek a javításhoz."
-    },
-    "timerPromo1": "Ajánlat",
-    "timerPromo2": "új<br />felhasználóknak",
-    "timerPromo3": "vége:",
-    "timerImageAlt": "Feszítő Musclepals",
-    "successMsg": "A rendelésed sikeresen feldolgozva.",
-    "paymentNote": "A tervet a fizetést követő <b>2 percen belül</b> megkapod."
-  },
-  "TDEE": {
-    "title1": "Teljes napi energiafelhasználás",
-    "deficit": "kalóriadeficit",
-    "surplus": "kalóriatöbblet",
-    "unit": "kcal/nap",
-    "mainDescPrefix": "Ez az érték ",
-    "mainDescBold1Cut": "a fogyást veszi figyelembe",
-    "mainDescBold1Bulk": "a súlygyarapodást veszi figyelembe",
-    "mainDescSuffix": ". Ez az az alap kalóriamennyiség, amit el kell fogyasztanod ahhoz, hogy ",
-    "mainDescActionCut": "fogyj",
-    "mainDescActionBulk": "súlyt szedj fel",
-    "noData": "-"
-  },
-  "Carousel": {
-    "indicatorNote": "Figyelem! Ez nem a teljes edzésterv, csak 4 minta oldal.",
-    "pageLabel": "{current}/{total} oldal",
-    "workout": {
-      "slides": [
-        {
-          "alt": "Rafał 1",
-          "caption": "Bevezetés az edzéstervbe – 1. oldal"
-        },
-        {
-          "alt": "Rafał 2",
-          "caption": "Útmutató a terv használatához – 2. oldal"
-        },
-        {
-          "alt": "Rafał 3",
-          "caption": "Az edzésterv kezdete – 5. oldal"
-        },
-        {
-          "alt": "Rafał 5",
-          "caption": "Progressziós terv a következő 3 hónapra – 7. oldal"
-        }
-      ]
-    }
-  },
-  "OrderPage": {
-    "logoHref": "https://musclepals.com/",
-    "verifyingText": "Fizetés ellenőrzése...",
-    "processingText": "Fizetésed feldolgozása folyamatban...",
-    "pendingHtml": "A fizetésed ellenőrzés alatt áll.<br /><b>Kérlek, ne zárd be ezt az oldalt.</b><br /><br />Ha a fizetés sikeres volt, a terv néhány percen belül megérkezik az e-mail fiókodba.",
-    "loading": "Betöltés...",
-    "successTitle": "A rendelésed<br />sikeresen kifizetve!",
-    "successImageAlt": "Rendelés kifizetve",
-    "successText1": "Hamarosan megjelenik az e-mailedben.",
-    "successText2": "(ez akár 5 percet is igénybe vehet)",
-    "successText3": "Ellenőrizd a spam és a promóciók mappát is",
-    "successText4": "Bármilyen probléma esetén nyugodtan szólj nekünk!",
-    "successEmail": "support@musclepals.com",
-    "errorTitle": "Problémánk adódott a<br />fizetésed<br />feldolgozásával.",
-    "errorImageAlt": "Jelentés kifizetetlen",
-    "errorText1": "A fizetésed <b>nem fejeződött be</b>, térj vissza a főoldalra és próbáld újra.",
-    "buttonText": "Vissza a főoldalra",
-    "logoAlt": "Musclepals",
-    "contactText": "Ha úgy gondolod, hogy ez tévedés, lépj kapcsolatba velem:"
-  },
-  "JoinAthletes": "Csatlakozz a <b><u>{count}</u> sportolóhoz</b>, akik <b>már használják</b> a <b>személyre szabott edzéstervüket!</b>",
-  "NextButton": {
-    "alt": "Tovább"
-  },
-  "AnswersSummary": {
-    "buttonAlt": "Válaszok összefoglalása",
-    "backLinkText": "Válasz módosítása az űrlapon",
-    "conjunction_and": "és",
-    "equipmentNotSelected": "Nincs kiválasztva eszköz",
-    "locationTypeMap": {
-      "gym": "Edzőterem",
-      "house": "Otthon"
-    },
-    "equipmentMap": {
-      "none": "Nincs",
-      "bands": "Gumiszalagok",
-      "dumbbells": "Kézi súlyzók",
-      "barbell": "Rúd",
-      "bench": "Pad",
-      "pullup_bar": "Húzódzkodó rúd",
-      "dip_bar": "Tolódzkodó állvány"
-    },
-    "labels": {
-      "gender": "Nem",
-      "age": "Életkor",
-      "height": "Magasság",
-      "weight": "Súly",
-      "weight_goal": "Célsúly",
-      "goal": "Cél",
-      "diet_goal": "Diéta cél",
-      "bodyfat": "Testzsír",
-      "activity": "Aktivitás",
-      "experience": "Tapasztalat",
-      "difficulty": "Nehézség",
-      "location": "Edzés helyszíne",
-      "equipment": "Felszerelés",
-      "priority": "Prioritás",
-      "frequency": "Gyakoriság",
-      "fitness": "Erőnlét",
-      "sleep": "Alvás",
-      "pushups": "Fekvőtámasz",
-      "pullups": "Húzódzkodás",
-      "calistenic_experience": "Tapasztalat (calisthenics)",
-      "duration": "Edzésidő"
-    },
-    "gender": {
-      "male": "Férfi",
-      "M": "Férfi",
-      "female": "Nő",
-      "F": "Nő",
-      "Kobieta": "Nő",
-      "other": "Egyéb"
-    },
-    "dietGoal": {
-      "bulk": "Izomtömeg növelése",
-      "cut": "Testzsír csökkentése"
-    },
-    "activityMap": {
-      "low_activity": "A nap nagy részében ülök, kevés mozgás.",
-      "some_activity": "Mozgok kicsit, de nincs rendszeres edzés.",
-      "light_training": "Hetente párszor könnyedén edzek.",
-      "regular_training": "Rendszeresen edzek, a legtöbb nap aktív vagyok.",
-      "hard_work": "Nagyon sokat edzek vagy nehéz fizikai munkát végzek."
-    },
-    "experienceMap": {
-      "new": "Új",
-      "beginner": "Kezdő",
-      "intermediate": "Már edzek egy ideje.",
-      "advanced": "Régóta edzek.",
-      "none": "Még nem kezdtem el edzeni.",
-      "just_started": "Épp most kezdtem.",
-      "some_experience": "Már edzek egy ideje."
-    },
-    "difficultyMap": {
-      "motivation": "Hiányzik a motivációm az edzéshez/diétához.",
-      "effects": "Elkeserít, hogy nem látom az eredményeket.",
-      "insecurity": "Félek lemenni a terembe, vagy bizonytalannak érzem magam ott.",
-      "diet": "Nem igazán tudom, hogyan tartsam a diétát.",
-      "no_difficulty": "Nincs ilyen nehézségem."
-    },
-    "locationMap": {
-      "gym": "Edzőterem",
-      "housewith": "Otthon (szalagokkal)",
-      "housewithout": "Otthon (szalagok nélkül)"
-    },
-    "priorityMap": {
-      "shoulders": "Váll",
-      "chest": "Mellkas",
-      "triceps": "Tricepsz",
-      "biceps": "Bicepsz",
-      "back": "Hát",
-      "legs": "Láb",
-      "abs": "Hasizom",
-      "forearms": "Alkar",
-      "glutes": "Fenék"
-    },
-    "format": {
-      "bodyfat": "{value}%",
-      "height": "{value}cm",
-      "weight": "{value}kg",
-      "age": "{value} éves",
-      "frequency": "{value}x/hét",
-      "fitness": "{value}/10",
-      "sleep": "{value} óra",
-      "pushups": "{value} fekvőtámaszt tudok.",
-      "pullups": "{value} húzódzkodást tudok.",
-      "pullups_none": "Még egy húzódzkodást sem tudok.",
-      "duration": "{count, plural, one {# perc} other {# perc}}"
-    }
-  },
-  "MissingSteps": {
-    "title": "Néhány válasz nem került mentésre",
-    "description": "Sajnos a szoftver nem mentette el a válaszokat a következő kérdésekre: {steps}.<br /><br />Kattints az alábbi gombra, hogy újra végigmenj ezeken a kérdéseken.",
-    "buttonImage": "/btns/{locale}/fill-again-btn.svg",
-    "buttonAlt": "Próbáld újra",
-    "stepLabels": {
-      "gender": "Nem",
-      "diet_goal": "Diéta cél",
-      "bodyfat": "Testzsír",
-      "height": "Magasság",
-      "weight": "Súly",
-      "age": "Életkor",
-      "activity": "Aktivitás",
-      "location": "Helyszín",
-      "experience": "Tapasztalat",
-      "difficulty": "Nehézség",
-      "priority": "Prioritás",
-      "frequency": "Gyakoriság",
-      "fitness": "Erőnlét",
-      "sleep": "Alvás"
-    },
-    "persistentError": {
-      "title": "A probléma továbbra is fennáll",
-      "description": "Sajnos a válaszok mentésével kapcsolatos probléma továbbra is fennáll. Ez technikai hiba lehet.<br /><br />Lépj kapcsolatba velünk: {email}",
-      "contactEmail": "support@musclepals.com"
-    }
-  },
-  "ReviewsMarquee": {
-    "imageAlt": "Felhasználói vélemény",
-    "title": "Nézd meg, mit mondanak rólunk az ügyfelek"
+  "errorTitle": "Nincs adat ehhez a folyamathoz.",
+  "errorDescription": "Lépj kapcsolatba velünk: support@musclepals.com",
+  "faq": {
+    "title": "Gyakran<br/>ismételt kérdések:"
   }
+},
+"BMIBOX": {
+  "yourScore": "Az eredményed:",
+  "underweight": "soványság",
+  "overweight": "túlsúly",
+  "categories": {
+    "lt16": "Súlyos soványság",
+    "lt17": "Mérsékelt soványság",
+    "lt18_5": "Enyhe soványság",
+    "lt25": "Normális testsúly",
+    "lt30": "Túlsúly",
+    "lt35": "I. fokú elhízás",
+    "lt40": "II. fokú elhízás",
+    "gt40": "III. fokú elhízás (súlyos)"
+  },
+  "descriptions": {
+    "lt16": "A szervezet erősen legyengült a nagyon súlyos súlyhiány miatt.",
+    "lt17": "A test észrevehetően legyengült, az izmok és szövetek nem kapnak elegendő tápanyagot.",
+    "lt18_5": "A testsúly túl alacsony. A szervezet kevésbé ellenálló a betegségekkel szemben, és rosszabbul bírja a fizikai terhelést.",
+    "lt25": "A szervezetet nem terheli túlzott zsírszövet, és nem is gyengíti annak hiánya.",
+    "lt30": "Megjelenik a felesleges zsírszövet, ami kezdi terhelni a szervezetet.",
+    "lt35": "A felesleges zsírszövet egyértelműen terheli a szervezetet és növeli a betegségek kockázatát.",
+    "lt40": "A szervezet erősen túlterhelt. Nő a súlyos krónikus betegségek kockázata.",
+    "gt40": "A nagyon nagy mennyiségű zsírszövet komolyan veszélyezteti az egészséget és az életet."
+  }
+},
+"Summary": {
+  "title": "A Terved:",
+  "conjunction_and": " és ",
+  "priorities": {
+    "shoulders": "váll",
+    "chest": "mellkas",
+    "triceps": "tricepsz",
+    "biceps": "bicepsz",
+    "back": "hát",
+    "legs": "láb",
+    "forearms": "alkar",
+    "abs": "hasizom",
+    "glutes": "farizom",
+    "default": "minden testrész"
+  },
+  "goals": {
+    "bulk": "izomtömeg építését",
+    "cut": "testzsír csökkentését"
+  },
+  "frequency": {
+    "intro": "Heti <strong>{n}</strong> {days} biztosít számodra.",
+    "daySingular": "edzést",
+    "dayPlural": "edzést",
+    "dayPluralFew": "edzést",
+    "dayPluralMany": "edzést"
+  },
+  "location": {
+    "housewithout": "Hatékony edzést biztosít <strong>otthoni körülmények között</strong>.",
+    "housewith": "Hatékony edzést biztosít <strong>otthoni körülmények között, gumiszalagokkal.</strong>",
+    "gym": "",
+    "default": ""
+  },
+  "focus": "Különös hangsúlyt fektet a(z) <strong>{priorities}</strong> fejlesztésére.",
+  "goalFocus": "A(z) <strong>{goal}</strong> a célja.",
+  "fitnessFocus": "A jelenlegi <strong>{fitness}</strong> van igazítva.",
+  "fitnessFocusText": "fizikai erőnlétedhez",
+  "equipment": {
+    "intro": "Eddz otthon <strong>{list}</strong> használatával.",
+    "introNone": "Eddz otthon <strong>mindenféle extra felszerelés nélkül</strong>.",
+    "map": {
+      "bands": "gumiszalagok",
+      "dumbbells": "kézi súlyzók",
+      "barbell": "kétkezes súlyzó",
+      "bench": "fekvőpad",
+      "none": "felszerelés hiánya"
+    }
+  },
+  "priority": {
+    "none": "Különös hangsúlyt fektet az izomtömeg <strong>egyenletes fejlesztésére</strong> az egész testen.",
+    "one": "Különös hangsúlyt fektet a(z) <strong>{p1}</strong> fejlesztésére.",
+    "two": "Különös hangsúlyt fektet a(z) <strong>{p1}</strong> és <strong>{p2}</strong> fejlesztésére.",
+    "many": "Különös hangsúlyt fektet a(z) <strong>{list}</strong> fejlesztésére."
+  }
+},
+"YouVsFuture": {
+  "now": "most",
+  "future": "néhány hónap múlva",
+  "weight": "súly:",
+  "muscle": "izmok",
+  "fitness": "erőnlét",
+  "bodyfat": "testzsír",
+  "activityMap": {
+    "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "Nagyon sokat edzek vagy nehéz fizikai munkát végzek",
+    "Ćwiczę regularnie, jestem w ruchu większość dni": "Rendszeresen edzek, a legtöbb nap aktív vagyok",
+    "Trenuję lekko kilka razy w tygodniu": "Hetente párszor könnyedén edzek",
+    "Trochę się ruszam, ale bez regularnych treningów": "Mozgok kicsit, de nincs rendszeres edzés"
+  }
+},
+"ReportForm": {
+  "title": "Vedd át<br />az edzés-<br />tervedet!",
+  "imageAlt": "Smith gép illusztráció",
+  "nameLabel": "Hogy hívnak?",
+  "namePlaceholder": "Név",
+  "emailLabel": "Email (amire a tervet kapod):",
+  "emailPlaceholder": "cim@email.hu",
+  "agreementText": "Hozzájárulok személyes adataim kezeléséhez az <a href=\"https://musclepals.com/regional/hu/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">adatvédelmi szabályzat</a> szerint.",
+  "agreementCheckboxHtml": "Elfogadom a <a href=\"https://musclepals.com/regional/hu/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">felhasználási feltételeket</a> és az <a href=\"https://musclepals.com/regional/hu/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">adatvédelmi szabályzatot</a>.",
+  "healthDataAgreementHtml": "Hozzájárulok egészségügyi adataim és méreteim felhasználásához (szükséges a terv elkészítéséhez).",
+  "healthDataAgreementRequiredError": "Kérlek, fogadd el az egészségügyi adatok felhasználására vonatkozó hozzájárulást a folytatáshoz.",
+  "agreementRequiredError": "Kérlek, fogadd el a felhasználási feltételeket a folytatáshoz.",
+  "errorMsg1": "Kérlek, adj meg érvényes nevet és e-mail címet.",
+  "errorMsg2": "Győződj meg róla, hogy az e-mail címed helyes. Ha igen, kattints újra a gombra.",
+  "errorMsgDomainTypo": "Nincs elírás a címben? Erre gondoltál: {suggestedEmail}? Ha igen, javítsd ki. Ha a cím helyes, kattints újra a gombra.",
+  "orText": "vagy",
+  "detailsBtn": "Tudj meg többet az alkatelemzésről!",
+  "detailsBox1Title": "Megmutatom neked:",
+  "detailsBox1Body": {
+    "training": "Hány kalóriát kell enned, hogy hatékonyan {goal},",
+    "smart": "Hogyan eddz okosabban, ne keményebben,",
+    "workDiet": "Hogyan egyeztesd össze az iskolát/munkát a diétával,",
+    "progress": "Hogyan győzd le az akadályokat, amik gátolják a fejlődésedet."
+  },
+  "detailsBox2Title": "Ezt kapod:",
+  "detailsBox2Body": {
+    "macros": "Pontos makrotápanyag arányok a testedre szabva,",
+    "dietSchema": "Egy minta étrend séma, {goalSchema}",
+    "summary": "Őszinte összefoglaló a jelenlegi helyzetedről és tippek a javításhoz."
+  },
+  "timerPromo1": "Ajánlat",
+  "timerPromo2": "új<br />felhasználóknak",
+  "timerPromo3": "vége:",
+  "timerImageAlt": "Feszítő Musclepals",
+  "successMsg": "A rendelésed sikeresen feldolgozva.",
+  "paymentNote": "A tervet a fizetést követő <b>2 percen belül</b> megkapod."
+},
+"TDEE": {
+  "title1": "Teljes napi energiafelhasználás",
+  "deficit": "kalóriadeficit",
+  "surplus": "kalóriatöbblet",
+  "unit": "kcal/nap",
+  "mainDescPrefix": "Ez az érték ",
+  "mainDescBold1Cut": "a fogyást veszi figyelembe",
+  "mainDescBold1Bulk": "a súlygyarapodást veszi figyelembe",
+  "mainDescSuffix": ". Ez az az alap kalóriamennyiség, amit el kell fogyasztanod ahhoz, hogy ",
+  "mainDescActionCut": "fogyj",
+  "mainDescActionBulk": "súlyt szedj fel",
+  "noData": "-"
+},
+"Carousel": {
+  "indicatorNote": "Figyelem! Ez nem a teljes edzésterv, csak 4 minta oldal.",
+  "pageLabel": "{current}/{total} oldal",
+  "workout": {
+    "slides": [
+      {
+        "alt": "Rafał 1",
+        "caption": "Bevezetés az edzéstervbe – 1. oldal"
+      },
+      {
+        "alt": "Rafał 2",
+        "caption": "Útmutató a terv használatához – 2. oldal"
+      },
+      {
+        "alt": "Rafał 3",
+        "caption": "Az edzésterv kezdete – 5. oldal"
+      },
+      {
+        "alt": "Rafał 5",
+        "caption": "Progressziós terv a következő 3 hónapra – 7. oldal"
+      }
+    ]
+  }
+},
+"OrderPage": {
+  "logoHref": "https://musclepals.com/",
+  "verifyingText": "Fizetés ellenőrzése...",
+  "processingText": "Fizetésed feldolgozása folyamatban...",
+  "pendingHtml": "A fizetésed ellenőrzés alatt áll.<br /><b>Kérlek, ne zárd be ezt az oldalt.</b><br /><br />Ha a fizetés sikeres volt, a terv néhány percen belül megérkezik az e-mail fiókodba.",
+  "loading": "Betöltés...",
+  "successTitle": "A rendelésed<br />sikeresen kifizetve!",
+  "successImageAlt": "Rendelés kifizetve",
+  "successText1": "Hamarosan megjelenik az e-mailedben.",
+  "successText2": "(ez akár 5 percet is igénybe vehet)",
+  "successText3": "Ellenőrizd a spam és a promóciók mappát is",
+  "successText4": "Bármilyen probléma esetén nyugodtan szólj nekünk!",
+  "successEmail": "support@musclepals.com",
+  "errorTitle": "Problémánk adódott a<br />fizetésed<br />feldolgozásával.",
+  "errorImageAlt": "Jelentés kifizetetlen",
+  "errorText1": "A fizetésed <b>nem fejeződött be</b>, térj vissza a főoldalra és próbáld újra.",
+  "buttonText": "Vissza a főoldalra",
+  "logoAlt": "Musclepals",
+  "contactText": "Ha úgy gondolod, hogy ez tévedés, lépj kapcsolatba velem:"
+},
+"JoinAthletes": "Csatlakozz a <b><u>{count}</u> sportolóhoz</b>, akik <b>már használják</b> a <b>személyre szabott edzéstervüket!</b>",
+"NextButton": {
+  "alt": "Tovább"
+},
+"AnswersSummary": {
+  "buttonAlt": "Válaszok összefoglalása",
+  "backLinkText": "Válasz módosítása az űrlapon",
+  "conjunction_and": "és",
+  "equipmentNotSelected": "Nincs kiválasztva eszköz",
+  "locationTypeMap": {
+    "gym": "Edzőterem",
+    "house": "Otthon"
+  },
+  "equipmentMap": {
+    "none": "Nincs",
+    "bands": "Gumiszalagok",
+    "dumbbells": "Kézi súlyzók",
+    "barbell": "Rúd",
+    "bench": "Pad",
+    "pullup_bar": "Húzódzkodó rúd",
+    "dip_bar": "Tolódzkodó állvány"
+  },
+  "labels": {
+    "gender": "Nem",
+    "age": "Életkor",
+    "height": "Magasság",
+    "weight": "Súly",
+    "weight_goal": "Célsúly",
+    "goal": "Cél",
+    "diet_goal": "Diéta cél",
+    "bodyfat": "Testzsír",
+    "activity": "Aktivitás",
+    "experience": "Tapasztalat",
+    "difficulty": "Nehézség",
+    "location": "Edzés helyszíne",
+    "equipment": "Felszerelés",
+    "priority": "Prioritás",
+    "frequency": "Gyakoriság",
+    "fitness": "Erőnlét",
+    "sleep": "Alvás",
+    "pushups": "Fekvőtámasz",
+    "pullups": "Húzódzkodás",
+    "duration": "Edzésidő"
+  },
+  "gender": {
+    "male": "Férfi",
+    "M": "Férfi",
+    "female": "Nő",
+    "F": "Nő",
+    "Kobieta": "Nő",
+    "other": "Egyéb"
+  },
+  "dietGoal": {
+    "bulk": "Izomtömeg növelése",
+    "cut": "Testzsír csökkentése"
+  },
+  "activityMap": {
+    "low_activity": "A nap nagy részében ülök, kevés mozgás.",
+    "some_activity": "Mozgok kicsit, de nincs rendszeres edzés.",
+    "light_training": "Hetente párszor könnyedén edzek.",
+    "regular_training": "Rendszeresen edzek, a legtöbb nap aktív vagyok.",
+    "hard_work": "Nagyon sokat edzek vagy nehéz fizikai munkát végzek."
+  },
+  "experienceMap": {
+    "new": "Új",
+    "beginner": "Kezdő",
+    "intermediate": "Már edzek egy ideje.",
+    "advanced": "Régóta edzek.",
+    "none": "Még nem kezdtem el edzeni.",
+    "just_started": "Épp most kezdtem.",
+    "some_experience": "Már edzek egy ideje."
+  },
+  "difficultyMap": {
+    "motivation": "Hiányzik a motivációm az edzéshez/diétához.",
+    "effects": "Elkeserít, hogy nem látom az eredményeket.",
+    "insecurity": "Félek lemenni a terembe, vagy bizonytalannak érzem magam ott.",
+    "diet": "Nem igazán tudom, hogyan tartsam a diétát.",
+    "no_difficulty": "Nincs ilyen nehézségem."
+  },
+  "locationMap": {
+    "gym": "Edzőterem",
+    "housewith": "Otthon (szalagokkal)",
+    "housewithout": "Otthon (szalagok nélkül)"
+  },
+  "priorityMap": {
+    "shoulders": "Váll",
+    "chest": "Mellkas",
+    "triceps": "Tricepsz",
+    "biceps": "Bicepsz",
+    "back": "Hát",
+    "legs": "Láb",
+    "abs": "Hasizom",
+    "forearms": "Alkar",
+    "glutes": "Fenék"
+  },
+  "format": {
+    "bodyfat": "{value}%",
+    "height": "{value}cm",
+    "weight": "{value}kg",
+    "age": "{value} éves",
+    "frequency": "{value}x/hét",
+    "fitness": "{value}/10",
+    "sleep": "{value} óra",
+    "pushups": "{value} fekvőtámaszt tudok.",
+    "pullups": "{value} húzódzkodást tudok.",
+    "pullups_none": "Még egy húzódzkodást sem tudok.",
+    "duration": "{count, plural, one {# perc} other {# perc}}"
+  }
+},
+"MissingSteps": {
+  "title": "Néhány válasz nem került mentésre",
+  "description": "Sajnos a szoftver nem mentette el a válaszokat a következő kérdésekre: {steps}.<br /><br />Kattints az alábbi gombra, hogy újra végigmenj ezeken a kérdéseken.",
+  "buttonImage": "/btns/{locale}/fill-again-btn.svg",
+  "buttonAlt": "Próbáld újra",
+  "stepLabels": {
+    "gender": "Nem",
+    "diet_goal": "Diéta cél",
+    "bodyfat": "Testzsír",
+    "height": "Magasság",
+    "weight": "Súly",
+    "age": "Életkor",
+    "activity": "Aktivitás",
+    "location": "Helyszín",
+    "experience": "Tapasztalat",
+    "difficulty": "Nehézség",
+    "priority": "Prioritás",
+    "frequency": "Gyakoriság",
+    "fitness": "Erőnlét",
+    "sleep": "Alvás"
+  },
+  "persistentError": {
+    "title": "A probléma továbbra is fennáll",
+    "description": "Sajnos a válaszok mentésével kapcsolatos probléma továbbra is fennáll. Ez technikai hiba lehet.<br /><br />Lépj kapcsolatba velünk: {email}",
+    "contactEmail": "support@musclepals.com"
+  }
+},
+"ReviewsMarquee": {
+  "imageAlt": "Felhasználói vélemény",
+  "title": "Nézd meg, mit mondanak rólunk az ügyfelek"
+}
 }

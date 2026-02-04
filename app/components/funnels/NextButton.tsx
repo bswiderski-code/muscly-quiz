@@ -7,10 +7,13 @@ import React from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import type { Locale } from '@/i18n/config';
 import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
+import { resolveNextStep } from '@/lib/funnels/navigation';
+import type { StepId } from '@/lib/steps/stepIds';
 import { getNextButtonConfig } from './NextButton.config';
 
 interface NextButtonProps {
   currentIdx: number;
+  stepId: StepId;
   fieldKey?: string;
   fieldValue?: any; // Allow any type for fieldValue
   onClick: () => void;
@@ -18,7 +21,7 @@ interface NextButtonProps {
   funnel?: FunnelKey;
 }
 
-const NextButton: React.FC<NextButtonProps> = ({ currentIdx, fieldKey = "", fieldValue, onClick, disabled = false, funnel: funnelProp }) => {
+const NextButton: React.FC<NextButtonProps> = ({ currentIdx, stepId, fieldKey = "", fieldValue, onClick, disabled = false, funnel: funnelProp }) => {
   const router = useRouter();
   const t = useTranslations('NextButton');
   const setField = useFunnelStore((s) => s.setField);
@@ -26,22 +29,24 @@ const NextButton: React.FC<NextButtonProps> = ({ currentIdx, fieldKey = "", fiel
   const sid = Object.keys(bySid)[0]; // Assuming the first session ID is used
   const locale = useLocale() as Locale; // Get the current locale with project typing
   const funnel = funnelProp ?? useCurrentFunnel();
-  const order = getStepOrder(funnel);
   const config = getNextButtonConfig(funnel);
 
   const handleClick = () => {
-    if (onClick) {
-      onClick();
-      return;
-    }
-
     // Store the field value in Zustand if fieldKey and fieldValue are provided
     if (sid && fieldKey) {
       setField(sid, fieldKey as any, fieldValue, funnel); // Save any type of value
     }
 
-    // Navigate to the next step or result page
-    const nextStep = order[currentIdx + 1];
+    if (onClick) {
+      onClick();
+      return;
+    }
+
+    // Use centralized navigation logic
+    const answers = bySid[sid] || {};
+    const nextAnswers = { ...answers, ...(fieldKey ? { [fieldKey]: fieldValue } : {}) };
+    const nextStep = resolveNextStep(stepId, nextAnswers);
+
     if (nextStep) {
       router.push({ pathname: '/[funnel]/[step]', params: { funnel: getFunnelSlug(funnel, locale), step: getStepSlug(funnel, nextStep, locale) } } as any);
     } else if (sid) {

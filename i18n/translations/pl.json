@@ -452,21 +452,6 @@
       "10+": "Ponad 10 podciągnięć"
     }
   },
-  "CalistenicExperienceStep": {
-    "title": "Jakie masz <span class=\"kalistenika-text\">doświadczenie</span> z kalisteniką?",
-    "options": {
-      "none": "Nowy",
-      "just_started": "Początkujący",
-      "some_experience": "Średniozaawansowany",
-      "advanced": "Zaawansowany."
-    },
-    "descriptions": {
-      "none": "Startuję od zera. Nie trenowałem wcześniej regularnie i chcę zbudować podstawową siłę oraz nauczyć się techniki.",
-      "just_started": "Mam już kontakt ze sportem. Potrafię zrobić serię pompek i przysiadów, ale nie podciągam się na drążku wcale lub robię to tylko 1-3 razy.",
-      "some_experience": "Trenuję regularnie. Swobodnie wykonuję serie podciągnięć (powyżej 5) i dipów. Chcę wejść na wyższy poziom (np. nauka Muscle Up, L-sit).",
-      "advanced": "Podstawy to dla mnie rozgrzewka. Potrafię wykonać Muscle Up i pracuję nad trudnymi elementami statycznymi (Front Lever, Planche) lub zaawansowaną dynamiką."
-    }
-  },
   "DurationStep": {
     "title1": "Wybierz <b>czas</b>",
     "title2": "jednego <b>treningu</b>",
@@ -762,7 +747,6 @@
       "sleep": "Sen",
       "pushups": "Pompki",
       "pullups": "Podciągnięcia",
-      "calistenic_experience": "Doświadczenie (kalistenika)",
       "duration": "Czas treningu"
     },
     "gender": {

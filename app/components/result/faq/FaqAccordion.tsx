@@ -21,7 +21,7 @@ export default function FaqAccordion({ faqData }: FaqAccordionProps) {
       {faqData.map((faq, index) => (
         <div 
           key={index}
-          className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-200 hover:shadow-md"
+          className="bg-white rounded-xl border-4 border-black overflow-hidden transition-all duration-200"
         >
           <button
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
