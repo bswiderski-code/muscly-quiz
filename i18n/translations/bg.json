@@ -1,819 +1,475 @@
 {
   "CheckoutProducts": {
     "workout_solo": {
-      "productName": "Training Plan (solo)"
+      "productName": "Тренировъчен план (самостоятелен)"
     },
     "workout_bundle": {
-      "productName": "Training Plan + Diet (bundle)"
+      "productName": "Тренировъчен план + Диета (пакет)"
     },
     "workout": {
-      "description": "Get<br />your training<br />plan!"
+      "description": "Вземи<br />своя тренировъчен<br />план!"
     }
   },
   "ReviewsWidget": {
-    "title": "What do buyers think of their plans 2 months later?",
-    "sort_best": "sort - by best",
-    "sort_worst": "sort - by worst",
-    "sort_newest": "sort - by newest",
-    "sort_oldest": "sort - by oldest",
-    "verified": "(verified purchase)",
-    "age_suffix": "years old",
-    "aria_label": "Customer reviews",
-    "average": "average rating",
+    "title": "Какво мислят купувачите за своите планове 2 месеца след покупката?",
+    "sort_best": "сортиране - от най-добрите",
+    "sort_worst": "сортиране - от най-лошите",
+    "sort_newest": "сортиране - от най-новите",
+    "sort_oldest": "сортиране - от най-старите",
+    "verified": "(потвърдена покупка)",
+    "age_suffix": "години",
+    "aria_label": "Клиентски отзиви",
+    "average": "средна оценка",
     "of5": "/5"
+  },
+  "PlanPage": {
+    "title": "Твоят план",
+    "privacy": "Политика за поверителност",
+    "terms": "Общи условия",
+    "assets": {
+      "privacyUrl": "https://musclepals.com/regional/bg/privacy",
+      "termsUrl": "https://musclepals.com/regional/bg/terms"
+    }
   },
   "Seo": {
     "appTitle": "Musclepals",
     "home": {
-      "title": "Training Plan | Musclepals",
-      "description": "Create a workout plan tailored to you. Short quiz, results in minutes."
+      "title": "Тренировъчен план | Musclepals",
+      "description": "Създай тренировъчен план, съобразен с теб. Кратка анкета, резултат за няколко минути."
     },
     "workout": {
-      "title": "Professional training plan - personalized for you",
-      "description": "Looking for an effective workout routine? I'll prepare a set based on your answers."
+      "title": "Професионален тренировъчен план - персонализиран за теб",
+      "description": "Търсиш ефективна програма за тренировки? Ще подготвя за теб комплект упражнения въз основа на твоите отговори."
     },
     "workoutForm": {
-      "title": "Plan Form | Musclepals",
-      "description": "Answer the questions to tailor the plan to your goals."
+      "title": "Формуляр за план | Musclepals",
+      "description": "Отговори на въпросите, за да адаптираме плана към твоите цели."
     }
   },
   "Gender": {
-    "title": "What is your <b>gender?</b>",
-    "ariaLabel": "Gender selection",
+    "title": "Какъв е твоят <b>пол?</b>",
+    "ariaLabel": "Избор на пол",
     "male": {
-      "label": "Select Male",
-      "alt": "Male"
+      "label": "Мъж",
+      "alt": "Мъж"
     },
     "female": {
-      "label": "Select Female",
-      "alt": "Female"
+      "label": "Жената",
+      "alt": "Жената"
     }
   },
   "WorkoutPage": {
-    "homeLabel": "Musclepals Home Page",
-    "titleHtml": "Your custom<br /><span style='font-weight: 800'>training plan</span>",
+    "homeLabel": "Начална страница Musclepals",
+    "titleHtml": "Твоят собствен<br /><span style='font-weight: 800'>тренировъчен план</span>",
     "heroAlt": "",
-    "description": "Complete a short quiz, and I'll create the perfect training plan for you!\n<em>It'll take you 2-3 minutes.</em>",
-    "button": "Create training plan",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "description": "Попълни кратка анкета и ще създам за теб идеалния тренировъчен план!\n<em>Ще ти отнеме 2-3 минути.</em>",
+    "button": "Създай тренировъчен план",
+    "privacy": "Политика за поверителност",
+    "terms": "Общи условия"
   },
   "DietGoal": {
-    "title": "What is<br /><b>your goal?</b>",
-    "titleAria": "What is your goal?",
+    "title": "Каква е<br /><b>твоята цел?</b>",
+    "titleAria": "Каква е твоята цел?",
     "bulk": {
-      "label": "I want to bulk",
-      "alt": "I want to gain muscle mass",
-      "description": "You focus on building new muscle mass, weight goes up."
+      "label": "Искам да кача маса",
+      "alt": "Искам да кача мускулна маса",
+      "description": "Фокусираш се върху изграждането на нова мускулна маса, теглото расте."
     },
     "cut": {
-      "label": "I want to cut",
-      "alt": "I want to reduce fat",
-      "description": "You lose weight, shed fat, and reveal existing muscle."
+      "label": "Искам да изчистя",
+      "alt": "Искам да намаля мазнините",
+      "description": "Сваляш килограми, мазнините изчезват и подчертаваш вече съществуващите мускули."
     }
   },
   "Bodyfat": {
-    "title": "Select your <br /><b>body fat</b> level",
-    "alt": "Physique for selected body fat level",
+    "title": "Избери своето ниво на<br /><b>телесни мазнини</b>",
+    "alt": "Фигура за избраното ниво на телесни мазнини",
     "stepsDataMale": [
       {
         "value": "5-9",
         "label": "5-9%",
-        "info": "Extremely low body fat. The physique is very muscular, and definition is excellent."
+        "info": "Екстремно ниско ниво на мазнини. Фигурата е много мускулеста с перфектна дефиниция."
       },
       {
         "value": "10-14",
         "label": "10-14%",
-        "info": "Very low body fat. The physique is lean, muscles are clearly visible."
+        "info": "Много ниско ниво на мазнини. Фигурата е стройна, мускулите са ясно видими."
       },
       {
         "value": "15-19",
         "label": "15-19%",
-        "info": "Healthy, athletic body fat level. Muscles are visible, but the body isn't emaciated."
+        "info": "Здравословно, спортно ниво на мазнини. Мускулите са видими, но фигурата не е прекалено изпита."
       },
       {
         "value": "20-24",
         "label": "20-24%",
-        "info": "Low body fat level. Physique is slim, muscles are visible."
+        "info": "Ниско до средно ниво на мазнини. Фигурата е стройна, мускулите се очертават."
       },
       {
         "value": "25-29",
         "label": "25-29%",
-        "info": "Moderate body fat level. Physique is fuller, muscles are less visible."
+        "info": "Умерено ниво на мазнини. Фигурата е по-пълна, мускулите са по-малко видими."
       },
       {
         "value": "30-34",
         "label": "30-34%",
-        "info": "Higher body fat level. Physique is rounded, muscles are not visible."
+        "info": "По-високо ниво на мазнини. Фигурата е заоблена, мускулите не се виждат."
       },
       {
         "value": "35-39",
         "label": "35-39%",
-        "info": "High body fat level. The physique is very rounded."
+        "info": "Високо ниво на мазнини. Фигурата е много заоблена."
       },
       {
         "value": ">40",
         "label": ">40%",
-        "info": "Very high body fat level. The physique is obese."
+        "info": "Много високо ниво на мазнини. Фигурата е със затлъстяване."
       }
     ],
     "stepsDataFemale": [
       {
         "value": "10-14",
         "label": "10-14%",
-        "info": "Very low body fat content, typical for physique athletes. May be associated with hormonal imbalances and amenorrhea."
+        "info": "Много ниско съдържание на мазнини, типично за състезателки. Може да е свързано с хормонални проблеми."
       },
       {
         "value": "15-19",
         "label": "15-19%",
-        "info": "Low body fat content, often seen in active women and athletes. Very slim physique with clearly defined muscles."
+        "info": "Ниско съдържание на мазнини, често срещано при активни жени и спортистки. Много стройна фигура с очертани мускули."
       },
       {
         "value": "20-24",
         "label": "20-24%",
-        "info": "Healthy, athletic body fat level. Slim but feminine physique. Most common among active women."
+        "info": "Здравословно, спортно ниво. Стройна, но женствена фигура. Най-често срещано при активни жени."
       },
       {
         "value": "25-29",
         "label": "25-29%",
-        "info": "Average body fat level. Natural physique, slightly rounded, without clear muscle definition."
+        "info": "Средно ниво на мазнини. Естествена фигура, леко заоблена, без изразена дефиниция."
       },
       {
         "value": "30-39",
         "label": "30-39%",
-        "info": "Elevated body fat level. Clearly rounded physique, possible health issues related to excess fat."
+        "info": "Повишено ниво на мазнини. Ясно заоблена фигура, възможни здравословни проблеми."
       },
       {
         "value": ">40",
         "label": ">40%",
-        "info": "Very high body fat level. Health consultation and lifestyle changes are recommended."
+        "info": "Много високо ниво на мазнини. Препоръчва се консултация със специалист и промяна в начина на живот."
       }
     ]
   },
   "Height": {
-    "title": "How tall <b>are you?</b>",
-    "alt": "How tall are you?",
-    "unit": "cm",
+    "title": "Колко си <b>висок?</b>",
+    "alt": "Колко си висок?",
+    "unit": "см",
     "placeholder": "___",
-    "errorMsg": "Enter your real height.",
-    "ariaLabel": "Height"
+    "errorMsg": "Въведи реалния си ръст.",
+    "ariaLabel": "Ръст"
   },
   "Weight": {
-    "title1": "How much do you <b>weigh?</b>",
-    "title2": "What is your <b>target weight?</b>",
-    "alt1": "Current weight",
-    "alt2": "Target weight",
-    "unit": "kg",
+    "title1": "Колко <b>тежиш?</b>",
+    "title2": "Колко искаш да <b>тежиш?</b>",
+    "alt1": "Текущо тегло",
+    "alt2": "Целево тегло",
+    "unit": "кг",
     "placeholder": "___",
-    "ariaLabel1": "Weight",
-    "ariaLabel2": "Target weight",
-    "error1": "Enter your real weight.",
-    "error2": "Enter your target weight in the range of 30-300kg.",
-    "errorBulk": "If your goal is to bulk, target weight must be higher than current weight.",
-    "errorCut": "If your goal is to cut, target weight must be lower than current weight.",
-    "infoBulk": "Choose a weight from {minInfo} up.",
-    "infoCut": "Choose a weight from {maxInfo} down.",
-    "buttonExpandAlt": "Expand"
+    "ariaLabel1": "Тегло",
+    "ariaLabel2": "Целево тегло",
+    "error1": "Въведи реалното си тегло.",
+    "error2": "Въведи целево тегло в диапазона 30-300 кг.",
+    "errorBulk": "Ако целта ти е качване на маса, целевото тегло трябва да е по-високо от текущото.",
+    "errorCut": "Ако целта ти е отслабване, целевото тегло трябва да е по-ниско от текущото.",
+    "infoBulk": "Избери тегло от {minInfo} нагоре.",
+    "infoCut": "Избери тегло от {maxInfo} надолу.",
+    "buttonExpandAlt": "Разгъни"
   },
   "Age": {
-    "title": "How old <b>are you?</b>",
+    "title": "На колко <b>години си?</b>",
     "placeholder": "__",
-    "ariaLabel": "Age",
-    "unit": "years",
+    "ariaLabel": "Възраст",
+    "unit": "години",
     "12-14": {
-      "message": "You have huge potential!",
-      "description": "This is the best time to build <b>solid foundations!</b> Your body is still developing, so the key is habits and learning technique, not heavy weights."
+      "message": "Имаш огромен потенциал!",
+      "description": "Това е най-доброто време да изградиш <b>здрави основи!</b> Тялото ти все още се развива, затова ключови са навиците и техниката, а не огромните тежести."
     },
     "15-20": {
-      "message": "Ideal age to get serious about training!",
-      "description": "Your body recovers quickly, so you can make great progress with well-planned exercises and nutrition."
+      "message": "Идеална възраст да започнеш сериозни тренировки!",
+      "description": "Организмът се възстановява бързо, така че можеш да постигнеш голям напредък с добре планирани упражнения и хранене."
     },
     "21-30": {
-      "message": "This is the time to build truly great form!",
-      "description": "You already have body awareness - now you just need a well-tailored plan to take your results to the next level."
+      "message": "Това е времето, когато можеш да изградиш наистина страхотна форма!",
+      "description": "Вече познаваш тялото си - сега е нужен само добре подбран план, за да вдигнеш резултатите на ново ниво."
     }
   },
   "Activity": {
-    "title": "What is your <b>physical activity level?</b>",
-    "errorMsg": "Please select one of the options before proceeding.",
+    "title": "Какво е нивото ти на<b> физическа активност?</b>",
+    "errorMsg": "Моля, избери една от опциите преди да продължиш.",
     "options": {
-      "low_activity": "I sit most of the day, little movement. 🛋️",
-      "some_activity": "I move a bit, but no regular workouts. 🚶",
-      "light_training": "I train lightly a few times a week. 🏃‍♂️",
-      "regular_training": "I exercise regularly, I'm active most days. 💪",
-      "hard_work": "I train very hard or have a demanding physical job. 🏋️‍♂️"
+      "low_activity": "Седя през по-голямата част от деня, малко движение. 🛋️",
+      "some_activity": "Движа се малко, но без редовни тренировки. 🚶",
+      "light_training": "Тренирам леко няколко пъти седмично. 🏃‍♂️",
+      "regular_training": "Тренирам редовно, активен съм през повечето дни. 💪",
+      "hard_work": "Тренирам много или имам тежка физическа работа. 🏋️‍♂️"
     }
   },
   "BMI": {
-    "title": "Your <span>BMI</span> is:",
+    "title": "Твоят <span>ИТМ</span> е:",
     "category": {
-      "unknown": "Unknown category",
-      "starvation": "Starvation",
-      "emaciation": "Emaciation",
-      "underweight": "Underweight",
-      "normal": "Normal weight",
-      "overweight": "Overweight",
-      "obesityI": "Obesity Class I",
-      "obesityII": "Obesity Class II (Severe)",
-      "obesityIII": "Obesity Class III (Morbid)"
+      "unknown": "Неизвестна категория",
+      "starvation": "Силно недохранване",
+      "emaciation": "Недохранване",
+      "underweight": "Под нормата",
+      "normal": "Нормално тегло",
+      "overweight": "Наднормено тегло",
+      "obesityI": "Затлъстяване I степен",
+      "obesityII": "Затлъстяване II степен",
+      "obesityIII": "Затлъстяване III степен (болестно)"
     },
     "description": {
-      "unknown": "BMI category cannot be determined.",
-      "starvation": "The body is severely weakened due to extreme weight deficiency.",
-      "emaciation": "The body is clearly weakened; muscles and tissues lack sufficient nutrition.",
-      "underweight": "Body weight is too low. The organism isn't properly protected against diseases and handles physical exertion poorly.",
-      "normal": "The body is neither burdened by excess body fat nor weakened by its deficiency.",
-      "overweight": "Excess body fat appears, beginning to burden the body.",
-      "obesityI": "Excess body fat clearly burdens the body and increases the risk of diseases.",
-      "obesityII": "The body is heavily burdened. The risk of serious chronic diseases increases, and physical fitness is limited.",
-      "obesityIII": "Very high amount of body fat seriously threatens health and life."
+      "unknown": "Не може да се определи категория ИТМ.",
+      "starvation": "Организмът е силно отслабен поради много голям недостиг на телесна маса.",
+      "emaciation": "Тялото е видимо отслабено, мускулите и тъканите нямат достатъчно хранителни вещества.",
+      "underweight": "Телесното тегло е твърде ниско. Организмът не е защитен от болести и понася по-трудно физическо натоварване.",
+      "normal": "Организмът не е натоварен с излишни мазнини, нито е отслабен от липсата им.",
+      "overweight": "Появяват се излишни мазнини, които започват да натоварват организма.",
+      "obesityI": "Излишните мазнини ясно натоварват организма и увеличават риска от заболявания.",
+      "obesityII": "Организмът е силно натоварен. Рискът от сериозни хронични заболявания нараства.",
+      "obesityIII": "Много голямото количество мазнини сериозно застрашава здравето и живота."
     },
-    "conclusion": "Perfect moment to build muscle!",
-    "nextStepAlt": "Go to the next step"
+    "conclusion": "Идеален момент за изграждане на мускули!",
+    "nextStepAlt": "Към следващата стъпка"
   },
   "Location": {
-    "title": "Where do you plan to<br /><b>train?</b>",
-    "ariaLabelGroup": "Training location",
+    "title": "Къде смяташ да<br /><b>тренираш?</b>",
+    "ariaLabelGroup": "Място за тренировки",
     "gym": {
-      "label": "I will train at the gym",
-      "label_f": "I will train at the gym",
-      "alt": "I will train at the gym",
-      "alt_f": "I will train at the gym",
-      "description": "Training at the gym with access to a wide range of equipment.",
-      "description_f": "Training at the gym with access to a wide range of equipment."
+      "label": "Ще тренирам във фитнес зала",
+      "label_f": "Ще тренирам във фитнес зала",
+      "alt": "Ще тренирам във фитнес зала",
+      "alt_f": "Ще тренирам във фитнес зала",
+      "description": "Тренировка във фитнес с достъп до широк избор от оборудване.",
+      "description_f": "Тренировка във фитнес с достъп до широк избор от оборудване."
     },
     "home": {
-      "label": "I will train at home",
-      "label_f": "I will train at home",
-      "alt": "I will train at home",
-      "alt_f": "I will train at home",
-      "description": "Home training tailored to available equipment.",
-      "description_f": "Home training tailored to available equipment."
+      "label": "Ще тренирам вкъщи",
+      "label_f": "Ще тренирам вкъщи",
+      "alt": "Ще тренирам вкъщи",
+      "alt_f": "Ще тренирам вкъщи",
+      "description": "Тренировка вкъщи, съобразена с наличното оборудване.",
+      "description_f": "Тренировка вкъщи, съобразена с наличното оборудване."
     },
     "bandsPanel": {
-      "question": "Do you have access to resistance bands?",
+      "question": "Имаш ли достъп до ластици за тренировка?",
       "yes": {
-        "label": "Yes - I have bands",
-        "alt": "Yes"
+        "label": "Да - имам ластици",
+        "alt": "Да"
       },
       "no": {
-        "label": "No - I don't have bands",
-        "alt": "No"
+        "label": "Не - нямам ластици",
+        "alt": "Не"
       }
     }
   },
   "Experience": {
-    "title": "What is your <b>training experience?</b>",
+    "title": "Какъв е твоят опит<br /><b>в тренировките?</b>",
     "options": {
       "none": {
-        "label": "Haven't started training yet. 🐣",
-        "description1": "In the beginning, the key is learning <b>proper technique</b> and <b>building consistency</b>.",
-        "description2": "<b>But don't worry!</b><br />Your Plan will guide you through this step by step ;)",
-        "alt": "Exercise"
+        "label": "Още не съм започнал да тренирам. 🐣",
+        "description1": "В началото ключово е научаването на <b>правилна техника</b> и <b>изграждането на постоянство</b>.",
+        "description2": "<b>Но не се притеснявай!</b><br />Твоят План ще те преведе през това стъпка по стъпка ;)",
+        "alt": "Упражнение"
       },
       "just_started": {
-        "label": "Just started. 🏁",
-        "description1": "<b>Just starting — awesome!</b>",
-        "description2": "At this stage, your body responds quickly to training, so we'll focus on <b>learning technique</b> and simple, repeatable habits.",
-        "alt": "Exercise"
+        "label": "Току-що започнах. 🏁",
+        "description1": "<b>Тепърва започваш — супер!</b>",
+        "description2": "На този етап тялото реагира бързо на тренировките, затова ще се фокусираме върху <b>техниката</b> и простите навици.",
+        "alt": "Упражнение"
       },
       "some_experience": {
-        "label": "I train a bit already. 💪",
-        "description1": "<b>You have some experience — bomb!</b>",
-        "description2": "This is the moment your body gets <b>used to training</b> — so it's key to introduce a plan with <b>structure</b> and <b>progression</b>.",
-        "alt": "Exercise"
+        "label": "Вече тренирам малко. 💪",
+        "description1": "<b>Имаш известен опит — страхотно!</b>",
+        "description2": "Това е моментът, в който тялото <b>свиква с тренировките</b> — затова е важно въвеждането на план с <b>конкретна структура</b> и <b>прогресия</b>.",
+        "alt": "Упражнение"
       },
       "advanced": {
-        "label": "I've been training for a long time. 🥇",
-        "description1": "<b>Great job!</b> You already know what <b>regularity</b> and <b>consistency</b> look like.",
-        "description2": "At this stage, we'll focus on optimization: a <b>precise plan</b>, <b>progression</b>, and <b>recovery</b>.",
-        "alt": "Exercise"
+        "label": "Тренирам отдавна. 🥇",
+        "description1": "<b>Отлична работа!</b> Вече знаеш какво означават <b>постоянство</b> и <b>последователност</b>.",
+        "description2": "На този етап ще се фокусираме върху оптимизацията: <b>прецизен план</b>, <b>прогресия</b> и <b>възстановяване</b>.",
+        "alt": "Упражнение"
       }
     },
-    "errorMsg": "Please select your training experience before proceeding."
+    "errorMsg": "Моля, избери своя опит в тренировките преди да продължиш."
   },
   "Equipment": {
-    "title": "What <b>equipment</b> do you have at home?",
-    "subtitle": "(you can select more<br />than one option)",
-    "ariaLabelGroup": "Equipment selection",
+    "title": "С какво <b>оборудване</b> разполагаш вкъщи?",
+    "subtitle": "(можеш да отбележиш повече от една опция)",
+    "ariaLabelGroup": "Избор на оборудване",
     "options": {
       "none": {
-        "label": "No access to any training equipment. 🚫",
-        "description": "We will base the plan on bodyweight exercises and simple household items."
+        "label": "Нямам достъп до никакво оборудване. 🚫",
+        "description": "Ще базираме плана на упражнения със собствено тегло и прости домашни предмети."
       },
       "bands": {
-        "label": "Resistance bands.",
-        "description": "Mini bands and power bands will allow us to add resistance and scale exercise difficulty."
+        "label": "Ластици за тренировка.",
+        "description": "Ластиците (mini bands и power bands) ще ни позволят да добавим съпротивление и да степенуваме трудността."
       },
       "dumbbells": {
-        "label": "Dumbbells.",
-        "description": "We'll use single and double-hand variations to fully utilize the dumbbells' potential."
+        "label": "Дъмбели.",
+        "description": "Ще използваме вариации с една и две ръце, за да използваме пълния потенциал на дъмбелите."
       },
       "barbell": {
-        "label": "Barbell and weights.",
-        "description": "We'll set up classic lifts (squats, deadlifts, presses) adjusting volume to your goal."
+        "label": "Щанга и тежести.",
+        "description": "Ще включим класически упражнения (клек, тяга, преса), като адаптираме обема към твоята цел."
       },
       "bench": {
-        "label": "Bench press bench.",
-        "description": "A bench allows adding lying and incline exercises to better target the stimulus."
+        "label": "Лежанка.",
+        "description": "Лежанката позволява изпълнението на упражнения от лег и полулег за по-добро натоварване."
+      },
+      "pullup_bar": {
+        "label": "Лост за набиране.",
+        "description": "Лостът позволява изпълнението на набирания и други упражнения."
+      },
+      "dip_bar": {
+        "label": "Успоредка за кофички.",
+        "description": "Позволява изпълнението на кофички и други упражнения за трицепс."
       }
     },
-    "errorMsg": "Select at least one equipment option to proceed."
+    "errorMsg": "Отбележи поне една опция за оборудване, за да продължиш."
   },
   "Difficulty": {
-    "title": "What is your <span style=\"font-weight: 700\">BIGGEST</span><br />struggle regarding the gym?",
-    "errorMsg": "Please select one of the options before proceeding.",
+    "title": "Каква е твоята <span style=\"font-weight: 700\">НАЙ-ГОЛЯМА</span><br />трудност, свързана с фитнеса?",
+    "errorMsg": "Моля, избери една от опциите преди да продължиш.",
     "options": {
-      "motivation": "I lack motivation to train/stick to a diet. 😔",
-      "effects": "I get discouraged by not seeing results. ⏳",
-      "insecurity": "I'm afraid to go to the gym, or I feel insecure there. 😟",
-      "diet": "I don't really know how to stick to a diet. ❓",
-      "no_difficulty": "I don't have any of the above difficulties. ✅"
+      "motivation": "Липсва ми мотивация за тренировки/диета. 😔",
+      "effects": "Обезкуражава ме, че не виждам резултати. ⏳",
+      "insecurity": "Страхувам се да отида във фитнеса или се чувствам несигурен там. 😟",
+      "diet": "Не знам точно как да спазвам диета. ❓",
+      "no_difficulty": "Нямам нито една от горните трудности. ✅"
     }
   },
   "Priority": {
-    "title1": "Which body parts do you<br />care about<br />",
-    "title2": "<span style=\"font-weight: 700\">THE MOST?</span>",
-    "subtitle": "(The plan covers all muscle groups, but you can choose ones to <b>prioritize</b>)",
-    "warning": "ATTENTION! You can select max 2 parts",
+    "title1": "Върху кои мускулни групи искаш<br />да наблегнеш<br />",
+    "title2": "<span style=\"font-weight: 700\">НАЙ-МНОГО?</span>",
+    "subtitle": "(Планът включва всички мускулни групи, но можеш да избереш тези, които са с <b>приоритет</b>)",
+    "warning": "ВНИМАНИЕ! Можеш да избереш макс. 2 групи",
     "partNames": {
-      "shoulders": "Shoulders",
-      "chest": "Chest",
-      "triceps": "Triceps",
-      "biceps": "Biceps",
-      "back": "Back",
-      "legs": "Legs",
-      "abs": "Abs",
-      "forearms": "Forearms",
-      "glutes": "Glutes"
+      "shoulders": "Рамене",
+      "chest": "Гърди",
+      "triceps": "Трицепс",
+      "biceps": "Бицепс",
+      "back": "Гръб",
+      "legs": "Крака",
+      "abs": "Корем",
+      "forearms": "Предмишници",
+      "glutes": "Седалище"
     },
-    "ariaLabelSelected": "Priority: {name} selected",
-    "ariaLabelUnselected": "Priority: {name} unselected",
-    "imageAltSelected": "{name} — selected",
-    "imageAltUnselected": "{name} — not selected"
+    "ariaLabelSelected": "Приоритет: {name} е избран",
+    "ariaLabelUnselected": "Приоритет: {name} не е избран",
+    "imageAltSelected": "{name} — избрано",
+    "imageAltUnselected": "{name} — не е избрано"
   },
   "Frequency": {
-    "title1": "How many times a week<br />do you want to<br />",
-    "title2": "<span style=\"font-weight: 700\">TRAIN?</span>",
-    "dayLabelSingular": "day",
-    "dayLabelPlural": "days",
+    "title1": "Колко пъти<br />седмично искаш да",
+    "title2": "<span style=\"font-weight: 700\">ТРЕНИРАШ?</span>",
+    "dayLabelSingular": "ден",
+    "dayLabelPlural": "дни",
     "steps": [
       {
         "value": "1",
-        "label": "1 time a week"
+        "label": "1 път седмично"
       },
       {
         "value": "2",
-        "label": "2 times a week"
+        "label": "2 пъти седмично"
       },
       {
         "value": "3",
-        "label": "3 times a week"
+        "label": "3 пъти седмично"
       },
       {
         "value": "4",
-        "label": "4 times a week"
+        "label": "4 пъти седмично"
       },
       {
         "value": "5",
-        "label": "5 times a week"
+        "label": "5 пъти седмично"
       }
     ],
-    "daySingular": "workout",
-    "dayPlural": "workouts",
-    "dayPluralFew": "workouts"
+    "daySingular": "тренировка",
+    "dayPlural": "тренировки",
+    "dayPluralFew": "тренировки"
   },
   "Fitness": {
-    "title1": "How would you rate your<br /><span style=\"font-weight: 700\">physical fitness</span><br />on a scale of 1 to 10?"
+    "title1": "Как би оценил своята<br /><b>физическа форма</b><br />по скалата от 1 до 10?"
   },
   "Sleep": {
-    "title": "How much time<br /><span style=\"font-weight: 700\">do you spend sleeping?</span>",
+    "title": "Колко време<br /><span style=\"font-weight: 700\">отделяш за сън?</span>",
     "steps": [
       {
         "value": "lt6",
-        "label": "< 6 hours"
+        "label": "< 6 часа"
       },
       {
         "value": "7-8",
-        "label": "7-8 hours"
+        "label": "7-8 часа"
       },
       {
         "value": "9-12",
-        "label": "9-12 hours"
+        "label": "9-12 часа"
       },
       {
         "value": "gt12",
-        "label": "> 12 hours"
+        "label": "> 12 часа"
       }
     ],
     "messages": [
-      "It's hard to recover well with this amount of sleep... Remember to work on it :)",
-      "Good amount of sleep — recovery supports training and health.",
-      "Very good amount of sleep — optimal recovery.",
-      "Too much sleep might mean irregularity — monitor how you feel."
+      "Трудно е да се възстановиш добре с толкова малко сън... Помни да работиш над това :)",
+      "Добро количество сън — възстановяването подпомага тренировките и здравето.",
+      "Много добро количество сън — оптимално възстановяване.",
+      "Твърде много сън може да означава нередовност — следи как се чувстваш."
     ]
   },
-  "ResultPage": {
-    "title": "<span style=\"font-size: 36px; font-weight: 700;\">Your Training Plan</span><br /><span style=\"font-size: 28px; font-weight: 400;\">is ready!</span>",
-    "intro1": "Created based on <b>Your 14 answers</b> by an <b>advanced training algorithm</b><br />designed specifically for <b>physique building</b> and <b>fat reduction</b>.",
-    "intro2": "You will receive an <b>individual plan</b><br/>based on data, created in <b>less than 3 minutes</b> thanks to<br />technology that analyzes over<br/><b>4,000 training combinations</b>.",
-    "subtitle": "<b>Quick Summary</b><br /><span style=\"font-size: 28px; font-weight: 400;\">of Your results</span>",
-    "trustImageAlt": "Why trust us?",
-    "analyzeTitle": "The algorithm analyzes, among others:",
-    "analyzeList": {
-      "aktywnosc": "Your <b>activity level</b>",
-      "cel": "Your <b>goal</b> (cut / bulk)",
-      "wiek": "Your <b>age</b>",
-      "doswiadczenie": "<b>Training experience</b>",
-      "time": "<b>Time</b> you have available",
-      "strengths": "<b>Strengths and weaknesses of your physique</b>"
-    },
-    "conclusion1": "And then selects a <b>specific training plan</b> that fits <b>Your situation</b> better than <b>99% of cookie-cutter plans</b> on the internet.",
-    "conclusion2": "It's a combination of <b>personal trainer knowledge</b> and <b>system precision</b> that makes no mistakes and doesn't guess.",
-    "purchaseTitle": "What exactly will you get after purchase?",
-    "purchaseImageAlt": "Product description",
-    "sampleBtn": "See a sample training plan!",
-    "sampleTitle": "And here are a few pages from Rafael's plan!",
-    "loadingTitle": "Creating your training plan...",
-    "loadingSubtitle": "One moment, loading all results.",
-    "loadingData": "No data for this session.",
-    "loadingErrorTitle": "We're having trouble loading your data.",
-    "loadingErrorHtml": "Refresh the page and try again. If the problem persists, write to us: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
-    "loadingErrorBtn": "once_again",
-    "reportNote1": "plans sent",
-    "reportNote2": "in the last 24 hours",
-    "joinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized training plan!</b>",
-    "contactBox": {
-      "title": "Have any doubts?",
-      "emailIntro": "Hit me up:",
-      "emailAddress": "support@trenerstrzykawa.pl",
-      "responseTime": "⏰ I usually reply in less than an hour."
-    },
-    "ctaButton": {
-      "alt": "Get plan"
-    },
-    "errorTitle": "No data for this funnel.",
-    "errorDescription": "Contact us at: support@trenerstrzykawa.pl",
-    "faq": {
-      "title": "Frequently<br/>Asked Questions:"
-    }
-  },
-  "BMIBOX": {
-    "yourScore": "Your result is:",
-    "underweight": "underweight",
-    "overweight": "overweight",
-    "categories": {
-      "lt16": "Starvation",
-      "lt17": "Emaciation",
-      "lt18_5": "Underweight",
-      "lt25": "Normal weight",
-      "lt30": "Overweight",
-      "lt35": "Obesity Class I",
-      "lt40": "Obesity Class II (Severe)",
-      "gt40": "Obesity Class III (Morbid)"
-    },
-    "descriptions": {
-      "lt16": "The body is severely weakened due to extreme weight deficiency.",
-      "lt17": "The body is clearly weakened; muscles and tissues lack sufficient nutrition.",
-      "lt18_5": "Body weight is too low. The organism isn't properly protected against diseases and handles physical exertion poorly.",
-      "lt25": "The body is neither burdened by excess body fat nor weakened by its deficiency.",
-      "lt30": "Excess body fat appears, beginning to burden the body.",
-      "lt35": "Excess body fat clearly burdens the body and increases the risk of diseases.",
-      "lt40": "The body is heavily burdened. The risk of serious chronic diseases increases, and physical fitness is limited.",
-      "gt40": "Very high amount of body fat seriously threatens health and life."
-    }
-  },
-  "Summary": {
-    "title": "Your Plan:",
-    "conjunction_and": " and ",
-    "priorities": {
-      "shoulders": "shoulders",
-      "chest": "chest",
-      "triceps": "triceps",
-      "biceps": "biceps",
-      "back": "back",
-      "legs": "legs",
-      "forearms": "forearms",
-      "abs": "abs",
-      "glutes": "glutes",
-      "default": "all body parts"
-    },
-    "goals": {
-      "bulk": "building muscle mass",
-      "cut": "reducing body fat"
-    },
-    "frequency": {
-      "intro": "Provides you with <strong>{n}</strong> {days} a week.",
-      "daySingular": "workout",
-      "dayPlural": "workouts",
-      "dayPluralFew": "workouts",
-      "dayPluralMany": "workouts"
-    },
-    "location": {
-      "housewithout": "Ensures efficient training in <strong>home conditions</strong>.",
-      "housewith": "Ensures efficient training in <strong>home conditions with resistance bands.</strong>",
-      "gym": "",
-      "default": ""
-    },
-    "focus": "Places special emphasis on <strong>{priorities}</strong>.",
-    "goalFocus": "Is geared towards <strong>{goal}</strong>.",
-    "fitnessFocus": "Is adapted to your current <strong>{fitness}</strong>.",
-    "fitnessFocusText": "physical fitness",
-    "equipment": {
-      "intro": "Train at home using <strong>{list}</strong>.",
-      "introNone": "Train at home <strong>without any additional equipment</strong>.",
-      "map": {
-        "bands": "resistance bands",
-        "dumbbells": "dumbbells",
-        "barbell": "barbell with weights",
-        "bench": "workout bench",
-        "none": "no equipment"
-      }
-    },
-    "priority": {
-      "none": "Places special emphasis on <strong>balanced muscle mass development</strong> throughout the whole body.",
-      "one": "Places special emphasis on <strong>{p1}</strong>.",
-      "two": "Places special emphasis on <strong>{p1}</strong> and <strong>{p2}</strong>.",
-      "many": "Places special emphasis on <strong>{list}</strong>."
-    }
-  },
-  "YouVsFuture": {
-    "now": "now",
-    "future": "in a few months",
-    "weight": "weight:",
-    "muscle": "muscle",
-    "fitness": "physical fitness",
-    "bodyfat": "body fat",
-    "activityMap": {
-      "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "I train very hard or have a demanding physical job",
-      "Ćwiczę regularnie, jestem w ruchu większość dni": "I exercise regularly, I'm active most days",
-      "Trenuję lekko kilka razy w tygodniu": "I train lightly a few times a week"
-    }
-  },
-  "ReportForm": {
-    "title": "Get<br />your training<br />plan!",
-    "imageAlt": "Smith machine illustration",
-    "nameLabel": "What's your name?",
-    "namePlaceholder": "Name",
-    "emailLabel": "Email (where you'll receive the plan):",
-    "emailPlaceholder": "address@email.com",
-    "agreementText": "I agree to the processing of my personal data in accordance with the <a href=\"https://musclepals.com/regional/bg/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
-    "agreementCheckboxHtml": "I accept the <a href=\"https://musclepals.com/regional/bg/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">terms</a> and <a href=\"https://musclepals.com/regional/bg/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
-    "healthDataAgreementHtml": "I agree to the use of my health data and measurements (this is necessary to create the plan).",
-    "healthDataAgreementRequiredError": "Please accept the agreement to use health data to proceed.",
-    "agreementRequiredError": "Please accept the terms to proceed to payment.",
-    "errorMsg1": "Please provide a valid name and email address.",
-    "errorMsg2": "Double-check your email address. If it's correct, click the button again to continue.",
-    "errorMsgDomainTypo": "Typo in email? Did you mean {suggestedEmail}? If so, please correct it. If it's correct, click the button again to continue.",
-    "orText": "or",
-    "detailsBtn": "Learn more about BMI/BMR analysis!",
-    "detailsBox1Title": "I'll show you:",
-    "detailsBox1Body": {
-      "training": "How many calories you need to eat to effectively {goal},",
-      "smart": "How to train smarter, not harder,",
-      "workDiet": "How to balance school/work with diet,",
-      "progress": "How to overcome difficulties stopping your progress."
-    },
-    "detailsBox2Title": "You will receive:",
-    "detailsBox2Body": {
-      "macros": "Exact macro ratios tailored to your body,",
-      "dietSchema": "A sample diet framework for you, {goalSchema}",
-      "summary": "An honest summary of your current situation and tips on how to improve it."
-    },
-    "timerPromo1": "Promotion for",
-    "timerPromo2": "new<br />users",
-    "timerPromo3": "ends in:",
-    "timerImageAlt": "Flexing Musclepals",
-    "successMsg": "Your order has been processed successfully.",
-    "paymentNote": "You will receive the plan within <b>2 minutes</b> of payment."
-  },
-  "TDEE": {
-    "title1": "Total Daily Energy Expenditure",
-    "deficit": "caloric deficit",
-    "surplus": "caloric surplus",
-    "unit": "kcal/day",
-    "mainDescPrefix": "This value ",
-    "mainDescBold1Cut": "accounts for losing weight",
-    "mainDescBold1Bulk": "accounts for gaining weight",
-    "mainDescSuffix": ". This is the base amount of calories you must consume to ",
-    "mainDescActionCut": "lose weight",
-    "mainDescActionBulk": "gain weight",
-    "noData": "-"
-  },
-  "Carousel": {
-    "indicatorNote": "Note! This is not the full plan, just 4 sample pages.",
-    "pageLabel": "Page {current}/{total}",
-    "workout": {
-      "slides": [
-        {
-          "alt": "Rafael 1",
-          "caption": "Introduction to the training plan – page 1"
-        },
-        {
-          "alt": "Rafael 2",
-          "caption": "Guide on how to use the plan – page 2"
-        },
-        {
-          "alt": "Rafael 3",
-          "caption": "Start of the training plan – page 5"
-        },
-        {
-          "alt": "Rafael 5",
-          "caption": "Progression plan for the next 3 months – page 7"
-        }
-      ]
-    }
-  },
-  "OrderPage": {
-    "logoHref": "https://musclepals.com/",
-    "verifyingText": "Verifying payment...",
-    "processingText": "Processing your payment...",
-    "pendingHtml": "Your payment is being verified.<br /><b>Please do not close this page.</b><br /><br />If payment was made, the plan will arrive in your email within a few minutes.",
-    "loading": "Loading...",
-    "successTitle": "Your order has been<br />paid successfully!",
-    "successImageAlt": "Order paid",
-    "successText1": "It will appear in your email in a moment.",
-    "successText2": "(may take up to 5 minutes)",
-    "successText3": "Check spam and the \"promotions\" tab as well",
-    "successText4": "If you have any issues, feel free to reach out!",
-    "successEmail": "support@trenerstrzykawa.pl",
-    "errorTitle": "We're having trouble<br />processing<br />your payment.",
-    "errorImageAlt": "Report unpaid",
-    "errorText1": "Your payment <b>was not finalized</b>, return to the main page and try again.",
-    "buttonText": "Return to main page",
-    "logoAlt": "Musclepals",
-    "contactText": "If you think this is a mistake, contact me:",
-    "logoSrc": "/vectors/logo.svg",
-    "logoHeight": "50",
-    "backButtonImage": "/btns/en/back-to-home-btn.svg",
-    "heroSuccessSrc": "/regional/en/sample-guy.svg"
-  },
-  "JoinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized training plan!</b>",
-  "NextButton": {
-    "alt": "Next"
-  },
-  "AnswersSummary": {
-    "buttonAlt": "Summary of answers",
-    "backLinkText": "Return to filling the form",
-    "conjunction_and": "and",
-    "equipmentNotSelected": "No equipment selected",
-    "locationTypeMap": {
-      "gym": "Gym",
-      "house": "Home"
-    },
-    "equipmentMap": {
-      "none": "None",
-      "bands": "Resistance bands",
-      "dumbbells": "Dumbbells",
-      "barbell": "Barbell",
-      "bench": "Bench"
-    },
-    "labels": {
-      "gender": "Gender",
-      "age": "Age",
-      "height": "Height",
-      "weight": "Weight",
-      "weight_goal": "Target weight",
-      "goal": "Goal",
-      "diet_goal": "Diet goal",
-      "bodyfat": "Body fat",
-      "activity": "Activity",
-      "experience": "Experience",
-      "difficulty": "Difficulty",
-      "location": "Training location",
-      "equipment": "Equipment",
-      "priority": "Priority",
-      "frequency": "Frequency",
-      "fitness": "Fitness",
-      "sleep": "Sleep",
-      "pushups": "Pushups",
-      "pullups": "Pullups",
-      "calistenic_experience": "Calisthenics experience",
-      "duration": "Training duration"
-    },
-    "gender": {
-      "male": "Male",
-      "M": "Male",
-      "female": "Female",
-      "F": "Female",
-      "other": "Other"
-    },
-    "dietGoal": {
-      "bulk": "Gaining muscle mass",
-      "cut": "Reducing body fat"
-    },
-    "activityMap": {
-      "low_activity": "I sit most of the day, little movement.",
-      "some_activity": "I move a bit, but no regular workouts.",
-      "light_training": "I train lightly a few times a week.",
-      "regular_training": "I exercise regularly, I'm active most days.",
-      "hard_work": "I train very hard or have a demanding physical job."
-    },
-    "experienceMap": {
-      "none": "Haven't started training yet.",
-      "just_started": "Just started.",
-      "some_experience": "I train a bit already.",
-      "advanced": "I've been training for a long time."
-    },
-    "difficultyMap": {
-      "motivation": "I lack motivation to train/stick to a diet.",
-      "effects": "I get discouraged by not seeing results.",
-      "insecurity": "I'm afraid to go to the gym, or I feel insecure there.",
-      "diet": "I don't really know how to stick to a diet.",
-      "no_difficulty": "I don't have any of the above difficulties."
-    },
-    "locationMap": {
-      "gym": "Gym",
-      "housewith": "Home (with resistance bands)",
-      "housewithout": "Home (without resistance bands)"
-    },
-    "priorityMap": {
-      "shoulders": "Shoulders",
-      "chest": "Chest",
-      "triceps": "Triceps",
-      "biceps": "Biceps",
-      "back": "Back",
-      "legs": "Legs",
-      "abs": "Abs",
-      "forearms": "Forearms",
-      "glutes": "Glutes"
-    },
-    "format": {
-      "bodyfat": "{value}%",
-      "height": "{value}cm",
-      "weight": "{value}kg",
-      "age": "{value} years",
-      "frequency": "{value}x/week",
-      "fitness": "{value}/10",
-      "duration": "{count, plural, one {# minute} other {# minutes}}"
-    },
-    "persistentError": {
-      "title": "Problem persists",
-      "description": "Unfortunately, the problem with saving answers persists. It might be a technical error.<br /><br />Contact us at: {email}",
-      "contactEmail": "support@trenerstrzykawa.pl"
-    }
-  },
-  "MissingSteps": {
-    "title": "Some answers were not saved",
-    "description": "Unfortunately, the software didn't save answers to the questions: {steps}.<br /><br />Click the button below to go through these questions again.",
-    "buttonAlt": "Try again",
-    "stepLabels": {
-      "gender": "Gender",
-      "diet_goal": "Diet goal",
-      "bodyfat": "Body fat",
-      "height": "Height",
-      "weight": "Weight",
-      "age": "Age",
-      "activity": "Activity",
-      "location": "Location",
-      "experience": "Experience",
-      "difficulty": "Difficulty",
-      "priority": "Priority",
-      "frequency": "Frequency",
-      "fitness": "Fitness",
-      "sleep": "Sleep"
-    }
-  },
   "PushupsStep": {
-    "title": "How many <span class=\"kalistenika-text\">pushups</span> can you do in one go?",
-    "placeholder": "e.g. 15",
+    "title": "Колко <span class=\"kalistenika-text\">лицеви опори</span> можеш да направиш наведнъж?",
+    "placeholder": "напр. 15",
     "options": {
-      "0-5": "0-5 pushups",
-      "6-10": "6-10 pushups",
-      "11-20": "11-20 pushups",
-      "21-30": "21-30 pushups",
-      "30+": "More than 30 pushups"
+      "0-5": "0-5 опори",
+      "6-10": "6-10 опори",
+      "11-20": "11-20 опори",
+      "21-30": "21-30 опори",
+      "30+": "Над 30 опори"
     }
   },
   "PullupsStep": {
-    "title": "How many <span class=\"kalistenika-text\">pullups</span> can you do in one go?",
-    "placeholder": "e.g. 5",
+    "title": "Колко <span class=\"kalistenika-text\">набирания</span> можеш да направиш наведнъж?",
+    "placeholder": "напр. 5",
     "options": {
-      "0": "None yet",
-      "1-3": "1-3 pullups",
-      "4-6": "4-6 pullups",
-      "7-10": "7-10 pullups",
-      "10+": "More than 10 pullups"
+      "0": "Още нито едно",
+      "1-3": "1-3 набирания",
+      "4-6": "4-6 набирания",
+      "7-10": "7-10 набирания",
+      "10+": "Над 10 набирания"
     }
   },
   "CalistenicExperienceStep": {
-    "title": "What is your <span class=\"kalistenika-text\">experience</span> with calisthenics?",
+    "title": "Какъв <span class=\"kalistenika-text\">опит</span> имаш с калистениката?",
     "options": {
-      "none": "New",
-      "just_started": "Beginner",
-      "some_experience": "Intermediate",
-      "advanced": "Advanced."
+      "none": "Нов",
+      "just_started": "Начинаещ",
+      "some_experience": "Средно напреднал",
+      "advanced": "Напреднал"
     },
     "descriptions": {
-      "none": "Starting from zero. Haven't trained regularly before and want to build basic strength and technique.",
-      "just_started": "Already have contact with sports. Can do a set of pushups and squats, but can't pull up at all or only 1-3 times.",
-      "some_experience": "Training regularly. Can comfortably do pullups (over 5) and dips. Want to level up (e.g. Muscle Up, L-sit).",
-      "advanced": "Basics are just a warmup. Can do Muscle Up and work on difficult statics (Front Lever, Planche) or advanced dynamics."
+      "none": "Започвам от нулата. Не съм тренирал редовно преди и искам да изградя базова сила и да науча техниката.",
+      "just_started": "Имам досег със спорта. Мога да направя серия лицеви опори и клекове, но не мога да се набирам или правя само 1-3 пъти.",
+      "some_experience": "Тренирам редовно. Свободно правя серии набирания (над 5) и кофички. Искам да мина на по-високо ниво (напр. учене на Muscle Up, L-sit).",
+      "advanced": "Основите за мен са загрявка. Мога да правя Muscle Up и работя над трудни статични елементи (Front Lever, Planche) или сложна динамика."
     }
   },
   "DurationStep": {
-    "title1": "Select <b>training</b>",
-    "title2": "<b>duration</b>",
+    "title1": "Избери <b>продължителност</b>",
+    "title2": "на една <b>тренировка</b>",
     "steps": [
       {
         "value": "30"
@@ -828,14 +484,381 @@
         "value": "90"
       }
     ],
-    "minutes": "{count, plural, one {# minute} other {# minutes}}",
-    "info": "Optimal training time is <i><b>45-60 minutes</b></i>. Remember that <b>quality</b> of sets is more important than <b>quantity</b>.",
-    "recommended": "(recommended)"
+    "minutes": "{count, plural, one {# минута} other {# минути}}",
+    "info": "Оптималното време за тренировка е <i><b>45-60 минути</b></i>. Помни, че <b>качеството</b> на сериите е по-важно от тяхното <b>количество</b>.",
+    "recommended": "(препоръчително)"
   },
-  "PlanPage": {
-    "assets": {
-      "privacyUrl": "https://musclepals.com/regional/bg/privacy",
-      "termsUrl": "https://musclepals.com/regional/bg/terms"
+  "ResultPage": {
+    "title": "<span style=\"font-size: 36px; font-weight: 700;\">Твоят Тренировъчен План</span><br /><span style=\"font-size: 28px; font-weight: 400;\">е готов!</span>",
+    "intro1": "Създаден въз основа на<br /><b>твоите 14 отговора</b> чрез<br/><b>усъвършенстван алгоритъм</b>,<br />проектиран специално за<br /><b>изграждане на фигура</b> и <b>сваляне на мазнини</b>.",
+    "intro2": "Ще получиш <b>индивидуален план</b>,<br/>базиран на данни, създаден<br/>за <b>по-малко от 3 минути</b> благодарение на<br />технология, която анализира над<br/><b>4 000 тренировъчни комбинации</b>.",
+    "subtitle": "<b>Бързо обобщение</b><br /><span style=\"font-size: 28px; font-weight: 400;\">на твоите резултати</span>",
+    "trustImageAlt": "Защо да ни се довериш?",
+    "analyzeTitle": "Алгоритъмът анализира м.др.:",
+    "analyzeList": {
+      "aktywnosc": "Твоето <b>ниво на активност</b>",
+      "cel": "Твоята <b>цел</b> (чистене / маса)",
+      "wiek": "Твоята <b>възраст</b>",
+      "doswiadczenie": "<b>Тренировъчен опит</b>",
+      "time": "<b>Времето</b>, с което разполагаш",
+      "strengths": "<b>Силните и слабите страни на фигурата</b>"
+    },
+    "conclusion1": "А след това подбира <b>конкретен тренировъчен план</b>, който пасва на <b>твоята ситуация</b> по-добре от <b>99% от готовите планове</b> в интернет.",
+    "conclusion2": "Това е комбинация от <b>знанията на персонален треньор</b> и <b>прецизността на система</b>, която не допуска грешки и не гадае.",
+    "purchaseTitle": "Какво точно получаваш след покупката?",
+    "purchaseImageAlt": "Описание на продукта",
+    "sampleBtn": "Виж примерен тренировъчен план!",
+    "sampleTitle": "Ето няколко страници от плана на Рафал!",
+    "loadingTitle": "Създавам твоя тренировъчен план...",
+    "loadingSubtitle": "Малко търпение, зареждам всички резултати.",
+    "loadingData": "Няма данни за тази сесия.",
+    "loadingErrorTitle": "Имаме проблем със зареждането на твоите данни.",
+    "loadingErrorHtml": "Опресни страницата и опитай отново. Ако проблемът продължава, пиши ни: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
+    "loadingErrorBtn": "once_again",
+    "reportNote1": "изпратени планове",
+    "reportNote2": "през последните 24 часа",
+    "joinAthletes": "Присъедини се към <b><u>{count}</u> спортуващи</b>, които <b>вече използват</b> своя <b>персонализиран тренировъчен план!</b>",
+    "contactBox": {
+      "title": "Имаш ли някакви съмнения?",
+      "emailIntro": "Пиши ми:",
+      "emailAddress": "support@musclepals.com",
+      "responseTime": "⏰ Обикновено отговарям за по-малко от час."
+    },
+    "ctaButton": {
+      "alt": "Вземи плана"
+    },
+    "errorTitle": "Няма данни за тази фуния.",
+    "errorDescription": "Свържи се с нас на адрес: support@musclepals.com",
+    "faq": {
+      "title": "Често<br/>задавани въпроси:"
     }
+  },
+  "BMIBOX": {
+    "yourScore": "Твоят резултат е:",
+    "underweight": "поднормено тегло",
+    "overweight": "наднормено тегло",
+    "categories": {
+      "lt16": "Силно недохранване",
+      "lt17": "Недохранване",
+      "lt18_5": "Под нормата",
+      "lt25": "Нормално тегло",
+      "lt30": "Наднормено тегло",
+      "lt35": "Затлъстяване I степен",
+      "lt40": "Затлъстяване II степен",
+      "gt40": "Затлъстяване III степен (болестно)"
+    },
+    "descriptions": {
+      "lt16": "Организмът е силно отслабен поради много голям недостиг на телесна маса.",
+      "lt17": "Тялото е видимо отслабено, мускулите и тъканите нямат достатъчно хранителни вещества.",
+      "lt18_5": "Телесното тегло е твърде ниско. Организмът не е защитен от болести и понася по-трудно физическо натоварване.",
+      "lt25": "Организмът не е натоварен с излишни мазнини, нито е отслабен от липсата им.",
+      "lt30": "Появяват се излишни мазнини, които започват да натоварват организма.",
+      "lt35": "Излишните мазнини ясно натоварват организма и увеличават риска от заболявания.",
+      "lt40": "Организмът е силно натоварен. Рискът от сериозни хронични заболявания нараства.",
+      "gt40": "Много голямото количество мазнини сериозно застрашава здравето и живота."
+    }
+  },
+  "Summary": {
+    "title": "Твоят План:",
+    "conjunction_and": " и ",
+    "priorities": {
+      "shoulders": "рамене",
+      "chest": "гърди",
+      "triceps": "трицепс",
+      "biceps": "бицепс",
+      "back": "гръб",
+      "legs": "крака",
+      "forearms": "предмишници",
+      "abs": "коремна мускулатура",
+      "glutes": "седалище",
+      "default": "всички части на тялото"
+    },
+    "goals": {
+      "bulk": "изграждане на мускулна маса",
+      "cut": "намаляване на телесните мазнини"
+    },
+    "frequency": {
+      "intro": "Осигурява ти <strong>{n}</strong> {days} седмично.",
+      "daySingular": "тренировка",
+      "dayPlural": "тренировки",
+      "dayPluralFew": "тренировки",
+      "dayPluralMany": "тренировки"
+    },
+    "location": {
+      "housewithout": "Ще осигури ефективна тренировка в <strong>домашни условия</strong>.",
+      "housewith": "Ще осигури ефективна тренировка в <strong>домашни условия с ластици.</strong>",
+      "gym": "",
+      "default": ""
+    },
+    "focus": "Поставя специален акцент върху <strong>{priorities}</strong>.",
+    "goalFocus": "Е насочен към <strong>{goal}</strong>.",
+    "fitnessFocus": "Е адаптиран към твоята текуща <strong>{fitness}</strong>.",
+    "fitnessFocusText": "физическа форма",
+    "equipment": {
+      "intro": "Тренирай вкъщи, използвайки <strong>{list}</strong>.",
+      "introNone": "Тренирай вкъщи <strong>без никакво допълнително оборудване</strong>.",
+      "map": {
+        "bands": "ластици",
+        "dumbbells": "дъмбели",
+        "barbell": "щанга с тежести",
+        "bench": "лежанка",
+        "none": "липса на оборудване"
+      }
+    },
+    "priority": {
+      "none": "Поставя специален акцент върху <strong>равномерното развитие на мускулатурата</strong> на цялото тяло.",
+      "one": "Поставя специален акцент върху <strong>{p1}</strong>.",
+      "two": "Поставя специален акцент върху <strong>{p1}</strong> и <strong>{p2}</strong>.",
+      "many": "Поставя специален акцент върху <strong>{list}</strong>."
+    }
+  },
+  "YouVsFuture": {
+    "now": "сега",
+    "future": "след няколко месеца",
+    "weight": "тегло:",
+    "muscle": "мускули",
+    "fitness": "форма",
+    "bodyfat": "телесни мазнини",
+    "activityMap": {
+      "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "Тренирам много или имам тежка физическа работа",
+      "Ćwiczę regularnie, jestem w ruchu większość dni": "Тренирам редовно, активен съм през повечето дни",
+      "Trenuję lekko kilka razy w tygodniu": "Тренирам леко няколко пъти седмично",
+      "Trochę się ruszam, ale bez regularnych treningów": "Движа се малко, но без редовни тренировки"
+    }
+  },
+  "ReportForm": {
+    "title": "Вземи<br />своя<br />план!",
+    "imageAlt": "Илюстрация на смит машина",
+    "nameLabel": "Как се казваш?",
+    "namePlaceholder": "Име",
+    "emailLabel": "Имейл (на който ще получиш плана):",
+    "emailPlaceholder": "adres@email.bg",
+    "agreementText": "Съгласен съм с обработката на личните ми данни съгласно <a href=\"https://musclepals.com/regional/bg/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">политиката за поверителност</a>.",
+    "agreementCheckboxHtml": "Приемам <a href=\"https://musclepals.com/regional/bg/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">общите условия</a> и <a href=\"https://musclepals.com/regional/bg/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">политиката за поверителност</a>.",
+    "healthDataAgreementHtml": "Съгласен съм с използването на моите здравни данни и мерки (необходимо за създаването на плана).",
+    "healthDataAgreementRequiredError": "Моля, приеми съгласието за използване на здравни данни, за да продължиш.",
+    "agreementRequiredError": "Моля, приеми общите условия, за да продължиш.",
+    "errorMsg1": "Моля, въведи валидно име и имейл адрес.",
+    "errorMsg2": "Увери се, че имейлът ти е правилен. Ако е така, кликни бутона отново.",
+    "errorMsgDomainTypo": "Няма ли грешка в адреса? Имаше предвид: {suggestedEmail}? Ако да, поправи го. Ако адресът е верен, кликни бутона отново.",
+    "orText": "или",
+    "detailsBtn": "Научи повече за анализа на фигурата!",
+    "detailsBox1Title": "Ще ти покажа:",
+    "detailsBox1Body": {
+      "training": "Колко калории трябва да ядеш, за да постигнеш ефективно {goal},",
+      "smart": "Как да тренираш по-умно, а не по-тежко,",
+      "workDiet": "Как да съчетаеш училище/работа с диетата,",
+      "progress": "Как да преодолееш трудностите, които спират напредъка ти."
+    },
+    "detailsBox2Title": "Ще получиш:",
+    "detailsBox2Body": {
+      "macros": "Точни пропорции на макронутриентите, адаптирани към твоето тяло,",
+      "dietSchema": "Примерна схема на твоята диета, {goalSchema}",
+      "summary": "Честно обобщение на текущата ти ситуация и съвети как да я подобриш."
+    },
+    "timerPromo1": "Промоция за",
+    "timerPromo2": "нови<br />потребители",
+    "timerPromo3": "край след:",
+    "timerImageAlt": "Стегнат Musclepals",
+    "successMsg": "Твоята поръчка беше обработена успешно.",
+    "paymentNote": "Ще получиш плана в рамките на <b>2 минути</b> от плащането."
+  },
+  "TDEE": {
+    "title1": "Общ енергиен разход",
+    "deficit": "калориен дефицит",
+    "surplus": "калориен излишък",
+    "unit": "ккал/ден",
+    "mainDescPrefix": "Тази стойност ",
+    "mainDescBold1Cut": "включва сваляне на тегло",
+    "mainDescBold1Bulk": "включва качване на тегло",
+    "mainDescSuffix": ". Това е базовото количество калории, което трябва да приемаш, за да ",
+    "mainDescActionCut": "отслабваш",
+    "mainDescActionBulk": "качваш килограми",
+    "noData": "-"
+  },
+  "Carousel": {
+    "indicatorNote": "Внимание! Това не е целият тренировъчен план, а само 4 примерни страници.",
+    "pageLabel": "Страница {current}/{total}",
+    "workout": {
+      "slides": [
+        {
+          "alt": "Рафал 1",
+          "caption": "Въведение в тренировъчния план – страница 1"
+        },
+        {
+          "alt": "Рафал 2",
+          "caption": "Ръководство как да използваш плана – страница 2"
+        },
+        {
+          "alt": "Рафал 3",
+          "caption": "Начало на тренировъчния план – страница 5"
+        },
+        {
+          "alt": "Рафал 5",
+          "caption": "План за прогресия за следващите 3 месеца – страница 7"
+        }
+      ]
+    }
+  },
+  "OrderPage": {
+    "logoHref": "https://musclepals.com/",
+    "verifyingText": "Проверявам плащането...",
+    "processingText": "Обработваме твоето плащане...",
+    "pendingHtml": "Твоето плащане се проверява.<br /><b>Моля, не затваряй тази страница.</b><br /><br />Ако плащането е успешно, планът ще пристигне на имейла ти до няколко минути.",
+    "loading": "Зареждане...",
+    "successTitle": "Твоята поръчка беше<br />платена успешно!",
+    "successImageAlt": "Поръчка платена",
+    "successText1": "След малко ще се появи в имейла ти.",
+    "successText2": "(може да отнеме до 5 минути)",
+    "successText3": "Провери също спам и папка \"промоции\"",
+    "successText4": "В случай на каквито и да е проблеми, смело ни пиши!",
+    "successEmail": "support@musclepals.com",
+    "errorTitle": "Имаме проблем с<br />обработката на<br />твоето плащане.",
+    "errorImageAlt": "Доклад неплатен",
+    "errorText1": "Твоето плащане <b>не беше завършено</b>, върни се на началната страница и опитай отново.",
+    "buttonText": "Към началната страница",
+    "logoAlt": "Musclepals",
+    "contactText": "Ако смяташ, че това е грешка, свържи се с мен:"
+  },
+  "JoinAthletes": "Присъедини се към <b><u>{count}</u> спортуващи</b>, които <b>вече използват</b> своя <b>персонализиран тренировъчен план!</b>",
+  "NextButton": {
+    "alt": "Напред"
+  },
+  "AnswersSummary": {
+    "buttonAlt": "Обобщение на отговорите",
+    "backLinkText": "Редактирай отговор във формата",
+    "conjunction_and": "и",
+    "equipmentNotSelected": "Не е избрано оборудване",
+    "locationTypeMap": {
+      "gym": "Фитнес",
+      "house": "Вкъщи"
+    },
+    "equipmentMap": {
+      "none": "Няма",
+      "bands": "Ластици",
+      "dumbbells": "Дъмбели",
+      "barbell": "Щанга",
+      "bench": "Лежанка",
+      "pullup_bar": "Лост за набиране",
+      "dip_bar": "Успоредка"
+    },
+    "labels": {
+      "gender": "Пол",
+      "age": "Възраст",
+      "height": "Ръст",
+      "weight": "Тегло",
+      "weight_goal": "Целево тегло",
+      "goal": "Цел",
+      "diet_goal": "Цел на диетата",
+      "bodyfat": "Телесни мазнини",
+      "activity": "Активност",
+      "experience": "Опит",
+      "difficulty": "Трудност",
+      "location": "Място за тренировка",
+      "equipment": "Оборудване",
+      "priority": "Приоритет",
+      "frequency": "Честота",
+      "fitness": "Форма",
+      "sleep": "Сън",
+      "pushups": "Лицеви опори",
+      "pullups": "Набирания",
+      "calistenic_experience": "Опит (калистеника)",
+      "duration": "Продължителност"
+    },
+    "gender": {
+      "male": "Мъж",
+      "M": "Мъж",
+      "female": "Жената",
+      "F": "Жената",
+      "Kobieta": "Жената",
+      "other": "Друг"
+    },
+    "dietGoal": {
+      "bulk": "Качване на мускулна маса",
+      "cut": "Намаляване на мазнините"
+    },
+    "activityMap": {
+      "low_activity": "Седя през по-голямата част от деня, малко движение.",
+      "some_activity": "Движа се малко, но без редовни тренировки.",
+      "light_training": "Тренирам леко няколко пъти седмично.",
+      "regular_training": "Тренирам редовно, активен съм през повечето дни.",
+      "hard_work": "Тренирам много или имам тежка физическа работа."
+    },
+    "experienceMap": {
+      "new": "Нов",
+      "beginner": "Начинаещ",
+      "intermediate": "Вече тренирам малко.",
+      "advanced": "Тренирам отдавна.",
+      "none": "Още не съм започнал да тренирам.",
+      "just_started": "Току-що започнах.",
+      "some_experience": "Вече тренирам малко."
+    },
+    "difficultyMap": {
+      "motivation": "Липсва ми мотивация за тренировки/диета.",
+      "effects": "Обезкуражава ме, че не виждам резултати.",
+      "insecurity": "Страхувам се да отида във фитнеса или се чувствам несигурен там.",
+      "diet": "Не знам точно как да спазвам диета.",
+      "no_difficulty": "Нямам нито една от горните трудности."
+    },
+    "locationMap": {
+      "gym": "Фитнес",
+      "housewith": "Вкъщи (с ластици)",
+      "housewithout": "Вкъщи (без ластици)"
+    },
+    "priorityMap": {
+      "shoulders": "Рамене",
+      "chest": "Гърди",
+      "triceps": "Трицепс",
+      "biceps": "Бицепс",
+      "back": "Гръб",
+      "legs": "Крака",
+      "abs": "Корем",
+      "forearms": "Предмишници",
+      "glutes": "Седалище"
+    },
+    "format": {
+      "bodyfat": "{value}%",
+      "height": "{value}см",
+      "weight": "{value}кг",
+      "age": "{value} години",
+      "frequency": "{value}х/седм.",
+      "fitness": "{value}/10",
+      "sleep": "{value} часа",
+      "pushups": "Мога {value} лицеви опори.",
+      "pullups": "Мога {value} набирания.",
+      "pullups_none": "Не мога още нито едно набиране.",
+      "duration": "{count, plural, one {# минута} other {# минути}}"
+    }
+  },
+  "MissingSteps": {
+    "title": "Някои отговори не бяха запазени",
+    "description": "За съжаление софтуерът не запази отговорите на въпроси: {steps}.<br /><br />Кликни бутона по-долу, за да минеш през тези въпроси отново.",
+    "buttonImage": "/btns/{locale}/fill-again-btn.svg",
+    "buttonAlt": "Опитай отново",
+    "stepLabels": {
+      "gender": "Пол",
+      "diet_goal": "Цел на диетата",
+      "bodyfat": "Телесни мазнини",
+      "height": "Ръст",
+      "weight": "Тегло",
+      "age": "Възраст",
+      "activity": "Активност",
+      "location": "Място",
+      "experience": "Опит",
+      "difficulty": "Трудност",
+      "priority": "Приоритет",
+      "frequency": "Честота",
+      "fitness": "Форма",
+      "sleep": "Сън"
+    },
+    "persistentError": {
+      "title": "Проблемът продължава",
+      "description": "За съжаление проблемът със запазването на отговорите продължава. Това може да е техническа грешка.<br /><br />Свържи се с нас на адрес: {email}",
+      "contactEmail": "support@musclepals.com"
+    }
+  },
+  "ReviewsMarquee": {
+    "imageAlt": "Отзив от потребител",
+    "title": "Виж какво казват клиентите за нас"
   }
 }

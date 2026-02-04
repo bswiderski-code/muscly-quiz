@@ -1,818 +1,475 @@
 {
   "CheckoutProducts": {
     "workout_solo": {
-      "productName": "Tréninkový plán (solo)"
+      "productName": "Tréninkový plán (samostatně)"
     },
     "workout_bundle": {
-      "productName": "Tréninkový plán + strava (bundle)"
+      "productName": "Tréninkový plán + Jídelníček (balíček)"
     },
     "workout": {
-      "description": "Get<br />your training<br />plan!"
+      "description": "Vyzvedni<br />si svůj<br />tréninkový plán!"
     }
   },
   "ReviewsWidget": {
-    "title": "What do buyers think of their plans 2 months later?",
-    "sort_best": "sort - by best",
-    "sort_worst": "sort - by worst",
-    "sort_newest": "sort - by newest",
-    "sort_oldest": "sort - by oldest",
-    "verified": "(verified purchase)",
-    "age_suffix": "years old",
-    "aria_label": "Customer reviews",
-    "average": "average rating",
+    "title": "Co si myslí kupující o svých plánech 2 měsíce po nákupu?",
+    "sort_best": "seřadit - od nejlepších",
+    "sort_worst": "seřadit - od nejhorších",
+    "sort_newest": "seřadit - od nejnovějších",
+    "sort_oldest": "seřadit - od nejstarších",
+    "verified": "(ověřený nákup)",
+    "age_suffix": "let",
+    "aria_label": "Recenze zákazníků",
+    "average": "průměrné hodnocení",
     "of5": "/5"
+  },
+  "PlanPage": {
+    "title": "Tvůj plán",
+    "privacy": "Zásady ochrany osobních údajů",
+    "terms": "Obchodní podmínky",
+    "assets": {
+      "privacyUrl": "https://musclepals.com/regional/cz/privacy",
+      "termsUrl": "https://musclepals.com/regional/cz/terms"
+    }
   },
   "Seo": {
     "appTitle": "Musclepals",
     "home": {
-      "title": "Training Plan | Musclepals",
-      "description": "Create a workout plan tailored to you. Short quiz, results in minutes."
+      "title": "Tréninkový plán | Musclepals",
+      "description": "Vytvoř si tréninkový plán na míru. Krátký dotazník, výsledek za pár minut."
     },
     "workout": {
-      "title": "Professional training plan - personalized for you",
-      "description": "Looking for an effective workout routine? I'll prepare a set based on your answers."
+      "title": "Profesionální tréninkový plán - na míru pro tebe",
+      "description": "Hledáš efektivní plán cvičení? Připravím pro tebe sestavu na základě tvých odpovědí."
     },
     "workoutForm": {
-      "title": "Plan Form | Musclepals",
-      "description": "Answer the questions to tailor the plan to your goals."
+      "title": "Formulář plánu | Musclepals",
+      "description": "Odpověz na otázky, abychom přizpůsobili plán tvým cílům."
     }
   },
   "Gender": {
-    "title": "What is your <b>gender?</b>",
-    "ariaLabel": "Gender selection",
+    "title": "Jakého jsi <b>pohlaví?</b>",
+    "ariaLabel": "Výběr pohlaví",
     "male": {
-      "label": "Select Male",
-      "alt": "Male"
+      "label": "Muž",
+      "alt": "Muž"
     },
     "female": {
-      "label": "Select Female",
-      "alt": "Female"
+      "label": "Žena",
+      "alt": "Žena"
     }
   },
   "WorkoutPage": {
-    "homeLabel": "Musclepals Home Page",
-    "titleHtml": "Your custom<br /><span style='font-weight: 800'>training plan</span>",
+    "homeLabel": "Domovská stránka Musclepals",
+    "titleHtml": "Tvůj vlastní<br /><span style='font-weight: 800'>tréninkový plán</span>",
     "heroAlt": "",
-    "description": "Complete a short quiz, and I'll create the perfect training plan for you!\n<em>It'll take you 2-3 minutes.</em>",
-    "button": "Create training plan",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "description": "Vyplň krátký dotazník a vytvořím pro tebe ideální tréninkový plán!\n<em>Zabere ti to 2-3 minuty.</em>",
+    "button": "Vytvořit tréninkový plán",
+    "privacy": "Zásady ochrany soukromí",
+    "terms": "Obchodní podmínky"
   },
   "DietGoal": {
-    "title": "What is<br /><b>your goal?</b>",
-    "titleAria": "What is your goal?",
+    "title": "Jaký je<br /><b>tvůj cíl?</b>",
+    "titleAria": "Jaký je tvůj cíl?",
     "bulk": {
-      "label": "I want to bulk",
-      "alt": "I want to gain muscle mass",
-      "description": "You focus on building new muscle mass, weight goes up."
+      "label": "Chci nabrat",
+      "alt": "Chci nabrat svalovou hmotu",
+      "description": "Soustředíš se na budování nové svalové hmoty, váha roste."
     },
     "cut": {
-      "label": "I want to cut",
-      "alt": "I want to reduce fat",
-      "description": "You lose weight, shed fat, and reveal existing muscle."
+      "label": "Chci zhubnout",
+      "alt": "Chci zredukovat tuk",
+      "description": "Ztrácíš na váze, mizí tuk a zvýrazňuješ již existující svaly."
     }
   },
   "Bodyfat": {
-    "title": "Select your <br /><b>body fat</b> level",
-    "alt": "Physique for selected body fat level",
+    "title": "Vyber svou úroveň<br /><b>tělesného tuku</b>",
+    "alt": "Postava pro vybranou úroveň tělesného tuku",
     "stepsDataMale": [
       {
         "value": "5-9",
         "label": "5-9%",
-        "info": "Extremely low body fat. The physique is very muscular, and definition is excellent."
+        "info": "Extrémně nízká hladina tuku. Postava je velmi svalnatá s dokonalou definicí."
       },
       {
         "value": "10-14",
         "label": "10-14%",
-        "info": "Very low body fat. The physique is lean, muscles are clearly visible."
+        "info": "Velmi nízká hladina tuku. Postava je štíhlá, svaly jsou jasně viditelné."
       },
       {
         "value": "15-19",
         "label": "15-19%",
-        "info": "Healthy, athletic body fat level. Muscles are visible, but the body isn't emaciated."
+        "info": "Zdravá, sportovní úroveň tuku. Svaly jsou viditelné, ale postava není vychrtlá."
       },
       {
         "value": "20-24",
         "label": "20-24%",
-        "info": "Low body fat level. Physique is slim, muscles are visible."
+        "info": "Nízká až průměrná úroveň tuku. Postava je štíhlá, svaly se rýsují."
       },
       {
         "value": "25-29",
         "label": "25-29%",
-        "info": "Moderate body fat level. Physique is fuller, muscles are less visible."
+        "info": "Mírná úroveň tuku. Postava je plnější, menší viditelnost svalů."
       },
       {
         "value": "30-34",
         "label": "30-34%",
-        "info": "Higher body fat level. Physique is rounded, muscles are not visible."
+        "info": "Vyšší úroveň tuku. Postava je zaoblená, svaly nejsou vidět."
       },
       {
         "value": "35-39",
         "label": "35-39%",
-        "info": "High body fat level. The physique is very rounded."
+        "info": "Vysoká úroveň tuku. Postava je velmi zaoblená."
       },
       {
         "value": ">40",
         "label": ">40%",
-        "info": "Very high body fat level. The physique is obese."
+        "info": "Velmi vysoká úroveň tuku. Postava je obézní."
       }
     ],
     "stepsDataFemale": [
       {
         "value": "10-14",
         "label": "10-14%",
-        "info": "Very low body fat content, typical for physique athletes. May be associated with hormonal imbalances and amenorrhea."
+        "info": "Velmi nízká hladina tuku, typická pro závodnice fitness. Může souviset s hormonálními problémy."
       },
       {
         "value": "15-19",
         "label": "15-19%",
-        "info": "Low body fat content, often seen in active women and athletes. Very slim physique with clearly defined muscles."
+        "info": "Nízká hladina tuku, častá u aktivních žen a sportovkyň. Velmi štíhlá postava s vyrýsovanými svaly."
       },
       {
         "value": "20-24",
         "label": "20-24%",
-        "info": "Healthy, athletic body fat level. Slim but feminine physique. Most common among active women."
+        "info": "Zdravá, sportovní úroveň tuku. Postava je štíhlá, ale ženská. Nejčastější u aktivních žen."
       },
       {
         "value": "25-29",
         "label": "25-29%",
-        "info": "Average body fat level. Natural physique, slightly rounded, without clear muscle definition."
+        "info": "Průměrná úroveň tuku. Postava je přirozená, lehce zaoblená, bez výrazné definice svalů."
       },
       {
         "value": "30-39",
         "label": "30-39%",
-        "info": "Elevated body fat level. Clearly rounded physique, possible health issues related to excess fat."
+        "info": "Zvýšená úroveň tuku. Postava je zřetelně zaoblená, možná zdravotní rizika."
       },
       {
         "value": ">40",
         "label": ">40%",
-        "info": "Very high body fat level. Health consultation and lifestyle changes are recommended."
+        "info": "Velmi vysoká úroveň tuku. Doporučuje se konzultace s lékařem a změna životního stylu."
       }
     ]
   },
   "Height": {
-    "title": "How tall <b>are you?</b>",
-    "alt": "How tall are you?",
+    "title": "Kolik <b>měříš?</b>",
+    "alt": "Kolik měříš?",
     "unit": "cm",
     "placeholder": "___",
-    "errorMsg": "Enter your real height.",
-    "ariaLabel": "Height"
+    "errorMsg": "Zadej svou skutečnou výšku.",
+    "ariaLabel": "Výška"
   },
   "Weight": {
-    "title1": "How much do you <b>weigh?</b>",
-    "title2": "What is your <b>target weight?</b>",
-    "alt1": "Current weight",
-    "alt2": "Target weight",
+    "title1": "Kolik <b>vážíš?</b>",
+    "title2": "Kolik chceš <b>vážit?</b>",
+    "alt1": "Současná váha",
+    "alt2": "Cílová váha",
     "unit": "kg",
     "placeholder": "___",
-    "ariaLabel1": "Weight",
-    "ariaLabel2": "Target weight",
-    "error1": "Enter your real weight.",
-    "error2": "Enter your target weight in the range of 30-300kg.",
-    "errorBulk": "If your goal is to bulk, target weight must be higher than current weight.",
-    "errorCut": "If your goal is to cut, target weight must be lower than current weight.",
-    "infoBulk": "Choose a weight from {minInfo} up.",
-    "infoCut": "Choose a weight from {maxInfo} down.",
-    "buttonExpandAlt": "Expand"
+    "ariaLabel1": "Váha",
+    "ariaLabel2": "Cílová váha",
+    "error1": "Zadej svou skutečnou váhu.",
+    "error2": "Zadej cílovou váhu v rozmezí 30-300 kg.",
+    "errorBulk": "Pokud je tvým cílem objem, cílová váha musí být vyšší než současná.",
+    "errorCut": "Pokud je tvým cílem redukce, cílová váha musí být nižší než současná.",
+    "infoBulk": "Vyber váhu od {minInfo} výše.",
+    "infoCut": "Vyber váhu od {maxInfo} níže.",
+    "buttonExpandAlt": "Rozbalit"
   },
   "Age": {
-    "title": "How old <b>are you?</b>",
+    "title": "Kolik je ti <b>let?</b>",
     "placeholder": "__",
-    "ariaLabel": "Age",
-    "unit": "years",
+    "ariaLabel": "Věk",
+    "unit": "let",
     "12-14": {
-      "message": "You have huge potential!",
-      "description": "This is the best time to build <b>solid foundations!</b> Your body is still developing, so the key is habits and learning technique, not heavy weights."
+      "message": "Máš obrovský potenciál!",
+      "description": "Je to nejlepší čas vybudovat <b>pevné základy!</b> Tvé tělo se teprve vyvíjí, takže klíčem jsou návyky a technika, ne obří váhy."
     },
     "15-20": {
-      "message": "Ideal age to get serious about training!",
-      "description": "Your body recovers quickly, so you can make great progress with well-planned exercises and nutrition."
+      "message": "Ideální věk, kdy se do tréninku pustit vážně!",
+      "description": "Organismus rychle regeneruje, takže můžeš dělat velké pokroky s dobře naplánovaným cvičením a stravou."
     },
     "21-30": {
-      "message": "This is the time to build truly great form!",
-      "description": "You already have body awareness - now you just need a well-tailored plan to take your results to the next level."
+      "message": "To je čas, kdy můžeš vybudovat opravdu skvělou formu!",
+      "description": "Už znáš své tělo - teď stačí dobře zvolený plán, který posune tvé výsledky na novou úroveň."
     }
   },
   "Activity": {
-    "title": "What is your <b>physical activity level?</b>",
-    "errorMsg": "Please select one of the options before proceeding.",
+    "title": "Jaká je úroveň tvé<b> fyzické aktivity?</b>",
+    "errorMsg": "Před pokračováním vyber jednu z možností.",
     "options": {
-      "low_activity": "I sit most of the day, little movement. 🛋️",
-      "some_activity": "I move a bit, but no regular workouts. 🚶",
-      "light_training": "I train lightly a few times a week. 🏃‍♂️",
-      "regular_training": "I exercise regularly, I'm active most days. 💪",
-      "hard_work": "I train very hard or have a demanding physical job. 🏋️‍♂️"
+      "low_activity": "Většinu dne sedím, málo pohybu. 🛋️",
+      "some_activity": "Trochu se hýbu, ale bez pravidelných tréninků. 🚶",
+      "light_training": "Trénuji lehce několikrát týdně. 🏃‍♂️",
+      "regular_training": "Cvičím pravidelně, jsem v pohybu většinu dní. 💪",
+      "hard_work": "Velmi hodně trénuji nebo mám těžkou fyzickou práci. 🏋️‍♂️"
     }
   },
   "BMI": {
-    "title": "Your <span>BMI</span> is:",
+    "title": "Tvé <span>BMI</span> je:",
     "category": {
-      "unknown": "Unknown category",
-      "starvation": "Starvation",
-      "emaciation": "Emaciation",
-      "underweight": "Underweight",
-      "normal": "Normal weight",
-      "overweight": "Overweight",
-      "obesityI": "Obesity Class I",
-      "obesityII": "Obesity Class II (Severe)",
-      "obesityIII": "Obesity Class III (Morbid)"
+      "unknown": "Neznámá kategorie",
+      "starvation": "Těžká podvýživa",
+      "emaciation": "Podvýživa",
+      "underweight": "Podváha",
+      "normal": "Normální váha",
+      "overweight": "Nadváha",
+      "obesityI": "Obezita I. stupně",
+      "obesityII": "Obezita II. stupně (závažná)",
+      "obesityIII": "Obezita III. stupně (těžká)"
     },
     "description": {
-      "unknown": "BMI category cannot be determined.",
-      "starvation": "The body is severely weakened due to extreme weight deficiency.",
-      "emaciation": "The body is clearly weakened; muscles and tissues lack sufficient nutrition.",
-      "underweight": "Body weight is too low. The organism isn't properly protected against diseases and handles physical exertion poorly.",
-      "normal": "The body is neither burdened by excess body fat nor weakened by its deficiency.",
-      "overweight": "Excess body fat appears, beginning to burden the body.",
-      "obesityI": "Excess body fat clearly burdens the body and increases the risk of diseases.",
-      "obesityII": "The body is heavily burdened. The risk of serious chronic diseases increases, and physical fitness is limited.",
-      "obesityIII": "Very high amount of body fat seriously threatens health and life."
+      "unknown": "Nelze určit kategorii BMI.",
+      "starvation": "Tělo je silně oslabené kvůli extrémnímu nedostatku tělesné hmotnosti.",
+      "emaciation": "Tělo je zřetelně oslabené, svaly a tkáně nemají dostatečnou výživu.",
+      "underweight": "Tělesná hmotnost je příliš nízká. Organismus není chráněn před nemocemi a hůře snáší fyzickou zátěž.",
+      "normal": "Organismus není ani přetížen nadměrným tukem, ani oslaben jeho nedostatkem.",
+      "overweight": "Objevuje se nadbytek tuku, který začíná zatěžovat organismus.",
+      "obesityI": "Nadbytek tuku zřetelně zatěžuje organismus a zvyšuje riziko nemocí.",
+      "obesityII": "Organismus je silně přetížen. Roste riziko vážných chronických onemocnění.",
+      "obesityIII": "Velmi velké množství tuku vážně ohrožuje zdraví a život."
     },
-    "conclusion": "Perfect moment to build muscle!",
-    "nextStepAlt": "Go to the next step"
+    "conclusion": "Ideální moment pro budování svalů!",
+    "nextStepAlt": "Přejít na další krok"
   },
   "Location": {
-    "title": "Where do you plan to<br /><b>train?</b>",
-    "ariaLabelGroup": "Training location",
+    "title": "Kde plánuješ<br /><b>trénovat?</b>",
+    "ariaLabelGroup": "Místo tréninku",
     "gym": {
-      "label": "I will train at the gym",
-      "label_f": "I will train at the gym",
-      "alt": "I will train at the gym",
-      "alt_f": "I will train at the gym",
-      "description": "Training at the gym with access to a wide range of equipment.",
-      "description_f": "Training at the gym with access to a wide range of equipment."
+      "label": "Budu trénovat v posilovně",
+      "label_f": "Budu trénovat v posilovně",
+      "alt": "Budu trénovat v posilovně",
+      "alt_f": "Budu trénovat v posilovně",
+      "description": "Trénink v posilovně s přístupem k širokému výběru vybavení.",
+      "description_f": "Trénink v posilovně s přístupem k širokému výběru vybavení."
     },
     "home": {
-      "label": "I will train at home",
-      "label_f": "I will train at home",
-      "alt": "I will train at home",
-      "alt_f": "I will train at home",
-      "description": "Home training tailored to available equipment.",
-      "description_f": "Home training tailored to available equipment."
+      "label": "Budu trénovat doma",
+      "label_f": "Budu trénovat doma",
+      "alt": "Budu trénovat doma",
+      "alt_f": "Budu trénovat doma",
+      "description": "Domácí trénink přizpůsobený dostupnému vybavení.",
+      "description_f": "Domácí trénink přizpůsobený dostupnému vybavení."
     },
     "bandsPanel": {
-      "question": "Do you have access to resistance bands?",
+      "question": "Máš přístup k odporovým gumám?",
       "yes": {
-        "label": "Yes - I have bands",
-        "alt": "Yes"
+        "label": "Ano - mám gumy",
+        "alt": "Ano"
       },
       "no": {
-        "label": "No - I don't have bands",
-        "alt": "No"
+        "label": "Ne - nemám gumy",
+        "alt": "Ne"
       }
     }
   },
   "Experience": {
-    "title": "What is your <b>training experience?</b>",
+    "title": "Jaké máš zkušenosti<br /><b>s tréninkem?</b>",
     "options": {
       "none": {
-        "label": "Haven't started training yet. 🐣",
-        "description1": "In the beginning, the key is learning <b>proper technique</b> and <b>building consistency</b>.",
-        "description2": "<b>But don't worry!</b><br />Your Plan will guide you through this step by step ;)",
-        "alt": "Exercise"
+        "label": "Ještě jsem nezačal trénovat. 🐣",
+        "description1": "Na začátku je klíčové naučit se <b>správnou techniku</b> a <b>vybudovat pravidelnost</b>.",
+        "description2": "<b>Ale žádný strach!</b><br />Tvůj Plán tě tím provede krok za krokem ;)",
+        "alt": "Cvičení"
       },
       "just_started": {
-        "label": "Just started. 🏁",
-        "description1": "<b>Just starting — awesome!</b>",
-        "description2": "At this stage, your body responds quickly to training, so we'll focus on <b>learning technique</b> and simple, repeatable habits.",
-        "alt": "Exercise"
+        "label": "Teprve jsem začal. 🏁",
+        "description1": "<b>Teprve začínáš — super!</b>",
+        "description2": "V této fázi tělo rychle reaguje na trénink, proto se zaměříme na <b>učení techniky</b> a jednoduché návyky.",
+        "alt": "Cvičení"
       },
       "some_experience": {
-        "label": "I train a bit already. 💪",
-        "description1": "<b>You have some experience — bomb!</b>",
-        "description2": "This is the moment your body gets <b>used to training</b> — so it's key to introduce a plan with <b>structure</b> and <b>progression</b>.",
-        "alt": "Exercise"
+        "label": "Už trochu trénuji. 💪",
+        "description1": "<b>Už máš nějaké zkušenosti — pecka!</b>",
+        "description2": "To je moment, kdy si tělo <b>zvyká na trénink</b> — proto je klíčové zavést plán s <b>konkrétní strukturou</b> a <b>progresí</b>.",
+        "alt": "Cvičení"
       },
       "advanced": {
-        "label": "I've been training for a long time. 🥇",
-        "description1": "<b>Great job!</b> You already know what <b>regularity</b> and <b>consistency</b> look like.",
-        "description2": "At this stage, we'll focus on optimization: a <b>precise plan</b>, <b>progression</b>, and <b>recovery</b>.",
-        "alt": "Exercise"
+        "label": "Cvičím už dlouho. 🥇",
+        "description1": "<b>Skvělá práce!</b> Už víš, jak vypadá <b>pravidelnost</b> a <b>důslednost</b>.",
+        "description2": "V této fázi se zaměříme na optimalizaci: <b>precizní plán</b>, <b>progresi</b> a <b>regeneraci</b>.",
+        "alt": "Cvičení"
       }
     },
-    "errorMsg": "Please select your training experience before proceeding."
+    "errorMsg": "Před pokračováním vyber své tréninkové zkušenosti."
   },
   "Equipment": {
-    "title": "What <b>equipment</b> do you have at home?",
-    "subtitle": "(you can select more<br />than one option)",
-    "ariaLabelGroup": "Equipment selection",
+    "title": "Jaké <b>vybavení</b> máš doma k dispozici?",
+    "subtitle": "(můžeš označit více než jednu možnost)",
+    "ariaLabelGroup": "Výběr vybavení",
     "options": {
       "none": {
-        "label": "No access to any training equipment. 🚫",
-        "description": "We will base the plan on bodyweight exercises and simple household items."
+        "label": "Nemám přístup k žádnému vybavení. 🚫",
+        "description": "Plán založíme na cvičení s vlastní vahou a jednoduchém domácím vybavení."
       },
       "bands": {
-        "label": "Resistance bands.",
-        "description": "Mini bands and power bands will allow us to add resistance and scale exercise difficulty."
+        "label": "Odporové gumy.",
+        "description": "Mini bandy a power bandy nám umožní přidat odpor a stupňovat obtížnost."
       },
       "dumbbells": {
-        "label": "Dumbbells.",
-        "description": "We'll use single and double-hand variations to fully utilize the dumbbells' potential."
+        "label": "Jednoručky (hantle).",
+        "description": "Využijeme varianty jednoruční i obouruční, abychom naplno využili potenciál činek."
       },
       "barbell": {
-        "label": "Barbell and weights.",
-        "description": "We'll set up classic lifts (squats, deadlifts, presses) adjusting volume to your goal."
+        "label": "Velká činka a závaží.",
+        "description": "Sestavíme klasické cviky (dřepy, mrtvé tahy, tlaky) a přizpůsobíme objem tvému cíli."
       },
       "bench": {
-        "label": "Bench press bench.",
-        "description": "A bench allows adding lying and incline exercises to better target the stimulus."
+        "label": "Lavice na bench press.",
+        "description": "Lavička umožní přidat cviky vleže a na šikmé lavici pro lepší zacílení svalů."
+      },
+      "pullup_bar": {
+        "label": "Hrazda na shyby.",
+        "description": "Hrazda umožní provádění shybů a dalších kalistenických cviků."
+      },
+      "dip_bar": {
+        "label": "Bradla na dipy.",
+        "description": "Bradla umožní provádět dipy (kliky na bradlech) a další cviky na triceps."
       }
     },
-    "errorMsg": "Select at least one equipment option to proceed."
+    "errorMsg": "Pro pokračování označ alespoň jednu možnost vybavení."
   },
   "Difficulty": {
-    "title": "What is your <span style=\"font-weight: 700\">BIGGEST</span><br />struggle regarding the gym?",
-    "errorMsg": "Please select one of the options before proceeding.",
+    "title": "Jaká je tvá <span style=\"font-weight: 700\">NEJVĚTŠÍ</span><br />překážka spojená s posilovnou?",
+    "errorMsg": "Před pokračováním vyber jednu z možností.",
     "options": {
-      "motivation": "I lack motivation to train/stick to a diet. 😔",
-      "effects": "I get discouraged by not seeing results. ⏳",
-      "insecurity": "I'm afraid to go to the gym, or I feel insecure there. 😟",
-      "diet": "I don't really know how to stick to a diet. ❓",
-      "no_difficulty": "I don't have any of the above difficulties. ✅"
+      "motivation": "Chybí mi motivace k tréninku/držení diety. 😔",
+      "effects": "Odrazuje mě, že nevidím výsledky. ⏳",
+      "insecurity": "Bojím se jít do posilovny nebo se tam cítím nejistě. 😟",
+      "diet": "Nevím úplně přesně, jak držet stravu. ❓",
+      "no_difficulty": "Nemám žádnou z výše uvedených potíží. ✅"
     }
   },
   "Priority": {
-    "title1": "Which body parts do you<br />care about<br />",
-    "title2": "<span style=\"font-weight: 700\">THE MOST?</span>",
-    "subtitle": "(The plan covers all muscle groups, but you can choose ones to <b>prioritize</b>)",
-    "warning": "ATTENTION! You can select max 2 parts",
+    "title1": "Na rozvoji kterých<br />partií ti záleží<br />",
+    "title2": "<span style=\"font-weight: 700\">NEJVÍCE?</span>",
+    "subtitle": "(Plán zahrnuje všechny svalové partie, ale můžeš vybrat ty, které chceš <b>upřednostnit</b>)",
+    "warning": "POZOR! Můžeš označit max. 2 partie",
     "partNames": {
-      "shoulders": "Shoulders",
-      "chest": "Chest",
+      "shoulders": "Ramena",
+      "chest": "Hrudník",
       "triceps": "Triceps",
       "biceps": "Biceps",
-      "back": "Back",
-      "legs": "Legs",
-      "abs": "Abs",
-      "forearms": "Forearms",
-      "glutes": "Glutes"
+      "back": "Záda",
+      "legs": "Nohy",
+      "abs": "Břicho",
+      "forearms": "Předloktí",
+      "glutes": "Hýždě"
     },
-    "ariaLabelSelected": "Priority: {name} selected",
-    "ariaLabelUnselected": "Priority: {name} unselected",
-    "imageAltSelected": "{name} — selected",
-    "imageAltUnselected": "{name} — not selected"
+    "ariaLabelSelected": "Priorita: {name} označeno",
+    "ariaLabelUnselected": "Priorita: {name} neoznačeno",
+    "imageAltSelected": "{name} — označeno",
+    "imageAltUnselected": "{name} — neoznačeno"
   },
   "Frequency": {
-    "title1": "How many times a week<br />do you want to<br />",
-    "title2": "<span style=\"font-weight: 700\">TRAIN?</span>",
-    "dayLabelSingular": "day",
-    "dayLabelPlural": "days",
+    "title1": "Kolikrát týdně<br />chceš",
+    "title2": "<span style=\"font-weight: 700\">TRÉNOVAT?</span>",
+    "dayLabelSingular": "den",
+    "dayLabelPlural": "dny",
     "steps": [
       {
         "value": "1",
-        "label": "1 time a week"
+        "label": "1x týdně"
       },
       {
         "value": "2",
-        "label": "2 times a week"
+        "label": "2x týdně"
       },
       {
         "value": "3",
-        "label": "3 times a week"
+        "label": "3x týdně"
       },
       {
         "value": "4",
-        "label": "4 times a week"
+        "label": "4x týdně"
       },
       {
         "value": "5",
-        "label": "5 times a week"
+        "label": "5x týdně"
       }
     ],
-    "daySingular": "workout",
-    "dayPlural": "workouts",
-    "dayPluralFew": "workouts"
+    "daySingular": "trénink",
+    "dayPlural": "tréninky",
+    "dayPluralFew": "tréninky"
   },
   "Fitness": {
-    "title1": "How would you rate your<br /><span style=\"font-weight: 700\">physical fitness</span><br />on a scale of 1 to 10?"
+    "title1": "Jak bys ohodnotil svou<br /><b>fyzickou zdatnost</b><br />na stupnici od 1 do 10?"
   },
   "Sleep": {
-    "title": "How much time<br /><span style=\"font-weight: 700\">do you spend sleeping?</span>",
+    "title": "Kolik času<br /><span style=\"font-weight: 700\">věnuješ spánku?</span>",
     "steps": [
       {
         "value": "lt6",
-        "label": "< 6 hours"
+        "label": "< 6 hodin"
       },
       {
         "value": "7-8",
-        "label": "7-8 hours"
+        "label": "7-8 hodin"
       },
       {
         "value": "9-12",
-        "label": "9-12 hours"
+        "label": "9-12 hodin"
       },
       {
         "value": "gt12",
-        "label": "> 12 hours"
+        "label": "> 12 hodin"
       }
     ],
     "messages": [
-      "It's hard to recover well with this amount of sleep... Remember to work on it :)",
-      "Good amount of sleep — recovery supports training and health.",
-      "Very good amount of sleep — optimal recovery.",
-      "Too much sleep might mean irregularity — monitor how you feel."
+      "S takovým množstvím spánku je těžké dobře regenerovat... Zkus na tom zapracovat :)",
+      "Dobré množství spánku — regenerace podporuje trénink i zdraví.",
+      "Velmi dobré množství spánku — optimální regenerace.",
+      "Příliš mnoho spánku může znamenat nepravidelnost — sleduj, jak se cítíš."
     ]
   },
-  "ResultPage": {
-    "title": "<span style=\"font-size: 36px; font-weight: 700;\">Your Training Plan</span><br /><span style=\"font-size: 28px; font-weight: 400;\">is ready!</span>",
-    "intro1": "Created based on <b>Your 14 answers</b> by an <b>advanced training algorithm</b><br />designed specifically for <b>physique building</b> and <b>fat reduction</b>.",
-    "intro2": "You will receive an <b>individual plan</b><br/>based on data, created in <b>less than 3 minutes</b> thanks to<br />technology that analyzes over<br/><b>4,000 training combinations</b>.",
-    "subtitle": "<b>Quick Summary</b><br /><span style=\"font-size: 28px; font-weight: 400;\">of Your results</span>",
-    "trustImageAlt": "Why trust us?",
-    "analyzeTitle": "The algorithm analyzes, among others:",
-    "analyzeList": {
-      "aktywnosc": "Your <b>activity level</b>",
-      "cel": "Your <b>goal</b> (cut / bulk)",
-      "wiek": "Your <b>age</b>",
-      "doswiadczenie": "<b>Training experience</b>",
-      "time": "<b>Time</b> you have available",
-      "strengths": "<b>Strengths and weaknesses of your physique</b>"
-    },
-    "conclusion1": "And then selects a <b>specific training plan</b> that fits <b>Your situation</b> better than <b>99% of cookie-cutter plans</b> on the internet.",
-    "conclusion2": "It's a combination of <b>personal trainer knowledge</b> and <b>system precision</b> that makes no mistakes and doesn't guess.",
-    "purchaseTitle": "What exactly will you get after purchase?",
-    "purchaseImageAlt": "Product description",
-    "sampleBtn": "See a sample training plan!",
-    "sampleTitle": "And here are a few pages from Rafael's plan!",
-    "loadingTitle": "Creating your training plan...",
-    "loadingSubtitle": "One moment, loading all results.",
-    "loadingData": "No data for this session.",
-    "loadingErrorTitle": "We're having trouble loading your data.",
-    "loadingErrorHtml": "Refresh the page and try again. If the problem persists, write to us: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
-    "loadingErrorBtn": "once_again",
-    "reportNote1": "plans sent",
-    "reportNote2": "in the last 24 hours",
-    "joinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized training plan!</b>",
-    "contactBox": {
-      "title": "Have any doubts?",
-      "emailIntro": "Hit me up:",
-      "emailAddress": "support@trenerstrzykawa.pl",
-      "responseTime": "⏰ I usually reply in less than an hour."
-    },
-    "ctaButton": {
-      "alt": "Get plan"
-    },
-    "errorTitle": "No data for this funnel.",
-    "errorDescription": "Contact us at: support@trenerstrzykawa.pl",
-    "faq": {
-      "title": "Frequently<br/>Asked Questions:"
-    }
-  },
-  "BMIBOX": {
-    "yourScore": "Your result is:",
-    "underweight": "underweight",
-    "overweight": "overweight",
-    "categories": {
-      "lt16": "Starvation",
-      "lt17": "Emaciation",
-      "lt18_5": "Underweight",
-      "lt25": "Normal weight",
-      "lt30": "Overweight",
-      "lt35": "Obesity Class I",
-      "lt40": "Obesity Class II (Severe)",
-      "gt40": "Obesity Class III (Morbid)"
-    },
-    "descriptions": {
-      "lt16": "The body is severely weakened due to extreme weight deficiency.",
-      "lt17": "The body is clearly weakened; muscles and tissues lack sufficient nutrition.",
-      "lt18_5": "Body weight is too low. The organism isn't properly protected against diseases and handles physical exertion poorly.",
-      "lt25": "The body is neither burdened by excess body fat nor weakened by its deficiency.",
-      "lt30": "Excess body fat appears, beginning to burden the body.",
-      "lt35": "Excess body fat clearly burdens the body and increases the risk of diseases.",
-      "lt40": "The body is heavily burdened. The risk of serious chronic diseases increases, and physical fitness is limited.",
-      "gt40": "Very high amount of body fat seriously threatens health and life."
-    }
-  },
-  "Summary": {
-    "title": "Your Plan:",
-    "conjunction_and": " and ",
-    "priorities": {
-      "shoulders": "shoulders",
-      "chest": "chest",
-      "triceps": "triceps",
-      "biceps": "biceps",
-      "back": "back",
-      "legs": "legs",
-      "forearms": "forearms",
-      "abs": "abs",
-      "glutes": "glutes",
-      "default": "all body parts"
-    },
-    "goals": {
-      "bulk": "building muscle mass",
-      "cut": "reducing body fat"
-    },
-    "frequency": {
-      "intro": "Provides you with <strong>{n}</strong> {days} a week.",
-      "daySingular": "workout",
-      "dayPlural": "workouts",
-      "dayPluralFew": "workouts",
-      "dayPluralMany": "workouts"
-    },
-    "location": {
-      "housewithout": "Ensures efficient training in <strong>home conditions</strong>.",
-      "housewith": "Ensures efficient training in <strong>home conditions with resistance bands.</strong>",
-      "gym": "",
-      "default": ""
-    },
-    "focus": "Places special emphasis on <strong>{priorities}</strong>.",
-    "goalFocus": "Is geared towards <strong>{goal}</strong>.",
-    "fitnessFocus": "Is adapted to your current <strong>{fitness}</strong>.",
-    "fitnessFocusText": "physical fitness",
-    "equipment": {
-      "intro": "Train at home using <strong>{list}</strong>.",
-      "introNone": "Train at home <strong>without any additional equipment</strong>.",
-      "map": {
-        "bands": "resistance bands",
-        "dumbbells": "dumbbells",
-        "barbell": "barbell with weights",
-        "bench": "workout bench",
-        "none": "no equipment"
-      }
-    },
-    "priority": {
-      "none": "Places special emphasis on <strong>balanced muscle mass development</strong> throughout the whole body.",
-      "one": "Places special emphasis on <strong>{p1}</strong>.",
-      "two": "Places special emphasis on <strong>{p1}</strong> and <strong>{p2}</strong>.",
-      "many": "Places special emphasis on <strong>{list}</strong>."
-    }
-  },
-  "YouVsFuture": {
-    "now": "now",
-    "future": "in a few months",
-    "weight": "weight:",
-    "muscle": "muscle",
-    "fitness": "physical fitness",
-    "bodyfat": "body fat",
-    "activityMap": {
-      "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "I train very hard or have a demanding physical job",
-      "Ćwiczę regularnie, jestem w ruchu większość dni": "I exercise regularly, I'm active most days"
-    }
-  },
-  "ReportForm": {
-    "title": "Get<br />your training<br />plan!",
-    "imageAlt": "Smith machine illustration",
-    "nameLabel": "What's your name?",
-    "namePlaceholder": "Name",
-    "emailLabel": "Email (where you'll receive the plan):",
-    "emailPlaceholder": "address@email.com",
-    "agreementText": "I agree to the processing of my personal data in accordance with the <a href=\"https://musclepals.com/regional/cz/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
-    "agreementCheckboxHtml": "I accept the <a href=\"https://musclepals.com/regional/cz/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">terms</a> and <a href=\"https://musclepals.com/regional/cz/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
-    "healthDataAgreementHtml": "I agree to the use of my health data and measurements (this is necessary to create the plan).",
-    "healthDataAgreementRequiredError": "Please accept the agreement to use health data to proceed.",
-    "agreementRequiredError": "Please accept the terms to proceed to payment.",
-    "errorMsg1": "Please provide a valid name and email address.",
-    "errorMsg2": "Double-check your email address. If it's correct, click the button again to continue.",
-    "errorMsgDomainTypo": "Typo in email? Did you mean {suggestedEmail}? If so, please correct it. If it's correct, click the button again to continue.",
-    "orText": "or",
-    "detailsBtn": "Learn more about BMI/BMR analysis!",
-    "detailsBox1Title": "I'll show you:",
-    "detailsBox1Body": {
-      "training": "How many calories you need to eat to effectively {goal},",
-      "smart": "How to train smarter, not harder,",
-      "workDiet": "How to balance school/work with diet,",
-      "progress": "How to overcome difficulties stopping your progress."
-    },
-    "detailsBox2Title": "You will receive:",
-    "detailsBox2Body": {
-      "macros": "Exact macro ratios tailored to your body,",
-      "dietSchema": "A sample diet framework for you, {goalSchema}",
-      "summary": "An honest summary of your current situation and tips on how to improve it."
-    },
-    "timerPromo1": "Promotion for",
-    "timerPromo2": "new<br />users",
-    "timerPromo3": "ends in:",
-    "timerImageAlt": "Flexing Musclepals",
-    "successMsg": "Your order has been processed successfully.",
-    "paymentNote": "You will receive the plan within <b>2 minutes</b> of payment."
-  },
-  "TDEE": {
-    "title1": "Total Daily Energy Expenditure",
-    "deficit": "caloric deficit",
-    "surplus": "caloric surplus",
-    "unit": "kcal/day",
-    "mainDescPrefix": "This value ",
-    "mainDescBold1Cut": "accounts for losing weight",
-    "mainDescBold1Bulk": "accounts for gaining weight",
-    "mainDescSuffix": ". This is the base amount of calories you must consume to ",
-    "mainDescActionCut": "lose weight",
-    "mainDescActionBulk": "gain weight",
-    "noData": "-"
-  },
-  "Carousel": {
-    "indicatorNote": "Note! This is not the full plan, just 4 sample pages.",
-    "pageLabel": "Page {current}/{total}",
-    "workout": {
-      "slides": [
-        {
-          "alt": "Rafael 1",
-          "caption": "Introduction to the training plan – page 1"
-        },
-        {
-          "alt": "Rafael 2",
-          "caption": "Guide on how to use the plan – page 2"
-        },
-        {
-          "alt": "Rafael 3",
-          "caption": "Start of the training plan – page 5"
-        },
-        {
-          "alt": "Rafael 5",
-          "caption": "Progression plan for the next 3 months – page 7"
-        }
-      ]
-    }
-  },
-  "OrderPage": {
-    "logoHref": "https://musclepals.com/",
-    "verifyingText": "Verifying payment...",
-    "processingText": "Processing your payment...",
-    "pendingHtml": "Your payment is being verified.<br /><b>Please do not close this page.</b><br /><br />If payment was made, the plan will arrive in your email within a few minutes.",
-    "loading": "Loading...",
-    "successTitle": "Your order has been<br />paid successfully!",
-    "successImageAlt": "Order paid",
-    "successText1": "It will appear in your email in a moment.",
-    "successText2": "(may take up to 5 minutes)",
-    "successText3": "Check spam and the \"promotions\" tab as well",
-    "successText4": "If you have any issues, feel free to reach out!",
-    "successEmail": "support@trenerstrzykawa.pl",
-    "errorTitle": "We're having trouble<br />processing<br />your payment.",
-    "errorImageAlt": "Report unpaid",
-    "errorText1": "Your payment <b>was not finalized</b>, return to the main page and try again.",
-    "buttonText": "Return to main page",
-    "logoAlt": "Musclepals",
-    "contactText": "If you think this is a mistake, contact me:",
-    "logoSrc": "/vectors/logo.svg",
-    "logoHeight": "50",
-    "backButtonImage": "/btns/en/back-to-home-btn.svg",
-    "heroSuccessSrc": "/regional/en/sample-guy.svg"
-  },
-  "JoinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized training plan!</b>",
-  "NextButton": {
-    "alt": "Next"
-  },
-  "AnswersSummary": {
-    "buttonAlt": "Summary of answers",
-    "backLinkText": "Return to filling the form",
-    "conjunction_and": "and",
-    "equipmentNotSelected": "No equipment selected",
-    "locationTypeMap": {
-      "gym": "Gym",
-      "house": "Home"
-    },
-    "equipmentMap": {
-      "none": "None",
-      "bands": "Resistance bands",
-      "dumbbells": "Dumbbells",
-      "barbell": "Barbell",
-      "bench": "Bench"
-    },
-    "labels": {
-      "gender": "Gender",
-      "age": "Age",
-      "height": "Height",
-      "weight": "Weight",
-      "weight_goal": "Target weight",
-      "goal": "Goal",
-      "diet_goal": "Diet goal",
-      "bodyfat": "Body fat",
-      "activity": "Activity",
-      "experience": "Experience",
-      "difficulty": "Difficulty",
-      "location": "Training location",
-      "equipment": "Equipment",
-      "priority": "Priority",
-      "frequency": "Frequency",
-      "fitness": "Fitness",
-      "sleep": "Sleep",
-      "pushups": "Pushups",
-      "pullups": "Pullups",
-      "calistenic_experience": "Calisthenics experience",
-      "duration": "Training duration"
-    },
-    "gender": {
-      "male": "Male",
-      "M": "Male",
-      "female": "Female",
-      "F": "Female",
-      "other": "Other"
-    },
-    "dietGoal": {
-      "bulk": "Gaining muscle mass",
-      "cut": "Reducing body fat"
-    },
-    "activityMap": {
-      "low_activity": "I sit most of the day, little movement.",
-      "some_activity": "I move a bit, but no regular workouts.",
-      "light_training": "I train lightly a few times a week.",
-      "regular_training": "I exercise regularly, I'm active most days.",
-      "hard_work": "I train very hard or have a demanding physical job."
-    },
-    "experienceMap": {
-      "none": "Haven't started training yet.",
-      "just_started": "Just started.",
-      "some_experience": "I train a bit already.",
-      "advanced": "I've been training for a long time."
-    },
-    "difficultyMap": {
-      "motivation": "I lack motivation to train/stick to a diet.",
-      "effects": "I get discouraged by not seeing results.",
-      "insecurity": "I'm afraid to go to the gym, or I feel insecure there.",
-      "diet": "I don't really know how to stick to a diet.",
-      "no_difficulty": "I don't have any of the above difficulties."
-    },
-    "locationMap": {
-      "gym": "Gym",
-      "housewith": "Home (with resistance bands)",
-      "housewithout": "Home (without resistance bands)"
-    },
-    "priorityMap": {
-      "shoulders": "Shoulders",
-      "chest": "Chest",
-      "triceps": "Triceps",
-      "biceps": "Biceps",
-      "back": "Back",
-      "legs": "Legs",
-      "abs": "Abs",
-      "forearms": "Forearms",
-      "glutes": "Glutes"
-    },
-    "format": {
-      "bodyfat": "{value}%",
-      "height": "{value}cm",
-      "weight": "{value}kg",
-      "age": "{value} years",
-      "frequency": "{value}x/week",
-      "fitness": "{value}/10",
-      "duration": "{count, plural, one {# minute} other {# minutes}}"
-    },
-    "persistentError": {
-      "title": "Problem persists",
-      "description": "Unfortunately, the problem with saving answers persists. It might be a technical error.<br /><br />Contact us at: {email}",
-      "contactEmail": "support@trenerstrzykawa.pl"
-    }
-  },
-  "MissingSteps": {
-    "title": "Some answers were not saved",
-    "description": "Unfortunately, the software didn't save answers to the questions: {steps}.<br /><br />Click the button below to go through these questions again.",
-    "buttonAlt": "Try again",
-    "stepLabels": {
-      "gender": "Gender",
-      "diet_goal": "Diet goal",
-      "bodyfat": "Body fat",
-      "height": "Height",
-      "weight": "Weight",
-      "age": "Age",
-      "activity": "Activity",
-      "location": "Location",
-      "experience": "Experience",
-      "difficulty": "Difficulty",
-      "priority": "Priority",
-      "frequency": "Frequency",
-      "fitness": "Fitness",
-      "sleep": "Sleep"
-    }
-  },
   "PushupsStep": {
-    "title": "How many <span class=\"kalistenika-text\">pushups</span> can you do in one go?",
-    "placeholder": "e.g. 15",
+    "title": "Kolik <span class=\"kalistenika-text\">kliků</span> zvládneš udělat najednou?",
+    "placeholder": "např. 15",
     "options": {
-      "0-5": "0-5 pushups",
-      "6-10": "6-10 pushups",
-      "11-20": "11-20 pushups",
-      "21-30": "21-30 pushups",
-      "30+": "More than 30 pushups"
+      "0-5": "0-5 kliků",
+      "6-10": "6-10 kliků",
+      "11-20": "11-20 kliků",
+      "21-30": "21-30 kliků",
+      "30+": "Více než 30 kliků"
     }
   },
   "PullupsStep": {
-    "title": "How many <span class=\"kalistenika-text\">pullups</span> can you do in one go?",
-    "placeholder": "e.g. 5",
+    "title": "Kolik <span class=\"kalistenika-text\">shybů</span> zvládneš udělat najednou?",
+    "placeholder": "např. 5",
     "options": {
-      "0": "None yet",
-      "1-3": "1-3 pullups",
-      "4-6": "4-6 pullups",
-      "7-10": "7-10 pullups",
-      "10+": "More than 10 pullups"
+      "0": "Zatím žádný",
+      "1-3": "1-3 shyby",
+      "4-6": "4-6 shybů",
+      "7-10": "7-10 shybů",
+      "10+": "Více než 10 shybů"
     }
   },
   "CalistenicExperienceStep": {
-    "title": "What is your <span class=\"kalistenika-text\">experience</span> with calisthenics?",
+    "title": "Jaké máš <span class=\"kalistenika-text\">zkušenosti</span> s kalistenikou?",
     "options": {
-      "none": "New",
-      "just_started": "Beginner",
-      "some_experience": "Intermediate",
-      "advanced": "Advanced."
+      "none": "Nový",
+      "just_started": "Začátečník",
+      "some_experience": "Středně pokročilý",
+      "advanced": "Pokročilý"
     },
     "descriptions": {
-      "none": "Starting from zero. Haven't trained regularly before and want to build basic strength and technique.",
-      "just_started": "Already have contact with sports. Can do a set of pushups and squats, but can't pull up at all or only 1-3 times.",
-      "some_experience": "Training regularly. Can comfortably do pullups (over 5) and dips. Want to level up (e.g. Muscle Up, L-sit).",
-      "advanced": "Basics are just a warmup. Can do Muscle Up and work on difficult statics (Front Lever, Planche) or advanced dynamics."
+      "none": "Začínám od nuly. Předtím jsem pravidelně netrénoval a chci vybudovat základní sílu a naučit se techniku.",
+      "just_started": "Mám už kontakt se sportem. Zvládnu sérii kliků a dřepů, ale na hrazdě se nepřitáhnu vůbec nebo jen 1-3x.",
+      "some_experience": "Trénuji pravidelně. Zvládám série shybů (přes 5) a dipů. Chci se posunout výš (např. naučit se Muscle Up, L-sit).",
+      "advanced": "Základy jsou pro mě rozcvička. Zvládám Muscle Up a pracuji na těžkých statických prvcích (Front Lever, Planche) nebo pokročilé dynamice."
     }
   },
   "DurationStep": {
-    "title1": "Select <b>training</b>",
-    "title2": "<b>duration</b>",
+    "title1": "Vyber <b>délku</b>",
+    "title2": "jednoho <b>tréninku</b>",
     "steps": [
       {
         "value": "30"
@@ -827,14 +484,381 @@
         "value": "90"
       }
     ],
-    "minutes": "{count, plural, one {# minute} other {# minutes}}",
-    "info": "Optimal training time is <i><b>45-60 minutes</b></i>. Remember that <b>quality</b> of sets is more important than <b>quantity</b>.",
-    "recommended": "(recommended)"
+    "minutes": "{count, plural, one {# minuta} few {# minuty} other {# minut}}",
+    "info": "Optimální čas tréninku je <i><b>45-60 minut</b></i>. Pamatuj, že <b>kvalita</b> sérií je důležitější než jejich <b>množství</b>.",
+    "recommended": "(doporučeno)"
   },
-  "PlanPage": {
-    "assets": {
-      "privacyUrl": "https://musclepals.com/regional/cz/privacy",
-      "termsUrl": "https://musclepals.com/regional/cz/terms"
+  "ResultPage": {
+    "title": "<span style=\"font-size: 36px; font-weight: 700;\">Tvůj Tréninkový Plán</span><br /><span style=\"font-size: 28px; font-weight: 400;\">je hotový!</span>",
+    "intro1": "Vytvořený na základě<br /><b>tvých 14 odpovědí</b> pomocí<br/><b>pokročilého algoritmu</b>,<br />navrženého speciálně pro<br /><b>budování postavy</b> a <b>redukci tuku</b>.",
+    "intro2": "Získáš <b>individuální plán</b><br/>založený na datech, který vznikl<br/>za <b>méně než 3 minuty</b> díky<br />technologii, která analyzuje přes<br/><b>4 000 tréninkových kombinací</b>.",
+    "subtitle": "<b>Rychlé shrnutí</b><br /><span style=\"font-size: 28px; font-weight: 400;\">tvých výsledků</span>",
+    "trustImageAlt": "Proč nám věřit?",
+    "analyzeTitle": "Algoritmus analyzuje m.j.:",
+    "analyzeList": {
+      "aktywnosc": "Tvou <b>úroveň aktivity</b>",
+      "cel": "Tvůj <b>cíl</b> (redukce / objem)",
+      "wiek": "Tvůj <b>věk</b>",
+      "doswiadczenie": "<b>Tréninkové zkušenosti</b>",
+      "time": "<b>Čas</b>, který máš k dispozici",
+      "strengths": "<b>Silné a slabé stránky postavy</b>"
+    },
+    "conclusion1": "A následně vybere <b>konkrétní tréninkový plán</b>, který odpovídá <b>tvé situaci</b> lépe než <b>99 % hotových plánů</b> na internetu.",
+    "conclusion2": "Je to spojení <b>znalostí osobního trenéra</b> a <b>přesnosti systému</b>, který nedělá chyby ani nehádá.",
+    "purchaseTitle": "Co přesně získáš po zakoupení?",
+    "purchaseImageAlt": "Popis produktu",
+    "sampleBtn": "Podívej se na ukázkový plán!",
+    "sampleTitle": "A zde je několik stránek z plánu Rafała!",
+    "loadingTitle": "Vytvářím tvůj tréninkový plán...",
+    "loadingSubtitle": "Chvilku strpení, načítám všechny výsledky.",
+    "loadingData": "Žádná data pro tuto relaci.",
+    "loadingErrorTitle": "Máme problém s načtením tvých dat.",
+    "loadingErrorHtml": "Obnov stránku a zkus to znovu. Pokud problém přetrvává, napiš nám: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
+    "loadingErrorBtn": "once_again",
+    "reportNote1": "odeslaných plánů",
+    "reportNote2": "za posledních 24 hodin",
+    "joinAthletes": "Přidej se k <b><u>{count}</u> sportovcům</b>, kteří <b>už používají</b> svůj <b>personalizovaný tréninkový plán!</b>",
+    "contactBox": {
+      "title": "Máš jakékoliv pochybnosti?",
+      "emailIntro": "Ozvi se:",
+      "emailAddress": "support@musclepals.com",
+      "responseTime": "⏰ Obvykle odpovídám do hodiny."
+    },
+    "ctaButton": {
+      "alt": "Vyzvednout plán"
+    },
+    "errorTitle": "Žádná data pro tento funnel.",
+    "errorDescription": "Kontaktuj nás na adrese: support@musclepals.com",
+    "faq": {
+      "title": "Nejčastější<br/>dotazy:"
     }
+  },
+  "BMIBOX": {
+    "yourScore": "Tvůj výsledek je:",
+    "underweight": "podváha",
+    "overweight": "nadváha",
+    "categories": {
+      "lt16": "Těžká podvýživa",
+      "lt17": "Podvýživa",
+      "lt18_5": "Podváha",
+      "lt25": "Normální váha",
+      "lt30": "Nadváha",
+      "lt35": "Obezita I. stupně",
+      "lt40": "Obezita II. stupně (závažná)",
+      "gt40": "Obezita III. stupně (těžká)"
+    },
+    "descriptions": {
+      "lt16": "Tělo je silně oslabené kvůli extrémnímu nedostatku tělesné hmotnosti.",
+      "lt17": "Tělo je zřetelně oslabené, svaly a tkáně nemají dostatečnou výživu.",
+      "lt18_5": "Tělesná hmotnost je příliš nízká. Organismus není chráněn před nemocemi a hůře snáší fyzickou zátěž.",
+      "lt25": "Organismus není ani přetížen nadměrným tukem, ani oslaben jeho nedostatkem.",
+      "lt30": "Objevuje se nadbytek tuku, který začíná zatěžovat organismus.",
+      "lt35": "Nadbytek tuku zřetelně zatěžuje organismus a zvyšuje riziko nemocí.",
+      "lt40": "Organismus je silně přetížen. Roste riziko vážných chronických onemocnění.",
+      "gt40": "Velmi velké množství tuku vážně ohrožuje zdraví a život."
+    }
+  },
+  "Summary": {
+    "title": "Tvůj Plán:",
+    "conjunction_and": " a ",
+    "priorities": {
+      "shoulders": "ramena",
+      "chest": "hrudník",
+      "triceps": "triceps",
+      "biceps": "biceps",
+      "back": "záda",
+      "legs": "nohy",
+      "forearms": "předloktí",
+      "abs": "břišní svaly",
+      "glutes": "hýždě",
+      "default": "všechny části těla"
+    },
+    "goals": {
+      "bulk": "budování svalové hmoty",
+      "cut": "redukci tělesného tuku"
+    },
+    "frequency": {
+      "intro": "Zajišťuje ti <strong>{n}</strong> {days} týdně.",
+      "daySingular": "trénink",
+      "dayPlural": "tréninky",
+      "dayPluralFew": "tréninky",
+      "dayPluralMany": "tréninků"
+    },
+    "location": {
+      "housewithout": "Zajistí efektivní trénink v <strong>domácích podmínkách</strong>.",
+      "housewith": "Zajistí efektivní trénink v <strong>domácích podmínkách s odporovými gumami.</strong>",
+      "gym": "",
+      "default": ""
+    },
+    "focus": "Klade zvláštní důraz na <strong>{priorities}</strong>.",
+    "goalFocus": "Je zaměřen na <strong>{goal}</strong>.",
+    "fitnessFocus": "Je přizpůsoben tvé aktuální <strong>{fitness}</strong>.",
+    "fitnessFocusText": "fyzické zdatnosti",
+    "equipment": {
+      "intro": "Trénuj doma s využitím <strong>{list}</strong>.",
+      "introNone": "Trénuj doma <strong>bez jakéhokoli dalšího vybavení</strong>.",
+      "map": {
+        "bands": "odporových gum",
+        "dumbbells": "jednoruček",
+        "barbell": "velké činky se závažím",
+        "bench": "lavičky na bench press",
+        "none": "absence vybavení"
+      }
+    },
+    "priority": {
+      "none": "Klade zvláštní důraz na <strong>rovnoměrný rozvoj svalové hmoty</strong> celého těla.",
+      "one": "Klade zvláštní důraz na <strong>{p1}</strong>.",
+      "two": "Klade zvláštní důraz na <strong>{p1}</strong> a <strong>{p2}</strong>.",
+      "many": "Klade zvláštní důraz na <strong>{list}</strong>."
+    }
+  },
+  "YouVsFuture": {
+    "now": "teď",
+    "future": "za několik měsíců",
+    "weight": "váha:",
+    "muscle": "svaly",
+    "fitness": "kondice",
+    "bodyfat": "tělesný tuk",
+    "activityMap": {
+      "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "Velmi hodně trénuji nebo mám těžkou fyzickou práci",
+      "Ćwiczę regularnie, jestem w ruchu większość dni": "Cvičím pravidelně, jsem v pohybu většinu dní",
+      "Trenuję lekko kilka razy w tygodniu": "Trénuji lehce několikrát týdně",
+      "Trochę się ruszam, ale bez regularnych treningów": "Trochu se hýbu, ale bez pravidelných tréninků"
+    }
+  },
+  "ReportForm": {
+    "title": "Vyzvedni<br />si svůj<br />plán!",
+    "imageAlt": "Ilustrace multipressu",
+    "nameLabel": "Jak se jmenuješ?",
+    "namePlaceholder": "Jméno",
+    "emailLabel": "Email (na který plán obdržíš):",
+    "emailPlaceholder": "adresa@email.cz",
+    "agreementText": "Souhlasím se zpracováním mých osobních údajů v souladu se <a href=\"https://musclepals.com/regional/cz/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">zásadami ochrany soukromí</a>.",
+    "agreementCheckboxHtml": "Přijímám <a href=\"https://musclepals.com/regional/cz/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">obchodní podmínky</a> a <a href=\"https://musclepals.com/regional/cz/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">zásady ochrany soukromí</a>.",
+    "healthDataAgreementHtml": "Souhlasím s použitím mých zdravotních údajů a rozměrů (nezbytné pro vytvoření plánu).",
+    "healthDataAgreementRequiredError": "Pro pokračování prosím odsouhlas použití zdravotních údajů.",
+    "agreementRequiredError": "Pro pokračování prosím přijmi obchodní podmínky.",
+    "errorMsg1": "Zadej prosím platné jméno a e-mail.",
+    "errorMsg2": "Ujisti se, že je tvůj e-mail správný. Pokud ano, klikni na tlačítko znovu.",
+    "errorMsgDomainTypo": "Není v adrese překlep? Měl jsi na mysli: {suggestedEmail}? Pokud ano, oprav ji. Pokud je adresa správná, klikni na tlačítko znovu.",
+    "orText": "nebo",
+    "detailsBtn": "Zjisti více o analýze postavy!",
+    "detailsBox1Title": "Ukážu ti:",
+    "detailsBox1Body": {
+      "training": "Kolik kalorií musíš jíst, abys efektivně {goal},",
+      "smart": "Jak trénovat chytřeji, ne tvrději,",
+      "workDiet": "Jak skloubit školu/práci s dietou,",
+      "progress": "Jak překonat překážky, které brzdí tvůj progres."
+    },
+    "detailsBox2Title": "Získáš:",
+    "detailsBox2Body": {
+      "macros": "Přesné poměry makroživin přizpůsobené tvému tělu,",
+      "dietSchema": "Vzorové schéma tvé diety, {goalSchema}",
+      "summary": "Upřímné shrnutí tvé aktuální situace a tipy, jak ji zlepšit."
+    },
+    "timerPromo1": "Akce pro",
+    "timerPromo2": "nové<br />uživatele",
+    "timerPromo3": "končí za:",
+    "timerImageAlt": "Napnutý sval Musclepals",
+    "successMsg": "Tvá objednávka byla úspěšně zpracována.",
+    "paymentNote": "Plán obdržíš do <b>2 minut</b> od provedení platby."
+  },
+  "TDEE": {
+    "title1": "Celkový energetický výdej",
+    "deficit": "kalorický deficit",
+    "surplus": "kalorický nadbytek",
+    "unit": "kcal/den",
+    "mainDescPrefix": "Tato hodnota ",
+    "mainDescBold1Cut": "zohledňuje hubnutí",
+    "mainDescBold1Bulk": "zohledňuje nabírání váhy",
+    "mainDescSuffix": ". Je to základní množství kalorií, které musíš přijímat, abys ",
+    "mainDescActionCut": "hubnul/a",
+    "mainDescActionBulk": "nabíral/a na váze",
+    "noData": "-"
+  },
+  "Carousel": {
+    "indicatorNote": "Pozor! Toto není celý tréninkový plán, pouze 4 ukázkové stránky.",
+    "pageLabel": "Strana {current}/{total}",
+    "workout": {
+      "slides": [
+        {
+          "alt": "Rafał 1",
+          "caption": "Úvod do tréninkového plánu – strana 1"
+        },
+        {
+          "alt": "Rafał 2",
+          "caption": "Návod, jak používat plán – strana 2"
+        },
+        {
+          "alt": "Rafał 3",
+          "caption": "Začátek tréninkového plánu – strana 5"
+        },
+        {
+          "alt": "Rafał 5",
+          "caption": "Plán progrese na nejbližší 3 měsíce – strana 7"
+        }
+      ]
+    }
+  },
+  "OrderPage": {
+    "logoHref": "https://musclepals.com/",
+    "verifyingText": "Ověřuji platbu...",
+    "processingText": "Zpracováváme tvou platbu...",
+    "pendingHtml": "Tvá platba se ověřuje.<br /><b>Prosím, nezavírej tuto stránku.</b><br /><br />Pokud platba proběhla, plán dorazí na tvůj e-mail během několika minut.",
+    "loading": "Načítání...",
+    "successTitle": "Tvá objednávka byla<br />úspěšně zaplacena!",
+    "successImageAlt": "Objednávka zaplacena",
+    "successText1": "Za chvíli se objeví ve tvém e-mailu.",
+    "successText2": "(může to trvat do 5 minut)",
+    "successText3": "Zkontroluj také spam a složku \"hromadné/promo\"",
+    "successText4": "V případě jakýchkoliv problémů nám dej vědět!",
+    "successEmail": "support@musclepals.com",
+    "errorTitle": "Máme problém se<br />zpracováním<br />tvé platby.",
+    "errorImageAlt": "Nezaplaceno",
+    "errorText1": "Tvá platba <b>nebyla dokončena</b>, vrať se na hlavní stránku a zkus to znovu.",
+    "buttonText": "Zpět na hlavní stránku",
+    "logoAlt": "Musclepals",
+    "contactText": "Pokud si myslíš, že jde o chybu, kontaktuj mě:"
+  },
+  "JoinAthletes": "Přidej se k <b><u>{count}</u> sportovcům</b>, kteří <b>už používají</b> svůj <b>personalizovaný tréninkový plán!</b>",
+  "NextButton": {
+    "alt": "Dále"
+  },
+  "AnswersSummary": {
+    "buttonAlt": "Shrnutí odpovědí",
+    "backLinkText": "Upravit odpověď ve formuláři",
+    "conjunction_and": "a",
+    "equipmentNotSelected": "Nebylo vybráno žádné vybavení",
+    "locationTypeMap": {
+      "gym": "Posilovna",
+      "house": "Doma"
+    },
+    "equipmentMap": {
+      "none": "Žádné",
+      "bands": "Odporové gumy",
+      "dumbbells": "Jednoručky",
+      "barbell": "Velká činka",
+      "bench": "Lavice",
+      "pullup_bar": "Hrazda",
+      "dip_bar": "Bradla"
+    },
+    "labels": {
+      "gender": "Pohlaví",
+      "age": "Věk",
+      "height": "Výška",
+      "weight": "Váha",
+      "weight_goal": "Cílová váha",
+      "goal": "Cíl",
+      "diet_goal": "Cíl diety",
+      "bodyfat": "Tělesný tuk",
+      "activity": "Aktivita",
+      "experience": "Zkušenosti",
+      "difficulty": "Obtížnost",
+      "location": "Místo tréninku",
+      "equipment": "Vybavení",
+      "priority": "Priorita",
+      "frequency": "Frekvence",
+      "fitness": "Zdatnost",
+      "sleep": "Spánek",
+      "pushups": "Kliky",
+      "pullups": "Shyby",
+      "calistenic_experience": "Zkušenosti (kalistenika)",
+      "duration": "Délka tréninku"
+    },
+    "gender": {
+      "male": "Muž",
+      "M": "Muž",
+      "female": "Žena",
+      "F": "Žena",
+      "Kobieta": "Žena",
+      "other": "Jiné"
+    },
+    "dietGoal": {
+      "bulk": "Nabírání svalové hmoty",
+      "cut": "Redukce tuku"
+    },
+    "activityMap": {
+      "low_activity": "Většinu dne sedím, málo pohybu.",
+      "some_activity": "Trochu se hýbu, ale bez pravidelných tréninků.",
+      "light_training": "Trénuji lehce několikrát týdně.",
+      "regular_training": "Cvičím pravidelně, jsem v pohybu většinu dní.",
+      "hard_work": "Velmi hodně trénuji nebo mám těžkou fyzickou práci."
+    },
+    "experienceMap": {
+      "new": "Nový",
+      "beginner": "Začátečník",
+      "intermediate": "Už trochu trénuji.",
+      "advanced": "Cvičím už dlouho.",
+      "none": "Ještě jsem nezačal trénovat.",
+      "just_started": "Teprve jsem začal.",
+      "some_experience": "Už trochu trénuji."
+    },
+    "difficultyMap": {
+      "motivation": "Chybí mi motivace k tréninku/držení diety.",
+      "effects": "Odrazuje mě, že nevidím výsledky.",
+      "insecurity": "Bojím se jít do posilovny nebo se tam cítím nejistě.",
+      "diet": "Nevím úplně přesně, jak držet stravu.",
+      "no_difficulty": "Nemám žádnou z výše uvedených potíží."
+    },
+    "locationMap": {
+      "gym": "Posilovna",
+      "housewith": "Doma (s gumami)",
+      "housewithout": "Doma (bez gum)"
+    },
+    "priorityMap": {
+      "shoulders": "Ramena",
+      "chest": "Hrudník",
+      "triceps": "Triceps",
+      "biceps": "Biceps",
+      "back": "Záda",
+      "legs": "Nohy",
+      "abs": "Břišní svaly",
+      "forearms": "Předloktí",
+      "glutes": "Hýždě"
+    },
+    "format": {
+      "bodyfat": "{value} %",
+      "height": "{value} cm",
+      "weight": "{value} kg",
+      "age": "{value} let",
+      "frequency": "{value}x/týdně",
+      "fitness": "{value}/10",
+      "sleep": "{value} hodin",
+      "pushups": "Zvládnu {value} kliků.",
+      "pullups": "Zvládnu {value} shybů.",
+      "pullups_none": "Zatím nezvládnu ani jeden shyb.",
+      "duration": "{count, plural, one {# minuta} few {# minuty} other {# minut}}"
+    }
+  },
+  "MissingSteps": {
+    "title": "Některé odpovědi se neuložily",
+    "description": "Bohužel, software neuložil odpovědi na otázky: {steps}.<br /><br />Klikni na tlačítko níže a projdi tyto otázky znovu.",
+    "buttonImage": "/btns/{locale}/fill-again-btn.svg",
+    "buttonAlt": "Zkusit znovu",
+    "stepLabels": {
+      "gender": "Pohlaví",
+      "diet_goal": "Cíl diety",
+      "bodyfat": "Tělesný tuk",
+      "height": "Výška",
+      "weight": "Váha",
+      "age": "Věk",
+      "activity": "Aktivita",
+      "location": "Místo",
+      "experience": "Zkušenosti",
+      "difficulty": "Obtížnost",
+      "priority": "Priorita",
+      "frequency": "Frekvence",
+      "fitness": "Zdatnost",
+      "sleep": "Spánek"
+    },
+    "persistentError": {
+      "title": "Problém přetrvává",
+      "description": "Bohužel, problém s ukládáním odpovědí stále trvá. Může jít o technickou chybu.<br /><br />Kontaktuj nás na adrese: {email}",
+      "contactEmail": "support@musclepals.com"
+    }
+  },
+  "ReviewsMarquee": {
+    "imageAlt": "Recenze uživatele",
+    "title": "Podívej se, co o nás říkají klienti"
   }
 }
