@@ -23,7 +23,7 @@ export default function ReviewsMarquee({ locale, imageCount }: ReviewsMarqueePro
   // Generate and randomize array of image paths
   useEffect(() => {
     const images = Array.from({ length: imageCount }, (_, i) =>
-      `/reviews/${locale.toLowerCase()}/rev${i + 1}.png`
+      `/regional/${locale.toLowerCase()}/reviews/rev${i + 1}.png`
     );
 
     const shuffled = [...images];
@@ -216,7 +216,7 @@ export default function ReviewsMarquee({ locale, imageCount }: ReviewsMarqueePro
               <div 
                 className="relative overflow-hidden rounded-2xl shadow-md border border-gray-100 bg-gray-50"
                 style={{
-                  width: 'min(70vw, 420px)',
+                  width: 'min(60vw, 340px)',
                   aspectRatio: '962 / 410',
                 }}
               >
@@ -224,7 +224,7 @@ export default function ReviewsMarquee({ locale, imageCount }: ReviewsMarqueePro
                   src={src}
                   alt={t('imageAlt')}
                   fill
-                  sizes="(max-width: 768px) 70vw, 420px"
+                  sizes="(max-width: 768px) 60vw, 340px"
                   className="pointer-events-none object-cover"
                   style={{
                     opacity: loadedImageUrls.has(src) || !isVisible ? 1 : 0,

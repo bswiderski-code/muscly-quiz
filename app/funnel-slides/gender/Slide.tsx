@@ -12,8 +12,8 @@ import { withLocale } from "@/lib/imagePath";
 const stepId: StepId = "gender";
 
 const ASSETS = {
-  maleImageSrc: '/btns/{locale}/male.svg',
-  femaleImageSrc: '/btns/{locale}/female.svg',
+  maleImageSrc: '/btns/{locale}/male-btn.svg',
+  femaleImageSrc: '/btns/{locale}/female-btn.svg',
 };
 
 export default function Page() {

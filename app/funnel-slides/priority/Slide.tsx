@@ -19,7 +19,7 @@ const PRIORITIES = {
 } as const;
 
 const ASSETS = {
-  imageBasePath: '/priorities/needle/{locale}',
+  imageBasePath: '/regional/{locale}/priorities',
 };
 
 function parseStored(v?: string): string[] {
@@ -46,7 +46,7 @@ export default function Page() {
     }
   }, [value, select]);
 
-  const imagePath = `${withLocale(ASSETS.imageBasePath, locale)}/`; 
+  const imagePath = withLocale(ASSETS.imageBasePath, locale); 
   useEffect(() => {
     priorities.forEach((name) => {
       new globalThis.Image().src = `${imagePath}/unselected/${name}_priority_btn.svg`;

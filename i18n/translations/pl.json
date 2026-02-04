@@ -27,8 +27,8 @@
     "privacy": "Polityka prywatności",
     "terms": "Regulamin",
     "assets": {
-      "privacyUrl": "https://trenerstrzykawa.pl/polityka-prywatnosci/",
-      "termsUrl": "https://trenerstrzykawa.pl/regulamin/"
+      "privacyUrl": "https://musclepals.com/regional/pl/privacy",
+      "termsUrl": "https://musclepals.com/regional/pl/terms"
     }
   },
   "Seo": {
@@ -633,8 +633,8 @@
     "namePlaceholder": "Imię",
     "emailLabel": "Email (na który otrzymasz plan):",
     "emailPlaceholder": "adres@email.pl",
-    "agreementText": "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href=\"https://trenerstrzykawa.pl/polityka-prywatnosci/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">polityką prywatności</a>.",
-    "agreementCheckboxHtml": "Akceptuję <a href=\"https://trenerstrzykawa.pl/regulamin/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">regulamin</a> i <a href=\"https://trenerstrzykawa.pl/polityka-prywatnosci/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">politykę prywatności</a>.",
+    "agreementText": "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href=\"https://musclepals.com/regional/pl/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">polityką prywatności</a>.",
+    "agreementCheckboxHtml": "Akceptuję <a href=\"https://musclepals.com/regional/pl/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">regulamin</a> i <a href=\"https://musclepals.com/regional/pl/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">politykę prywatności</a>.",
     "healthDataAgreementHtml": "Zgadzam się na użycie moich danych zdrowotnych i wymiarów (jest to niezbędne do stworzenia planu).",
     "healthDataAgreementRequiredError": "Proszę zaakceptować zgodę na wykorzystanie danych zdrowotnych, aby kontynuować.",
     "agreementRequiredError": "Proszę zaakceptować regulamin, aby kontynuować.",
@@ -718,11 +718,7 @@
     "errorText1": "Twoja płatność <b>nie została sfinalizowana</b>, wróć do strony głównej i spróbuj ponownie.",
     "buttonText": "Wróć do strony głównej",
     "logoAlt": "Musclepals",
-    "contactText": "Jeśli uważasz, że jest to pomyłka skontaktuj się ze mną:",
-    "logoSrc": "/pl/needle/logo-long.svg",
-    "logoHeight": "50",
-    "backButtonImage": "/btns/pl/backtohomepage.svg",
-    "heroSuccessSrc": "/pl/needle/sample_guy.svg"
+    "contactText": "Jeśli uważasz, że jest to pomyłka skontaktuj się ze mną:"
   },
   "JoinAthletes": "Dołącz do <b><u>{count}</u> sportowców</b>, którzy <b>już korzystają</b> ze swojego <b>personalizowanego planu treningowego!</b>",
   "NextButton": {
@@ -837,7 +833,7 @@
   "MissingSteps": {
     "title": "Niektóre odpowiedzi nie zostały zapisane",
     "description": "Niestety, oprogramowanie nie zapisało odpowiedzi na pytania: {steps}.<br /><br />Kliknij przycisk poniżej, aby przejść przez te pytania ponownie.",
-    "buttonImage": "/btns/{locale}/once_again.svg",
+    "buttonImage": "/btns/{locale}/fill-again-btn.svg",
     "buttonAlt": "Spróbuj ponownie",
     "stepLabels": {
       "gender": "Płeć",

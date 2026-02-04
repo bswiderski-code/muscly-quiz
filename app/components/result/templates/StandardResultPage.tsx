@@ -9,6 +9,7 @@ import { useFunnelStore } from '@/lib/store'
 import { useMarket } from '@/lib/useMarket'
 import { getMarketForLocale, type Locale as AppLocale } from '@/i18n/config'
 import { resolveFunnelKeyByResultSlug, getFunnelSlug } from '@/lib/funnels/funnels'
+import { withLocale } from '@/lib/imagePath'
 import { getResultPageConfig } from './config'
 import YOUVSFUTURE from '@/app/components/result/youvsfuture/YOUVSFUTURE'
 import BMIBOX from '@/app/components/result/BMIBOX'
@@ -33,7 +34,11 @@ const reviewImageCounts: Record<string, number> = {
   ro: 8,
 }
 
-export default function StandardResultPage() {
+interface StandardResultPageProps {
+  faqSection?: React.ReactNode;
+}
+
+export default function StandardResultPage({ faqSection }: StandardResultPageProps) {
   const router = useRouter()
   const t = useTranslations('ResultPage')
   const planPageT = useTranslations('PlanPage')
@@ -138,7 +143,7 @@ export default function StandardResultPage() {
   }
   const supportEmail = contactBox?.emailAddress || 'support@musclepals.com'
   
-  const replaceLocale = (path: string) => path.replace(/{locale}/g, locale);
+  const replaceLocale = (path: string) => withLocale(path, locale);
 
   const trustImageSrc = replaceLocale(config.trustImage);
   const purchaseImageSrc = replaceLocale(config.purchaseImage);
@@ -432,43 +437,43 @@ export default function StandardResultPage() {
           minHeight: showLoader ? '100vh' : 'auto',
         }}
       >
-      <h1
-        style={{
-          textAlign: 'center',
-          fontWeight: 700,
-          fontSize: 32,
-          marginTop: 16,
-          marginBottom: 4,
-        }}
-        dangerouslySetInnerHTML={{ __html: t.raw(titleKey) }}
-      />
-
-      <YOUVSFUTURE
-        sid={sessionId ?? 'default'}
-        weight={weight || 0}
-        diet_goal={diet_goal || ''}
-        age={age || 30}
-        activity={activity || ''}
-        heightCm={height}
-        bodyfat={bodyfat}
-        funnelKey={resolvedFunnel}
-        style={{ marginTop: 24 }}
-      />
-
-      <div style={{ textAlign: 'center', marginTop: 32 }}>
-        <p style={{ fontSize: 19, lineHeight: 1.4, marginTop: 0, marginBottom: 24 }} dangerouslySetInnerHTML={{ __html: t.raw(intro1Key) }} />
-        <Image
-          src={config.introBicepImage}
-          alt={config.introBicepAlt}
-          width={303}
-          height={151}
-          style={{ width: '100%', maxWidth: 303, height: 'auto', display: 'block', margin: '0 auto' }}
-          priority
+      <header style={{ textAlign: 'center', marginTop: 16 }}>
+        <h1
+          style={{
+            fontWeight: 700,
+            fontSize: 32,
+            marginBottom: 4,
+          }}
+          dangerouslySetInnerHTML={{ __html: t.raw(titleKey) }}
         />
-        <p style={{ fontSize: 19, lineHeight: 1.4, marginTop: 16 }} dangerouslySetInnerHTML={{ __html: t.raw(intro2Key) }} />
-      </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: 24 }}>
+        <YOUVSFUTURE
+          sid={sessionId ?? 'default'}
+          weight={weight || 0}
+          diet_goal={diet_goal || ''}
+          age={age || 30}
+          activity={activity || ''}
+          heightCm={height}
+          bodyfat={bodyfat}
+          funnelKey={resolvedFunnel}
+          style={{ marginTop: 24 }}
+        />
+
+        <div style={{ marginTop: 32 }}>
+          <p style={{ fontSize: 19, lineHeight: 1.4, marginTop: 0, marginBottom: 24 }} dangerouslySetInnerHTML={{ __html: t.raw(intro1Key) }} />
+          <Image
+            src={config.introBicepImage}
+            alt={config.introBicepAlt}
+            width={303}
+            height={151}
+            style={{ width: '100%', maxWidth: 303, height: 'auto', display: 'block', margin: '0 auto' }}
+            priority
+          />
+          <p style={{ fontSize: 19, lineHeight: 1.4, marginTop: 16 }} dangerouslySetInnerHTML={{ __html: t.raw(intro2Key) }} />
+        </div>
+      </header>
+
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: 32, marginBottom: 32 }}>
         <Image
           src={config.dividerImage}
           alt={config.dividerAlt}
@@ -478,105 +483,107 @@ export default function StandardResultPage() {
         />
       </div>
 
-      <h2
-        style={{
-          textAlign: 'center',
-          fontWeight: 700,
-          fontSize: 32,
-          marginTop: 16,
-          lineHeight: 1.2,
-        }}
-        dangerouslySetInnerHTML={{ __html: t.raw(subtitleKey) }}
-      />
-
-      {config.showBmiBox && bmi !== undefined && (
-        <BMIBOX bmi={bmi} pointerLeft={((bmi - 12) / (45 - 12)) * 100} />
-      )}
-      {config.showTdeeBox && <TDEEBOX sid={sessionId ?? 'default'} funnelKey={resolvedFunnel} />}
-
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: 12 }}>
-        <Image
-          src={trustImageSrc}
-          alt={t(trustImageAltKey)}
-          width={337}
-          height={221}
+      <section style={{ textAlign: 'center', marginTop: 16 }}>
+        <h2
           style={{
-            width: '100%',
-            maxWidth: 337,
-            height: 'auto',
+            fontWeight: 700,
+            fontSize: 32,
+            lineHeight: 1.2,
+            marginBottom: 24,
           }}
+          dangerouslySetInnerHTML={{ __html: t.raw(subtitleKey) }}
         />
-      </div>
-      <div style={{ marginTop: 0 }}>
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      textAlign: 'left',
-      fontSize: 16,
-      lineHeight: 1.5,
-      maxWidth: 420,
-      margin: '0 auto',
-      height: '100%',
-    }}
-  >
-    <p style={{ fontSize: 26 }}><b>{t(analyzeTitleKey)}</b></p>
-    <ul style={{ paddingLeft: 0, marginTop: 0 }}>
-      {Object.values(analyzeList).map((html, index) => (
-          <li key={index} dangerouslySetInnerHTML={{ __html: html }} />
-      ))}
-    </ul>
-  </div>
 
-  <div
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: 10,
-      marginTop: 24,
-      width: '100%',
-    }}
-  >
-    <p
-      style={{
-        fontSize: 16,
-        lineHeight: 1.5,
-        maxWidth: 420,
-        margin: 0,
-        textAlign: 'center',
-        flex: '1 1 100%',
-      }}
-      dangerouslySetInnerHTML={{ __html: t.raw(conclusion1Key) }}
-    />
-  </div>
+        <div style={{ marginTop: 40 }}>
+          {config.showBmiBox && bmi !== undefined && (
+            <BMIBOX bmi={bmi} pointerLeft={((bmi - 12) / (45 - 12)) * 100} />
+          )}
+        </div>
+        {config.showTdeeBox && <TDEEBOX sid={sessionId ?? 'default'} funnelKey={resolvedFunnel} />}
+      </section>
 
-  <p
-    style={{
-      fontSize: 16,
-      lineHeight: 1.5,
-      maxWidth: 360,
-      margin: '12px auto 0',
-      textAlign: 'center',
-    }}
-    dangerouslySetInnerHTML={{ __html: t.raw(conclusion2Key) }}
-  />
-</div>
+      <section style={{ marginTop: 48 }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
+          <Image
+            src={trustImageSrc}
+            alt={t(trustImageAltKey)}
+            width={337}
+            height={221}
+            style={{
+              width: '100%',
+              maxWidth: 337,
+              height: 'auto',
+            }}
+          />
+        </div>
+        <div 
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'left',
+            fontSize: 16,
+            lineHeight: 1.5,
+            maxWidth: 420,
+            margin: '0 auto',
+          }}
+        >
+          <p style={{ fontSize: 26, marginBottom: 12 }}><b>{t(analyzeTitleKey)}</b></p>
+          <ul style={{ paddingLeft: 0, marginTop: 0 }}>
+            {Object.values(analyzeList).map((html, index) => (
+                <li key={index} dangerouslySetInnerHTML={{ __html: html }} />
+            ))}
+          </ul>
+        </div>
 
-{config.showPlanSummary && (
-  <div style={{ marginTop: 18 }}>
-    <PlanSummary sid={sessionId ?? 'default'} funnelKey={resolvedFunnel} />
-  </div>
-)}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 10,
+            marginTop: 32,
+            width: '100%',
+          }}
+        >
+          <p
+            style={{
+              fontSize: 16,
+              lineHeight: 1.5,
+              maxWidth: 420,
+              margin: 0,
+              textAlign: 'center',
+              flex: '1 1 100%',
+            }}
+            dangerouslySetInnerHTML={{ __html: t.raw(conclusion1Key) }}
+          />
+        </div>
 
-      <div
+        <p
+          style={{
+            fontSize: 16,
+            lineHeight: 1.5,
+            maxWidth: 360,
+            margin: '12px auto 0',
+            textAlign: 'center',
+          }}
+          dangerouslySetInnerHTML={{ __html: t.raw(conclusion2Key) }}
+        />
+      </section>
+
+      {config.showPlanSummary && (
+        <section style={{ marginTop: 48 }}>
+          <PlanSummary sid={sessionId ?? 'default'} funnelKey={resolvedFunnel} />
+        </section>
+      )}
+
+      <section
         style={{
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          margin: '24px auto 0',
+          margin: '48px auto 0',
           width: '100%',
           maxWidth: 420,
           padding: '0 12px',
@@ -590,24 +597,27 @@ export default function StandardResultPage() {
             fontSize: 24,
             marginTop: 0,
             lineHeight: 1.2,
+            marginBottom: 24,
           }}
         >
           {t(purchaseTitleKey)}
         </h2>
-        <Image
-          src={purchaseImageSrc}
-          alt={t(purchaseImageAltKey)}
-          width={imageWidth}
-          height={imageHeight}
-          style={{
-            width: '100%',
-            maxWidth: 351,
-            height: 'auto',
-            marginBottom: 16,
-            display: 'block',
-          }}
-        />
-        <div style={{ textAlign: 'center', marginTop: 0, width: '100%' }}>
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+          <Image
+            src={purchaseImageSrc}
+            alt={t(purchaseImageAltKey)}
+            width={imageWidth}
+            height={imageHeight}
+            style={{
+              width: '100%',
+              maxWidth: 351,
+              height: 'auto',
+              marginBottom: 16,
+              display: 'block',
+            }}
+          />
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 8, width: '100%' }}>
           <button
             type="button"
             aria-expanded={showSamplePlan}
@@ -652,47 +662,47 @@ export default function StandardResultPage() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: 24 }}>
-        <Image
-          src={config.dividerImage}
-          alt={config.dividerAlt}
-          width={400}
-          height={20}
-          style={{ width: '100%', maxWidth: 400, height: 'auto' }}
+      <section style={{ marginTop: 40, textAlign: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
+          <Image
+            src={config.dividerImage}
+            alt={config.dividerAlt}
+            width={400}
+            height={20}
+            style={{ width: '100%', maxWidth: 400, height: 'auto' }}
+          />
+        </div>
+
+        <p
+          style={{
+            fontSize: 24,
+            lineHeight: 1.5,
+            margin: '16px 0',
+            fontFamily: 'inherit',
+          }}
+          dangerouslySetInnerHTML={{
+            __html: t.raw(joinAthletesKey).replace('{count}', (totalOpenedCheckouts !== null ? totalOpenedCheckouts : 0).toString())
+          }}
         />
-      </div>
 
-      <p
-        style={{
-          textAlign: 'center',
-          fontSize: 24,
-          lineHeight: 1.5,
-          margin: '16px 0',
-          fontFamily: 'inherit',
-        }}
-        dangerouslySetInnerHTML={{
-          __html: t.raw(joinAthletesKey).replace('{count}', (totalOpenedCheckouts !== null ? totalOpenedCheckouts : 0).toString())
-        }}
-      />
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 24, marginBottom: 24 }}>
+          <Image
+            src={config.dividerImage}
+            alt={config.dividerAlt}
+            width={400}
+            height={20}
+            style={{ width: '100%', maxWidth: 400, height: 'auto' }}
+          />
+        </div>
+      </section>
 
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: 0 }}>
-        <Image
-          src={config.dividerImage}
-          alt={config.dividerAlt}
-          width={400}
-          height={20}
-          style={{ width: '100%', maxWidth: 400, height: 'auto' }}
-        />
-      </div>
-
-      <div style={{ marginTop: 18 }}>
+      <section style={{ marginTop: 48 }}>
         <AnswersSummary sid={sessionId ?? 'default'} funnelSlug={funnelSlug} answersButtonImage={answersButtonImage} />
-      </div>
+      </section>
 
-      <div style={{ marginTop: 16 }} id="form-section">
-
+      <section style={{ marginTop: 48 }} id="form-section">
         <CheckoutForm
           sessionId={sessionId ?? 'default'}
           funnelKey={resolvedFunnel}
@@ -702,10 +712,10 @@ export default function StandardResultPage() {
           separatorText={reportFormT('orText')}
           paymentNoteHtml={String(reportFormT.raw('paymentNote'))}
         />
-        <div style={{ marginTop: 14 }}>
+        <div style={{ marginTop: 24 }}>
           <DetailsSection diet_goal={String(answers?.diet_goal ?? '')} />
         </div>
-      </div>
+      </section>
 
       <div className="reports-wrap" style={{ textAlign: 'center', marginTop: 8 }}>
         <div className="reports-box">
@@ -717,10 +727,10 @@ export default function StandardResultPage() {
         </div>
       </div>
 
-      <div style={{ marginTop: 32 }}>
+      <div style={{ marginTop: 48, marginBottom: 48 }}>
         {config.showReviews && (
           <>
-            <h2 style={{ textAlign: 'center', fontWeight: 700, fontSize: 28, marginBottom: 16, lineHeight: 1.2 }}>
+            <h2 style={{ textAlign: 'center', fontWeight: 700, fontSize: 28, marginBottom: 24, lineHeight: 1.2 }}>
               {reviewsT('title')}
             </h2>
             {(() => {
@@ -745,28 +755,28 @@ export default function StandardResultPage() {
           </>
         )}
       </div>
-      <div style={{ marginTop: 32 }}>
-        {config.showFaq && <FAQPlan />}
+      <section style={{ marginTop: 48 }}>
+        {config.showFaq && (faqSection || <FAQPlan />)}
         {config.showContactBox && (
         <div
           style={{
-            margin: '32px auto 32px',
+            margin: '24px auto 48px',
             maxWidth: 400,
             background: '#fff',
             border: '4px solid #000',
             borderRadius: 16,
-            padding: '22px 20px 18px 20px',
+            padding: '28px 24px 24px 24px',
             boxSizing: 'border-box',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
             fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif",
             textAlign: 'center',
             position: 'relative',
           }}
         >
-          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 10px 0', lineHeight: 1.2 }}>
+          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 14px 0', lineHeight: 1.2 }}>
             {contactBox.title}
           </h2>
-          <div style={{ fontSize: 17, marginBottom: 10 }}>
+          <div style={{ fontSize: 17, marginBottom: 14 }}>
             {contactBox.emailIntro}
             <br />
             <a
@@ -776,12 +786,12 @@ export default function StandardResultPage() {
               {contactBox.emailAddress}
             </a>
           </div>
-          <div style={{ fontSize: 15, color: '#333', marginTop: 8, opacity: 0.85 }}>
+          <div style={{ fontSize: 15, color: '#333', marginTop: 12, opacity: 0.85 }}>
             {contactBox.responseTime}
           </div>
         </div>
         )}
-        </div>
+      </section>
         <div style={{ maxWidth: 400, margin: '0px auto 32px', textAlign: 'center' }}>
           <button
             type="button"

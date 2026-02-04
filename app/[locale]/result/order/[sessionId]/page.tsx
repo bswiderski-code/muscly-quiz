@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { sendGTMEvent } from '@next/third-parties/google';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { trackPurchase } from '@/lib/analytics';
 
 const ZamowieniePageContent = () => {
@@ -144,16 +144,14 @@ const ZamowieniePageContent = () => {
     sendPurchaseEvents();
   }, [sessionId, purchaseEventsSent]);
 
+  const locale = useLocale();
+
   const assets = {
     logoHref: 'https://musclepals.com',
-    logoSrc: '/branding/logo.svg',
-    logoHeight: (() => {
-      if (!t.has('logoHeight')) return 50;
-      const parsed = Number.parseInt(t('logoHeight'), 10);
-      return Number.isFinite(parsed) && parsed > 0 ? parsed : 50;
-    })(),
-    backButtonImage: t.has('backButtonImage') ? t('backButtonImage') : '/btns/pl/backtohomepage.svg',
-    heroSuccessSrc: t.has('heroSuccessSrc') ? t('heroSuccessSrc') : '/vectors/t_eagle.svg'
+    logoSrc: `/${locale}/../vectors/logo.svg`,
+    logoHeight: 50,
+    backButtonImage: `/btns/${locale}/back-to-home-btn.svg`,
+    heroSuccessSrc: `/${locale}/sample_guy.svg`
   };
 
   if (status === 'loading' || status === 'pending') {

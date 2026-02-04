@@ -154,8 +154,8 @@ export default function CheckoutForm({
 
   const checkoutSoloCopy = (productsT.raw('workout_solo') as { productName?: string; buttonSvg?: string }) ?? {};
   const checkoutBundleCopy = (productsT.raw('workout_bundle') as { productName?: string; buttonSvg?: string }) ?? {};
-  const defaultSoloButton = (checkoutSoloCopy.buttonSvg || "/btns/{locale}/workout_bef.svg").replace('{locale}', locale);
-  const defaultBundleButton = (checkoutBundleCopy.buttonSvg || "/btns/{locale}/bundle_bef.svg").replace('{locale}', locale);
+  const defaultSoloButton = (checkoutSoloCopy.buttonSvg || "/btns/{locale}/workout-btn.svg").replace('{locale}', locale);
+  const defaultBundleButton = (checkoutBundleCopy.buttonSvg || "/btns/{locale}/bundle-btn.svg").replace('{locale}', locale);
 
   const offers = [] as { key: string; node: React.ReactNode }[];
 

@@ -560,8 +560,8 @@
     "namePlaceholder": "Vorname",
     "emailLabel": "E-Mail (an die du den Plan erhältst):",
     "emailPlaceholder": "adresse@email.de",
-    "agreementText": "Ich stimme der Verarbeitung meiner personenbezogenen Daten gemäß der <a href=\"https://trenerstrzykawa.pl/polityka-prywatnosci/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">Datenschutzerklärung</a> zu.",
-    "agreementCheckboxHtml": "Ich akzeptiere die <a href=\"https://trenerstrzykawa.pl/regulamin/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">AGB</a> und die <a href=\"https://trenerstrzykawa.pl/polityka-prywatnosci/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">Datenschutzerklärung</a>.",
+    "agreementText": "Ich stimme der Verarbeitung meiner personenbezogenen Daten gemäß der <a href=\"https://musclepals.com/de/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">Datenschutzerklärung</a> zu.",
+    "agreementCheckboxHtml": "Ich akzeptiere die <a href=\"https://musclepals.com/de/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">AGB</a> und die <a href=\"https://musclepals.com/de/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">Datenschutzerklärung</a>.",
     "healthDataAgreementHtml": "Ich stimme der Verwendung meiner Gesundheitsdaten und Maße zu (dies ist notwendig, um den Plan zu erstellen).",
     "healthDataAgreementRequiredError": "Bitte akzeptiere die Zustimmung zur Verwendung von Gesundheitsdaten, um fortzufahren.",
     "agreementRequiredError": "Bitte akzeptiere die Bedingungen, um zur Zahlung zu gelangen.",
@@ -646,10 +646,10 @@
     "buttonText": "Zurück zur Startseite",
     "logoAlt": "Musclepals",
     "contactText": "Wenn du denkst, dass das ein Irrtum ist, kontaktiere mich:",
-    "logoSrc": "/en/needle/logo-long.svg",
+    "logoSrc": "/vectors/logo.svg",
     "logoHeight": "50",
-    "backButtonImage": "/btns/en/backtohomepage.svg",
-    "heroSuccessSrc": "/en/needle/sample_guy.svg"
+    "backButtonImage": "/btns/en/back-to-home-btn.svg",
+    "heroSuccessSrc": "/regional/en/sample_guy.svg"
   },
   "JoinAthletes": "Schließ dich <b><u>{count}</u> Athleten</b> an, die <b>bereits</b> ihren <b>personalisierten Trainingsplan nutzen!</b>",
   "NextButton": {
@@ -835,5 +835,11 @@
   "ReviewsMarquee": {
     "imageAlt": "User review",
     "title": "Sehen Sie, was unsere Kunden sagen"
+  },
+  "PlanPage": {
+    "assets": {
+      "privacyUrl": "https://musclepals.com/de/privacy",
+      "termsUrl": "https://musclepals.com/de/terms"
+    }
   }
 }

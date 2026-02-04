@@ -11,8 +11,8 @@ import { withLocale } from '@/lib/imagePath'
 const stepId: StepId = 'location';
 
 const ASSETS = {
-  gymImageSrc: '/btns/{locale}/atgym.svg',
-  homeImageSrc: '/btns/{locale}/athome.svg',
+  gymImageSrc: '/btns/{locale}/gym-training-btn.svg',
+  homeImageSrc: '/btns/{locale}/home-training-btn.svg',
 };
 
 export default function Page() {

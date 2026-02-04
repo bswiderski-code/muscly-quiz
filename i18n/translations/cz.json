@@ -556,8 +556,8 @@
     "namePlaceholder": "Name",
     "emailLabel": "Email (where you'll receive the plan):",
     "emailPlaceholder": "address@email.com",
-    "agreementText": "I agree to the processing of my personal data in accordance with the <a href=\"https://coachplate.com/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
-    "agreementCheckboxHtml": "I accept the <a href=\"https://coachplate.com/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">terms</a> and <a href=\"https://coachplate.com/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
+    "agreementText": "I agree to the processing of my personal data in accordance with the <a href=\"https://musclepals.com/regional/cz/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
+    "agreementCheckboxHtml": "I accept the <a href=\"https://musclepals.com/regional/cz/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">terms</a> and <a href=\"https://musclepals.com/regional/cz/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
     "healthDataAgreementHtml": "I agree to the use of my health data and measurements (this is necessary to create the plan).",
     "healthDataAgreementRequiredError": "Please accept the agreement to use health data to proceed.",
     "agreementRequiredError": "Please accept the terms to proceed to payment.",
@@ -642,10 +642,10 @@
     "buttonText": "Return to main page",
     "logoAlt": "Musclepals",
     "contactText": "If you think this is a mistake, contact me:",
-    "logoSrc": "/en/needle/logo-long.svg",
+    "logoSrc": "/vectors/logo.svg",
     "logoHeight": "50",
-    "backButtonImage": "/btns/en/backtohomepage.svg",
-    "heroSuccessSrc": "/en/needle/sample_guy.svg"
+    "backButtonImage": "/btns/en/back-to-home-btn.svg",
+    "heroSuccessSrc": "/regional/en/sample_guy.svg"
   },
   "JoinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized training plan!</b>",
   "NextButton": {
@@ -830,5 +830,11 @@
     "minutes": "{count, plural, one {# minute} other {# minutes}}",
     "info": "Optimal training time is <i><b>45-60 minutes</b></i>. Remember that <b>quality</b> of sets is more important than <b>quantity</b>.",
     "recommended": "(recommended)"
+  },
+  "PlanPage": {
+    "assets": {
+      "privacyUrl": "https://musclepals.com/regional/cz/privacy",
+      "termsUrl": "https://musclepals.com/regional/cz/terms"
+    }
   }
 }

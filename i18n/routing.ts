@@ -6,7 +6,7 @@ export const routing = defineRouting({
   locales,
   defaultLocale,
 
-  // WAŻNE: To ustawienie zawsze pokazuje prefix językowy w URL (np. /pl/, /en/).
+  // WAŻNE: To ustawienie zawsze pokazuje prefix językowy w URL (np. /regional/pl/, /regional/en/).
   localePrefix: 'always',
 
   // Tłumaczenie ścieżek (Pathnames)

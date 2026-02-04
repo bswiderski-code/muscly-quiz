@@ -646,10 +646,10 @@
     "buttonText": "Înapoi la pagina principală",
     "logoAlt": "Musclepals",
     "contactText": "Dacă crezi că este o greșeală, contactează-mă:",
-    "logoSrc": "/ro/needle/logo-long.svg",
+    "logoSrc": "/vectors/logo.svg",
     "logoHeight": "50",
-    "backButtonImage": "/btns/ro/backtohomepage.svg",
-    "heroSuccessSrc": "/ro/needle/sample_guy.svg"
+    "backButtonImage": "/btns/ro/back-to-home-btn.svg",
+    "heroSuccessSrc": "/regional/ro/sample_guy.svg"
   },
   "JoinAthletes": "Alătură-te celor <b><u>{count}</u> sportivi</b> care <b>deja folosesc</b> propriul lor <b>plan de antrenament personalizat!</b>",
   "NextButton": {
@@ -846,5 +846,11 @@
   "ReviewsMarquee": {
     "imageAlt": "User review",
     "title": "Vedeți ce spun clienții noștri"
+  },
+  "PlanPage": {
+    "assets": {
+      "privacyUrl": "https://musclepals.com/regional/ro/privacy",
+      "termsUrl": "https://musclepals.com/regional/ro/terms"
+    }
   }
 }

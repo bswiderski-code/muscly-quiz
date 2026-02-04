@@ -5,22 +5,22 @@
  */
 export const ASSET_PATHS = {
     logos: {
-        long: "/{locale}/needle/logo-long.svg",
+        long: "/vectors/logo.svg",
     },
     buttons: {
         createPlan: "/btns/{locale}/create_plan_btn.svg",
         getYourPlan: "/btns/{locale}/get_your.svg",
-        onceAgain: "/btns/{locale}/once_again.svg",
-        backToHome: "/btns/{locale}/backtohomepage.svg",
-        next: "/btns/{locale}/next.svg",
+        onceAgain: "/btns/{locale}/fill-again-btn.svg",
+        backToHome: "/btns/{locale}/back-to-home-btn.svg",
+        next: "/btns/{locale}/next-btn.svg",
         answersSummary: "/btns/{locale}/answers_summary.svg",
-        workoutBef: "/btns/{locale}/workout_bef.svg",
-        bundleBef: "/btns/{locale}/bundle_bef.svg",
+        workoutBef: "/btns/{locale}/workout-btn.svg",
+        bundleBef: "/btns/{locale}/bundle-btn.svg",
     },
     resultPage: {
-        whyTrust: "/{locale}/needle/why-trust.svg",
-        productDescription: "/{locale}/needle/product-description.svg",
-        sampleGuy: "/{locale}/needle/sample_guy.svg",
+        whyTrust: "/regional/{locale}/why-trust.svg",
+        productDescription: "/regional/{locale}/product-description.svg",
+        sampleGuy: "/regional/{locale}/sample_guy.svg",
         heroEagle: "/vectors/t_eagle.svg",
         inclineSmith: "/vectors/exercises/incline_smith.svg",
     },
@@ -29,26 +29,26 @@ export const ASSET_PATHS = {
     },
     bmiImages: {
         male: {
-            "5-9": "/bodyfat_variants/needle/m_bodyfat_1.svg",
-            "10-14": "/bodyfat_variants/needle/m_bodyfat_2.svg",
-            "15-19": "/bodyfat_variants/needle/m_bodyfat_3.svg",
-            "20-24": "/bodyfat_variants/needle/m_bodyfat_4.svg",
-            "25-29": "/bodyfat_variants/needle/m_bodyfat_5.svg",
-            "30-34": "/bodyfat_variants/needle/m_bodyfat_6.svg",
-            "35-39": "/bodyfat_variants/needle/m_bodyfat_7.svg",
-            ">40": "/bodyfat_variants/needle/m_bodyfat_8.svg"
+            "5-9": "/vectors/m_bodyfat_1.svg",
+            "10-14": "/vectors/m_bodyfat_2.svg",
+            "15-19": "/vectors/m_bodyfat_3.svg",
+            "20-24": "/vectors/m_bodyfat_4.svg",
+            "25-29": "/vectors/m_bodyfat_5.svg",
+            "30-34": "/vectors/m_bodyfat_6.svg",
+            "35-39": "/vectors/m_bodyfat_7.svg",
+            ">40": "/vectors/m_bodyfat_8.svg"
         },
         female: {
-            "10-14": "/bodyfat_variants/needle/f_bodyfat_1.svg",
-            "15-19": "/bodyfat_variants/needle/f_bodyfat_2.svg",
-            "20-24": "/bodyfat_variants/needle/f_bodyfat_3.svg",
-            "25-29": "/bodyfat_variants/needle/f_bodyfat_4.svg",
-            "30-39": "/bodyfat_variants/needle/f_bodyfat_5.svg",
-            ">40": "/bodyfat_variants/needle/f_bodyfat_6.svg"
+            "10-14": "/vectors/f_bodyfat_1.svg",
+            "15-19": "/vectors/f_bodyfat_2.svg",
+            "20-24": "/vectors/f_bodyfat_3.svg",
+            "25-29": "/vectors/f_bodyfat_4.svg",
+            "30-39": "/vectors/f_bodyfat_5.svg",
+            ">40": "/vectors/f_bodyfat_6.svg"
         },
         final: {
-            male: "/bodyfat_variants/needle/m_final.svg",
-            female: "/bodyfat_variants/needle/f_final.svg"
+            male: "/vectors/m_final.svg",
+            female: "/vectors/f_final.svg"
         }
     }
 } as const;

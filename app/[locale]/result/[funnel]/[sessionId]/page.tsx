@@ -1,16 +1,16 @@
-'use client';
-
-import { useParams } from 'next/navigation';
-import { useTranslations, useLocale } from 'next-intl';
 import { resolveFunnelKeyByResultSlug, FUNNELS } from '@/lib/funnels/funnels';
 import { FunnelProvider } from '@/lib/funnels/funnelContext';
 import StandardResultPage from '@/app/components/result/templates/StandardResultPage';
+import FaqSection from '@/app/components/result/faq/FaqSection';
+import { getTranslations } from 'next-intl/server';
 
-export default function ResultPage() {
-  const t = useTranslations('ResultPage');
-  const locale = useLocale();
-  const params = useParams<{ funnel: string }>();
-  const funnelSlug = params?.funnel;
+type Props = {
+  params: Promise<{ locale: string; funnel: string; sessionId: string }>;
+};
+
+export default async function ResultPage({ params }: Props) {
+  const { locale, funnel: funnelSlug } = await params;
+  const t = await getTranslations({ locale, namespace: 'ResultPage' });
 
   const funnelKey = resolveFunnelKeyByResultSlug(funnelSlug ?? '', locale);
 
@@ -29,14 +29,16 @@ export default function ResultPage() {
   if (template === 'standard') {
     return (
       <FunnelProvider funnel={funnelKey}>
-        <StandardResultPage />
+        <StandardResultPage 
+          faqSection={<FaqSection locale={locale} />} 
+        />
       </FunnelProvider>
     );
   }
 
   return (
-      <div style={{ textAlign: 'center', padding: '40px' }}>
-        <h1>Unknown Template</h1>
-      </div>
-    );
+    <div style={{ textAlign: 'center', padding: '40px' }}>
+      <h1>Unknown Template</h1>
+    </div>
+  );
 }
