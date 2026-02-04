@@ -14,7 +14,7 @@ import { withLocale } from '@/lib/imagePath'
 const stepId: StepId = "bmi";
 
 const ASSETS = {
-  nextStepImg: '/btns/{locale}/lets_go.svg',
+  nextStepImg: '/btns/{locale}/lets-go-btn.svg',
   illustrationImg: '/vectors/t_meat.svg',
 };
 

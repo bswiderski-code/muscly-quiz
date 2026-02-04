@@ -647,7 +647,7 @@
     "logoSrc": "/vectors/logo.svg",
     "logoHeight": "50",
     "backButtonImage": "/btns/en/back-to-home-btn.svg",
-    "heroSuccessSrc": "/regional/en/sample_guy.svg"
+    "heroSuccessSrc": "/regional/en/sample-guy.svg"
   },
   "JoinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized training plan!</b>",
   "NextButton": {

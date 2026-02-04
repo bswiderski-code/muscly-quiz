@@ -649,7 +649,7 @@
     "logoSrc": "/vectors/logo.svg",
     "logoHeight": "50",
     "backButtonImage": "/btns/ro/back-to-home-btn.svg",
-    "heroSuccessSrc": "/regional/ro/sample_guy.svg"
+    "heroSuccessSrc": "/regional/ro/sample-guy.svg"
   },
   "JoinAthletes": "Alătură-te celor <b><u>{count}</u> sportivi</b> care <b>deja folosesc</b> propriul lor <b>plan de antrenament personalizat!</b>",
   "NextButton": {

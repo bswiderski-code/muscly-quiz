@@ -649,7 +649,7 @@
     "logoSrc": "/vectors/logo.svg",
     "logoHeight": "50",
     "backButtonImage": "/btns/en/back-to-home-btn.svg",
-    "heroSuccessSrc": "/regional/en/sample_guy.svg"
+    "heroSuccessSrc": "/regional/en/sample-guy.svg"
   },
   "JoinAthletes": "Rejoins <b><u>{count}</u> athlètes</b> qui <b>utilisent déjà</b> leur <b>programme d'entraînement personnalisé !</b>",
   "NextButton": {

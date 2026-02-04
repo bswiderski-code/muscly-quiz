@@ -10,12 +10,12 @@ import { withLocale } from '@/lib/imagePath'
 
 const ASSETS = {
   bulk: {
-    male: '/btns/{locale}/want_bulk.svg',
-    female: '/btns/{locale}/want_bulk_f.svg',
+    male: '/btns/{locale}/bulking-btn.svg',
+    female: '/btns/{locale}/bulking-btn-f.svg',
   },
   cut: {
-    male: '/btns/{locale}/want_cut.svg',
-    female: '/btns/{locale}/want_cut_f.svg',
+    male: '/btns/{locale}/cutting-btn.svg',
+    female: '/btns/{locale}/cutting-btn-f.svg',
   },
 };
 
