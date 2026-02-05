@@ -93,6 +93,9 @@ export async function GET(
         forcePathStyle: true,
     });
 
+    // Log the generated key for debugging
+    console.log(`[DEBUG] Fetching: Bucket=${s3Config.bucket}, Key=${s3Key}, Region=${s3Config.region}`);
+
     try {
         const command = new GetObjectCommand({
             Bucket: s3Config.bucket,
@@ -121,7 +124,18 @@ export async function GET(
         });
 
     } catch (error: any) {
-        console.error(`S3 Fetch Error for key ${s3Key}:`, error.message);
-        return NextResponse.json({ error: 'Failed to fetch file' }, { status: 404 });
+        console.error(`S3 Fetch Error for key ${s3Key}:`, error);
+        // RETURN DEBUG INFO TO CLIENT TO HELP USER
+        return NextResponse.json({
+            error: 'Failed to fetch file',
+            details: error.message,
+            debug_bucket: s3Config.bucket,
+            debug_key: s3Key,
+            debug_endpoint: s3Config.endpoint,
+            db_item: order.item,
+            db_country: order.country,
+            resolved_locale: locale,
+            resolved_basename: baseName
+        }, { status: 404 });
     }
 }
