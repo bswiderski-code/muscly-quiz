@@ -100,7 +100,7 @@ model Orders {
   country          String
   createdAt        DateTime  @default(now())
   amount           Decimal   @db.Decimal(10, 2)
-  deliveredAt      Boolean   @default(false)
+  delivered        Boolean   @default(false)
   currency         String
   payment_provider String
 
