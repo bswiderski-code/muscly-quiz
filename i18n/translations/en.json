@@ -703,7 +703,9 @@
     "errorText1": "Your payment <b>was not finalized</b>, return to the main page and try again.",
     "buttonText": "Return to home page",
     "logoAlt": "Musclepals",
-    "contactText": "If you think this is a mistake, contact me:"
+    "contactText": "If you think this is a mistake, contact me:",
+    "downloadWorkout": "Download Workout Plan",
+    "downloadDiet": "Download Diet Report"
   },
   "JoinAthletes": "Join <b><u>{count}</u> athletes</b> who are <b>already using</b> their <b>personalized workout plan!</b>",
   "NextButton": {

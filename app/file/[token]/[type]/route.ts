@@ -8,34 +8,22 @@ import fs from 'fs';
 
 export const dynamic = 'force-dynamic';
 
-const ITEM_TO_KEY: Record<string, string> = {
-    workout_solo: 'workout',
-    workout_bundle: 'workout',
-    raport: 'raport',
-    calisthenics_solo: 'calisthenics',
-    calisthenics_bundle: 'calisthenics',
-};
-
-const ITEM_TO_DIR: Record<string, string> = {
-    workout_solo: 'training_plan',
-    workout_bundle: 'training_plan',
-    raport: 'diet',
-    calisthenics_solo: 'training_plan',
-    calisthenics_bundle: 'training_plan',
+const TYPE_TO_DIR: Record<string, string> = {
+    workout: 'training_plan',
+    diet: 'diet',
 };
 
 export async function GET(
     req: NextRequest,
-    context: { params: Promise<{ token: string }> }
+    context: { params: Promise<{ token: string; type: string }> }
 ) {
-    const { token } = await context.params;
+    const { token, type } = await context.params;
 
     // Helper to generate HTML error response
     const returnErrorHtml = (locale: string = 'en', translations: any = null) => {
         let title = 'Problem loading your data.';
         let description = 'If the issue persists, please contact us at support@musclepals.com';
 
-        // Try to use translations if available
         if (translations && translations.ResultPage) {
             title = translations.ResultPage.loadingErrorTitle || title;
             if (translations.ResultPage.loadingErrorHtml) {
@@ -43,7 +31,6 @@ export async function GET(
                 description = translations.ResultPage.loadingErrorHtml.replace(/{email}/g, email);
             }
         } else {
-            // Fallback to loading en.json if translations not provided
             try {
                 const enPath = path.join(process.cwd(), 'i18n', 'translations', 'en.json');
                 if (fs.existsSync(enPath)) {
@@ -100,10 +87,6 @@ export async function GET(
                     line-height: 1.5;
                     color: #4b5563;
                 }
-                a {
-                    color: #2563eb;
-                    text-decoration: underline;
-                }
                 .icon {
                     margin-bottom: 24px;
                     font-size: 48px;
@@ -121,12 +104,16 @@ export async function GET(
         `;
 
         return new NextResponse(html, {
-            status: 404, // Using 404 to indicate not found/error but displaying friendly UI
+            status: 404,
             headers: { 'Content-Type': 'text/html; charset=utf-8' },
         });
     };
 
-    if (!token) {
+    if (!token || !type) {
+        return returnErrorHtml('en');
+    }
+
+    if (type !== 'workout' && type !== 'diet') {
         return returnErrorHtml('en');
     }
 
@@ -138,12 +125,31 @@ export async function GET(
         return returnErrorHtml('en');
     }
 
+    // Access control logic
+    const item = order.item;
+    let hasAccess = false;
+
+    if (type === 'workout') {
+        // Workout access for all solo/bundle workout/calisthenics items
+        if (['workout_solo', 'workout_bundle', 'calisthenics_solo', 'calisthenics_bundle'].includes(item)) {
+            hasAccess = true;
+        }
+    } else if (type === 'diet') {
+        // Diet access for bundles or solo raport item
+        if (['workout_bundle', 'calisthenics_bundle', 'raport'].includes(item)) {
+            hasAccess = true;
+        }
+    }
+
+    if (!hasAccess) {
+        return returnErrorHtml('en'); // or custom "No access" page
+    }
+
     // Determine locale from country
     const locale = getLocaleFromCountry(order.country);
-    // Use the stored country (e.g., 'PL', 'US')
     const country = (order.country || 'PL').toUpperCase();
 
-    // Load translation to get base filename and for error page
+    // Load translation to get base filename
     let baseName = 'File';
     let translations: any = null;
 
@@ -151,16 +157,31 @@ export async function GET(
         const filePath = path.join(process.cwd(), 'i18n', 'translations', `${locale}.json`);
         if (fs.existsSync(filePath)) {
             translations = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-            const key = ITEM_TO_KEY[order.item];
-            if (key && translations.PdfFilenames && translations.PdfFilenames[key]) {
-                baseName = translations.PdfFilenames[key];
-            } else if (locale !== 'en') {
-                // Fallback to English if key missing in current locale
-                const enPath = path.join(process.cwd(), 'i18n', 'translations', 'en.json');
-                if (fs.existsSync(enPath)) {
-                    const enTranslations = JSON.parse(fs.readFileSync(enPath, 'utf8'));
-                    if (enTranslations.PdfFilenames && enTranslations.PdfFilenames[key]) {
-                        baseName = enTranslations.PdfFilenames[key];
+
+            // Determine translation key
+            let transKey = type; // default to 'workout' or 'diet'
+            if (type === 'workout' && item.startsWith('calisthenics')) {
+                transKey = 'calisthenics';
+            }
+
+            if (translations.PdfFilenames && translations.PdfFilenames[transKey]) {
+                baseName = translations.PdfFilenames[transKey];
+            } else {
+                // Special mapping for 'diet' if key is 'raport' in translations
+                const effectiveKey = (transKey === 'diet' && !translations.PdfFilenames?.diet) ? 'raport' : transKey;
+
+                if (translations.PdfFilenames && translations.PdfFilenames[effectiveKey]) {
+                    baseName = translations.PdfFilenames[effectiveKey];
+                } else {
+                    // Fallback to English
+                    const enPath = path.join(process.cwd(), 'i18n', 'translations', 'en.json');
+                    if (fs.existsSync(enPath)) {
+                        const enTranslations = JSON.parse(fs.readFileSync(enPath, 'utf8'));
+                        const enEffectiveKey = (transKey === 'diet' && !enTranslations.PdfFilenames?.diet) ? 'raport' : transKey;
+
+                        if (enTranslations.PdfFilenames && enTranslations.PdfFilenames[enEffectiveKey]) {
+                            baseName = enTranslations.PdfFilenames[enEffectiveKey];
+                        }
                     }
                 }
             }
@@ -169,11 +190,7 @@ export async function GET(
         console.error('Failed to load translations for PDF filename:', e);
     }
 
-    // Determine directory: training-plan or diet
-    const dir = ITEM_TO_DIR[order.item] || 'training-plan';
-
-    // Construct final S3 key: [directory]/[country]/[base]_[order_id].pdf
-    // e.g., training-plan/PL/Plan_treningowy_1234.pdf
+    const dir = TYPE_TO_DIR[type];
     const s3Key = `${dir}/${country}/${baseName}_${order.id}.pdf`;
     const downloadName = `${baseName}_${order.id}.pdf`;
 
@@ -191,8 +208,7 @@ export async function GET(
         forcePathStyle: true,
     });
 
-    // Log the generated key for debugging
-    console.log(`[DEBUG] Fetching: Bucket=${s3Config.bucket}, Key=${s3Key}, Region=${s3Config.region}`);
+    console.log(`[DEBUG] Fetching: Bucket=${s3Config.bucket}, Key=${s3Key}, Type=${type}, Item=${item}`);
 
     try {
         const command = new GetObjectCommand({
@@ -222,7 +238,6 @@ export async function GET(
         });
 
     } catch (error: any) {
-        // Handle missing file explicitly
         if (error.name === 'NoSuchKey' || error.$metadata?.httpStatusCode === 404) {
             console.error(`File missing in S3: ${s3Key}`);
             return returnErrorHtml(locale, translations);

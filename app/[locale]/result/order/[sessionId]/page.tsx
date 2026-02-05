@@ -55,6 +55,7 @@ const ZamowieniePageContent = () => {
     };
   }, [sessionId]);
 
+  const [purchaseData, setPurchaseData] = useState<any>(null);
   const [purchaseEventsSent, setPurchaseEventsSent] = useState(false);
 
   const hashSHA256 = async (str: string) => {
@@ -82,6 +83,7 @@ const ZamowieniePageContent = () => {
           return;
         }
 
+        setPurchaseData(data);
         const sha256_email = await hashSHA256(data.email || '');
         const sha256_name = await hashSHA256(data.name || '');
         const purchaseValue = Number(data.amount);
@@ -156,8 +158,8 @@ const ZamowieniePageContent = () => {
 
   if (status === 'loading' || status === 'pending') {
     return (
-      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: '#fff', padding: '0 24px' }}>
-        <div style={{ marginBottom: 32, marginTop: 16, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', background: '#fff', padding: '40px 24px 0 24px' }}>
+        <div style={{ marginBottom: 32, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
           <Image src={assets.logoSrc} alt={t('logoAlt')} width={220} height={assets.logoHeight} style={{ width: 'auto', height: assets.logoHeight, maxWidth: '100%' }} />
         </div>
         <div style={{ marginTop: 48, marginBottom: 32, fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif", fontSize: 22, fontWeight: 700, color: '#111', textAlign: 'center' }}>
@@ -193,9 +195,9 @@ const ZamowieniePageContent = () => {
 
   if (status === 'success') {
     return (
-      <div style={{ minHeight: '100vh', background: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif", padding: '0 24px' }}>
+      <div style={{ minHeight: '100vh', background: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif", padding: '40px 24px 0 24px' }}>
         <div style={{ maxWidth: 420, width: '100%', marginLeft: 'auto', marginRight: 'auto', padding: 0, boxSizing: 'border-box', textAlign: 'center' }}>
-          <div style={{ marginBottom: 32, marginTop: 16, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+          <div style={{ marginBottom: 32, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
             <Image src={assets.logoSrc} alt={t('logoAlt')} width={220} height={assets.logoHeight} style={{ width: 'auto', height: assets.logoHeight, maxWidth: '100%' }} />
           </div>
           <div style={{ fontSize: 32, fontWeight: 700, margin: '16px 0 0 0', color: '#111', lineHeight: 1.18 }}>
@@ -212,9 +214,57 @@ const ZamowieniePageContent = () => {
             {t('successText4')}<br />
             <a href={`mailto:${t('successEmail')}`} style={{ color: '#111', textDecoration: 'underline' }}>{t('successEmail')}</a>
           </div>
-          <div style={{ margin: '18px 0 0 0', display: 'flex', justifyContent: 'center' }}>
+          <div style={{ margin: '18px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
+            {purchaseData?.pdfToken && (
+               <>
+                 {['workout_solo', 'workout_bundle', 'calisthenics_solo', 'calisthenics_bundle'].includes(purchaseData.item) && (
+                   <button
+                     onClick={() => {
+                       window.location.href = `/file/${purchaseData.pdfToken}/workout`;
+                     }}
+                     style={{
+                       background: '#111',
+                       color: '#fff',
+                       border: 'none',
+                       padding: '12px 24px',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       fontSize: '16px',
+                       fontWeight: 700,
+                       width: '100%',
+                       maxWidth: 260,
+                     }}
+                   >
+                     {t('downloadWorkout')}
+                   </button>
+                 )}
+                 {['workout_bundle', 'calisthenics_bundle', 'raport'].includes(purchaseData.item) && (
+                   <button
+                     onClick={() => {
+                       window.location.href = `/file/${purchaseData.pdfToken}/diet`;
+                     }}
+                     style={{
+                       background: '#111',
+                       color: '#fff',
+                       border: 'none',
+                       padding: '12px 24px',
+                       borderRadius: '8px',
+                       cursor: 'pointer',
+                       fontSize: '16px',
+                       fontWeight: 700,
+                       width: '100%',
+                       maxWidth: 260,
+                     }}
+                   >
+                     {t('downloadDiet')}
+                   </button>
+                 )}
+               </>
+            )}
             <button
-              onClick={() => router.push('/')}
+              onClick={() => {
+                window.location.href = `https://musclepals.com/${locale}/`;
+              }}
               style={{
                 background: 'none',
                 border: 'none',

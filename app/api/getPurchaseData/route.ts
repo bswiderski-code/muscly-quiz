@@ -48,6 +48,8 @@ export async function GET(req: NextRequest) {
       amount: Number(order.amount),
       name: userData.name,
       email: userData.email,
+      pdfToken: order.pdfToken,
+      item: order.item,
     });
   } catch (error) {
     console.error('Error fetching purchase data:', error);

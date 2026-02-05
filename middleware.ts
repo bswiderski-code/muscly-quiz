@@ -31,7 +31,7 @@ export default async function middleware(request: NextRequest) {
   }
 
   // 2. Skip next-intl for S3 proxy files
-  if (request.nextUrl.pathname.startsWith('/files/')) {
+  if (request.nextUrl.pathname.startsWith('/file/')) {
     return NextResponse.next();
   }
 

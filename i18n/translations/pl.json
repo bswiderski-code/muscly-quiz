@@ -703,7 +703,9 @@
     "errorText1": "Twoja płatność <b>nie została sfinalizowana</b>, wróć do strony głównej i spróbuj ponownie.",
     "buttonText": "Wróć do strony głównej",
     "logoAlt": "Musclepals",
-    "contactText": "Jeśli uważasz, że jest to pomyłka skontaktuj się ze mną:"
+    "contactText": "Jeśli uważasz, że to błąd, skontaktuj się ze mną:",
+    "downloadWorkout": "Pobierz Plan Treningowy",
+    "downloadDiet": "Pobierz Raport Dietetyczny"
   },
   "JoinAthletes": "Dołącz do <b><u>{count}</u> sportowców</b>, którzy <b>już korzystają</b> ze swojego <b>personalizowanego planu treningowego!</b>",
   "NextButton": {
