@@ -95,7 +95,7 @@ enum BalancePriority {
 model Orders {
   id               Int       @id @default(autoincrement())
   userId           Int?      @map("userid") // relation to user_data
-  user             UserData? @relation("UserOrders", fields: [userId], references: [id])
+  user             UserData? @relation("UserOrders", fields: [userId], references: [id], onDelete: Cascade)
   item             OrderItem
   country          String
   createdAt        DateTime  @default(now())
@@ -126,7 +126,7 @@ model UserData {
 // ==================== HEALTH DETAILS ====================
 model HealthDetails {
   userId        Int             @id @map("userid")
-  user          UserData        @relation(fields: [userId], references: [id])
+  user          UserData        @relation(fields: [userId], references: [id], onDelete: Cascade)
   gender        Gender
   activity      ActivityLevel
   bmi           Float
