@@ -215,52 +215,6 @@ const ZamowieniePageContent = () => {
             <a href={`mailto:${t('successEmail')}`} style={{ color: '#111', textDecoration: 'underline' }}>{t('successEmail')}</a>
           </div>
           <div style={{ margin: '18px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
-            {purchaseData?.pdfToken && (
-               <>
-                 {['workout_solo', 'workout_bundle', 'calisthenics_solo', 'calisthenics_bundle'].includes(purchaseData.item) && (
-                   <button
-                     onClick={() => {
-                       window.location.href = `/file/${purchaseData.pdfToken}/workout`;
-                     }}
-                     style={{
-                       background: '#111',
-                       color: '#fff',
-                       border: 'none',
-                       padding: '12px 24px',
-                       borderRadius: '8px',
-                       cursor: 'pointer',
-                       fontSize: '16px',
-                       fontWeight: 700,
-                       width: '100%',
-                       maxWidth: 260,
-                     }}
-                   >
-                     {t('downloadWorkout')}
-                   </button>
-                 )}
-                 {['workout_bundle', 'calisthenics_bundle', 'raport'].includes(purchaseData.item) && (
-                   <button
-                     onClick={() => {
-                       window.location.href = `/file/${purchaseData.pdfToken}/diet`;
-                     }}
-                     style={{
-                       background: '#111',
-                       color: '#fff',
-                       border: 'none',
-                       padding: '12px 24px',
-                       borderRadius: '8px',
-                       cursor: 'pointer',
-                       fontSize: '16px',
-                       fontWeight: 700,
-                       width: '100%',
-                       maxWidth: 260,
-                     }}
-                   >
-                     {t('downloadDiet')}
-                   </button>
-                 )}
-               </>
-            )}
             <button
               onClick={() => {
                 window.location.href = `https://musclepals.com/${locale}/`;
