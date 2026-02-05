@@ -6,7 +6,7 @@ This guide explains how to use and maintain the permanent PDF link system on `mu
 
 Instead of redirecting users to a temporary S3 URL (which looks like `s3.bucket.com/...` and expires), we use a **Proxy Stream**:
 
-1.  **URL**: The user visits `musclepals.com/file/[token]`.
+1.  **URL**: The user visits `musclepals.com/files/[token]`.
 2.  **Validation**: Our server verifies the `token` exists in the `Orders` database.
 3.  **Fetch**: Our server fetches the file from Hetzner S3 in the background.
 4.  **Stream**: The file is piped directly to the user's browser.
@@ -22,7 +22,7 @@ Instead of redirecting users to a temporary S3 URL (which looks like `s3.bucket.
 You can now provide a direct link to the user's PDF using the `pdfToken` stored in the `orders` table:
 
 ```html
-<a href="https://musclepals.com/file/{{pdfToken}}">View your PDF</a>
+<a href="https://musclepals.com/files/{{pdfToken}}">View your PDF</a>
 ```
 
 ## 3. Configuration & Maintenance
@@ -32,7 +32,7 @@ Ensure your credentials are correctly set in `config/credentials.ts`. The implem
 
 ### File Mapping
 The mapping between your product (`OrderItem`) and the actual file in S3 is managed in:
-`app/file/[token]/route.ts`
+`app/files/[token]/route.ts`
 
 Look for the `ORDER_ITEM_FILES` object:
 
@@ -53,6 +53,6 @@ If you add a new product or change a filename in S3, update this mapping.
 
 ## 5. Implementation Details
 
--   **Route Handler**: `app/file/[token]/route.ts`
+-   **Route Handler**: `app/files/[token]/route.ts`
 -   **Database**: `prisma/schema.prisma` -> `Orders.pdfToken`
 -   **Generation**: Token is generated automatically in payment notify routes (`lib/stripe/orderProcessor.ts`, etc.) during order creation.

@@ -30,7 +30,12 @@ export default async function middleware(request: NextRequest) {
     return NextResponse.redirect(redirectUrl, 308);
   }
 
-  // 2. Uruchomienie logiki next-intl. 
+  // 2. Skip next-intl for S3 proxy files
+  if (request.nextUrl.pathname.startsWith('/files/')) {
+    return NextResponse.next();
+  }
+
+  // 3. Uruchomienie logiki next-intl. 
   // Z 'localePrefix: always' w routing.ts, next-intl zajmie się wykrywaniem 
   // języka (np. z nagłówka Accept-Language) i przekierowaniem na /[locale]/.
   const handleI18nRouting = createMiddleware(routing);
