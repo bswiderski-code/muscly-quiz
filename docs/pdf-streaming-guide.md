@@ -30,21 +30,20 @@ You can now provide a direct link to the user's PDF using the `pdfToken` stored 
 ### S3 Credentials
 Ensure your credentials are correctly set in `config/credentials.ts`. The implementation uses the `@aws-sdk/client-s3` compatible with Hetzner.
 
-### File Mapping
-The mapping between your product (`OrderItem`) and the actual file in S3 is managed in:
-`app/files/[token]/route.ts`
+### S3 Key Structure
+The system automatically organizes files in S3 based on product type and user location:
 
-Look for the `ORDER_ITEM_FILES` object:
+**Pattern:** `[category]/[country]/[localized_name]_[order_id].pdf`
 
-```typescript
-const ORDER_ITEM_FILES: Record<string, string> = {
-    workout_solo: 'workout_solo.pdf',         // Map to S3 Key
-    workout_bundle: 'workout_bundle.pdf',
-    // ...
-};
-```
+**Categories:**
+- `training-plan/` (for workout and calisthenics)
+- `diet/` (for BMI reports)
 
-If you add a new product or change a filename in S3, update this mapping.
+**Example (Poland, Workout):**
+`training-plan/PL/Plan_treningowy_1234.pdf`
+
+**Example (US, BMI Report):**
+`diet/US/BMI_Report_5678.pdf`
 
 ## 4. Troubleshooting
 

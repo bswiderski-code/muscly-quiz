@@ -16,6 +16,14 @@ const ITEM_TO_KEY: Record<string, string> = {
     calisthenics_bundle: 'calisthenics',
 };
 
+const ITEM_TO_DIR: Record<string, string> = {
+    workout_solo: 'training-plan',
+    workout_bundle: 'training-plan',
+    raport: 'diet',
+    calisthenics_solo: 'training-plan',
+    calisthenics_bundle: 'training-plan',
+};
+
 export async function GET(
     req: NextRequest,
     context: { params: Promise<{ token: string }> }
@@ -36,6 +44,8 @@ export async function GET(
 
     // Determine locale from country
     const locale = getLocaleFromCountry(order.country);
+    // Use the stored country (e.g., 'PL', 'US')
+    const country = (order.country || 'PL').toUpperCase();
 
     // Load translation to get base filename
     let baseName = 'File';
@@ -61,8 +71,13 @@ export async function GET(
         console.error('Failed to load translations for PDF filename:', e);
     }
 
-    // Construct final filename: [base]_[order_id].pdf
-    const fileKey = `${baseName}_${order.id}.pdf`;
+    // Determine directory: training-plan or diet
+    const dir = ITEM_TO_DIR[order.item] || 'training-plan';
+
+    // Construct final S3 key: [directory]/[country]/[base]_[order_id].pdf
+    // e.g., training-plan/PL/Plan_treningowy_1234.pdf
+    const s3Key = `${dir}/${country}/${baseName}_${order.id}.pdf`;
+    const downloadName = `${baseName}_${order.id}.pdf`;
 
     // Initialize S3
     const s3Config = PAYMENT_CREDENTIALS.s3;
@@ -81,7 +96,7 @@ export async function GET(
     try {
         const command = new GetObjectCommand({
             Bucket: s3Config.bucket,
-            Key: fileKey,
+            Key: s3Key,
         });
 
         const response = await s3.send(command);
@@ -95,7 +110,7 @@ export async function GET(
         const headers = new Headers();
         headers.set('Content-Type', 'application/pdf');
         // Disposition: inline ensures it opens in browser
-        headers.set('Content-Disposition', `inline; filename="${fileKey}"`);
+        headers.set('Content-Disposition', `inline; filename="${downloadName}"`);
         if (response.ContentLength) {
             headers.set('Content-Length', response.ContentLength.toString());
         }
@@ -106,7 +121,7 @@ export async function GET(
         });
 
     } catch (error: any) {
-        console.error(`S3 Fetch Error for key ${fileKey}:`, error);
+        console.error(`S3 Fetch Error for key ${s3Key}:`, error);
         return NextResponse.json({ error: 'Failed to fetch file' }, { status: 404 });
     }
 }
