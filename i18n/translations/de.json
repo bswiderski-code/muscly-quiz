@@ -841,5 +841,10 @@
       "privacyUrl": "https://musclepals.com/de/privacy",
       "termsUrl": "https://musclepals.com/de/terms"
     }
+  },
+  "PdfFilenames": {
+    "workout": "Trainingsplan",
+    "raport": "BMI_Bericht",
+    "calisthenics": "Kalisthenik_Plan"
   }
 }

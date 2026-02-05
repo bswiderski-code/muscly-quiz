@@ -844,5 +844,10 @@
   "ReviewsMarquee": {
     "imageAlt": "Recenzja użytkownika",
     "title": "Sprawdź co mówią o nas klienci"
+  },
+  "PdfFilenames": {
+    "workout": "Plan_treningowy",
+    "raport": "Raport_BMI",
+    "calisthenics": "Plan_kalisteniki"
   }
 }

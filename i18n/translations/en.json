@@ -844,5 +844,10 @@
   "ReviewsMarquee": {
     "imageAlt": "User review",
     "title": "Check what clients say about us"
+  },
+  "PdfFilenames": {
+    "workout": "Workout_plan",
+    "raport": "BMI_Report",
+    "calisthenics": "Calisthenics_plan"
   }
 }

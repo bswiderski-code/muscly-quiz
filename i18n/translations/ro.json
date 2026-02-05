@@ -836,5 +836,10 @@
       "privacyUrl": "https://musclepals.com/regional/ro/privacy",
       "termsUrl": "https://musclepals.com/regional/ro/terms"
     }
+  },
+  "PdfFilenames": {
+    "workout": "Plan_de_antrenament",
+    "raport": "Raport_BMI",
+    "calisthenics": "Plan_calistenie"
   }
 }

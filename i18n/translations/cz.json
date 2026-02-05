@@ -844,5 +844,10 @@
   "ReviewsMarquee": {
     "imageAlt": "Recenze uživatele",
     "title": "Podívej se, co o nás říkají klienti"
+  },
+  "PdfFilenames": {
+    "workout": "Treninkovy_plan",
+    "raport": "BMI_Zprava",
+    "calisthenics": "Kalisteniky_plan"
   }
 }
