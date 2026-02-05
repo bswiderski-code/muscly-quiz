@@ -153,20 +153,7 @@ export default function StandardResultPage({ faqSection }: StandardResultPagePro
   const imageWidth = config.purchaseImageWidth;
   const imageHeight = config.purchaseImageHeight[locale] || config.purchaseImageHeight.default;
 
-  useEffect(() => {
-    if (answers && sessionId) {
-      fetch('/api/funnel/save', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          sid: sessionId,
-          funnel: resolvedFunnel,
-          locale,
-          ...answers,
-        }),
-      }).catch((err) => console.error('Failed to auto-save funnel data:', err));
-    }
-  }, [answers, sessionId, resolvedFunnel]);
+
 
   useEffect(() => {
     if (answers) {
