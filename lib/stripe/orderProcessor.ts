@@ -62,8 +62,6 @@ export async function processStripeSession(
         const order = await tx.orders.create({
             data: {
                 item: userData.item,
-                name: userData.name,
-                email: userData.email,
                 userId: userData.id,
                 amount: new Prisma.Decimal((session.amount_total ?? 0) / 100),
                 currency: session.currency?.toUpperCase() ?? 'USD',

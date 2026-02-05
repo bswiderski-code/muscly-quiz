@@ -66,12 +66,12 @@ export async function POST(req: NextRequest) {
 		return NextResponse.json({ ok: true, status: order?.status ?? 'unknown' });
 	}
 
-	await prisma.userData.updateMany({
+	await (prisma as any).userData.updateMany({
 		where: { sid: sessionId },
 		data: { status: 'paid' },
 	}).catch(() => undefined);
 
-	const userData = await prisma.userData.findFirst({
+	const userData = await (prisma as any).userData.findFirst({
 		where: { sid: sessionId },
 	});
 
@@ -81,9 +81,9 @@ export async function POST(req: NextRequest) {
 	}
 
 	// Idempotency guard: PayU may retry notifications.
-	const existingOrder = await prisma.orders.findFirst({
+	const existingOrder = await (prisma as any).orders.findFirst({
 		where: {
-			sid: userData.sid,
+			userId: userData.id,
 			payment_provider: 'PayU',
 		},
 		select: { id: true },
@@ -95,11 +95,9 @@ export async function POST(req: NextRequest) {
 	}
 
 	try {
-		await prisma.orders.create({
+		await (prisma as any).orders.create({
 			data: {
 				item: userData.item,
-				name: userData.name,
-				email: userData.email,
 				userId: userData.id,
 				// Schema: `amount Decimal @db.Decimal(10,2)`.
 				// If I pass integer 12300 to Decimal(10,2), it might be interpreted as 12300.00.

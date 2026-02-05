@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
 
   const valid = p24.verifyNotification(body);
   if (!valid) {
-    await prisma.userData.updateMany({
+    await (prisma as any).userData.updateMany({
       where: { sid: body.sessionId },
       data: { status: 'failed' },
     });
@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
   });
 
   if (!verified) {
-    await prisma.userData.updateMany({
+    await (prisma as any).userData.updateMany({
       where: { sid: body.sessionId },
       data: { status: 'failed' },
     });
@@ -67,32 +67,29 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
 
-  await prisma.userData.updateMany({
+  await (prisma as any).userData.updateMany({
     where: { sid: body.sessionId },
     data: { status: 'paid' },
   }).catch(() => undefined);
 
   let userData: any = null;
   try {
-    userData = await prisma.userData.findFirst({
+    userData = await (prisma as any).userData.findFirst({
       where: { sid: body.sessionId },
     });
 
     if (userData) {
       // Check if order exists
-      const existing = await prisma.orders.findFirst({ where: { sid: userData.sid, payment_provider: 'Przelewy24' } });
+      const existing = await (prisma as any).orders.findFirst({ where: { userId: userData.id, payment_provider: 'P24' } });
       if (!existing) {
-        await prisma.orders.create({
+        await (prisma as any).orders.create({
           data: {
             item: userData.item,
-            name: userData.name,
-            email: userData.email,
             userId: userData.id,
-            sid: userData.sid,
             amount: Number(body.amount) / 100, // P24 amount is integer, e.g. 12300 for 123 PLN
             currency: market.currency || 'PLN',
             country: country,
-            payment_provider: 'Przelewy24',
+            payment_provider: 'P24',
           },
         });
       }
