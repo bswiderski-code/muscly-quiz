@@ -18,7 +18,8 @@ export async function GET(req: NextRequest) {
         email: true,
         amount: true,
         currency: true,
-        description: true,
+        currency: true,
+        item: true,
       },
     });
 
@@ -28,7 +29,7 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json({
       item_id: checkout.id,
-      item_name: checkout.description || 'workout',
+      item_name: checkout.item || 'workout',
       price: checkout.amount,
       currency: checkout.currency || 'PLN',
       amount: checkout.amount,

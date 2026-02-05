@@ -5,22 +5,21 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"] // Required to use specific DB schemas
 }
-
 
 datasource db {
   provider = "postgresql"
-  url = env("DATABASE_URL")
+  url      = env("DATABASE_URL")
+  schemas  = ["Musclepals"] // Defines the schema used
 }
 
-// New model for the provided fields.
-// Model name is PascalCase; map to the existing DB table name "training_plans".
 model TrainingPlan {
   id            Int      @id @default(autoincrement())
-  sid           String   @unique                              // session id
+  sid           String   @unique // session id
   amount        Float
-  description   String?
+  item          String?  // Renamed from "description"
   currency      String
   status        String
   name          String?
@@ -45,27 +44,32 @@ model TrainingPlan {
   duration      Int?
   pushups       String?
   pullups       String?
-  paymentId     String?
+  cardio        Boolean?
+  balance       String?
   createdAt     DateTime @default(now())
   paymenturl    String?
+  // paymentId removed
 
-  @@map("training_plans")
+  @@map("Training_Plans")
+  @@schema("Musclepals")
 }
 
 model Orders {
-  id              Int      @id @default(autoincrement())
-  item            String   // opis sprzedanego produktu, np. "raport"
-  name            String
-  email           String
-  checkoutId      Int      // id w tabeli checkoutu (tu: Raport_bmi.id), bez relacji FK
-  checkoutDB      String   // nazwa tabeli, np. "Raport_bmi"
-  sessionId       String
-  amount          Int
-  currency        String   // teraz "PLN"
-  country         String   // teraz "PL"
-  payment_provider String  // teraz "Przelewy24"
-  createdAt       DateTime @default(now())
-  paymentId       String   // dawny token
-  n8n_exec        String?  // może być null
-  deliveredAt     DateTime?
+  id               Int       @id @default(autoincrement())
+  item             String    // opis sprzedanego produktu, np. "raport"
+  name             String
+  email            String
+  checkoutId       Int       // id w tabeli checkoutu (tu: TrainingPlan.id), bez relacji FK
+  // checkoutDB removed
+  sid              String    // Renamed from "sessionId" to match TrainingPlan
+  amount           Int
+  currency         String    // teraz "PLN"
+  country          String    // teraz "PL"
+  payment_provider String    // teraz "Przelewy24"
+  createdAt        DateTime  @default(now())
+  // paymentId removed
+  n8n_exec         String?   // może być null
+  deliveredAt      DateTime?
+
+  @@schema("Musclepals")
 }

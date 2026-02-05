@@ -140,7 +140,7 @@ export async function POST(req: NextRequest) {
         sid: sessionId,
         // order.amount is in grosze (e.g. 123 for 1.23 PLN) — store as Float PLN
         amount: order.amount / 100,
-        description: description || 'workout', // use incoming description from frontend
+        item: description || 'workout', // use incoming description from frontend
         currency: String(order.currency),
         status: 'pending',
         name: name ?? '',
@@ -166,7 +166,6 @@ export async function POST(req: NextRequest) {
         pullups: (pullups as string) ?? null,
         weight: parsedWeight || null,
         height: parsedHeightCm || null,
-        paymentId,
         paymenturl: link,
       },
     });

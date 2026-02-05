@@ -161,7 +161,7 @@ export async function POST(req: Request) {
       data: {
         sid: sessionId,
         amount: amount,
-        description: description || 'workout',
+        item: description || 'workout',
         currency: String(safeCurrency).toUpperCase(),
         status: 'pending',
         name: name ?? '',
@@ -186,7 +186,6 @@ export async function POST(req: Request) {
         pullups: (pullups as string) ?? null,
         weight: parsedWeight || null,
         height: parsedHeightCm || null,
-        paymentId: session.id,
         paymenturl: session.url ?? null,
       },
     });

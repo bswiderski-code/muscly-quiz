@@ -158,7 +158,7 @@ export async function POST(req: NextRequest) {
 			data: {
 				sid: sessionId,
 				amount: totalAmount / 100,
-				description: description,
+				item: description,
 				currency: String(order.currencyCode),
 				status: 'pending',
 				name: name ?? '',
@@ -183,7 +183,6 @@ export async function POST(req: NextRequest) {
 				pullups: (pullups as string) ?? null,
 				weight: parsedWeight || null,
 				height: parsedHeightCm || null,
-				paymentId: orderId,
 				paymenturl: redirectUri,
 			},
 		});

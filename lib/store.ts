@@ -45,6 +45,9 @@ export type FunnelAnswers = {
   height_raw?: number
   weight_raw?: number
   weight_goal_raw?: number
+  cardio?: string // stored as 'yes'/'no' in Zustand, converted to boolean for DB
+  balance?: string
+  physique_goal?: string
 }
 
 type ByFunnel = Record<FunnelKey, Record<string, FunnelAnswers>>

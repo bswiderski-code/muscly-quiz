@@ -49,6 +49,8 @@ export async function POST(req: NextRequest) {
       duration: parseNumber(answers.duration),
       pushups: (answers.pushups as string) ?? null,
       pullups: (answers.pullups as string) ?? null,
+      cardio: answers.cardio === 'yes' ? true : answers.cardio === 'no' ? false : null,
+      balance: (answers.balance as string) ?? null,
     };
 
     // Upsert the training plan based on sid

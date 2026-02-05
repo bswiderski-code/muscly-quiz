@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
 
 	await prisma.trainingPlan.update({
 		where: { sid: sessionId },
-		data: { status: 'paid', paymentId: order?.orderId },
+		data: { status: 'paid' },
 	}).catch(() => undefined);
 
 	const checkout = await prisma.trainingPlan.findUnique({
@@ -80,8 +80,7 @@ export async function POST(req: NextRequest) {
 			amount: true,
 			currency: true,
 			sid: true,
-			paymentId: true,
-			description: true,
+			item: true,
 		},
 	});
 
@@ -93,8 +92,7 @@ export async function POST(req: NextRequest) {
 	// Idempotency guard: PayU may retry notifications.
 	const existingOrder = await prisma.orders.findFirst({
 		where: {
-			checkoutDB: 'training_plans',
-			sessionId: checkout.sid,
+			sid: checkout.sid,
 			payment_provider: 'PayU',
 		},
 		select: { id: true },
@@ -108,17 +106,15 @@ export async function POST(req: NextRequest) {
 	try {
 		await prisma.orders.create({
 			data: {
-				item: checkout.description ?? 'workout',
+				item: checkout.item ?? 'workout',
 				name: checkout.name ?? '',
 				email: checkout.email ?? '',
 				checkoutId: checkout.id,
-				checkoutDB: 'training_plans',
-				sessionId: checkout.sid,
+				sid: checkout.sid,
 				amount: Math.round(checkout.amount * 100),
 				currency: checkout.currency || market.currency || 'PLN',
 				country: country,
 				payment_provider: 'PayU',
-				paymentId: checkout.paymentId ?? order?.orderId ?? '',
 			},
 		});
 	} catch (e) {

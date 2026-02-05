@@ -82,25 +82,22 @@ export async function POST(req: NextRequest) {
         amount: true,
         currency: true,
         sid: true,
-        paymentId: true,
-        description: true,
+        item: true,
       },
     });
 
     if (checkout) {
       await prisma.orders.create({
         data: {
-          item: checkout.description ?? 'workout',
+          item: checkout.item ?? 'workout',
           name: checkout.name ?? '',
           email: checkout.email ?? '',
           checkoutId: checkout.id,
-          checkoutDB: 'training_plans',
-          sessionId: checkout.sid,
+          sid: checkout.sid,
           amount: Math.round(checkout.amount * 100),
           currency: checkout.currency || market.currency || 'PLN',
           country: country,
           payment_provider: 'Przelewy24',
-          paymentId: checkout.paymentId ?? String(body.orderId ?? ''),
         },
       });
     }

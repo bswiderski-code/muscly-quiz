@@ -61,17 +61,15 @@ export async function processStripeSession(
         // 3. Create the Order (since we just transitioned to 'paid')
         const order = await tx.orders.create({
             data: {
-                item: checkout.description ?? 'workout',
+                item: checkout.item ?? 'workout',
                 name: checkout.name ?? '',
                 email: checkout.email ?? '',
                 checkoutId: checkout.id,
-                checkoutDB: 'training_plans',
-                sessionId: checkout.sid,
+                sid: checkout.sid,
                 amount: Math.round(checkout.amount * 100),
                 currency: checkout.currency ?? 'USD',
                 country: country,
                 payment_provider: 'Stripe',
-                paymentId: checkout.paymentId ?? session.id,
             },
         });
 
