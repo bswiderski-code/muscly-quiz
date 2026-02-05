@@ -4,6 +4,7 @@ import { PayU } from '@ingameltd/payu';
 import { sendToN8n } from '@/lib/n8n';
 import { getCountryForHost, getMarketForHost } from '@/i18n/config';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
+import { v4 as uuidv4 } from 'uuid';
 
 import { getPayUCredentials } from '@/config/credentials';
 
@@ -106,6 +107,7 @@ export async function POST(req: NextRequest) {
 				currency: order.currencyCode || market.currency || 'PLN',
 				country: country,
 				payment_provider: 'PayU',
+				pdfToken: uuidv4(),
 			},
 		});
 	} catch (e) {

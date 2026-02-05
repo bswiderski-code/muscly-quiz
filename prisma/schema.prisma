@@ -103,6 +103,7 @@ model Orders {
   delivered        Boolean   @default(false)
   currency         String
   payment_provider String
+  pdfToken         String?   @unique
 
   @@map("orders")
 }

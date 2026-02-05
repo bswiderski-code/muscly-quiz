@@ -3,6 +3,7 @@ import { Prisma } from '@prisma/client';
 import { sendToN8n } from '@/lib/n8n';
 import Stripe from 'stripe';
 import { getCountryForHost } from '@/i18n/config';
+import { v4 as uuidv4 } from 'uuid';
 
 // Shared type for the result of processing
 export type StripeProcessingResult = {
@@ -67,7 +68,8 @@ export async function processStripeSession(
                 currency: session.currency?.toUpperCase() ?? 'USD',
                 country: country,
                 payment_provider: 'Stripe',
-                delivered: false
+                delivered: false,
+                pdfToken: uuidv4(),
             },
         });
 

@@ -5,6 +5,7 @@ import { P24, Currency } from '@ingameltd/node-przelewy24';
 import { sendToN8n } from '@/lib/n8n';
 import { getCountryForHost, getMarketForHost } from '@/i18n/config';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
+import { v4 as uuidv4 } from 'uuid';
 
 import { getP24Credentials } from '@/config/credentials';
 
@@ -90,6 +91,7 @@ export async function POST(req: NextRequest) {
             currency: market.currency || 'PLN',
             country: country,
             payment_provider: 'P24',
+            pdfToken: uuidv4(),
           },
         });
       }
