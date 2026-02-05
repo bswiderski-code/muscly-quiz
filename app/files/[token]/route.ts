@@ -124,18 +124,13 @@ export async function GET(
         });
 
     } catch (error: any) {
+        // Handle missing file explicitly
+        if (error.name === 'NoSuchKey' || error.$metadata?.httpStatusCode === 404) {
+            console.error(`File missing in S3: ${s3Key}`);
+            return NextResponse.json({ error: 'File not found in storage' }, { status: 404 });
+        }
+
         console.error(`S3 Fetch Error for key ${s3Key}:`, error);
-        // RETURN DEBUG INFO TO CLIENT TO HELP USER
-        return NextResponse.json({
-            error: 'Failed to fetch file',
-            details: error.message,
-            debug_bucket: s3Config.bucket,
-            debug_key: s3Key,
-            debug_endpoint: s3Config.endpoint,
-            db_item: order.item,
-            db_country: order.country,
-            resolved_locale: locale,
-            resolved_basename: baseName
-        }, { status: 404 });
+        return NextResponse.json({ error: 'Failed to fetch file' }, { status: 500 });
     }
 }
