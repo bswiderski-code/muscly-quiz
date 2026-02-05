@@ -17,11 +17,11 @@ const ITEM_TO_KEY: Record<string, string> = {
 };
 
 const ITEM_TO_DIR: Record<string, string> = {
-    workout_solo: 'training-plan',
-    workout_bundle: 'training-plan',
+    workout_solo: 'training_plan',
+    workout_bundle: 'training_plan',
     raport: 'diet',
-    calisthenics_solo: 'training-plan',
-    calisthenics_bundle: 'training-plan',
+    calisthenics_solo: 'training_plan',
+    calisthenics_bundle: 'training_plan',
 };
 
 export async function GET(
@@ -102,6 +102,7 @@ export async function GET(
         const response = await s3.send(command);
 
         if (!response.Body) {
+            console.error(`S3 response body is empty for key: ${s3Key}`);
             return NextResponse.json({ error: 'Empty file' }, { status: 500 });
         }
 
@@ -109,7 +110,6 @@ export async function GET(
 
         const headers = new Headers();
         headers.set('Content-Type', 'application/pdf');
-        // Disposition: inline ensures it opens in browser
         headers.set('Content-Disposition', `inline; filename="${downloadName}"`);
         if (response.ContentLength) {
             headers.set('Content-Length', response.ContentLength.toString());
@@ -121,7 +121,7 @@ export async function GET(
         });
 
     } catch (error: any) {
-        console.error(`S3 Fetch Error for key ${s3Key}:`, error);
+        console.error(`S3 Fetch Error for key ${s3Key}:`, error.message);
         return NextResponse.json({ error: 'Failed to fetch file' }, { status: 404 });
     }
 }
