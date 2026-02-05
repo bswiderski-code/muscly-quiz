@@ -29,13 +29,13 @@ export async function POST(req: NextRequest) {
 
   const valid = p24.verifyNotification(body);
   if (!valid) {
-    await prisma.trainingPlan.update({
+    await prisma.userData.updateMany({
       where: { sid: body.sessionId },
       data: { status: 'failed' },
     });
 
     await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
-      checkoutDB: 'training_plans',
+      checkoutDB: 'user_data',
       sessionId: body.sessionId,
       event: 'checkout.succeeded',
       status: 'signature_invalid',
@@ -52,13 +52,13 @@ export async function POST(req: NextRequest) {
   });
 
   if (!verified) {
-    await prisma.trainingPlan.update({
+    await prisma.userData.updateMany({
       where: { sid: body.sessionId },
       data: { status: 'failed' },
     });
 
     await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
-      checkoutDB: 'training_plans',
+      checkoutDB: 'user_data',
       sessionId: body.sessionId,
       event: 'checkout.succeeded',
       status: 'transaction_verification_failed',
@@ -67,51 +67,53 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
 
-  await prisma.trainingPlan.update({
+  await prisma.userData.updateMany({
     where: { sid: body.sessionId },
     data: { status: 'paid' },
-  });
+  }).catch(() => undefined);
 
+  let userData: any = null;
   try {
-    const checkout = await prisma.trainingPlan.findUnique({
+    userData = await prisma.userData.findFirst({
       where: { sid: body.sessionId },
-      select: {
-        id: true,
-        name: true,
-        email: true,
-        amount: true,
-        currency: true,
-        sid: true,
-        item: true,
-      },
     });
 
-    if (checkout) {
-      await prisma.orders.create({
-        data: {
-          item: checkout.item ?? 'workout',
-          name: checkout.name ?? '',
-          email: checkout.email ?? '',
-          checkoutId: checkout.id,
-          sid: checkout.sid,
-          amount: Math.round(checkout.amount * 100),
-          currency: checkout.currency || market.currency || 'PLN',
-          country: country,
-          payment_provider: 'Przelewy24',
-        },
-      });
+    if (userData) {
+      // Check if order exists
+      const existing = await prisma.orders.findFirst({ where: { sid: userData.sid, payment_provider: 'Przelewy24' } });
+      if (!existing) {
+        await prisma.orders.create({
+          data: {
+            item: userData.item,
+            name: userData.name,
+            email: userData.email,
+            userId: userData.id,
+            sid: userData.sid,
+            amount: Number(body.amount) / 100, // P24 amount is integer, e.g. 12300 for 123 PLN
+            currency: market.currency || 'PLN',
+            country: country,
+            payment_provider: 'Przelewy24',
+          },
+        });
+      }
     }
   } catch (e) {
     console.error('Failed to create Orders row for session', body.sessionId, e);
   }
 
   await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
-    checkoutDB: 'training_plans',
+    checkoutDB: 'user_data',
     sessionId: body.sessionId,
     event: 'checkout.succeeded',
     status: 'paid',
     country: country,
+    item: userData?.item,
+    email: userData?.email,
+    name: userData?.name,
+    amount: Number(body.amount) / 100,
+    currency: market.currency,
   });
 
   return NextResponse.json({ ok: true });
 }
+

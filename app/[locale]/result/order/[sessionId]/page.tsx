@@ -151,7 +151,7 @@ const ZamowieniePageContent = () => {
     logoSrc: `/${locale}/../vectors/logo.svg`,
     logoHeight: 50,
     backButtonImage: `/btns/${locale}/back-to-home-btn.svg`,
-    heroSuccessSrc: `/${locale}/sample-guy.svg`
+    heroSuccessSrc: `/vectors/t_eagle.svg`
   };
 
   if (status === 'loading' || status === 'pending') {

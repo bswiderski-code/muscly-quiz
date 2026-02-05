@@ -66,25 +66,16 @@ export async function POST(req: NextRequest) {
 		return NextResponse.json({ ok: true, status: order?.status ?? 'unknown' });
 	}
 
-	await prisma.trainingPlan.update({
+	await prisma.userData.updateMany({
 		where: { sid: sessionId },
 		data: { status: 'paid' },
 	}).catch(() => undefined);
 
-	const checkout = await prisma.trainingPlan.findUnique({
+	const userData = await prisma.userData.findFirst({
 		where: { sid: sessionId },
-		select: {
-			id: true,
-			name: true,
-			email: true,
-			amount: true,
-			currency: true,
-			sid: true,
-			item: true,
-		},
 	});
 
-	if (!checkout) {
+	if (!userData) {
 		// Payment completed but checkout row missing; return 500 so PayU retries.
 		return NextResponse.json({ ok: false, error: 'Checkout not found' }, { status: 500 });
 	}
@@ -92,7 +83,7 @@ export async function POST(req: NextRequest) {
 	// Idempotency guard: PayU may retry notifications.
 	const existingOrder = await prisma.orders.findFirst({
 		where: {
-			sid: checkout.sid,
+			sid: userData.sid,
 			payment_provider: 'PayU',
 		},
 		select: { id: true },
@@ -106,13 +97,15 @@ export async function POST(req: NextRequest) {
 	try {
 		await prisma.orders.create({
 			data: {
-				item: checkout.item ?? 'workout',
-				name: checkout.name ?? '',
-				email: checkout.email ?? '',
-				checkoutId: checkout.id,
-				sid: checkout.sid,
-				amount: Math.round(checkout.amount * 100),
-				currency: checkout.currency || market.currency || 'PLN',
+				item: userData.item,
+				name: userData.name,
+				email: userData.email,
+				userId: userData.id,
+				// Schema: `amount Decimal @db.Decimal(10,2)`.
+				// If I pass integer 12300 to Decimal(10,2), it might be interpreted as 12300.00.
+				// I should pass 123.00.
+				amount: order.totalAmount / 100,
+				currency: order.currencyCode || market.currency || 'PLN',
 				country: country,
 				payment_provider: 'PayU',
 			},
@@ -125,12 +118,18 @@ export async function POST(req: NextRequest) {
 	}
 
 	await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
-		checkoutDB: 'training_plans',
+		checkoutDB: 'user_data',
 		sessionId,
 		event: 'checkout.succeeded',
 		status: 'paid',
 		country: country,
+		item: userData.item,
+		email: userData.email,
+		name: userData.name,
+		amount: order.totalAmount / 100,
+		currency: order.currencyCode,
 	});
 
 	return NextResponse.json({ ok: true });
 }
+

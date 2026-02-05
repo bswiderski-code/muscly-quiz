@@ -5,71 +5,132 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["multiSchema"] // Required to use specific DB schemas
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  schemas  = ["Musclepals"] // Defines the schema used
 }
 
-model TrainingPlan {
-  id            Int      @id @default(autoincrement())
-  sid           String   @unique // session id
-  amount        Float
-  item          String?  // Renamed from "description"
-  currency      String
-  status        String
-  name          String?
-  email         String?
-  age           Int?
-  gender        String?
-  activity      String?
-  bmi           Float?
-  tdee          Int?
-  bodyfat       String?
-  diet_goal     String?
-  frequency     Int?
-  experience    String?
-  location      String?
-  priority      String?
-  equipment     String?
-  sleep         String?
-  fitness_level Int?
-  difficulty    String?
-  weight        Float?
-  height        Float?
-  duration      Int?
-  pushups       String?
-  pullups       String?
-  cardio        Boolean?
-  balance       String?
-  createdAt     DateTime @default(now())
-  paymenturl    String?
-  // paymentId removed
-
-  @@map("Training_Plans")
-  @@schema("Musclepals")
+// ==================== ENUMS ====================
+enum OrderItem {
+  workout_solo
+  workout_bundle
+  raport
+  calisthenics_solo
+  calisthenics_bundle
 }
 
+enum UserStatus {
+  paid
+  pending
+  failed
+}
+
+enum Gender {
+  M
+  F
+}
+
+enum ActivityLevel {
+  low_activity
+  some_activity
+  light_training
+  regular_training
+  hard_work
+}
+
+enum DietGoal {
+  bulk
+  cut
+}
+
+enum Experience {
+  none
+  just_started
+  some_experience
+  advanced
+}
+
+enum Difficulty {
+  motivation
+  effects
+  insecurity
+  diet
+  no_difficulty
+}
+
+enum Location {
+  gym
+  house
+}
+
+enum BalancePriority {
+  balance
+  prioritized
+  onlyupper
+  onlylower
+}
+
+// ==================== ORDERS ====================
 model Orders {
   id               Int       @id @default(autoincrement())
-  item             String    // opis sprzedanego produktu, np. "raport"
-  name             String
-  email            String
-  checkoutId       Int       // id w tabeli checkoutu (tu: TrainingPlan.id), bez relacji FK
-  // checkoutDB removed
-  sid              String    // Renamed from "sessionId" to match TrainingPlan
-  amount           Int
-  currency         String    // teraz "PLN"
-  country          String    // teraz "PL"
-  payment_provider String    // teraz "Przelewy24"
+  userId           Int? // relation to user_data
+  user             UserData? @relation("UserOrders", fields: [userId], references: [id])
+  item             OrderItem
+  country          String
   createdAt        DateTime  @default(now())
-  // paymentId removed
-  n8n_exec         String?   // może być null
-  deliveredAt      DateTime?
+  amount           Decimal   @db.Decimal(10, 2)
+  deliveredAt      Boolean   @default(false)
+  currency         String
+  payment_provider String
 
-  @@schema("Musclepals")
+  @@map("orders")
+}
+
+// ==================== USER DATA ====================
+model UserData {
+  id        Int            @id @default(autoincrement()) // userId
+  sid       String
+  status    UserStatus
+  name      String
+  email     String
+  item      OrderItem
+  country   String? // two letters code
+  createdAt DateTime       @default(now()) // Europe/Warsaw timezone must be handled in app layer
+  orders    Orders[]       @relation("UserOrders")
+  health    HealthDetails?
+
+  @@map("user_data")
+}
+
+// ==================== HEALTH DETAILS ====================
+model HealthDetails {
+  userId        Int             @id
+  user          UserData        @relation(fields: [userId], references: [id])
+  gender        Gender
+  activity      ActivityLevel
+  bmi           Float
+  tdee          Float
+  bodyfat       String
+  diet_goal     DietGoal
+  frequency     Int
+  experience    Experience
+  location      Location
+  priority      String
+  equipment     String
+  sleep         String
+  fitness_level Int // 1 to 10
+  difficulty    Difficulty
+  weight        Float
+  height        Float
+  duration      Int
+  pushups       String
+  pullups       String
+  cardio        Boolean
+  balance       BalancePriority
+  age           Int
+
+  @@map("health_details")
 }

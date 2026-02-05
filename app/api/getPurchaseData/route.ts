@@ -10,33 +10,48 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const checkout = await prisma.trainingPlan.findUnique({
+    const userData = await (prisma as any).userData.findFirst({
       where: { sid: sessionId },
-      select: {
-        id: true,
-        name: true,
-        email: true,
-        amount: true,
-        currency: true,
-        item: true,
-      },
     });
 
-    if (!checkout) {
+    if (!userData) {
       return NextResponse.json({ error: 'Purchase data not found' }, { status: 404 });
     }
 
+    const order = await (prisma as any).orders.findFirst({
+      where: { userId: userData.id },
+    });
+
+    if (!order) {
+      // Only UserData exists (pending payment or order creation failed)
+      // We might not have amount/currency here if we rely on Orders for it.
+      // However, the frontend might need this to display "You bought X".
+      // If order is missing, we can partial return or return what we have.
+      // But typically this endpoint is called on the Thank You page.
+      // If status is paid, order should exist.
+      return NextResponse.json({
+        item_id: userData.id,
+        item_name: userData.item || 'workout',
+        price: 0, // Unknown without order
+        currency: 'PLN', // Default
+        amount: 0,
+        name: userData.name,
+        email: userData.email,
+      });
+    }
+
     return NextResponse.json({
-      item_id: checkout.id,
-      item_name: checkout.item || 'workout',
-      price: checkout.amount,
-      currency: checkout.currency || 'PLN',
-      amount: checkout.amount,
-      name: checkout.name,
-      email: checkout.email,
+      item_id: userData.id,
+      item_name: userData.item || 'workout',
+      price: Number(order.amount), // Convert Decimal to number
+      currency: order.currency || 'PLN',
+      amount: Number(order.amount),
+      name: userData.name,
+      email: userData.email,
     });
   } catch (error) {
     console.error('Error fetching purchase data:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
+

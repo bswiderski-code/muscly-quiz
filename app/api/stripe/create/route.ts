@@ -3,11 +3,12 @@ import Stripe from 'stripe';
 import { randomUUID } from 'crypto';
 import { prisma } from '@/lib/prisma';
 import { getBaseUrl, getRealBaseUrl } from '@/lib/requestBaseUrl';
-import { getCountryForHost, getMarketForHost } from '@/i18n/config';
+import { getCountryForHost, getMarketForHost, getMarketForLocale, getCountryForLocale } from '@/i18n/config';
 import { normalizeGenderMF } from '@/lib/gender/normalizeGenderMF';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 
 import { getStripeCredentials } from '@/config/credentials';
+import { Prisma } from '@prisma/client';
 
 const isSandbox = process.env.STRIPE_SANDBOX === 'true';
 const creds = getStripeCredentials(isSandbox);
@@ -19,8 +20,6 @@ const stripe = new Stripe(creds.secretKey, {
 export async function POST(req: Request) {
   // Extract host for market determination
   const host = getIncomingHost(req.headers);
-  const market = getMarketForHost(host);
-  const country = getCountryForHost(host);
 
   try {
     const body = await req.json();
@@ -54,7 +53,13 @@ export async function POST(req: Request) {
       weight_raw,
       weight_goal_raw,
       height_raw,
+      cardio,
+      balance,
+      locale,
     } = body;
+
+    const market = locale ? getMarketForLocale(locale as any) : getMarketForHost(host);
+    const country = locale ? getCountryForLocale(locale as any) : getCountryForHost(host);
 
     // Helper to safely parse numbers
     const parseNumber = (val: unknown) => {
@@ -157,37 +162,47 @@ export async function POST(req: Request) {
       }
     });
 
-    await prisma.trainingPlan.create({
-      data: {
-        sid: sessionId,
-        amount: amount,
-        item: description || 'workout',
-        currency: String(safeCurrency).toUpperCase(),
-        status: 'pending',
-        name: name ?? '',
-        email,
-        age: Math.round(parsedAge) || null,
-        gender: genderMF,
-        activity: (activity as string) ?? null,
-        bmi: bmi || null,
-        tdee: Number.isFinite(tdee) && tdee > 0 ? Math.round(tdee) : null,
-        bodyfat: (bodyfat as string) ?? null,
-        diet_goal: (diet_goal as string) ?? null,
-        frequency: frequency ? Math.round(parseNumber(frequency)) : null,
-        experience: (experience || null) as string,
-        priority: (priority as string) ?? null,
-        location: (location as string) ?? null,
-        equipment: (equipment as string) ?? null,
-        sleep: (sleep as string) ?? null,
-        fitness_level: fitness ? Math.round(parseNumber(fitness)) : null,
-        difficulty: (difficulty as string) ?? null,
-        duration: duration ? Math.round(parseNumber(duration)) : null,
-        pushups: (pushups as string) ?? null,
-        pullups: (pullups as string) ?? null,
-        weight: parsedWeight || null,
-        height: parsedHeightCm || null,
-        paymenturl: session.url ?? null,
-      },
+    await prisma.$transaction(async (tx: any) => {
+      // Create UserData associated with this checkout session
+      const userData = await tx.userData.create({
+        data: {
+          sid: sessionId,
+          status: 'pending',
+          name: name ?? '',
+          email: email,
+          item: description.includes('bundle') ? 'workout_bundle' : 'workout_solo', // simple heuristic, refine if needed
+          country: country,
+        }
+      });
+
+      // Create HealthDetails
+      await tx.healthDetails.create({
+        data: {
+          userId: userData.id,
+          gender: genderMF === 'M' ? 'M' : 'F',
+          activity: (activity as any) ?? 'some_activity',
+          bmi: bmi || 0,
+          tdee: Number.isFinite(tdee) && tdee > 0 ? Math.round(tdee) : 0,
+          bodyfat: (bodyfat as string) ?? '',
+          diet_goal: (diet_goal as any) ?? 'cut',
+          frequency: frequency ? Math.round(parseNumber(frequency)) : 3,
+          experience: (experience as any) ?? 'just_started',
+          location: (location as any) ?? 'house',
+          priority: (priority as string) ?? '',
+          equipment: (equipment as string) ?? '',
+          sleep: (sleep as string) ?? '',
+          fitness_level: fitness ? Math.round(parseNumber(fitness)) : 5,
+          difficulty: (difficulty as any) ?? 'no_difficulty',
+          weight: parsedWeight || 0,
+          height: parsedHeightCm || 0,
+          duration: duration ? Math.round(parseNumber(duration)) : 30,
+          pushups: (pushups as string) ?? '0',
+          pullups: (pullups as string) ?? '0',
+          cardio: cardio === true || cardio === 'true',
+          balance: (balance as any) ?? 'balance',
+          age: Math.round(parsedAge) || 0,
+        }
+      });
     });
 
     return NextResponse.json({ url: session.url });
@@ -197,3 +212,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 }
+

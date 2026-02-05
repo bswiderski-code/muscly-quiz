@@ -65,6 +65,12 @@ export const getCountryForMarket = (market: MarketCode): string => {
   return marketToCountryMap[market] || 'US';
 };
 
+export const getCountryForLocale = (locale: Locale): string => {
+  const market = localeMarketMap[locale] || localeMarketMap[defaultLocale];
+  return getCountryForMarket(market.market);
+};
+
 export const getCountryForHost = (host: string | null | undefined): string => {
-  return 'US'; // Fallback
+  const locale = getLocaleForHost(host);
+  return getCountryForLocale(locale);
 };

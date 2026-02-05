@@ -9,8 +9,8 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ success: false, error: 'Missing sid' }, { status: 400 });
   }
 
-  const raport = await prisma.trainingPlan.findUnique({
-    where: { sid }, // Replace sessionId with sid
+  const raport = await (prisma as any).userData.findFirst({
+    where: { sid },
     select: { status: true },
   });
 

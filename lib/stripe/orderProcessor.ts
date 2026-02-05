@@ -8,7 +8,7 @@ import { getCountryForHost } from '@/i18n/config';
 export type StripeProcessingResult = {
     processed: boolean;
     order?: any;
-    checkout?: any;
+    userData?: any;
     status: 'paid' | 'already_paid' | 'failed' | 'ignored';
 };
 
@@ -31,7 +31,7 @@ export async function processStripeSession(
     const transactionResult = await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
         // 1. Try to update status from !paid -> paid.
         // If this returns count: 0, either the record doesn't exist OR it's already paid.
-        const updateResult = await tx.trainingPlan.updateMany({
+        const updateResult = await tx.userData.updateMany({
             where: {
                 sid: sessionId,
                 status: { not: 'paid' },
@@ -39,13 +39,12 @@ export async function processStripeSession(
             data: { status: 'paid' },
         });
 
-        // 2. Fetch the plan details to verify existence and get data for Order
-        // 2. Fetch the plan details to verify existence and get data for Order
-        const checkout = await tx.trainingPlan.findUnique({
+        // 2. Fetch the userData to verify existence and get data for Order
+        const userData = await tx.userData.findFirst({
             where: { sid: sessionId },
         });
 
-        if (!checkout) {
+        if (!userData) {
             // Plan missing entirely
             return null;
         }
@@ -55,25 +54,26 @@ export async function processStripeSession(
         // but typically if it's 'paid', the order should be there.
         if (updateResult.count === 0) {
             // It was already paid. Let's see if we need to return 'already_paid'
-            return { action: 'already_paid', checkout };
+            return { action: 'already_paid', userData };
         }
 
         // 3. Create the Order (since we just transitioned to 'paid')
+        // UserData doesn't have amount/currency, so we get it from the session
         const order = await tx.orders.create({
             data: {
-                item: checkout.item ?? 'workout',
-                name: checkout.name ?? '',
-                email: checkout.email ?? '',
-                checkoutId: checkout.id,
-                sid: checkout.sid,
-                amount: Math.round(checkout.amount * 100),
-                currency: checkout.currency ?? 'USD',
+                item: userData.item,
+                name: userData.name,
+                email: userData.email,
+                userId: userData.id,
+                amount: new Prisma.Decimal((session.amount_total ?? 0) / 100),
+                currency: session.currency?.toUpperCase() ?? 'USD',
                 country: country,
                 payment_provider: 'Stripe',
+                deliveredAt: false
             },
         });
 
-        return { action: 'processed', order, checkout };
+        return { action: 'processed', order, userData };
     });
 
     if (!transactionResult) {
@@ -82,18 +82,23 @@ export async function processStripeSession(
     }
 
     if (transactionResult.action === 'already_paid') {
-        return { processed: true, status: 'already_paid', checkout: transactionResult.checkout };
+        return { processed: true, status: 'already_paid', userData: transactionResult.userData };
     }
 
     // If we processed it, send the webhook
     if (transactionResult.action === 'processed') {
         try {
             await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
-                checkoutDB: 'training_plans',
+                checkoutDB: 'user_data',
                 sessionId: sessionId,
                 event: 'checkout.succeeded',
                 status: 'paid',
                 country: country,
+                item: transactionResult.userData?.item,
+                email: transactionResult.userData?.email,
+                name: transactionResult.userData?.name,
+                amount: (session.amount_total ?? 0) / 100,
+                currency: session.currency?.toUpperCase(),
                 usedMetric: session.metadata?.usedMetric,
                 waga_raw: session.metadata?.waga_raw,
                 waga_cel_raw: session.metadata?.waga_cel_raw,
@@ -107,9 +112,10 @@ export async function processStripeSession(
             processed: true,
             status: 'paid',
             order: transactionResult.order,
-            checkout: transactionResult.checkout
+            userData: transactionResult.userData
         };
     }
 
     return { processed: false, status: 'failed' };
 }
+

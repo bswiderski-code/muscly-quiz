@@ -13,7 +13,7 @@ export const getCachedResultStats = unstable_cache(
         const since = new Date(Date.now() - 24 * 60 * 60 * 1000);
 
         const [recentCount, totalCount] = await Promise.all([
-            prisma.trainingPlan.count({
+            prisma.userData.count({
                 where: {
                     status: 'paid',
                     createdAt: {
@@ -21,7 +21,7 @@ export const getCachedResultStats = unstable_cache(
                     },
                 },
             }),
-            prisma.trainingPlan.count({
+            prisma.userData.count({
                 where: {
                     status: 'paid',
                 },

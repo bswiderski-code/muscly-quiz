@@ -161,6 +161,7 @@ export default function StandardResultPage({ faqSection }: StandardResultPagePro
         body: JSON.stringify({
           sid: sessionId,
           funnel: resolvedFunnel,
+          locale,
           ...answers,
         }),
       }).catch((err) => console.error('Failed to auto-save funnel data:', err));

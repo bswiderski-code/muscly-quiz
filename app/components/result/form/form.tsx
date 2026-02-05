@@ -145,6 +145,7 @@ export default function CheckoutForm({
       name,
       email,
       sessionId,
+      locale,
     });
   }
 
