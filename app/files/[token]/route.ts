@@ -30,8 +30,104 @@ export async function GET(
 ) {
     const { token } = await context.params;
 
+    // Helper to generate HTML error response
+    const returnErrorHtml = (locale: string = 'en', translations: any = null) => {
+        let title = 'Problem loading your data.';
+        let description = 'If the issue persists, please contact us at support@musclepals.com';
+
+        // Try to use translations if available
+        if (translations && translations.ResultPage) {
+            title = translations.ResultPage.loadingErrorTitle || title;
+            if (translations.ResultPage.loadingErrorHtml) {
+                const email = 'support@musclepals.com';
+                description = translations.ResultPage.loadingErrorHtml.replace(/{email}/g, email);
+            }
+        } else {
+            // Fallback to loading en.json if translations not provided
+            try {
+                const enPath = path.join(process.cwd(), 'i18n', 'translations', 'en.json');
+                if (fs.existsSync(enPath)) {
+                    const enTrans = JSON.parse(fs.readFileSync(enPath, 'utf8'));
+                    if (enTrans.ResultPage) {
+                        title = enTrans.ResultPage.loadingErrorTitle || title;
+                        if (enTrans.ResultPage.loadingErrorHtml) {
+                            const email = 'support@musclepals.com';
+                            description = enTrans.ResultPage.loadingErrorHtml.replace(/{email}/g, email);
+                        }
+                    }
+                }
+            } catch (e) {
+                // Ignore fallback error
+            }
+        }
+
+        const html = `
+        <!DOCTYPE html>
+        <html lang="${locale}">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>${title}</title>
+            <style>
+                body {
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                    background-color: #f9fafb;
+                    color: #111827;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100vh;
+                    margin: 0;
+                    padding: 20px;
+                    text-align: center;
+                }
+                .container {
+                    background: white;
+                    padding: 40px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                    max-width: 500px;
+                    width: 100%;
+                }
+                h1 {
+                    font-size: 24px;
+                    font-weight: 700;
+                    margin-bottom: 16px;
+                    margin-top: 0;
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 1.5;
+                    color: #4b5563;
+                }
+                a {
+                    color: #2563eb;
+                    text-decoration: underline;
+                }
+                .icon {
+                    margin-bottom: 24px;
+                    font-size: 48px;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="icon">⚠️</div>
+                <h1>${title}</h1>
+                <p>${description}</p>
+            </div>
+        </body>
+        </html>
+        `;
+
+        return new NextResponse(html, {
+            status: 404, // Using 404 to indicate not found/error but displaying friendly UI
+            headers: { 'Content-Type': 'text/html; charset=utf-8' },
+        });
+    };
+
     if (!token) {
-        return NextResponse.json({ error: 'Missing token' }, { status: 400 });
+        return returnErrorHtml('en');
     }
 
     const order = await prisma.orders.findUnique({
@@ -39,7 +135,7 @@ export async function GET(
     });
 
     if (!order) {
-        return NextResponse.json({ error: 'File not found or invalid token' }, { status: 404 });
+        return returnErrorHtml('en');
     }
 
     // Determine locale from country
@@ -47,12 +143,14 @@ export async function GET(
     // Use the stored country (e.g., 'PL', 'US')
     const country = (order.country || 'PL').toUpperCase();
 
-    // Load translation to get base filename
+    // Load translation to get base filename and for error page
     let baseName = 'File';
+    let translations: any = null;
+
     try {
         const filePath = path.join(process.cwd(), 'i18n', 'translations', `${locale}.json`);
         if (fs.existsSync(filePath)) {
-            const translations = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            translations = JSON.parse(fs.readFileSync(filePath, 'utf8'));
             const key = ITEM_TO_KEY[order.item];
             if (key && translations.PdfFilenames && translations.PdfFilenames[key]) {
                 baseName = translations.PdfFilenames[key];
@@ -83,7 +181,7 @@ export async function GET(
     const s3Config = PAYMENT_CREDENTIALS.s3;
     if (!s3Config.credentials.accessKeyId || !s3Config.credentials.secretAccessKey) {
         console.error('S3 credentials missing');
-        return NextResponse.json({ error: 'File not available' }, { status: 500 });
+        return returnErrorHtml(locale, translations);
     }
 
     const s3 = new S3Client({
@@ -106,7 +204,7 @@ export async function GET(
 
         if (!response.Body) {
             console.error(`S3 response body is empty for key: ${s3Key}`);
-            return NextResponse.json({ error: 'Empty file' }, { status: 500 });
+            return returnErrorHtml(locale, translations);
         }
 
         const stream = response.Body.transformToWebStream();
@@ -127,10 +225,10 @@ export async function GET(
         // Handle missing file explicitly
         if (error.name === 'NoSuchKey' || error.$metadata?.httpStatusCode === 404) {
             console.error(`File missing in S3: ${s3Key}`);
-            return NextResponse.json({ error: 'File not found in storage' }, { status: 404 });
+            return returnErrorHtml(locale, translations);
         }
 
         console.error(`S3 Fetch Error for key ${s3Key}:`, error);
-        return NextResponse.json({ error: 'Failed to fetch file' }, { status: 500 });
+        return returnErrorHtml(locale, translations);
     }
 }
