@@ -12,6 +12,8 @@ const sendToN8n = async <T extends Record<string, unknown>>(url: string, event: 
   let signature = '';
   if (secret) {
     signature = crypto.createHmac('sha256', secret).update(body).digest('hex');
+  } else {
+    console.warn('N8N_WEBHOOK_SECRET is not set, webhook will not be signed.');
   }
 
   // krótkie połączenie: nie blokujemy głównej ścieżki
@@ -24,7 +26,7 @@ const sendToN8n = async <T extends Record<string, unknown>>(url: string, event: 
     };
 
     if (signature) {
-      headers['x-signature'] = signature;
+      headers['x-n8n-signature'] = signature;
     }
 
     await fetch(url, {
