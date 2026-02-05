@@ -20,17 +20,23 @@ enum OrderItem {
   raport
   calisthenics_solo
   calisthenics_bundle
+
+  @@map("order_item")
 }
 
 enum UserStatus {
   paid
   pending
   failed
+
+  @@map("user_status")
 }
 
 enum Gender {
   M
   F
+
+  @@map("gender")
 }
 
 enum ActivityLevel {
@@ -39,11 +45,15 @@ enum ActivityLevel {
   light_training
   regular_training
   hard_work
+
+  @@map("activity_level")
 }
 
 enum DietGoal {
   bulk
   cut
+
+  @@map("diet_goal")
 }
 
 enum Experience {
@@ -51,6 +61,8 @@ enum Experience {
   just_started
   some_experience
   advanced
+
+  @@map("experience")
 }
 
 enum Difficulty {
@@ -59,11 +71,15 @@ enum Difficulty {
   insecurity
   diet
   no_difficulty
+
+  @@map("difficulty")
 }
 
 enum Location {
   gym
   house
+
+  @@map("location")
 }
 
 enum BalancePriority {
@@ -71,6 +87,8 @@ enum BalancePriority {
   prioritized
   onlyupper
   onlylower
+
+  @@map("balance_priority")
 }
 
 // ==================== ORDERS ====================
