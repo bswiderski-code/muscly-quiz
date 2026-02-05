@@ -18,7 +18,6 @@ export async function GET(req: NextRequest) {
         email: true,
         amount: true,
         currency: true,
-        currency: true,
         item: true,
       },
     });
