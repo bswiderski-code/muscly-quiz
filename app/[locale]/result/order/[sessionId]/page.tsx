@@ -1,6 +1,6 @@
 "use client";
 import { Suspense } from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { sendGTMEvent } from '@next/third-parties/google';
@@ -57,6 +57,7 @@ const ZamowieniePageContent = () => {
 
   const [purchaseData, setPurchaseData] = useState<any>(null);
   const [purchaseEventsSent, setPurchaseEventsSent] = useState(false);
+  const eventsSentRef = useRef(false);
 
   const hashSHA256 = async (str: string) => {
     const encoder = new TextEncoder();
@@ -68,7 +69,15 @@ const ZamowieniePageContent = () => {
 
   // Immediately send purchase events on component mount - independent of status polling
   useEffect(() => {
-    if (!sessionId || purchaseEventsSent) return;
+    if (!sessionId || purchaseEventsSent || eventsSentRef.current) return;
+
+    // Additional check in localStorage to prevent duplicates on refresh
+    const storageKey = `purchase_event_sent_${sessionId}`;
+    if (typeof window !== 'undefined' && localStorage.getItem(storageKey)) {
+      setPurchaseEventsSent(true);
+      eventsSentRef.current = true;
+      return;
+    }
 
     const sendPurchaseEvents = async (retries = 3) => {
       try {
@@ -82,6 +91,9 @@ const ZamowieniePageContent = () => {
           }
           return;
         }
+
+        // Final safety check before sending
+        if (eventsSentRef.current) return;
 
         setPurchaseData(data);
         const sha256_email = await hashSHA256(data.email || '');
@@ -107,6 +119,9 @@ const ZamowieniePageContent = () => {
             user_data: {
               sha256_email_address: sha256_email,
               sha256_first_name: sha256_name,
+              address: {
+                country: data.country,
+              },
               session_id: sessionId,
             },
           });
@@ -121,6 +136,7 @@ const ZamowieniePageContent = () => {
             currency: data.currency,
             value: Number.isFinite(purchaseValue) ? purchaseValue : data.amount,
             content_type: 'product',
+            country: data.country,
             contents: [
               {
                 id: data.item_id,
@@ -134,7 +150,14 @@ const ZamowieniePageContent = () => {
           console.error('Failed to send Facebook Pixel purchase event:', pixelError);
         }
 
+        // Mark as sent in both state and ref (strict mode safety)
         setPurchaseEventsSent(true);
+        eventsSentRef.current = true;
+        
+        // Mark in localStorage to prevent duplicates on refresh
+        if (typeof window !== 'undefined') {
+          localStorage.setItem(storageKey, 'true');
+        }
       } catch (error) {
         console.error('Failed to fetch purchase data:', error);
         if (retries > 0) {

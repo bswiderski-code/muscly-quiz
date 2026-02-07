@@ -22,34 +22,25 @@ export async function GET(req: NextRequest) {
       where: { userId: userData.id },
     });
 
-    if (!order) {
-      // Only UserData exists (pending payment or order creation failed)
-      // We might not have amount/currency here if we rely on Orders for it.
-      // However, the frontend might need this to display "You bought X".
-      // If order is missing, we can partial return or return what we have.
-      // But typically this endpoint is called on the Thank You page.
-      // If status is paid, order should exist.
-      return NextResponse.json({
-        item_id: userData.id,
-        item_name: userData.item || 'workout',
-        price: 0, // Unknown without order
-        currency: 'PLN', // Default
-        amount: 0,
-        name: userData.name,
-        email: userData.email,
-      });
-    }
+    const item = order?.item || userData.item || 'workout_solo';
+    const standardizedItemName = item === 'workout_bundle'
+      ? 'Workout plan + diet analysis'
+      : 'Workout plan';
+    const standardizedItemId = item === 'workout_bundle'
+      ? 'workout_bundle'
+      : 'workout_solo';
 
     return NextResponse.json({
-      item_id: userData.id,
-      item_name: userData.item || 'workout',
-      price: Number(order.amount), // Convert Decimal to number
-      currency: order.currency || 'PLN',
-      amount: Number(order.amount),
+      item_id: standardizedItemId,
+      item_name: standardizedItemName,
+      price: order ? Number(order.amount) : 0,
+      currency: order?.currency || 'PLN',
+      amount: order ? Number(order.amount) : 0,
       name: userData.name,
       email: userData.email,
-      pdfToken: order.pdfToken,
-      item: order.item,
+      pdfToken: order?.pdfToken,
+      item: item,
+      country: userData.country || 'PL',
     });
   } catch (error) {
     console.error('Error fetching purchase data:', error);

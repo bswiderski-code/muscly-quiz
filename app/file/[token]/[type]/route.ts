@@ -131,12 +131,12 @@ export async function GET(
 
     if (type === 'workout') {
         // Workout access for all solo/bundle workout/calisthenics items
-        if (['workout_solo', 'workout_bundle', 'calisthenics_solo', 'calisthenics_bundle'].includes(item)) {
+        if (['workout_solo', 'workout_bundle'].includes(item)) {
             hasAccess = true;
         }
     } else if (type === 'diet') {
         // Diet access for bundles or solo raport item
-        if (['workout_bundle', 'calisthenics_bundle', 'raport'].includes(item)) {
+        if (['workout_bundle', 'raport'].includes(item)) {
             hasAccess = true;
         }
     }
@@ -160,9 +160,6 @@ export async function GET(
 
             // Determine translation key
             let transKey = type; // default to 'workout' or 'diet'
-            if (type === 'workout' && item.startsWith('calisthenics')) {
-                transKey = 'calisthenics';
-            }
 
             if (translations.PdfFilenames && translations.PdfFilenames[transKey]) {
                 baseName = translations.PdfFilenames[transKey];

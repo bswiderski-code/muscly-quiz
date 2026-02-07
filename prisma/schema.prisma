@@ -18,8 +18,6 @@ enum OrderItem {
   workout_solo
   workout_bundle
   raport
-  calisthenics_solo
-  calisthenics_bundle
 
   @@map("order_item")
 }
