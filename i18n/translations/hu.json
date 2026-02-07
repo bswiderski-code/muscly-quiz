@@ -375,11 +375,26 @@
     "dayLabelSingular": "nap",
     "dayLabelPlural": "nap",
     "steps": [
-      { "value": "1", "label": "hetente 1-szer" },
-      { "value": "2", "label": "hetente 2-szer" },
-      { "value": "3", "label": "hetente 3-szor" },
-      { "value": "4", "label": "hetente 4-szer" },
-      { "value": "5", "label": "hetente 5-ször" }
+      {
+        "value": "1",
+        "label": "hetente 1-szer"
+      },
+      {
+        "value": "2",
+        "label": "hetente 2-szer"
+      },
+      {
+        "value": "3",
+        "label": "hetente 3-szor"
+      },
+      {
+        "value": "4",
+        "label": "hetente 4-szer"
+      },
+      {
+        "value": "5",
+        "label": "hetente 5-ször"
+      }
     ],
     "daySingular": "edzés",
     "dayPlural": "edzés",
@@ -391,10 +406,22 @@
   "Sleep": {
     "title": "Mennyi időt<br /><span style=\"font-weight: 700\">szánsz az alvásra?</span>",
     "steps": [
-      { "value": "lt6", "label": "< 6 óra" },
-      { "value": "7-8", "label": "7-8 óra" },
-      { "value": "9-12", "label": "9-12 óra" },
-      { "value": "gt12", "label": "> 12 óra" }
+      {
+        "value": "lt6",
+        "label": "< 6 óra"
+      },
+      {
+        "value": "7-8",
+        "label": "7-8 óra"
+      },
+      {
+        "value": "9-12",
+        "label": "9-12 óra"
+      },
+      {
+        "value": "gt12",
+        "label": "> 12 óra"
+      }
     ],
     "messages": [
       "Ennyi alvás mellett nehéz a regeneráció... Figyelj oda erre :)",
@@ -429,10 +456,18 @@
     "title1": "Válaszd ki egy <b>edzés</b>",
     "title2": "<b>időtartamát</b>",
     "steps": [
-      { "value": "30" },
-      { "value": "45" },
-      { "value": "60" },
-      { "value": "90" }
+      {
+        "value": "30"
+      },
+      {
+        "value": "45"
+      },
+      {
+        "value": "60"
+      },
+      {
+        "value": "90"
+      }
     ],
     "minutes": "{count} perc",
     "info": "Az optimális edzésidő <i><b>45-60 perc</b></i>. Ne feledd, a sorozatok <b>minősége</b> fontosabb, mint a <b>mennyisége</b>.",
@@ -632,10 +667,22 @@
     "pageLabel": "{current}/{total} oldal",
     "workout": {
       "slides": [
-        { "alt": "Rafael 1", "caption": "Bevezetés az edzéstervbe – 1. oldal" },
-        { "alt": "Rafael 2", "caption": "Használati útmutató – 2. oldal" },
-        { "alt": "Rafael 3", "caption": "Az edzésterv kezdete – 5. oldal" },
-        { "alt": "Rafael 5", "caption": "Progressziós terv 3 hónapra – 7. oldal" }
+        {
+          "alt": "Rafael 1",
+          "caption": "Bevezetés az edzéstervbe – 1. oldal"
+        },
+        {
+          "alt": "Rafael 2",
+          "caption": "Használati útmutató – 2. oldal"
+        },
+        {
+          "alt": "Rafael 3",
+          "caption": "Az edzésterv kezdete – 5. oldal"
+        },
+        {
+          "alt": "Rafael 5",
+          "caption": "Progressziós terv 3 hónapra – 7. oldal"
+        }
       ]
     }
   },
@@ -799,5 +846,9 @@
     "workout": "Edzesterv",
     "raport": "BMI_Jelentes",
     "calisthenics": "Sajat_sulyos_terv"
+  },
+  "NotFound": {
+    "title": "Ez az oldal nem létezik",
+    "startButton": "Kezdés az elejétől"
   }
 }

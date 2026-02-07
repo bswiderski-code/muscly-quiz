@@ -849,5 +849,9 @@
     "workout": "Plan_treningowy",
     "raport": "Raport_BMI",
     "calisthenics": "Plan_kalisteniki"
+  },
+  "NotFound": {
+    "title": "Ta strona nie istnieje",
+    "startButton": "Zacznij od początku"
   }
 }

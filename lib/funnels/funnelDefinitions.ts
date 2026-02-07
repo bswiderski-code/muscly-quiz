@@ -65,31 +65,34 @@ const stepsFor = (order: readonly StepId[], skipRules?: SkipRule[]): FunnelDefin
 const sharedPricing: Partial<Record<LocalePricingKey, LocalePricing>> = {
   pl: {
     currency: 'PLN',
-    workout_solo: { amount: 35.99, description: 'workout_solo' },
-    workout_bundle: { amount: 39.99, description: 'workout_bundle' },
+    workout_solo: { amount: 39.99, description: 'workout_solo' },
+    workout_bundle: { amount: 45.99, description: 'workout_bundle' },
   },
-  /*
   en: {
     currency: 'USD',
-    workout_solo: { amount: 9.99, description: 'workout_solo' },
-    workout_bundle: { amount: 11.99, description: 'workout_bundle' },
-  },
-  de: {
-    currency: 'EUR',
-    workout_solo: { amount: 9.99, description: 'workout_solo' },
-    workout_bundle: { amount: 11.99, description: 'workout_bundle' },
-  },
-  fr: {
-    currency: 'EUR',
-    workout_solo: { amount: 9.99, description: 'workout_solo' },
-    workout_bundle: { amount: 11.99, description: 'workout_bundle' },
+    workout_solo: { amount: 12.99, description: 'workout_solo' },
+    workout_bundle: { amount: 14.99, description: 'workout_bundle' },
   },
   ro: {
     currency: 'RON',
-    workout_solo: { amount: 39.99, description: 'workout_solo' },
-    workout_bundle: { amount: 44.99, description: 'workout_bundle' },
+    workout_solo: { amount: 44.99, description: 'workout_solo' },
+    workout_bundle: { amount: 54.99, description: 'workout_bundle' },
   },
-  */
+  cz: {
+    currency: 'CZK',
+    workout_solo: { amount: 249, description: 'workout_solo' },
+    workout_bundle: { amount: 289, description: 'workout_bundle' },
+  },
+  hu: {
+    currency: 'HUF',
+    workout_solo: { amount: 3990, description: 'workout_solo' },
+    workout_bundle: { amount: 4590, description: 'workout_bundle' },
+  },
+  bg: {
+    currency: 'BGN',
+    workout_solo: { amount: 19.90, description: 'workout_solo' },
+    workout_bundle: { amount: 24.90, description: 'workout_bundle' },
+  },
 };
 
 /**

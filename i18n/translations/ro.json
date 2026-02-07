@@ -456,10 +456,18 @@
     "title1": "Alege <b>durata</b>",
     "title2": "unui <b>antrenament</b>",
     "steps": [
-      { "value": "30" },
-      { "value": "45" },
-      { "value": "60" },
-      { "value": "90" }
+      {
+        "value": "30"
+      },
+      {
+        "value": "45"
+      },
+      {
+        "value": "60"
+      },
+      {
+        "value": "90"
+      }
     ],
     "minutes": "{count, plural, one {# minut} few {# minute} other {# de minute}}",
     "info": "Durata optimă este de <i><b>45-60 minute</b></i>. Reține că <b>calitatea</b> seriilor e mai importantă decât <b>cantitatea</b>.",
@@ -484,8 +492,12 @@
     "sampleBtn": "Vezi un exemplu de plan!",
     "loadingTitle": "Generez planul tău...",
     "loadingSubtitle": "Un moment, încarc toate rezultatele.",
-    "ctaButton": { "alt": "Obține planul" },
-    "faq": { "title": "Întrebări<br/>frecvente:" }
+    "ctaButton": {
+      "alt": "Obține planul"
+    },
+    "faq": {
+      "title": "Întrebări<br/>frecvente:"
+    }
   },
   "BMIBOX": {
     "yourScore": "Rezultatul tău:",
@@ -538,5 +550,9 @@
     "workout": "Plan_Antrenament",
     "raport": "Raport_IMC",
     "calisthenics": "Plan_Calistenie"
+  },
+  "NotFound": {
+    "title": "Această pagină nu există",
+    "startButton": "Începe de la început"
   }
 }

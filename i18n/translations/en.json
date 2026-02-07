@@ -849,5 +849,9 @@
     "workout": "Workout_plan",
     "raport": "BMI_Report",
     "calisthenics": "Calisthenics_plan"
+  },
+  "NotFound": {
+    "title": "This page doesn't exist",
+    "startButton": "Start from the beginning"
   }
 }

@@ -375,11 +375,26 @@
     "dayLabelSingular": "den",
     "dayLabelPlural": "dny",
     "steps": [
-      { "value": "1", "label": "1x týdně" },
-      { "value": "2", "label": "2x týdně" },
-      { "value": "3", "label": "3x týdně" },
-      { "value": "4", "label": "4x týdně" },
-      { "value": "5", "label": "5x týdně" }
+      {
+        "value": "1",
+        "label": "1x týdně"
+      },
+      {
+        "value": "2",
+        "label": "2x týdně"
+      },
+      {
+        "value": "3",
+        "label": "3x týdně"
+      },
+      {
+        "value": "4",
+        "label": "4x týdně"
+      },
+      {
+        "value": "5",
+        "label": "5x týdně"
+      }
     ],
     "daySingular": "trénink",
     "dayPlural": "tréninky",
@@ -391,10 +406,22 @@
   "Sleep": {
     "title": "Kolik času<br /><span style=\"font-weight: 700\">věnujete spánku?</span>",
     "steps": [
-      { "value": "lt6", "label": "< 6 hodin" },
-      { "value": "7-8", "label": "7-8 hodin" },
-      { "value": "9-12", "label": "9-12 hodin" },
-      { "value": "gt12", "label": "> 12 hodin" }
+      {
+        "value": "lt6",
+        "label": "< 6 hodin"
+      },
+      {
+        "value": "7-8",
+        "label": "7-8 hodin"
+      },
+      {
+        "value": "9-12",
+        "label": "9-12 hodin"
+      },
+      {
+        "value": "gt12",
+        "label": "> 12 hodin"
+      }
     ],
     "messages": [
       "S takovým spánkem je regenerace těžká... Zkuste na tom zapracovat :)",
@@ -429,10 +456,18 @@
     "title1": "Zvolte <b>čas</b>",
     "title2": "jednoho <b>tréninku</b>",
     "steps": [
-      { "value": "30" },
-      { "value": "45" },
-      { "value": "60" },
-      { "value": "90" }
+      {
+        "value": "30"
+      },
+      {
+        "value": "45"
+      },
+      {
+        "value": "60"
+      },
+      {
+        "value": "90"
+      }
     ],
     "minutes": "{count, plural, one {# minuta} few {# minuty} other {# minut}}",
     "info": "Optimální čas tréninku je <i><b>45-60 minut</b></i>. Kvalita je důležitější než kvantita.",
@@ -466,9 +501,13 @@
       "emailAddress": "support@musclepals.com",
       "responseTime": "⏰ Odpovídám většinou do hodiny."
     },
-    "ctaButton": { "alt": "Získat plán" },
+    "ctaButton": {
+      "alt": "Získat plán"
+    },
     "errorTitle": "Chybí data.",
-    "faq": { "title": "Časté<br/>dotazy:" }
+    "faq": {
+      "title": "Časté<br/>dotazy:"
+    }
   },
   "BMIBOX": {
     "yourScore": "Váš výsledek:",
@@ -517,5 +556,9 @@
     "workout": "Treninkovy_plan",
     "raport": "BMI_Zprava",
     "calisthenics": "Kalistenika_plan"
+  },
+  "NotFound": {
+    "title": "Tato stránka neexistuje",
+    "startButton": "Začít od začátku"
   }
 }

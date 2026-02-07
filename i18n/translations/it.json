@@ -845,5 +845,9 @@
     "workout": "Piano_di_allenamento",
     "raport": "Rapporto_BMI",
     "calisthenics": "Piano_di_calistenia"
+  },
+  "NotFound": {
+    "title": "Questa pagina non esiste",
+    "startButton": "Inizia dall'inizio"
   }
 }
