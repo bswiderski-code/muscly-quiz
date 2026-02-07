@@ -82,14 +82,6 @@ enum Location {
   @@map("location")
 }
 
-enum BalancePriority {
-  balance
-  prioritized
-  onlyupper
-  onlylower
-
-  @@map("balance_priority")
-}
 
 // ==================== ORDERS ====================
 model Orders {
@@ -148,7 +140,6 @@ model HealthDetails {
   pushups       String
   pullups       String
   cardio        Boolean
-  balance       BalancePriority
   age           Int
 
   @@map("health_details")

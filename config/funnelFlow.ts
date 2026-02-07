@@ -24,7 +24,6 @@ export const FUNNEL_STEPS_ORDER: readonly StepId[] = [
     'difficulty',
     'cardio',
     'experience',
-    'balance',
     'priority',
     'frequency',
     'duration',
@@ -42,17 +41,4 @@ export const FUNNEL_SKIP_RULES: SkipRule[] = [
         trigger: [{ step: 'location', value: 'house' }],
         skip: ['difficulty']
     },
-    // balance logic: skip priority if NOT prioritized
-    {
-        trigger: [{ step: 'balance', value: 'balance' }],
-        skip: ['priority']
-    },
-    {
-        trigger: [{ step: 'balance', value: 'upper_only' }],
-        skip: ['priority']
-    },
-    {
-        trigger: [{ step: 'balance', value: 'lower_only' }],
-        skip: ['priority']
-    }
 ];

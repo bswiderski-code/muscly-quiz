@@ -24,6 +24,5 @@ export const STEP_SLUGS: Record<StepId, LocalizedStringMap> = {
   pullups: 'pullups',
   duration: 'duration',
   cardio: 'cardio',
-  balance: 'balance',
   physique_goal: 'physique_goal',
 }

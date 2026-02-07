@@ -54,7 +54,6 @@ export async function POST(req: Request) {
       weight_goal_raw,
       height_raw,
       cardio,
-      balance,
       locale,
     } = body;
 
@@ -199,7 +198,6 @@ export async function POST(req: Request) {
           pushups: (pushups as string) ?? '0',
           pullups: (pullups as string) ?? '0',
           cardio: cardio === true || cardio === 'true',
-          balance: (balance as any) ?? 'balance',
           age: Math.round(parsedAge) || 0,
         }
       });

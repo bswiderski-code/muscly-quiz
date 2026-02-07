@@ -81,7 +81,6 @@ export async function POST(req: NextRequest) {
 			calistenic_experience,
 			usedMetric,
 			cardio,
-			balance,
 			locale,
 		} = body;
 
@@ -196,7 +195,6 @@ export async function POST(req: NextRequest) {
 					pushups: (pushups as string) ?? '0',
 					pullups: (pullups as string) ?? '0',
 					cardio: cardio === true || cardio === 'true',
-					balance: (balance as any) ?? 'balance',
 					age: Math.round(parsedAge) || 0,
 				}
 			});

@@ -46,7 +46,6 @@ export type FunnelAnswers = {
   weight_raw?: number
   weight_goal_raw?: number
   cardio?: string // stored as 'yes'/'no' in Zustand, converted to boolean for DB
-  balance?: string
   physique_goal?: string
 }
 
@@ -66,6 +65,7 @@ type State = {
   setDefaultFunnel: (funnel: FunnelKey) => void
   setLanguage: (lang: string) => void
   getLanguage: () => string
+  clearAll: () => void
 }
 
 export const useFunnelStore = create<State>()(
@@ -119,6 +119,7 @@ export const useFunnelStore = create<State>()(
         })),
       setLanguage: (lang) => set({ language: lang }),
       getLanguage: () => get().language,
+      clearAll: () => set({ bySid: {}, byFunnel: {} }),
     }),
     {
       name: 'workout-answers',

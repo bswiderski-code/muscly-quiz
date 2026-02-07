@@ -139,6 +139,9 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
   // API you use in slides:
   function select(val: string, opts?: { advance?: boolean }) {
     if (!sid) return
+    if (stepId === 'gender') {
+      useFunnelStore.getState().clearAll()
+    }
     setField(sid, field, val, funnel)
     if (opts?.advance !== false) {
       const href = hrefForStep(resolveNextStepId(val)) ?? resultHref

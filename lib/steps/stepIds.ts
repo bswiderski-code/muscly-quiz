@@ -19,7 +19,6 @@ export const ALL_STEPS = [
   'pullups',
   'duration',
   'cardio',
-  'balance',
   'physique_goal',
 ] as const
 
@@ -48,6 +47,5 @@ export const STEP_TAGS: Record<StepId, StepTag | undefined> = {
   pullups: undefined,
   duration: undefined,
   cardio: undefined,
-  balance: undefined,
   physique_goal: undefined,
 }
