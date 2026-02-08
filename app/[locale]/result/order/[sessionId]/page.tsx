@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { sendGTMEvent } from '@next/third-parties/google';
 import { useTranslations, useLocale } from 'next-intl';
 import { trackPurchase } from '@/lib/analytics';
+import { getSupportEmail } from '@/lib/i18n/emailUtils';
 
 const ZamowieniePageContent = () => {
   const t = useTranslations('OrderPage');
@@ -170,6 +171,7 @@ const ZamowieniePageContent = () => {
   }, [sessionId, purchaseEventsSent]);
 
   const locale = useLocale();
+  const supportEmail = getSupportEmail(locale);
 
   const assets = {
     logoHref: 'https://musclepals.com',
@@ -208,7 +210,7 @@ const ZamowieniePageContent = () => {
               />
             </div>
             <div style={{ marginTop: 18, fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif", fontSize: 15, color: '#111', textAlign: 'center', maxWidth: 340 }}>
-              {t('contactText')} <a href={`mailto:${t('successEmail')}`} style={{ color: '#111', textDecoration: 'underline' }}>{t('successEmail')}</a>
+              {t('contactText')} <a href={`mailto:${supportEmail}`} style={{ color: '#111', textDecoration: 'underline' }}>{supportEmail}</a>
             </div>
           </>
         )}
@@ -235,7 +237,7 @@ const ZamowieniePageContent = () => {
           <div style={{ margin: '18px 0 0 0', fontSize: 15, color: '#111', textAlign: 'center', fontWeight: 400 }}>
             <b>{t('successText3')}</b><br />
             {t('successText4')}<br />
-            <a href={`mailto:${t('successEmail')}`} style={{ color: '#111', textDecoration: 'underline' }}>{t('successEmail')}</a>
+            <a href={`mailto:${supportEmail}`} style={{ color: '#111', textDecoration: 'underline' }}>{supportEmail}</a>
           </div>
           <div style={{ margin: '18px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
             <button

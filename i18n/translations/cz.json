@@ -514,13 +514,13 @@
       "title": "Máš nějaké otázky?",
       "emailIntro": "Napiš nám:",
       "emailAddress": "cz-support@musclepals.com",
-      "responseTime": "⏰ Obvykle odpovím do hodiny."
+      "responseTime": "⏰ Obvykle odpovídám do hodiny."
     },
     "ctaButton": {
       "alt": "Získat plán"
     },
-    "errorTitle": "Pro tento funnel nejsou k dispozici žádná data.",
-    "errorDescription": "Kontaktuj nás na: cz-support@musclepals.com",
+    "errorTitle": "Žádná data pro tento funnel.",
+    "errorDescription": "Kontaktuj nás na: {email}",
     "faq": {
       "title": "Často<br/>kladené otázky:"
     }
@@ -703,9 +703,9 @@
     "successText1": "Za chvíli se objeví ve tvém e-mailu.",
     "successText2": "(může to trvat až 5 minut)",
     "successText3": "Zkontroluj také spam a záložku „Hromadné“/„Nabídky“",
-    "successText4": "V případě problémů nám klidně napiš!",
+    "successText4": "V případě jakýchkoli problémů nám neváhejte dát vědět!",
     "successEmail": "cz-support@musclepals.com",
-    "errorTitle": "Máme problém<br />se zpracováním<br />tvé platby.",
+    "errorTitle": "Máme problém<br />se zpracováním<br />vaší platby.",
     "errorImageAlt": "Nahlášení nezaplaceno",
     "errorText1": "Tvoje platba <b>nebyla dokončena</b>, vrať se na úvodní stránku a zkus to znovu.",
     "buttonText": "Vrátit se na úvodní stránku",

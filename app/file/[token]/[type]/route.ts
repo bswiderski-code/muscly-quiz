@@ -5,6 +5,7 @@ import { PAYMENT_CREDENTIALS } from '@/config/credentials';
 import { getLocaleFromCountry } from '@/lib/i18n/localeUtils';
 import path from 'path';
 import fs from 'fs';
+import { getSupportEmail } from '@/lib/i18n/emailUtils';
 
 export const dynamic = 'force-dynamic';
 
@@ -21,14 +22,14 @@ export async function GET(
 
     // Helper to generate HTML error response
     const returnErrorHtml = (locale: string = 'en', translations: any = null) => {
+        const supportEmail = getSupportEmail(locale);
         let title = 'Problem loading your data.';
-        let description = `If the issue persists, please contact us at ${locale}-support@musclepals.com`;
+        let description = `If the issue persists, please contact us at ${supportEmail}`;
 
         if (translations && translations.ResultPage) {
             title = translations.ResultPage.loadingErrorTitle || title;
             if (translations.ResultPage.loadingErrorHtml) {
-                const email = `${locale}-support@musclepals.com`;
-                description = translations.ResultPage.loadingErrorHtml.replace(/{email}/g, email);
+                description = translations.ResultPage.loadingErrorHtml.replace(/{email}/g, supportEmail);
             }
         } else {
             try {
@@ -38,8 +39,7 @@ export async function GET(
                     if (enTrans.ResultPage) {
                         title = enTrans.ResultPage.loadingErrorTitle || title;
                         if (enTrans.ResultPage.loadingErrorHtml) {
-                            const email = 'en-support@musclepals.com';
-                            description = enTrans.ResultPage.loadingErrorHtml.replace(/{email}/g, email);
+                            description = enTrans.ResultPage.loadingErrorHtml.replace(/{email}/g, 'support@musclepals.com');
                         }
                     }
                 }

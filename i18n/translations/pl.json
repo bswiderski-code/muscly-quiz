@@ -514,13 +514,13 @@
       "title": "Masz jakiekolwiek wątpliwości?",
       "emailIntro": "Odezwij się:",
       "emailAddress": "pl-support@musclepals.com",
-      "responseTime": "⏰ Zazwyczaj odpisuję w mniej niż godzinę."
+      "responseTime": "⏰ Zwykle odpowiadam w mniej niż godzinę."
     },
     "ctaButton": {
       "alt": "Odbierz plan"
     },
     "errorTitle": "Brak danych dla tego lejka.",
-    "errorDescription": "Skontaktuj się z nami pod adresem: pl-support@musclepals.com",
+    "errorDescription": "Skontaktuj się z nami pod adresem: {email}",
     "faq": {
       "title": "Najczęściej<br/>zadawane pytania:"
     }
@@ -703,14 +703,14 @@
     "successText1": "Za chwilę pojawi się on na twoim mailu.",
     "successText2": "(może potrwać do 5 minut)",
     "successText3": "Sprawdź również spam i zakładkę \"oferty\"",
-    "successText4": "W razie jakichkolwiek problemów, śmiało daj znać!",
+    "successText4": "W razie jakichkolwiek problemów śmiało daj nam znać!",
     "successEmail": "pl-support@musclepals.com",
-    "errorTitle": "Mamy problem z<br />przetworzeniem<br />Twojej płatności.",
+    "errorTitle": "Mamy problem<br />z przetworzeniem<br />Twojej płatności.",
     "errorImageAlt": "Raport nieopłacony",
     "errorText1": "Twoja płatność <b>nie została sfinalizowana</b>, wróć do strony głównej i spróbuj ponownie.",
     "buttonText": "Wróć do strony głównej",
     "logoAlt": "Musclepals",
-    "contactText": "Jeśli uważasz, że to błąd, skontaktuj się ze mną:"
+    "contactText": "Jeśli uważasz, że to błąd, skontaktuj się z nami: {email}"
   },
   "JoinAthletes": "Dołącz do <b><u>{count}</u> sportowców</b>, którzy <b>już korzystają</b> ze swojego <b>personalizowanego planu treningowego!</b>",
   "NextButton": {

@@ -23,6 +23,7 @@ import AnswersSummary from '@/app/components/result/answers_summary/answers_summ
 import MissingStepsView from '@/app/components/result/MissingStepsView'
 import { getMissingSteps } from '@/lib/validation/stepValidation'
 import type { StepId } from '@/lib/steps/stepIds'
+import { getSupportEmail } from '@/lib/i18n/emailUtils'
 
 const reviewImageCounts: Record<string, number> = {
   bg: 7,
@@ -140,7 +141,7 @@ export default function StandardResultPage({ faqSection }: StandardResultPagePro
     emailAddress: string
     responseTime: string
   }
-  const supportEmail = contactBox?.emailAddress || `${locale}-support@musclepals.com`
+  const supportEmail = getSupportEmail(locale)
   
   const replaceLocale = (path: string) => withLocale(path, locale);
 

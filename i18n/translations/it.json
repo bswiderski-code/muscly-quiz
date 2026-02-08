@@ -460,10 +460,10 @@
       "responseTime": "⏰ Di solito rispondo in meno di un'ora."
     },
     "ctaButton": {
-      "alt": "Ritira il piano"
+      "alt": "Ottieni il piano"
     },
     "errorTitle": "Nessun dato per questo funnel.",
-    "errorDescription": "Contattaci all'indirizzo: it-support@musclepals.com",
+    "errorDescription": "Contattaci all'indirizzo: {email}",
     "faq": {
       "title": "Domande<br/>Frequenti:"
     }
@@ -556,9 +556,9 @@
     "bodyfat": "massa grassa",
     "activityMap": {
       "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "Mi alleno molto duramente o faccio un lavoro fisico pesante",
-      "Ćwiczę regularnie, jestem w ruchu większość dni": "Mi alleno regolarmente, sono attivo la maggior parte dei giorni",
+      "Ćwiczę regularnie, jestem w movimento la maggior parte dei giorni": "Mi alleno regolarmente, sono attivo la maggior parte dei giorni",
       "Trenuję lekko kilka razy w tygodniu": "Mi alleno in modo leggero qualche volta a settimana",
-      "Trochę się ruszam, ale bez regularnych treningów": "Mi muovo un po', ma senza allenamenti regolari"
+      "Trochę się ruszam, ale senza allenamenti regolari": "Mi muovo un po', ma senza allenamenti regolari"
     }
   },
   "ReportForm": {
@@ -645,9 +645,9 @@
     "successText1": "Arriverà sulla tua email in un attimo.",
     "successText2": "(può richiedere fino a 5 minuti)",
     "successText3": "Controlla anche lo spam e la scheda \"offerte/promozioni\"",
-    "successText4": "Se hai qualsiasi problema, fammelo sapere!",
+    "successText4": "In caso di problemi, non esitare a farmelo sapere!",
     "successEmail": "it-support@musclepals.com",
-    "errorTitle": "Abbiamo un problema<br />nell'elaborare<br />il tuo pagamento.",
+    "errorTitle": "Abbiamo riscontrato un problema<br />durante l'elaborazione<br />del pagamento.",
     "errorImageAlt": "Report non pagato",
     "errorText1": "Il tuo pagamento <b>non è stato finalizzato</b>, torna alla home page e riprova.",
     "buttonText": "Torna alla home page",

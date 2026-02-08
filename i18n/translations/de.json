@@ -457,13 +457,13 @@
       "title": "Hast du irgendwelche Zweifel?",
       "emailIntro": "Melde dich:",
       "emailAddress": "de-support@musclepals.com",
-      "responseTime": "⏰ Ich antworte meistens in weniger als einer Stunde."
+      "responseTime": "⏰ Normalerweise antworte ich in weniger als einer Stunde."
     },
     "ctaButton": {
-      "alt": "Plan holen"
+      "alt": "Plan erhalten"
     },
     "errorTitle": "Keine Daten für diesen Funnel.",
-    "errorDescription": "Kontaktiere uns unter: de-support@musclepals.com",
+    "errorDescription": "Kontaktiere uns unter: {email}",
     "faq": {
       "title": "Häufig gestellte<br/>Fragen:"
     }
@@ -555,7 +555,7 @@
     "fitness": "Fitness",
     "bodyfat": "Körperfett",
     "activityMap": {
-      "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "Trainiere sehr viel oder habe einen harten körperlichen Job",
+      "Bardzo dużo trenuję oder mam ciężką pracę fizyczną": "Trainiere sehr viel oder habe einen harten körperlichen Job",
       "Ćwiczę regularnie, jestem w ruchu większość dni": "Trainiere regelmäßig, bin die meisten Tage aktiv",
       "Trenuję lekko kilka razy w tygodniu": "Trainiere leicht ein paar Mal pro Woche",
       "Trochę się ruszam, ale bez regularnych treningów": "Bewege mich etwas, aber kein regelmäßiges Training"
@@ -646,7 +646,7 @@
     "successText1": "Er wird gleich in deiner E-Mail erscheinen.",
     "successText2": "(kann bis zu 5 Minuten dauern)",
     "successText3": "Prüfe auch den Spam-Ordner und den Reiter \"Angebote\"",
-    "successText4": "Falls du irgendwelche Probleme hast, sag Bescheid!",
+    "successText4": "Sollte es Probleme geben, lass es uns einfach wissen!",
     "successEmail": "de-support@musclepals.com",
     "errorTitle": "Wir haben ein Problem<br />bei der Verarbeitung<br />deiner Zahlung.",
     "errorImageAlt": "Bericht nicht bezahlt",
