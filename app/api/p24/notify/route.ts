@@ -81,23 +81,23 @@ export async function POST(req: NextRequest) {
 
     if (userData) {
       // Check if order exists
-      const existing = await (prisma as any).orders.findFirst({ where: { userId: userData.id, payment_provider: 'P24' } });
+      const existing = await (prisma as any).order.findFirst({ where: { userId: userData.id, paymentProvider: 'P24' } });
       if (!existing) {
-        await (prisma as any).orders.create({
+        await (prisma as any).order.create({
           data: {
             item: userData.item,
             userId: userData.id,
             amount: Number(body.amount) / 100, // P24 amount is integer, e.g. 12300 for 123 PLN
             currency: market.currency || 'PLN',
             country: country,
-            payment_provider: 'P24',
+            paymentProvider: 'P24',
             pdfToken: uuidv4(),
           },
         });
       }
     }
   } catch (e) {
-    console.error('Failed to create Orders row for session', body.sessionId, e);
+    console.error('Failed to create Order row for session', body.sessionId, e);
   }
 
   await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {

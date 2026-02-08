@@ -79,14 +79,14 @@ async function main() {
 
         // 2b. Create order
         // We use some defaults for amount/currency since we don't have payu/stripe session data here
-        const order = await tx.orders.create({
+        const order = await tx.order.create({
             data: {
                 item: lastUser.item,
                 userId: lastUser.id,
                 amount: 39.00, // Default price approximation if unknown
                 currency: 'PLN', // Default currency
                 country: lastUser.country || 'PL',
-                payment_provider: 'MANUAL_CONVERT',
+                paymentProvider: 'MANUAL_CONVERT',
                 delivered: false,
                 pdfToken: uuidv4(),
             },

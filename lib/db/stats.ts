@@ -7,7 +7,7 @@ import { unstable_cache } from 'next/cache';
  */
 export const getTotalOrdersCount = unstable_cache(
     async () => {
-        return await prisma.orders.count();
+        return await prisma.order.count();
     },
     ['total-orders-count'],
     {
@@ -23,7 +23,7 @@ export const getTotalOrdersCount = unstable_cache(
 export const getRecentOrdersCount = unstable_cache(
     async () => {
         const since = new Date(Date.now() - 24 * 60 * 60 * 1000);
-        return await prisma.orders.count({
+        return await prisma.order.count({
             where: {
                 createdAt: {
                     gte: since,

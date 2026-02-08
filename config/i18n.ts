@@ -4,7 +4,7 @@ export type CheckoutProvider = 'p24' | 'payu' | 'stripe';
 export type MarketInfo = {
     market: MarketCode;
     locale: string;
-    currency: 'PLN' | 'USD' | 'EUR' | 'CZK' | 'BGN' | 'HUF';
+    currency: 'PLN' | 'USD' | 'EUR' | 'CZK' | 'HUF';
     checkoutProvider: CheckoutProvider;
     gtmId: string;
     facebookPixelId: string;
@@ -61,7 +61,7 @@ export const LOCALE_CONFIG = {
     bg: {
         market: 'bg',
         locale: 'bg',
-        currency: 'BGN',
+        currency: 'EUR',
         checkoutProvider: 'stripe',
         gtmId: 'GTM-XXXXXXXX',
         facebookPixelId: 'XXXXXXXXXXXXXXX',

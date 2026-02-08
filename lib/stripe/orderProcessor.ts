@@ -60,14 +60,14 @@ export async function processStripeSession(
 
         // 3. Create the Order (since we just transitioned to 'paid')
         // UserData doesn't have amount/currency, so we get it from the session
-        const order = await (tx as any).orders.create({
+        const order = await (tx as any).order.create({
             data: {
                 item: userData.item,
                 userId: userData.id,
                 amount: new Prisma.Decimal((session.amount_total ?? 0) / 100) as any,
                 currency: session.currency?.toUpperCase() ?? 'USD',
                 country: country,
-                payment_provider: 'Stripe',
+                paymentProvider: 'Stripe',
                 delivered: false,
                 pdfToken: uuidv4(),
             },

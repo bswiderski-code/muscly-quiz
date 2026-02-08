@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: 'Purchase data not found' }, { status: 404 });
     }
 
-    const order = await (prisma as any).orders.findFirst({
+    const order = await (prisma as any).order.findFirst({
       where: { userId: userData.id },
     });
 

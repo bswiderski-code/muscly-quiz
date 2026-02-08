@@ -704,6 +704,7 @@ export default function StandardResultPage({ faqSection }: StandardResultPagePro
         </div>
       </section>
 
+      {/* 
       <div className="reports-wrap" style={{ textAlign: 'center', marginTop: 8 }}>
         <div className="reports-box">
           <span className="reports-highlight">
@@ -713,6 +714,7 @@ export default function StandardResultPage({ faqSection }: StandardResultPagePro
           <span className="reports-note">{t('reportNote2')}</span>
         </div>
       </div>
+      */}
 
       <div style={{ marginTop: 48, marginBottom: 48 }}>
         {config.showReviews && (

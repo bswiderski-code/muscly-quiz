@@ -262,6 +262,14 @@
       }
     }
   },
+  "CardioStep": {
+    "title": "Möchtest du <b>Cardio</b> machen?",
+    "subtitle": "(Laufen, Radfahren, Seilspringen)",
+    "yesAlt": "Ja",
+    "noAlt": "Nein",
+    "yesLabel": "Wähle ja",
+    "noLabel": "Wähle nein"
+  },
   "Experience": {
     "title": "Welche Erfahrung hast du<br /><span style=\"font-weight: 700\">im Training?</span>",
     "options": {

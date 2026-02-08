@@ -73,11 +73,7 @@ const sharedPricing: Partial<Record<LocalePricingKey, LocalePricing>> = {
     workout_solo: { amount: 12.99, description: 'workout_solo' },
     workout_bundle: { amount: 14.99, description: 'workout_bundle' },
   },
-  ro: {
-    currency: 'RON',
-    workout_solo: { amount: 44.99, description: 'workout_solo' },
-    workout_bundle: { amount: 54.99, description: 'workout_bundle' },
-  },
+
   cz: {
     currency: 'CZK',
     workout_solo: { amount: 249, description: 'workout_solo' },
@@ -89,9 +85,9 @@ const sharedPricing: Partial<Record<LocalePricingKey, LocalePricing>> = {
     workout_bundle: { amount: 4590, description: 'workout_bundle' },
   },
   bg: {
-    currency: 'BGN',
-    workout_solo: { amount: 19.90, description: 'workout_solo' },
-    workout_bundle: { amount: 24.90, description: 'workout_bundle' },
+    currency: 'EUR',
+    workout_solo: { amount: 10.99, description: 'workout_solo' },
+    workout_bundle: { amount: 13.99, description: 'workout_bundle' },
   },
 };
 

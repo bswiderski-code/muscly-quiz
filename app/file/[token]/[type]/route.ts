@@ -117,7 +117,7 @@ export async function GET(
         return returnErrorHtml('en');
     }
 
-    const order = await prisma.orders.findUnique({
+    const order = await prisma.order.findUnique({
         where: { pdfToken: token },
     });
 

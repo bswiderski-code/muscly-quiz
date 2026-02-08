@@ -82,10 +82,10 @@ export async function POST(req: NextRequest) {
 	}
 
 	// Idempotency guard: PayU may retry notifications.
-	const existingOrder = await (prisma as any).orders.findFirst({
+	const existingOrder = await (prisma as any).order.findFirst({
 		where: {
 			userId: userData.id,
-			payment_provider: 'PayU',
+			paymentProvider: 'PayU',
 		},
 		select: { id: true },
 	});
@@ -96,7 +96,7 @@ export async function POST(req: NextRequest) {
 	}
 
 	try {
-		await (prisma as any).orders.create({
+		await (prisma as any).order.create({
 			data: {
 				item: userData.item,
 				userId: userData.id,
@@ -106,15 +106,15 @@ export async function POST(req: NextRequest) {
 				amount: order.totalAmount / 100,
 				currency: order.currencyCode || market.currency || 'PLN',
 				country: country,
-				payment_provider: 'PayU',
+				paymentProvider: 'PayU',
 				pdfToken: uuidv4(),
 			},
 		});
 	} catch (e) {
-		console.error('Failed to create Orders row for session', sessionId, e);
-		// Critical: do not send webhook unless Orders row was created.
+		console.error('Failed to create Order row for session', sessionId, e);
+		// Critical: do not send webhook unless Order row was created.
 		// Return 500 so PayU retries and we can try again.
-		return NextResponse.json({ ok: false, error: 'Failed to create Orders row' }, { status: 500 });
+		return NextResponse.json({ ok: false, error: 'Failed to create Order row' }, { status: 500 });
 	}
 
 	await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
