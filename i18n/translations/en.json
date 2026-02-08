@@ -271,6 +271,14 @@
       }
     }
   },
+  "CardioStep": {
+    "title": "Do you want to do<b> cardio?</b>",
+    "subtitle": "(running, cycling, jump rope)",
+    "yesAlt": "Yes",
+    "noAlt": "No",
+    "yesLabel": "Select yes",
+    "noLabel": "Select no"
+  },
   "Experience": {
     "title": "What is your experience<br /><b>in training?</b>",
     "options": {
@@ -431,7 +439,7 @@
     ]
   },
   "PushupsStep": {
-    "title": "How many <span class=\"kalistenika-text\">push-ups</span> are you able to do in one go?",
+    "title": "How many push-ups are you able to do in one go?",
     "placeholder": "e.g. 15",
     "options": {
       "0-5": "0-5 push-ups",
@@ -442,7 +450,7 @@
     }
   },
   "PullupsStep": {
-    "title": "How many <span class=\"kalistenika-text\">pull-ups</span> are you able to do in one go?",
+    "title": "How many pull-ups are you able to do in one go?",
     "placeholder": "e.g. 5",
     "options": {
       "0": "None yet",
@@ -453,8 +461,7 @@
     }
   },
   "DurationStep": {
-    "title1": "Choose the <b>time</b>",
-    "title2": "of one <b>workout</b>",
+    "title": "Choose the <b>time</b> of one <b>workout</b>",
     "steps": [
       {
         "value": "30"

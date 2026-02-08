@@ -262,6 +262,14 @@
       }
     }
   },
+  "CardioStep": {
+    "title": "Vuoi fare<b> cardio?</b>",
+    "subtitle": "(corsa, ciclismo, salto con la corda)",
+    "yesAlt": "Sì",
+    "noAlt": "No",
+    "yesLabel": "Seleziona sì",
+    "noLabel": "Seleziona no"
+  },
   "Experience": {
     "title": "Che esperienza hai<br /><span style=\"font-weight: 700\">con l'allenamento?</span>",
     "options": {
@@ -774,7 +782,7 @@
     }
   },
   "PushupsStep": {
-    "title": "Quante <span class=\"kalistenika-text\">flessioni</span> riesci a fare in una volta sola?",
+    "title": "Quante flessioni riesci a fare in una volta sola?",
     "placeholder": "es. 15",
     "options": {
       "0-5": "0-5 flessioni",
@@ -785,7 +793,7 @@
     }
   },
   "PullupsStep": {
-    "title": "Quante <span class=\"kalistenika-text\">trazioni</span> riesci a fare in una volta sola?",
+    "title": "Quante trazioni riesci a fare in una volta sola?",
     "placeholder": "es. 5",
     "options": {
       "0": "Ancora nessuna",
@@ -796,7 +804,7 @@
     }
   },
   "CalistenicExperienceStep": {
-    "title": "Qual è la tua <span class=\"kalistenika-text\">esperienza</span> con il calisthenics?",
+    "title": "Qual è la tua esperienza con il calisthenics?",
     "options": {
       "none": "Nuovo",
       "just_started": "Principiante",
@@ -811,8 +819,7 @@
     }
   },
   "DurationStep": {
-    "title1": "Scegli la <b>durata</b>",
-    "title2": "di un <b>allenamento</b>",
+    "title": "Scegli la <b>durata</b> di un <b>allenamento</b>",
     "steps": [
       {
         "value": "30"

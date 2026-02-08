@@ -775,7 +775,7 @@
     }
   },
   "PushupsStep": {
-    "title": "Wie viele <span class=\"kalistenika-text\">Liegestütze</span> schaffst du am Stück?",
+    "title": "Wie viele Liegestütze schaffst du am Stück?",
     "placeholder": "z.B. 15",
     "options": {
       "0-5": "0-5 Liegestütze",
@@ -786,7 +786,7 @@
     }
   },
   "PullupsStep": {
-    "title": "Wie viele <span class=\"kalistenika-text\">Klimmzüge</span> schaffst du am Stück?",
+    "title": "Wie viele Klimmzüge schaffst du am Stück?",
     "placeholder": "z.B. 5",
     "options": {
       "0": "Noch keine",
@@ -797,7 +797,7 @@
     }
   },
   "CalistenicExperienceStep": {
-    "title": "Welche <span class=\"kalistenika-text\">Erfahrung</span> hast du mit Calisthenics?",
+    "title": "Welche Erfahrung hast du mit Calisthenics?",
     "options": {
       "none": "Neu",
       "just_started": "Anfänger",
@@ -812,8 +812,7 @@
     }
   },
   "DurationStep": {
-    "title1": "Wähle die <b>Dauer</b>",
-    "title2": "einer <b>Trainingseinheit</b>",
+    "title": "Wähle die <b>Dauer</b> einer <b>Trainingseinheit</b>",
     "steps": [
       {
         "value": "30"

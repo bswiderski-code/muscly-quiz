@@ -271,6 +271,14 @@
       }
     }
   },
+  "CardioStep": {
+    "title": "Chceš cvičit<b> cardio?</b>",
+    "subtitle": "(běh, jízda na kole, švihadlo)",
+    "yesAlt": "Ano",
+    "noAlt": "Ne",
+    "yesLabel": "Vybrat ano",
+    "noLabel": "Vybrat ne"
+  },
   "Experience": {
     "title": "Jaké máš zkušenosti<br /><b>s tréninkem?</b>",
     "options": {
@@ -431,7 +439,7 @@
     ]
   },
   "PushupsStep": {
-    "title": "Kolik <span class=\"kalistenika-text\">kliků</span> zvládneš v kuse?",
+    "title": "Kolik kliků zvládneš v kuse?",
     "placeholder": "např. 15",
     "options": {
       "0-5": "0–5 kliků",
@@ -442,7 +450,7 @@
     }
   },
   "PullupsStep": {
-    "title": "Kolik <span class=\"kalistenika-text\">shybů</span> zvládneš v kuse?",
+    "title": "Kolik shybů zvládneš v kuse?",
     "placeholder": "např. 5",
     "options": {
       "0": "Zatím žádný",
@@ -453,8 +461,7 @@
     }
   },
   "DurationStep": {
-    "title1": "Vyber <b>čas</b>",
-    "title2": "jednoho <b>tréninku</b>",
+    "title": "Vyber <b>čas</b> jednoho <b>tréninku</b>",
     "steps": [
       {
         "value": "30"

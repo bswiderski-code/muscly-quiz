@@ -431,7 +431,7 @@
     ]
   },
   "PushupsStep": {
-    "title": "Câte <span class=\"kalistenika-text\">flotări</span> poți face consecutiv?",
+    "title": "Câte flotări poți face consecutiv?",
     "placeholder": "ex. 15",
     "options": {
       "0-5": "0-5 flotări",
@@ -442,7 +442,7 @@
     }
   },
   "PullupsStep": {
-    "title": "Câte <span class=\"kalistenika-text\">tracțiuni</span> poți face consecutiv?",
+    "title": "Câte tracțiuni poți face consecutiv?",
     "placeholder": "ex. 5",
     "options": {
       "0": "Niciuna momentan",
@@ -453,8 +453,7 @@
     }
   },
   "DurationStep": {
-    "title1": "Alege <b>durata</b>",
-    "title2": "unui <b>antrenament</b>",
+    "title": "Alege <b>durata</b> unui <b>antrenament</b>",
     "steps": [
       {
         "value": "30"

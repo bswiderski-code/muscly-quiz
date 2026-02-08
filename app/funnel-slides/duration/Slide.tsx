@@ -50,10 +50,7 @@ export default function Page() {
       </div>
 
       <div className="funnel-content funnel-content--centered">
-        <h1 className="funnel-title">
-          <span dangerouslySetInnerHTML={{ __html: t.raw('title1') }} />
-          <span dangerouslySetInnerHTML={{ __html: t.raw('title2') }} />
-        </h1>
+        <h1 className="funnel-title" dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
 
         <div className="funnel-big-value">
           {durationLabel}

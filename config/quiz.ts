@@ -3,7 +3,7 @@ import type { StepId } from '@/lib/steps/stepIds';
 /**
  * Control which quiz steps are disabled.
  */
-export const DISABLED_STEPS: StepId[] = [];
+export const DISABLED_STEPS: StepId[] = ['physique_goal'];
 
 /**
  * Control which equipment options are disabled.

@@ -271,6 +271,14 @@
       }
     }
   },
+  "CardioStep": {
+    "title": "Czy chcesz wykonywać<b> cardio?</b>",
+    "subtitle": "(bieganie, jazda na rowerze, skakanka)",
+    "yesAlt": "Tak",
+    "noAlt": "Nie",
+    "yesLabel": "Wybierz tak",
+    "noLabel": "Wybierz nie"
+  },
   "Experience": {
     "title": "Jakie masz doświadczenie<br /><b>w treningach?</b>",
     "options": {
@@ -431,7 +439,7 @@
     ]
   },
   "PushupsStep": {
-    "title": "Ile <span class=\"kalistenika-text\">pompek</span> jesteś w stanie zrobić za jednym razem?",
+    "title": "Ile pompek jesteś w stanie zrobić za jednym razem?",
     "placeholder": "np. 15",
     "options": {
       "0-5": "0-5 pompek",
@@ -442,7 +450,7 @@
     }
   },
   "PullupsStep": {
-    "title": "Ile <span class=\"kalistenika-text\">podciągnięć</span> jesteś w stanie zrobić za jednym razem?",
+    "title": "Ile podciągnięć jesteś w stanie zrobić za jednym razem?",
     "placeholder": "np. 5",
     "options": {
       "0": "Jeszcze żadnego",
@@ -453,8 +461,7 @@
     }
   },
   "DurationStep": {
-    "title1": "Wybierz <b>czas</b>",
-    "title2": "jednego <b>treningu</b>",
+    "title": "Wybierz <b>długość</b> jednego <b>treningu</b>",
     "steps": [
       {
         "value": "30"
