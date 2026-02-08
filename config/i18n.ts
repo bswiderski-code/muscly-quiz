@@ -1,10 +1,10 @@
-export type MarketCode = 'pl' | 'us' | 'fr' | 'de' | 'ro' | 'cz' | 'bg' | 'hu';
+export type MarketCode = 'pl' | 'us' | 'fr' | 'de' | 'cz' | 'bg' | 'hu';
 export type CheckoutProvider = 'p24' | 'payu' | 'stripe';
 
 export type MarketInfo = {
     market: MarketCode;
     locale: string;
-    currency: 'PLN' | 'USD' | 'EUR' | 'RON' | 'CZK' | 'BGN' | 'HUF';
+    currency: 'PLN' | 'USD' | 'EUR' | 'CZK' | 'BGN' | 'HUF';
     checkoutProvider: CheckoutProvider;
     gtmId: string;
     facebookPixelId: string;
@@ -29,15 +29,6 @@ export const LOCALE_CONFIG = {
         checkoutProvider: 'stripe',
         gtmId: 'GTM-XXXXXXXX',
         facebookPixelId: 'XXXXXXXXXXXXXXX',
-        funnels: ['workout'],
-    },
-    ro: {
-        market: 'ro',
-        locale: 'ro',
-        currency: 'RON',
-        checkoutProvider: 'stripe',
-        gtmId: 'GTM-MC5WTFCJ',
-        facebookPixelId: '1644944776860623',
         funnels: ['workout'],
     },
     fr: {
@@ -87,7 +78,7 @@ export const LOCALE_CONFIG = {
     },
 } as const satisfies Record<string, Omit<MarketInfo, 'isKnownHost'>>;
 
-export const locales = ['pl', 'en', 'ro', 'fr', 'de', 'cz', 'bg', 'hu'] as const;
+export const locales = ['pl', 'en', 'fr', 'de', 'cz', 'bg', 'hu'] as const;
 export type Locale = typeof locales[number];
 
 export const defaultLocale: Locale = 'pl';
@@ -97,7 +88,6 @@ export const localeMarketMap: Record<Locale, Omit<MarketInfo, 'isKnownHost'>> = 
 export const marketToCountryMap: Record<MarketCode, string> = {
     pl: 'PL',
     us: 'US',
-    ro: 'RO',
     fr: 'FR',
     de: 'DE',
     cz: 'CZ',

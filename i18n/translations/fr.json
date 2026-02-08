@@ -456,14 +456,14 @@
     "contactBox": {
       "title": "Tu as des doutes ?",
       "emailIntro": "Écris-moi :",
-      "emailAddress": "support@musclepals.com",
+      "emailAddress": "fr-support@musclepals.com",
       "responseTime": "⏰ Je réponds généralement en moins d'une heure."
     },
     "ctaButton": {
       "alt": "Recevoir mon plan"
     },
     "errorTitle": "Pas de données pour ce funnel.",
-    "errorDescription": "Contacte-nous à l'adresse : support@musclepals.com",
+    "errorDescription": "Contacte-nous à l'adresse : fr-support@musclepals.com",
     "faq": {
       "title": "Questions<br/>Fréquemment Posées :"
     }
@@ -647,7 +647,7 @@
     "successText2": "(ça peut prendre jusqu'à 5 minutes)",
     "successText3": "Vérifie aussi les spams et l'onglet \"offres/promotions\"",
     "successText4": "Si tu as le moindre problème, n'hésite pas à me le dire !",
-    "successEmail": "support@musclepals.com",
+    "successEmail": "fr-support@musclepals.com",
     "errorTitle": "On a un problème pour<br />traiter<br />ton paiement.",
     "errorImageAlt": "Rapport non payé",
     "errorText1": "Ton paiement <b>n'a pas été finalisé</b>, retourne à la page d'accueil et réessaie.",
@@ -779,7 +779,7 @@
     "persistentError": {
       "title": "Le problème persiste",
       "description": "Malheureusement, le problème d'enregistrement persiste. C'est peut-être une erreur technique.<br /><br />Contacte-nous à : {email}",
-      "contactEmail": "support@musclepals.com"
+      "contactEmail": "fr-support@musclepals.com"
     }
   },
   "PushupsStep": {

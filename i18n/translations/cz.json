@@ -513,14 +513,14 @@
     "contactBox": {
       "title": "Máš nějaké otázky?",
       "emailIntro": "Napiš nám:",
-      "emailAddress": "support@musclepals.com",
+      "emailAddress": "cz-support@musclepals.com",
       "responseTime": "⏰ Obvykle odpovím do hodiny."
     },
     "ctaButton": {
       "alt": "Získat plán"
     },
     "errorTitle": "Pro tento funnel nejsou k dispozici žádná data.",
-    "errorDescription": "Kontaktuj nás na: support@musclepals.com",
+    "errorDescription": "Kontaktuj nás na: cz-support@musclepals.com",
     "faq": {
       "title": "Často<br/>kladené otázky:"
     }
@@ -704,7 +704,7 @@
     "successText2": "(může to trvat až 5 minut)",
     "successText3": "Zkontroluj také spam a záložku „Hromadné“/„Nabídky“",
     "successText4": "V případě problémů nám klidně napiš!",
-    "successEmail": "support@musclepals.com",
+    "successEmail": "cz-support@musclepals.com",
     "errorTitle": "Máme problém<br />se zpracováním<br />tvé platby.",
     "errorImageAlt": "Nahlášení nezaplaceno",
     "errorText1": "Tvoje platba <b>nebyla dokončena</b>, vrať se na úvodní stránku a zkus to znovu.",
@@ -845,7 +845,7 @@
     "persistentError": {
       "title": "Problém přetrvává",
       "description": "Bohužel problém s ukládáním odpovědí stále přetrvává. Může jít o technickou chybu.<br /><br />Kontaktuj nás na: {email}",
-      "contactEmail": "support@musclepals.com"
+      "contactEmail": "cz-support@musclepals.com"
     }
   },
   "ReviewsMarquee": {

@@ -513,14 +513,14 @@
     "contactBox": {
       "title": "Do you have any doubts?",
       "emailIntro": "Reach out:",
-      "emailAddress": "support@musclepals.com",
+      "emailAddress": "en-support@musclepals.com",
       "responseTime": "⏰ Usually I reply in less than an hour."
     },
     "ctaButton": {
       "alt": "Get plan"
     },
     "errorTitle": "No data for this funnel.",
-    "errorDescription": "Contact us at: support@musclepals.com",
+    "errorDescription": "Contact us at: en-support@musclepals.com",
     "faq": {
       "title": "Frequently<br/>asked questions:"
     }
@@ -704,7 +704,7 @@
     "successText2": "(may take up to 5 minutes)",
     "successText3": "Check also spam and the \"offers\" tab",
     "successText4": "In case of any problems, feel free to let us know!",
-    "successEmail": "support@musclepals.com",
+    "successEmail": "en-support@musclepals.com",
     "errorTitle": "We have a problem<br />processing<br />your payment.",
     "errorImageAlt": "Report unpaid",
     "errorText1": "Your payment <b>was not finalized</b>, return to the home page and try again.",
@@ -845,7 +845,7 @@
     "persistentError": {
       "title": "Problem still occurs",
       "description": "Unfortunately, the problem with saving answers still occurs. This may be a technical error.<br /><br />Contact us at: {email}",
-      "contactEmail": "support@musclepals.com"
+      "contactEmail": "en-support@musclepals.com"
     }
   },
   "ReviewsMarquee": {

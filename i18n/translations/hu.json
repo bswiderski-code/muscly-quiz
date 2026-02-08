@@ -513,14 +513,14 @@
     "contactBox": {
       "title": "Van kérdésed?",
       "emailIntro": "Írj nekünk:",
-      "emailAddress": "support@musclepals.com",
+      "emailAddress": "hu-support@musclepals.com",
       "responseTime": "⏰ Általában egy órán belül válaszolok."
     },
     "ctaButton": {
       "alt": "Terv megszerzése"
     },
     "errorTitle": "Nincs adat ehhez a folyamathoz.",
-    "errorDescription": "Vedd fel velünk a kapcsolatot: support@musclepals.com",
+    "errorDescription": "Vedd fel velünk a kapcsolatot: hu-support@musclepals.com",
     "faq": {
       "title": "Gyakran<br/>ismételt kérdések:"
     }
@@ -704,7 +704,7 @@
     "successText2": "(akár 5 percig is eltarthat)",
     "successText3": "Nézd meg a spam mappát és a „promóciók/ajánlatok” fület is",
     "successText4": "Ha bármi gond lenne, szólj nyugodtan!",
-    "successEmail": "support@musclepals.com",
+    "successEmail": "hu-support@musclepals.com",
     "errorTitle": "Probléma adódott<br />a fizetés<br />feldolgozásakor.",
     "errorImageAlt": "Jelentés: nincs kifizetve",
     "errorText1": "A fizetésed <b>nem fejeződött be</b>, térj vissza a főoldalra és próbáld újra.",
@@ -845,7 +845,7 @@
     "persistentError": {
       "title": "A probléma továbbra is fennáll",
       "description": "Sajnos a válaszok mentésével kapcsolatos probléma még mindig fennáll. Ez technikai hiba lehet.<br /><br />Vedd fel velünk a kapcsolatot: {email}",
-      "contactEmail": "support@musclepals.com"
+      "contactEmail": "hu-support@musclepals.com"
     }
   },
   "ReviewsMarquee": {

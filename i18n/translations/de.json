@@ -448,14 +448,14 @@
     "contactBox": {
       "title": "Hast du irgendwelche Zweifel?",
       "emailIntro": "Melde dich:",
-      "emailAddress": "support@musclepals.com",
+      "emailAddress": "de-support@musclepals.com",
       "responseTime": "⏰ Ich antworte meistens in weniger als einer Stunde."
     },
     "ctaButton": {
       "alt": "Plan holen"
     },
     "errorTitle": "Keine Daten für diesen Funnel.",
-    "errorDescription": "Kontaktiere uns unter: support@musclepals.com",
+    "errorDescription": "Kontaktiere uns unter: de-support@musclepals.com",
     "faq": {
       "title": "Häufig gestellte<br/>Fragen:"
     }
@@ -639,7 +639,7 @@
     "successText2": "(kann bis zu 5 Minuten dauern)",
     "successText3": "Prüfe auch den Spam-Ordner und den Reiter \"Angebote\"",
     "successText4": "Falls du irgendwelche Probleme hast, sag Bescheid!",
-    "successEmail": "support@musclepals.com",
+    "successEmail": "de-support@musclepals.com",
     "errorTitle": "Wir haben ein Problem<br />bei der Verarbeitung<br />deiner Zahlung.",
     "errorImageAlt": "Bericht nicht bezahlt",
     "errorText1": "Deine Zahlung <b>wurde nicht abgeschlossen</b>, geh zurück zur Startseite und versuche es erneut.",
@@ -771,7 +771,7 @@
     "persistentError": {
       "title": "Das Problem besteht weiterhin",
       "description": "Leider besteht das Problem beim Speichern der Antworten weiterhin. Das könnte ein technischer Fehler sein.<br /><br />Kontaktiere uns unter: {email}",
-      "contactEmail": "support@musclepals.com"
+      "contactEmail": "de-support@musclepals.com"
     }
   },
   "PushupsStep": {

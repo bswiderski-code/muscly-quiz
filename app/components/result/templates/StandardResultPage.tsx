@@ -140,7 +140,7 @@ export default function StandardResultPage({ faqSection }: StandardResultPagePro
     emailAddress: string
     responseTime: string
   }
-  const supportEmail = contactBox?.emailAddress || 'support@musclepals.com'
+  const supportEmail = contactBox?.emailAddress || `${locale}-support@musclepals.com`
   
   const replaceLocale = (path: string) => withLocale(path, locale);
 

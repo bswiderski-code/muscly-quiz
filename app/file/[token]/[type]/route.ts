@@ -22,12 +22,12 @@ export async function GET(
     // Helper to generate HTML error response
     const returnErrorHtml = (locale: string = 'en', translations: any = null) => {
         let title = 'Problem loading your data.';
-        let description = 'If the issue persists, please contact us at support@musclepals.com';
+        let description = `If the issue persists, please contact us at ${locale}-support@musclepals.com`;
 
         if (translations && translations.ResultPage) {
             title = translations.ResultPage.loadingErrorTitle || title;
             if (translations.ResultPage.loadingErrorHtml) {
-                const email = 'support@musclepals.com';
+                const email = `${locale}-support@musclepals.com`;
                 description = translations.ResultPage.loadingErrorHtml.replace(/{email}/g, email);
             }
         } else {
@@ -38,7 +38,7 @@ export async function GET(
                     if (enTrans.ResultPage) {
                         title = enTrans.ResultPage.loadingErrorTitle || title;
                         if (enTrans.ResultPage.loadingErrorHtml) {
-                            const email = 'support@musclepals.com';
+                            const email = 'en-support@musclepals.com';
                             description = enTrans.ResultPage.loadingErrorHtml.replace(/{email}/g, email);
                         }
                     }

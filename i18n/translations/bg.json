@@ -505,14 +505,14 @@
     "contactBox": {
       "title": "Имаш ли въпроси?",
       "emailIntro": "Свържи се:",
-      "emailAddress": "support@musclepals.com",
+      "emailAddress": "bg-support@musclepals.com",
       "responseTime": "⏰ Обикновено отговарям за по-малко от час."
     },
     "ctaButton": {
       "alt": "Вземи плана"
     },
     "errorTitle": "Няма данни за тази фуния.",
-    "errorDescription": "Свържи се с нас на: support@musclepals.com",
+    "errorDescription": "Свържи се с нас на: bg-support@musclepals.com",
     "faq": {
       "title": "Често<br/>задавани въпроси:"
     }
@@ -696,7 +696,7 @@
     "successText2": "(може да отнеме до 5 минути)",
     "successText3": "Провери и спам папката, както и таба „Промоции“",
     "successText4": "При проблеми — пиши ни!",
-    "successEmail": "support@musclepals.com",
+    "successEmail": "bg-support@musclepals.com",
     "errorTitle": "Имаме проблем<br />с обработката<br />на плащането ти.",
     "errorImageAlt": "Поръчката не е платена",
     "errorText1": "Плащането ти <b>не беше финализирано</b>. Върни се на началната страница и опитай отново.",
@@ -837,7 +837,7 @@
     "persistentError": {
       "title": "Проблемът все още се появява",
       "description": "За съжаление проблемът със запазването на отговорите продължава. Това може да е техническа грешка.<br /><br />Свържи се с нас на: {email}",
-      "contactEmail": "support@musclepals.com"
+      "contactEmail": "bg-support@musclepals.com"
     }
   },
   "ReviewsMarquee": {
