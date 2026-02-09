@@ -254,7 +254,11 @@ export async function GET(
 
         const headers = new Headers();
         headers.set('Content-Type', 'application/pdf');
-        headers.set('Content-Disposition', `inline; filename="${downloadName}"`);
+        // RFC 5987 compliant filename encoding for proper handling of all characters
+        // Including ASCII fallback for older browsers and UTF-8 encoding for modern browsers
+        const encodedFilename = encodeURIComponent(downloadName);
+        const asciiFilename = downloadName.replace(/[^\x20-\x7E]/g, '_'); // Replace non-ASCII with underscore
+        headers.set('Content-Disposition', `inline; filename="${asciiFilename}"; filename*=UTF-8''${encodedFilename}`);
         if (response.ContentLength) {
             headers.set('Content-Length', response.ContentLength.toString());
         }
