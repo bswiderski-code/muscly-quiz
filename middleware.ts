@@ -30,7 +30,7 @@ export default async function middleware(request: NextRequest) {
     return NextResponse.redirect(redirectUrl, 308);
   }
 
-  // 2. Skip next-intl for S3 proxy files
+  // 2. Skip next-intl for S3 proxy files (both legacy and new locale-based routes)
   if (request.nextUrl.pathname.startsWith('/file/')) {
     return NextResponse.next();
   }
