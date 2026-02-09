@@ -6,6 +6,7 @@ import { getCountryForHost, getMarketForHost } from '@/i18n/config';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 import { normalizeCountryCode } from '@/lib/i18n/countryUtils';
 import { v4 as uuidv4 } from 'uuid';
+import { getExchangeRateToPLN } from '@/lib/exchangeRateApi';
 
 import { getPayUCredentials } from '@/config/credentials';
 
@@ -97,6 +98,15 @@ export async function POST(req: NextRequest) {
 	}
 
 	try {
+		const amount = order.totalAmount / 100;
+		const currency = order.currencyCode || market.currency || 'PLN';
+
+		let amountPln = amount;
+		if (currency !== 'PLN') {
+			const rate = await getExchangeRateToPLN(currency);
+			amountPln = amount * rate;
+		}
+
 		await (prisma as any).order.create({
 			data: {
 				item: userData.item,
@@ -104,11 +114,12 @@ export async function POST(req: NextRequest) {
 				// Schema: `amount Decimal @db.Decimal(10,2)`.
 				// If I pass integer 12300 to Decimal(10,2), it might be interpreted as 12300.00.
 				// I should pass 123.00.
-				amount: order.totalAmount / 100,
-				currency: order.currencyCode || market.currency || 'PLN',
+				amount: amount,
+				currency: currency,
 				country: normalizeCountryCode(userData.country || country),
 				paymentProvider: 'PayU',
 				pdfToken: uuidv4(),
+				amountPln: amountPln,
 			},
 		});
 	} catch (e) {

@@ -89,6 +89,7 @@ async function main() {
                 paymentProvider: 'MANUAL_CONVERT',
                 delivered: false,
                 pdfToken: uuidv4(),
+                amountPln: 39.00,
             },
         });
 

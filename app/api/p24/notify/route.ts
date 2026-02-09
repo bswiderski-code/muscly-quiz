@@ -7,6 +7,7 @@ import { getCountryForHost, getMarketForHost } from '@/i18n/config';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 import { normalizeCountryCode } from '@/lib/i18n/countryUtils';
 import { v4 as uuidv4 } from 'uuid';
+import { getExchangeRateToPLN } from '@/lib/exchangeRateApi';
 
 import { getP24Credentials } from '@/config/credentials';
 
@@ -78,15 +79,25 @@ export async function POST(req: NextRequest) {
       // Check if order exists
       const existing = await (prisma as any).order.findFirst({ where: { userId: userData.id, paymentProvider: 'P24' } });
       if (!existing) {
+        const amount = Number(body.amount) / 100;
+        const currency = market.currency || 'PLN';
+
+        let amountPln = amount;
+        if (currency !== 'PLN') {
+          const rate = await getExchangeRateToPLN(currency);
+          amountPln = amount * rate;
+        }
+
         await (prisma as any).order.create({
           data: {
             item: userData.item,
             userId: userData.id,
-            amount: Number(body.amount) / 100, // P24 amount is integer, e.g. 12300 for 123 PLN
-            currency: market.currency || 'PLN',
+            amount: amount, // P24 amount is integer, e.g. 12300 for 123 PLN
+            currency: currency,
             country: normalizeCountryCode(userData.country || country),
             paymentProvider: 'P24',
             pdfToken: uuidv4(),
+            amountPln: amountPln,
           },
         });
       }

@@ -89,6 +89,11 @@ const sharedPricing: Partial<Record<LocalePricingKey, LocalePricing>> = {
     workout_solo: { amount: 10.99, description: 'workout_solo' },
     workout_bundle: { amount: 13.99, description: 'workout_bundle' },
   },
+  ro: {
+    currency: 'RON',
+    workout_solo: { amount: 44.99, description: 'workout_solo' },
+    workout_bundle: { amount: 54.99, description: 'workout_bundle' },
+  },
 };
 
 /**
