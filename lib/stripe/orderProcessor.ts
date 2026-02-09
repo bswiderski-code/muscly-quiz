@@ -88,21 +88,8 @@ export async function processStripeSession(
     // If we processed it, send the webhook
     if (transactionResult.action === 'processed') {
         try {
-            await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
-                checkoutDB: 'user_data',
+            await sendToN8n(process.env.N8N_WEBHOOK_URL!, {
                 sessionid: sessionId,
-                event: 'checkout.succeeded',
-                status: 'paid',
-                country: country,
-                item: transactionResult.userData?.item,
-                email: transactionResult.userData?.email,
-                name: transactionResult.userData?.name,
-                amount: (session.amount_total ?? 0) / 100,
-                currency: session.currency?.toUpperCase(),
-                usedMetric: session.metadata?.usedMetric,
-                waga_raw: session.metadata?.waga_raw,
-                waga_cel_raw: session.metadata?.waga_cel_raw,
-                wzrost_raw: session.metadata?.wzrost_raw,
             });
         } catch (webhookError) {
             console.error('N8n Webhook failed', webhookError);

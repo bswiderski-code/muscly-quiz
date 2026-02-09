@@ -4,9 +4,9 @@ import crypto from 'crypto';
 type N8nEvent =
   | 'checkout.succeeded';
 
-const sendToN8n = async <T extends Record<string, unknown>>(url: string, event: N8nEvent, data: T) => {
+const sendToN8n = async <T extends Record<string, unknown>>(url: string, data: T) => {
   const secret = process.env.N8N_WEBHOOK_SECRET;
-  const payload = { event, ...data };
+  const payload = { ...data };
   const body = JSON.stringify(payload);
 
   let signature = '';

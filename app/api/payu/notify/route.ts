@@ -117,17 +117,8 @@ export async function POST(req: NextRequest) {
 		return NextResponse.json({ ok: false, error: 'Failed to create Order row' }, { status: 500 });
 	}
 
-	await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
-		checkoutDB: 'user_data',
+	await sendToN8n(process.env.N8N_WEBHOOK_URL!, {
 		sessionid: sessionId,
-		event: 'checkout.succeeded',
-		status: 'paid',
-		country: country,
-		item: userData.item,
-		email: userData.email,
-		name: userData.name,
-		amount: order.totalAmount / 100,
-		currency: order.currencyCode,
 	});
 
 	return NextResponse.json({ ok: true });

@@ -9,9 +9,9 @@ dotenv.config();
 const prisma = new PrismaClient();
 
 // Minimal sendToN8n implementation for script usage
-async function sendToN8n(url: string, event: string, data: any) {
+async function sendToN8n(url: string, data: any) {
     const secret = process.env.N8N_WEBHOOK_SECRET;
-    const payload = { event, ...data };
+    const payload = { ...data };
     const body = JSON.stringify(payload);
 
     let signature = '';
@@ -79,7 +79,7 @@ async function main() {
 
         // 2b. Create order
         // We use some defaults for amount/currency since we don't have payu/stripe session data here
-        const order = await tx.order.create({
+        const order = await (tx as any).order.create({
             data: {
                 item: lastUser.item,
                 userId: lastUser.id,
@@ -102,17 +102,8 @@ async function main() {
     const webhookUrl = process.env.N8N_WEBHOOK_URL;
     if (webhookUrl) {
         console.log('Sending N8N Webhook...');
-        await sendToN8n(webhookUrl, 'checkout.succeeded', {
-            checkoutDB: 'user_data',
+        await sendToN8n(webhookUrl, {
             sessionid: lastUser.sid,
-            event: 'checkout.succeeded',
-            status: 'paid',
-            country: lastUser.country || 'PL',
-            item: lastUser.item,
-            email: lastUser.email,
-            name: lastUser.name,
-            amount: 39.00,
-            currency: 'PLN',
         });
         console.log('Webhook sent.');
     } else {

@@ -35,11 +35,8 @@ export async function POST(req: NextRequest) {
       data: { status: 'failed' },
     });
 
-    await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
-      checkoutDB: 'user_data',
+    await sendToN8n(process.env.N8N_WEBHOOK_URL!, {
       sessionid: body.sessionId,
-      event: 'checkout.succeeded',
-      status: 'signature_invalid',
     });
 
     return NextResponse.json({ ok: false }, { status: 400 });
@@ -58,11 +55,8 @@ export async function POST(req: NextRequest) {
       data: { status: 'failed' },
     });
 
-    await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
-      checkoutDB: 'user_data',
+    await sendToN8n(process.env.N8N_WEBHOOK_URL!, {
       sessionid: body.sessionId,
-      event: 'checkout.succeeded',
-      status: 'transaction_verification_failed',
     });
 
     return NextResponse.json({ ok: false }, { status: 400 });
@@ -100,17 +94,8 @@ export async function POST(req: NextRequest) {
     console.error('Failed to create Order row for session', body.sessionId, e);
   }
 
-  await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
-    checkoutDB: 'user_data',
+  await sendToN8n(process.env.N8N_WEBHOOK_URL!, {
     sessionid: body.sessionId,
-    event: 'checkout.succeeded',
-    status: 'paid',
-    country: country,
-    item: userData?.item,
-    email: userData?.email,
-    name: userData?.name,
-    amount: Number(body.amount) / 100,
-    currency: market.currency,
   });
 
   return NextResponse.json({ ok: true });
