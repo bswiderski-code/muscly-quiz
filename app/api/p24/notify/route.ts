@@ -5,6 +5,7 @@ import { P24, Currency } from '@ingameltd/node-przelewy24';
 import { sendToN8n } from '@/lib/n8n';
 import { getCountryForHost, getMarketForHost } from '@/i18n/config';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
+import { normalizeCountryCode } from '@/lib/i18n/countryUtils';
 import { v4 as uuidv4 } from 'uuid';
 
 import { getP24Credentials } from '@/config/credentials';
@@ -83,7 +84,7 @@ export async function POST(req: NextRequest) {
             userId: userData.id,
             amount: Number(body.amount) / 100, // P24 amount is integer, e.g. 12300 for 123 PLN
             currency: market.currency || 'PLN',
-            country: country,
+            country: normalizeCountryCode(country),
             paymentProvider: 'P24',
             pdfToken: uuidv4(),
           },

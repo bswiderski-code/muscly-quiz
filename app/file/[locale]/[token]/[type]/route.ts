@@ -20,6 +20,28 @@ export async function GET(
 ) {
     const { locale: urlLocale, token, type } = await context.params;
 
+    // Detect if this is a legacy URL format: /file/[token]/[type]
+    // In this case, urlLocale is actually the token, and token is actually the type
+    // We detect this by checking if urlLocale looks like a UUID token
+    const isLegacyUrl = urlLocale && urlLocale.length > 10 && urlLocale.includes('-');
+
+    let actualLocale: string | null = null;
+    let actualToken: string;
+    let actualType: string;
+
+    if (isLegacyUrl) {
+        // Legacy URL: /file/[token]/[type]
+        // urlLocale is the token, token is the type, type is undefined or next segment
+        actualToken = urlLocale;
+        actualType = token;
+        // We'll look up locale from database below
+    } else {
+        // New URL: /file/[locale]/[token]/[type]
+        actualLocale = urlLocale;
+        actualToken = token;
+        actualType = type;
+    }
+
     // Helper to generate HTML error response
     const returnErrorHtml = (locale: string = 'en', translations: any = null) => {
         let title = 'Problem loading your data.';
@@ -110,32 +132,32 @@ export async function GET(
         });
     };
 
-    if (!token || !type) {
-        return returnErrorHtml(urlLocale || 'en');
+    if (!actualToken || !actualType) {
+        return returnErrorHtml(actualLocale || 'en');
     }
 
-    if (type !== 'workout' && type !== 'diet') {
-        return returnErrorHtml(urlLocale || 'en');
+    if (actualType !== 'workout' && actualType !== 'diet') {
+        return returnErrorHtml(actualLocale || 'en');
     }
 
     const order = await prisma.order.findUnique({
-        where: { pdfToken: token },
+        where: { pdfToken: actualToken },
     });
 
     if (!order) {
-        return returnErrorHtml(urlLocale || 'en');
+        return returnErrorHtml(actualLocale || 'en');
     }
 
     // Access control logic
     const item = order.item;
     let hasAccess = false;
 
-    if (type === 'workout') {
+    if (actualType === 'workout') {
         // Workout access for all solo/bundle workout items
         if (['workout_solo', 'workout_bundle'].includes(item)) {
             hasAccess = true;
         }
-    } else if (type === 'diet') {
+    } else if (actualType === 'diet') {
         // Diet access for bundles or solo raport item
         if (['workout_bundle', 'raport'].includes(item)) {
             hasAccess = true;
@@ -143,15 +165,15 @@ export async function GET(
     }
 
     if (!hasAccess) {
-        return returnErrorHtml(urlLocale || 'en'); // or custom "No access" page
+        return returnErrorHtml(actualLocale || 'en'); // or custom "No access" page
     }
 
     // Determine locale: use URL locale if provided, otherwise fall back to country lookup
     let locale: string;
-    if (urlLocale) {
-        locale = urlLocale;
+    if (actualLocale) {
+        locale = actualLocale;
     } else {
-        // Fallback: lookup from database country
+        // Fallback: lookup from database country (for legacy URLs)
         locale = getLocaleFromCountry(order.country);
     }
 
@@ -167,7 +189,7 @@ export async function GET(
             translations = JSON.parse(fs.readFileSync(filePath, 'utf8'));
 
             // Determine translation key
-            let transKey = type; // default to 'workout' or 'diet'
+            let transKey = actualType; // default to 'workout' or 'diet'
 
             if (translations.PdfFilenames && translations.PdfFilenames[transKey]) {
                 baseName = translations.PdfFilenames[transKey];
@@ -195,7 +217,7 @@ export async function GET(
         console.error('Failed to load translations for PDF filename:', e);
     }
 
-    const dir = TYPE_TO_DIR[type];
+    const dir = TYPE_TO_DIR[actualType];
     const s3Key = `${dir}/${country}/${baseName}_${order.id}.pdf`;
     const downloadName = `${baseName}_${order.id}.pdf`;
 
@@ -213,7 +235,7 @@ export async function GET(
         forcePathStyle: true,
     });
 
-    console.log(`[DEBUG] Fetching: Bucket=${s3Config.bucket}, Key=${s3Key}, Type=${type}, Item=${item}, Locale=${locale}`);
+    console.log(`[DEBUG] Fetching: Bucket=${s3Config.bucket}, Key=${s3Key}, Type=${actualType}, Item=${item}, Locale=${locale}, IsLegacyUrl=${isLegacyUrl}`);
 
     try {
         const command = new GetObjectCommand({

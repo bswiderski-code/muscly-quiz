@@ -3,6 +3,7 @@ import { Prisma } from '@prisma/client';
 import { sendToN8n } from '@/lib/n8n';
 import Stripe from 'stripe';
 import { getCountryForHost } from '@/i18n/config';
+import { normalizeCountryCode } from '@/lib/i18n/countryUtils';
 import { v4 as uuidv4 } from 'uuid';
 
 // Shared type for the result of processing
@@ -66,7 +67,7 @@ export async function processStripeSession(
                 userId: userData.id,
                 amount: new Prisma.Decimal((session.amount_total ?? 0) / 100) as any,
                 currency: session.currency?.toUpperCase() ?? 'USD',
-                country: country,
+                country: normalizeCountryCode(country),
                 paymentProvider: 'Stripe',
                 delivered: false,
                 pdfToken: uuidv4(),

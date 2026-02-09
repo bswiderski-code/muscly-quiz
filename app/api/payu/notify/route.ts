@@ -4,6 +4,7 @@ import { PayU } from '@ingameltd/payu';
 import { sendToN8n } from '@/lib/n8n';
 import { getCountryForHost, getMarketForHost } from '@/i18n/config';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
+import { normalizeCountryCode } from '@/lib/i18n/countryUtils';
 import { v4 as uuidv4 } from 'uuid';
 
 import { getPayUCredentials } from '@/config/credentials';
@@ -105,7 +106,7 @@ export async function POST(req: NextRequest) {
 				// I should pass 123.00.
 				amount: order.totalAmount / 100,
 				currency: order.currencyCode || market.currency || 'PLN',
-				country: country,
+				country: normalizeCountryCode(country),
 				paymentProvider: 'PayU',
 				pdfToken: uuidv4(),
 			},
