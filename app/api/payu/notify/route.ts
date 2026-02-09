@@ -106,7 +106,7 @@ export async function POST(req: NextRequest) {
 				// I should pass 123.00.
 				amount: order.totalAmount / 100,
 				currency: order.currencyCode || market.currency || 'PLN',
-				country: normalizeCountryCode(country),
+				country: normalizeCountryCode(userData.country || country),
 				paymentProvider: 'PayU',
 				pdfToken: uuidv4(),
 			},

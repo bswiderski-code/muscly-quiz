@@ -78,7 +78,7 @@ export async function processStripeSession(
                 userId: userData.id,
                 amount: new Prisma.Decimal(amount) as any,
                 currency: currency,
-                country: normalizeCountryCode(country),
+                country: normalizeCountryCode(userData.country || country),
                 paymentProvider: 'Stripe',
                 delivered: false,
                 pdfToken: uuidv4(),

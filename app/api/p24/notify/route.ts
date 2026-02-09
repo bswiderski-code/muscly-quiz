@@ -84,7 +84,7 @@ export async function POST(req: NextRequest) {
             userId: userData.id,
             amount: Number(body.amount) / 100, // P24 amount is integer, e.g. 12300 for 123 PLN
             currency: market.currency || 'PLN',
-            country: normalizeCountryCode(country),
+            country: normalizeCountryCode(userData.country || country),
             paymentProvider: 'P24',
             pdfToken: uuidv4(),
           },
