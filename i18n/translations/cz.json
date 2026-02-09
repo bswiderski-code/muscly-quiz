@@ -664,25 +664,25 @@
     "noData": "-"
   },
   "Carousel": {
-    "indicatorNote": "Poznámka! Toto není celý tréninkový plán, pouze 4 ukázkové stránky.",
-    "pageLabel": "Strana {current}/{total}",
+    "indicatorNote": "Pozor! Toto není celý tréninkový plán, pouze 4 ukázkové strany. Celý plán se skládá z 10 stran.",
+    "pageLabel": "Strážka {current}/{total}",
     "workout": {
       "slides": [
         {
-          "alt": "Rafal 1",
-          "caption": "Úvod do tréninkového plánu – strana 1"
+          "alt": "Marek 1",
+          "caption": "Úvod do plánu - strana 1"
         },
         {
-          "alt": "Rafal 2",
-          "caption": "Návod, jak plán používat – strana 2"
+          "alt": "Marek 2",
+          "caption": "Návod k použití plánu - strana 3"
         },
         {
-          "alt": "Rafal 3",
-          "caption": "Začátek tréninkového plánu – strana 5"
+          "alt": "Marek 3",
+          "caption": "Začátek tréninkové rutiny - strana 4"
         },
         {
-          "alt": "Rafal 5",
-          "caption": "Plán progrese na další 3 měsíce – strana 7"
+          "alt": "Marek 5",
+          "caption": "Analýza regenerace - strana 7"
         }
       ]
     }

@@ -664,25 +664,25 @@
     "noData": "-"
   },
   "Carousel": {
-    "indicatorNote": "Uwaga! To nie jest cały plan treningowy, tylko 4 przykładowe strony.",
+    "indicatorNote": "Uwaga! To nie jest cały plan treningowy, tylko 4 przykładowe strony. Ten pełny plan składa się z 10 stron.",
     "pageLabel": "Strona {current}/{total}",
     "workout": {
       "slides": [
         {
-          "alt": "Rafał 1",
-          "caption": "Wstęp do planu treningowego – strona 1"
+          "alt": "Maciej 1",
+          "caption": "Wstęp do planu - strona 1"
         },
         {
-          "alt": "Rafał 2",
-          "caption": "Poradnik, jak korzystać z planu – strona 2"
+          "alt": "Maciej 2",
+          "caption": "Poradnik korzystania z planu - strona 3"
         },
         {
-          "alt": "Rafał 3",
-          "caption": "Początek planu treningowego – strona 5"
+          "alt": "Maciej 3",
+          "caption": "Początek rutyny treningowej - strona 4"
         },
         {
-          "alt": "Rafał 5",
-          "caption": "Plan progresji na najbliższe 3 miesiące – strona 7"
+          "alt": "Maciej 5",
+          "caption": "Analiza regeneracji - strona 7"
         }
       ]
     }

@@ -25,7 +25,7 @@ export const ASSET_PATHS = {
         inclineSmith: "/vectors/exercises/incline_smith.svg",
     },
     exampleTraining: {
-        samplePlan: "/example_training/{locale}/plan/sample-{n}.png",
+        samplePlan: "/example_training/{locale}/sample-{n}.png",
     },
     bmiImages: {
         male: {

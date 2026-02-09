@@ -664,25 +664,25 @@
     "noData": "-"
   },
   "Carousel": {
-    "indicatorNote": "Notă! Acesta nu este întregul plan de antrenament, ci doar 4 pagini de exemplu.",
+    "indicatorNote": "Atenție! Acesta nu este întregul plan de antrenament, ci doar 4 pagini de exemplu. Planul complet este format din 10 pagini.",
     "pageLabel": "Pagina {current}/{total}",
     "workout": {
       "slides": [
         {
-          "alt": "Rafal 1",
-          "caption": "Introducere în planul de antrenament – pagina 1"
+          "alt": "Andrei 1",
+          "caption": "Introducere în plan - pagina 1"
         },
         {
-          "alt": "Rafal 2",
-          "caption": "Ghid despre cum să folosești planul – pagina 2"
+          "alt": "Andrei 2",
+          "caption": "Ghid de utilizare a planului - pagina 3"
         },
         {
-          "alt": "Rafal 3",
-          "caption": "Începutul planului de antrenament – pagina 5"
+          "alt": "Andrei 3",
+          "caption": "Începutul rutinei de antrenament - pagina 4"
         },
         {
-          "alt": "Rafal 5",
-          "caption": "Plan de progresie pentru următoarele 3 luni – pagina 7"
+          "alt": "Andrei 5",
+          "caption": "Analiza recuperării - pagina 7"
         }
       ]
     }

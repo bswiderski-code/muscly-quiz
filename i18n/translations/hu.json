@@ -664,25 +664,25 @@
     "noData": "-"
   },
   "Carousel": {
-    "indicatorNote": "Figyelem! Ez nem a teljes edzésterv, csak 4 mintaoldal.",
+    "indicatorNote": "Figyelem! Ez nem a teljes edzésterv, csak 4 mintaoldal. A teljes terv 10 oldalból áll.",
     "pageLabel": "{current}/{total}. oldal",
     "workout": {
       "slides": [
         {
-          "alt": "Rafal 1",
-          "caption": "Bevezetés az edzéstervhez – 1. oldal"
+          "alt": "Bence 1",
+          "caption": "Bevezetés a tervbe - 1. oldal"
         },
         {
-          "alt": "Rafal 2",
-          "caption": "Útmutató a terv használatához – 2. oldal"
+          "alt": "Bence 2",
+          "caption": "Útmutató a terv használatához - 3. oldal"
         },
         {
-          "alt": "Rafal 3",
-          "caption": "Az edzésterv kezdete – 5. oldal"
+          "alt": "Bence 3",
+          "caption": "Az edzésprogram kezdete - 4. oldal"
         },
         {
-          "alt": "Rafal 5",
-          "caption": "Progressziós terv a következő 3 hónapra – 7. oldal"
+          "alt": "Bence 5",
+          "caption": "Regeneráció elemzése - 7. oldal"
         }
       ]
     }

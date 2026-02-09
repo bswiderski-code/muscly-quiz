@@ -664,25 +664,25 @@
     "noData": "-"
   },
   "Carousel": {
-    "indicatorNote": "Note! This is not the whole workout plan, just 4 sample pages.",
+    "indicatorNote": "Note! This is not the full training plan, just 4 sample pages. The full plan consists of 10 pages.",
     "pageLabel": "Page {current}/{total}",
     "workout": {
       "slides": [
         {
-          "alt": "Rafal 1",
-          "caption": "Introduction to the training plan – page 1"
+          "alt": "Liam 1",
+          "caption": "Introduction to the plan - page 1"
         },
         {
-          "alt": "Rafal 2",
-          "caption": "Guide on how to use the plan – page 2"
+          "alt": "Liam 2",
+          "caption": "Guide on using the plan - page 3"
         },
         {
-          "alt": "Rafal 3",
-          "caption": "Beginning of the training plan – page 5"
+          "alt": "Liam 3",
+          "caption": "Start of training routine - page 4"
         },
         {
-          "alt": "Rafal 5",
-          "caption": "Progression plan for the next 3 months – page 7"
+          "alt": "Liam 5",
+          "caption": "Recovery analysis - page 7"
         }
       ]
     }
