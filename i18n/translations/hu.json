@@ -846,8 +846,8 @@
     "title": "Nézd meg, mit mondanak rólunk a vásárlóink"
   },
   "PdfFilenames": {
-    "workout": "Edzesterv",
-    "raport": "BMI_elemzes"
+    "workout": "Edzésterv",
+    "raport": "BMI_Jelentés"
   },
   "NotFound": {
     "title": "Ez az oldal nem létezik",

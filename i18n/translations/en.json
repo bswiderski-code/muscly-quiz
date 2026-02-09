@@ -847,7 +847,7 @@
   },
   "PdfFilenames": {
     "workout": "Workout_plan",
-    "raport": "BMI_Report"
+    "raport": "BMI_Analysis"
   },
   "NotFound": {
     "title": "This page doesn't exist",

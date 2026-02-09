@@ -846,8 +846,8 @@
     "title": "Виж какво казват нашите клиенти за нас"
   },
   "PdfFilenames": {
-    "workout": "Trenirovachen_plan",
-    "raport": "BMI_analiz"
+    "workout": "Тренировъчен_план",
+    "raport": "Отчет_BMI"
   },
   "NotFound": {
     "title": "Тази страница не съществува",
