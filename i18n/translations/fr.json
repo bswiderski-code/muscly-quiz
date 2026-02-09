@@ -843,8 +843,7 @@
   "PlanPage": {},
   "PdfFilenames": {
     "workout": "Plan_d_entrainement",
-    "raport": "Rapport_BMI",
-    "calisthenics": "Plan_de_calisthenie"
+    "raport": "Rapport_BMI"
   },
   "NotFound": {
     "title": "Cette page n'existe pas",

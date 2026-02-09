@@ -131,7 +131,7 @@ export async function GET(
     let hasAccess = false;
 
     if (type === 'workout') {
-        // Workout access for all solo/bundle workout/calisthenics items
+        // Workout access for all solo/bundle workout items
         if (['workout_solo', 'workout_bundle'].includes(item)) {
             hasAccess = true;
         }

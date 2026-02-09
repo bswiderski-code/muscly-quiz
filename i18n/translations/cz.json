@@ -847,8 +847,7 @@
   },
   "PdfFilenames": {
     "workout": "Treninkovy_plan",
-    "raport": "BMI_Zprava",
-    "calisthenics": "Kalistenika_plan"
+    "raport": "Analyza_BMI"
   },
   "NotFound": {
     "title": "Tato stránka neexistuje",

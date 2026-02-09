@@ -36,7 +36,7 @@ The system automatically organizes files in S3 based on product type and user lo
 **Pattern:** `[category]/[country]/[localized_name]_[order_id].pdf`
 
 **Categories:**
-- `training-plan/` (for workout and calisthenics)
+- `training_plan/` (for workout plans)
 - `diet/` (for BMI reports)
 
 **Example (Poland, Workout):**

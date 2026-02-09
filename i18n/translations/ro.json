@@ -847,8 +847,7 @@
   },
   "PdfFilenames": {
     "workout": "Plan_antrenament",
-    "raport": "Raport_IMC",
-    "calisthenics": "Plan_calisthenics"
+    "raport": "Raport_IMC"
   },
   "NotFound": {
     "title": "Această pagină nu există",
