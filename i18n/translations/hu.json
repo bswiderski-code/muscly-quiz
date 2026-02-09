@@ -25,11 +25,7 @@
   "PlanPage": {
     "title": "A terved",
     "privacy": "Adatvédelmi irányelvek",
-    "terms": "Általános Szerződési Feltételek",
-    "assets": {
-      "privacyUrl": "https://musclepals.com/regional/en/privacy",
-      "termsUrl": "https://musclepals.com/regional/en/terms"
-    }
+    "terms": "Általános Szerződési Feltételek"
   },
   "Seo": {
     "appTitle": "Musclepals",
@@ -513,7 +509,6 @@
     "contactBox": {
       "title": "Van kérdésed?",
       "emailIntro": "Írj nekünk:",
-      "emailAddress": "hu-support@musclepals.com",
       "responseTime": "⏰ Általában kevesebb mint egy órán belül válaszolok."
     },
     "ctaButton": {
@@ -625,8 +620,8 @@
     "namePlaceholder": "Név",
     "emailLabel": "E-mail (ide küldjük a tervet):",
     "emailPlaceholder": "cim@email.com",
-    "agreementText": "Hozzájárulok a személyes adataim kezeléséhez az <a href=\"https://musclepals.com/hu/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">adatvédelmi irányelvek</a> szerint.",
-    "agreementCheckboxHtml": "Elfogadom a <a href=\"https://musclepals.com/hu/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">feltételeket</a> és az <a href=\"https://musclepals.com/hu/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">adatvédelmi irányelveket</a>.",
+    "agreementText": "Hozzájárulok a személyes adataim kezeléséhez az <a href=\"{privacyUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">adatvédelmi irányelvek</a> szerint.",
+    "agreementCheckboxHtml": "Elfogadom a <a href=\"{termsUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">feltételeket</a> és az <a href=\"{privacyUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">adatvédelmi irányelveket</a>.",
     "healthDataAgreementHtml": "Hozzájárulok az egészségügyi adataim és méreteim felhasználásához (ez szükséges a terv elkészítéséhez).",
     "healthDataAgreementRequiredError": "Kérlek, fogadd el az egészségügyi adatok felhasználására vonatkozó hozzájárulást a folytatáshoz.",
     "agreementRequiredError": "Kérlek, fogadd el a feltételeket a folytatáshoz.",
@@ -704,7 +699,6 @@
     "successText2": "(akár 5 percig is eltarthat)",
     "successText3": "Nézd meg a spam mappát és a „promóciók/ajánlatok” fület is",
     "successText4": "Bármilyen probléma esetén bátran jelezd nekünk!",
-    "successEmail": "hu-support@musclepals.com",
     "errorTitle": "Probléma adódott<br />a fizetésed<br />feldolgozása közben.",
     "errorImageAlt": "Jelentés: nincs kifizetve",
     "errorText1": "A fizetésed <b>nem fejeződött be</b>, térj vissza a főoldalra és próbáld újra.",
@@ -844,8 +838,7 @@
     },
     "persistentError": {
       "title": "A probléma továbbra is fennáll",
-      "description": "Sajnos a válaszok mentésével kapcsolatos probléma még mindig fennáll. Ez technikai hiba lehet.<br /><br />Vedd fel velünk a kapcsolatot: {email}",
-      "contactEmail": "hu-support@musclepals.com"
+      "description": "Sajnos a válaszok mentésével kapcsolatos probléma még mindig fennáll. Ez technikai hiba lehet.<br /><br />Vedd fel velünk a kapcsolatot: {email}"
     }
   },
   "ReviewsMarquee": {

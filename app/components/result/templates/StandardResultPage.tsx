@@ -141,7 +141,7 @@ export default function StandardResultPage({ faqSection }: StandardResultPagePro
     emailAddress: string
     responseTime: string
   }
-  const supportEmail = getSupportEmail(locale)
+  const supportEmail = contactBox?.emailAddress || getSupportEmail(locale)
   
   const replaceLocale = (path: string) => withLocale(path, locale);
 
@@ -705,7 +705,6 @@ export default function StandardResultPage({ faqSection }: StandardResultPagePro
         </div>
       </section>
 
-      {/* 
       <div className="reports-wrap" style={{ textAlign: 'center', marginTop: 8 }}>
         <div className="reports-box">
           <span className="reports-highlight">
@@ -715,7 +714,6 @@ export default function StandardResultPage({ faqSection }: StandardResultPagePro
           <span className="reports-note">{t('reportNote2')}</span>
         </div>
       </div>
-      */}
 
       <div style={{ marginTop: 48, marginBottom: 48 }}>
         {config.showReviews && (

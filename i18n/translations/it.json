@@ -456,7 +456,6 @@
     "contactBox": {
       "title": "Hai qualche dubbio?",
       "emailIntro": "Scrivimi:",
-      "emailAddress": "it-support@musclepals.com",
       "responseTime": "⏰ Di solito rispondo in meno di un'ora."
     },
     "ctaButton": {
@@ -568,8 +567,8 @@
     "namePlaceholder": "Nome",
     "emailLabel": "Email (dove riceverai il piano):",
     "emailPlaceholder": "indirizzo@email.it",
-    "agreementText": "Acconsento al trattamento dei miei dati personali in conformità con la <a href=\"https://musclepals.com/it/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
-    "agreementCheckboxHtml": "Accetto i <a href=\"https://musclepals.com/it/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">termini</a> e la <a href=\"https://musclepals.com/it/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
+    "agreementText": "Acconsento al trattamento dei miei dati personali in conformità con la <a href=\"{privacyUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
+    "agreementCheckboxHtml": "Accetto i <a href=\"{termsUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">termini</a> e la <a href=\"{privacyUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">privacy policy</a>.",
     "healthDataAgreementHtml": "Acconsento all'uso dei miei dati sanitari e misure (è necessario per creare il piano).",
     "healthDataAgreementRequiredError": "Accetta l'accordo per l'uso dei dati sanitari per continuare.",
     "agreementRequiredError": "Per favore, accetta i termini per procedere al pagamento.",
@@ -646,7 +645,6 @@
     "successText2": "(può richiedere fino a 5 minuti)",
     "successText3": "Controlla anche lo spam e la scheda \"offerte/promozioni\"",
     "successText4": "In caso di problemi, non esitare a farmelo sapere!",
-    "successEmail": "it-support@musclepals.com",
     "errorTitle": "Abbiamo riscontrato un problema<br />durante l'elaborazione<br />del pagamento.",
     "errorImageAlt": "Report non pagato",
     "errorText1": "Il tuo pagamento <b>non è stato finalizzato</b>, torna alla home page e riprova.",
@@ -777,8 +775,7 @@
     },
     "persistentError": {
       "title": "Il problema persiste",
-      "description": "Purtroppo il problema nel salvare le risposte persiste. Potrebbe essere un errore tecnico.<br /><br />Contattaci all'indirizzo: {email}",
-      "contactEmail": "it-support@musclepals.com"
+      "description": "Purtroppo il problema nel salvare le risposte persiste. Potrebbe essere un errore tecnico.<br /><br />Contattaci all'indirizzo: {email}"
     }
   },
   "PushupsStep": {
@@ -842,12 +839,7 @@
     "imageAlt": "User review",
     "title": "Scopri cosa dicono i nostri clienti"
   },
-  "PlanPage": {
-    "assets": {
-      "privacyUrl": "https://musclepals.com/it/privacy",
-      "termsUrl": "https://musclepals.com/it/terms"
-    }
-  },
+  "PlanPage": {},
   "PdfFilenames": {
     "workout": "Piano_di_allenamento",
     "raport": "Rapporto_BMI",

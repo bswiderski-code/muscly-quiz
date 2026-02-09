@@ -1,0 +1,857 @@
+{
+  "CheckoutProducts": {
+    "workout_solo": {
+      "productName": "Plan de antrenament (solo)"
+    },
+    "workout_bundle": {
+      "productName": "Plan de antrenament + Dietă (pachet)"
+    },
+    "workout": {
+      "description": "Obține<br />propriul tău<br />plan de antrenament!"
+    }
+  },
+  "ReviewsWidget": {
+    "title": "Ce părere au cumpărătorii despre planurile lor la 2 luni după achiziție?",
+    "sort_best": "sortează – cele mai bune primele",
+    "sort_worst": "sortează – cele mai slabe primele",
+    "sort_newest": "sortează – cele mai noi primele",
+    "sort_oldest": "sortează – cele mai vechi primele",
+    "verified": "(achiziție verificată)",
+    "age_suffix": "ani",
+    "aria_label": "Recenzii ale clienților",
+    "average": "rating mediu",
+    "of5": "/5"
+  },
+  "PlanPage": {
+    "title": "Planul tău",
+    "privacy": "Politica de confidențialitate",
+    "terms": "Termeni și condiții"
+  },
+  "Seo": {
+    "appTitle": "Musclepals",
+    "home": {
+      "title": "Plan de antrenament | Musclepals",
+      "description": "Creează un plan de antrenament adaptat pentru tine. Chestionar scurt, rezultat în câteva minute."
+    },
+    "workout": {
+      "title": "Plan de antrenament profesionist – personalizat pentru tine",
+      "description": "Cauți un plan de exerciții eficient? Îți voi pregăti un program pe baza răspunsurilor tale."
+    },
+    "workoutForm": {
+      "title": "Formular plan | Musclepals",
+      "description": "Răspunde la întrebări pentru a adapta planul la obiectivele tale."
+    }
+  },
+  "Gender": {
+    "title": "Care este <b>genul</b> tău?",
+    "ariaLabel": "Selectare gen",
+    "male": {
+      "label": "Selectează masculin",
+      "alt": "Masculin"
+    },
+    "female": {
+      "label": "Selectează feminin",
+      "alt": "Feminin"
+    }
+  },
+  "WorkoutPage": {
+    "homeLabel": "Acasă Musclepals",
+    "titleHtml": "Propriul tău<br /><span style='font-weight: 800'>plan de antrenament</span>",
+    "heroAlt": "",
+    "description": "Completează un chestionar scurt și îți voi crea planul perfect de antrenament!\n<em>Îți va lua 2–3 minute.</em>",
+    "button": "Creează planul de antrenament",
+    "privacy": "Politica de confidențialitate",
+    "terms": "Termeni și condiții"
+  },
+  "DietGoal": {
+    "title": "Care este<br /><b>obiectivul tău?</b>",
+    "titleAria": "Care este obiectivul tău?",
+    "bulk": {
+      "label": "Vreau să cresc",
+      "alt": "Vreau să cresc masa musculară",
+      "description": "Te concentrezi pe construirea de masă musculară nouă, greutatea crește."
+    },
+    "cut": {
+      "label": "Vreau să reduc",
+      "alt": "Vreau să reduc grăsimea",
+      "description": "Slăbești, grăsimea dispare și evidențiezi mușchii deja existenți."
+    }
+  },
+  "Bodyfat": {
+    "title": "Selectează nivelul<br /><b>de grăsime corporală</b>",
+    "alt": "Fizic pentru nivelul selectat de grăsime corporală",
+    "stepsDataMale": [
+      {
+        "value": "5-9",
+        "label": "5-9%",
+        "info": "Acesta este un nivel extrem de scăzut de grăsime corporală. Fizicul este foarte muscular, iar definirea mușchilor este excelentă."
+      },
+      {
+        "value": "10-14",
+        "label": "10-14%",
+        "info": "Acesta este un nivel foarte scăzut de grăsime corporală. Fizicul este suplu, mușchii sunt clar vizibili."
+      },
+      {
+        "value": "15-19",
+        "label": "15-19%",
+        "info": "Acesta este un nivel sănătos, atletic de grăsime corporală. Mușchii sunt vizibili, dar fizicul nu este prea „tras”."
+      },
+      {
+        "value": "20-24",
+        "label": "20-24%",
+        "info": "Acesta este un nivel scăzut de grăsime corporală. Fizicul este suplu, mușchii sunt vizibili."
+      },
+      {
+        "value": "25-29",
+        "label": "25-29%",
+        "info": "Acesta este un nivel moderat de grăsime corporală. Fizicul este mai plin, mușchii sunt mai puțin vizibili."
+      },
+      {
+        "value": "30-34",
+        "label": "30-34%",
+        "info": "Acesta este un nivel mai ridicat de grăsime corporală. Fizicul este rotunjit, mușchii nu sunt vizibili."
+      },
+      {
+        "value": "35-39",
+        "label": "35-39%",
+        "info": "Acesta este un nivel ridicat de grăsime corporală. Fizicul este foarte rotunjit."
+      },
+      {
+        "value": ">40",
+        "label": ">40%",
+        "info": "Acesta este un nivel foarte ridicat de grăsime corporală. Fizicul este obez."
+      }
+    ],
+    "stepsDataFemale": [
+      {
+        "value": "10-14",
+        "label": "10-14%",
+        "info": "Conținut foarte scăzut de grăsime corporală, tipic pentru concurentele din sporturile de fitness/figură. Poate fi asociat cu dereglări hormonale și lipsa menstruației."
+      },
+      {
+        "value": "15-19",
+        "label": "15-19%",
+        "info": "Conținut scăzut de grăsime corporală, întâlnit des la femei active și sportive. Fizic foarte suplu, cu mușchi conturați clar."
+      },
+      {
+        "value": "20-24",
+        "label": "20-24%",
+        "info": "Nivel sănătos, atletic de grăsime corporală. Fizic suplu, dar feminin. Cel mai des întâlnit la femei active."
+      },
+      {
+        "value": "25-29",
+        "label": "25-29%",
+        "info": "Nivel mediu de grăsime corporală. Fizic natural, ușor rotunjit, fără definire musculară clară."
+      },
+      {
+        "value": "30-39",
+        "label": "30-39%",
+        "info": "Nivel crescut de grăsime corporală. Fizic vizibil rotunjit, posibile probleme de sănătate legate de excesul de grăsime."
+      },
+      {
+        "value": ">40",
+        "label": ">40%",
+        "info": "Nivel foarte ridicat de grăsime corporală. Sunt recomandate consultații medicale și schimbări ale stilului de viață."
+      }
+    ]
+  },
+  "Height": {
+    "title": "Ce <b>înălțime ai?</b>",
+    "alt": "Ce înălțime ai?",
+    "unit": "cm",
+    "placeholder": "___",
+    "errorMsg": "Te rugăm să introduci înălțimea reală.",
+    "ariaLabel": "Înălțime"
+  },
+  "Weight": {
+    "title1": "Cât <b>cântărești?</b>",
+    "title2": "Cât ai vrea să <b>cântărești?</b>",
+    "alt1": "Greutate actuală",
+    "alt2": "Greutate țintă",
+    "unit": "kg",
+    "placeholder": "___",
+    "ariaLabel1": "Greutate",
+    "ariaLabel2": "Greutate țintă",
+    "error1": "Te rugăm să introduci greutatea reală.",
+    "error2": "Te rugăm să introduci greutatea țintă în intervalul 30–300kg.",
+    "errorBulk": "Dacă obiectivul tău este masă, greutatea țintă trebuie să fie mai mare decât greutatea actuală.",
+    "errorCut": "Dacă obiectivul tău este definire, greutatea țintă trebuie să fie mai mică decât greutatea actuală.",
+    "infoBulk": "Alege o greutate de la {minInfo} în sus.",
+    "infoCut": "Alege o greutate de la {maxInfo} în jos.",
+    "buttonExpandAlt": "Extinde"
+  },
+  "Age": {
+    "title": "Câți <b>ani ai?</b>",
+    "placeholder": "__",
+    "ariaLabel": "Vârstă",
+    "unit": "ani",
+    "12-14": {
+      "message": "Ai un potențial uriaș!",
+      "description": "Acesta este cel mai bun moment să construiești <b>baze solide!</b> Acum corpul tău este în dezvoltare, așa că cheia sunt obiceiurile și învățarea tehnicii, nu greutățile uriașe."
+    },
+    "15-20": {
+      "message": "Vârsta ideală ca să te apuci serios de antrenament!",
+      "description": "Corpul se regenerează rapid, așa că poți face progrese excelente cu exerciții și alimentație bine planificate."
+    },
+    "21-30": {
+      "message": "Acum poți construi o formă cu adevărat excelentă!",
+      "description": "Ai deja conștientizarea corpului — acum ai nevoie doar de un plan bine ales ca să-ți duci rezultatele la următorul nivel."
+    }
+  },
+  "Activity": {
+    "title": "Care este nivelul tău de<b> activitate fizică?</b>",
+    "errorMsg": "Te rugăm să selectezi una dintre opțiuni înainte de a continua.",
+    "options": {
+      "low_activity": "Stau jos cea mai mare parte din zi, mă mișc puțin. 🛋️",
+      "some_activity": "Mă mișc puțin, dar fără antrenamente regulate. 🚶",
+      "light_training": "Mă antrenez ușor de câteva ori pe săptămână. 🏃‍♂️",
+      "regular_training": "Fac mișcare regulat, sunt activ(ă) în majoritatea zilelor. 💪",
+      "hard_work": "Mă antrenez mult sau am muncă fizică grea. 🏋️‍♂️"
+    }
+  },
+  "BMI": {
+    "title": "IMC-ul tău <span>BMI</span> este:",
+    "category": {
+      "unknown": "Categorie necunoscută",
+      "starvation": "Înfometare",
+      "emaciation": "Cașexie",
+      "underweight": "Subponderal",
+      "normal": "Greutate corporală dorită",
+      "overweight": "Supraponderal",
+      "obesityI": "Obezitate clasa I",
+      "obesityII": "Obezitate clasa II (severă)",
+      "obesityIII": "Obezitate clasa III (morbidă)"
+    },
+    "description": {
+      "unknown": "Categoria IMC nu poate fi determinată.",
+      "starvation": "Corpul este sever slăbit din cauza unui deficit foarte mare de masă corporală.",
+      "emaciation": "Corpul este vizibil slăbit, mușchii și țesuturile nu au nutriție suficientă.",
+      "underweight": "Masa corporală este prea mică. Corpul nu este protejat adecvat împotriva bolilor și tolerează mai greu efortul fizic.",
+      "normal": "Corpul nu este nici supraîncărcat cu exces de grăsime, nici slăbit de lipsa acesteia.",
+      "overweight": "Apare excesul de grăsime corporală, care începe să împovăreze organismul.",
+      "obesityI": "Excesul de grăsime corporală supraîncarcă vizibil organismul și crește riscul de boli.",
+      "obesityII": "Organismul este puternic supraîncărcat. Riscul de boli cronice serioase și limitarea condiției fizice crește.",
+      "obesityIII": "O cantitate foarte mare de grăsime corporală amenință serios sănătatea și viața."
+    },
+    "conclusion": "Momentul perfect pentru a construi masă musculară!",
+    "nextStepAlt": "Mergi la pasul următor"
+  },
+  "Location": {
+    "title": "Unde intenționezi să<br /><b>te antrenezi?</b>",
+    "ariaLabelGroup": "Locația antrenamentului",
+    "gym": {
+      "label": "Mă voi antrena la sală",
+      "label_f": "Mă voi antrena la sală",
+      "alt": "Mă voi antrena la sală",
+      "alt_f": "Mă voi antrena la sală",
+      "description": "Antrenament la sală cu acces la o gamă largă de aparate.",
+      "description_f": "Antrenament la sală cu acces la o gamă largă de aparate."
+    },
+    "home": {
+      "label": "Mă voi antrena acasă",
+      "label_f": "Mă voi antrena acasă",
+      "alt": "Mă voi antrena acasă",
+      "alt_f": "Mă voi antrena acasă",
+      "description": "Antrenament acasă, cu posibilitatea de a adapta la echipamentul disponibil.",
+      "description_f": "Antrenament acasă, cu posibilitatea de a adapta la echipamentul disponibil."
+    },
+    "bandsPanel": {
+      "question": "Ai acces la benzi elastice de rezistență?",
+      "yes": {
+        "label": "Da – am benzi",
+        "alt": "Da"
+      },
+      "no": {
+        "label": "Nu – nu am benzi",
+        "alt": "Nu"
+      }
+    }
+  },
+  "CardioStep": {
+    "title": "Vrei să faci<b> cardio?</b>",
+    "subtitle": "(alergare, ciclism, coardă)",
+    "yesAlt": "Da",
+    "noAlt": "Nu",
+    "yesLabel": "Selectează da",
+    "noLabel": "Selectează nu"
+  },
+  "Experience": {
+    "title": "Care este experiența ta<br /><b>în antrenament?</b>",
+    "options": {
+      "none": {
+        "label": "Încă nu m-am apucat de antrenamente. 🐣",
+        "description1": "La început, este esențial să înveți <b>tehnica corectă</b> și să <b>construiești consecvență</b>.",
+        "description2": "<b>Dar stai liniștit(ă)!</b><br />Planul tău te va ghida pas cu pas ;)",
+        "alt": "Exercițiu"
+      },
+      "just_started": {
+        "label": "Abia am început. 🏁",
+        "description1": "<b>Abia începi — super!</b>",
+        "description2": "În această etapă, corpul răspunde repede la antrenament, așa că ne vom concentra pe <b>învățarea tehnicii</b> și pe obiceiuri simple, repetabile.",
+        "alt": "Exercițiu"
+      },
+      "some_experience": {
+        "label": "Mă antrenez de ceva timp. 💪",
+        "description1": "<b>Ai deja ceva experiență — excelent!</b>",
+        "description2": "Acum corpul <b>se obișnuiește cu antrenamentul</b> — de aceea e crucial să introducem un plan cu <b>structură clară</b> și <b>progresie</b>.",
+        "alt": "Exercițiu"
+      },
+      "advanced": {
+        "label": "Mă antrenez de mult timp. 🥇",
+        "description1": "<b>Foarte bine!</b> Știi deja ce înseamnă <b>regularitate</b> și <b>consecvență</b>.",
+        "description2": "În această etapă ne concentrăm pe optimizare: <b>plan precis</b>, <b>progresie</b> și <b>recuperare</b>.",
+        "alt": "Exercițiu"
+      }
+    },
+    "errorMsg": "Te rugăm să selectezi experiența ta de antrenament înainte de a continua."
+  },
+  "Equipment": {
+    "title": "Ce <b>echipament</b> ai disponibil acasă?",
+    "subtitle": "(poți selecta mai mult de o opțiune)",
+    "ariaLabelGroup": "Selectare echipament de antrenament",
+    "options": {
+      "none": {
+        "label": "Nu am acces la niciun echipament de antrenament. 🚫",
+        "description": "Planul va fi bazat pe exerciții cu greutatea corpului și obiecte simple din casă."
+      },
+      "bands": {
+        "label": "Benzi elastice de rezistență.",
+        "description": "Mini bands și power bands ne permit să adăugăm rezistență și să graduăm dificultatea exercițiilor."
+      },
+      "dumbbells": {
+        "label": "Gantere.",
+        "description": "Vom folosi variante cu o mână și cu ambele mâini pentru a valorifica la maximum potențialul ganterelor."
+      },
+      "barbell": {
+        "label": "Haltere și discuri.",
+        "description": "Vom include ridicări clasice (genuflexiuni, îndreptări, împins), ajustând volumul în funcție de obiectiv."
+      },
+      "bench": {
+        "label": "Bancă de antrenament.",
+        "description": "Banca permite adăugarea exercițiilor la orizontală și înclinat, pentru un stimul mai bun."
+      },
+      "pullup_bar": {
+        "label": "Bară de tracțiuni.",
+        "description": "Bara permite efectuarea tracțiunilor și a altor exerciții de calisthenics."
+      },
+      "dip_bar": {
+        "label": "Bare paralele (dips).",
+        "description": "Barelele permit efectuarea dips-urilor și a altor exerciții pentru triceps."
+      }
+    },
+    "errorMsg": "Selectează cel puțin o opțiune de echipament pentru a continua."
+  },
+  "Difficulty": {
+    "title": "Care este cea mai <span style=\"font-weight: 700\">MARE</span><br />dificultate a ta legată de sală?",
+    "errorMsg": "Te rugăm să selectezi una dintre opțiuni înainte de a continua.",
+    "options": {
+      "motivation": "Îmi lipsește motivația pentru antrenamente/ținerea dietei. 😔",
+      "effects": "Mă descurajează faptul că nu văd rezultate. ⏳",
+      "insecurity": "Mi-e teamă să merg la sală sau mă simt nesigur(ă) acolo. 😟",
+      "diet": "Nu știu prea bine cum să țin o dietă. ❓",
+      "no_difficulty": "Nu am niciuna dintre dificultățile de mai sus. ✅"
+    }
+  },
+  "Priority": {
+    "title1": "Ce părți vrei să dezvolți<br />",
+    "title2": "<span style=\"font-weight: 700\">CEL MAI MULT?</span>",
+    "subtitle": "(Planul acoperă toate grupele musculare, dar poți alege pe cele pe care vrei să le <b>prioritizezi</b>)",
+    "warning": "ATENȚIE! Poți selecta max. 2 părți",
+    "partNames": {
+      "shoulders": "Umeri",
+      "chest": "Piept",
+      "triceps": "Triceps",
+      "biceps": "Biceps",
+      "back": "Spate",
+      "legs": "Picioare",
+      "abs": "Abdomen",
+      "forearms": "Antebrațe",
+      "glutes": "Fesieri"
+    },
+    "ariaLabelSelected": "Prioritate: {name} selectat(ă)",
+    "ariaLabelUnselected": "Prioritate: {name} neselectat(ă)",
+    "imageAltSelected": "{name} — selectat(ă)",
+    "imageAltUnselected": "{name} — neselectat(ă)"
+  },
+  "Frequency": {
+    "title1": "De câte ori pe<br />săptămână vrei să<br />",
+    "title2": "<span style=\"font-weight: 700\">TE ANTRENEZI?</span>",
+    "dayLabelSingular": "zi",
+    "dayLabelPlural": "zile",
+    "steps": [
+      {
+        "value": "1",
+        "label": "1 dată pe săptămână"
+      },
+      {
+        "value": "2",
+        "label": "de 2 ori pe săptămână"
+      },
+      {
+        "value": "3",
+        "label": "de 3 ori pe săptămână"
+      },
+      {
+        "value": "4",
+        "label": "de 4 ori pe săptămână"
+      },
+      {
+        "value": "5",
+        "label": "de 5 ori pe săptămână"
+      }
+    ],
+    "daySingular": "antrenament",
+    "dayPlural": "antrenamente",
+    "dayPluralFew": "antrenamente"
+  },
+  "Fitness": {
+    "title1": "Cum ți-ai evalua<br /><b>condiția fizică</b><br />pe o scară de la 1 la 10?"
+  },
+  "Sleep": {
+    "title": "Cât timp<br /><span style=\"font-weight: 700\">dormi?</span>",
+    "steps": [
+      {
+        "value": "lt6",
+        "label": "< 6 ore"
+      },
+      {
+        "value": "7-8",
+        "label": "7–8 ore"
+      },
+      {
+        "value": "9-12",
+        "label": "9–12 ore"
+      },
+      {
+        "value": "gt12",
+        "label": "> 12 ore"
+      }
+    ],
+    "messages": [
+      "Cu atât de puțin somn e greu să ai o recuperare bună... Încearcă să lucrezi la asta :)",
+      "Cantitate bună de somn — recuperarea susține antrenamentul și sănătatea.",
+      "Cantitate foarte bună de somn — recuperare optimă.",
+      "Prea mult somn poate însemna lipsă de regularitate — urmărește cum te simți."
+    ]
+  },
+  "PushupsStep": {
+    "title": "Câte flotări poți face dintr-o singură serie?",
+    "placeholder": "ex. 15",
+    "options": {
+      "0-5": "0–5 flotări",
+      "6-10": "6–10 flotări",
+      "11-20": "11–20 flotări",
+      "21-30": "21–30 flotări",
+      "30+": "Mai mult de 30 flotări"
+    }
+  },
+  "PullupsStep": {
+    "title": "Câte tracțiuni poți face dintr-o singură serie?",
+    "placeholder": "ex. 5",
+    "options": {
+      "0": "Încă niciuna",
+      "1-3": "1–3 tracțiuni",
+      "4-6": "4–6 tracțiuni",
+      "7-10": "7–10 tracțiuni",
+      "10+": "Mai mult de 10 tracțiuni"
+    }
+  },
+  "DurationStep": {
+    "title": "Alege <b>durata</b> unui <b>antrenament</b>",
+    "steps": [
+      {
+        "value": "30"
+      },
+      {
+        "value": "45"
+      },
+      {
+        "value": "60"
+      },
+      {
+        "value": "90"
+      }
+    ],
+    "minutes": "{count, plural, one {# minut} other {# minute}}",
+    "info": "Durata optimă a antrenamentului este <i><b>45–60 de minute</b></i>. Ține minte că <b>calitatea</b> seriilor este mai importantă decât <b>cantitatea</b> lor.",
+    "recommended": "(recomandat)"
+  },
+  "ResultPage": {
+    "title": "<span style=\"font-size: 36px; font-weight: 700;\">Planul tău de antrenament</span><br /><span style=\"font-size: 28px; font-weight: 400;\">este gata!</span>",
+    "intro1": "Creat pe baza<br /><b>celor 14 răspunsuri ale tale</b> de către<br/><b>un algoritm avansat de antrenament</b><br />conceput special pentru<br /><b>construirea fizicului</b> și <b>reducerea grăsimii</b>.",
+    "intro2": "Vei primi un <b>plan individual</b><br/>bazat pe date, creat<br/>în <b>mai puțin de 3 minute</b> datorită<br />tehnologiei care analizează peste<br/><b>4.000 de combinații de antrenament</b>.",
+    "subtitle": "<b>Rezumat rapid</b><br /><span style=\"font-size: 28px; font-weight: 400;\">al rezultatelor tale</span>",
+    "trustImageAlt": "De ce merită să ai încredere?",
+    "analyzeTitle": "Algoritmul analizează, printre altele:",
+    "analyzeList": {
+      "aktywnosc": "Nivelul tău de <b>activitate</b>",
+      "cel": "<b>Obiectivul</b> tău (definire / masă)",
+      "wiek": "<b>Vârsta</b> ta",
+      "doswiadczenie": "<b>Experiența de antrenament</b>",
+      "time": "<b>Timpul</b> pe care îl ai la dispoziție",
+      "strengths": "<b>Punctele forte și slabe ale fizicului</b>"
+    },
+    "conclusion1": "Iar apoi potrivește un <b>plan de antrenament specific</b> care se potrivește<b> situației tale</b> mai bine decât <b>99% dintre planurile gata făcute</b> de pe internet.",
+    "conclusion2": "Este o combinație între <b>cunoștințele unui antrenor personal</b> și <b>precizia unui sistem</b> care nu greșește și nu ghicește.",
+    "purchaseTitle": "Ce vei primi exact după achiziție?",
+    "purchaseImageAlt": "Descriere produs",
+    "sampleBtn": "Vezi un exemplu de plan de antrenament!",
+    "sampleTitle": "Iată câteva pagini din planul lui Rafal!",
+    "loadingTitle": "Îți creez planul de antrenament...",
+    "loadingSubtitle": "Un moment de răbdare, încarc toate rezultatele.",
+    "loadingData": "Nu există date pentru această sesiune.",
+    "loadingErrorTitle": "Avem o problemă la încărcarea datelor tale.",
+    "loadingErrorHtml": "Reîmprospătează pagina și încearcă din nou. Dacă problema persistă, scrie-ne: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
+    "loadingErrorBtn": "încă o dată",
+    "reportNote1": "planuri trimise",
+    "reportNote2": "în ultimele 24 de ore",
+    "joinAthletes": "Alătură-te celor <b><u>{count}</u> sportivi</b> care <b>folosesc deja</b> <b>planul lor personalizat de antrenament!</b>",
+    "contactBox": {
+      "title": "Ai vreo nelămurire?",
+      "emailIntro": "Scrie-mi:",
+      "responseTime": "⏰ De obicei răspund în mai puțin de o oră."
+    },
+    "ctaButton": {
+      "alt": "Obține planul"
+    },
+    "errorTitle": "Nu există date pentru acest funnel.",
+    "errorDescription": "Contactează-ne la: {email}",
+    "faq": {
+      "title": "Întrebări<br/>frecvente:"
+    }
+  },
+  "BMIBOX": {
+    "yourScore": "Scorul tău este:",
+    "underweight": "subponderal",
+    "overweight": "supraponderal",
+    "categories": {
+      "lt16": "Înfometare",
+      "lt17": "Cașexie",
+      "lt18_5": "Subponderal",
+      "lt25": "Masă corporală dorită",
+      "lt30": "Supraponderal",
+      "lt35": "Obezitate clasa I",
+      "lt40": "Obezitate clasa II (severă)",
+      "gt40": "Obezitate clasa III (morbidă)"
+    },
+    "descriptions": {
+      "lt16": "Corpul este sever slăbit din cauza unui deficit foarte mare de masă corporală.",
+      "lt17": "Corpul este vizibil slăbit, mușchii și țesuturile nu au nutriție suficientă.",
+      "lt18_5": "Masa corporală este prea mică. Corpul nu este protejat adecvat împotriva bolilor și tolerează mai greu efortul fizic.",
+      "lt25": "Corpul nu este nici supraîncărcat cu exces de grăsime, nici slăbit de lipsa acesteia.",
+      "lt30": "Apare excesul de grăsime corporală, care începe să împovăreze organismul.",
+      "lt35": "Excesul de grăsime corporală supraîncarcă vizibil organismul și crește riscul de boli.",
+      "lt40": "Organismul este puternic supraîncărcat. Riscul de boli cronice serioase și limitarea condiției fizice crește.",
+      "gt40": "O cantitate foarte mare de grăsime corporală amenință serios sănătatea și viața."
+    }
+  },
+  "Summary": {
+    "title": "Planul tău:",
+    "conjunction_and": " și ",
+    "priorities": {
+      "shoulders": "umeri",
+      "chest": "piept",
+      "triceps": "triceps",
+      "biceps": "biceps",
+      "back": "spate",
+      "legs": "picioare",
+      "forearms": "antebrațe",
+      "abs": "abdomen",
+      "glutes": "fesieri",
+      "default": "toate părțile corpului"
+    },
+    "goals": {
+      "bulk": "creșterea masei musculare",
+      "cut": "reducerea grăsimii corporale"
+    },
+    "frequency": {
+      "intro": "Îți oferă <strong>{n}</strong> {days} pe săptămână.",
+      "daySingular": "antrenament",
+      "dayPlural": "antrenamente",
+      "dayPluralFew": "antrenamente",
+      "dayPluralMany": "antrenamente"
+    },
+    "location": {
+      "housewithout": "Oferă antrenament eficient în <strong>condiții de acasă</strong>.",
+      "housewith": "Oferă antrenament eficient în <strong>condiții de acasă cu benzi elastice de rezistență.</strong>",
+      "gym": "",
+      "default": ""
+    },
+    "focus": "Pune un accent special pe <strong>{priorities}</strong>.",
+    "goalFocus": "Este orientat către <strong>{goal}</strong>.",
+    "fitnessFocus": "Este adaptat(ă) la <strong>{fitness}</strong> actual(ă).",
+    "fitnessFocusText": "condiție fizică",
+    "equipment": {
+      "intro": "Antrenează-te acasă folosind <strong>{list}</strong>.",
+      "introNone": "Antrenează-te acasă <strong>fără niciun echipament suplimentar</strong>.",
+      "map": {
+        "bands": "benzi elastice de rezistență",
+        "dumbbells": "gantere",
+        "barbell": "halteră cu greutăți",
+        "bench": "bancă de antrenament",
+        "none": "lipsă echipament"
+      }
+    },
+    "priority": {
+      "none": "Pune un accent special pe <strong>dezvoltarea uniformă a masei musculare</strong> în tot corpul.",
+      "one": "Pune un accent special pe <strong>{p1}</strong>.",
+      "two": "Pune un accent special pe <strong>{p1}</strong> și <strong>{p2}</strong>.",
+      "many": "Pune un accent special pe <strong>{list}</strong>."
+    }
+  },
+  "YouVsFuture": {
+    "now": "acum",
+    "future": "peste câteva luni",
+    "weight": "greutate:",
+    "muscle": "mușchi",
+    "fitness": "condiție fizică",
+    "bodyfat": "grăsime corporală",
+    "activityMap": {
+      "Bardzo dużo trenuję lub mam ciężką pracę fizyczną": "Mă antrenez mult sau am muncă fizică grea",
+      "Ćwiczę regularnie, jestem w ruchu większość dni": "Fac mișcare regulat, sunt activ(ă) în majoritatea zilelor",
+      "Trenuję lekko kilka razy w tygodniu": "Mă antrenez ușor de câteva ori pe săptămână",
+      "Trochę się ruszam, ale bez regularnych treningów": "Mă mișc puțin, dar fără antrenamente regulate"
+    }
+  },
+  "ReportForm": {
+    "title": "Obține<br />planul tău<br />de antrenament!",
+    "imageAlt": "Ilustrație a unui aparat Smith",
+    "nameLabel": "Cum te numești?",
+    "namePlaceholder": "Nume",
+    "emailLabel": "E-mail (pe care vei primi planul):",
+    "emailPlaceholder": "adresa@email.com",
+    "agreementText": "Sunt de acord cu prelucrarea datelor mele cu caracter personal în conformitate cu <a href=\"{privacyUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">politica de confidențialitate</a>.",
+    "agreementCheckboxHtml": "Accept <a href=\"{termsUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">termenii</a> și <a href=\"{privacyUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">politica de confidențialitate</a>.",
+    "healthDataAgreementHtml": "Sunt de acord cu utilizarea datelor mele de sănătate și a dimensiunilor (este necesar pentru a crea planul).",
+    "healthDataAgreementRequiredError": "Te rugăm să accepți consimțământul pentru utilizarea datelor de sănătate pentru a continua.",
+    "agreementRequiredError": "Te rugăm să accepți termenii pentru a continua.",
+    "errorMsg1": "Te rugăm să introduci un nume și o adresă de e-mail valide.",
+    "errorMsg2": "Asigură-te că e-mailul este corect. Dacă da, apasă din nou butonul.",
+    "errorMsgDomainTypo": "Este o greșeală de scriere în adresă? Ai vrut să scrii: {suggestedEmail}? Dacă da, corectează. Dacă adresa este corectă, apasă din nou butonul.",
+    "orText": "sau",
+    "detailsBtn": "Află mai multe despre analiza fizicului!",
+    "detailsBox1Title": "Îți voi arăta:",
+    "detailsBox1Body": {
+      "training": "De câte calorii ai nevoie ca să {goal} eficient,",
+      "smart": "Cum să te antrenezi mai inteligent, nu mai greu,",
+      "workDiet": "Cum să împaci școala/munca cu dieta,",
+      "progress": "Cum să depășești dificultățile care îți blochează progresul."
+    },
+    "detailsBox2Title": "Vei primi:",
+    "detailsBox2Body": {
+      "macros": "Proporții exacte de macronutrienți, adaptate corpului tău,",
+      "dietSchema": "Un exemplu de schemă alimentară, {goalSchema}",
+      "summary": "Un rezumat sincer al situației tale actuale și sfaturi despre cum să o îmbunătățești."
+    },
+    "timerPromo1": "Promoție pentru",
+    "timerPromo2": "utilizatori<br />noi",
+    "timerPromo3": "se termină în:",
+    "timerImageAlt": "Musclepals încordat",
+    "successMsg": "Comanda ta a fost procesată cu succes.",
+    "paymentNote": "Vei primi planul în <b>2 minute</b> după efectuarea plății."
+  },
+  "TDEE": {
+    "title1": "Cheltuiala energetică zilnică totală",
+    "deficit": "deficit caloric",
+    "surplus": "surplus caloric",
+    "unit": "kcal/zi",
+    "mainDescPrefix": "Această valoare ",
+    "mainDescBold1Cut": "ține cont de scăderea în greutate",
+    "mainDescBold1Bulk": "ține cont de creșterea în greutate",
+    "mainDescSuffix": ". Aceasta este cantitatea de bază de calorii pe care trebuie să o consumi ca să ",
+    "mainDescActionCut": "slăbești",
+    "mainDescActionBulk": "iei în greutate",
+    "noData": "-"
+  },
+  "Carousel": {
+    "indicatorNote": "Notă! Acesta nu este întregul plan de antrenament, ci doar 4 pagini de exemplu.",
+    "pageLabel": "Pagina {current}/{total}",
+    "workout": {
+      "slides": [
+        {
+          "alt": "Rafal 1",
+          "caption": "Introducere în planul de antrenament – pagina 1"
+        },
+        {
+          "alt": "Rafal 2",
+          "caption": "Ghid despre cum să folosești planul – pagina 2"
+        },
+        {
+          "alt": "Rafal 3",
+          "caption": "Începutul planului de antrenament – pagina 5"
+        },
+        {
+          "alt": "Rafal 5",
+          "caption": "Plan de progresie pentru următoarele 3 luni – pagina 7"
+        }
+      ]
+    }
+  },
+  "OrderPage": {
+    "logoHref": "https://musclepals.com/",
+    "verifyingText": "Se verifică plata...",
+    "processingText": "Se procesează plata...",
+    "pendingHtml": "Plata ta este în curs de verificare.<br /><b>Te rugăm să nu închizi această pagină.</b><br /><br />Dacă plata a fost efectuată, planul va ajunge pe e-mail în câteva minute.",
+    "loading": "Se încarcă...",
+    "successTitle": "Comanda ta a fost<br />plătită cu succes!",
+    "successImageAlt": "Comandă plătită",
+    "successText1": "În scurt timp va apărea pe e-mail.",
+    "successText2": "(poate dura până la 5 minute)",
+    "successText3": "Verifică și spamul, precum și fila „oferte”",
+    "successText4": "În caz de probleme, scrie-ne fără ezitare!",
+    "errorTitle": "Avem o problemă<br />la procesarea<br />plății tale.",
+    "errorImageAlt": "Raport neplătit",
+    "errorText1": "Plata ta <b>nu a fost finalizată</b>, revino la pagina principală și încearcă din nou.",
+    "buttonText": "Înapoi la pagina principală",
+    "logoAlt": "Musclepals",
+    "contactText": "Dacă crezi că este o eroare, contactează-mă:"
+  },
+  "JoinAthletes": "Alătură-te celor <b><u>{count}</u> sportivi</b> care <b>folosesc deja</b> <b>planul lor personalizat de antrenament!</b>",
+  "NextButton": {
+    "alt": "Următorul"
+  },
+  "AnswersSummary": {
+    "buttonAlt": "Rezumat răspunsuri",
+    "backLinkText": "Corectează răspunsul în formular",
+    "conjunction_and": "și",
+    "equipmentNotSelected": "Nu a fost selectat niciun echipament",
+    "locationTypeMap": {
+      "gym": "Sală",
+      "house": "Acasă"
+    },
+    "equipmentMap": {
+      "none": "Niciunul",
+      "bands": "Benzi elastice de rezistență",
+      "dumbbells": "Gantere",
+      "barbell": "Halteră",
+      "bench": "Bancă",
+      "pullup_bar": "Bară de tracțiuni",
+      "dip_bar": "Bare paralele"
+    },
+    "labels": {
+      "gender": "Gen",
+      "age": "Vârstă",
+      "height": "Înălțime",
+      "weight": "Greutate",
+      "weight_goal": "Greutate țintă",
+      "goal": "Obiectiv",
+      "diet_goal": "Obiectiv dietă",
+      "bodyfat": "Grăsime corporală",
+      "activity": "Activitate",
+      "experience": "Experiență",
+      "difficulty": "Dificultate",
+      "location": "Locația antrenamentului",
+      "equipment": "Echipament",
+      "priority": "Prioritate",
+      "frequency": "Frecvență",
+      "fitness": "Condiție fizică",
+      "sleep": "Somn",
+      "pushups": "Flotări",
+      "pullups": "Tracțiuni",
+      "duration": "Durata antrenamentului"
+    },
+    "gender": {
+      "male": "Masculin",
+      "M": "Masculin",
+      "female": "Feminin",
+      "F": "Feminin",
+      "Kobieta": "Feminin",
+      "other": "Altul"
+    },
+    "dietGoal": {
+      "bulk": "Creștere masă musculară",
+      "cut": "Reducere grăsime corporală"
+    },
+    "activityMap": {
+      "low_activity": "Stau jos cea mai mare parte din zi, mă mișc puțin.",
+      "some_activity": "Mă mișc puțin, dar fără antrenamente regulate.",
+      "light_training": "Mă antrenez ușor de câteva ori pe săptămână.",
+      "regular_training": "Fac mișcare regulat, sunt activ(ă) în majoritatea zilelor.",
+      "hard_work": "Mă antrenez mult sau am muncă fizică grea."
+    },
+    "experienceMap": {
+      "new": "Nou(ă)",
+      "beginner": "Începător(începătoare)",
+      "intermediate": "Mă antrenez de ceva timp.",
+      "advanced": "Mă antrenez de mult timp.",
+      "none": "Încă nu m-am apucat de antrenamente.",
+      "just_started": "Abia am început.",
+      "some_experience": "Mă antrenez de ceva timp."
+    },
+    "difficultyMap": {
+      "motivation": "Îmi lipsește motivația pentru antrenamente/ținerea dietei.",
+      "effects": "Mă descurajează faptul că nu văd rezultate.",
+      "insecurity": "Mi-e teamă să merg la sală sau mă simt nesigur(ă) acolo.",
+      "diet": "Nu știu prea bine cum să țin o dietă.",
+      "no_difficulty": "Nu am niciuna dintre dificultățile de mai sus."
+    },
+    "locationMap": {
+      "gym": "Sală",
+      "housewith": "Acasă (cu benzi elastice)",
+      "housewithout": "Acasă (fără benzi elastice)"
+    },
+    "priorityMap": {
+      "shoulders": "Umeri",
+      "chest": "Piept",
+      "triceps": "Triceps",
+      "biceps": "Biceps",
+      "back": "Spate",
+      "legs": "Picioare",
+      "abs": "Abdomen",
+      "forearms": "Antebrațe",
+      "glutes": "Fesieri"
+    },
+    "format": {
+      "bodyfat": "{value}%",
+      "height": "{value}cm",
+      "weight": "{value}kg",
+      "age": "{value} ani",
+      "frequency": "{value}x/săpt.",
+      "fitness": "{value}/10",
+      "sleep": "{value} ore",
+      "pushups": "Pot face {value} flotări.",
+      "pullups": "Pot face {value} tracțiuni.",
+      "pullups_none": "Nu pot face încă nici măcar o tracțiune.",
+      "duration": "{count, plural, one {# minut} other {# minute}}"
+    }
+  },
+  "MissingSteps": {
+    "title": "Unele răspunsuri nu au fost salvate",
+    "description": "Din păcate, software-ul nu a salvat răspunsurile la întrebările: {steps}.<br /><br />Apasă butonul de mai jos ca să parcurgi din nou aceste întrebări.",
+    "buttonImage": "/btns/{locale}/fill-again-btn.svg",
+    "buttonAlt": "Încearcă din nou",
+    "stepLabels": {
+      "gender": "Gen",
+      "diet_goal": "Obiectiv dietă",
+      "bodyfat": "Grăsime corporală",
+      "height": "Înălțime",
+      "weight": "Greutate",
+      "age": "Vârstă",
+      "activity": "Activitate",
+      "location": "Locație",
+      "experience": "Experiență",
+      "difficulty": "Dificultate",
+      "priority": "Prioritate",
+      "frequency": "Frecvență",
+      "fitness": "Condiție fizică",
+      "sleep": "Somn"
+    },
+    "persistentError": {
+      "title": "Problema persistă",
+      "description": "Din păcate, problema cu salvarea răspunsurilor continuă. Aceasta poate fi o eroare tehnică.<br /><br />Contactează-ne la: {email}"
+    }
+  },
+  "ReviewsMarquee": {
+    "imageAlt": "Recenzie utilizator",
+    "title": "Vezi ce spun clienții noștri despre noi"
+  },
+  "PdfFilenames": {
+    "workout": "Plan_antrenament",
+    "raport": "Raport_IMC",
+    "calisthenics": "Plan_calisthenics"
+  },
+  "NotFound": {
+    "title": "Această pagină nu există",
+    "startButton": "Începe de la început"
+  }
+}

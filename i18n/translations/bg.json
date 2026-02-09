@@ -25,11 +25,7 @@
   "PlanPage": {
     "title": "Твоят план",
     "privacy": "Политика за поверителност",
-    "terms": "Общи условия",
-    "assets": {
-      "privacyUrl": "https://musclepals.com/regional/en/privacy",
-      "termsUrl": "https://musclepals.com/regional/en/terms"
-    }
+    "terms": "Общи условия"
   },
   "Seo": {
     "appTitle": "Musclepals",
@@ -513,7 +509,6 @@
     "contactBox": {
       "title": "Имаш ли въпроси?",
       "emailIntro": "Свържи се:",
-      "emailAddress": "bg-support@musclepals.com",
       "responseTime": "⏰ Обикновено отговарям след по-малко от час."
     },
     "ctaButton": {
@@ -625,8 +620,8 @@
     "namePlaceholder": "Име",
     "emailLabel": "Имейл (на който ще получиш плана):",
     "emailPlaceholder": "address@email.com",
-    "agreementText": "Давам съгласие личните ми данни да бъдат обработвани съгласно <a href=\"https://musclepals.com/bg/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">политиката за поверителност</a>.",
-    "agreementCheckboxHtml": "Приемам <a href=\"https://musclepals.com/bg/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">общите условия</a> и <a href=\"https://musclepals.com/bg/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">политиката за поверителност</a>.",
+    "agreementText": "Давам съгласие личните ми данни да бъдат обработвани съгласно <a href=\"{privacyUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">политиката за поверителност</a>.",
+    "agreementCheckboxHtml": "Приемам <a href=\"{termsUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">общите условия</a> и <a href=\"{privacyUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">политиката за поверителност</a>.",
     "healthDataAgreementHtml": "Съгласявам се да използвате здравните ми данни и мерки (необходимо е за създаването на плана).",
     "healthDataAgreementRequiredError": "Моля, приеми съгласието за използване на здравни данни, за да продължиш.",
     "agreementRequiredError": "Моля, приеми условията, за да продължиш.",
@@ -704,7 +699,6 @@
     "successText2": "(може да отнеме до 5 минути)",
     "successText3": "Провери и спам папката, както и таба „Промоции“",
     "successText4": "В случай на проблеми, не се колебай да ни уведомиш!",
-    "successEmail": "bg-support@musclepals.com",
     "errorTitle": "Имаме проблем<br />с обработката<br />на плащането ви.",
     "errorImageAlt": "Поръчката не е платена",
     "errorText1": "Плащането ти <b>не беше финализирано</b>. Върни се на началната страница и опитай отново.",
@@ -844,8 +838,7 @@
     },
     "persistentError": {
       "title": "Проблемът все още се появява",
-      "description": "За съжаление проблемът със запазването на отговорите продължава. Това може да е техническа грешка.<br /><br />Свържи се с нас на: {email}",
-      "contactEmail": "bg-support@musclepals.com"
+      "description": "За съжаление проблемът със запазването на отговорите продължава. Това може да е техническа грешка.<br /><br />Свържи се с нас на: {email}"
     }
   },
   "ReviewsMarquee": {

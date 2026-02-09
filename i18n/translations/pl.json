@@ -25,11 +25,7 @@
   "PlanPage": {
     "title": "Twój plan",
     "privacy": "Polityka prywatności",
-    "terms": "Regulamin",
-    "assets": {
-      "privacyUrl": "https://musclepals.com/pl/privacy",
-      "termsUrl": "https://musclepals.com/pl/terms"
-    }
+    "terms": "Regulamin"
   },
   "Seo": {
     "appTitle": "Musclepals",
@@ -513,7 +509,6 @@
     "contactBox": {
       "title": "Masz jakiekolwiek wątpliwości?",
       "emailIntro": "Odezwij się:",
-      "emailAddress": "pl-support@musclepals.com",
       "responseTime": "⏰ Zwykle odpowiadam w mniej niż godzinę."
     },
     "ctaButton": {
@@ -625,8 +620,8 @@
     "namePlaceholder": "Imię",
     "emailLabel": "Email (na który otrzymasz plan):",
     "emailPlaceholder": "adres@email.pl",
-    "agreementText": "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href=\"https://musclepals.com/pl/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">polityką prywatności</a>.",
-    "agreementCheckboxHtml": "Akceptuję <a href=\"https://musclepals.com/pl/terms\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">regulamin</a> i <a href=\"https://musclepals.com/pl/privacy\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">politykę prywatności</a>.",
+    "agreementText": "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a href=\"{privacyUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">polityką prywatności</a>.",
+    "agreementCheckboxHtml": "Akceptuję <a href=\"{termsUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">regulamin</a> i <a href=\"{privacyUrl}\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: #222; text-decoration: underline;\">politykę prywatności</a>.",
     "healthDataAgreementHtml": "Zgadzam się na użycie moich danych zdrowotnych i wymiarów (jest to niezbędne do stworzenia planu).",
     "healthDataAgreementRequiredError": "Proszę zaakceptować zgodę na wykorzystanie danych zdrowotnych, aby kontynuować.",
     "agreementRequiredError": "Proszę zaakceptować regulamin, aby kontynuować.",
@@ -704,7 +699,6 @@
     "successText2": "(może potrwać do 5 minut)",
     "successText3": "Sprawdź również spam i zakładkę \"oferty\"",
     "successText4": "W razie jakichkolwiek problemów śmiało daj nam znać!",
-    "successEmail": "pl-support@musclepals.com",
     "errorTitle": "Mamy problem<br />z przetworzeniem<br />Twojej płatności.",
     "errorImageAlt": "Raport nieopłacony",
     "errorText1": "Twoja płatność <b>nie została sfinalizowana</b>, wróć do strony głównej i spróbuj ponownie.",
@@ -844,8 +838,7 @@
     },
     "persistentError": {
       "title": "Problem nadal występuje",
-      "description": "Niestety, problem z zapisem odpowiedzi nadal występuje. To może być błąd techniczny.<br /><br />Skontaktuj się z nami pod adresem: {email}",
-      "contactEmail": "pl-support@musclepals.com"
+      "description": "Niestety, problem z zapisem odpowiedzi nadal występuje. To może być błąd techniczny.<br /><br />Skontaktuj się z nami pod adresem: {email}"
     }
   },
   "ReviewsMarquee": {

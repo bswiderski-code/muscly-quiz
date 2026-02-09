@@ -3,9 +3,9 @@ import { prisma } from '@/lib/prisma';
 import { S3Client, GetObjectCommand } from '@aws-sdk/client-s3';
 import { PAYMENT_CREDENTIALS } from '@/config/credentials';
 import { getLocaleFromCountry } from '@/lib/i18n/localeUtils';
+import { getSupportEmail } from '@/lib/i18n/emailUtils';
 import path from 'path';
 import fs from 'fs';
-import { getSupportEmail } from '@/lib/i18n/emailUtils';
 
 export const dynamic = 'force-dynamic';
 
@@ -22,14 +22,14 @@ export async function GET(
 
     // Helper to generate HTML error response
     const returnErrorHtml = (locale: string = 'en', translations: any = null) => {
-        const supportEmail = getSupportEmail(locale);
         let title = 'Problem loading your data.';
-        let description = `If the issue persists, please contact us at ${supportEmail}`;
+        let description = `If the issue persists, please contact us at ${getSupportEmail(locale)}`;
 
         if (translations && translations.ResultPage) {
             title = translations.ResultPage.loadingErrorTitle || title;
             if (translations.ResultPage.loadingErrorHtml) {
-                description = translations.ResultPage.loadingErrorHtml.replace(/{email}/g, supportEmail);
+                const email = getSupportEmail(locale);
+                description = translations.ResultPage.loadingErrorHtml.replace(/{email}/g, email);
             }
         } else {
             try {
@@ -39,7 +39,8 @@ export async function GET(
                     if (enTrans.ResultPage) {
                         title = enTrans.ResultPage.loadingErrorTitle || title;
                         if (enTrans.ResultPage.loadingErrorHtml) {
-                            description = enTrans.ResultPage.loadingErrorHtml.replace(/{email}/g, 'support@musclepals.com');
+                            const email = getSupportEmail(locale);
+                            description = enTrans.ResultPage.loadingErrorHtml.replace(/{email}/g, email);
                         }
                     }
                 }
