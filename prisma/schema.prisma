@@ -85,7 +85,7 @@ enum Location {
 model Order {
   id              Int       @id @default(autoincrement())
   country         String
-  createdAt       DateTime  @default(now()) @db.Timestamptz(6)
+  createdAt       DateTime  @default(now()) @db.Timestamptz
   amount          Decimal   @db.Decimal(10, 2)
   currency        String
   paymentProvider String    @map("payment_provider")
@@ -156,4 +156,13 @@ model HealthDetails {
   age           Int
 
   @@map("health_details")
+}
+
+// ==================== EXCHANGE RATES ====================
+model ExchangeRate {
+  currency  String   @id
+  rate      Decimal  @db.Decimal(10, 4) // Rate to convert FROM currency TO PLN
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("exchange_rates")
 }

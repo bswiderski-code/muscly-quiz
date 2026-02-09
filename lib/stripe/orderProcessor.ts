@@ -5,6 +5,7 @@ import Stripe from 'stripe';
 import { getCountryForHost } from '@/i18n/config';
 import { normalizeCountryCode } from '@/lib/i18n/countryUtils';
 import { v4 as uuidv4 } from 'uuid';
+import { getExchangeRateToPLN } from '@/lib/exchangeRateApi';
 
 // Shared type for the result of processing
 export type StripeProcessingResult = {
@@ -61,16 +62,27 @@ export async function processStripeSession(
 
         // 3. Create the Order (since we just transitioned to 'paid')
         // UserData doesn't have amount/currency, so we get it from the session
+        const amount = (session.amount_total ?? 0) / 100;
+        const currency = session.currency?.toUpperCase() ?? 'USD';
+
+        // Calculate amount_pln
+        let amountPln = amount;
+        if (currency !== 'PLN') {
+            const rate = await getExchangeRateToPLN(currency);
+            amountPln = amount * rate;
+        }
+
         const order = await (tx as any).order.create({
             data: {
                 item: userData.item,
                 userId: userData.id,
-                amount: new Prisma.Decimal((session.amount_total ?? 0) / 100) as any,
-                currency: session.currency?.toUpperCase() ?? 'USD',
+                amount: new Prisma.Decimal(amount) as any,
+                currency: currency,
                 country: normalizeCountryCode(country),
                 paymentProvider: 'Stripe',
                 delivered: false,
                 pdfToken: uuidv4(),
+                amountPln: new Prisma.Decimal(amountPln) as any,
             },
         });
 
