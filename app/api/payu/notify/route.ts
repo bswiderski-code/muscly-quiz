@@ -119,7 +119,7 @@ export async function POST(req: NextRequest) {
 
 	await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
 		checkoutDB: 'user_data',
-		sessionId,
+		sessionid: sessionId,
 		event: 'checkout.succeeded',
 		status: 'paid',
 		country: country,

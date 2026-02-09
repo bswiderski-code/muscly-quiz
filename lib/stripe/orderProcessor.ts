@@ -90,7 +90,7 @@ export async function processStripeSession(
         try {
             await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
                 checkoutDB: 'user_data',
-                sessionId: sessionId,
+                sessionid: sessionId,
                 event: 'checkout.succeeded',
                 status: 'paid',
                 country: country,

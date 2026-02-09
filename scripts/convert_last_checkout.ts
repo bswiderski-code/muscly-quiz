@@ -104,7 +104,7 @@ async function main() {
         console.log('Sending N8N Webhook...');
         await sendToN8n(webhookUrl, 'checkout.succeeded', {
             checkoutDB: 'user_data',
-            sessionId: lastUser.sid,
+            sessionid: lastUser.sid,
             event: 'checkout.succeeded',
             status: 'paid',
             country: lastUser.country || 'PL',

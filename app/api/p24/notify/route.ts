@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
 
     await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
       checkoutDB: 'user_data',
-      sessionId: body.sessionId,
+      sessionid: body.sessionId,
       event: 'checkout.succeeded',
       status: 'signature_invalid',
     });
@@ -60,7 +60,7 @@ export async function POST(req: NextRequest) {
 
     await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
       checkoutDB: 'user_data',
-      sessionId: body.sessionId,
+      sessionid: body.sessionId,
       event: 'checkout.succeeded',
       status: 'transaction_verification_failed',
     });
@@ -102,7 +102,7 @@ export async function POST(req: NextRequest) {
 
   await sendToN8n(process.env.N8N_WEBHOOK_URL!, 'checkout.succeeded', {
     checkoutDB: 'user_data',
-    sessionId: body.sessionId,
+    sessionid: body.sessionId,
     event: 'checkout.succeeded',
     status: 'paid',
     country: country,
