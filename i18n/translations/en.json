@@ -748,7 +748,12 @@
       "sleep": "Sleep",
       "pushups": "Push-ups",
       "pullups": "Pull-ups",
-      "duration": "Workout time"
+      "duration": "Workout time",
+      "cardio": "Cardio"
+    },
+    "cardioMap": {
+      "yes": "Yes",
+      "no": "No"
     },
     "gender": {
       "male": "Male",

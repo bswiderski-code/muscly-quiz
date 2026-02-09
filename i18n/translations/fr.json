@@ -694,7 +694,12 @@
       "priority": "Priorité",
       "frequency": "Fréquence",
       "fitness": "Forme",
-      "sleep": "Sommeil"
+      "sleep": "Sommeil",
+      "cardio": "Cardio"
+    },
+    "cardioMap": {
+      "yes": "Oui",
+      "no": "Non"
     },
     "gender": {
       "male": "Homme",

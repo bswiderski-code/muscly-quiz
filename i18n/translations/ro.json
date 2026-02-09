@@ -748,7 +748,12 @@
       "sleep": "Somn",
       "pushups": "Flotări",
       "pullups": "Tracțiuni",
-      "duration": "Durata antrenamentului"
+      "duration": "Durata antrenamentului",
+      "cardio": "Cardio"
+    },
+    "cardioMap": {
+      "yes": "Da",
+      "no": "Nu"
     },
     "gender": {
       "male": "Masculin",

@@ -25,6 +25,7 @@ export const ANSWER_EMOJIS: Record<string, string | ((value: any) => string)> = 
   bmi: '📊',
   name: '👤',
   email: '✉️',
+  cardio: '❤️',
 
   // Value-dependent emojis
   gender: (value: any) => {

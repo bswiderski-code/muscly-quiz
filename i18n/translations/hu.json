@@ -748,7 +748,12 @@
       "sleep": "Alvás",
       "pushups": "Fekvőtámasz",
       "pullups": "Húzódzkodás",
-      "duration": "Edzésidő"
+      "duration": "Edzésidő",
+      "cardio": "Kardió"
+    },
+    "cardioMap": {
+      "yes": "Igen",
+      "no": "Nem"
     },
     "gender": {
       "male": "Férfi",

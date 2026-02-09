@@ -30,6 +30,7 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
   const equipmentMap = t.raw('equipmentMap') as Record<string, string>;
   const conjunctionAnd = CONJUNCTIONS.and;
   const priorityMap = t.raw('priorityMap') as Record<string, string>;
+  const cardioMap = t.raw('cardioMap') as Record<string, string>;
   const format = t.raw('format') as Record<string, string>;
 
   const buttonImageSrc = answersButtonImage 
@@ -107,6 +108,8 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
       if (mapped.length === 2) return `${mapped[0]} ${conjunctionAnd} ${mapped[1]}`;
       return `${mapped.slice(0, -1).join(', ')} ${conjunctionAnd} ${mapped[mapped.length - 1]}`;
     }
+
+    if (key === 'cardio') return cardioMap[value] || value;
     if (key === 'priority') {
       if (!value) return '';
       const priorities = String(value).split(',').filter(Boolean);

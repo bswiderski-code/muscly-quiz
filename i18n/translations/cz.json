@@ -748,7 +748,12 @@
       "sleep": "Spánek",
       "pushups": "Kliky",
       "pullups": "Shyby",
-      "duration": "Délka tréninku"
+      "duration": "Délka tréninku",
+      "cardio": "Kardio"
+    },
+    "cardioMap": {
+      "yes": "Ano",
+      "no": "Ne"
     },
     "gender": {
       "male": "Muž",

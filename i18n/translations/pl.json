@@ -748,7 +748,12 @@
       "sleep": "Sen",
       "pushups": "Pompki",
       "pullups": "Podciągnięcia",
-      "duration": "Czas treningu"
+      "duration": "Czas treningu",
+      "cardio": "Kardio"
+    },
+    "cardioMap": {
+      "yes": "Tak",
+      "no": "Nie"
     },
     "gender": {
       "male": "Mężczyzna",
