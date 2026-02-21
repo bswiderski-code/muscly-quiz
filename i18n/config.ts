@@ -34,7 +34,7 @@ const normalizeCheckoutProvider = (info: Omit<MarketInfo, 'isKnownHost'>): Omit<
     : info;
 };
 
-export const getPolishCheckoutProvider = (): Extract<CheckoutProvider, 'p24' | 'payu'> => {
+export const getPolishCheckoutProvider = (): CheckoutProvider => {
   return PAYMENT_CONFIG.pl.provider;
 };
 

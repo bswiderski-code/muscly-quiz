@@ -134,10 +134,16 @@ export async function POST(req: NextRequest) {
     const origin = await getBaseUrl();
     const realOrigin = (await getRealBaseUrl()) || origin;
 
+    // Payment methods vary by currency.
+    // PLN (Poland): card + BLIK + Klarna (Przelewy24 disabled).
+    // Other currencies: card + Revolut Pay + Klarna.
+    const paymentMethodTypes: Stripe.Checkout.SessionCreateParams.PaymentMethodType[] =
+      safeCurrency === 'pln'
+        ? ['card', 'blik', 'klarna']
+        : ['card', 'revolut_pay', 'klarna'];
+
     const session = await stripe.checkout.sessions.create({
-      // Enable card (covers Apple Pay / Google Pay / regular cards),
-      // Revolut Pay, Link, and Klarna where available.
-      payment_method_types: ['card', 'revolut_pay', 'klarna'],
+      payment_method_types: paymentMethodTypes,
       client_reference_id: sessionId,
       line_items: [
         {

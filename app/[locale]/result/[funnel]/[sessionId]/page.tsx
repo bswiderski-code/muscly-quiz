@@ -3,6 +3,8 @@ import { FunnelProvider } from '@/lib/funnels/funnelContext';
 import StandardResultPage from '@/app/components/result/templates/StandardResultPage';
 import FaqSection from '@/app/components/result/faq/FaqSection';
 import { getTranslations } from 'next-intl/server';
+import { getMarketForLocale } from '@/i18n/config';
+import type { Locale } from '@/i18n/config';
 
 type Props = {
   params: Promise<{ locale: string; funnel: string; sessionId: string }>;
@@ -27,10 +29,13 @@ export default async function ResultPage({ params }: Props) {
   const template = definition.resultTemplate ?? 'standard';
 
   if (template === 'standard') {
+    // Resolve checkoutProvider server-side so the env var is visible.
+    const { checkoutProvider } = getMarketForLocale(locale as Locale);
     return (
       <FunnelProvider funnel={funnelKey}>
-        <StandardResultPage 
-          faqSection={<FaqSection locale={locale} />} 
+        <StandardResultPage
+          faqSection={<FaqSection locale={locale} />}
+          checkoutProvider={checkoutProvider}
         />
       </FunnelProvider>
     );

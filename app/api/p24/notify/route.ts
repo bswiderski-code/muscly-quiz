@@ -64,19 +64,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
 
-  await (prisma as any).userData.updateMany({
-    where: { sid: body.sessionId },
-    data: { status: 'paid' },
-  }).catch(() => undefined);
-
-  let userData: any = null;
+  let orderCreated = false;
   try {
-    userData = await (prisma as any).userData.findFirst({
+    const userData = await (prisma as any).userData.findFirst({
       where: { sid: body.sessionId },
     });
 
     if (userData) {
-      // Check if order exists
+      // Idempotency: only process if not already paid
       const existing = await (prisma as any).order.findFirst({ where: { userId: userData.id, paymentProvider: 'P24' } });
       if (!existing) {
         const amount = Number(body.amount) / 100;
@@ -88,11 +83,16 @@ export async function POST(req: NextRequest) {
           amountPln = amount * rate;
         }
 
+        await (prisma as any).userData.updateMany({
+          where: { sid: body.sessionId },
+          data: { status: 'paid' },
+        });
+
         await (prisma as any).order.create({
           data: {
             item: userData.item,
             userId: userData.id,
-            amount: amount, // P24 amount is integer, e.g. 12300 for 123 PLN
+            amount: amount,
             currency: currency,
             country: normalizeCountryCode(userData.country || country),
             paymentProvider: 'P24',
@@ -100,15 +100,20 @@ export async function POST(req: NextRequest) {
             amountPln: amountPln,
           },
         });
+
+        orderCreated = true;
       }
     }
   } catch (e) {
     console.error('Failed to create Order row for session', body.sessionId, e);
   }
 
-  await sendToN8n(process.env.N8N_WEBHOOK_URL!, {
-    sessionid: body.sessionId,
-  });
+  // Only trigger the N8n webhook once — when the order is newly created.
+  if (orderCreated) {
+    await sendToN8n(process.env.N8N_WEBHOOK_URL!, {
+      sessionid: body.sessionId,
+    });
+  }
 
   return NextResponse.json({ ok: true });
 }

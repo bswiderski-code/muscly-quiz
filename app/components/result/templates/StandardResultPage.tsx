@@ -36,9 +36,10 @@ const reviewImageCounts: Record<string, number> = {
 
 interface StandardResultPageProps {
   faqSection?: React.ReactNode;
+  checkoutProvider?: import('@/i18n/config').CheckoutProvider;
 }
 
-export default function StandardResultPage({ faqSection }: StandardResultPageProps) {
+export default function StandardResultPage({ faqSection, checkoutProvider: checkoutProviderProp }: StandardResultPageProps) {
   const router = useRouter()
   const t = useTranslations('ResultPage')
   const planPageT = useTranslations('PlanPage')
@@ -695,7 +696,7 @@ export default function StandardResultPage({ faqSection }: StandardResultPagePro
           sessionId={sessionId ?? 'default'}
           funnelKey={resolvedFunnel}
           locale={locale as AppLocale}
-          checkoutProvider={effectiveMarket.checkoutProvider}
+          checkoutProvider={checkoutProviderProp ?? effectiveMarket.checkoutProvider}
           marketCurrency={effectiveMarket.currency}
           separatorText={reportFormT('orText')}
           paymentNoteHtml={String(reportFormT.raw('paymentNote'))}

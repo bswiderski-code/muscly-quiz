@@ -9,8 +9,7 @@ import { ContactForm } from "./ContactForm";
 import { PaymentSection } from "./PaymentSection";
 import { getSuggestedEmailForCommonDomainTypos, validTlds } from "@/lib/emailValidator";
 import styles from './form.module.css';
-import { StripePayButton } from '../stripebtn';
-import { PLPayButton } from '../plpaybtn';
+import { PaymentButton } from '../PaymentButton';
 import { getLocalizedPricing, trackBeginCheckoutEvent, trackViewItemEvent } from './form_pixel';
 import CheckoutIntro from './checkout_intro';
 import { getResultPageConfig } from '../templates/config';
@@ -160,98 +159,31 @@ export default function CheckoutForm({
 
   const offers = [] as { key: string; node: React.ReactNode }[];
 
-  if (checkoutProvider === 'stripe' && soloOffer && bundleOffer) {
-    offers.push(
-      {
-        key: 'stripe_solo',
+  if (soloOffer && bundleOffer) {
+    const items = [
+      { key: 'solo',   offer: soloOffer,   copy: checkoutSoloCopy,   buttonSvg: defaultSoloButton,   kind: 'workout_solo'   as const },
+      { key: 'bundle', offer: bundleOffer, copy: checkoutBundleCopy, buttonSvg: defaultBundleButton, kind: 'workout_bundle' as const },
+    ];
+
+    for (const { key, offer, copy, buttonSvg, kind } of items) {
+      offers.push({
+        key,
         node: (
-          <StripePayButton
+          <PaymentButton
+            provider={checkoutProvider}
+            buttonSvg={buttonSvg}
+            amount={offer.amount}
+            currency={offer.currency}
+            description={offer.description}
+            productName={copy.productName ?? offer.description}
             onPay={handlePayClick}
-            currency={soloOffer.currency}
-            amount={soloOffer.amount}
-            description={soloOffer.description}
-            productName={checkoutSoloCopy.productName ?? soloOffer.description}
-            buttonSvg={defaultSoloButton}
             onBeforePay={() =>
-              trackBeginCheckoutEvent({
-                funnelKey: funnelKey ?? 'workout',
-                locale,
-                marketCurrency,
-                kind: 'workout_solo',
-                checkoutProvider,
-              })
+              trackBeginCheckoutEvent({ funnelKey: funnelKey ?? 'workout', locale, marketCurrency, kind, checkoutProvider })
             }
           />
         ),
-      },
-      {
-        key: 'stripe_bundle',
-        node: (
-          <StripePayButton
-            onPay={handlePayClick}
-            currency={bundleOffer.currency}
-            amount={bundleOffer.amount}
-            description={bundleOffer.description}
-            productName={checkoutBundleCopy.productName ?? bundleOffer.description}
-            buttonSvg={defaultBundleButton}
-            onBeforePay={() =>
-              trackBeginCheckoutEvent({
-                funnelKey: funnelKey ?? 'workout',
-                locale,
-                marketCurrency,
-                kind: 'workout_bundle',
-                checkoutProvider,
-              })
-            }
-          />
-        ),
-      },
-    );
-  } else if (checkoutProvider !== 'stripe' && soloOffer && bundleOffer) {
-    offers.push(
-      {
-        key: 'pl_solo',
-        node: (
-          <PLPayButton
-            onPay={handlePayClick}
-            amountPln={soloOffer.amount}
-            description={soloOffer.description}
-            productName={checkoutSoloCopy.productName ?? soloOffer.description}
-            buttonSvg={defaultSoloButton}
-            onBeforePay={() =>
-              trackBeginCheckoutEvent({
-                funnelKey: funnelKey ?? 'workout',
-                locale,
-                marketCurrency,
-                kind: 'workout_solo',
-                checkoutProvider,
-              })
-            }
-          />
-        ),
-      },
-      {
-        key: 'pl_bundle',
-        node: (
-          <PLPayButton
-            onPay={handlePayClick}
-            amountPln={bundleOffer.amount}
-            description={bundleOffer.description}
-            productName={checkoutBundleCopy.productName ?? bundleOffer.description}
-            buttonSvg={defaultBundleButton}
-            onBeforePay={() =>
-              trackBeginCheckoutEvent({
-                funnelKey: funnelKey ?? 'workout',
-                locale,
-                marketCurrency,
-                kind: 'workout_bundle',
-                checkoutProvider,
-              })
-            }
-          />
-        ),
-      },
-    );
+      });
+    }
   }
 
   return (

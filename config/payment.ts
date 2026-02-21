@@ -1,7 +1,7 @@
 export const PAYMENT_CONFIG = {
   pl: {
     sandbox: process.env.PL_PAYMENT_SANDBOX === 'true',
-    provider: (process.env.PL_PAYMENT_PROVIDER as 'p24' | 'payu') || 'payu',
+    provider: (process.env.PL_PAYMENT_PROVIDER as 'p24' | 'payu' | 'stripe') || 'payu',
     payu: {
       merchantId: '390978', // Default sandbox/prod values can be swapped here or via vars if needed
       posId: '390978',
