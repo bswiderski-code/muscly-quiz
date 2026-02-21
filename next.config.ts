@@ -14,12 +14,32 @@ const devEnv =
     }
     : {};
 
+const securityHeaders = [
+  // Prevent clickjacking / iframe embedding
+  { key: 'X-Frame-Options', value: 'DENY' },
+  // Prevent MIME-type sniffing
+  { key: 'X-Content-Type-Options', value: 'nosniff' },
+  // Limit referrer info sent to third parties
+  { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+  // Restrict browser feature access
+  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()' },
+  // Force HTTPS for 2 years (only effective when served over HTTPS)
+  { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
+  // Disable IE/Edge compatibility mode
+  { key: 'X-UA-Compatible', value: 'IE=edge' },
+];
+
 const nextConfig: NextConfig = {
   env: devEnv,
-  experimental: {
-  }
-  // Usuwamy rewrites - next-intl to obsłuży
-  // Ewentualnie inne konfiguracje, jeśli masz (np. images)
+  experimental: {},
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: securityHeaders,
+      },
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

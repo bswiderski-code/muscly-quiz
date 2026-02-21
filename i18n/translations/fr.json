@@ -10,6 +10,11 @@
       "description": "Obtiens<br />ton programme<br />d'entraînement !"
     }
   },
+  "TechnicalIssues": {
+    "title": "Problèmes techniques",
+    "description": "Nous rencontrons des difficultés techniques temporaires. Notre équipe travaille à la résolution du problème. Veuillez réessayer plus tard ou contacter le support si le problème persiste.",
+    "backLabel": "Retour à l'accueil"
+  },
   "ReviewsWidget": {
     "title": "Qu'en pensent les acheteurs 2 mois après leur achat ?",
     "sort_best": "trier - par les meilleurs",
@@ -844,6 +849,11 @@
   "ReviewsMarquee": {
     "imageAlt": "User review",
     "title": "Découvrez ce que disent nos clients"
+  },
+  "TechnicalIssues": {
+    "title": "Problèmes techniques",
+    "description": "Nous rencontrons des difficultés techniques temporaires. Notre équipe travaille à la résolution du problème. Veuillez réessayer plus tard ou contacter le support si le problème persiste.",
+    "backLabel": "Retour à l'accueil"
   },
   "PlanPage": {},
   "PdfFilenames": {

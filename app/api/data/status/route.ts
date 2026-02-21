@@ -1,12 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { rateLimit, getClientIp, rateLimitResponse } from '@/lib/rateLimit';
+
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 export async function GET(req: NextRequest) {
-  const { searchParams } = new URL(req.url);
-  const sid = searchParams.get('sessionId'); // Replace sessionId with sid
+  const rl = rateLimit(`status:${getClientIp(req)}`, { max: 30, windowSecs: 60 });
+  if (!rl.allowed) return rateLimitResponse(rl);
 
-  if (!sid) {
-    return NextResponse.json({ success: false, error: 'Missing sid' }, { status: 400 });
+  const { searchParams } = new URL(req.url);
+  const sid = searchParams.get('sessionId');
+
+  if (!sid || !UUID_RE.test(sid)) {
+    return NextResponse.json({ success: false, error: 'Invalid session ID' }, { status: 400 });
   }
 
   const raport = await (prisma as any).userData.findFirst({

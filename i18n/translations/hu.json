@@ -27,6 +27,11 @@
     "privacy": "Adatvédelmi irányelvek",
     "terms": "Általános Szerződési Feltételek"
   },
+  "TechnicalIssues": {
+    "title": "Technikai problémák",
+    "description": "Átmeneti technikai nehézségekkel szembesülünk. Csapatunk dolgozik a megoldáson. Kérjük, próbáld újra később, vagy vedd fel a kapcsolatot az ügyfélszolgálattal, ha a probléma továbbra is fennáll.",
+    "backLabel": "Vissza a főoldalra"
+  },
   "Seo": {
     "appTitle": "Musclepals",
     "home": {

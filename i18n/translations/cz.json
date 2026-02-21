@@ -27,6 +27,11 @@
     "privacy": "Zásady ochrany osobních údajů",
     "terms": "Obchodní podmínky"
   },
+  "TechnicalIssues": {
+    "title": "Technické potíže",
+    "description": "Máme dočasné technické potíže. Náš tým na tom pracuje. Zkus to prosím později nebo nás kontaktuj, pokud problém přetrvává.",
+    "backLabel": "Zpět na úvodní stránku"
+  },
   "Seo": {
     "appTitle": "Musclepals",
     "home": {

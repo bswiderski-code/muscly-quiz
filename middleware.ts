@@ -9,6 +9,7 @@ export default async function middleware(request: NextRequest) {
   const hostHeader = getIncomingHost(request.headers) ?? '';
   const effectiveHost = getEffectiveHost(hostHeader) ?? hostHeader;
   const hostForChecks = effectiveHost.toLowerCase();
+  const pathname = request.nextUrl.pathname;
 
   // Local dev exception: localhost, *.local, etc.
   const isLocalDev =
@@ -31,17 +32,37 @@ export default async function middleware(request: NextRequest) {
   }
 
   // 2. Skip next-intl for S3 proxy files (both legacy and new locale-based routes)
-  if (request.nextUrl.pathname.startsWith('/file/')) {
+  if (pathname.startsWith('/file/')) {
     return NextResponse.next();
   }
 
-  // 3. Uruchomienie logiki next-intl. 
-  // Z 'localePrefix: always' w routing.ts, next-intl zajmie się wykrywaniem 
-  // języka (np. z nagłówka Accept-Language) i przekierowaniem na /[locale]/.
-  const handleI18nRouting = createMiddleware(routing);
-  const response = handleI18nRouting(request);
+  // 3. Technical issues mode — manual override via env var.
+  //    Redirects every page to /{locale}/technical-issues.
+  //    Skip if already on the technical-issues page to avoid redirect loops.
+  const isMaintenance = process.env.TECHNICAL_ISSUES_MODE === 'true';
+  if (isMaintenance && !pathname.includes('/technical-issues')) {
+    const segments = pathname.split('/').filter(Boolean);
+    const firstSegment = segments[0] ?? '';
+    const locale = routing.locales.includes(firstSegment as any) ? firstSegment : routing.defaultLocale;
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = `/${locale}/technical-issues`;
+    return NextResponse.redirect(redirectUrl, 307);
+  }
 
-  return response;
+  // 4. Run next-intl locale routing.
+  const handleI18nRouting = createMiddleware(routing);
+  const i18nResponse = handleI18nRouting(request);
+
+  // If next-intl is issuing a redirect (e.g. to add locale prefix), pass it through.
+  if (i18nResponse.status >= 300 && i18nResponse.status < 400) {
+    return i18nResponse;
+  }
+
+  // 5. Inject the current pathname as a request header so server-side layouts
+  //    can read it (e.g. to skip the DB health check on /technical-issues).
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set('x-pathname', pathname);
+  return NextResponse.next({ request: { headers: requestHeaders } });
 }
 
 export const config = {

@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { randomUUID } from 'crypto';
 import { prisma } from '@/lib/prisma';
@@ -6,6 +6,7 @@ import { getBaseUrl, getRealBaseUrl } from '@/lib/requestBaseUrl';
 import { getCountryForHost, getMarketForHost, getMarketForLocale, getCountryForLocale } from '@/i18n/config';
 import { normalizeGenderMF } from '@/lib/gender/normalizeGenderMF';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
+import { rateLimit, getClientIp, rateLimitResponse } from '@/lib/rateLimit';
 
 import { getStripeCredentials } from '@/config/credentials';
 import { Prisma } from '@prisma/client';
@@ -17,7 +18,10 @@ const stripe = new Stripe(creds.secretKey, {
   apiVersion: '2026-01-28.clover',
 });
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
+  const rl = rateLimit(`stripe-create:${getClientIp(req)}`, { max: 10, windowSecs: 900 });
+  if (!rl.allowed) return rateLimitResponse(rl);
+
   // Extract host for market determination
   const host = getIncomingHost(req.headers);
 
@@ -206,8 +210,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ url: session.url });
   } catch (error: unknown) {
     console.error('Stripe error:', error);
-    const message = error instanceof Error ? error.message : 'Stripe error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: 'Payment session could not be created.' }, { status: 500 });
   }
 }
 

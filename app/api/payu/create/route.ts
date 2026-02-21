@@ -6,6 +6,7 @@ import { getBaseUrl, getRealBaseUrl } from '@/lib/requestBaseUrl';
 import { getCountryForHost, getMarketForHost, getMarketForLocale, getCountryForLocale } from '@/i18n/config';
 import { normalizeGenderMF } from '@/lib/gender/normalizeGenderMF';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
+import { rateLimit, getClientIp, rateLimitResponse } from '@/lib/rateLimit';
 
 import { getPayUCredentials } from '@/config/credentials';
 
@@ -19,15 +20,6 @@ const payU = new PayU(
 	creds.secondKey,
 	{ sandbox: isSandbox }
 );
-
-// Extract best-effort client IP; PayU rejects 0.0.0.0
-const getClientIp = (req: NextRequest) => {
-	const forwarded = req.headers.get('x-forwarded-for');
-	if (forwarded) return forwarded.split(',')[0]?.trim();
-	const real = req.headers.get('x-real-ip');
-	if (real) return real.trim();
-	return '127.0.0.1';
-};
 
 // Helper to safely parse numbers coming as string (with comma) or number
 const parseNumber = (val: unknown) => {
@@ -49,6 +41,9 @@ const normalizePlanDescription = (raw: unknown) => {
 };
 
 export async function POST(req: NextRequest) {
+	const rl = rateLimit(`payu-create:${getClientIp(req)}`, { max: 10, windowSecs: 900 });
+	if (!rl.allowed) return rateLimitResponse(rl);
+
 	// Extract host for market determination
 	const host = getIncomingHost(req.headers);
 
@@ -202,11 +197,8 @@ export async function POST(req: NextRequest) {
 
 		return NextResponse.json({ url: redirectUri, paymentId: orderId, sessionId });
 	} catch (err: unknown) {
-		let message = 'Błąd PayU';
-		if (err instanceof Error) {
-			message = err.message;
-		}
-		return NextResponse.json({ error: message }, { status: 500 });
+		console.error('PayU error:', err);
+		return NextResponse.json({ error: 'Payment session could not be created.' }, { status: 500 });
 	}
 }
 

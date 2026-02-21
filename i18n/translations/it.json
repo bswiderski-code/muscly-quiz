@@ -22,6 +22,11 @@
     "average": "media voti",
     "of5": "/5"
   },
+  "TechnicalIssues": {
+    "title": "Problemi tecnici",
+    "description": "Stiamo riscontrando difficoltà tecniche temporanee. Il nostro team sta lavorando per risolvere il problema. Riprova più tardi o contatta l'assistenza se il problema persiste.",
+    "backLabel": "Torna alla home"
+  },
   "Seo": {
     "appTitle": "Musclepals",
     "home": {

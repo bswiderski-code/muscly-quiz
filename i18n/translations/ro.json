@@ -27,6 +27,11 @@
     "privacy": "Politica de confidențialitate",
     "terms": "Termeni și condiții"
   },
+  "TechnicalIssues": {
+    "title": "Probleme tehnice",
+    "description": "Întâmpinăm dificultăți tehnice temporare. Echipa noastră lucrează la rezolvarea problemei. Te rugăm să încerci din nou mai târziu sau să contactezi suportul dacă problema persistă.",
+    "backLabel": "Înapoi la pagina principală"
+  },
   "Seo": {
     "appTitle": "Musclepals",
     "home": {

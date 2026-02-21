@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { forceRefreshRates, getCacheInfo } from '@/lib/conversionRates';
 
 /**
@@ -29,7 +29,14 @@ export async function GET() {
     }
 }
 
-export async function POST() {
+export async function POST(req: NextRequest) {
+    const adminSecret = process.env.EXCHANGE_RATE_APIKEY;
+    const provided = req.headers.get('x-admin-secret');
+
+    if (!adminSecret || provided !== adminSecret) {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
     try {
         console.log('[API] Manual refresh of exchange rates requested');
         const success = await forceRefreshRates();

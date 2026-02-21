@@ -13,6 +13,7 @@ import { getBaseUrl, getRealBaseUrl } from '@/lib/requestBaseUrl';
 import { getMarketForHost, getCountryForHost, getMarketForLocale, getCountryForLocale } from '@/i18n/config';
 import { normalizeGenderMF } from '@/lib/gender/normalizeGenderMF';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
+import { rateLimit, getClientIp, rateLimitResponse } from '@/lib/rateLimit';
 
 import { getP24Credentials } from '@/config/credentials';
 
@@ -28,6 +29,9 @@ const p24 = new P24(
 );
 
 export async function POST(req: NextRequest) {
+  const rl = rateLimit(`p24-create:${getClientIp(req)}`, { max: 10, windowSecs: 900 });
+  if (!rl.allowed) return rateLimitResponse(rl);
+
   // Extract host for market determination
   const host = getIncomingHost(req.headers);
 
@@ -181,12 +185,9 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ url: link, paymentId, sessionId });
   } catch (err: unknown) {
-    let message = 'Błąd P24';
-    if (err instanceof Error) {
-      message = err.message;
-    }
+    console.error('P24 error:', err);
     return NextResponse.json(
-      { error: message },
+      { error: 'Payment session could not be created.' },
       { status: 500 }
     );
   }

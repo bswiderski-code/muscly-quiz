@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { GoogleTagManager } from '@next/third-parties/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { headers } from 'next/headers';
 import { routing } from '@/i18n/routing';
+import { checkDbHealth } from '@/lib/health';
 import { createMetadata } from '@/lib/metadata';
 import { getPathname } from '@/i18n/routing';
 import { getBaseUrlFromHeaders } from '@/lib/requestBaseUrl';
@@ -71,12 +72,22 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  // 3. Auto-detect: redirect to technical-issues if the DB is unreachable.
+  //    Skipped when already on the technical-issues page to prevent redirect loops.
+  const h = await headers();
+  const currentPathname = h.get('x-pathname') ?? '';
+  if (!currentPathname.includes('/technical-issues')) {
+    const healthy = await checkDbHealth();
+    if (!healthy) {
+      redirect(`/${locale}/technical-issues`);
+    }
+  }
+
   // 3. Ustawienie locale dla komponentów serwerowych (wymagane w static generation)
   setRequestLocale(locale);
 
   // 4. Pobranie tłumaczeń
   const messages = await getMessages();
-  const h = await headers();
   const host = getIncomingHost(h);
   const effectiveHost = getEffectiveHost(host) ?? host;
   const market = getMarketForLocale(locale as Locale);

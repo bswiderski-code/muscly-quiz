@@ -16,6 +16,7 @@ export const routing = defineRouting({
     '/': '/',
     '/privacy': '/privacy',
     '/terms': '/terms',
+    '/technical-issues': '/technical-issues',
     '/[funnel]': '/[funnel]',
     '/[funnel]/[step]': '/[funnel]/[step]',
     '/result/[funnel]/[sessionId]': '/result/[funnel]/[sessionId]',

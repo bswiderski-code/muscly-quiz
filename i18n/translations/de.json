@@ -10,6 +10,16 @@
       "description": "Hol dir<br />deinen<br />Trainingsplan!"
     }
   },
+  "PlanPage": {
+    "title": "Dein Plan",
+    "privacy": "Datenschutz",
+    "terms": "AGB"
+  },
+  "TechnicalIssues": {
+    "title": "Technische Probleme",
+    "description": "Wir haben vorübergehend technische Schwierigkeiten. Unser Team arbeitet an der Behebung. Bitte versuche es später erneut oder kontaktiere den Support, wenn das Problem weiterhin besteht.",
+    "backLabel": "Zurück zur Startseite"
+  },
   "ReviewsWidget": {
     "title": "Was sagen Käufer 2 Monate nach dem Kauf über ihre Pläne?",
     "sort_best": "Sortierung - Beste zuerst",

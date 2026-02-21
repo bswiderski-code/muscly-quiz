@@ -27,6 +27,11 @@
     "privacy": "Polityka prywatności",
     "terms": "Regulamin"
   },
+  "TechnicalIssues": {
+    "title": "Problemy techniczne",
+    "description": "Występują tymczasowe problemy techniczne. Nasz zespół pracuje nad ich rozwiązaniem. Spróbuj ponownie za chwilę lub skontaktuj się z pomocą techniczną, jeśli problem będzie się utrzymywał.",
+    "backLabel": "Wróć na stronę główną"
+  },
   "Seo": {
     "appTitle": "Musclepals",
     "home": {
