@@ -23,8 +23,6 @@ const securityHeaders = [
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
   // Restrict browser feature access
   { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()' },
-  // Force HTTPS for 2 years (only effective when served over HTTPS)
-  { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' },
   // Disable IE/Edge compatibility mode
   { key: 'X-UA-Compatible', value: 'IE=edge' },
 ];
