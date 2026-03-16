@@ -1,14 +1,14 @@
 "use client";
 
-import { useStepController } from '@/lib/useStepController';
+import { useStepController } from '@/lib/quiz/useStepController';
 import Image from "next/image";
 import { useState, useEffect, useRef, FormEvent, useMemo } from "react";
-import type { StepId } from '@/lib/steps/stepIds.ts';
-import { useFunnelStore } from "@/lib/store";
+import type { StepId } from '@/lib/quiz/stepIds';
+import { useFunnelStore } from "@/lib/quiz/store";
 import ProgressHeader from "@/app/components/header/ProgressHeader";
 import NextButton from "@/app/components/funnels/NextButton";
 import { useTranslations, useLocale } from 'next-intl';
-import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
+import { useCurrentFunnel } from '@/lib/quiz/funnelContext';
 const stepId: StepId = "weight";
 
 const IMAGES = {
@@ -19,7 +19,7 @@ const IMAGES = {
 export default function Page() {
   const funnel = useCurrentFunnel();
   const { value: gender } = useStepController('gender' as StepId, { funnel });
-  const { idx, total, goPrev, goNext, sid } = useStepController(stepId, { funnel });
+  const { idx, total, goPrev, goNext, sid, isPending } = useStepController(stepId, { funnel });
   const t = useTranslations('Weight');
   const locale = useLocale();
   const [unit, setUnit] = useState<'kg' | 'lbs'>(() => {
@@ -36,8 +36,6 @@ export default function Page() {
 
   const bySid = useFunnelStore((s) => s.bySid);
   const setField = useFunnelStore((s) => s.setField);
-
-  const isPending = false;
 
   const secondRef = useRef<HTMLDivElement | null>(null);
   const firstInputRef = useRef<HTMLInputElement | null>(null);

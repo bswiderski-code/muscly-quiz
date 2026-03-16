@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
-import { funnelDefinitions } from '@/lib/funnels/funnelDefinitions';
+import { funnelDefinitions } from '@/lib/quiz/funnelDefinitions';
 import type { Locale } from '@/i18n/config';
 import { ASSET_PATHS } from '@/config/imagePaths';
 import { withLocale } from '@/lib/imagePath';

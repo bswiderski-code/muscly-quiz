@@ -1,5 +1,5 @@
 import { redirect } from '@/i18n/routing';
-import { getDefaultFunnelForLocale, getFunnelSlug } from '@/lib/funnels/funnels';
+import { getDefaultFunnelForLocale, getFunnelSlug } from '@/lib/quiz/funnels';
 import type { Locale } from '@/i18n/config';
 
 type Props = {
@@ -10,7 +10,7 @@ export default async function HomePage({ params }: Props) {
   const { locale } = await params;
 
   const defaultFunnel = getDefaultFunnelForLocale(locale as Locale);
-  const defaultFunnelSlug = getFunnelSlug(defaultFunnel, locale);
+  const defaultFunnelSlug = getFunnelSlug(defaultFunnel);
 
   // Przekierowanie do konkretnego leja (domyślny dla języka)
   redirect({

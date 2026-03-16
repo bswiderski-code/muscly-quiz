@@ -4,8 +4,8 @@ import { useMemo } from 'react'
 import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
 import { useRouter } from '@/i18n/routing'
-import { getFunnelSlug, getFirstStep, getStepSlug, type FunnelKey } from '@/lib/funnels/funnels'
-import type { StepId } from '@/lib/steps/stepIds'
+import { getFunnelSlug, getFirstStep, getStepSlug, type FunnelKey } from '@/lib/quiz/funnels'
+import type { StepId } from '@/lib/quiz/stepIds'
 
 interface MissingStepsViewProps {
   sessionId: string
@@ -48,8 +48,8 @@ export default function MissingStepsView({
   const handleRetry = () => {
     // Navigate to the first step of the funnel
     const firstStep = getFirstStep(funnel)
-    const funnelSlug = getFunnelSlug(funnel, locale)
-    const stepSlug = getStepSlug(funnel, firstStep, locale)
+    const funnelSlug = getFunnelSlug(funnel)
+    const stepSlug = getStepSlug(funnel, firstStep)
     
     router.push({
       pathname: '/[funnel]/[step]',

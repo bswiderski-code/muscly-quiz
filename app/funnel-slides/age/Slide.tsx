@@ -1,11 +1,11 @@
 "use client";
 
-import { useStepController } from "@/lib/useStepController";
+import { useStepController } from "@/lib/quiz/useStepController";
 import ProgressHeader from "@/app/components/header/ProgressHeader";
 import NextButton from "@/app/components/funnels/NextButton";
-import type { StepId } from '@/lib/steps/stepIds.ts';
+import type { StepId } from '@/lib/quiz/stepIds';
 import { useTranslations } from 'next-intl';
-import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
+import { useCurrentFunnel } from '@/lib/quiz/funnelContext';
 import "../funnel.css";
 
 const stepId: StepId = "age";

@@ -1,29 +1,34 @@
 'use client'
 
-import { useEffect, useMemo, useState, useTransition } from 'react'
+import { useEffect, useTransition } from 'react'
+import { useState } from 'react'
 import { useRouter } from '@/i18n/routing'
 import { v4 as uuid } from 'uuid'
-import { useFunnelStore, type FunnelAnswers } from '@/lib/store'
-import { FUNNELS, getFunnelSlug, getResultSlug, getStepOrder, getStepSlug, type FunnelKey } from '@/lib/funnels/funnels'
-import type { StepId } from '@/lib/steps/stepIds'
+import { useFunnelStore, type FunnelAnswers } from './store'
+import { FUNNELS, getFunnelSlug, getResultSlug, getStepOrder, getStepSlug, type FunnelKey } from './funnels'
+import type { StepId } from './stepIds'
 import { useLocale } from 'next-intl'
-import { useCurrentFunnel } from '@/lib/funnels/funnelContext'
+import { useCurrentFunnel } from './funnelContext'
+import { getSkippedSteps, resolveNextStep } from './navigation'
 
 function getCookie(name: string) {
   if (typeof document === 'undefined') return null
   const m = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'))
   return m ? decodeURIComponent(m[2]) : null
 }
+
 function setCookie(name: string, value: string) {
   document.cookie = `${name}=${encodeURIComponent(value)}; path=/; max-age=31536000`
 }
 
 export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey }) {
   const locale = useLocale()
-  const funnel = options?.funnel ?? useCurrentFunnel()
+  const contextFunnel = useCurrentFunnel()
+  const funnel = options?.funnel ?? contextFunnel
   const router = useRouter()
   const field = stepId as keyof FunnelAnswers
   const order = getStepOrder(funnel)
+  const skipRules = FUNNELS[funnel]?.steps.skipRules ?? []
   const idx = order.indexOf(stepId)
   const isFirst = idx === 0
   const isLast = idx === order.length - 1
@@ -33,12 +38,11 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
 
   const setDefaultFunnel = useFunnelStore(s => s.setDefaultFunnel)
   const setField = useFunnelStore(s => s.setField)
-  const planEntry = useFunnelStore((s) => (sid ? s.getFor(sid, funnel) : undefined))
+  const planEntry = useFunnelStore(s => (sid ? s.getFor(sid, funnel) : undefined))
 
   useEffect(() => {
     setDefaultFunnel(funnel)
 
-    // Apply forced answers if defined for the funnel
     const funnelDef = FUNNELS[funnel]
     if (funnelDef?.forcedAnswers && sid) {
       Object.entries(funnelDef.forcedAnswers).forEach(([key, value]) => {
@@ -50,39 +54,19 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
     }
   }, [funnel, sid, setDefaultFunnel, setField])
 
-  // ensure sid
   useEffect(() => {
     let s = getCookie('sid')
-    if (!s) { s = uuid(); setCookie('sid', s) }
+    if (!s) {
+      s = uuid()
+      setCookie('sid', s)
+    }
     setSid(s)
   }, [])
 
-  // current value (prefilled)
   const currentValue = planEntry?.[field]
   const value = currentValue !== undefined && currentValue !== null ? String(currentValue) : ''
 
-  // Branching Logic
-  const skipRules = FUNNELS[funnel]?.steps.skipRules ?? []
-
-  const getSkippedSteps = (answers: Partial<FunnelAnswers> | undefined) => {
-    if (!answers) return new Set<StepId>()
-    const skipped = new Set<StepId>()
-    for (const rule of skipRules) {
-      // Check if ALL triggers match (AND logic)
-      const allTriggersMatch = rule.trigger.every(t => {
-        const value = answers[t.step as keyof FunnelAnswers]
-        return value !== undefined && String(value) === t.value
-      })
-
-      if (allTriggersMatch) {
-        rule.skip.forEach(s => skipped.add(s))
-      }
-    }
-    return skipped
-  }
-
-  // Calculate effective previous step
-  const skippedForPrev = getSkippedSteps(planEntry)
+  const skippedForPrev = getSkippedSteps(planEntry ?? {}, skipRules)
   let prevIdx = idx - 1
   let effectivePrevStepId: StepId | null = null
   while (prevIdx >= 0) {
@@ -95,32 +79,21 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
   }
 
   const resolveNextStepId = (selectedValue?: string): StepId | null => {
-    // Simulate answers with the new value for the current step
-    const currentAnswers = planEntry ?? {}
     const val = selectedValue !== undefined ? selectedValue : value
-    const nextAnswers = { ...currentAnswers, [field]: val }
-
-    const skipped = getSkippedSteps(nextAnswers)
-
-    let nextIdx = idx + 1
-    while (nextIdx < order.length) {
-      const candidate = order[nextIdx]
-      if (!skipped.has(candidate)) return candidate
-      nextIdx++
-    }
-    return null
+    const nextAnswers = { ...(planEntry ?? {}), [field]: val }
+    return resolveNextStep(stepId, order, nextAnswers, skipRules)
   }
 
   const effectiveNextStepId = resolveNextStepId()
 
-  const funnelSlug = getFunnelSlug(funnel, locale)
-  const resultSlug = getResultSlug(funnel, locale)
+  const funnelSlug = getFunnelSlug(funnel)
+  const resultSlug = getResultSlug(funnel)
   const hrefForStep = (target: StepId | null) =>
     target
       ? ({
-        pathname: '/[funnel]/[step]',
-        params: { funnel: funnelSlug, step: getStepSlug(funnel, target, locale) },
-      } as const)
+          pathname: '/[funnel]/[step]',
+          params: { funnel: funnelSlug, step: getStepSlug(funnel, target) },
+        } as const)
       : null
 
   const prevHref = hrefForStep(effectivePrevStepId)
@@ -129,14 +102,12 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
     ? ({ pathname: '/result/[funnel]/[sessionId]', params: { funnel: resultSlug, sessionId: sid } } as const)
     : null
 
-  // prefetch neighbors (+result on last step)
   useEffect(() => {
     if (prevHref) router.prefetch(prevHref as any)
     if (nextHref) router.prefetch(nextHref as any)
     if (isLast && resultHref) router.prefetch(resultHref)
   }, [prevHref, nextHref, isLast, resultHref, router])
 
-  // API you use in slides:
   function select(val: string, opts?: { advance?: boolean }) {
     if (!sid) return
     if (stepId === 'gender') {
@@ -152,10 +123,10 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
   function goPrev() {
     if (prevHref) startTransition(() => router.push(prevHref as any))
   }
+
   function goNext() {
     const href = nextHref ?? resultHref
     if (!href) return
-
     startTransition(() => router.push(href as any))
   }
 
@@ -164,16 +135,11 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
   }
 
   return {
-    // meta
     stepId, idx, total: order.length, isFirst, isLast,
     funnel,
-    // data
     sid, value,
-    // actions
     select, goPrev, goNext, goTo,
-    // ui
     isPending,
-    // optional: expose hrefs if you want to <Link/>
     prevHref, nextHref, resultHref,
   }
 }

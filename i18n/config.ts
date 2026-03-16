@@ -1,5 +1,6 @@
 import { PAYMENT_CONFIG } from '@/config/payment';
 import { getEffectiveHost } from '@/lib/domain/effectiveHost';
+import { CANONICAL_HOST } from '@/config/site';
 import {
   CheckoutProvider,
   defaultLocale,
@@ -54,7 +55,7 @@ export const getBaseUrlForLocale = (locale?: Locale): string | undefined => {
   if (process.env.NODE_ENV === 'development') {
     return undefined; // Let Next.js handle it
   }
-  return 'https://quiz.musclepals.com';
+  return `https://${CANONICAL_HOST}`;
 };
 
 export const getLocaleForHost = (host: string | null | undefined): Locale => {

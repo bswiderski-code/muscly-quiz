@@ -1,6 +1,6 @@
 import { sendGTMEvent } from '@next/third-parties/google'
 import { trackInitiateCheckout, trackEvent } from '@/lib/analytics'
-import { funnelDefinitions, type LocalePricingKey } from '@/lib/funnels/funnelDefinitions'
+import { funnelDefinitions, type LocalePricingKey } from '@/lib/quiz/funnelDefinitions'
 import type { Locale, CheckoutProvider } from '@/i18n/config'
 
 type OfferKind = 'workout_solo' | 'workout_bundle'

@@ -1,8 +1,8 @@
 // lib/usePlanField.ts
 "use client";
 import { useCallback } from "react";
-import { useFunnelStore, type FunnelAnswers } from "@/lib/store";
-import type { FunnelKey } from "@/lib/funnels/funnels";
+import { useFunnelStore, type FunnelAnswers } from "@/lib/quiz/store";
+import type { FunnelKey } from "@/lib/quiz/funnels";
 
 export function usePlanField<T extends keyof FunnelAnswers>(sid: string, field: T, funnel?: FunnelKey) {
   const value = useFunnelStore((s) => s.getFor(sid, funnel)?.[field]) as FunnelAnswers[T] | undefined;

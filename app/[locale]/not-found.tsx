@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations, useLocale } from 'next-intl';
+import { MAIN_SITE_URL } from '@/config/site';
 
 export default function NotFound() {
   const t = useTranslations('NotFound');
@@ -13,7 +14,7 @@ export default function NotFound() {
       {/* Header */}
       <header className="w-full flex justify-center py-6 px-6 border-b border-gray-100">
         <Link 
-          href={`https://musclepals.com/${locale}`}
+          href={`${MAIN_SITE_URL}/${locale}`}
           className="relative w-32 h-10 transition-opacity hover:opacity-80"
         >
           <Image 

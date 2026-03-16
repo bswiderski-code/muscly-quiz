@@ -7,6 +7,7 @@ import { sendGTMEvent } from '@next/third-parties/google';
 import { useTranslations, useLocale } from 'next-intl';
 import { trackPurchase } from '@/lib/analytics';
 import { getSupportEmail } from '@/lib/i18n/emailUtils';
+import { MAIN_SITE_URL } from '@/config/site';
 
 const ZamowieniePageContent = () => {
   const t = useTranslations('OrderPage');
@@ -174,7 +175,7 @@ const ZamowieniePageContent = () => {
   const supportEmail = getSupportEmail(locale);
 
   const assets = {
-    logoHref: 'https://musclepals.com',
+    logoHref: MAIN_SITE_URL,
     logoSrc: `/${locale}/../vectors/logo.svg`,
     logoHeight: 50,
     backButtonImage: `/btns/${locale}/back-to-home-btn.svg`,
@@ -242,7 +243,7 @@ const ZamowieniePageContent = () => {
           <div style={{ margin: '18px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
             <button
               onClick={() => {
-                window.location.href = `https://musclepals.com/${locale}/`;
+                window.location.href = `${MAIN_SITE_URL}/${locale}/`;
               }}
               style={{
                 background: 'none',

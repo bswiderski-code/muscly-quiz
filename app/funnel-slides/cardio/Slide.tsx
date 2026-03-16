@@ -1,8 +1,8 @@
 "use client";
 
-import { useStepController } from "@/lib/useStepController";
-import type { StepId } from '@/lib/steps/stepIds.ts';
-import { useCurrentFunnel } from '@/lib/funnels/funnelContext'
+import { useStepController } from "@/lib/quiz/useStepController";
+import type { StepId } from '@/lib/quiz/stepIds';
+import { useCurrentFunnel } from '@/lib/quiz/funnelContext'
 import ProgressHeader from "@/app/components/header/ProgressHeader";
 import { useLocale, useTranslations } from "next-intl";
 import { withLocale } from '@/lib/imagePath'

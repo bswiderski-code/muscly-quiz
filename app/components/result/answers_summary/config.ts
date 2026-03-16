@@ -1,5 +1,5 @@
-import type { FunnelKey } from '@/lib/funnels/funnels'
-import type { StepId } from '@/lib/steps/stepIds'
+import type { FunnelKey } from '@/lib/quiz/funnels'
+import type { StepId } from '@/lib/quiz/stepIds'
 
 /**
  * Configuration for which answer labels should be visible in the answers summary

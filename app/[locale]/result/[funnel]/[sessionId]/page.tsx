@@ -1,5 +1,5 @@
-import { resolveFunnelKeyByResultSlug, FUNNELS } from '@/lib/funnels/funnels';
-import { FunnelProvider } from '@/lib/funnels/funnelContext';
+import { resolveFunnelKeyByResultSlug, FUNNELS } from '@/lib/quiz/funnels';
+import { FunnelProvider } from '@/lib/quiz/funnelContext';
 import StandardResultPage from '@/app/components/result/templates/StandardResultPage';
 import FaqSection from '@/app/components/result/faq/FaqSection';
 import { getTranslations } from 'next-intl/server';
@@ -14,7 +14,7 @@ export default async function ResultPage({ params }: Props) {
   const { locale, funnel: funnelSlug } = await params;
   const t = await getTranslations({ locale, namespace: 'ResultPage' });
 
-  const funnelKey = resolveFunnelKeyByResultSlug(funnelSlug ?? '', locale);
+  const funnelKey = resolveFunnelKeyByResultSlug(funnelSlug ?? '');
 
   if (!funnelKey) {
      return (

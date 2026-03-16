@@ -5,10 +5,10 @@ import { useParams } from 'next/navigation'
 import { useTranslations, useLocale } from 'next-intl'
 import Image from 'next/image'
 import { useRouter } from '@/i18n/routing'
-import { useFunnelStore } from '@/lib/store'
+import { useFunnelStore } from '@/lib/quiz/store'
 import { useMarket } from '@/lib/useMarket'
 import { getMarketForLocale, type Locale as AppLocale } from '@/i18n/config'
-import { resolveFunnelKeyByResultSlug, getFunnelSlug } from '@/lib/funnels/funnels'
+import { resolveFunnelKeyByResultSlug, getFunnelSlug } from '@/lib/quiz/funnels'
 import { withLocale } from '@/lib/imagePath'
 import { getResultPageConfig } from './config'
 import YOUVSFUTURE from '@/app/components/result/youvsfuture/YOUVSFUTURE'
@@ -21,8 +21,8 @@ import { DetailsSection } from '@/app/components/result/form/DetailsSection'
 import { EmblaCarousel } from '@/app/components/result/Carousel/Carousel'
 import AnswersSummary from '@/app/components/result/answers_summary/answers_summary'
 import MissingStepsView from '@/app/components/result/MissingStepsView'
-import { getMissingSteps } from '@/lib/validation/stepValidation'
-import type { StepId } from '@/lib/steps/stepIds'
+import { getMissingSteps } from '@/lib/quiz/stepValidation'
+import type { StepId } from '@/lib/quiz/stepIds'
 import { getSupportEmail } from '@/lib/i18n/emailUtils'
 
 const reviewImageCounts: Record<string, number> = {
@@ -56,7 +56,7 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
   const funnelSlug = Array.isArray(params?.funnel) ? params.funnel[0] : params?.funnel
 
   const resolvedFunnel = useMemo(
-    () => resolveFunnelKeyByResultSlug(funnelSlug ?? 'workout', locale) ?? 'workout',
+    () => resolveFunnelKeyByResultSlug(funnelSlug ?? 'workout') ?? 'workout',
     [funnelSlug, locale],
   )
 

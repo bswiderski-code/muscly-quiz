@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from 'react';
 import Image from 'next/image';
-import { useFunnelStore, type FunnelAnswers } from '@/lib/store';
+import { useFunnelStore, type FunnelAnswers } from '@/lib/quiz/store';
 import { useTranslations, useLocale } from 'next-intl';
-import { getFunnelSlug, getStepOrder, getStepSlug, resolveFunnelKey, type FunnelKey } from '@/lib/funnels/funnels';
-import { ALL_STEPS } from '@/lib/steps/stepIds';
+import { getFunnelSlug, getStepOrder, getStepSlug, resolveFunnelKey, type FunnelKey } from '@/lib/quiz/funnels';
+import { ALL_STEPS } from '@/lib/quiz/stepIds';
 import { getAnswersSummaryConfig } from './config';
 import { getAnswerEmoji, formatDefaultLabel, CONJUNCTIONS, VALUE_FORMATS, formatValue } from './mappings';
 
@@ -41,7 +41,7 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
 
   const resolvedFunnel = useMemo<FunnelKey | null>(() => {
     if (!funnelSlug) return null;
-    return resolveFunnelKey(funnelSlug, locale);
+    return resolveFunnelKey(funnelSlug);
   }, [funnelSlug, locale]);
 
   const answers = useFunnelStore((s) => s.getFor(sid, resolvedFunnel ?? undefined) ?? {});
@@ -64,8 +64,8 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
   const backLinkHref = useMemo(() => {
     if (!resolvedFunnel) return null;
     const lastStep = stepOrder[stepOrder.length - 1];
-    const funnelPath = getFunnelSlug(resolvedFunnel, locale);
-    const stepPath = getStepSlug(resolvedFunnel, lastStep, locale);
+    const funnelPath = getFunnelSlug(resolvedFunnel);
+    const stepPath = getStepSlug(resolvedFunnel, lastStep);
     return `/${funnelPath}/${stepPath}`;
   }, [locale, resolvedFunnel, stepOrder]);
 

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { headers } from 'next/headers';
 import { getBaseUrlFromHeaders } from '@/lib/requestBaseUrl';
-import { FUNNELS, getFunnelSlug, isFunnelAllowedOnDomain, type FunnelKey } from '@/lib/funnels/funnels';
+import { FUNNELS, getFunnelSlug, isFunnelAllowedOnDomain, type FunnelKey } from '@/lib/quiz/funnels';
 import { routing } from '@/i18n/routing';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 
@@ -22,7 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     (Object.keys(FUNNELS) as FunnelKey[])
       .filter((funnelKey) => isFunnelAllowedOnDomain(funnelKey, host))
       .map((funnelKey) => ({
-        url: `${baseUrl}/${getFunnelSlug(funnelKey, locale)}`,
+        url: `${baseUrl}/${getFunnelSlug(funnelKey)}`,
         lastModified: new Date(),
         changeFrequency: 'daily' as const,
         priority: 1,

@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations, useLocale } from 'next-intl';
+import { MAIN_SITE_URL } from '@/config/site';
 
 export default function TechnicalIssuesPage() {
   const t = useTranslations('TechnicalIssues');
@@ -37,7 +38,7 @@ export default function TechnicalIssuesPage() {
         </p>
 
         <a
-          href={`https://musclepals.com/${locale}`}
+          href={`${MAIN_SITE_URL}/${locale}`}
           className="mt-2 inline-flex min-h-[48px] min-w-[180px] items-center justify-center rounded-2xl bg-foreground px-6 py-3 font-medium text-background transition-opacity hover:opacity-90 active:opacity-80"
         >
           {t('backLabel')}

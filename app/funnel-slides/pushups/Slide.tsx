@@ -3,8 +3,8 @@
 import ProgressHeader from '@/app/components/header/ProgressHeader';
 import SelectMenu, { type SelectOption } from '@/app/components/funnels/SelectMenu';
 import NextButton from '@/app/components/funnels/NextButton';
-import { useStepController } from '@/lib/useStepController';
-import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
+import { useStepController } from '@/lib/quiz/useStepController';
+import { useCurrentFunnel } from '@/lib/quiz/funnelContext';
 import { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import "../funnel.css";

@@ -1,10 +1,10 @@
 'use client'
 
 import Image from "next/image";
-import { useFunnelStore } from '@/lib/store';
+import { useFunnelStore } from '@/lib/quiz/store';
 import { useTranslations } from "next-intl";
 import { useMemo } from 'react';
-import type { FunnelKey } from '@/lib/funnels/funnels'
+import type { FunnelKey } from '@/lib/quiz/funnels'
 import { getYouVsFutureConfig } from './config';
 
 // --- Helper: dynamic plan calculation (modyfikacja: użycie klucza aktywności zamiast tłumaczenia) ---

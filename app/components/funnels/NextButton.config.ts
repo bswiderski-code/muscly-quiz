@@ -1,4 +1,4 @@
-import type { FunnelKey } from '@/lib/funnels/funnels';
+import type { FunnelKey } from '@/lib/quiz/funnels';
 import { ASSET_PATHS } from '@/config/imagePaths';
 
 export type NextButtonConfig = {

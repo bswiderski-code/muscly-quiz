@@ -1,13 +1,13 @@
 "use client";
 
-import { useStepController } from '@/lib/useStepController';
-import type { StepId } from '@/lib/steps/stepIds.ts';
+import { useStepController } from '@/lib/quiz/useStepController';
+import type { StepId } from '@/lib/quiz/stepIds';
 import ProgressHeader from '@/app/components/header/ProgressHeader';
 import StepRangeSlider from '@/app/components/funnels/StepRangeSlider';
 import NextButton from '@/app/components/funnels/NextButton';
 import { useMemo } from 'react';
 import { useTranslations } from 'next-intl';
-import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
+import { useCurrentFunnel } from '@/lib/quiz/funnelContext';
 import "../funnel.css";
 
 const stepId: StepId = 'fitness';

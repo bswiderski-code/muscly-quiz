@@ -1,4 +1,4 @@
-import { SUPPORT_EMAILS, DEFAULT_SUPPORT_EMAIL } from '@/config/support';
+import { SUPPORT_EMAILS, DEFAULT_SUPPORT_EMAIL, SUPPORT_EMAIL_DOMAIN } from '@/config/support';
 
 /**
  * Returns the locale-specific support email address.
@@ -22,5 +22,5 @@ export function getSupportEmail(locale: string): string {
     }
 
     // Fallback pattern
-    return `${shortLocale}-support@musclepals.com`;
+    return `${shortLocale}-support@${SUPPORT_EMAIL_DOMAIN}`;
 }

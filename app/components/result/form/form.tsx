@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import { useFunnelStore } from "@/lib/store";
+import { useFunnelStore } from "@/lib/quiz/store";
 import { useTranslations } from "next-intl";
-import type { FunnelKey } from '@/lib/funnels/funnels';
+import type { FunnelKey } from '@/lib/quiz/funnels';
 import type { Locale, CheckoutProvider } from '@/i18n/config';
 import { ContactForm } from "./ContactForm";
 import { PaymentSection } from "./PaymentSection";

@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useRef } from "react";
-import { useStepController } from "@/lib/useStepController";
-import type { StepId } from '@/lib/steps/stepIds.ts';
-import { useCurrentFunnel } from '@/lib/funnels/funnelContext'
+import { useStepController } from "@/lib/quiz/useStepController";
+import type { StepId } from '@/lib/quiz/stepIds';
+import { useCurrentFunnel } from '@/lib/quiz/funnelContext'
 import ProgressHeader from "@/app/components/header/ProgressHeader";
 import NextButton from "@/app/components/funnels/NextButton";
 import { useTranslations, useLocale } from 'next-intl';

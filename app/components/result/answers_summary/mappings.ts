@@ -1,4 +1,4 @@
-import type { StepId } from '@/lib/steps/stepIds'
+import type { StepId } from '@/lib/quiz/stepIds'
 
 /**
  * Emoji mappings for different answer keys and values

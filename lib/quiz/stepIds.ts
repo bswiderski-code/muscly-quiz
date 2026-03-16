@@ -24,6 +24,7 @@ export const ALL_STEPS = [
 
 export type StepId = typeof ALL_STEPS[number]
 
+// 'nonselective' steps don't require user input and are excluded from progress count
 export type StepTag = 'nonselective'
 
 export const STEP_TAGS: Record<StepId, StepTag | undefined> = {

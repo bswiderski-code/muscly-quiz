@@ -1,6 +1,6 @@
 'use client';
 
-import { ANALYTICS_CONFIG } from '@/config/Analytics';
+import { ANALYTICS_CONFIG } from '@/config/site';
 import { trackStandardEvent, trackCustomEvent } from './facebookPixel';
 
 type GTMEvent = {

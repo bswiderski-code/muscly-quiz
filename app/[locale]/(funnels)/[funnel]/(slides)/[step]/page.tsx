@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { funnelStepMetadata, getSeoTitle, getSeoDescription } from '@/lib/metadata'
 import { getPathname, redirect } from '@/i18n/routing'
 import { getBaseUrlFromHeaders } from '@/lib/requestBaseUrl'
-import { FunnelProvider } from '@/lib/funnels/funnelContext'
+import { FunnelProvider } from '@/lib/quiz/funnelContext'
 import {
   getFirstStep,
   getFunnelSlug,
@@ -12,8 +12,8 @@ import {
   resolveFunnelKey,
   resolveStepId,
   type FunnelKey,
-} from '@/lib/funnels/funnels'
-import type { StepId } from '@/lib/steps/stepIds.ts';
+} from '@/lib/quiz/funnels'
+import type { StepId } from '@/lib/quiz/stepIds';
 
 async function loadStepComponent(stepId: StepId): Promise<React.ComponentType | null> {
   try {
@@ -31,15 +31,15 @@ function buildCanonicalHref(funnel: FunnelKey, step: StepId, locale: string) {
   return {
     pathname: '/[funnel]/[step]',
     params: {
-      funnel: getFunnelSlug(funnel, locale),
-      step: getStepSlug(funnel, step, locale),
+      funnel: getFunnelSlug(funnel),
+      step: getStepSlug(funnel, step),
     },
   } as const
 }
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { locale, funnel, step } = await params
-  const funnelKey = resolveFunnelKey(funnel, locale)
+  const funnelKey = resolveFunnelKey(funnel)
   const baseUrl = await getBaseUrlFromHeaders()
   
   const title = await getSeoTitle(locale, 'planForm')
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     return { ...base, robots: { index: false, follow: false } }
   }
 
-  const resolvedStepId = resolveStepId(funnelKey, step, locale) ?? getFirstStep(funnelKey)
+  const resolvedStepId = resolveStepId(funnelKey, step) ?? getFirstStep(funnelKey)
   const canonicalPath = getPathname({ href: buildCanonicalHref(funnelKey, resolvedStepId, locale), locale })
 
   const base = funnelStepMetadata({
@@ -71,13 +71,13 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
 export default async function FunnelStepPage({ params }: { params: Promise<Params> }) {
   const { locale, funnel, step } = await params
-  const funnelKey = resolveFunnelKey(funnel, locale)
+  const funnelKey = resolveFunnelKey(funnel)
 
   if (!funnelKey) {
     notFound()
   }
 
-  const resolvedStepId = resolveStepId(funnelKey, step, locale)
+  const resolvedStepId = resolveStepId(funnelKey, step)
   const targetStepId = resolvedStepId ?? getFirstStep(funnelKey)
 
   if (!resolvedStepId) {

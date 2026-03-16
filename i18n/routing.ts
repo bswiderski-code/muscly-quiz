@@ -11,7 +11,7 @@ export const routing = defineRouting({
 
   // Tłumaczenie ścieżek (Pathnames)
   // Note: Funnel paths are now dynamic via /[funnel] pattern.
-  // Funnel slugs are defined in lib/funnels/funnelDefinitions.ts
+  // Funnel slugs are defined in lib/quiz/funnelDefinitions.ts
   pathnames: {
     '/': '/',
     '/privacy': '/privacy',

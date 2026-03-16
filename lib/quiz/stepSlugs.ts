@@ -1,4 +1,3 @@
-import type { Locale } from '@/i18n/config'
 import type { StepId } from './stepIds'
 
 export type LocalizedStringMap = string

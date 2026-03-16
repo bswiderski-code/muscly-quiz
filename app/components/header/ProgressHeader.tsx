@@ -2,11 +2,12 @@
 
 import * as React from 'react'
 import { useRouter } from '@/i18n/routing';
-import { getFunnelSlug, getStepOrder, getStepSlug, type FunnelKey } from '@/lib/funnels/funnels'
-import type { StepId } from '@/lib/steps/stepIds.ts';
+import { getFunnelSlug, getStepOrder, type FunnelKey } from '@/lib/quiz/funnels'
+import type { StepId } from '@/lib/quiz/stepIds'
 import { useLocale } from 'next-intl'
-import { useCurrentFunnel } from '@/lib/funnels/funnelContext'
-import IGNORED_STEPS from '@/lib/steps/ignoredSteps';
+import { useCurrentFunnel } from '@/lib/quiz/funnelContext'
+import IGNORED_STEPS from '@/lib/quiz/ignoredSteps'
+import { MAIN_SITE_URL } from '@/config/site'
 
 type Props = {
   currentIdx: number
@@ -58,11 +59,11 @@ export default function ProgressHeader({ currentIdx, onBack, className, funnel: 
   }, [targetPct]);
 
   const router = useRouter();
-  const funnelSlug = React.useMemo(() => getFunnelSlug(funnel, locale), [funnel, locale])
+  const funnelSlug = React.useMemo(() => getFunnelSlug(funnel), [funnel])
 
   const handleBack = () => {
     if (currentIdx === 0) {
-      window.location.href = `https://musclepals.com/${locale}`;
+      window.location.href = `${MAIN_SITE_URL}/${locale}`;
       return;
     }
     if (onBack) {

@@ -8,8 +8,8 @@ import React, {
   useState,
 } from 'react';
 import styles from './StepRangeSlider.module.css';
-import { useCurrentFunnel } from '@/lib/funnels/funnelContext';
-import type { FunnelKey } from '@/lib/funnels/funnels';
+import { useCurrentFunnel } from '@/lib/quiz/funnelContext';
+import type { FunnelKey } from '@/lib/quiz/funnels';
 
 type StepRangeSliderProps = {
   steps: string[];
