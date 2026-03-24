@@ -1,6 +1,5 @@
 'use client'
 
-import Image from "next/image";
 import { useFunnelStore } from '@/lib/quiz/store';
 import { useTranslations } from "next-intl";
 import { useMemo } from 'react';
@@ -112,12 +111,6 @@ export default function YOUVSFUTURE({
 
   const fitnessPercentage = Math.max(0, Math.min(100, (fitness * 10) * 0.7));
 
-  // 1. Obrazki
-  const bmiImage = isFemale 
-    ? (config.femaleBodyfatMap[bodyfatValue] || config.femaleBodyfatMap["20-24"])
-    : (config.maleBodyfatMap[bodyfatValue] || config.maleBodyfatMap["10-14"]);
-  const finalBmiImage = isFemale ? config.femaleFinalImage : config.maleFinalImage;
-
   // --- Nowy dynamiczny plan ---
   const { desiredWeight } = getDynamicPlan({
     weight, bmi: undefined, diet_goal: diet_goal, ageIn: age, activity, heightCm,
@@ -125,7 +118,7 @@ export default function YOUVSFUTURE({
 
   const targetWeight = answers?.weight_goal ?? (typeof desiredWeight === 'number' ? desiredWeight : undefined);
 
-  const { lineThickness, lineColor, bmiImgHeight, bmiImgBaseWidth, bmiImgBaseHeight, lineHeight } = config;
+  const { lineThickness, lineColor, lineHeight } = config;
 
   // Determine metric and values
   const usedMetric = answers?.usedMetric === 'us' ? 'us' : 'eu';
@@ -139,24 +132,11 @@ export default function YOUVSFUTURE({
         style={{
           maxWidth: 520,
           margin: "0 auto",
-          fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif",
+          fontFamily: "inherit",
           position: "relative",
           lineHeight: lineHeight,
         }}
       >
-        {/* Ludzie */}
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "flex-end", marginBottom: 0, position: "relative" }}>
-          <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
-            <Image src={bmiImage} alt={t('now')} width={bmiImgBaseWidth} height={bmiImgBaseHeight} style={{ height: `${bmiImgHeight}px`, width: 'auto' }} priority />
-          </div>
-          <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
-            <Image src={finalBmiImage} alt={t('future')} width={bmiImgBaseWidth} height={bmiImgBaseHeight} style={{ height: `${bmiImgHeight}px`, width: 'auto' }} priority />
-          </div>
-        </div>
-
-        {/* Kreska pozioma */}
-        <div style={{ height: lineThickness, background: lineColor, width: "100%", margin: "0px 0 0 0", borderRadius: lineThickness }} />
-
         {/* Opisy i wagi */}
         <div style={{ display: "flex", justifyContent: "center", fontWeight: 700, fontSize: config.headerFontSize, marginTop: 8 }}>
           <div style={{ flex: 1, textAlign: "center" }}>

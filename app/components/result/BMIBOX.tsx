@@ -67,7 +67,7 @@ export default function BMIBOX({ bmi, pointerLeft = 50 }: BMIBOXProps) {
         boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
         padding: "16px",
         boxSizing: "border-box",
-        fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif",
+        fontFamily: "inherit",
       }}
     >
       <div style={{ fontSize: 14, fontWeight: 500, marginBottom: -2 }}>

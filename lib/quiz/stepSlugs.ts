@@ -8,6 +8,7 @@ export const STEP_SLUGS: Record<StepId, LocalizedStringMap> = {
   bodyfat: 'bodyfat',
   height: 'height',
   weight: 'weight',
+  weight_goal: 'desired-weight',
   age: 'age',
   activity: 'activity',
   bmi: 'bmi',

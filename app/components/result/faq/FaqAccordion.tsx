@@ -27,7 +27,7 @@ export default function FaqAccordion({ faqData }: FaqAccordionProps) {
             onClick={() => setOpenIndex(openIndex === index ? null : index)}
             className="w-full px-6 py-5 flex items-center justify-between text-left transition-colors hover:bg-gray-50/50"
           >
-            <span className="font-bold text-lg pr-4 text-gray-800" style={{ fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif" }}>
+            <span className="font-bold text-lg pr-4 text-gray-800" style={{ fontFamily: "inherit" }}>
               {faq.question}
             </span>
             <ChevronDown 
@@ -44,7 +44,7 @@ export default function FaqAccordion({ faqData }: FaqAccordionProps) {
           >
             <div 
               className="px-6 pb-5 pt-2 prose prose-slate max-w-none text-left prose-p:my-0 prose-p:leading-relaxed prose-strong:text-gray-900 text-gray-700"
-              style={{ fontFamily: "'Nunito', sans-serif" }}
+              style={{ fontFamily: "inherit" }}
             >
               <MDXRemote {...faq.answer} />
             </div>

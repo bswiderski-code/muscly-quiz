@@ -26,7 +26,7 @@ export function DetailsSection({ diet_goal }: Props) {
         style={{
           background: 'none',
           border: 'none',
-          color: '#000',
+          color: 'inherit',
           cursor: 'pointer',
           textDecoration: 'underline',
           fontSize: '16px',

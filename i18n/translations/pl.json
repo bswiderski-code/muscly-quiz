@@ -1,26 +1,16 @@
 {
   "CheckoutProducts": {
     "workout_solo": {
-      "productName": "Plan treningowy (solo)"
+      "productName": "Plan treningowy (solo)",
+      "buttonLabel": "Odbierz plan treningowy"
     },
     "workout_bundle": {
-      "productName": "Plan treningowy + dieta (bundle)"
+      "productName": "Plan treningowy + dieta (bundle)",
+      "buttonLabel": "Odbierz pakiet plan + dieta"
     },
     "workout": {
       "description": "Odbierz<br />swój plan<br />treningowy!"
     }
-  },
-  "ReviewsWidget": {
-    "title": "Co kupujący uważają o swoich planach 2 miesiące po zakupie?",
-    "sort_best": "sortowanie - od najlepszych",
-    "sort_worst": "sortowanie - od najgorszych",
-    "sort_newest": "sortowanie - od najnowszych",
-    "sort_oldest": "sortowanie - od najstarszych",
-    "verified": "(zweryfikowany zakup)",
-    "age_suffix": "lat",
-    "aria_label": "Opinie klientów",
-    "average": "średnia ocen",
-    "of5": "/5"
   },
   "PlanPage": {
     "title": "Twój plan",
@@ -49,14 +39,13 @@
   },
   "Gender": {
     "title": "Jakiej <b>płci</b> jesteś?",
+    "subtitle": "Pomoże nam obliczyć Twoje zapotrzebowanie kaloryczne.",
     "ariaLabel": "Wybór płci",
     "male": {
-      "label": "Wybierz mężczyznę",
-      "alt": "Mężczyzna"
+      "label": "Mężczyzna"
     },
     "female": {
-      "label": "Wybierz kobietę",
-      "alt": "Kobieta"
+      "label": "Kobieta"
     }
   },
   "WorkoutPage": {
@@ -69,7 +58,8 @@
     "terms": "Regulamin"
   },
   "DietGoal": {
-    "title": "Jaki jest<br /><b>twój cel?</b>",
+    "title": "Jaki jest <b>twój cel?</b>",
+    "subtitle": "Wybierz ten, który najlepiej opisuje Twój cel.",
     "titleAria": "Jaki jest twój cel?",
     "bulk": {
       "label": "Chcę nabrać",
@@ -83,86 +73,97 @@
     }
   },
   "Bodyfat": {
-    "title": "Wybierz swój poziom<br /><b>tkanki tłuszczowej</b>",
-    "alt": "Sylwetka dla wybranego poziomu tkanki tłuszczowej",
+    "title": "Wybierz swój <b>poziom tkanki tłuszczowej</b>",
+    "subtitle": "Wybierz zakres, który najlepiej Cię opisuje.",
+    "previewAlt": "Przykładowa sylwetka dla zakresu {label}",
     "stepsDataMale": [
       {
         "value": "5-9",
         "label": "5-9%",
-        "info": "To ekstremalnie niski poziom tkanki tłuszczowej. Sylwetka jest bardzo muskularna i definicja mięśni jest doskonała."
+        "info": "To <strong>ekstremalnie niski poziom tkanki tłuszczowej</strong>. Sylwetka jest bardzo muskularna i definicja mięśni jest doskonała."
       },
       {
         "value": "10-14",
         "label": "10-14%",
-        "info": "To bardzo niski poziom tkanki tłuszczowej. Sylwetka jest szczupła, mięśnie są wyraźnie widoczne."
+        "info": "To <strong>bardzo niski poziom tkanki tłuszczowej</strong>. Sylwetka jest szczupła, mięśnie są wyraźnie widoczne."
       },
       {
         "value": "15-19",
         "label": "15-19%",
-        "info": "To zdrowy, sportowy poziom tkanki tłuszczowej. Mięśnie są widoczne, ale sylwetka nie jest wychudzona."
+        "info": "To <strong>zdrowy, sportowy poziom tkanki tłuszczowej</strong>. Mięśnie są widoczne, ale sylwetka nie jest wychudzona."
       },
       {
         "value": "20-24",
         "label": "20-24%",
-        "info": "To niski poziom tkanki tłuszczowej. Sylwetka jest szczupła, mięśnie są widoczne."
+        "info": "To <strong>niski poziom tkanki tłuszczowej</strong>. Sylwetka jest szczupła, mięśnie są widoczne."
       },
       {
         "value": "25-29",
         "label": "25-29%",
-        "info": "To umiarkowany poziom tkanki tłuszczowej. Sylwetka jest pełniejsza, mięśnie są mniej widoczne."
+        "info": "To <strong>umiarkowany poziom tkanki tłuszczowej</strong>. Sylwetka jest pełniejsza, mięśnie są mniej widoczne."
       },
       {
         "value": "30-34",
         "label": "30-34%",
-        "info": "To wyższy poziom tkanki tłuszczowej. Sylwetka jest zaokrąglona, mięśnie są niewidoczne."
+        "info": "To <strong>wyższy poziom tkanki tłuszczowej</strong>. Sylwetka jest zaokrąglona, mięśnie są niewidoczne."
       },
       {
         "value": "35-39",
         "label": "35-39%",
-        "info": "To wysoki poziom tkanki tłuszczowej. Sylwetka jest bardzo zaokrąglona."
+        "info": "To <strong>wysoki poziom tkanki tłuszczowej</strong>. Sylwetka jest bardzo zaokrąglona."
       },
       {
         "value": ">40",
         "label": ">40%",
-        "info": "To bardzo wysoki poziom tkanki tłuszczowej. Sylwetka jest otyła."
+        "info": "To <strong>bardzo wysoki poziom tkanki tłuszczowej</strong>. Sylwetka jest otyła."
       }
     ],
     "stepsDataFemale": [
       {
+        "value": "5-9",
+        "label": "5-9%",
+        "info": "To <strong>ekstremalnie niski poziom tkanki tłuszczowej</strong>, rzadko spotykany u kobiet poza zawodowymi kulturystkami. Wiąże się z dużym ryzykiem zdrowotnym."
+      },
+      {
         "value": "10-14",
         "label": "10-14%",
-        "info": "Bardzo niska zawartość tkanki tłuszczowej, typowa dla zawodniczek sportów sylwetkowych. Może wiązać się z zaburzeniami hormonalnymi i brakiem miesiączki."
+        "info": "<strong>Bardzo niska zawartość tkanki tłuszczowej</strong>, typowa dla zawodniczek sportów sylwetkowych. <strong>Może wiązać się z zaburzeniami hormonalnymi i brakiem miesiączki.</strong>"
       },
       {
         "value": "15-19",
         "label": "15-19%",
-        "info": "Niska zawartość tkanki tłuszczowej, często spotykana u aktywnych kobiet i sportsmenek. Sylwetka bardzo szczupła, z wyraźnie zarysowanymi mięśniami."
+        "info": "<strong>Niska zawartość tkanki tłuszczowej</strong>, często spotykana u aktywnych kobiet i sportsmenek. Sylwetka bardzo szczupła, z wyraźnie zarysowanymi mięśniami."
       },
       {
         "value": "20-24",
         "label": "20-24%",
-        "info": "Zdrowy, sportowy poziom tkanki tłuszczowej. Sylwetka szczupła, ale kobieca. Najczęściej spotykany u aktywnych kobiet."
+        "info": "<strong>Zdrowy, sportowy poziom tkanki tłuszczowej</strong>. Sylwetka szczupła, ale kobieca. Najczęściej spotykany u aktywnych kobiet."
       },
       {
         "value": "25-29",
         "label": "25-29%",
-        "info": "Przeciętny poziom tkanki tłuszczowej. Sylwetka naturalna, lekko zaokrąglona, bez wyraźnej definicji mięśni."
+        "info": "<strong>Przeciętny poziom tkanki tłuszczowej</strong>. Sylwetka naturalna, lekko zaokrąglona, bez wyraźnej definicji mięśni."
       },
       {
-        "value": "30-39",
-        "label": "30-39%",
-        "info": "Podwyższony poziom tkanki tłuszczowej. Sylwetka wyraźnie zaokrąglona, możliwe problemy zdrowotne związane z nadmiarem tłuszczu."
+        "value": "30-34",
+        "label": "30-34%",
+        "info": "<strong>Podwyższony poziom tkanki tłuszczowej</strong>. Sylwetka wyraźnie zaokrąglona, mięśnie są słabo widoczne."
+      },
+      {
+        "value": "35-39",
+        "label": "35-39%",
+        "info": "<strong>Wysoki poziom tkanki tłuszczowej</strong>. Sylwetka bardzo zaokrąglona, wskazane zwiększenie aktywności fizycznej."
       },
       {
         "value": ">40",
         "label": ">40%",
-        "info": "Bardzo wysoki poziom tkanki tłuszczowej. Wskazane konsultacje zdrowotne i zmiana stylu życia."
+        "info": "<strong>Bardzo wysoki poziom tkanki tłuszczowej</strong>. <strong>Wskazane konsultacje zdrowotne i zmiana stylu życia.</strong>"
       }
     ]
   },
   "Height": {
     "title": "Ile masz <b>wzrostu?</b>",
-    "alt": "Ile masz wzrostu?",
+    "subtitle": "Potrzebujemy go do obliczenia Twojego BMI.",
     "unit": "cm",
     "placeholder": "___",
     "errorMsg": "Podaj swój prawdziwy wzrost.",
@@ -170,9 +171,9 @@
   },
   "Weight": {
     "title1": "Ile <b>ważysz?</b>",
+    "subtitle1": "Wpisz swoją aktualną wagę.",
     "title2": "Ile chciałbyś <b>ważyć?</b>",
-    "alt1": "Obecna waga",
-    "alt2": "Waga docelowa",
+    "subtitle2": "Podaj swój docelowy ciężar ciała.",
     "unit": "kg",
     "placeholder": "___",
     "ariaLabel1": "Waga",
@@ -187,6 +188,7 @@
   },
   "Age": {
     "title": "Ile masz <b>lat?</b>",
+    "subtitle": "Wiek wpływa na intensywność i strukturę planu.",
     "placeholder": "__",
     "ariaLabel": "Wiek",
     "unit": "lat",
@@ -242,7 +244,8 @@
     "nextStepAlt": "Przejdź do następnego kroku"
   },
   "Location": {
-    "title": "Gdzie zamierzasz<br /><b>trenować?</b>",
+    "title": "Gdzie zamierzasz <b>trenować?</b>",
+    "subtitle": "Dostosujemy plan do miejsca Twoich treningów.",
     "ariaLabelGroup": "Lokalizacja treningów",
     "gym": {
       "label": "Będę trenował na siłowni",
@@ -273,7 +276,7 @@
     }
   },
   "CardioStep": {
-    "title": "Czy chcesz wykonywać<b> cardio?</b>",
+    "title": "Czy chcesz robić<b> cardio?</b>",
     "subtitle": "(bieganie, jazda na rowerze, skakanka)",
     "yesAlt": "Tak",
     "noAlt": "Nie",
@@ -281,7 +284,8 @@
     "noLabel": "Wybierz nie"
   },
   "Experience": {
-    "title": "Jakie masz doświadczenie<br /><b>w treningach?</b>",
+    "title": "Jakie masz <b>doświadczenie w treningach?</b>",
+    "subtitle": "Dopasujemy poziom trudności do Twoich umiejętności.",
     "options": {
       "none": {
         "label": "Jeszcze nie zacząłem trenować. 🐣",
@@ -358,9 +362,9 @@
     }
   },
   "Priority": {
-    "title1": "Na rozbudowie których<br />partii zależy ci<br />",
-    "title2": "<span style=\"font-weight: 700\">NAJBARDZIEJ?</span>",
-    "subtitle": "(Plan obejmuje wszystkie partie mięśniowe, ale możesz wybrać te, które chcesz <b>priorytetyzować</b>)",
+    "title1": "Na rozbudowie których partii ",
+    "title2": "<b>zależy Ci najbardziej?</b>",
+    "subtitle": "Plan obejmuje wszystkie partie, ale możesz wybrać te, które chcesz priorytetyzować.",
     "warning": "UWAGA! Możesz zaznaczyć max. 2 partie",
     "partNames": {
       "shoulders": "Barki",
@@ -372,11 +376,7 @@
       "abs": "Brzuch",
       "forearms": "Przedramiona",
       "glutes": "Pośladki"
-    },
-    "ariaLabelSelected": "Priorytet: {name} zaznaczony",
-    "ariaLabelUnselected": "Priorytet: {name} niezaznaczony",
-    "imageAltSelected": "{name} — zaznaczono",
-    "imageAltUnselected": "{name} — nie zaznaczono"
+    }
   },
   "Frequency": {
     "title1": "Ile razy w<br />tygodniu chcesz<br />",
@@ -486,7 +486,6 @@
     "intro1": "Stworzony na podstawie<br /><b>Twoich 14 odpowiedzi</b> przez<br/><b>zaawansowany algorytm treningowy</b><br />zaprojektowany specjalnie do<br /><b>budowy sylwetki</b> i <b>redukcji tłuszczu</b>.",
     "intro2": "Otrzymasz <b>indywidualny plan</b><br/>oparty na danych, który powstał<br/>w <b>mniej niż 3 minuty</b> dzięki<br />technologii, która analizuje ponad<br/><b>4 000 kombinacji treningowych</b>.",
     "subtitle": "<b>Szybkie Podsumowanie</b><br /><span style=\"font-size: 28px; font-weight: 400;\">Twoich wyników</span>",
-    "trustImageAlt": "Dlaczego warto zaufać?",
     "analyzeTitle": "Algorytm analizuje m.in.:",
     "analyzeList": {
       "aktywnosc": "Twój <b>poziom aktywności</b>",
@@ -499,7 +498,6 @@
     "conclusion1": "A następnie dobiera <b>konkretny plan treningowy</b>, który pasuje do<b> Twojej sytuacji</b> lepiej niż <b>99% gotowych planów</b> w internecie.",
     "conclusion2": "To połączenie <b>wiedzy trenera personalnego</b> oraz <b>precyzji systemu</b>, który nie popełnia błędów ani nie zgaduje.",
     "purchaseTitle": "Co dokładnie otrzymasz po zakupie?",
-    "purchaseImageAlt": "Opis produktu",
     "sampleBtn": "Zobacz przykładowy plan treningowy!",
     "sampleTitle": "A oto kilka stron z planu Rafała!",
     "loadingTitle": "Tworzę Twój plan treningowy...",
@@ -507,7 +505,7 @@
     "loadingData": "Brak danych dla tej sesji.",
     "loadingErrorTitle": "Mamy problem z wczytaniem Twoich danych.",
     "loadingErrorHtml": "Odśwież stronę i spróbuj ponownie. Jeśli problem nadal występuje, napisz do nas: <a href=\"mailto:{email}\" style=\"color:#111;text-decoration:underline\">{email}</a>",
-    "loadingErrorBtn": "once_again",
+    "loadingErrorBtn": "Spróbuj ponownie",
     "reportNote1": "wysłanych planów",
     "reportNote2": "przez ostatnie 24 godziny",
     "joinAthletes": "Dołącz do <b><u>{count}</u> sportowców</b>, którzy <b>już korzystają</b> ze swojego <b>personalizowanego planu treningowego!</b>",
@@ -517,7 +515,8 @@
       "responseTime": "⏰ Zwykle odpowiadam w mniej niż godzinę."
     },
     "ctaButton": {
-      "alt": "Odbierz plan"
+      "alt": "Odbierz plan",
+      "label": "Odbierz personalizowany plan"
     },
     "errorTitle": "Brak danych dla tego lejka.",
     "errorDescription": "Skontaktuj się z nami pod adresem: {email}",
@@ -620,7 +619,6 @@
   },
   "ReportForm": {
     "title": "Odbierz<br />swój plan<br />treningowy!",
-    "imageAlt": "Ilustracja maszyny Smitha",
     "nameLabel": "Jak masz na imię?",
     "namePlaceholder": "Imię",
     "emailLabel": "Email (na który otrzymasz plan):",
@@ -651,7 +649,6 @@
     "timerPromo1": "Promocja dla",
     "timerPromo2": "nowych<br />użytkowników",
     "timerPromo3": "koniec za:",
-    "timerImageAlt": "Napięty Musclepals",
     "successMsg": "Twoje zamówienie zostało pomyślnie przetworzone.",
     "paymentNote": "Plan otrzymasz w przeciągu <b>2 minut</b> od dokonania płatności."
   },
@@ -699,13 +696,11 @@
     "pendingHtml": "Twoja płatność jest w trakcie weryfikacji.<br /><b>Proszę, nie zamykaj tej strony.</b><br /><br />Jeśli płatność została dokonana, plan trafi na Twój e-mail w ciągu kilku minut.",
     "loading": "Ładowanie...",
     "successTitle": "Twoje zamówienie zostało<br />opłacone pomyślnie!",
-    "successImageAlt": "Zamówienie opłacone",
     "successText1": "Za chwilę pojawi się on na twoim mailu.",
     "successText2": "(może potrwać do 5 minut)",
     "successText3": "Sprawdź również spam i zakładkę \"oferty\"",
     "successText4": "W razie jakichkolwiek problemów śmiało daj nam znać!",
     "errorTitle": "Mamy problem<br />z przetworzeniem<br />Twojej płatności.",
-    "errorImageAlt": "Raport nieopłacony",
     "errorText1": "Twoja płatność <b>nie została sfinalizowana</b>, wróć do strony głównej i spróbuj ponownie.",
     "buttonText": "Wróć do strony głównej",
     "logoAlt": "Musclepals",
@@ -713,12 +708,14 @@
   },
   "JoinAthletes": "Dołącz do <b><u>{count}</u> sportowców</b>, którzy <b>już korzystają</b> ze swojego <b>personalizowanego planu treningowego!</b>",
   "NextButton": {
-    "alt": "Dalej"
+    "alt": "Dalej",
+    "backLabel": "Cofnij"
   },
   "AnswersSummary": {
     "buttonAlt": "Podsumowanie odpowiedzi",
     "backLinkText": "Popraw odpowiedź w formularzu",
     "conjunction_and": "i",
+    "buttonLabel": "Podsumowanie Twoich odpowiedzi",
     "equipmentNotSelected": "Nie wybrano żadnego sprzętu",
     "locationTypeMap": {
       "gym": "Siłownia",
@@ -780,13 +777,10 @@
       "hard_work": "Bardzo dużo trenuję lub mam ciężką pracę fizyczną."
     },
     "experienceMap": {
-      "new": "Nowy",
-      "beginner": "Początkujący",
-      "intermediate": "Już trochę trenuję.",
-      "advanced": "Ćwiczę już długo.",
       "none": "Jeszcze nie zacząłem trenować.",
       "just_started": "Dopiero zacząłem.",
-      "some_experience": "Już trochę trenuję."
+      "some_experience": "Już trochę trenuję.",
+      "advanced": "Ćwiczę już długo."
     },
     "difficultyMap": {
       "motivation": "Brakuje mi motywacji do treningów/trzymania diety.",
@@ -828,7 +822,6 @@
   "MissingSteps": {
     "title": "Niektóre odpowiedzi nie zostały zapisane",
     "description": "Niestety, oprogramowanie nie zapisało odpowiedzi na pytania: {steps}.<br /><br />Kliknij przycisk poniżej, aby przejść przez te pytania ponownie.",
-    "buttonImage": "/btns/{locale}/fill-again-btn.svg",
     "buttonAlt": "Spróbuj ponownie",
     "stepLabels": {
       "gender": "Płeć",
@@ -850,10 +843,6 @@
       "title": "Problem nadal występuje",
       "description": "Niestety, problem z zapisem odpowiedzi nadal występuje. To może być błąd techniczny.<br /><br />Skontaktuj się z nami pod adresem: {email}"
     }
-  },
-  "ReviewsMarquee": {
-    "imageAlt": "Recenzja użytkownika",
-    "title": "Sprawdź co mówią o nas klienci"
   },
   "PdfFilenames": {
     "workout": "Plan_treningowy",

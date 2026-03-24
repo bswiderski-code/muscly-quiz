@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import Image from 'next/image';
 import type { CheckoutProvider } from '@/i18n/config';
 
 const ENDPOINT: Record<CheckoutProvider, string> = {
@@ -65,27 +64,20 @@ export function PaymentButton({
     <div style={{ margin: '0', position: 'relative' }}>
       <button
         type="button"
+        className="btn btn-primary"
         disabled={loading}
         onClick={() => {
           onBeforePay?.();
           onPay(handlePay);
         }}
         style={{
-          background: 'none',
-          border: 'none',
-          padding: 0,
           cursor: loading ? 'not-allowed' : 'pointer',
           width: '100%',
           position: 'relative',
+          opacity: loading ? 0.7 : 1,
         }}
       >
-        <Image
-          src={buttonSvg}
-          alt={imageAlt ?? description}
-          width={400}
-          height={120}
-          style={{ width: '100%', height: 'auto', display: 'block', opacity: loading ? 0.7 : 1 }}
-        />
+        {imageAlt ?? description}
         {loading && (
           <div
             style={{
@@ -96,9 +88,10 @@ export function PaymentButton({
               justifyContent: 'center',
               fontWeight: 700,
               fontSize: 18,
-              color: '#222',
+              color: '#1F2600',
               background: 'rgba(255,255,255,0.7)',
               zIndex: 3,
+              borderRadius: 2,
             }}
           >
             {loadingLabel ?? 'Przekierowuję…'}

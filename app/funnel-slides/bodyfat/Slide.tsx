@@ -2,21 +2,23 @@
 
 import { useStepController } from '@/lib/quiz/useStepController';
 import type { StepId } from '@/lib/quiz/stepIds';
-import { useCurrentFunnel } from '@/lib/quiz/funnelContext'
 import ProgressHeader from '@/app/components/header/ProgressHeader';
-import StepRangeSlider from '@/app/components/funnels/StepRangeSlider';
+import BodyfatSliderCard from '@/app/components/funnels/BodyfatSliderCard';
 import { useEffect } from 'react';
 import NextButton from '@/app/components/funnels/NextButton';
 import { useTranslations } from 'next-intl';
-import { ASSET_PATHS } from '@/config/imagePaths';
 
 
 const stepId: StepId = 'bodyfat';
 
+/** Maps stored value to PNG basename under `public/bodyfats/{male|female}/`. */
+function bodyfatImageBasename(value: string): string {
+  return value === '>40' ? 'gt40' : value;
+}
+
 export default function Page() {
-  const funnel = useCurrentFunnel();
   const t = useTranslations('Bodyfat');
-  const { idx, total, value, select, goPrev, goNext, isPending } = useStepController(stepId);
+  const { idx, value, select, goPrev, goNext } = useStepController(stepId);
   const { value: gender } = useStepController('gender' as StepId);
 
   const isFemale = gender === 'F';
@@ -25,7 +27,7 @@ export default function Page() {
     label: string;
     info: string;
   }[];
-  
+
   const FEMALE_STEPS_DATA = t.raw('stepsDataFemale') as unknown as {
     value: string;
     label: string;
@@ -34,8 +36,7 @@ export default function Page() {
 
   const STEPS_DATA = isFemale ? FEMALE_STEPS_DATA : MALE_STEPS_DATA;
   const STEPS = STEPS_DATA.map(s => ({ value: s.value, label: s.label }));
-  const imageByValue = isFemale ? ASSET_PATHS.bmiImages.female : ASSET_PATHS.bmiImages.male;
-  const BF_MAP = new Map(STEPS_DATA.map(s => [s.value, { info: s.info, imageSrc: (imageByValue as Record<string, string>)[s.value] }]));
+  const BF_MAP = new Map(STEPS_DATA.map(s => [s.value, { info: s.info }]));
 
   const DEFAULT_VALUE = isFemale ? '20-24' : '15-19';
 
@@ -49,11 +50,14 @@ export default function Page() {
   const currentBodyfatValue = value || DEFAULT_VALUE;
   const currentData = BF_MAP.get(currentBodyfatValue) || BF_MAP.get(DEFAULT_VALUE)!;
   const currentLabel = STEPS.find(s => s.value === currentBodyfatValue)?.label || DEFAULT_VALUE + '%';
-  const imageSrc = currentData.imageSrc;
-  const infoText = currentData.info;
+  const infoHtml = currentData.info;
   const stepLabels = STEPS.map((s) => s.label);
   const initialIndex = STEPS.findIndex((s) => s.value === DEFAULT_VALUE);
 
+  const previewBasename = bodyfatImageBasename(currentBodyfatValue);
+  const previewSrc = isFemale
+    ? `/bodyfats/female/${previewBasename}.png`
+    : `/bodyfats/male/${previewBasename}.png`;
 
   return (
     <main className="funnel-page">
@@ -61,56 +65,28 @@ export default function Page() {
         <ProgressHeader currentIdx={idx} onBack={goPrev} />
       </div>
 
-      {/* Large preview area */}
-      <div
-        style={{
-          background: '#ddd',
-          height: 240, 
-          borderBottom: '6px solid #000',
-          margin: 0, 
-          padding: 0,
-          width: '100%', 
-          display: 'flex',
-          alignItems: 'flex-end',
-          justifyContent: 'center',
-        }}
-      >
-        <img
-          src={imageSrc} 
-          alt={t('alt')}
-          style={{
-            height: '94%',
-            width: 'auto', 
-            maxWidth: '100%',
-            objectFit: 'contain',
-            display: 'block',
-            margin: -1,
-            padding: 0,
-          }}
-        />
-      </div>
-
-      <div className="funnel-content funnel-content--centered funnel-content--bodyfat">
+      <div className="funnel-content funnel-content--centered funnel-content--bodyfat funnel-content--with-fixed-button">
         <h1 className="funnel-title">
           <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
         </h1>
+        <p className="funnel-subtitle">{t('subtitle')}</p>
 
-        <div className="funnel-big-value" style={{ fontSize: 24, textShadow: '0 4px 8px #eee, 0 2px 2px #bbb' }}>
-          {currentLabel}
-        </div>
-
-        <div className="funnel-slider-wrap">
-          <StepRangeSlider
-            steps={stepLabels}
-            initialIndex={initialIndex}
-            rememberedIndex={rememberedIndex}
-            onChange={(i, label) => select(STEPS_DATA[i].value, { advance: false })}
-          />
-        </div>
-
-        <div className="funnel-subtitle">
-          {infoText}
-        </div>
+        <BodyfatSliderCard
+          previewImage={{
+            src: previewSrc,
+            alt: t('previewAlt', { label: currentLabel }),
+          }}
+          isFemale={isFemale}
+          overlapPreview
+          descriptionHtml={infoHtml}
+          descriptionKey={currentBodyfatValue}
+          steps={stepLabels}
+          initialIndex={initialIndex}
+          rememberedIndex={rememberedIndex}
+          onChange={(i) =>
+            select(STEPS_DATA[i].value, { advance: false })
+          }
+        />
 
         <div className="funnel-submit-wrap">
           <NextButton currentIdx={idx} stepId={stepId} onClick={goNext} />

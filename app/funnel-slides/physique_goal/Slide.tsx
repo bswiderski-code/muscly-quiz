@@ -15,7 +15,7 @@ const stepId: StepId = "physique_goal";
 export default function Page() {
   const funnel = useCurrentFunnel();
   const t = useTranslations('PhysiqueGoalStep');
-  const { idx, total, value, select, goPrev, goNext, isPending } = useStepController(stepId);
+  const { idx, total, value, select, goPrev, isPending } = useStepController(stepId);
   const [isValid, setIsValid] = useState(true);
 
   const options: SelectOption[] = useMemo(() => [
@@ -25,12 +25,8 @@ export default function Page() {
   ], [t]);
 
   const handleNext = () => {
-    if (!isValid) return;
-    if (value) {
-      select(value, { advance: true });
-    } else {
-      goNext();
-    }
+    if (!isValid || !value) return;
+    select(value, { advance: true });
   };
 
   return (
@@ -39,7 +35,7 @@ export default function Page() {
         <ProgressHeader currentIdx={idx} onBack={goPrev} />
       </div>
 
-      <div className="funnel-content funnel-content--centered">
+      <div className="funnel-content funnel-content--centered funnel-content--with-fixed-button">
         <h1 className="funnel-title" dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
 
         <SelectMenu
@@ -55,7 +51,7 @@ export default function Page() {
             currentIdx={idx}
             stepId={stepId}
             onClick={handleNext}
-            disabled={!isValid}
+            disabled={!isValid || !value}
           />
         </div>
       </div>

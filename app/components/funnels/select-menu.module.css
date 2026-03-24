@@ -19,16 +19,15 @@
 .option {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 18px;
-  background: #fff;
-  border: 4px solid #000;
-  border-radius: 18px;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #27272A;
+  border: 1px solid #3F3F46;
+  border-radius: 14px;
   cursor: pointer;
-  transition: transform 80ms ease;
-  box-shadow: 0 1px 0 #000;
+  transition: transform 80ms ease, border-color 160ms ease;
   position: relative;
-  z-index: 1; /* stoi nad panelem */
+  z-index: 1;
 }
 .option:active { transform: scale(0.995); }
 
@@ -58,35 +57,44 @@
 /* pudełko z ikonami (fade box_1 → box_2) */
 .box {
   position: relative;
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
 }
 .boxOff, .boxOn {
   position: absolute;
   inset: 0;
-  transition: opacity 160ms ease-in-out;
+  transition: all 160ms ease-in-out;
+  border: 2px solid #52525B;
+  border-radius: 50%;
 }
-.boxOn { opacity: 0; }
+.boxOff { background: #3F3F46; }
+.boxOn { opacity: 0; background: #D9F166; border-color: #D9F166; }
 .optionChecked .boxOn { opacity: 1; }
 .optionChecked .boxOff { opacity: 0; }
 
 /* tekst — regular → bold */
 .label {
-  font-family: var(--font-display);
-  font-size: 20px;
+  font-family: inherit;
+  font-size: 16px;
   line-height: 1.25;
   font-weight: 400;
   text-align: left;
+  color: #FAFAFA;
   transition: font-weight 120ms ease;
 }
-.optionChecked .label { font-weight: 700; }
+.optionChecked .label { font-weight: 600; color: #FAFAFA; }
 
-/* gdy otwarty – delikatniej zaokrąglony dół,
-   żeby przejście wyglądało naturalnie */
+/* gdy zaznaczone – tylko zmień kolor ramki, zachowaj kształt */
 .optionChecked {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-color: #D9F166;
+}
+
+/* gdy zaznaczone i MA szczegóły – delikatniej zaokrąglony dół,
+   żeby przejście wyglądało naturalnie */
+.optionWithDetails.optionChecked {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
 /* ===== panel rozwijany ===== */
@@ -104,28 +112,27 @@
 
 /* właściwa „szara karta” – bez górnej ramki, podsuń pod kafelek */
 .detailsInner {
-  overflow: hidden;             /* chowa nadmiar przy animacji */
-  background: #e9e9e9;            /* szary jak na screenie */
-  border-left: 4px solid #000;
-  border-right: 4px solid #000;
-  border-bottom: 4px solid #000;
-  border-top: 0;                   /* brak górnej krawędzi = wspólna rama */
-  border-radius: 0 0 18px 18px;    /* tylko dół zaokrąglony */
-  margin-top: -4px;                /* podsuń o grubość obramowania */
+  overflow: hidden;
+  background: #1E1E22;
+  border-left: 1px solid #D9F166;
+  border-right: 1px solid #D9F166;
+  border-bottom: 1px solid #D9F166;
+  border-top: 0;
+  border-radius: 0 0 14px 14px;
+  margin-top: -1px;
   padding: 14px 18px;
-  box-shadow: 0 1px 0 #000;
   text-align: left;
+  color: #A1A1AA;
+  font-size: 14px;
 }
 
 /* Kalistenika funnel specific styles */
 :global(.funnel-kalistenika) .detailsInner {
-  background: #63C0FF;
+  background: #1E3A4A;
   letter-spacing: 0.05rem;
   font-size: 16px;
-  color: #000;
-  text-align: center;
-  -webkit-text-stroke: 4px white;
-  paint-order: stroke fill;
+  color: #FAFAFA;
+  text-align: left;
 }
 
 /* redukcja ruchu */

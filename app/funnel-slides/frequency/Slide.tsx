@@ -51,7 +51,7 @@ export default function Page() {
         <ProgressHeader currentIdx={idx} onBack={goPrev} />
       </div>
 
-      <div className="funnel-content funnel-content--centered">
+      <div className="funnel-content funnel-content--centered funnel-content--with-fixed-button">
         <h1 className="funnel-title">
           <span dangerouslySetInnerHTML={{ __html: t.raw('title1') }} />
           <span dangerouslySetInnerHTML={{ __html: t.raw('title2') }} />

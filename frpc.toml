@@ -1,0 +1,11 @@
+serverAddr = "23.88.106.37"
+serverPort = 7000
+
+auth.method = "token"
+auth.token = "4Ef8qZckgfd7OloPYRAOfG3RWUA"
+
+[[proxies]]
+name = "web"
+type = "http"
+localPort = 3000
+customDomains = ["dev.sigma-inc.work"]

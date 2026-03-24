@@ -1,19 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-theme-bg: var(--bg-color);
+  --color-theme-surface: var(--surface-color);
+  --color-theme-text: var(--text-main);
+  --color-theme-muted: var(--text-muted);
+  --color-theme-primary: var(--primary);
+  --color-theme-primary-fg: var(--primary-fg);
+  --color-theme-secondary: var(--secondary);
+  --color-theme-secondary-fg: var(--secondary-fg);
+  --color-theme-accent: var(--accent);
+  --color-theme-border: var(--border-color);
+
+  --radius-theme-sm: var(--radius-sm);
+  --radius-theme-md: var(--radius-md);
+  --radius-theme-lg: var(--radius-lg);
+  --radius-theme-full: var(--radius-full);
+
+  --shadow-theme: var(--shadow);
 }
 
 /* === Tokens === */
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
-
-  /* layout */
+  /* Layout */
   --max-w: 600px;
-  
-  /* spacing */
+
+  /* Spacing */
   --space-1: 8px;
   --space-2: 8px;
   --space-3: 16px;
@@ -21,28 +33,35 @@
   --space-5: 28px;
   --space-6: 32px;
 
-  /* radius & borders */
-  --radius-1: 8px;
-  --radius-2: 20px;
-  --b-strong: 4px;
-  --b-medium: 3px;
-
-  /* colors */
-  --c-bg: #fff;
-  --c-fg: #111;
-  --c-border: #000;
-  --c-muted: #7F7F7F;
-
-  /* type */
+  /* Type */
   --fs-h1: 26px;
   --fs-label: 17px;
   --fs-input: 18px;
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-bold: 700;
+  --fw-btn: 800; /* slightly heavier than body bold for CTAs */
 
-  --font-display: 'Comic Relief', Arial, Helvetica, sans-serif;
-  --font-base: 'Nunito', Arial, Helvetica, sans-serif;
+  /* Structural Variables */
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-full: 9999px;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --font-family: 'Inter', sans-serif;
+  --border-width: 0px;
+
+  /* Color Variables */
+  --bg-color: #18181B;
+  --surface-color: #27272A;
+  --text-main: #FAFAFA;
+  --text-muted: #A1A1AA;
+  --primary: #D9F166;
+  --primary-fg: #18181B;
+  --secondary: #3F3F46;
+  --secondary-fg: #FAFAFA;
+  --accent: #D9F166;
+  --border-color: #3F3F46;
 }
 
 /* Prevent horizontal overflow globally */
@@ -51,28 +70,19 @@ html, body {
   width: 100vw;
 }
 
-/* (Optional) Dark scheme – same palette by design */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #000000;
-  }
-}
-
 /* === Base === */
 html, body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-display); /* use Comic Relief everywhere */
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-family);
   min-height: 100%;
 }
 body { margin: 0; }
 
-/* Headings keep display vibe */
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  color: #111;
-  font-weight: var(--fw-regular); /* Default to regular weight */
+  color: var(--text-main);
+  font-weight: var(--fw-regular);
 }
 
 
@@ -157,9 +167,9 @@ main {
 
 /* Card */
 .card {
-  background: var(--c-bg);
-  border: var(--b-strong) solid var(--c-border);
-  border-radius: var(--radius-2);
+  background: var(--surface-color);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-md);
   padding: var(--space-5) var(--space-3);
   display: flex;
   flex-direction: column;
@@ -167,16 +177,84 @@ main {
   box-sizing: border-box;
 }
 
-/* Font helpers (generic) */
-.comic-relief-force { font-family: 'Comic Relief', 'Nunito', Arial, Helvetica, sans-serif !important; }
-.nunito-regular    { font-family: "Nunito", sans-serif; font-optical-sizing: auto; font-weight: 400; font-style: normal; }
-.nunito-bold       { font-family: "Nunito", sans-serif; font-optical-sizing: auto; font-weight: 700; font-style: normal; }
-.nunito-black      { font-family: "Nunito", sans-serif; font-optical-sizing: auto; font-weight: 900; font-style: normal; }
-.comic-relief-regular { font-family: "Comic Relief", system-ui; font-weight: 400; font-style: normal; }
-.comic-relief-bold    { font-family: "Comic Relief", system-ui; font-weight: 700; font-style: normal; }
+.theme-transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
 
-/* Utility to apply Comic Relief where a class is used */
-.font-display { font-family: var(--font-display) !important; }
+.theme-shadow {
+  box-shadow: var(--shadow);
+}
+
+.theme-border {
+  border-width: var(--border-width);
+  border-color: var(--border-color);
+}
+
+/* === Buttons === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: var(--fw-btn);
+  line-height: 1.2;
+  padding: 18px 32px;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  border-style: solid;
+}
+
+.btn-primary {
+  border: none;
+  border-radius: 2px;
+  color: #1f2600;
+  background: linear-gradient(135deg, #e1fa6d 0%, #95aa25 100%);
+  box-shadow: 0 0 40px rgba(225, 250, 109, 0.15);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  border-width: 1px;
+  border-color: rgba(72, 71, 75, 0.2);
+  border-radius: 2px;
+  background: #25252a;
+  color: var(--text-main);
+}
+
+a.btn {
+  display: inline-flex;
+}
+
+/* Funnel “Next”: label + Lucide chevron on one vertical centerline */
+.btn-next-row {
+  line-height: 1;
+  font-weight: var(--fw-btn);
+  align-items: center;
+}
+.btn-next-row__label {
+  line-height: 1.05;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-next-row__icon {
+  flex-shrink: 0;
+  align-self: center;
+  width: 1.1875rem;
+  height: 1.1875rem;
+  color: inherit;
+}
 
 /* Small utilities */
 .stack-16 { display: flex; flex-direction: column; gap: var(--space-3); }
@@ -236,13 +314,13 @@ main {
 /* Legacy centering enforcement removed in favor of MobileContainer */
 
 .outline-box {
-  border: 3px solid #111;
-  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
   padding: 12px;
-  background: #f9f9f9;
+  background: var(--surface-color);
 }
-.box-title { font-weight: 700; font-size: 16px; margin-bottom: 4px; }
-.box-body { font-weight: 400; font-size: 15px; line-height: 1.5; }
+.box-title { font-weight: 700; font-size: 16px; margin-bottom: 4px; color: var(--text-main); }
+.box-body { font-weight: 400; font-size: 15px; line-height: 1.5; color: var(--text-muted); }
 
 /* Reports box */
 .reports-wrap {
@@ -253,18 +331,19 @@ main {
   justify-content: center;
 }
 .reports-box {
-  border: 4.5px solid #111;
-  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
   padding: 16px 12px;
-  background: #fff;
-  font-family: 'Comic Relief', cursive, sans-serif;
+  background: var(--surface-color);
+  font-family: var(--font-family);
   text-align: center;
   font-size: 24px;
   font-weight: 700;
   width: 100%;
   box-sizing: border-box;
   line-height: 1.2;
+  color: var(--text-main);
 }
 .reports-highlight { }
-.reports-note { font-weight: 400; font-size: 20px; }
+.reports-note { font-weight: 400; font-size: 20px; color: var(--text-muted); }
 

@@ -5,7 +5,7 @@ import type { StepId } from '@/lib/quiz/stepIds';
 import ProgressHeader from '@/app/components/header/ProgressHeader';
 import StepRangeSlider from '@/app/components/funnels/StepRangeSlider';
 import NextButton from '@/app/components/funnels/NextButton';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import { useCurrentFunnel } from '@/lib/quiz/funnelContext';
 import "../funnel.css";
@@ -28,6 +28,12 @@ export default function Page() {
   const sliderIndex = rememberedIndex >= 0 ? rememberedIndex : defaultIndex;
   const stepLabels = steps.map((s) => s.label);
 
+  useEffect(() => {
+    if (!value) {
+      select(steps[defaultIndex].value, { advance: false });
+    }
+  }, [value, select, steps, defaultIndex]);
+
   const currentNumber = Number(steps[sliderIndex].value);
 
   return (
@@ -36,7 +42,7 @@ export default function Page() {
         <ProgressHeader currentIdx={idx} onBack={goPrev} />
       </div>
 
-      <div className="funnel-content funnel-content--centered">
+      <div className="funnel-content funnel-content--centered funnel-content--with-fixed-button">
         <h1 className="funnel-title">
           <span
             dangerouslySetInnerHTML={{

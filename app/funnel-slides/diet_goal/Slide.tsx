@@ -6,18 +6,6 @@ import { useCurrentFunnel } from '@/lib/quiz/funnelContext'
 import ProgressHeader from '@/app/components/header/ProgressHeader'
 import { useLocale, useTranslations } from 'next-intl';
 import "../funnel.css";
-import { withLocale } from '@/lib/imagePath'
-
-const ASSETS = {
-  bulk: {
-    male: '/btns/{locale}/bulking-btn.svg',
-    female: '/btns/{locale}/bulking-btn-f.svg',
-  },
-  cut: {
-    male: '/btns/{locale}/cutting-btn.svg',
-    female: '/btns/{locale}/cutting-btn-f.svg',
-  },
-};
 
 const stepId: StepId = 'diet_goal'
 
@@ -28,24 +16,15 @@ export default function Page() {
   const locale = useLocale();
   const t = useTranslations('DietGoal');
 
-  const bulkSrc =
-    gender === 'F'
-      ? withLocale(ASSETS.bulk.female, locale)
-      : withLocale(ASSETS.bulk.male, locale);
-
-  const cutSrc =
-    gender === 'F'
-      ? withLocale(ASSETS.cut.female, locale)
-      : withLocale(ASSETS.cut.male, locale);
-
   return (
     <main className="funnel-page">
       <div className="funnel-header-wrapper">
         <ProgressHeader currentIdx={idx} onBack={goPrev} />
       </div>
 
-      <div className="funnel-content funnel-content--centered">
+      <div className="funnel-content funnel-content--centered funnel-content--with-fixed-button">
         <h1 className="funnel-title" dangerouslySetInnerHTML={{__html: t.raw('title')}} />
+        <p className="funnel-subtitle">{t('subtitle')}</p>
 
         <div className="funnel-choices funnel-choices--stack" role="group" aria-label={t('titleAria')}> 
           <div className="funnel-choice-item">
@@ -56,13 +35,22 @@ export default function Page() {
               aria-pressed={value === 'bulk'}
               disabled={isPending && value === 'bulk'}
               aria-label={t('bulk.label')}
+              style={{
+                background: value === 'bulk' ? '#D9F166' : '#27272A',
+                border: value === 'bulk' ? '1px solid #D9F166' : '1px solid #3F3F46',
+                borderRadius: 14,
+                padding: '14px 18px',
+                fontSize: 16,
+                fontWeight: 500,
+                color: value === 'bulk' ? '#18181B' : '#FAFAFA',
+                width: '100%',
+                cursor: 'pointer',
+                textAlign: 'left',
+              }}
             >
-              <img
-                src={bulkSrc}
-                alt={t('bulk.alt')}
-              />
+              {t('bulk.label')}
             </button>
-            <p className="funnel-choice-desc">
+            <p className="funnel-choice-desc" style={{ color: '#71717A', fontSize: '14px', marginTop: '4px' }}>
               {t('bulk.description')}
             </p>
           </div>
@@ -75,13 +63,22 @@ export default function Page() {
               aria-pressed={value === 'cut'}
               disabled={isPending && value === 'cut'}
               aria-label={t('cut.label')}
+              style={{
+                background: value === 'cut' ? '#D9F166' : '#27272A',
+                border: value === 'cut' ? '1px solid #D9F166' : '1px solid #3F3F46',
+                borderRadius: 14,
+                padding: '14px 18px',
+                fontSize: 16,
+                fontWeight: 500,
+                color: value === 'cut' ? '#18181B' : '#FAFAFA',
+                width: '100%',
+                cursor: 'pointer',
+                textAlign: 'left',
+              }}
             >
-              <img
-                src={cutSrc}
-                alt={t('cut.alt')}
-              />
+              {t('cut.label')}
             </button>
-            <p className="funnel-choice-desc">
+            <p className="funnel-choice-desc" style={{ color: '#71717A', fontSize: '14px', marginTop: '4px' }}>
               {t('cut.description')}
             </p>
           </div>

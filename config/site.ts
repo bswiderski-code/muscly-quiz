@@ -1,9 +1,12 @@
 import { locales, defaultLocale } from './i18n';
 
-export const CANONICAL_HOST = 'quiz.musclepals.com';
+/** Hostname only (no protocol), e.g. quiz.example.com — set via NEXT_PUBLIC_CANONICAL_HOST */
+export const CANONICAL_HOST =
+  process.env.NEXT_PUBLIC_CANONICAL_HOST?.trim() ?? '';
 
-// Main marketing site URL (used for back navigation, logo links, legal pages)
-export const MAIN_SITE_URL = 'https://musclepals.com';
+/** Marketing site origin with protocol — set via NEXT_PUBLIC_MAIN_SITE_URL */
+export const MAIN_SITE_URL =
+  process.env.NEXT_PUBLIC_MAIN_SITE_URL?.trim() ?? '';
 
 const isSpoofing = process.env.SPOOFING === 'true';
 const devUrl = process.env.DEV_URL;
@@ -11,7 +14,11 @@ const devUrl = process.env.DEV_URL;
 export const SITE_CONFIG = {
   gtmId: 'GTM-PRLGT92L',
   fbPixelId: '926252729971653',
-  baseUrl: isSpoofing && devUrl ? devUrl : (process.env.NEXT_PUBLIC_BASE_URL || 'https://' + CANONICAL_HOST),
+  baseUrl:
+    isSpoofing && devUrl
+      ? devUrl
+      : process.env.NEXT_PUBLIC_BASE_URL?.trim() ||
+        (CANONICAL_HOST ? `https://${CANONICAL_HOST}` : ''),
   defaultLocale,
   locales: [...locales],
 };

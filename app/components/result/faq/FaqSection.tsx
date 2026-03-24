@@ -17,7 +17,7 @@ export default async function FaqSection({ locale }: FaqSectionProps) {
       <div className="max-w-3xl mx-auto w-full">
         <h2 
           className="text-4xl leading-tight mb-4 text-center font-bold"
-          style={{ fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif" }}
+          style={{ fontFamily: "inherit" }}
         >
           {t('faq.title').replace('<br/>', '\n')}
         </h2>

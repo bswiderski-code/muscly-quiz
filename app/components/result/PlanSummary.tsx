@@ -133,7 +133,7 @@ const PlanSummary = ({ sid, funnelKey }: { sid: string; funnelKey: FunnelKey }) 
 
 
   return (
-    <div style={{ maxWidth: 420, margin: '16px auto', fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif", textAlign: 'center' }}>
+    <div style={{ maxWidth: 420, margin: '16px auto', fontFamily: "inherit", textAlign: 'center' }}>
       <h3 style={{ margin: 0, fontSize: 28, fontWeight: 900 }}>{t('title')}</h3>
       <div style={{ display: 'grid', gap: 10, marginTop: 12 }}>
         

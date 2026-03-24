@@ -14,7 +14,7 @@ const OPTION_KEYS = ["motivation", "effects", "insecurity", "diet", "no_difficul
 
 export default function Page() {
   const t = useTranslations('Difficulty');
-  const { idx, total, value, select, goPrev, goNext } = useStepController(stepId);
+  const { idx, total, value, select, goPrev } = useStepController(stepId);
   const [isValid, setIsValid] = useState<boolean>(true);
   const [showError, setShowError] = useState<boolean>(false);
 
@@ -26,15 +26,11 @@ export default function Page() {
   }, [t]);
 
   const handleNext = () => {
-    if (!isValid) {
+    if (!isValid || !value) {
       setShowError(true);
       return;
     }
-    if (value) {
-      select(value, { advance: true });
-    } else {
-      goNext();
-    }
+    select(value, { advance: true });
   };
 
   return (
@@ -43,7 +39,7 @@ export default function Page() {
         <ProgressHeader currentIdx={idx} onBack={goPrev} />
       </div>
 
-      <div className="funnel-content funnel-content--centered">
+      <div className="funnel-content funnel-content--centered funnel-content--with-fixed-button">
         <h1 className="funnel-title">
           <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
         </h1>
@@ -76,7 +72,7 @@ export default function Page() {
             currentIdx={idx}
             stepId={stepId}
             onClick={handleNext}
-            disabled={!isValid}
+            disabled={!isValid || !value}
           />
         </div>
       </div>

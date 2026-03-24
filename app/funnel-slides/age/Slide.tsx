@@ -13,7 +13,7 @@ const stepId: StepId = "age";
 export default function Page() {
   const funnel = useCurrentFunnel();
   const t = useTranslations('Age');
-  const { idx, total, value, select, goPrev, isPending } = useStepController(stepId);
+  const { idx, total, value, select, goPrev, isPending, canAdvanceFromAnswers } = useStepController(stepId);
 
   const getAgeKey = (ageValue: number): string | null => {
     if (ageValue >= 12 && ageValue <= 14) return "12-14";
@@ -31,17 +31,18 @@ export default function Page() {
       <div className="funnel-header-wrapper">
         <ProgressHeader currentIdx={idx} onBack={goPrev} />
       </div>
-      <div className="funnel-content funnel-content--centered funnel-content--age">
+      <div className="funnel-content funnel-content--age funnel-content--with-fixed-button">
         
         <h1 className="funnel-title">
           <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
         </h1>
+        <p className="funnel-subtitle">{t('subtitle')}</p>
         
         <form
           className="funnel-form-centered"
           onSubmit={(e) => e.preventDefault()}
         >
-          <div className="funnel-input-shell funnel-input-shell--narrow">
+          <div className="funnel-number-input-centered">
             <input
               inputMode="numeric"
               type="text"
@@ -52,10 +53,9 @@ export default function Page() {
                 const sanitizedValue = e.target.value.replace(/[^0-9]/g, "");
                 select(sanitizedValue, { advance: false });
               }}
-              placeholder={t('placeholder')}
               aria-label={t('ariaLabel')}
             />
-            <span className="funnel-unit">{t('unit')}</span>
+            <span className="unit">{t('unit')}</span>
           </div>
 
           {ageData && (
@@ -67,17 +67,18 @@ export default function Page() {
               />
             </div>
           )}
-
-          <div className="funnel-submit-wrap">
-            <NextButton
-              currentIdx={idx}
-              stepId={stepId}
-              fieldKey="age"
-              fieldValue={value}
-              onClick={() => select(value, { advance: true })}
-            />
-          </div>
         </form>
+
+        <div className="funnel-submit-wrap">
+          <NextButton
+            currentIdx={idx}
+            stepId={stepId}
+            fieldKey="age"
+            fieldValue={value}
+            disabled={!canAdvanceFromAnswers}
+            onClick={() => select(value, { advance: true })}
+          />
+        </div>
       </div>
     </main>
   );

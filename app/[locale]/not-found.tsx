@@ -1,6 +1,5 @@
 'use client';
 
-import Image from "next/image";
 import Link from "next/link";
 import { useTranslations, useLocale } from 'next-intl';
 import { MAIN_SITE_URL } from '@/config/site';
@@ -15,15 +14,9 @@ export default function NotFound() {
       <header className="w-full flex justify-center py-6 px-6 border-b border-gray-100">
         <Link 
           href={`${MAIN_SITE_URL}/${locale}`}
-          className="relative w-32 h-10 transition-opacity hover:opacity-80"
+          className="text-2xl font-black transition-opacity hover:opacity-80"
         >
-          <Image 
-            src="/vectors/logo.svg" 
-            alt="Musclepals" 
-            fill 
-            className="object-contain"
-            priority
-          />
+          Musclepals
         </Link>
       </header>
 
@@ -35,9 +28,9 @@ export default function NotFound() {
           </h2>
           
           <div className="flex justify-center">
-            <Link 
+            <Link
               href="/"
-              className="w-full sm:w-auto px-10 py-5 bg-gray-900 text-white rounded-2xl font-extrabold shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all active:scale-95 text-xl"
+              className="btn btn-primary w-full sm:w-auto px-10 py-5 text-xl justify-center"
             >
               {t('startButton')}
             </Link>

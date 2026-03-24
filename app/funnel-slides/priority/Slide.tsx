@@ -3,12 +3,10 @@
 import { useEffect, useMemo, useRef } from "react";
 import { useStepController } from "@/lib/quiz/useStepController";
 import type { StepId } from '@/lib/quiz/stepIds';
-import { useCurrentFunnel } from '@/lib/quiz/funnelContext'
 import ProgressHeader from "@/app/components/header/ProgressHeader";
 import NextButton from "@/app/components/funnels/NextButton";
-import { useTranslations, useLocale } from 'next-intl';
-import NextImage from "next/image";
-import { withLocale } from '@/lib/imagePath'
+import { useTranslations } from 'next-intl';
+import { FEMALE_PRIORITY_IMAGES_BY_PART, MALE_PRIORITY_IMAGES_BY_PART } from '@/lib/quiz/stepImages';
 import "../funnel.css";
 
 const stepId: StepId = "priority";
@@ -18,20 +16,14 @@ const PRIORITIES = {
   female: ['legs', 'glutes', 'abs', 'chest', 'triceps', 'biceps', 'back', 'shoulders'],
 } as const;
 
-const ASSETS = {
-  imageBasePath: '/regional/{locale}/priorities',
-};
-
 function parseStored(v?: string): string[] {
   return v ? String(v).split(",").filter(Boolean) : [];
 }
 
 export default function Page() {
   const { value: gender } = useStepController('gender' as StepId);
-  const funnel = useCurrentFunnel();
-  const locale = useLocale();
   const t = useTranslations('Priority');
-  const { idx, total, value, select, goPrev } = useStepController(stepId);
+  const { idx, value, select, goPrev, canAdvanceFromAnswers } = useStepController(stepId);
 
   const priorities = gender === 'F' ? PRIORITIES.female : PRIORITIES.male;
 
@@ -45,15 +37,6 @@ export default function Page() {
       select("", { advance: false });
     }
   }, [value, select]);
-
-  const imagePath = withLocale(ASSETS.imageBasePath, locale); 
-  useEffect(() => {
-    priorities.forEach((name) => {
-      new globalThis.Image().src = `${imagePath}/unselected/${name}_priority_btn.svg`;
-      new globalThis.Image().src = `${imagePath}/selected/${name}_priority_btn.svg`;
-    });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [imagePath, priorities]);
 
   function toggle(name: string) {
     const has = selectedSet.has(name);
@@ -75,85 +58,51 @@ export default function Page() {
         <ProgressHeader currentIdx={idx} onBack={goPrev} />
       </div>
 
-      <div className="funnel-content funnel-content--centered">
+      <div className="funnel-content funnel-content--centered funnel-content--with-fixed-button">
         <h1 className="funnel-title">
           <span dangerouslySetInnerHTML={{ __html: t.raw('title1') }} />
           <span dangerouslySetInnerHTML={{ __html: t.raw('title2') }} />
         </h1>
-        <p className="funnel-subtitle">
-          <span dangerouslySetInnerHTML={{ __html: t.raw('subtitle') }} />
-        </p>
+        <p className="funnel-subtitle">{t('subtitle')}</p>
 
         <div className="funnel-priority-grid">
           {priorities.map((name) => {
             const isSelected = selectedSet.has(name);
             const partLabel = t(`partNames.${name}`);
-            const ariaLabel = t(isSelected ? 'ariaLabelSelected' : 'ariaLabelUnselected', { name: partLabel });
-            const selectedSrc = `${imagePath}/selected/${name}_priority_btn.svg`;
-            const unselectedSrc = `${imagePath}/unselected/${name}_priority_btn.svg`;
-
-            const baseImageStyle: React.CSSProperties = {
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-              transition: "opacity 220ms ease",
-            };
+            const imgMap = gender === 'F' ? FEMALE_PRIORITY_IMAGES_BY_PART : MALE_PRIORITY_IMAGES_BY_PART;
+            const imgSrc = imgMap[name];
 
             return (
               <button
                 key={name}
                 type="button"
+                className={`funnel-priority-btn ${isSelected ? 'funnel-priority-btn--selected' : ''}`}
                 onClick={() => toggle(name)}
-                aria-label={ariaLabel}
-                aria-pressed={isSelected}
-                style={{
-                  border: "none",
-                  background: "transparent",
-                  padding: 0,
-                  cursor: "pointer",
-                  display: "block",
-                  width: "100%",
-                }}
               >
-                <div
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    aspectRatio: "134 / 100",
-                  }}
-                >
-                  <NextImage
-                    src={unselectedSrc}
-                    alt=""
-                    fill
-                    sizes="(max-width: 768px) 50vw, 240px"
-                    style={{
-                      ...baseImageStyle,
-                      opacity: isSelected ? 0 : 1,
-                    }}
-                    priority
-                  />
-                  <NextImage
-                    src={selectedSrc}
-                    alt=""
-                    fill
-                    sizes="(max-width: 768px) 50vw, 240px"
-                    style={{
-                      ...baseImageStyle,
-                      opacity: isSelected ? 1 : 0,
-                    }}
-                    priority
-                  />
-                </div>
+                {imgSrc ? (
+                  <div className="funnel-priority-btn__img-wrap">
+                    <img
+                      className="funnel-priority-btn__img"
+                      src={imgSrc}
+                      alt=""
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
+                ) : null}
+                <span className="funnel-priority-btn__label">{partLabel}</span>
               </button>
             );
           })}
         </div>
 
         <div className="funnel-submit-wrap">
-          <NextButton currentIdx={idx} stepId={stepId} onClick={() => select(value ?? "", { advance: true })} />
+          <NextButton
+            currentIdx={idx}
+            stepId={stepId}
+            disabled={!canAdvanceFromAnswers}
+            onClick={() => select(value ?? "", { advance: true })}
+          />
         </div>
       </div>
     </main>

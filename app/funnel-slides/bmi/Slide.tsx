@@ -5,24 +5,18 @@ import type { StepId } from '@/lib/quiz/stepIds';
 import { useFunnelStore } from '@/lib/quiz/store';
 import { useCurrentFunnel } from '@/lib/quiz/funnelContext';
 import GoBack from "@/app/components/header/GoBack";
-import Image from "next/image";
-import { useLocale, useTranslations } from 'next-intl';
+import NextButton from "@/app/components/funnels/NextButton";
+import { useTranslations } from 'next-intl';
+import Lottie from "lottie-react";
 import "../funnel.css";
 import { useMemo, useEffect, useState } from "react";
-import { withLocale } from '@/lib/imagePath';
 
 const stepId: StepId = "bmi";
 
-const ASSETS = {
-  nextStepImg: '/btns/{locale}/lets-go-btn.svg',
-  illustrationImg: '/vectors/t_meat.svg',
-};
-
 export default function Page() {
   useCurrentFunnel();
-  const locale = useLocale();
   const t = useTranslations('BMI');
-  const { sid, goPrev, goNext } = useStepController(stepId);
+  const { sid, goPrev, goNext, idx } = useStepController(stepId);
 
   const snapshot = useMemo(() => useFunnelStore.getState().bySid[sid] || {}, [sid]);
   const { weight, height } = snapshot;
@@ -31,6 +25,22 @@ export default function Page() {
 
   const [animatedBmi, setAnimatedBmi] = useState("X");
   const [isAnimating, setIsAnimating] = useState(false);
+  const [musclyAnimation, setMusclyAnimation] = useState<object | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/assets/Muscly.json")
+      .then((res) => res.json())
+      .then((data) => {
+        if (!cancelled) setMusclyAnimation(data);
+      })
+      .catch(() => {
+        /* ignore broken asset */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (!weight || !height) return;
@@ -75,32 +85,43 @@ export default function Page() {
         <GoBack onClick={goPrev} />
       </div>
 
-      <main className="funnel-content funnel-content--centered">
-        <h2 className="funnel-title">
-          <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
-        </h2>
-        <div className={`funnel-result-cross ${isAnimating ? "animated" : ""}`}>{animatedBmi}</div>
-        <div className="funnel-result-quote">{t(`category.${bmiCategoryKey}`)}</div>
+      <main className="funnel-content funnel-content--centered funnel-content--with-fixed-button funnel-content--bmi">
+        <div className="funnel-bmi-scene">
+          <div
+            className="funnel-bmi-lottie"
+            style={{
+              width: "100%",
+              maxWidth: 400,
+              height: 300,
+              margin: "0 auto 8px",
+            }}
+            aria-hidden
+          >
+            {musclyAnimation ? (
+              <Lottie
+                animationData={musclyAnimation}
+                loop
+                autoplay
+                style={{ width: "100%", height: "100%" }}
+              />
+            ) : (
+              <div style={{ width: "100%", height: "100%", minHeight: 300 }} />
+            )}
+          </div>
+          <h2 className="funnel-title">
+            <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
+          </h2>
+          <div className={`funnel-result-cross ${isAnimating ? "animated" : ""}`}>{animatedBmi}</div>
+          <div className="funnel-result-quote">{t(`category.${bmiCategoryKey}`)}</div>
 
-        <div className="funnel-result-illustration">
-          <Image
-            src={ASSETS.illustrationImg}
-            alt=""
-            width={600}
-            height={240}
-            priority
-            style={{ width: 600, height: 240, maxWidth: '100%', objectFit: 'contain' }}
-          />
+          <p className="funnel-result-text">{t(`description.${bmiCategoryKey}`)}</p>
         </div>
 
-        <p className="funnel-result-text">{t(`description.${bmiCategoryKey}`)}</p>
-
-        <div className="funnel-result-cta" onClick={goNext}>
-          <Image
-            src={withLocale(ASSETS.nextStepImg, locale)}
-            alt={t('nextStepAlt')}
-            width={300}
-            height={80}
+        <div className="funnel-submit-wrap">
+          <NextButton
+            currentIdx={idx}
+            stepId={stepId}
+            onClick={goNext}
           />
         </div>
       </main>

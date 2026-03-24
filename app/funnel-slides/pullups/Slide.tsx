@@ -16,7 +16,7 @@ const PULLUPS_OPTIONS = ['0', '1-3', '4-6', '7-10', '10+'] as const;
 export default function Page() {
   const funnel = useCurrentFunnel();
   const t = useTranslations('PullupsStep');
-  const { idx, total, value, select, goPrev, goNext } = useStepController(stepId);
+  const { idx, total, value, select, goPrev } = useStepController(stepId);
   const [isValid, setIsValid] = useState<boolean>(true);
 
   const options: SelectOption[] = useMemo(() => {
@@ -41,7 +41,7 @@ export default function Page() {
         <ProgressHeader currentIdx={idx} onBack={goPrev} />
       </div>
 
-      <div className="funnel-content funnel-content--centered">
+      <div className="funnel-content funnel-content--centered funnel-content--with-fixed-button">
         <h1 className="funnel-title">
           <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
         </h1>
@@ -64,7 +64,7 @@ export default function Page() {
             currentIdx={idx}
             stepId={stepId}
             onClick={handleNext}
-            disabled={!isValid}
+            disabled={!isValid || !value}
           />
         </div>
       </div>

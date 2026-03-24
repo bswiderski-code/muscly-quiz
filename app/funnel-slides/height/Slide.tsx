@@ -12,11 +12,6 @@ import { useCurrentFunnel } from '@/lib/quiz/funnelContext';
 
 const stepId: StepId = 'height';
 
-const IMAGES = {
-  male: '/vectors/t_height.svg',
-  female: '/vectors/f_height.svg',
-};
-
 export default function Page() {
   const { value: gender } = useStepController('gender' as StepId);
   useCurrentFunnel();
@@ -138,14 +133,15 @@ export default function Page() {
       <div className="funnel-header-wrapper">
         <ProgressHeader currentIdx={idx} onBack={goPrev} />
       </div>
-      <div className="funnel-content funnel-content--centered funnel-content--height">
-        {submitError && (
-          <p className="funnel-error" aria-live="polite">{submitError}</p>
-        )}
-
+      <div className="funnel-content funnel-content--height funnel-content--with-fixed-button">
         <h1 className="funnel-title">
           <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
         </h1>
+        <p className="funnel-subtitle">{t('subtitle')}</p>
+
+        {submitError && (
+          <p className="funnel-error" aria-live="polite">{submitError}</p>
+        )}
 
         {locale === 'en' && (
           <div className="funnel-unit-switch-container">
@@ -157,25 +153,17 @@ export default function Page() {
           </div>
         )}
 
-        <div className="funnel-input-group">
-          <img
-            src={gender === 'F' ? IMAGES.female : IMAGES.male}
-            alt={t('alt')}
-            style={{ width: '140px', height: '359px', marginRight: '20px' }}
+        <div className="funnel-number-input-centered">
+          <input
+            inputMode="decimal"
+            type="text"
+            pattern={unit === 'cm' ? "\\d{2,3}(\\.\\d)?" : "\\d{1,2}(\\.\\d{1,2})?"}
+            maxLength={6}
+            value={height}
+            onChange={handleChange}
+            aria-label={t('ariaLabel')}
           />
-          <div className="funnel-input-shell funnel-input-shell--narrow">
-            <input
-              inputMode="decimal"
-              type="text"
-              pattern={unit === 'cm' ? "\\d{2,3}(\\.\\d)?" : "\\d{1,2}(\\.\\d{1,2})?"}
-              maxLength={5}
-              value={height}
-              onChange={handleChange}
-              placeholder={unit === 'cm' ? t('placeholder') : '5.9'}
-              aria-label={t('ariaLabel')}
-            />
-            <span className="funnel-unit">{unit}</span>
-          </div>
+          <span className="unit">{unit}</span>
         </div>
 
         <div
@@ -188,6 +176,7 @@ export default function Page() {
             stepId={stepId}
             fieldKey="height"
             fieldValue={Number.isFinite(valueToSave) ? valueToSave : undefined}
+            disabled={!isValidHeight(height)}
             onClick={handleNext}
           />
         </div>

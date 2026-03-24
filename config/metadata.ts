@@ -23,83 +23,11 @@ export const localeMetadata: Record<string, MetadataConfig> = {
             title: 'Formularz planu | Musclepals',
             description: 'Odpowiedz na pytania, aby dopasować plan do Twoich celów.',
         },
-        ogImage: '/og-image-quiz-pl.png',
+        ogImage: '',
         funnels: {
             workout: {
                 title: 'Profesjonalny plan treningowy - personalizowany dla Ciebie',
                 description: 'Szukasz skutecznego planu ćwiczeń? Przygotuję dla Ciebie zestaw oparty o Twoje odpowiedzi.',
-            },
-        },
-    },
-    en: {
-        appTitle: 'Musclepals',
-        home: {
-            title: 'Workout plan | Musclepals',
-            description: 'Create a workout plan tailored to you. Quick survey, results in minutes.',
-        },
-        planForm: {
-            title: 'Plan form | Musclepals',
-            description: 'Answer a few questions so we can match the plan to your goals.',
-        },
-        ogImage: '/og-image-quiz-en.png',
-        funnels: {
-            workout: {
-                title: 'Workout plan – survey | Musclepals',
-                description: 'Fill out a short survey and generate your workout plan.',
-            },
-        },
-    },
-    fr: {
-        appTitle: 'Musclepals',
-        home: {
-            title: 'Plan d\'entraînement | Musclepals',
-            description: 'Crée un plan d\'entraînement adapté à toi. Questionnaire rapide, résultat en quelques minutes.',
-        },
-        planForm: {
-            title: 'Formulaire du plan | Musclepals',
-            description: 'Réponds à quelques questions pour adapter le plan à tes objectifs.',
-        },
-        ogImage: '/og-image-quiz-en.png',
-        funnels: {
-            workout: {
-                title: 'Plan d\'entraînement – questionnaire | Musclepals',
-                description: 'Réponds à un court questionnaire et génère ton plan d\'entraînement.',
-            },
-        },
-    },
-    de: {
-        appTitle: 'Musclepals',
-        home: {
-            title: 'Trainingsplan | Musclepals',
-            description: 'Erstelle einen Trainingsplan, der zu dir passt. Kurzer Fragebogen, Ergebnis in wenigen Minuten.',
-        },
-        planForm: {
-            title: 'Plan-Formular | Musclepals',
-            description: 'Beantworte ein paar Fragen, damit der Plan zu deinen Zielen passt.',
-        },
-        ogImage: '/og-image-quiz-en.png',
-        funnels: {
-            workout: {
-                title: 'Trainingsplan – Fragebogen | Musclepals',
-                description: 'Fülle einen kurzen Fragebogen aus und erstelle deinen Trainingsplan.',
-            },
-        },
-    },
-    ro: {
-        appTitle: 'Musclepals',
-        home: {
-            title: 'Plan Antrenament | Musclepals',
-            description: 'Creează un plan de antrenament personalizat pentru tine. Chestionar rapid, rezultate în câteva minute.',
-        },
-        planForm: {
-            title: 'Formular Plan | Musclepals',
-            description: 'Răspunde la întrebări pentru a personaliza planul în funcție de obiectivele tale.',
-        },
-        ogImage: '/og-image-quiz-en.png',
-        funnels: {
-            workout: {
-                title: 'Plan de Antrenament Profesional - Personalizat pentru Tine',
-                description: 'Cauți un program de exerciții eficiente? Voi crea un program bazat pe răspunsurile tale.',
             },
         },
     },

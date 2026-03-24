@@ -10,6 +10,8 @@ import type { StepId } from './stepIds'
 import { useLocale } from 'next-intl'
 import { useCurrentFunnel } from './funnelContext'
 import { getSkippedSteps, resolveNextStep } from './navigation'
+import { isStepAnswerComplete } from './stepAnswerValid'
+import { getStepImages, preloadImages } from './stepImages'
 
 function getCookie(name: string) {
   if (typeof document === 'undefined') return null
@@ -108,16 +110,31 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
     if (isLast && resultHref) router.prefetch(resultHref)
   }, [prevHref, nextHref, isLast, resultHref, router])
 
+  // Preload images for the next step so they're cached before user navigates.
+  useEffect(() => {
+    if (!effectiveNextStepId) return
+    const imgs = getStepImages(effectiveNextStepId, planEntry ?? {})
+    preloadImages(imgs)
+  }, [effectiveNextStepId, planEntry])
+
   function select(val: string, opts?: { advance?: boolean }) {
     if (!sid) return
+    const willAdvance = opts?.advance !== false
+    const merged: FunnelAnswers = { ...(planEntry ?? {}) }
+    ;(merged as Record<string, unknown>)[field as string] = val
+
+    if (willAdvance && !isStepAnswerComplete(stepId, merged)) {
+      return
+    }
+
     if (stepId === 'gender') {
       useFunnelStore.getState().clearAll()
     }
     setField(sid, field, val, funnel)
-    if (opts?.advance !== false) {
-      const href = hrefForStep(resolveNextStepId(val)) ?? resultHref
-      if (href) startTransition(() => router.push(href as any))
-    }
+    if (!willAdvance) return
+
+    const href = hrefForStep(resolveNextStepId(val)) ?? resultHref
+    if (href) startTransition(() => router.push(href as any))
   }
 
   function goPrev() {
@@ -125,7 +142,11 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
   }
 
   function goNext() {
-    const href = nextHref ?? resultHref
+    if (!sid) return
+    const fresh = useFunnelStore.getState().getFor(sid, funnel) ?? {}
+    if (!isStepAnswerComplete(stepId, fresh)) return
+    const nextStep = resolveNextStep(stepId, order, fresh, skipRules)
+    const href = hrefForStep(nextStep) ?? resultHref
     if (!href) return
     startTransition(() => router.push(href as any))
   }
@@ -134,6 +155,8 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
     startTransition(() => router.push(hrefForStep(step) as any))
   }
 
+  const canAdvanceFromAnswers = isStepAnswerComplete(stepId, planEntry ?? {})
+
   return {
     stepId, idx, total: order.length, isFirst, isLast,
     funnel,
@@ -141,5 +164,7 @@ export function useStepController(stepId: StepId, options?: { funnel?: FunnelKey
     select, goPrev, goNext, goTo,
     isPending,
     prevHref, nextHref, resultHref,
+    /** False until this step’s field has a valid stored answer (use for Next disabled). */
+    canAdvanceFromAnswers,
   }
 }

@@ -5,16 +5,9 @@ import type { StepId } from '@/lib/quiz/stepIds';
 import { useCurrentFunnel } from '@/lib/quiz/funnelContext'
 import ProgressHeader from "@/app/components/header/ProgressHeader";
 import { useLocale, useTranslations } from "next-intl";
-import { withLocale } from '@/lib/imagePath'
 import "../funnel.css";
 
 const stepId: StepId = "cardio";
-
-const ASSETS = {
-  mainImage: '/vectors/cardio.svg',
-  yesBtn: '/btns/{locale}/yes-cardio-btn.svg',
-  noBtn: '/btns/{locale}/no-cardio-btn.svg',
-};
 
 export default function Page() {
   const funnel = useCurrentFunnel();
@@ -22,28 +15,15 @@ export default function Page() {
   const t = useTranslations('CardioStep');
   const { idx, total, value, select, goPrev, isPending } = useStepController(stepId);
 
-  const yesSrc = withLocale(ASSETS.yesBtn, locale);
-  const noSrc = withLocale(ASSETS.noBtn, locale);
-
   return (
     <main className="funnel-page">
       <div className="funnel-header-wrapper">
         <ProgressHeader currentIdx={idx} onBack={goPrev} />
       </div>
 
-      <div className="funnel-content funnel-content--centered">
+      <div className="funnel-content funnel-content--centered funnel-content--with-fixed-button">
         <h1 className="funnel-title" dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
         <p className="funnel-subtitle">{t('subtitle')}</p>
-
-        <div style={{ marginTop: '24px', marginBottom: '16px' }}>
-          <img 
-            src={ASSETS.mainImage} 
-            width={328} 
-            height={354} 
-            alt="" 
-            style={{ maxWidth: '100%', height: 'auto' }}
-          />
-        </div>
 
         <div className="funnel-choices">
           <button
@@ -52,8 +32,20 @@ export default function Page() {
             onClick={() => select('yes')}
             disabled={isPending && value === 'yes'}
             aria-label={t('yesLabel')}
+            style={{
+              background: value === 'yes' ? '#D9F166' : '#27272A',
+              border: value === 'yes' ? '1px solid #D9F166' : '1px solid #3F3F46',
+              borderRadius: 14,
+              padding: '14px 18px',
+              fontSize: 16,
+              fontWeight: 500,
+              color: value === 'yes' ? '#18181B' : '#FAFAFA',
+              width: '100%',
+              cursor: 'pointer',
+              textAlign: 'left',
+            }}
           >
-            <img src={yesSrc} alt={t('yesAlt')} />
+            {t('yesLabel')}
           </button>
           <button
             type="button"
@@ -61,8 +53,20 @@ export default function Page() {
             onClick={() => select('no')}
             disabled={isPending && value === 'no'}
             aria-label={t('noLabel')}
+            style={{
+              background: value === 'no' ? '#D9F166' : '#27272A',
+              border: value === 'no' ? '1px solid #D9F166' : '1px solid #3F3F46',
+              borderRadius: 14,
+              padding: '14px 18px',
+              fontSize: 16,
+              fontWeight: 500,
+              color: value === 'no' ? '#18181B' : '#FAFAFA',
+              width: '100%',
+              cursor: 'pointer',
+              textAlign: 'left',
+            }}
           >
-            <img src={noSrc} alt={t('noAlt')} />
+            {t('noLabel')}
           </button>
         </div>
       </div>

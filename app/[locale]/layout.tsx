@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { GoogleTagManager } from '@next/third-parties/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
@@ -7,12 +7,7 @@ import { headers } from 'next/headers';
 import { routing } from '@/i18n/routing';
 import { checkDbHealth } from '@/lib/health';
 import { createMetadata } from '@/lib/metadata';
-import { getPathname } from '@/i18n/routing';
-import { getBaseUrlFromHeaders } from '@/lib/requestBaseUrl';
-import { getBaseUrlForLocale, getEffectiveHost, getMarketForLocale, type Locale } from '@/i18n/config';
-import { getAppTitle } from '@/lib/metadata';
 import FacebookPixelProvider from '@/lib/FacebookPixelProvider';
-import { getIncomingHost } from '@/lib/domain/incomingHost';
 import "./globals.css"; // Wyjście katalog wyżej do globals.css
 
 type Props = {
@@ -23,14 +18,25 @@ type Props = {
 import { SITE_CONFIG } from '@/config/site';
 import MobileContainer from '@/app/components/MobileContainer';
 import { localeMetadata } from '@/config/metadata';
+import { defaultLocale } from '@/i18n/config';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  
-  // Get metadata for the current locale or fallback to English
-  const seo = localeMetadata[locale] || localeMetadata.en;
-  
-  // Use home page metadata for the main layout/entry point
+
+  const loc =
+    typeof locale === 'string' && locale in localeMetadata ? locale : defaultLocale;
+  const seo = localeMetadata[loc] ?? localeMetadata[defaultLocale];
+
+  if (!seo?.home) {
+    throw new Error(`layout generateMetadata: missing home metadata for locale "${loc}"`);
+  }
+
   const { title, description } = seo.home;
   
   const base = createMetadata({
@@ -88,16 +94,12 @@ export default async function LocaleLayout({
 
   // 4. Pobranie tłumaczeń
   const messages = await getMessages();
-  const host = getIncomingHost(h);
-  const effectiveHost = getEffectiveHost(host) ?? host;
-  const market = getMarketForLocale(locale as Locale);
-  const appTitle = await getAppTitle(locale);
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <GoogleTagManager gtmId={SITE_CONFIG.gtmId} />
       <head>
-        <meta name="apple-mobile-web-app-title" content={appTitle} />
+        <meta name="apple-mobile-web-app-title" content="Muscly" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

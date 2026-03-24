@@ -7,18 +7,8 @@ import NextButton from '@/app/components/funnels/NextButton';
 import { useStepController } from '@/lib/quiz/useStepController';
 import type { StepId } from '@/lib/quiz/stepIds';
 import { useCurrentFunnel } from '@/lib/quiz/funnelContext';
-import Image from "next/image";
 import { useTranslations, useLocale } from 'next-intl';
 import "../funnel.css";
-
-const ASSETS = {
-  imageByValue: {
-    none: '/vectors/exercises/hammer_dumbell.svg',
-    just_started: '/vectors/exercises/seated_ohp.svg',
-    some_experience: '/vectors/exercises/cable_upper.svg',
-    advanced: '/vectors/exercises/chest_fly.svg',
-  },
-};
 
 type ExperienceStepValue = 'none' | 'just_started' | 'some_experience' | 'advanced';
 
@@ -58,23 +48,12 @@ export default function Page() {
       }
 
       const DetailsComponent = (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: 16, alignItems: "center" }}>
+        <div style={{ display: "block", gap: 16, alignItems: "center" }}>
           <div>
             <p style={{ margin: 0 }} dangerouslySetInnerHTML={{ __html: data.description1 }} />
             <div style={{ height: englishKey === 'none' ? 24 : 8 }} aria-hidden="true" />
             <p style={{ margin: 0 }} dangerouslySetInnerHTML={{ __html: data.description2 }} />
           </div>
-          <Image
-            src={ASSETS.imageByValue[valueKey]}
-            alt={data.alt}
-            width={englishKey === 'none' ? 110 : englishKey === 'just_started' ? 76 : englishKey === 'some_experience' ? 89 : 75}
-            height={englishKey === 'none' ? 158 : englishKey === 'just_started' ? 138 : englishKey === 'some_experience' ? 140 : 107}
-            style={{
-              display: "block",
-              marginBottom: englishKey === 'none' ? -18 : 0,
-              alignSelf: englishKey === 'none' ? 'end' : 'center',
-            }}
-          />
         </div>
       );
 
@@ -92,10 +71,11 @@ export default function Page() {
         <ProgressHeader currentIdx={idx} onBack={goPrev} />
       </div>
 
-      <div className="funnel-content funnel-content--centered">
+      <div className="funnel-content funnel-content--centered funnel-content--with-fixed-button">
         <h1 className="funnel-title">
           <span dangerouslySetInnerHTML={{ __html: t.raw('title') }} />
         </h1>
+        <p className="funnel-subtitle">{t('subtitle')}</p>
 
         <SelectMenu
           name="experience"

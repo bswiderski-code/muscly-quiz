@@ -18,16 +18,20 @@ export default async function middleware(request: NextRequest) {
     hostForChecks.includes('127.0.0.1') ||
     hostForChecks.includes('.local:');
 
-  const canonicalHost = CANONICAL_HOST;
+  const canonicalHost = CANONICAL_HOST.toLowerCase();
 
   // 1. Production rule: Enforce canonical host.
-  if (!isLocalDev && hostForChecks !== canonicalHost) {
+  if (
+    canonicalHost &&
+    !isLocalDev &&
+    hostForChecks !== canonicalHost
+  ) {
     const proto = (request.headers.get('x-forwarded-proto') ?? request.nextUrl.protocol.replace(':', '') ?? 'https')
       .split(',')[0]
       ?.trim();
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.protocol = `${proto}:`;
-    redirectUrl.host = canonicalHost;
+    redirectUrl.host = CANONICAL_HOST;
     return NextResponse.redirect(redirectUrl, 308);
   }
 

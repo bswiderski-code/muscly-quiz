@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { usePrevNextButtons, PrevButton, NextButton } from './c_arrows';
 import "./Carousel.css";
-import { ASSET_PATHS } from '@/config/imagePaths';
-import { withLocale } from '@/lib/imagePath';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 interface EmblaCarouselProps {
   funnelKey?: string;
@@ -12,7 +10,6 @@ interface EmblaCarouselProps {
 
 export function EmblaCarousel({ funnelKey = 'workout' }: EmblaCarouselProps) {
   const t = useTranslations('Carousel');
-  const locale = useLocale();
   const funnelConfig = t.raw(funnelKey) as { slides: Array<{ alt: string; caption: string }> };
   const slides = funnelConfig?.slides || [];
   const totalPages = slides.length;
@@ -43,10 +40,8 @@ export function EmblaCarousel({ funnelKey = 'workout' }: EmblaCarouselProps) {
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
           {slides.map((slide, idx) => {
-            const slideImg = withLocale(ASSET_PATHS.exampleTraining.samplePlan, locale).replace('{n}', (idx + 1).toString());
             return (
               <div className="embla__slide" key={idx}>
-                <img src={slideImg} alt={slide.alt} />
                 <div
                   className="embla__caption"
                   style={{ fontSize: '1.15rem', fontWeight: 500, marginTop: 8 }}

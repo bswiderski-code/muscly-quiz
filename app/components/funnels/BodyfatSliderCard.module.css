@@ -1,0 +1,79 @@
+.figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 4px auto 20px;
+}
+
+.preview {
+  margin: 0 auto;
+  max-width: min(190px, 48vw);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #3f3f46;
+  background: #18181b;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.previewImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.card {
+  width: 100%;
+  max-width: min(420px, 100%);
+  margin-top: 14px;
+  padding: 16px 12px 18px;
+  box-sizing: border-box;
+  background: #1a1a1f;
+  border-radius: 6px;
+  box-shadow:
+    0 0 0 1px rgba(225, 250, 109, 0.08),
+    0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.cardOverlap {
+  margin-top: -112px;
+  position: relative;
+  z-index: 2;
+}
+
+.inner {
+  width: 100%;
+}
+
+.track {
+  margin: 0;
+  width: 100%;
+}
+
+.description {
+  margin: 14px 0 0;
+  padding: 12px 8px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+  font-size: var(--funnel-small-fs, 14px);
+  font-weight: 400;
+  color: #a1a1aa;
+  line-height: 1.45;
+  opacity: 0;
+  transform: translateY(-6px);
+  animation: bodyfatCardDescIn 0.28s ease-out forwards;
+}
+
+.description strong {
+  font-weight: 600;
+  color: #e4e4e7;
+}
+
+@keyframes bodyfatCardDescIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

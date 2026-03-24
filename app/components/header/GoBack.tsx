@@ -1,5 +1,5 @@
-// app/(funnels)/plan-formularz/_components/GoBack.tsx
-'use client'
+import * as React from 'react'
+import { useTranslations } from 'next-intl'
 
 type Props = {
   /** go back action */
@@ -9,6 +9,7 @@ type Props = {
 }
 
 export default function GoBack({ onClick, className }: Props) {
+  const t = useTranslations('NextButton')
   return (
     <button
       type="button"
@@ -19,20 +20,18 @@ export default function GoBack({ onClick, className }: Props) {
         appearance: 'none',
         border: 'none',
         background: 'transparent',
-        padding: 0,
+        padding: '8px 16px',
         cursor: onClick ? 'pointer' : 'default',
-        opacity: 1, // Fully black, no grayed-out state
-        marginLeft: 16, // Added margin-left
-        marginTop: 16, // Added margin-top
+        opacity: onClick ? 1 : 0.4,
+        marginLeft: 16,
+        marginTop: 16,
+        display: 'flex',
+        alignItems: 'center',
       }}
     >
-      <img
-        src="/btns/goback.svg"
-        alt="Cofnij"
-        width={32}
-        height={32}
-        style={{ display: 'block' }}
-      />
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.5 16L7 10L12.5 4" stroke="#FAFAFA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
     </button>
   )
 }

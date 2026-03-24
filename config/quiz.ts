@@ -17,6 +17,7 @@ export const FUNNEL_STEPS_ORDER: readonly StepId[] = [
   'diet_goal',
   'height',
   'weight',
+  'weight_goal',
   'age',
   'bodyfat',
   'bmi',

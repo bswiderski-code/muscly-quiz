@@ -4,81 +4,67 @@ import { useStepController } from "@/lib/quiz/useStepController";
 import type { StepId } from '@/lib/quiz/stepIds';
 import { useCurrentFunnel } from '@/lib/quiz/funnelContext'
 import ProgressHeader from "@/app/components/header/ProgressHeader";
-import Image from "next/image";
 import "../funnel.css";
 import { useLocale, useTranslations } from "next-intl";
-import { withLocale } from "@/lib/imagePath";
 
 const stepId: StepId = "gender";
 
-const ASSETS = {
-  maleImageSrc: '/btns/{locale}/male-btn.svg',
-  femaleImageSrc: '/btns/{locale}/female-btn.svg',
-};
+const btnStyle = (active: boolean): React.CSSProperties => ({
+  background: active ? '#D9F166' : '#27272A',
+  border: active ? '1px solid #D9F166' : '1px solid #3F3F46',
+  borderRadius: 14,
+  padding: '14px 18px',
+  fontSize: 16,
+  fontWeight: 500,
+  color: active ? '#18181B' : '#FAFAFA',
+  width: '100%',
+  cursor: 'pointer',
+  textAlign: 'left',
+});
 
 export default function Page() {
-   const { idx, total, value, select, goPrev, isPending } = useStepController(stepId);
-   
-   const funnel = useCurrentFunnel();
-   const locale = useLocale();
-   const t = useTranslations('Gender');
+  const { idx, value, select, goPrev, isPending } = useStepController(stepId);
+  const t = useTranslations('Gender');
 
-   const maleSrc = withLocale(ASSETS.maleImageSrc, locale);
-   const femaleSrc = withLocale(ASSETS.femaleImageSrc, locale);
+  return (
+    <main className="funnel-page">
+      <div className="funnel-header-wrapper">
+        <ProgressHeader currentIdx={idx} onBack={goPrev} />
+      </div>
+      <div className="funnel-content funnel-content--centered funnel-content--with-fixed-button">
+        <h1 className="funnel-title" dangerouslySetInnerHTML={{ __html: t.raw("title") }} />
+        <p className="funnel-subtitle">{t("subtitle")}</p>
 
-   return (
-	   <main className="funnel-page">
-           <div className="funnel-header-wrapper">
-			   <ProgressHeader currentIdx={idx} onBack={goPrev} />
-           </div>
-		   <div className="funnel-content funnel-content--centered">
-			   {/* used t.raw() to allow HTML tags like <b> or <br> from the JSON */}
-			   <h1 className="funnel-title" dangerouslySetInnerHTML={{ __html: t.raw("title") }} />
+        <div className="funnel-choices" role="group" aria-label={t("ariaLabel")}>
+          <div className="funnel-choice-item">
+            <button
+              type="button"
+              className="funnel-choice-btn"
+              onClick={() => select("M")}
+              aria-pressed={value === "M"}
+              disabled={isPending && value === "M"}
+              aria-label={t("male.label")}
+              style={btnStyle(value === "M")}
+            >
+              {t("male.label")}
+            </button>
+          </div>
 
-			   <div
-				   className="funnel-choices"
-				   role="group"
-				   aria-label={t("ariaLabel")}
-			   >
-				   {/* Male Option */}
-				   <div className="funnel-choice-item">
-					   <button
-						   type="button"
-						   className="funnel-choice-btn"
-						   onClick={() => select("M")}
-						   aria-pressed={value === "M"}
-						   disabled={isPending && value === "M"}
-						   aria-label={t("male.label")}
-					   >
-						   <Image 
-                               src={maleSrc} 
-                               alt={t("male.alt")}
-							   width={177} 
-                               height={307} 
-                           />
-					   </button>
-				   </div>
-
-				   {/* Female Option */}
-				   <div className="funnel-choice-item">
-					   <button
-						   type="button"
-						   className="funnel-choice-btn"
-						   onClick={() => select("F")}
-						   aria-pressed={value === "F"}
-						   disabled={isPending && value === "F"}
-						   aria-label={t("female.label")}
-					   >
-						   <Image 
-                               src={femaleSrc} 
-                               alt={t("female.alt")}
-							   width={177} 
-                               height={307} 
-                           />
-					   </button>
-				   </div>
-			   </div>
-		   </div>
-	   </main>
-   );
+          <div className="funnel-choice-item">
+            <button
+              type="button"
+              className="funnel-choice-btn"
+              onClick={() => select("F")}
+              aria-pressed={value === "F"}
+              disabled={isPending && value === "F"}
+              aria-label={t("female.label")}
+              style={btnStyle(value === "F")}
+            >
+              {t("female.label")}
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
 }

@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react';
-import Image from 'next/image';
 import { useFunnelStore, type FunnelAnswers } from '@/lib/quiz/store';
 import { useTranslations, useLocale } from 'next-intl';
 import { getFunnelSlug, getStepOrder, getStepSlug, resolveFunnelKey, type FunnelKey } from '@/lib/quiz/funnels';
@@ -10,12 +9,11 @@ import { getAnswerEmoji, formatDefaultLabel, CONJUNCTIONS, VALUE_FORMATS, format
 interface AnswersSummaryProps {
   sid: string;
   funnelSlug?: string;
-  answersButtonImage?: string;
 }
 
 // Emoji function moved to mappings.ts
 
-export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: AnswersSummaryProps) {
+export default function AnswersSummary({ sid, funnelSlug }: AnswersSummaryProps) {
   const [open, setOpen] = useState(false);
   const t = useTranslations('AnswersSummary');
   const locale = useLocale();
@@ -33,9 +31,6 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
   const cardioMap = t.raw('cardioMap') as Record<string, string>;
   const format = t.raw('format') as Record<string, string>;
 
-  const buttonImageSrc = answersButtonImage 
-    ? answersButtonImage.replace('{locale}', locale) 
-    : t('buttonImage');
   const buttonAltText = t('buttonAlt');
   const backLinkText = t('backLinkText');
 
@@ -136,24 +131,16 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
     >
       <button
         type="button"
+        className="btn btn-primary"
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
         style={{
-          background: 'none',
-          border: 'none',
-          padding: 0,
           cursor: 'pointer',
-          display: 'block',
+          display: 'flex',
           width: '100%',
         }}
       >
-        <Image
-          src={buttonImageSrc}
-          alt={buttonAltText}
-          width={312}
-          height={37}
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
+        {buttonAltText}
       </button>
       <div
         style={{
@@ -167,7 +154,7 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
           marginTop: 8,
           boxShadow: open ? '0 2px 8px rgba(0,0,0,0.08)' : 'none',
           padding: open ? '18px 18px 12px 18px' : '0 18px',
-          fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif",
+          fontFamily: "inherit",
         }}
       >
         {open && (
@@ -221,9 +208,9 @@ export default function AnswersSummary({ sid, funnelSlug, answersButtonImage }: 
           <a
             href={backLinkHref}
             style={{
-              fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif",
+              fontFamily: "inherit",
               fontSize: 15,
-              color: '#000',
+              color: 'inherit',
               textDecoration: 'underline',
               fontWeight: 400,
               display: 'inline-block',

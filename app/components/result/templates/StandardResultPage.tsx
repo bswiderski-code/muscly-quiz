@@ -3,20 +3,17 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useParams } from 'next/navigation'
 import { useTranslations, useLocale } from 'next-intl'
-import Image from 'next/image'
 import { useRouter } from '@/i18n/routing'
 import { useFunnelStore } from '@/lib/quiz/store'
 import { useMarket } from '@/lib/useMarket'
 import { getMarketForLocale, type Locale as AppLocale } from '@/i18n/config'
 import { resolveFunnelKeyByResultSlug, getFunnelSlug } from '@/lib/quiz/funnels'
-import { withLocale } from '@/lib/imagePath'
 import { getResultPageConfig } from './config'
 import YOUVSFUTURE from '@/app/components/result/youvsfuture/YOUVSFUTURE'
 import BMIBOX from '@/app/components/result/BMIBOX'
 import TDEEBOX from '@/app/components/result/TDEEBOX'
 import CheckoutForm from '@/app/components/result/form/form'
 import PlanSummary from '@/app/components/result/PlanSummary'
-import ReviewsMarquee from '@/app/components/result/ReviewsMarquee'
 import { DetailsSection } from '@/app/components/result/form/DetailsSection'
 import { EmblaCarousel } from '@/app/components/result/Carousel/Carousel'
 import AnswersSummary from '@/app/components/result/answers_summary/answers_summary'
@@ -73,12 +70,8 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
   const fallbackMarket = getMarketForLocale(locale as AppLocale)
   const effectiveMarket = market.isKnownHost ? market : fallbackMarket
 
-  const [minTimeElapsed, setMinTimeElapsed] = useState(false)
-  const [shouldFadeOut, setShouldFadeOut] = useState(false)
-  const [loaderRemoved, setLoaderRemoved] = useState(false)
-  const [isDataReady, setIsDataReady] = useState<boolean>(() => !!answers)
   const [hasTimeoutError, setHasTimeoutError] = useState(false)
-  const [isHydrated, setIsHydrated] = useState(false)
+  const [storeHydrated, setStoreHydrated] = useState(false)
 
   const [reportCount, setReportCount] = useState<number | null>(null)
   const [showSamplePlan, setShowSamplePlan] = useState(false)
@@ -89,8 +82,6 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
     titleKey,
     subtitleKey,
     intro1Key,
-    answersButtonImage,
-    checkoutIntroImage,
     intro2Key,
     analyzeTitleKey,
     analyzeListKey,
@@ -100,9 +91,6 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
     sampleBtnKey,
     sampleTitleKey,
     joinAthletesKey,
-    trustImageAltKey,
-    purchaseImageAltKey,
-    ctaButtonAltKey,
   } = config
 
   useEffect(() => {
@@ -144,65 +132,26 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
   }
   const supportEmail = contactBox?.emailAddress || getSupportEmail(locale)
   
-  const replaceLocale = (path: string) => withLocale(path, locale);
-
-  const trustImageSrc = replaceLocale(config.trustImage);
-  const purchaseImageSrc = replaceLocale(config.purchaseImage);
-  const sampleImageSrc = replaceLocale(config.sampleImage);
-  const ctaButtonImageSrc = replaceLocale(config.ctaButtonImage);
-  const loadingErrorBtnSrc = replaceLocale(config.loadingErrorBtnImage);
-
-  const imageWidth = config.purchaseImageWidth;
-  const imageHeight = config.purchaseImageHeight[locale] || config.purchaseImageHeight.default;
-
-
-
   useEffect(() => {
-    if (answers) {
-      setIsDataReady(true)
+    if (useFunnelStore.persist.hasHydrated()) {
+      setStoreHydrated(true)
     }
-  }, [answers])
-
-  useEffect(() => {
-    const timer = setTimeout(() => setMinTimeElapsed(true), 3000)
-    return () => clearTimeout(timer)
+    return useFunnelStore.persist.onFinishHydration(() => {
+      setStoreHydrated(true)
+    })
   }, [])
 
   useEffect(() => {
-    setIsHydrated(true)
-  }, [])
-
-  useEffect(() => {
-    if (minTimeElapsed && isDataReady && !shouldFadeOut) {
-      setShouldFadeOut(true)
-      setTimeout(() => setLoaderRemoved(true), 320)
-    }
-  }, [minTimeElapsed, isDataReady, shouldFadeOut])
-
-  useEffect(() => {
-    if (isDataReady) return
+    if (!storeHydrated) return
+    if (answers) return
     const timeout = setTimeout(() => {
-      if (!answers) {
-        setHasTimeoutError(true)
-      }
+      setHasTimeoutError(true)
     }, 10000)
     return () => clearTimeout(timeout)
-  }, [isDataReady, answers])
+  }, [storeHydrated, answers])
 
-  if (!isHydrated) {
-    return (
-      <div
-        style={{
-          minHeight: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '24px 16px',
-          boxSizing: 'border-box',
-        }}
-      />
-    )
+  if (!storeHydrated && !hasTimeoutError) {
+    return null
   }
 
   if (hasTimeoutError) {
@@ -217,7 +166,7 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
           padding: '24px 16px',
           boxSizing: 'border-box',
           textAlign: 'center',
-          fontFamily: "'Comic Relief', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+          fontFamily: "inherit",
         }}
       >
         <p style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{t('loadingErrorTitle')}</p>
@@ -228,6 +177,8 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
           }}
         />
         <button
+          type="button"
+          className="btn btn-primary"
           onClick={() => {
             router.push({
               pathname: '/[funnel]',
@@ -235,165 +186,18 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
             })
           }}
           style={{
-            background: 'none',
-            border: 'none',
-            padding: 0,
             cursor: 'pointer',
             marginTop: 24,
           }}
         >
-          <Image
-            src={loadingErrorBtnSrc}
-            alt="Try again"
-            width={512}
-            height={67}
-            style={{ maxWidth: '100%', height: 'auto', width: 280 }}
-          />
+          {t('loadingErrorBtn')}
         </button>
       </div>
     )
   }
 
-  const Loader = (
-    <div
-      style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 9999,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: '#ffffff',
-        color: '#000000',
-        padding: '24px 16px',
-        boxSizing: 'border-box',
-        textAlign: 'center',
-        fontFamily: "'Comic Relief', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
-        opacity: shouldFadeOut ? 0 : 1,
-        transition: 'opacity 320ms cubic-bezier(0.4, 0.0, 0.2, 1)',
-        pointerEvents: shouldFadeOut ? 'none' : 'all',
-      }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: 16,
-        }}
-      >
-        <div
-          style={{
-            width: 56,
-            height: 56,
-            borderRadius: '50%',
-            border: '3px solid #000',
-            boxShadow: '0 3px 0 rgba(0,0,0,0.35)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            position: 'relative',
-          }}
-        >
-          <div
-            style={{
-              position: 'absolute',
-              inset: 8,
-              borderRadius: '999px',
-              border: '3px solid #000',
-              borderTopColor: 'transparent',
-              animation: 'spin 900ms linear infinite',
-            }}
-          />
-          <div
-            style={{
-              width: 18,
-              height: 4,
-              borderRadius: 999,
-              background: '#000',
-              position: 'relative',
-            }}
-          >
-            <div
-              style={{
-                width: 8,
-                height: 8,
-                borderRadius: '50%',
-                border: '2px solid #000',
-                background: '#fff',
-                position: 'absolute',
-                top: -6,
-                right: -4,
-              }}
-            />
-          </div>
-        </div>
-
-        <div>
-          <div
-            style={{
-              fontSize: 18,
-              fontWeight: 700,
-              letterSpacing: 0.4,
-            }}
-          >
-            {t('loadingTitle')}
-          </div>
-          <div
-            style={{
-              fontSize: 14,
-              marginTop: 4,
-              opacity: 0.8,
-            }}
-          >
-            {t('loadingSubtitle')}
-          </div>
-        </div>
-
-        <div
-          style={{
-            width: '100%',
-            maxWidth: 260,
-            height: 8,
-            borderRadius: 999,
-            border: '2px solid #000',
-            boxShadow: '0 2px 0 rgba(0,0,0,0.35)',
-            background: '#fff',
-            overflow: 'hidden',
-          }}
-        >
-          <div
-            style={{
-              width: '45%',
-              height: '100%',
-              background: '#000',
-              borderRadius: 999,
-              animation: 'loading-bar 1400ms cubic-bezier(0.4, 0.0, 0.2, 1) infinite',
-            }}
-          />
-        </div>
-      </div>
-
-      <style jsx global>{`
-        @keyframes spin {
-          to { transform: rotate(360deg); }
-        }
-        @keyframes loading-bar {
-          0% { transform: translateX(-120%); }
-          50% { transform: translateX(10%); }
-          100% { transform: translateX(120%); }
-        }
-      `}</style>
-    </div>
-  )
-
-  if (!answers && !hasTimeoutError) {
-    return Loader
-  }
-
   if (!answers) {
-    return <p style={{ textAlign: 'center', padding: '40px' }}>{t('loadingData')}</p>
+    return null
   }
 
   // Show missing steps view if steps are missing
@@ -410,20 +214,16 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
     )
   }
 
-  const showLoader = !loaderRemoved
-
   const { weight, diet_goal, age, activity, height, bodyfat, bmi } = answers
 
   return (
     <>
-      {showLoader && Loader}
       <div
         style={{
           maxWidth: config.containerMaxWidth,
           margin: '0 auto',
           padding: '8px 16px',
           boxSizing: 'border-box',
-          minHeight: showLoader ? '100vh' : 'auto',
         }}
       >
       <header style={{ textAlign: 'center', marginTop: 16 }}>
@@ -450,26 +250,12 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
 
         <div style={{ marginTop: 32 }}>
           <p style={{ fontSize: 19, lineHeight: 1.4, marginTop: 0, marginBottom: 24 }} dangerouslySetInnerHTML={{ __html: t.raw(intro1Key) }} />
-          <Image
-            src={config.introBicepImage}
-            alt={config.introBicepAlt}
-            width={303}
-            height={151}
-            style={{ width: '100%', maxWidth: 303, height: 'auto', display: 'block', margin: '0 auto' }}
-            priority
-          />
           <p style={{ fontSize: 19, lineHeight: 1.4, marginTop: 16 }} dangerouslySetInnerHTML={{ __html: t.raw(intro2Key) }} />
         </div>
       </header>
 
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: 32, marginBottom: 32 }}>
-        <Image
-          src={config.dividerImage}
-          alt={config.dividerAlt}
-          width={400}
-          height={20}
-          style={{ width: '100%', maxWidth: 400, height: 'auto' }}
-        />
+        <hr style={{ width: '100%', maxWidth: 400, border: '1px solid #000' }} />
       </div>
 
       <section style={{ textAlign: 'center', marginTop: 16 }}>
@@ -492,19 +278,6 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
       </section>
 
       <section style={{ marginTop: 48 }}>
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
-          <Image
-            src={trustImageSrc}
-            alt={t(trustImageAltKey)}
-            width={337}
-            height={221}
-            style={{
-              width: '100%',
-              maxWidth: 337,
-              height: 'auto',
-            }}
-          />
-        </div>
         <div 
           style={{
             display: 'flex',
@@ -591,41 +364,22 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
         >
           {t(purchaseTitleKey)}
         </h2>
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-          <Image
-            src={purchaseImageSrc}
-            alt={t(purchaseImageAltKey)}
-            width={imageWidth}
-            height={imageHeight}
-            style={{
-              width: '100%',
-              maxWidth: 351,
-              height: 'auto',
-              marginBottom: 16,
-              display: 'block',
-            }}
-          />
-        </div>
         <div style={{ textAlign: 'center', marginTop: 8, width: '100%' }}>
           <button
             type="button"
+            className="btn btn-secondary"
             aria-expanded={showSamplePlan}
             onClick={() => setShowSamplePlan((s) => !s)}
             style={{
-              display: 'inline-block',
-              background: 'transparent',
-              border: '2px solid transparent',
-              padding: '10px 14px',
-              color: '#000',
-              textDecoration: 'underline',
+              display: 'inline-flex',
               cursor: 'pointer',
               fontSize: 17,
               fontWeight: 400,
-              fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif",
-              borderRadius: 12,
               minWidth: 160,
               boxSizing: 'border-box',
               touchAction: 'manipulation',
+              padding: '10px 14px',
+              lineHeight: 1.3,
             }}
             >
               {t(sampleBtnKey)}
@@ -643,7 +397,6 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
             }}
           >
             <div style={{ width: '100%', maxWidth: 360, margin: '0 auto' }}>
-              <Image src={sampleImageSrc} alt="Rafal" width={394} height={383} style={{ width: '100%', height: 'auto', display: 'block' }} />
               <h3 style={{ fontSize: 20, fontWeight: 600, textAlign: 'center', margin: '12px 0', width: '100%', maxWidth: '100%' }}>{t(sampleTitleKey)}</h3>
               <div style={{ width: '100%', boxSizing: 'border-box' }}>
                 <EmblaCarousel funnelKey={resolvedFunnel} />
@@ -655,13 +408,7 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
 
       <section style={{ marginTop: 40, textAlign: 'center' }}>
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
-          <Image
-            src={config.dividerImage}
-            alt={config.dividerAlt}
-            width={400}
-            height={20}
-            style={{ width: '100%', maxWidth: 400, height: 'auto' }}
-          />
+          <hr style={{ width: '100%', maxWidth: 400, border: '1px solid #000' }} />
         </div>
 
         <p
@@ -677,18 +424,12 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
         />
 
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: 24, marginBottom: 24 }}>
-          <Image
-            src={config.dividerImage}
-            alt={config.dividerAlt}
-            width={400}
-            height={20}
-            style={{ width: '100%', maxWidth: 400, height: 'auto' }}
-          />
+          <hr style={{ width: '100%', maxWidth: 400, border: '1px solid #000' }} />
         </div>
       </section>
 
       <section style={{ marginTop: 48 }}>
-        <AnswersSummary sid={sessionId ?? 'default'} funnelSlug={funnelSlug} answersButtonImage={answersButtonImage} />
+        <AnswersSummary sid={sessionId ?? 'default'} funnelSlug={funnelSlug} />
       </section>
 
       <section style={{ marginTop: 48 }} id="form-section">
@@ -717,32 +458,6 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
       </div>
 
       <div style={{ marginTop: 48, marginBottom: 48 }}>
-        {config.showReviews && (
-          <>
-            <h2 style={{ textAlign: 'center', fontWeight: 700, fontSize: 28, marginBottom: 24, lineHeight: 1.2 }}>
-              {reviewsT('title')}
-            </h2>
-            {(() => {
-              const baseLocale = locale.split('-')[0].toLowerCase();
-              const effectiveLocale = reviewImageCounts[baseLocale] ? baseLocale : 'en';
-              const effectiveCount = reviewImageCounts[effectiveLocale] || 6;
-              
-              console.log('[Reviews] Resolved ReviewsMarquee props:', { 
-                originalLocale: locale, 
-                baseLocale, 
-                effectiveLocale, 
-                effectiveCount 
-              });
-              
-              return (
-                <ReviewsMarquee 
-                  locale={effectiveLocale} 
-                  imageCount={effectiveCount} 
-                />
-              );
-            })()}
-          </>
-        )}
       </div>
       <section style={{ marginTop: 48 }}>
         {config.showFaq && (faqSection)}
@@ -757,7 +472,7 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
             padding: '28px 24px 24px 24px',
             boxSizing: 'border-box',
             boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-            fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif",
+            fontFamily: "inherit",
             textAlign: 'center',
             position: 'relative',
           }}
@@ -784,6 +499,7 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
         <div style={{ maxWidth: 400, margin: '0px auto 32px', textAlign: 'center' }}>
           <button
             type="button"
+            className="btn btn-primary funnel-choice-btn"
             onClick={() => {
               const el = document.getElementById('form-section');
               if (el) {
@@ -793,21 +509,13 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
               }
             }}
             style={{
-              background: 'none',
-              border: 'none',
-              padding: 0,
-              cursor: 'pointer',
-              display: 'block',
+              padding: '20px',
+              fontSize: 20,
               width: '100%',
+              cursor: 'pointer',
             }}
           >
-        <Image
-          src={ctaButtonImageSrc}
-          alt={t(ctaButtonAltKey)}
-          width={394}
-          height={63}
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
+            {t('ctaButton.label')}
           </button>
         </div>
 

@@ -59,8 +59,22 @@ export const PrevButton: React.FC<PropType> = (props) => {
       className="embla__button embla__button--prev"
       type="button"
       {...restProps}
+      style={{
+        background: '#fff',
+        border: '2px solid #000',
+        borderRadius: '50%',
+        width: 40,
+        height: 40,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 20,
+        fontWeight: 700,
+        cursor: props.disabled ? 'default' : 'pointer',
+        opacity: props.disabled ? 0.3 : 1
+      }}
     >
-      <img src="/btns/back-carousel.svg" alt="Previous" className="embla__button__svg" />
+      ‹
       {children}
     </button>
   )
@@ -74,8 +88,22 @@ export const NextButton: React.FC<PropType> = (props) => {
       className="embla__button embla__button--next"
       type="button"
       {...restProps}
+      style={{
+        background: '#fff',
+        border: '2px solid #000',
+        borderRadius: '50%',
+        width: 40,
+        height: 40,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: 20,
+        fontWeight: 700,
+        cursor: props.disabled ? 'default' : 'pointer',
+        opacity: props.disabled ? 0.3 : 1
+      }}
     >
-      <img src="/btns/next-carousel.svg" alt="Next" className="embla__button__svg" />
+      ›
       {children}
     </button>
   )

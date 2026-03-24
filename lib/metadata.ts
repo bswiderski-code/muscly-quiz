@@ -6,10 +6,11 @@ const fallbackBaseUrl =
   getBaseUrlForLocale(defaultLocale) ||
   "http://localhost:3000";
 
-const defaultFaviconPath = "/favicon/favicon.ico";
-const appleTouchIconPath = "/favicon/apple-touch-icon.png";
-const icon96Path = "/favicon/favicon-96x96.png";
-const iconSvgPath = "/favicon/favicon.svg";
+/** `app/favicon.ico` is served at the site root by Next.js */
+const defaultFaviconPath = "/favicon.ico";
+const appleTouchIconPath = "/favicon/web-app-manifest-192x192.png";
+const icon192Path = "/favicon/web-app-manifest-192x192.png";
+const icon512Path = "/favicon/web-app-manifest-512x512.png";
 const manifestPath = "/favicon/site.webmanifest";
 
 export type MetadataOptions = {
@@ -97,8 +98,9 @@ export function createMetadata(options: MetadataOptions): Metadata {
     description,
     icons: {
       icon: [
-        { url: icon96Path, type: "image/png", sizes: "96x96" },
-        { url: iconSvgPath, type: "image/svg+xml" },
+        { url: defaultFaviconPath, sizes: "any" },
+        { url: icon192Path, type: "image/png", sizes: "192x192" },
+        { url: icon512Path, type: "image/png", sizes: "512x512" },
       ],
       shortcut: defaultFaviconPath,
       apple: appleTouchIconPath,
@@ -150,7 +152,13 @@ import { localeMetadata, type MetadataConfig } from '@/config/metadata';
  * Get locale-specific metadata configuration.
  */
 export async function getMetadataConfig(locale: string): Promise<MetadataConfig> {
-  return localeMetadata[locale] || localeMetadata['en'];
+  const resolved =
+    (typeof locale === 'string' && localeMetadata[locale]) ? localeMetadata[locale]
+    : localeMetadata[defaultLocale];
+  if (!resolved) {
+    throw new Error(`getMetadataConfig: no metadata for locale "${locale}"`);
+  }
+  return resolved;
 }
 
 /**

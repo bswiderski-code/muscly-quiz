@@ -49,7 +49,6 @@ export default function CheckoutForm({
 
   // Get result page config for funnel-specific customization
   const resultConfig = getResultPageConfig(funnelKey || 'workout');
-  const checkoutIntroImage = resultConfig.checkoutIntroImage;
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [formError, setFormError] = useState("");
@@ -152,30 +151,29 @@ export default function CheckoutForm({
   const soloOffer = pricing?.workout_solo;
   const bundleOffer = pricing?.workout_bundle;
 
-  const checkoutSoloCopy = (productsT.raw('workout_solo') as { productName?: string; buttonSvg?: string }) ?? {};
-  const checkoutBundleCopy = (productsT.raw('workout_bundle') as { productName?: string; buttonSvg?: string }) ?? {};
-  const defaultSoloButton = (checkoutSoloCopy.buttonSvg || "/btns/{locale}/workout-btn.svg").replace('{locale}', locale);
-  const defaultBundleButton = (checkoutBundleCopy.buttonSvg || "/btns/{locale}/bundle-btn.svg").replace('{locale}', locale);
+  const checkoutSoloCopy = (productsT.raw('workout_solo') as { productName?: string; buttonLabel?: string }) ?? {};
+  const checkoutBundleCopy = (productsT.raw('workout_bundle') as { productName?: string; buttonLabel?: string }) ?? {};
 
   const offers = [] as { key: string; node: React.ReactNode }[];
 
   if (soloOffer && bundleOffer) {
     const items = [
-      { key: 'solo',   offer: soloOffer,   copy: checkoutSoloCopy,   buttonSvg: defaultSoloButton,   kind: 'workout_solo'   as const },
-      { key: 'bundle', offer: bundleOffer, copy: checkoutBundleCopy, buttonSvg: defaultBundleButton, kind: 'workout_bundle' as const },
+      { key: 'solo',   offer: soloOffer,   copy: checkoutSoloCopy,   buttonLabel: checkoutSoloCopy.buttonLabel || 'Kup plan',   kind: 'workout_solo'   as const },
+      { key: 'bundle', offer: bundleOffer, copy: checkoutBundleCopy, buttonLabel: checkoutBundleCopy.buttonLabel || 'Kup pakiet', kind: 'workout_bundle' as const },
     ];
 
-    for (const { key, offer, copy, buttonSvg, kind } of items) {
+    for (const { key, offer, copy, buttonLabel, kind } of items) {
       offers.push({
         key,
         node: (
           <PaymentButton
             provider={checkoutProvider}
-            buttonSvg={buttonSvg}
+            buttonSvg={""}
             amount={offer.amount}
             currency={offer.currency}
             description={offer.description}
             productName={copy.productName ?? offer.description}
+            imageAlt={buttonLabel}
             onPay={handlePayClick}
             onBeforePay={() =>
               trackBeginCheckoutEvent({ funnelKey: funnelKey ?? 'workout', locale, marketCurrency, kind, checkoutProvider })
@@ -188,7 +186,7 @@ export default function CheckoutForm({
 
   return (
     <div className={styles.container}>
-      <CheckoutIntro funnelKey={funnelKey ?? 'workout'} locale={locale} imageSrc={checkoutIntroImage} />
+      <CheckoutIntro funnelKey={funnelKey ?? 'workout'} locale={locale} />
 
       <ContactForm
         name={name}

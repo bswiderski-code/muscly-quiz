@@ -1,5 +1,4 @@
 import type { FunnelKey } from '@/lib/quiz/funnels';
-import { ASSET_PATHS } from '@/config/imagePaths';
 
 export type NextButtonConfig = {
   imageSrc: string; // supports `{locale}` placeholder
@@ -7,13 +6,13 @@ export type NextButtonConfig = {
 };
 
 const defaultConfig: NextButtonConfig = {
-  imageSrc: ASSET_PATHS.buttons.next,
+  imageSrc: '',
   alt: 'Next step',
 };
 
 const funnelConfigs: Partial<Record<FunnelKey, Partial<NextButtonConfig>>> = {
   workout: {
-    imageSrc: ASSET_PATHS.buttons.next,
+    imageSrc: '',
     alt: 'Create plan',
   },
 };

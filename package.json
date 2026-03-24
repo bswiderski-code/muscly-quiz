@@ -25,6 +25,7 @@
     "embla-carousel": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "i18next": "^25.6.3",
+    "lottie-react": "^2.4.1",
     "lucide-react": "^0.563.0",
     "next": "^16.0.8",
     "next-i18next": "^15.4.2",

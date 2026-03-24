@@ -1,8 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { useRouter } from '@/i18n/routing';
-import { getFunnelSlug, getStepOrder, type FunnelKey } from '@/lib/quiz/funnels'
+import { getStepOrder, type FunnelKey } from '@/lib/quiz/funnels'
 import type { StepId } from '@/lib/quiz/stepIds'
 import { useLocale } from 'next-intl'
 import { useCurrentFunnel } from '@/lib/quiz/funnelContext'
@@ -58,9 +57,6 @@ export default function ProgressHeader({ currentIdx, onBack, className, funnel: 
     try { sessionStorage.setItem(storageKey, String(targetPct)); } catch {}
   }, [targetPct]);
 
-  const router = useRouter();
-  const funnelSlug = React.useMemo(() => getFunnelSlug(funnel), [funnel])
-
   const handleBack = () => {
     if (currentIdx === 0) {
       window.location.href = `${MAIN_SITE_URL}/${locale}`;
@@ -75,15 +71,13 @@ export default function ProgressHeader({ currentIdx, onBack, className, funnel: 
     <div
       className={className}
       style={{
-        display: 'grid',
-        gridTemplateColumns: 'auto 1fr',
+        display: 'flex',
         alignItems: 'center',
         gap: 12,
         paddingLeft: 16,
         paddingRight: 16,
-        borderRadius: 18,
-        paddingTop: 16,
-        paddingBottom: 16,
+        paddingTop: 14,
+        paddingBottom: 14,
       }}
     >
       {/* Back button */}
@@ -98,9 +92,14 @@ export default function ProgressHeader({ currentIdx, onBack, className, funnel: 
           padding: 0,
           cursor: currentIdx === 0 || onBack ? 'pointer' : 'default',
           opacity: currentIdx === 0 || onBack ? 1 : 0.4,
+          display: 'flex',
+          alignItems: 'center',
+          flexShrink: 0,
         }}
       >
-        <img src="/btns/goback.svg" alt="Cofnij" width={32} height={32} style={{ display: 'block' }} />
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12.5 16L7 10L12.5 4" stroke="#FAFAFA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
       </button>
 
       {/* Progress bar */}
@@ -109,34 +108,26 @@ export default function ProgressHeader({ currentIdx, onBack, className, funnel: 
         aria-valuenow={Math.round(pct)}
         aria-valuemin={0}
         aria-valuemax={99}
-        aria-label="Postęp"
+        aria-label="Progress"
         title={`${Math.round(pct)}%`}
         style={{
-          position: 'relative',
-          height: 24,
+          flex: 1,
+          height: 6,
           borderRadius: 9999,
-          border: '3px solid #000',
-          background: '#EEEEEE',
+          background: '#3F3F46',
           overflow: 'hidden',
         }}
       >
         <div
           style={{
             height: '100%',
-            width: `${pct}%`,                     // ← only value we change
-            background: 'linear-gradient(to top, #B20000 60%, #810000ff 100%)',
+            width: `${pct}%`,
+            background: '#D9F166',
             borderRadius: 9999,
-            display: 'grid',
-            placeItems: 'center',
-            color: '#fff',
-            fontWeight: 700,
-            fontSize: 12,
-            transition: 'width 500ms cubic-bezier(.22,.61,.36,1)', // smooth ease-out
+            transition: 'width 500ms cubic-bezier(.22,.61,.36,1)',
             willChange: 'width',
           }}
-        >
-          {pct >= 7 && `${Math.round(pct)}%`}
-        </div>
+        />
       </div>
     </div>
   );

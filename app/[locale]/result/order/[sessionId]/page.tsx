@@ -2,7 +2,6 @@
 import { Suspense } from 'react';
 import { useState, useEffect, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import Image from 'next/image';
 import { sendGTMEvent } from '@next/third-parties/google';
 import { useTranslations, useLocale } from 'next-intl';
 import { trackPurchase } from '@/lib/analytics';
@@ -174,21 +173,13 @@ const ZamowieniePageContent = () => {
   const locale = useLocale();
   const supportEmail = getSupportEmail(locale);
 
-  const assets = {
-    logoHref: MAIN_SITE_URL,
-    logoSrc: `/${locale}/../vectors/logo.svg`,
-    logoHeight: 50,
-    backButtonImage: `/btns/${locale}/back-to-home-btn.svg`,
-    heroSuccessSrc: `/vectors/t_eagle.svg`
-  };
-
   if (status === 'loading' || status === 'pending') {
     return (
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', background: '#fff', padding: '40px 24px 0 24px' }}>
         <div style={{ marginBottom: 32, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <Image src={assets.logoSrc} alt={t('logoAlt')} width={220} height={assets.logoHeight} style={{ width: 'auto', height: assets.logoHeight, maxWidth: '100%' }} />
+          <div style={{ fontSize: 24, fontWeight: 900 }}>Musclepals</div>
         </div>
-        <div style={{ marginTop: 48, marginBottom: 32, fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif", fontSize: 22, fontWeight: 700, color: '#111', textAlign: 'center' }}>
+        <div style={{ marginTop: 48, marginBottom: 32, fontFamily: "inherit", fontSize: 22, fontWeight: 700, color: '#111', textAlign: 'center' }}>
           {status === 'loading' ? t('verifyingText') : t('processingText')}
         </div>
         {status === 'loading' && (
@@ -203,14 +194,14 @@ const ZamowieniePageContent = () => {
         )}
         {status === 'pending' && (
           <>
-            <div style={{ marginTop: 24, fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif", fontSize: 16, color: '#111', textAlign: 'center', maxWidth: 340 }}>
+            <div style={{ marginTop: 24, fontFamily: "inherit", fontSize: 16, color: '#111', textAlign: 'center', maxWidth: 340 }}>
               <span
                 dangerouslySetInnerHTML={{
                   __html: t.raw('pendingHtml')
                 }}
               />
             </div>
-            <div style={{ marginTop: 18, fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif", fontSize: 15, color: '#111', textAlign: 'center', maxWidth: 340 }}>
+            <div style={{ marginTop: 18, fontFamily: "inherit", fontSize: 15, color: '#111', textAlign: 'center', maxWidth: 340 }}>
               {t('contactText')} <a href={`mailto:${supportEmail}`} style={{ color: '#111', textDecoration: 'underline' }}>{supportEmail}</a>
             </div>
           </>
@@ -221,16 +212,13 @@ const ZamowieniePageContent = () => {
 
   if (status === 'success') {
     return (
-      <div style={{ minHeight: '100vh', background: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif", padding: '40px 24px 0 24px' }}>
+      <div style={{ minHeight: '100vh', background: '#fff', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', fontFamily: "inherit", padding: '40px 24px 0 24px' }}>
         <div style={{ maxWidth: 420, width: '100%', marginLeft: 'auto', marginRight: 'auto', padding: 0, boxSizing: 'border-box', textAlign: 'center' }}>
           <div style={{ marginBottom: 32, display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-            <Image src={assets.logoSrc} alt={t('logoAlt')} width={220} height={assets.logoHeight} style={{ width: 'auto', height: assets.logoHeight, maxWidth: '100%' }} />
+            <div style={{ fontSize: 24, fontWeight: 900 }}>Musclepals</div>
           </div>
           <div style={{ fontSize: 32, fontWeight: 700, margin: '16px 0 0 0', color: '#111', lineHeight: 1.18 }}>
             <span dangerouslySetInnerHTML={{ __html: t.raw('successTitle') }} />
-          </div>
-          <div style={{ margin: '18px 0 0 0', display: 'flex', justifyContent: 'center' }}>
-            <Image src={assets.heroSuccessSrc} alt={t('successImageAlt')} width={180} height={140} style={{ width: 400, height: 'auto' }} />
           </div>
           <div style={{ margin: '18px 0 0 0', fontSize: 18, color: '#111' }}>
             {t('successText1')}<br />{t('successText2')}
@@ -242,23 +230,19 @@ const ZamowieniePageContent = () => {
           </div>
           <div style={{ margin: '18px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
             <button
+              type="button"
+              className="btn btn-primary"
               onClick={() => {
                 window.location.href = `${MAIN_SITE_URL}/${locale}/`;
               }}
               style={{
-                background: 'none',
-                border: 'none',
-                padding: 0,
                 cursor: 'pointer',
-                outline: 'none',
-                display: 'flex',
-                justifyContent: 'center',
                 width: '100%',
                 maxWidth: 260,
                 margin: '0 auto',
               }}
             >
-              <Image src={assets.backButtonImage} alt={t('buttonText')} width={181} height={33} style={{ width: '100%', height: 'auto', maxWidth: 260 }} />
+              {t('buttonText')}
             </button>
           </div>
         </div>

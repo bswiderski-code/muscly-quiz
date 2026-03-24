@@ -5,6 +5,7 @@ import { getFunnelSlug, getResultSlug, getStepOrder, getStepSlug, type FunnelKey
 import { resolveNextStep } from '@/lib/quiz/navigation'
 import { useCurrentFunnel } from '@/lib/quiz/funnelContext'
 import { getNextButtonConfig } from './NextButton.config'
+import { ChevronRight } from 'lucide-react'
 import React from 'react'
 import { useRouter } from '@/i18n/routing'
 import { useLocale, useTranslations } from 'next-intl'
@@ -24,6 +25,7 @@ interface NextButtonProps {
 const NextButton: React.FC<NextButtonProps> = ({
   currentIdx, stepId, fieldKey = '', fieldValue, onClick, disabled = false, funnel: funnelProp,
 }) => {
+  const t = useTranslations('NextButton')
   const locale = useLocale() as Locale
   const contextFunnel = useCurrentFunnel()
   const funnel = funnelProp ?? contextFunnel
@@ -32,22 +34,22 @@ const NextButton: React.FC<NextButtonProps> = ({
   return (
     <button
       type="button"
+      className="btn btn-primary btn-next-row"
       onClick={onClick}
       disabled={disabled}
       style={{
-        background: 'none',
-        border: 'none',
         width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
         margin: '0 auto',
+        maxWidth: '400px',
       }}
     >
-      <img
-        src={config.imageSrc.replace('{locale}', locale)}
-        alt={config.alt}
-        style={{ width: '90%', height: 'auto', maxHeight: '60px', maxWidth: '400px' }}
+      <span className="btn-next-row__label">{t('alt') || config.alt}</span>
+      <ChevronRight
+        className="btn-next-row__icon"
+        size={19}
+        strokeWidth={2.5}
+        absoluteStrokeWidth={false}
+        aria-hidden="true"
       />
     </button>
   )

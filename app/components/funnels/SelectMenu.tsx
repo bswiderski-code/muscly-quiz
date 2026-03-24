@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 import styles from "./select-menu.module.css";
 
@@ -113,15 +112,17 @@ export default function SelectMenu({
         // Exclusive options stay enabled so the user can always switch/cancel.
         const disabled = multi ? exclusiveActive && !checked && !opt.exclusive : false;
 
+        const hasDetails = !!opt.details;
+
         return (
           <div
             key={id}
-            className={styles.optionGroup}
+            className={`${styles.optionGroup} ${hasDetails ? styles.optionGroupWithDetails : ""}`}
             style={{ "--option-index": i } as React.CSSProperties}
           >
             <label
               htmlFor={id}
-              className={`${styles.option} ${checked ? styles.optionChecked : ""} ${disabled ? styles.optionDisabled : ""}`}
+              className={`${styles.option} ${checked ? styles.optionChecked : ""} ${disabled ? styles.optionDisabled : ""} ${hasDetails ? styles.optionWithDetails : ""}`}
             >
               <input
                 id={id}
@@ -136,22 +137,8 @@ export default function SelectMenu({
               />
 
               <span className={styles.box}>
-                <Image
-                  src="/components/box_1.svg"
-                  alt=""
-                  width={36}
-                  height={36}
-                  className={styles.boxOff}
-                  priority
-                />
-                <Image
-                  src="/components/box_2.svg"
-                  alt=""
-                  width={36}
-                  height={36}
-                  className={styles.boxOn}
-                  priority
-                />
+                <div className={styles.boxOff} />
+                <div className={styles.boxOn} />
               </span>
 
               <span id={labelId} className={styles.label}>{opt.label}</span>

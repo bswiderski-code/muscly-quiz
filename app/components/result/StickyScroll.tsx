@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState, useRef } from 'react'
-import Image from 'next/image'
 import styles from './StickyScroll.module.css'
 
 export default function StickyScroll({ targetId }: { targetId: string }) {
@@ -55,23 +54,18 @@ export default function StickyScroll({ targetId }: { targetId: string }) {
 
   return (
     <div
-      className={`${styles.container} ${isVisible && !isNearForm ? styles.visible : ''}`}
+      className={`btn btn-primary ${styles.container} ${isVisible && !isNearForm ? styles.visible : ''}`}
       onClick={handleScroll}
       role="button"
       aria-label="Przewiń do formularza"
+      style={{
+        padding: '12px 24px',
+        fontSize: 18,
+        textAlign: 'center',
+        cursor: 'pointer',
+      }}
     >
-      <Image
-        src="/btns/pl/scroll-do-planu.svg"
-        alt="Przewiń do planu"
-        width={359}
-        height={67}
-        priority
-        style={{ 
-          width: '100%', 
-          height: 'auto', 
-          display: 'block' 
-        }}
-      />
+      Przejdź do planu
     </div>
   )
 }

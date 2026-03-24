@@ -55,7 +55,7 @@ export const getBaseUrlForLocale = (locale?: Locale): string | undefined => {
   if (process.env.NODE_ENV === 'development') {
     return undefined; // Let Next.js handle it
   }
-  return `https://${CANONICAL_HOST}`;
+  return CANONICAL_HOST ? `https://${CANONICAL_HOST}` : undefined;
 };
 
 export const getLocaleForHost = (host: string | null | undefined): Locale => {

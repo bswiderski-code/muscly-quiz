@@ -65,7 +65,7 @@ export default function TDEEBOX({ sid, funnelKey }: { sid: string; funnelKey: Fu
         boxShadow: "0 2px 0 #0002",
         padding: 12,
         boxSizing: "border-box",
-        fontFamily: "'Comic Relief', Arial, Helvetica, sans-serif",
+        fontFamily: "inherit",
       }}
     >
       <div style={{ fontSize: 14, fontWeight: 500, marginBottom: 2 }}>
