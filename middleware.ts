@@ -2,13 +2,11 @@ import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
 import { routing } from './i18n/routing';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
-import { getEffectiveHost } from '@/lib/domain/effectiveHost';
 import { CANONICAL_HOST } from '@/config/site';
 
 export default async function middleware(request: NextRequest) {
   const hostHeader = getIncomingHost(request.headers) ?? '';
-  const effectiveHost = getEffectiveHost(hostHeader) ?? hostHeader;
-  const hostForChecks = effectiveHost.toLowerCase();
+  const hostForChecks = hostHeader.toLowerCase();
   const pathname = request.nextUrl.pathname;
 
   // Local dev exception: localhost, *.local, etc.
@@ -20,17 +18,17 @@ export default async function middleware(request: NextRequest) {
 
   const canonicalHost = CANONICAL_HOST.toLowerCase();
 
-  // 1. Production rule: Enforce canonical host.
+  // 1. Production only: enforce canonical host (quiz domain).
+  // In development, tunnels like dev.* hit Next over HTTP on localhost; redirecting to CANONICAL_HOST
+  // with request.nextUrl.protocol would wrongly send users to http://...
   if (
+    process.env.NODE_ENV === 'production' &&
     canonicalHost &&
     !isLocalDev &&
     hostForChecks !== canonicalHost
   ) {
-    const proto = (request.headers.get('x-forwarded-proto') ?? request.nextUrl.protocol.replace(':', '') ?? 'https')
-      .split(',')[0]
-      ?.trim();
     const redirectUrl = request.nextUrl.clone();
-    redirectUrl.protocol = `${proto}:`;
+    redirectUrl.protocol = 'https:';
     redirectUrl.host = CANONICAL_HOST;
     return NextResponse.redirect(redirectUrl, 308);
   }

@@ -5,6 +5,7 @@ import { getFunnelSlug, getStepOrder, getStepSlug, resolveFunnelKey, type Funnel
 import { ALL_STEPS } from '@/lib/quiz/stepIds';
 import { getAnswersSummaryConfig } from './config';
 import { getAnswerEmoji, formatDefaultLabel, CONJUNCTIONS, VALUE_FORMATS, formatValue } from './mappings';
+import { btnPrimary } from '@/app/components/ui/buttonClasses';
 
 interface AnswersSummaryProps {
   sid: string;
@@ -67,7 +68,8 @@ export default function AnswersSummary({ sid, funnelSlug }: AnswersSummaryProps)
   const getDisplayValue = (key: string, value: any) => {
     if (key === 'gender') return genderMap[value] || value;
     if (key === 'diet_goal') return dietGoalMap[value] || value;
-    if (key === 'bodyfat') return formatValue(value, format.bodyfat || VALUE_FORMATS.bodyfat);
+    if (key === 'bodyfat' || key === 'dream_physique')
+      return formatValue(value, format.bodyfat || VALUE_FORMATS.bodyfat);
     if (key === 'height') return formatValue(value, format.height || VALUE_FORMATS.height);
     if (key === 'weight' || key === 'weight_goal') return formatValue(value, format.weight || VALUE_FORMATS.weight);
     if (key === 'age') return formatValue(value, format.age || VALUE_FORMATS.age);
@@ -131,7 +133,7 @@ export default function AnswersSummary({ sid, funnelSlug }: AnswersSummaryProps)
     >
       <button
         type="button"
-        className="btn btn-primary"
+        className={btnPrimary}
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
         style={{

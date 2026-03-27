@@ -40,6 +40,7 @@ export type FunnelAnswers = {
   weight_goal_raw?: number
   cardio?: string
   physique_goal?: string
+  dream_physique?: string
 }
 
 type ByFunnel = Record<string, Record<string, FunnelAnswers>>

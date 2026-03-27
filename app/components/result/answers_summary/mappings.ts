@@ -11,6 +11,7 @@ export const ANSWER_EMOJIS: Record<string, string | ((value: any) => string)> = 
   weight: '⚖️',
   weight_goal: '⚖️',
   bodyfat: '💧',
+  dream_physique: '✨',
   activity: '🏃‍♂️',
   experience: '🎓',
   difficulty: '🧗',

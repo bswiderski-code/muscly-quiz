@@ -27,8 +27,8 @@ You can now provide a direct link to the user's PDF using the `pdfToken` stored 
 
 ## 3. Configuration & Maintenance
 
-### S3 Credentials
-Ensure your credentials are correctly set in `config/credentials.ts`. The implementation uses the `@aws-sdk/client-s3` compatible with Hetzner.
+### S3 credentials
+Set PDF bucket and keys in environment variables (see `.env.example`: `S3_PDF_*` and optional `AWS_*` fallbacks). The implementation uses `@aws-sdk/client-s3` against any S3-compatible host (for example Hetzner Object Storage).
 
 ### S3 Key Structure
 The system automatically organizes files in S3 based on product type and user location:

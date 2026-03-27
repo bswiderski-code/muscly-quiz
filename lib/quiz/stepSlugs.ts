@@ -6,6 +6,7 @@ export const STEP_SLUGS: Record<StepId, LocalizedStringMap> = {
   gender: 'start',
   diet_goal: 'diet_goal',
   bodyfat: 'bodyfat',
+  dream_physique: 'dream-physique',
   height: 'height',
   weight: 'weight',
   weight_goal: 'desired-weight',
@@ -25,4 +26,9 @@ export const STEP_SLUGS: Record<StepId, LocalizedStringMap> = {
   duration: 'duration',
   cardio: 'cardio',
   physique_goal: 'physique_goal',
+  attention_pitstop: 'attention',
+  great_decision_pitstop: 'great-decision',
+  effects_pitstop: 'effects',
+  difficulty_pitstop: 'difficulty-break',
+  name: 'name',
 }

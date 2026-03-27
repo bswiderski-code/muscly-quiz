@@ -1,5 +1,5 @@
 import { headers } from 'next/headers';
-import { defaultLocale, getBaseUrlForLocale, getEffectiveHost, type Locale } from '@/i18n/config';
+import { defaultLocale, getBaseUrlForLocale, type Locale } from '@/i18n/config';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 
 /**
@@ -11,22 +11,15 @@ export async function getBaseUrlFromHeaders(): Promise<string | undefined> {
   const h = await headers();
   const defaultProto = process.env.NODE_ENV === 'production' ? 'https' : 'http';
   const proto = (h.get('x-forwarded-proto') ?? defaultProto).split(',')[0]?.trim();
-  let host = getIncomingHost(h) ?? '';
+  const host = getIncomingHost(h) ?? '';
   if (!host) return undefined;
   if (!proto || !/^https?$/.test(proto)) return undefined;
   if (host.includes('\n') || host.includes('\r')) return undefined;
 
-  // Dev-only: optionally spoof the effective host to test domain-specific config on another URL.
-  // We use this for logic (market, locale, etc.) but for some things (like payment callbacks)
-  // we might need the real host.
-  const effectiveHost = getEffectiveHost(host) ?? host;
-
-  // Local dev exception: do not enforce canonical host logic.
-  const hostLower = effectiveHost.toLowerCase();
+  const hostLower = host.toLowerCase();
   const isLocalDev = hostLower.endsWith('.local') || hostLower.includes('.local:');
 
-  let finalHost = effectiveHost;
-  // Production rule: www is never canonical.
+  let finalHost = host;
   if (!isLocalDev) {
     finalHost = finalHost.replace(/^www\./i, '');
   }
@@ -35,19 +28,11 @@ export async function getBaseUrlFromHeaders(): Promise<string | undefined> {
 }
 
 /**
- * Returns the REAL base URL of the incoming request, bypassing any spoofing.
- * Crucial for payment notifications/callbacks to reach the current environment.
+ * Base URL for payment callbacks — same as {@link getBaseUrlFromHeaders} now that host
+ * resolution uses the real incoming host only.
  */
 export async function getRealBaseUrl(): Promise<string | undefined> {
-  const h = await headers();
-  const defaultProto = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-  const proto = (h.get('x-forwarded-proto') ?? defaultProto).split(',')[0]?.trim();
-  let host = getIncomingHost(h) ?? '';
-  if (!host) return undefined;
-  if (!proto || !/^https?$/.test(proto)) return undefined;
-  if (host.includes('\n') || host.includes('\r')) return undefined;
-
-  return `${proto}://${host}`;
+  return getBaseUrlFromHeaders();
 }
 
 /**
@@ -60,6 +45,6 @@ export async function getBaseUrl(preferredLocale?: Locale): Promise<string> {
   return (
     (await getBaseUrlFromHeaders()) ||
     getBaseUrlForLocale(preferredLocale ?? defaultLocale) ||
-    'http://localhost:3000'
+    'http://localhost:3003'
   );
 }

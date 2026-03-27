@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import type { CheckoutProvider } from '@/i18n/config';
+import { btnPrimary } from '@/app/components/ui/buttonClasses';
 
 const ENDPOINT: Record<CheckoutProvider, string> = {
   stripe: '/api/stripe/create',
@@ -64,7 +65,7 @@ export function PaymentButton({
     <div style={{ margin: '0', position: 'relative' }}>
       <button
         type="button"
-        className="btn btn-primary"
+        className={btnPrimary}
         disabled={loading}
         onClick={() => {
           onBeforePay?.();

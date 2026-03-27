@@ -8,18 +8,7 @@ import { normalizeGenderMF } from '@/lib/gender/normalizeGenderMF';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 import { rateLimit, getClientIp, rateLimitResponse } from '@/lib/rateLimit';
 
-import { getPayUCredentials } from '@/config/credentials';
-
-const isSandbox = process.env.PAYU_SANDBOX === 'true';
-const creds = getPayUCredentials(isSandbox);
-
-const payU = new PayU(
-	Number(creds.clientId),
-	creds.clientSecret,
-	Number(creds.merchantPosId),
-	creds.secondKey,
-	{ sandbox: isSandbox }
-);
+import { getPayU } from '@/lib/paymentClients';
 
 // Helper to safely parse numbers coming as string (with comma) or number
 const parseNumber = (val: unknown) => {
@@ -43,6 +32,8 @@ const normalizePlanDescription = (raw: unknown) => {
 export async function POST(req: NextRequest) {
 	const rl = rateLimit(`payu-create:${getClientIp(req)}`, { max: 10, windowSecs: 900 });
 	if (!rl.allowed) return rateLimitResponse(rl);
+
+	const payU = getPayU();
 
 	// Extract host for market determination
 	const host = getIncomingHost(req.headers);

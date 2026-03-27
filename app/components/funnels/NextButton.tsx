@@ -11,6 +11,12 @@ import { useRouter } from '@/i18n/routing'
 import { useLocale, useTranslations } from 'next-intl'
 import type { Locale } from '@/i18n/config'
 import type { StepId } from '@/lib/quiz/stepIds'
+import {
+  btnNextRow,
+  btnNextRowIcon,
+  btnNextRowLabel,
+  btnPrimaryVisual,
+} from '@/app/components/ui/buttonClasses'
 
 interface NextButtonProps {
   currentIdx: number
@@ -34,7 +40,7 @@ const NextButton: React.FC<NextButtonProps> = ({
   return (
     <button
       type="button"
-      className="btn btn-primary btn-next-row"
+      className={`${btnPrimaryVisual} px-8 py-[18px] ${btnNextRow}`}
       onClick={onClick}
       disabled={disabled}
       style={{
@@ -43,9 +49,9 @@ const NextButton: React.FC<NextButtonProps> = ({
         maxWidth: '400px',
       }}
     >
-      <span className="btn-next-row__label">{t('alt') || config.alt}</span>
+      <span className={btnNextRowLabel}>{t('alt') || config.alt}</span>
       <ChevronRight
-        className="btn-next-row__icon"
+        className={btnNextRowIcon}
         size={19}
         strokeWidth={2.5}
         absoluteStrokeWidth={false}

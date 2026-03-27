@@ -138,23 +138,23 @@ export default function YOUVSFUTURE({
         }}
       >
         {/* Opisy i wagi */}
-        <div style={{ display: "flex", justifyContent: "center", fontWeight: 700, fontSize: config.headerFontSize, marginTop: 8 }}>
+        <div style={{ display: "flex", justifyContent: "center", fontWeight: 700, fontSize: config.headerFontSize, marginTop: 8, color: "var(--ds-text)" }}>
           <div style={{ flex: 1, textAlign: "center" }}>
-            {t('now')} {/* TŁUMACZENIE */}
-            <div style={{ fontWeight: 400, fontSize: config.labelFontSize, marginTop: 4 }}>
-              {t('weight')} <span style={{ fontWeight: 700, fontSize: config.valueFontSize }}>{nowWeight ? `${nowWeight}${unitLabel}` : "-"}</span> {/* TŁUMACZENIE */}
+            {t('now')}
+            <div style={{ fontWeight: 400, fontSize: config.labelFontSize, marginTop: 4, color: "rgba(244,244,245,0.55)" }}>
+              {t('weight')} <span style={{ fontWeight: 700, fontSize: config.valueFontSize, color: "var(--ds-text)" }}>{nowWeight ? `${nowWeight}${unitLabel}` : "-"}</span>
             </div>
           </div>
           <div style={{ flex: 1, textAlign: "center" }}>
-            {t('future')} {/* TŁUMACZENIE */}
-            <div style={{ fontWeight: 400, fontSize: config.labelFontSize, marginTop: 4 }}>
-              {t('weight')} <span style={{ fontWeight: 700, fontSize: config.valueFontSize }}>{futureWeight ? `${futureWeight}${unitLabel}` : "-"}</span> {/* TŁUMACZENIE */}
+            {t('future')}
+            <div style={{ fontWeight: 400, fontSize: config.labelFontSize, marginTop: 4, color: "rgba(244,244,245,0.55)" }}>
+              {t('weight')} <span style={{ fontWeight: 700, fontSize: config.valueFontSize, color: "var(--ds-primary)" }}>{futureWeight ? `${futureWeight}${unitLabel}` : "-"}</span>
             </div>
           </div>
         </div>
 
         {/* Kreski */}
-        <div style={{ height: lineThickness, background: lineColor, width: "100%", margin: "12px 0 0 0", borderRadius: lineThickness }} />
+        <div style={{ height: lineThickness, background: "rgba(255,255,255,0.1)", width: "100%", margin: "12px 0 0 0", borderRadius: lineThickness }} />
         <div
           style={{
             position: "absolute",
@@ -162,43 +162,43 @@ export default function YOUVSFUTURE({
             bottom: config.verticalLineBottom,
             left: "50%",
             width: lineThickness,
-            background: lineColor,
+            background: "rgba(255,255,255,0.1)",
             transform: "translateX(-50%)",
             borderRadius: "18px",
           }}
         />
 
-        {/* Mięśnie, sprawność, tkanka tłuszczowa */}
-        <div style={{ display: "flex", justifyContent: "center", gap: 24, marginTop: 12 }}>
+          {/* Mięśnie, sprawność, tkanka tłuszczowa */}
+          <div style={{ display: "flex", justifyContent: "center", gap: 24, marginTop: 12 }}>
           {/* Lewa kolumna */}
           <div style={{ flex: 1 }}>
-            <div style={{ textAlign: "center", fontWeight: 500, marginBottom: 4 }}>{t('muscle')}</div> {/* TŁUMACZENIE */}
-            <div style={{ background: "#eee", borderRadius: 8, height: 12, marginBottom: 12, overflow: "hidden", border: `${lineThickness}px solid ${lineColor}` }}>
-              <div style={{ width: "40%", height: "100%", background: "linear-gradient(90deg, #d32f2f 90%, #eee 100%)" }} />
+            <div style={{ textAlign: "center", fontWeight: 500, marginBottom: 4, fontSize: 12, color: "rgba(244,244,245,0.6)" }}>{t('muscle')}</div>
+            <div style={{ background: "rgba(255,255,255,0.08)", borderRadius: 8, height: 8, marginBottom: 12, overflow: "hidden" }}>
+              <div style={{ width: "40%", height: "100%", background: "linear-gradient(90deg, #ef5350, #e57373)" }} />
             </div>
-            <div style={{ textAlign: "center", fontWeight: 500, marginBottom: 4 }}>{t('fitness')}</div> {/* TŁUMACZENIE */}
-            <div style={{ background: "#eee", borderRadius: 8, height: 12, marginBottom: 12, overflow: "hidden", border: `${lineThickness}px solid ${lineColor}` }}>
-              <div style={{ width: `${fitnessPercentage}%`, height: "100%", background: "linear-gradient(90deg, #1976d2 90%, #eee 100%)" }} />
+            <div style={{ textAlign: "center", fontWeight: 500, marginBottom: 4, fontSize: 12, color: "rgba(244,244,245,0.6)" }}>{t('fitness')}</div>
+            <div style={{ background: "rgba(255,255,255,0.08)", borderRadius: 8, height: 8, marginBottom: 12, overflow: "hidden" }}>
+              <div style={{ width: `${fitnessPercentage}%`, height: "100%", background: "linear-gradient(90deg, #42a5f5, #90caf9)" }} />
             </div>
-            <div style={{ textAlign: "center", fontWeight: 500, marginBottom: 4 }}>{t('bodyfat')}</div> {/* TŁUMACZENIE */}
-            <div style={{ background: "#eee", borderRadius: 8, height: 12, overflow: "hidden", border: `${lineThickness}px solid ${lineColor}` }}>
-              <div style={{ width: `${bodyfatPercentage}%`, height: "100%", background: "linear-gradient(90deg, #ff9800 90%, #eee 100%)" }} />
+            <div style={{ textAlign: "center", fontWeight: 500, marginBottom: 4, fontSize: 12, color: "rgba(244,244,245,0.6)" }}>{t('bodyfat')}</div>
+            <div style={{ background: "rgba(255,255,255,0.08)", borderRadius: 8, height: 8, overflow: "hidden" }}>
+              <div style={{ width: `${bodyfatPercentage}%`, height: "100%", background: "linear-gradient(90deg, #ffa726, #ffcc80)" }} />
             </div>
           </div>
 
           {/* Prawa kolumna */}
           <div style={{ flex: 1 }}>
-            <div style={{ textAlign: "center", fontWeight: 500, marginBottom: 4 }}>{t('muscle')}</div> {/* TŁUMACZENIE */}
-            <div style={{ background: "#eee", borderRadius: 8, height: 12, marginBottom: 12, overflow: "hidden", border: `${lineThickness}px solid ${lineColor}` }}>
-              <div style={{ width: diet_goal === "bulk" ? "90%" : "80%", height: "100%", background: "linear-gradient(90deg, #d32f2f 90%, #eee 100%)" }} />
+            <div style={{ textAlign: "center", fontWeight: 500, marginBottom: 4, fontSize: 12, color: "rgba(244,244,245,0.6)" }}>{t('muscle')}</div>
+            <div style={{ background: "rgba(255,255,255,0.08)", borderRadius: 8, height: 8, marginBottom: 12, overflow: "hidden" }}>
+              <div style={{ width: diet_goal === "bulk" ? "90%" : "80%", height: "100%", background: "linear-gradient(90deg, #ef5350, #e57373)" }} />
             </div>
-            <div style={{ textAlign: "center", fontWeight: 500, marginBottom: 4 }}>{t('fitness')}</div> {/* TŁUMACZENIE */}
-            <div style={{ background: "#eee", borderRadius: 8, height: 12, marginBottom: 12, overflow: "hidden", border: `${lineThickness}px solid ${lineColor}` }}>
-              <div style={{ width: "100%", height: "100%", background: "linear-gradient(90deg, #1976d2 90%, #eee 100%)" }} />
+            <div style={{ textAlign: "center", fontWeight: 500, marginBottom: 4, fontSize: 12, color: "rgba(244,244,245,0.6)" }}>{t('fitness')}</div>
+            <div style={{ background: "rgba(255,255,255,0.08)", borderRadius: 8, height: 8, marginBottom: 12, overflow: "hidden" }}>
+              <div style={{ width: "100%", height: "100%", background: "linear-gradient(90deg, #42a5f5, #90caf9)" }} />
             </div>
-            <div style={{ textAlign: "center", fontWeight: 500, marginBottom: 4 }}>{t('bodyfat')}</div> {/* TŁUMACZENIE */}
-            <div style={{ background: "#eee", borderRadius: 8, height: 12, marginBottom: 12, overflow: "hidden", border: `${lineThickness}px solid ${lineColor}` }}>
-              <div style={{ width: `25%`, height: "100%", background: "linear-gradient(90deg, #ff9800 90%, #eee 100%)" }} />
+            <div style={{ textAlign: "center", fontWeight: 500, marginBottom: 4, fontSize: 12, color: "rgba(244,244,245,0.6)" }}>{t('bodyfat')}</div>
+            <div style={{ background: "rgba(255,255,255,0.08)", borderRadius: 8, height: 8, marginBottom: 12, overflow: "hidden" }}>
+              <div style={{ width: `25%`, height: "100%", background: "linear-gradient(90deg, #ffa726, #ffcc80)" }} />
             </div>
           </div>
         </div>

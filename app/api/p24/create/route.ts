@@ -15,22 +15,13 @@ import { normalizeGenderMF } from '@/lib/gender/normalizeGenderMF';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 import { rateLimit, getClientIp, rateLimitResponse } from '@/lib/rateLimit';
 
-import { getP24Credentials } from '@/config/credentials';
-
-const isSandbox = process.env.P24_SANDBOX === 'true';
-const creds = getP24Credentials(isSandbox);
-
-const p24 = new P24(
-  Number(creds.merchantId),
-  Number(creds.posId),
-  creds.apiKey,
-  creds.crc,
-  { sandbox: isSandbox }
-);
+import { getP24 } from '@/lib/paymentClients';
 
 export async function POST(req: NextRequest) {
   const rl = rateLimit(`p24-create:${getClientIp(req)}`, { max: 10, windowSecs: 900 });
   if (!rl.allowed) return rateLimitResponse(rl);
+
+  const p24 = getP24();
 
   // Extract host for market determination
   const host = getIncomingHost(req.headers);

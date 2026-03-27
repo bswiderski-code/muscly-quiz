@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState, useRef } from 'react'
+import { btnPrimaryVisual } from '@/app/components/ui/buttonClasses'
 import styles from './StickyScroll.module.css'
 
 export default function StickyScroll({ targetId }: { targetId: string }) {
@@ -54,16 +55,10 @@ export default function StickyScroll({ targetId }: { targetId: string }) {
 
   return (
     <div
-      className={`btn btn-primary ${styles.container} ${isVisible && !isNearForm ? styles.visible : ''}`}
+      className={`${btnPrimaryVisual} px-6 py-3 text-center text-lg ${styles.container} ${isVisible && !isNearForm ? styles.visible : ''}`}
       onClick={handleScroll}
       role="button"
       aria-label="Przewiń do formularza"
-      style={{
-        padding: '12px 24px',
-        fontSize: 18,
-        textAlign: 'center',
-        cursor: 'pointer',
-      }}
     >
       Przejdź do planu
     </div>

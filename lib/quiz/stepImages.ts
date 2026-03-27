@@ -55,6 +55,7 @@ const FEMALE_PRIORITY_IMAGE_URLS = Object.values(FEMALE_PRIORITY_IMAGES_BY_PART)
 export function getStepImages(stepId: StepId, answers: Partial<FunnelAnswers>): string[] {
   switch (stepId) {
     case 'bodyfat':
+    case 'dream_physique':
       return answers.gender === 'F' ? FEMALE_BODYFAT_IMAGES : MALE_BODYFAT_IMAGES
     case 'priority':
       return answers.gender === 'F' ? FEMALE_PRIORITY_IMAGE_URLS : MALE_PRIORITY_IMAGE_URLS

@@ -1,5 +1,4 @@
 import { PAYMENT_CONFIG } from '@/config/payment';
-import { getEffectiveHost } from '@/lib/domain/effectiveHost';
 import { CANONICAL_HOST } from '@/config/site';
 import {
   CheckoutProvider,
@@ -25,8 +24,6 @@ export type {
   CheckoutProvider,
   MarketInfo,
 } from '@/config/i18n';
-
-export { getEffectiveHost };
 
 // Utility to normalize provider selection (Polish market can swap providers via env).
 const normalizeCheckoutProvider = (info: Omit<MarketInfo, 'isKnownHost'>): Omit<MarketInfo, 'isKnownHost'> => {

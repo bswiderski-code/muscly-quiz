@@ -205,6 +205,12 @@
       "description": "Masz już świadomość swojego ciała - teraz wystarczy dobrze dobrany plan, żeby ruszyć efekty na nowy poziom."
     }
   },
+  "Name": {
+    "title": "Jak masz na <b>imię?</b>",
+    "subtitle": "Użyjemy go w planie i na ekranie wyniku.",
+    "placeholder": "Imię",
+    "ariaLabel": "Imię"
+  },
   "Activity": {
     "title": "Jaki jest Twój poziom<b> aktywności fizycznej?</b>",
     "errorMsg": "Proszę wybrać jedną z opcji przed przejściem dalej.",
@@ -522,7 +528,63 @@
     "errorDescription": "Skontaktuj się z nami pod adresem: {email}",
     "faq": {
       "title": "Najczęściej<br/>zadawane pytania:"
+    },
+    "caseStudies": {
+      "line1": "SPRAWDŹ",
+      "line2": "PRZYKŁADOWE",
+      "line3": "PRZEMIANY",
+      "legalNote": "*Przedstawione obrazy mają charakter poglądowy i służą wyłącznie celom ilustracyjnym.",
+      "ctaLabel": "Zacznij quiz",
+      "placeholderImageAlt": "Porównanie sylwetki przed i po programie treningowym",
+      "beforeLabel": "PRZED",
+      "afterLabel": "PO",
+      "trendIconLabel": "Zmiana masy ciała w czasie",
+      "trendIconLabelGain": "Zmiana masy ciała w czasie (wzrost)"
+    },
+    "trustSection": {
+      "statBefore": "Już ",
+      "statAfter": " osób odebrało swój plan treningowy.",
+      "headline": "Co mówią klienci",
+      "cta": "Stwórz swój plan"
+    },
+    "heroSection": {
+      "badge": "Wygenerowano na bazie Twoich odpowiedzi",
+      "subtitle": "Stworzony pod Twoje ciało, rytm życia i cel — nie kopiowany z internetu.",
+      "priceLine": "Jeden zakup · Twój na zawsze",
+      "priceNote": "Płacisz raz, plan Twój na zawsze. Bez subskrypcji.",
+      "priceBadge": "Bez subskrypcji"
+    },
+    "dataSection": {
+      "eyebrow": "Twoje dane",
+      "title": "Wiemy dokładnie, z czym startujemy",
+      "bmiLabel": "BMI",
+      "bmrLabel": "BMR",
+      "bmrUnit": "kcal w spoczynku",
+      "caloriesLabel": "Kalorie dziennie",
+      "caloriesUnit": "zalecane",
+      "hydrationLabel": "Nawodnienie",
+      "hydrationUnit": "dziennie"
+    },
+    "planSectionEyebrow": "Twój plan",
+    "planSectionTitle": "Dopasowany do Twojego życia",
+    "methodologyEyebrow": "Metodologia",
+    "methodologyTitle": "Co bierze pod uwagę nasz algorytm",
+    "pricingSectionEyebrow": "Odbierz swój plan",
+    "pricingSectionNoSub": "Płacisz raz. Żadnej subskrypcji. Żadnych niespodzianek.",
+    "guarantee": {
+      "title": "Gwarancja satysfakcji",
+      "text": "Trenuj przez miesiąc zgodnie z planem. Jeśli nie zobaczysz żadnych efektów — masz <strong>14 dni na zwrot pełnej kwoty.</strong><br/><br/>Zero pytań. Zero haczyka. Możemy sobie na to pozwolić, bo wiemy, że plan działa."
+    },
+    "finalCta": {
+      "title": "Zacznij dziś.",
+      "subtitle": "Każdy dzień bez planu to dzień bez progresu.",
+      "trust1": "Jednorazowa płatność",
+      "trust2": "Natychmiastowy dostęp",
+      "trust3": "Gwarancja zwrotu"
     }
+  },
+  "ReviewsMarquee": {
+    "imageAlt": "Opinia klienta — zrzut ekranu"
   },
   "BMIBOX": {
     "yourScore": "Twój wynik to:",
@@ -739,6 +801,8 @@
       "goal": "Cel",
       "diet_goal": "Cel diety",
       "bodyfat": "Tkanka tłuszczowa",
+      "dream_physique": "Wymarzona sylwetka",
+      "name": "Imię",
       "activity": "Aktywność",
       "experience": "Doświadczenie",
       "difficulty": "Trudność",
@@ -827,6 +891,8 @@
       "gender": "Płeć",
       "diet_goal": "Cel diety",
       "bodyfat": "Tkanka tłuszczowa",
+      "dream_physique": "Wymarzona sylwetka",
+      "name": "Imię",
       "height": "Wzrost",
       "weight": "Waga",
       "age": "Wiek",

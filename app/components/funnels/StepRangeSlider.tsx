@@ -219,7 +219,7 @@ export default function StepRangeSlider({
     window.addEventListener('pointerup', end, { once: true });
     window.addEventListener('pointercancel', end, { once: true });
     return () => {
-      window.removeEventListener('pointermove', onMove, { passive: false });
+      window.removeEventListener('pointermove', onMove);
       window.removeEventListener('pointerup', end);
       window.removeEventListener('pointercancel', end);
     };

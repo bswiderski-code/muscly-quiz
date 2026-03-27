@@ -16,7 +16,8 @@ type LocalizedPricing = {
 	workout_bundle: LocalizedOffer
 }
 
-const localeFallbackOrder: LocalePricingKey[] = ['pl', 'en', 'de', 'fr']
+/** Try current locale first in getLocalizedPricing; then this order. Extend LocalePricingKey when adding markets. */
+const localeFallbackOrder = ['pl', 'en', 'de', 'fr'] as const satisfies readonly LocalePricingKey[]
 
 export function getLocalizedPricing(funnelKey: string, locale: Locale, marketCurrency: string): LocalizedPricing | null {
 	const def = funnelDefinitions[funnelKey as keyof typeof funnelDefinitions]

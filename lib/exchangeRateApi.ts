@@ -79,6 +79,33 @@ export function invertRatesToPLN(rates: Record<string, number>): Record<string, 
 }
 
 /**
+ * Fetches latest PLN-based rates from the API, inverts to rates → PLN, and upserts all rows in the database.
+ * Used on server start, cron refresh, and manual API calls so payments and in-memory cache stay aligned.
+ */
+export async function syncExchangeRatesToDatabase(): Promise<
+    { ok: true; rates: Record<string, number> } | { ok: false; error: unknown }
+> {
+    try {
+        const apiResponse = await fetchExchangeRates();
+        const invertedRates = invertRatesToPLN(apiResponse.conversion_rates);
+
+        const updates = Object.entries(invertedRates).map(([code, rate]) =>
+            prisma.exchangeRate.upsert({
+                where: { currency: code },
+                update: { rate },
+                create: { currency: code, rate },
+            })
+        );
+
+        await prisma.$transaction(updates);
+        return { ok: true, rates: invertedRates };
+    } catch (error) {
+        console.error('[ExchangeRates] syncExchangeRatesToDatabase failed:', error);
+        return { ok: false, error };
+    }
+}
+
+/**
  * Get exchange rate from given currency TO PLN
  * 
  * Logic:
@@ -116,23 +143,12 @@ export async function getExchangeRateToPLN(currency: string): Promise<number> {
         console.log(`Exchange rate for ${targetCurrency} is missing or stale. Fetching from API...`);
 
         try {
-            const apiResponse = await fetchExchangeRates();
-            const invertedRates = invertRatesToPLN(apiResponse.conversion_rates);
+            const sync = await syncExchangeRatesToDatabase();
+            if (!sync.ok) {
+                throw sync.error instanceof Error ? sync.error : new Error('Exchange rate sync failed');
+            }
 
-            // 4. Update all rates in DB in a transaction
-            // We do this to refresh everything at once since we paid for the API call
-            const updates = Object.entries(invertedRates).map(([code, rate]) => {
-                return prisma.exchangeRate.upsert({
-                    where: { currency: code },
-                    update: { rate: rate },
-                    create: { currency: code, rate: rate }
-                });
-            });
-
-            await prisma.$transaction(updates);
-
-            // 5. Return requested rate
-            const newRate = invertedRates[targetCurrency];
+            const newRate = sync.rates[targetCurrency];
 
             if (!newRate) {
                 console.warn(`Rate for ${targetCurrency} not found in API response. Defaulting to 1.0`);

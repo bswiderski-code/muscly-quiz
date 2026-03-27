@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useTranslations, useLocale } from 'next-intl';
 import { MAIN_SITE_URL } from '@/config/site';
+import { btnPrimaryVisual } from '@/app/components/ui/buttonClasses';
 
 export default function NotFound() {
   const t = useTranslations('NotFound');
@@ -30,7 +31,7 @@ export default function NotFound() {
           <div className="flex justify-center">
             <Link
               href="/"
-              className="btn btn-primary w-full sm:w-auto px-10 py-5 text-xl justify-center"
+              className={`${btnPrimaryVisual} w-full justify-center px-10 py-5 text-xl sm:w-auto`}
             >
               {t('startButton')}
             </Link>

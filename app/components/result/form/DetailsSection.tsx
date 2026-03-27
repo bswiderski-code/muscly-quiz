@@ -46,9 +46,9 @@ export function DetailsSection({ diet_goal }: Props) {
           marginTop: '12px'
         }}
       >
-        <div className="outline-box" style={{ marginTop: 0, textAlign: "left" }}>
-          <div className="box-title">{t('detailsBox1Title')}</div>
-          <div className="box-body">
+        <div className="mt-0 rounded-sm border border-border bg-surface p-3 text-left">
+          <div className="mb-1 text-base font-bold text-foreground">{t('detailsBox1Title')}</div>
+          <div className="text-[15px] font-normal leading-normal text-muted">
             - <span dangerouslySetInnerHTML={{ __html: t('detailsBox1Body.training', { goal: trainingTextGoal }) }} />
             <br />
             - <span dangerouslySetInnerHTML={{ __html: details1.smart }} />
@@ -58,9 +58,9 @@ export function DetailsSection({ diet_goal }: Props) {
             - <span dangerouslySetInnerHTML={{ __html: details1.progress }} />
           </div>
         </div>
-        <div className="outline-box" style={{ marginTop: 12, textAlign: "left" }}>
-          <div className="box-title">{t('detailsBox2Title')}</div>
-          <div className="box-body">
+        <div className="mt-3 rounded-sm border border-border bg-surface p-3 text-left">
+          <div className="mb-1 text-base font-bold text-foreground">{t('detailsBox2Title')}</div>
+          <div className="text-[15px] font-normal leading-normal text-muted">
             - <span dangerouslySetInnerHTML={{ __html: details2.macros }} />
             <br />
             - <span dangerouslySetInnerHTML={{ __html: t('detailsBox2Body.dietSchema', { goalSchema: goalSchemaText }) }} />

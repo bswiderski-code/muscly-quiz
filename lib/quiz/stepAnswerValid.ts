@@ -24,6 +24,8 @@ export function isStepAnswerComplete(stepId: StepId, answers: FunnelAnswers): bo
       return answers.diet_goal === 'bulk' || answers.diet_goal === 'cut'
     case 'bodyfat':
       return norm(answers.bodyfat) !== ''
+    case 'dream_physique':
+      return norm(answers.dream_physique) !== ''
     case 'height':
       return positiveNumber(answers.height)
     case 'weight':
@@ -75,5 +77,14 @@ export function isStepAnswerComplete(stepId: StepId, answers: FunnelAnswers): bo
       const p = norm(answers.physique_goal)
       return p === 'aesthetic' || p === 'strength' || p === 'health'
     }
+    case 'attention_pitstop':
+    case 'great_decision_pitstop':
+    case 'effects_pitstop':
+    case 'difficulty_pitstop':
+      return true
+    case 'name':
+      return norm(answers.name).length >= 1
+    default:
+      return false
   }
 }

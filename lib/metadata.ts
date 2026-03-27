@@ -4,7 +4,7 @@ import { defaultLocale, getBaseUrlForLocale, type Locale } from "@/i18n/config";
 // Default base for canonicals; prefer config-driven domains.
 const fallbackBaseUrl =
   getBaseUrlForLocale(defaultLocale) ||
-  "http://localhost:3000";
+  "http://localhost:3003";
 
 /** `app/favicon.ico` is served at the site root by Next.js */
 const defaultFaviconPath = "/favicon.ico";

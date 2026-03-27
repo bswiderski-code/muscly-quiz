@@ -8,17 +8,12 @@ export const CANONICAL_HOST =
 export const MAIN_SITE_URL =
   process.env.NEXT_PUBLIC_MAIN_SITE_URL?.trim() ?? '';
 
-const isSpoofing = process.env.SPOOFING === 'true';
-const devUrl = process.env.DEV_URL;
-
 export const SITE_CONFIG = {
   gtmId: 'GTM-PRLGT92L',
   fbPixelId: '926252729971653',
   baseUrl:
-    isSpoofing && devUrl
-      ? devUrl
-      : process.env.NEXT_PUBLIC_BASE_URL?.trim() ||
-        (CANONICAL_HOST ? `https://${CANONICAL_HOST}` : ''),
+    process.env.NEXT_PUBLIC_BASE_URL?.trim() ||
+    (CANONICAL_HOST ? `https://${CANONICAL_HOST}` : ''),
   defaultLocale,
   locales: [...locales],
 };

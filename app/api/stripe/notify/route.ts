@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import Stripe from 'stripe';
 import { prisma } from '@/lib/prisma';
 import { Prisma } from '@prisma/client';
 import { sendToN8n } from '@/lib/n8n';
@@ -8,14 +7,7 @@ import { getCountryForHost } from '@/i18n/config';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 import { processStripeSession } from '@/lib/stripe/orderProcessor';
 
-import { getStripeCredentials } from '@/config/credentials';
-
-const isSandbox = process.env.STRIPE_SANDBOX === 'true';
-const creds = getStripeCredentials(isSandbox);
-
-const stripe = new Stripe(creds.secretKey, {
-  apiVersion: '2026-01-28.clover', // Use a standard API version
-});
+import { getStripe } from '@/lib/paymentClients';
 
 export async function GET(req: Request) {
   const origin = await getBaseUrl();
@@ -24,6 +16,8 @@ export async function GET(req: Request) {
   const sessionId = searchParams.get('session_id');
 
   if (!sessionId) return NextResponse.redirect(`${origin}/fallback`);
+
+  const stripe = getStripe();
 
   try {
     const session = await stripe.checkout.sessions.retrieve(sessionId);

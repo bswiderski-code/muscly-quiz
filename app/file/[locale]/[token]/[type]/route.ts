@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { S3Client, GetObjectCommand } from '@aws-sdk/client-s3';
-import { PAYMENT_CREDENTIALS } from '@/config/credentials';
+import { getS3PdfConfig } from '@/lib/paymentClients';
 import { getLocaleFromCountry } from '@/lib/i18n/localeUtils';
 import { getSupportEmail } from '@/lib/i18n/emailUtils';
 import path from 'path';
@@ -79,8 +79,15 @@ export async function GET(
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>${title}</title>
             <style>
+                @font-face {
+                    font-family: 'Inter Local';
+                    src: url('/fonts/Inter.woff2') format('woff2');
+                    font-weight: 100 900;
+                    font-style: normal;
+                    font-display: swap;
+                }
                 body {
-                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                    font-family: "Inter", "Inter Local", ui-sans-serif, system-ui, sans-serif;
                     background-color: #f9fafb;
                     color: #111827;
                     display: flex;
@@ -221,10 +228,9 @@ export async function GET(
     const s3Key = `${dir}/${country}/${baseName}_${order.id}.pdf`;
     const downloadName = `${baseName}_${order.id}.pdf`;
 
-    // Initialize S3
-    const s3Config = PAYMENT_CREDENTIALS.s3;
-    if (!s3Config.credentials.accessKeyId || !s3Config.credentials.secretAccessKey) {
-        console.error('S3 credentials missing');
+    const s3Config = getS3PdfConfig();
+    if (!s3Config) {
+        console.error('S3 PDF env missing: set S3_PDF_BUCKET and access keys (or AWS_* equivalents)');
         return returnErrorHtml(locale, translations);
     }
 

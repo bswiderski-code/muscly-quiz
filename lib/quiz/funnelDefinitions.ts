@@ -1,11 +1,16 @@
 import { STEP_SLUGS, type LocalizedStringMap } from './stepSlugs'
 import type { StepId } from './stepIds'
-import type { Locale } from '@/i18n/config'
 import { DISABLED_STEPS, FUNNEL_STEPS_ORDER, FUNNEL_SKIP_RULES, type SkipRule } from '@/config/quiz'
 
 export type { SkipRule }
 
-export type LocalePricingKey = Locale
+/**
+ * Locales allowed in funnel `pricing` maps (and pixel fallback order).
+ * Kept separate from routed `Locale` in config/i18n so you can ship PL-only routing while
+ * retaining multi-locale pricing data. When re-enabling locales, extend `locales` / markets
+ * in config/i18n and add matching rows here.
+ */
+export type LocalePricingKey = 'pl' | 'en' | 'de' | 'fr' | 'cz' | 'hu' | 'bg' | 'ro'
 
 type OfferPricing = {
   amount: number

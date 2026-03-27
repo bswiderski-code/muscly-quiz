@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import { useRouter } from '@/i18n/routing'
 import { getFunnelSlug, getFirstStep, getStepSlug, type FunnelKey } from '@/lib/quiz/funnels'
 import type { StepId } from '@/lib/quiz/stepIds'
+import { btnPrimary } from '@/app/components/ui/buttonClasses'
 
 interface MissingStepsViewProps {
   sessionId: string
@@ -100,7 +101,7 @@ export default function MissingStepsView({
 
       <button
         type="button"
-        className="btn btn-primary"
+        className={btnPrimary}
         onClick={handleRetry}
         style={{
           cursor: 'pointer',

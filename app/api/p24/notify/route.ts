@@ -9,20 +9,11 @@ import { normalizeCountryCode } from '@/lib/i18n/countryUtils';
 import { v4 as uuidv4 } from 'uuid';
 import { getExchangeRateToPLN } from '@/lib/exchangeRateApi';
 
-import { getP24Credentials } from '@/config/credentials';
-
-const isSandbox = process.env.P24_SANDBOX === 'true';
-const creds = getP24Credentials(isSandbox);
-
-const p24 = new P24(
-  Number(creds.merchantId),
-  Number(creds.posId),
-  creds.apiKey,
-  creds.crc,
-  { sandbox: isSandbox }
-);
+import { getP24 } from '@/lib/paymentClients';
 
 export async function POST(req: NextRequest) {
+  const p24 = getP24();
+
   // Extract host for market determination
   const host = getIncomingHost(req.headers);
   const market = getMarketForHost(host);

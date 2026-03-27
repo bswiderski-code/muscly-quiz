@@ -8,18 +8,7 @@ import { normalizeCountryCode } from '@/lib/i18n/countryUtils';
 import { v4 as uuidv4 } from 'uuid';
 import { getExchangeRateToPLN } from '@/lib/exchangeRateApi';
 
-import { getPayUCredentials } from '@/config/credentials';
-
-const isSandbox = process.env.PAYU_SANDBOX === 'true';
-const creds = getPayUCredentials(isSandbox);
-
-const payU = new PayU(
-	Number(creds.clientId),
-	creds.clientSecret,
-	Number(creds.merchantPosId),
-	creds.secondKey,
-	{ sandbox: isSandbox }
-);
+import { getPayU } from '@/lib/paymentClients';
 
 const getClientIp = (req: NextRequest) => {
 	const forwarded = req.headers.get('x-forwarded-for');
@@ -30,6 +19,8 @@ const getClientIp = (req: NextRequest) => {
 };
 
 export async function POST(req: NextRequest) {
+	const payU = getPayU();
+
 	// Extract host for market determination
 	const host = getIncomingHost(req.headers);
 	const market = getMarketForHost(host);

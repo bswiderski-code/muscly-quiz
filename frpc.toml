@@ -7,5 +7,5 @@ auth.token = "4Ef8qZckgfd7OloPYRAOfG3RWUA"
 [[proxies]]
 name = "web"
 type = "http"
-localPort = 3000
+localPort = 3003
 customDomains = ["dev.sigma-inc.work"]

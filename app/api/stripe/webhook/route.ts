@@ -1,23 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { getStripeCredentials } from '@/config/credentials';
+import { getStripe, getStripeWebhookSecret } from '@/lib/paymentClients';
 import { processStripeSession } from '@/lib/stripe/orderProcessor';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(req: NextRequest) {
-    const isSandbox = process.env.STRIPE_SANDBOX === 'true';
-    const creds = getStripeCredentials(isSandbox);
-
-    if (!creds.webhookSecret) {
-        console.error('Stripe webhook secret is missing in credentials config.');
+    let webhookSecret: string;
+    try {
+        webhookSecret = getStripeWebhookSecret();
+    } catch {
+        console.error('STRIPE_WEBHOOK_SECRET is not set.');
         return NextResponse.json({ error: 'Webhook secret not configured' }, { status: 500 });
     }
 
-    const stripe = new Stripe(creds.secretKey, {
-        apiVersion: '2026-01-28.clover',
-    });
+    const stripe = getStripe();
 
     const signature = req.headers.get('stripe-signature');
     if (!signature) {
@@ -28,7 +26,7 @@ export async function POST(req: NextRequest) {
     let event: Stripe.Event;
 
     try {
-        event = stripe.webhooks.constructEvent(body, signature, creds.webhookSecret);
+        event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
     } catch (err: any) {
         console.error(`⚠️  Webhook signature verification failed.`, err.message);
         return NextResponse.json({ error: 'Webhook signature verification failed' }, { status: 400 });

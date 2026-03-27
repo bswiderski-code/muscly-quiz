@@ -8,19 +8,14 @@ import { normalizeGenderMF } from '@/lib/gender/normalizeGenderMF';
 import { getIncomingHost } from '@/lib/domain/incomingHost';
 import { rateLimit, getClientIp, rateLimitResponse } from '@/lib/rateLimit';
 
-import { getStripeCredentials } from '@/config/credentials';
 import { Prisma } from '@prisma/client';
-
-const isSandbox = process.env.STRIPE_SANDBOX === 'true';
-const creds = getStripeCredentials(isSandbox);
-
-const stripe = new Stripe(creds.secretKey, {
-  apiVersion: '2026-01-28.clover',
-});
+import { getStripe } from '@/lib/paymentClients';
 
 export async function POST(req: NextRequest) {
   const rl = rateLimit(`stripe-create:${getClientIp(req)}`, { max: 10, windowSecs: 900 });
   if (!rl.allowed) return rateLimitResponse(rl);
+
+  const stripe = getStripe();
 
   // Extract host for market determination
   const host = getIncomingHost(req.headers);

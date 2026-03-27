@@ -1,5 +1,4 @@
-// Payment configuration per locale
-// Credentials are in config/credentials.ts to keep this file as settings-only
+// Payment configuration per locale (provider secrets live in environment variables)
 export const PAYMENT_CONFIG = {
   pl: {
     // Set to true to use sandbox/test mode instead of production

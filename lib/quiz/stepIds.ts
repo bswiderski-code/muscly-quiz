@@ -2,6 +2,7 @@ export const ALL_STEPS = [
   'gender',
   'diet_goal',
   'bodyfat',
+  'dream_physique',
   'height',
   'weight',
   'weight_goal',
@@ -21,6 +22,11 @@ export const ALL_STEPS = [
   'duration',
   'cardio',
   'physique_goal',
+  'attention_pitstop',
+  'great_decision_pitstop',
+  'effects_pitstop',
+  'difficulty_pitstop',
+  'name',
 ] as const
 
 export type StepId = typeof ALL_STEPS[number]
@@ -32,6 +38,7 @@ export const STEP_TAGS: Record<StepId, StepTag | undefined> = {
   gender: undefined,
   diet_goal: undefined,
   bodyfat: undefined,
+  dream_physique: undefined,
   height: undefined,
   weight: undefined,
   weight_goal: undefined,
@@ -51,4 +58,9 @@ export const STEP_TAGS: Record<StepId, StepTag | undefined> = {
   duration: undefined,
   cardio: undefined,
   physique_goal: undefined,
+  attention_pitstop: 'nonselective',
+  great_decision_pitstop: 'nonselective',
+  effects_pitstop: 'nonselective',
+  difficulty_pitstop: 'nonselective',
+  name: undefined,
 }

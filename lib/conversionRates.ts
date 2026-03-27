@@ -1,4 +1,4 @@
-import { fetchExchangeRates, invertRatesToPLN } from './exchangeRateApi';
+import { syncExchangeRatesToDatabase } from './exchangeRateApi';
 
 /**
  * Currency conversion rates to PLN (Polish Zloty)
@@ -46,12 +46,12 @@ function isCacheValid(): boolean {
  */
 async function updateRatesFromAPI(): Promise<boolean> {
     try {
-        console.log('[ExchangeRates] Fetching latest rates from API...');
-        const data = await fetchExchangeRates();
-        const ratesToPLN = invertRatesToPLN(data.conversion_rates);
+        console.log('[ExchangeRates] Fetching latest rates from API (DB + memory)...');
+        const result = await syncExchangeRatesToDatabase();
+        if (!result.ok) return false;
 
         rateCache = {
-            rates: ratesToPLN,
+            rates: result.rates,
             lastUpdated: Date.now(),
             nextUpdate: Date.now() + CACHE_DURATION_MS,
         };
@@ -61,6 +61,19 @@ async function updateRatesFromAPI(): Promise<boolean> {
     } catch (error) {
         console.error('[ExchangeRates] Failed to update rates from API:', error);
         return false;
+    }
+}
+
+/**
+ * Run once when the Node server process starts (see instrumentation.ts).
+ * Non-blocking for request handling when called with `void` from register().
+ */
+export async function primeExchangeRatesOnServerStart(): Promise<void> {
+    const ok = await updateRatesFromAPI();
+    if (!ok) {
+        console.warn(
+            '[ExchangeRates] Startup refresh failed; payments may use stale DB rows or static fallbacks until the next successful sync.'
+        );
     }
 }
 
@@ -197,10 +210,3 @@ export function getCacheInfo(): { isValid: boolean; lastUpdated: Date | null; ne
     };
 }
 
-// Initialize cache on module load (in background, non-blocking)
-if (typeof window === 'undefined') {
-    // Only run on server-side
-    updateRatesFromAPI().catch(err => {
-        console.error('[ExchangeRates] Initial rate fetch failed:', err);
-    });
-}

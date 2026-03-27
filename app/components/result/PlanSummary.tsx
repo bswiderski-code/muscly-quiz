@@ -132,50 +132,44 @@ const PlanSummary = ({ sid, funnelKey }: { sid: string; funnelKey: FunnelKey }) 
   }, [equipmentMap, isHomePlan, equipment, t]);
 
 
+  const cardStyle: React.CSSProperties = {
+    border: '0.5px solid rgba(255,255,255,0.07)',
+    borderRadius: 10,
+    padding: '13px 14px',
+    background: 'var(--ds-card-bg)',
+    boxSizing: 'border-box',
+    fontSize: 14,
+    lineHeight: 1.5,
+    color: 'var(--ds-text)',
+  };
+
   return (
-    <div style={{ maxWidth: 420, margin: '16px auto', fontFamily: "inherit", textAlign: 'center' }}>
-      <h3 style={{ margin: 0, fontSize: 28, fontWeight: 900 }}>{t('title')}</h3>
-      <div style={{ display: 'grid', gap: 10, marginTop: 12 }}>
+    <div style={{ maxWidth: 420, margin: '0 auto', fontFamily: "inherit" }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
         
-        {/* PRIORYTET */}
         {priorityMessage && (
-          <div style={{ border: '4px solid #000', borderRadius: 14, padding: 14, background: '#fff', boxSizing: 'border-box' }}>
-            {priorityMessage}
-          </div>
+          <div style={cardStyle}>{priorityMessage}</div>
         )}
 
         {equipmentMessage && (
-          <div style={{ border: '4px solid #000', borderRadius: 14, padding: 14, background: '#fff', boxSizing: 'border-box' }}>
-            {equipmentMessage}
-          </div>
+          <div style={cardStyle}>{equipmentMessage}</div>
         )}
 
-        {/* LOKALIZACJA */}
         {locationMessage && (
-          <div style={{ border: '4px solid #000', borderRadius: 14, padding: 14, background: '#fff', boxSizing: 'border-box' }}>
-            {/* locationMap zawiera już HTML (<strong>) dlatego używamy dangerouslySetInnerHTML */}
+          <div style={cardStyle}>
             <span dangerouslySetInnerHTML={{ __html: locationMessage }} />
           </div>
         )}
         
-        {/* CEL DIETY */}
         {formattedDietGoal && (
-          <div style={{ border: '4px solid #000', borderRadius: 14, padding: 14, background: '#fff', boxSizing: 'border-box' }}>
-            {goalFocusMessage}
-          </div>
+          <div style={cardStyle}>{goalFocusMessage}</div>
         )}
         
-        {/* CZĘSTOTLIWOŚĆ */}
         {frequencyMessage && (
-          <div style={{ border: '4px solid #000', borderRadius: 14, padding: 14, background: '#fff', boxSizing: 'border-box' }}>
-            {frequencyMessage}
-          </div>
+          <div style={cardStyle}>{frequencyMessage}</div>
         )}
         
-        {/* SPRAWNOŚĆ */}
-        <div style={{ border: '4px solid #000', borderRadius: 14, padding: 14, background: '#fff', boxSizing: 'border-box' }}>
-          {fitnessFocusMessage}
-        </div>
+        <div style={cardStyle}>{fitnessFocusMessage}</div>
       </div>
     </div>
   );

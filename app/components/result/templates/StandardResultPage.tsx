@@ -7,7 +7,7 @@ import { useRouter } from '@/i18n/routing'
 import { useFunnelStore } from '@/lib/quiz/store'
 import { useMarket } from '@/lib/useMarket'
 import { getMarketForLocale, type Locale as AppLocale } from '@/i18n/config'
-import { resolveFunnelKeyByResultSlug, getFunnelSlug } from '@/lib/quiz/funnels'
+import { resolveFunnelKeyByResultSlug } from '@/lib/quiz/funnels'
 import { getResultPageConfig } from './config'
 import YOUVSFUTURE from '@/app/components/result/youvsfuture/YOUVSFUTURE'
 import BMIBOX from '@/app/components/result/BMIBOX'
@@ -18,30 +18,96 @@ import { DetailsSection } from '@/app/components/result/form/DetailsSection'
 import { EmblaCarousel } from '@/app/components/result/Carousel/Carousel'
 import AnswersSummary from '@/app/components/result/answers_summary/answers_summary'
 import MissingStepsView from '@/app/components/result/MissingStepsView'
+import StickyScroll from '@/app/components/result/StickyScroll'
 import { getMissingSteps } from '@/lib/quiz/stepValidation'
 import type { StepId } from '@/lib/quiz/stepIds'
 import { getSupportEmail } from '@/lib/i18n/emailUtils'
+import {
+  btnPrimary,
+  btnPrimaryVisual,
+  btnSecondaryVisual,
+} from '@/app/components/ui/buttonClasses'
 
-const reviewImageCounts: Record<string, number> = {
-  bg: 7,
-  cz: 6,
-  en: 6,
-  hu: 7,
-  pl: 11,
-  ro: 8,
+// ─── Shared style helpers ────────────────────────────────────────────────────
+
+const S = {
+  sec: {
+    padding: '32px 22px',
+    boxSizing: 'border-box' as const,
+  },
+  secBorder: {
+    borderTop: '0.5px solid rgba(255,255,255,0.07)',
+  },
+  eyebrow: {
+    display: 'block',
+    fontSize: 10,
+    fontWeight: 700,
+    letterSpacing: '0.12em',
+    textTransform: 'uppercase' as const,
+    color: 'var(--ds-primary)',
+    marginBottom: 8,
+  },
+  secTitle: {
+    fontSize: 22,
+    fontWeight: 800,
+    lineHeight: 1.15,
+    margin: '0 0 18px',
+    color: 'var(--ds-text)',
+  },
+  card: {
+    background: 'var(--ds-card-bg)',
+    borderRadius: 10,
+    padding: 14,
+    border: '0.5px solid rgba(255,255,255,0.07)',
+  },
+  insightBox: {
+    background: 'rgba(76,200,122,0.07)',
+    border: '0.5px solid rgba(76,200,122,0.2)',
+    borderRadius: 9,
+    padding: '12px 14px',
+    fontSize: 13,
+    color: 'rgba(244,244,245,0.65)',
+    lineHeight: 1.6,
+    marginTop: 14,
+  },
+  pillarNum: {
+    width: 26,
+    height: 26,
+    borderRadius: '50%',
+    background: 'rgba(217,241,102,0.1)',
+    color: 'var(--ds-primary)',
+    fontSize: 11,
+    fontWeight: 700,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+    marginTop: 2,
+  } as React.CSSProperties,
 }
+
+// ─── Types ───────────────────────────────────────────────────────────────────
 
 interface StandardResultPageProps {
-  faqSection?: React.ReactNode;
-  checkoutProvider?: import('@/i18n/config').CheckoutProvider;
+  faqSection?: React.ReactNode
+  checkoutProvider?: import('@/i18n/config').CheckoutProvider
+  caseStudiesSection?: React.ReactNode
+  trustSection?: React.ReactNode
 }
 
-export default function StandardResultPage({ faqSection, checkoutProvider: checkoutProviderProp }: StandardResultPageProps) {
+// ─── Component ───────────────────────────────────────────────────────────────
+
+export default function StandardResultPage({
+  faqSection,
+  checkoutProvider: checkoutProviderProp,
+  caseStudiesSection,
+  trustSection,
+}: StandardResultPageProps) {
   const router = useRouter()
   const t = useTranslations('ResultPage')
+  const bmiT = useTranslations('BMIBOX')
   const planPageT = useTranslations('PlanPage')
   const reportFormT = useTranslations('ReportForm')
-  const reviewsT = useTranslations('ReviewsMarquee')
   const locale = useLocale()
   const privacyUrl = planPageT('assets.privacyUrl')
   const termsUrl = planPageT('assets.termsUrl')
@@ -72,7 +138,6 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
 
   const [hasTimeoutError, setHasTimeoutError] = useState(false)
   const [storeHydrated, setStoreHydrated] = useState(false)
-
   const [reportCount, setReportCount] = useState<number | null>(null)
   const [showSamplePlan, setShowSamplePlan] = useState(false)
   const [totalOpenedCheckouts, setTotalOpenedCheckouts] = useState<number | null>(null)
@@ -80,9 +145,6 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
 
   const {
     titleKey,
-    subtitleKey,
-    intro1Key,
-    intro2Key,
     analyzeTitleKey,
     analyzeListKey,
     conclusion1Key,
@@ -98,12 +160,8 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
       fetch('/api/data/count')
         .then((res) => res.json())
         .then((data) => {
-          if (data.recentCount !== null) {
-            setReportCount(data.recentCount)
-          }
-          if (data.totalCount !== null) {
-            setTotalOpenedCheckouts(data.totalCount)
-          }
+          if (data.recentCount !== null) setReportCount(data.recentCount)
+          if (data.totalCount !== null) setTotalOpenedCheckouts(data.totalCount)
         })
         .catch(() => {
           setReportCount(null)
@@ -115,15 +173,45 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
     return () => clearInterval(interval)
   }, [])
 
-  // Validate required steps
   useEffect(() => {
     if (!sessionId || !answers) return
-    
     const missing = getMissingSteps(answers, resolvedFunnel, sessionId)
     setMissingSteps(missing)
   }, [answers, resolvedFunnel, sessionId])
 
   const analyzeList = t.raw(analyzeListKey) as unknown as Record<string, string>
+
+  // ─── Computed stats (must be before any conditional returns) ──────────────
+  const computedStats = useMemo(() => {
+    const w = answers?.weight || 0
+    const h = answers?.height || 0
+    const a = answers?.age || 0
+    const g = answers?.gender
+    const act = answers?.activity || ''
+    const dg = answers?.diet_goal || ''
+
+    let bmr = 0
+    if (w && h && a) {
+      const female = g === 'F' || g === 'female'
+      bmr = Math.round(female
+        ? 10 * w + 6.25 * h - 5 * a - 161
+        : 10 * w + 6.25 * h - 5 * a + 5)
+    }
+
+    const actMap: Record<string, number> = {
+      low_activity: 1.2,
+      some_activity: 1.35,
+      light_training: 1.5,
+      regular_training: 1.7,
+      hard_work: 1.9,
+    }
+    const tdee = bmr ? Math.round(bmr * (actMap[act] ?? 1.5)) : 0
+    const dailyCal = tdee ? (dg === 'cut' ? tdee - 300 : tdee + 300) : 0
+    const hydration = w ? `${(w * 0.035).toFixed(1)} l` : null
+
+    return { bmr, dailyCal, hydration }
+  }, [answers?.weight, answers?.height, answers?.age, answers?.gender, answers?.activity, answers?.diet_goal])
+
   const contactBox = t.raw('contactBox') as {
     title: string
     emailIntro: string
@@ -131,64 +219,34 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
     responseTime: string
   }
   const supportEmail = contactBox?.emailAddress || getSupportEmail(locale)
-  
+
   useEffect(() => {
-    if (useFunnelStore.persist.hasHydrated()) {
-      setStoreHydrated(true)
-    }
-    return useFunnelStore.persist.onFinishHydration(() => {
-      setStoreHydrated(true)
-    })
+    if (useFunnelStore.persist.hasHydrated()) setStoreHydrated(true)
+    return useFunnelStore.persist.onFinishHydration(() => setStoreHydrated(true))
   }, [])
 
   useEffect(() => {
     if (!storeHydrated) return
     if (answers) return
-    const timeout = setTimeout(() => {
-      setHasTimeoutError(true)
-    }, 10000)
+    const timeout = setTimeout(() => setHasTimeoutError(true), 10000)
     return () => clearTimeout(timeout)
   }, [storeHydrated, answers])
 
-  if (!storeHydrated && !hasTimeoutError) {
-    return null
-  }
+  if (!storeHydrated && !hasTimeoutError) return null
 
   if (hasTimeoutError) {
     return (
-      <div
-        style={{
-          minHeight: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '24px 16px',
-          boxSizing: 'border-box',
-          textAlign: 'center',
-          fontFamily: "inherit",
-        }}
-      >
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px 16px', boxSizing: 'border-box', textAlign: 'center' }}>
         <p style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{t('loadingErrorTitle')}</p>
         <p
           style={{ fontSize: 14, maxWidth: 340, lineHeight: 1.5 }}
-          dangerouslySetInnerHTML={{
-            __html: String(t.raw('loadingErrorHtml')).replaceAll('{email}', supportEmail),
-          }}
+          dangerouslySetInnerHTML={{ __html: String(t.raw('loadingErrorHtml')).replaceAll('{email}', supportEmail) }}
         />
         <button
           type="button"
-          className="btn btn-primary"
-          onClick={() => {
-            router.push({
-              pathname: '/[funnel]',
-              params: { funnel: resolvedFunnel },
-            })
-          }}
-          style={{
-            cursor: 'pointer',
-            marginTop: 24,
-          }}
+          className={btnPrimary}
+          onClick={() => router.push({ pathname: '/[funnel]', params: { funnel: resolvedFunnel } })}
+          style={{ cursor: 'pointer', marginTop: 24 }}
         >
           {t('loadingErrorBtn')}
         </button>
@@ -196,340 +254,328 @@ export default function StandardResultPage({ faqSection, checkoutProvider: check
     )
   }
 
-  if (!answers) {
-    return null
-  }
+  if (!answers) return null
 
-  // Show missing steps view if steps are missing
   if (missingSteps.length > 0 && sessionId) {
     return (
       <MissingStepsView
         sessionId={sessionId}
         funnel={resolvedFunnel}
         missingSteps={missingSteps}
-        onRetry={() => {
-          // Track retry if needed in the future
-        }}
+        onRetry={() => {}}
       />
     )
   }
 
   const { weight, diet_goal, age, activity, height, bodyfat, bmi } = answers
 
+  const BMI_MIN = 12
+  const BMI_MAX = 45
+  const bmiPointer = bmi !== undefined ? ((Math.max(BMI_MIN, Math.min(BMI_MAX, bmi)) - BMI_MIN) / (BMI_MAX - BMI_MIN)) * 100 : 50
+
+  const { bmr, dailyCal, hydration } = computedStats
+
+  // ─── Render ────────────────────────────────────────────────────────────────
   return (
     <>
-      <div
-        style={{
-          maxWidth: config.containerMaxWidth,
-          margin: '0 auto',
-          padding: '8px 16px',
-          boxSizing: 'border-box',
-        }}
-      >
-      <header style={{ textAlign: 'center', marginTop: 16 }}>
-        <h1
-          style={{
-            fontWeight: 700,
-            fontSize: 32,
-            marginBottom: 4,
-          }}
-          dangerouslySetInnerHTML={{ __html: t.raw(titleKey) }}
-        />
+      <StickyScroll targetId="form-section" />
 
-        <YOUVSFUTURE
-          sid={sessionId ?? 'default'}
-          weight={weight || 0}
-          diet_goal={diet_goal || ''}
-          age={age || 30}
-          activity={activity || ''}
-          heightCm={height}
-          bodyfat={bodyfat}
-          funnelKey={resolvedFunnel}
-          style={{ marginTop: 24 }}
-        />
+      {/* ── 1. HERO ── */}
+      <div style={{ maxWidth: 430, margin: '0 auto', boxSizing: 'border-box' }}>
+        <section style={{ padding: '28px 22px 24px' }}>
+          {/* Badge */}
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: 'rgba(217,241,102,0.08)', border: '0.5px solid rgba(217,241,102,0.25)', color: 'var(--ds-primary)', fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '5px 12px', borderRadius: 20, marginBottom: 18 }}>
+            ✓ {t('heroSection.badge')}
+          </div>
 
-        <div style={{ marginTop: 32 }}>
-          <p style={{ fontSize: 19, lineHeight: 1.4, marginTop: 0, marginBottom: 24 }} dangerouslySetInnerHTML={{ __html: t.raw(intro1Key) }} />
-          <p style={{ fontSize: 19, lineHeight: 1.4, marginTop: 16 }} dangerouslySetInnerHTML={{ __html: t.raw(intro2Key) }} />
-        </div>
-      </header>
+          {/* Title */}
+          <h1
+            style={{ fontWeight: 800, fontSize: 30, lineHeight: 1.1, marginBottom: 6, color: 'var(--ds-text)' }}
+            dangerouslySetInnerHTML={{ __html: t.raw(titleKey) }}
+          />
 
-      <div style={{ display: 'flex', justifyContent: 'center', marginTop: 32, marginBottom: 32 }}>
-        <hr style={{ width: '100%', maxWidth: 400, border: '1px solid #000' }} />
+          {/* Subtitle */}
+          <p style={{ fontSize: 13, color: 'rgba(244,244,245,0.45)', marginBottom: 22, lineHeight: 1.5 }}>
+            {t('heroSection.subtitle')}
+          </p>
+
+          {/* Transform visualization */}
+          <YOUVSFUTURE
+            sid={sessionId ?? 'default'}
+            weight={weight || 0}
+            diet_goal={diet_goal || ''}
+            age={age || 30}
+            activity={activity || ''}
+            heightCm={height}
+            bodyfat={bodyfat}
+            funnelKey={resolvedFunnel}
+          />
+
+          {/* Price preview strip */}
+          <div style={{ background: 'rgba(76,200,122,0.07)', border: '0.5px solid rgba(76,200,122,0.2)', borderRadius: 10, padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 20, gap: 12 }}>
+            <div>
+              <strong style={{ color: '#4cc87a', display: 'block', fontSize: 13 }}>{t('heroSection.priceLine')}</strong>
+              <span style={{ fontSize: 12, color: 'rgba(244,244,245,0.55)', lineHeight: 1.5 }}>{t('heroSection.priceNote')}</span>
+            </div>
+            <div style={{ background: 'rgba(76,200,122,0.12)', border: '0.5px solid rgba(76,200,122,0.3)', color: '#4cc87a', fontSize: 10, fontWeight: 700, padding: '4px 10px', borderRadius: 20, whiteSpace: 'nowrap' }}>
+              {t('heroSection.priceBadge')}
+            </div>
+          </div>
+        </section>
+
+        {/* ── 2. DATA SECTION ── */}
+        <section style={{ ...S.sec, ...S.secBorder }}>
+          <span style={S.eyebrow}>{t('dataSection.eyebrow')}</span>
+          <h2 style={S.secTitle} dangerouslySetInnerHTML={{ __html: t.raw('dataSection.title') }} />
+
+          {/* Stats 2×2 grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 14 }}>
+            {bmi !== undefined && (
+              <div style={S.card}>
+                <div style={{ fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.09em', color: 'rgba(244,244,245,0.35)', marginBottom: 6 }}>{t('dataSection.bmiLabel')}</div>
+                <div style={{ fontSize: 21, fontWeight: 700, lineHeight: 1, marginBottom: 2, color: 'var(--ds-primary)' }}>{bmi}</div>
+                <div style={{ fontSize: 10, color: 'rgba(244,244,245,0.35)' }}>{bmiT('categories.' + (() => {
+                  if (bmi < 16) return 'lt16'
+                  if (bmi < 17) return 'lt17'
+                  if (bmi < 18.5) return 'lt18_5'
+                  if (bmi < 25) return 'lt25'
+                  if (bmi < 30) return 'lt30'
+                  if (bmi < 35) return 'lt35'
+                  if (bmi < 40) return 'lt40'
+                  return 'gt40'
+                })())}</div>
+              </div>
+            )}
+            {bmr > 0 && (
+              <div style={S.card}>
+                <div style={{ fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.09em', color: 'rgba(244,244,245,0.35)', marginBottom: 6 }}>{t('dataSection.bmrLabel')}</div>
+                <div style={{ fontSize: 21, fontWeight: 700, lineHeight: 1, marginBottom: 2, color: 'var(--ds-text)' }}>{bmr}</div>
+                <div style={{ fontSize: 10, color: 'rgba(244,244,245,0.35)' }}>{t('dataSection.bmrUnit')}</div>
+              </div>
+            )}
+            {dailyCal > 0 && (
+              <div style={S.card}>
+                <div style={{ fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.09em', color: 'rgba(244,244,245,0.35)', marginBottom: 6 }}>{t('dataSection.caloriesLabel')}</div>
+                <div style={{ fontSize: 21, fontWeight: 700, lineHeight: 1, marginBottom: 2, color: 'var(--ds-primary)' }}>{dailyCal} kcal</div>
+                <div style={{ fontSize: 10, color: 'rgba(244,244,245,0.35)' }}>{t('dataSection.caloriesUnit')}</div>
+              </div>
+            )}
+            {hydration && (
+              <div style={S.card}>
+                <div style={{ fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.09em', color: 'rgba(244,244,245,0.35)', marginBottom: 6 }}>{t('dataSection.hydrationLabel')}</div>
+                <div style={{ fontSize: 21, fontWeight: 700, lineHeight: 1, marginBottom: 2, color: '#4a9de0' }}>{hydration}</div>
+                <div style={{ fontSize: 10, color: 'rgba(244,244,245,0.35)' }}>{t('dataSection.hydrationUnit')}</div>
+              </div>
+            )}
+          </div>
+
+          {config.showBmiBox && bmi !== undefined && (
+            <BMIBOX bmi={bmi} pointerLeft={bmiPointer} />
+          )}
+          {config.showTdeeBox && (
+            <TDEEBOX sid={sessionId ?? 'default'} funnelKey={resolvedFunnel} />
+          )}
+
+          {/* Insight */}
+          <div style={S.insightBox} dangerouslySetInnerHTML={{ __html: t.raw(conclusion1Key) }} />
+        </section>
+
+        {/* ── 3. PLAN SPECS ── */}
+        {config.showPlanSummary && (
+          <section style={{ ...S.sec, ...S.secBorder }}>
+            <span style={S.eyebrow}>{t('planSectionEyebrow')}</span>
+            <h2 style={S.secTitle}>{t('planSectionTitle')}</h2>
+            <PlanSummary sid={sessionId ?? 'default'} funnelKey={resolvedFunnel} />
+          </section>
+        )}
+
+        {/* ── 4. METHODOLOGY ── */}
+        <section style={{ ...S.sec, ...S.secBorder }}>
+          <span style={S.eyebrow}>{t('methodologyEyebrow')}</span>
+          <h2 style={S.secTitle}>{t(analyzeTitleKey)}</h2>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+            {Object.values(analyzeList).map((html, i) => (
+              <div key={i} style={{ display: 'flex', gap: 14 }}>
+                <div style={S.pillarNum}>{i + 1}</div>
+                <div style={{ paddingTop: 4 }}>
+                  <div style={{ fontSize: 14, lineHeight: 1.5, color: 'var(--ds-text)' }} dangerouslySetInnerHTML={{ __html: html }} />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p
+            style={{ fontSize: 13, lineHeight: 1.65, color: 'rgba(244,244,245,0.55)', marginTop: 20 }}
+            dangerouslySetInnerHTML={{ __html: t.raw(conclusion2Key) }}
+          />
+        </section>
       </div>
 
-      <section style={{ textAlign: 'center', marginTop: 16 }}>
-        <h2
-          style={{
-            fontWeight: 700,
-            fontSize: 32,
-            lineHeight: 1.2,
-            marginBottom: 24,
-          }}
-          dangerouslySetInnerHTML={{ __html: t.raw(subtitleKey) }}
-        />
+      {/* ── 5. CASE STUDIES (full-bleed) ── */}
+      {caseStudiesSection}
 
-        <div style={{ marginTop: 40 }}>
-          {config.showBmiBox && bmi !== undefined && (
-            <BMIBOX bmi={bmi} pointerLeft={((bmi - 12) / (45 - 12)) * 100} />
-          )}
-        </div>
-        {config.showTdeeBox && <TDEEBOX sid={sessionId ?? 'default'} funnelKey={resolvedFunnel} />}
-      </section>
+      {/* ── 6. PRICING ── */}
+      <div style={{ maxWidth: 430, margin: '0 auto', boxSizing: 'border-box' }}>
+        <section style={{ ...S.sec, ...S.secBorder }} id="form-section">
+          <span style={S.eyebrow}>{t('pricingSectionEyebrow')}</span>
+          <h2 style={S.secTitle}>{t(purchaseTitleKey)}</h2>
 
-      <section style={{ marginTop: 48 }}>
-        <div 
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'left',
-            fontSize: 16,
-            lineHeight: 1.5,
-            maxWidth: 420,
-            margin: '0 auto',
-          }}
-        >
-          <p style={{ fontSize: 26, marginBottom: 12 }}><b>{t(analyzeTitleKey)}</b></p>
-          <ul style={{ paddingLeft: 0, marginTop: 0 }}>
-            {Object.values(analyzeList).map((html, index) => (
-                <li key={index} dangerouslySetInnerHTML={{ __html: html }} />
-            ))}
-          </ul>
-        </div>
-
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: 10,
-            marginTop: 32,
-            width: '100%',
-          }}
-        >
-          <p
-            style={{
-              fontSize: 16,
-              lineHeight: 1.5,
-              maxWidth: 420,
-              margin: 0,
-              textAlign: 'center',
-              flex: '1 1 100%',
-            }}
-            dangerouslySetInnerHTML={{ __html: t.raw(conclusion1Key) }}
-          />
-        </div>
-
-        <p
-          style={{
-            fontSize: 16,
-            lineHeight: 1.5,
-            maxWidth: 360,
-            margin: '12px auto 0',
-            textAlign: 'center',
-          }}
-          dangerouslySetInnerHTML={{ __html: t.raw(conclusion2Key) }}
-        />
-      </section>
-
-      {config.showPlanSummary && (
-        <section style={{ marginTop: 48 }}>
-          <PlanSummary sid={sessionId ?? 'default'} funnelKey={resolvedFunnel} />
-        </section>
-      )}
-
-      <section
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          margin: '48px auto 0',
-          width: '100%',
-          maxWidth: 420,
-          padding: '0 12px',
-          boxSizing: 'border-box',
-        }}
-      >
-        <h2
-          style={{
-            textAlign: 'center',
-            fontWeight: 700,
-            fontSize: 24,
-            marginTop: 0,
-            lineHeight: 1.2,
-            marginBottom: 24,
-          }}
-        >
-          {t(purchaseTitleKey)}
-        </h2>
-        <div style={{ textAlign: 'center', marginTop: 8, width: '100%' }}>
-          <button
-            type="button"
-            className="btn btn-secondary"
-            aria-expanded={showSamplePlan}
-            onClick={() => setShowSamplePlan((s) => !s)}
-            style={{
-              display: 'inline-flex',
-              cursor: 'pointer',
-              fontSize: 17,
-              fontWeight: 400,
-              minWidth: 160,
-              boxSizing: 'border-box',
-              touchAction: 'manipulation',
-              padding: '10px 14px',
-              lineHeight: 1.3,
-            }}
+          {/* Sample plan toggle */}
+          <div style={{ marginBottom: 20, textAlign: 'center' }}>
+            <button
+              type="button"
+              className={`${btnSecondaryVisual} w-full py-3 text-sm`}
+              aria-expanded={showSamplePlan}
+              onClick={() => setShowSamplePlan((s) => !s)}
             >
               {t(sampleBtnKey)}
             </button>
-
-          <div
-            aria-hidden={!showSamplePlan}
-            style={{
-              overflow: 'hidden',
-              transition: 'max-height 320ms ease, opacity 240ms ease, padding 240ms ease',
-              maxHeight: showSamplePlan ? '1000px' : '0px',
-              opacity: showSamplePlan ? 1 : 0,
-              padding: showSamplePlan ? '12px 0 0 0' : '0 0 0 0',
-              width: '100%',
-            }}
-          >
-            <div style={{ width: '100%', maxWidth: 360, margin: '0 auto' }}>
-              <h3 style={{ fontSize: 20, fontWeight: 600, textAlign: 'center', margin: '12px 0', width: '100%', maxWidth: '100%' }}>{t(sampleTitleKey)}</h3>
-              <div style={{ width: '100%', boxSizing: 'border-box' }}>
-                <EmblaCarousel funnelKey={resolvedFunnel} />
-              </div>
+            <div
+              aria-hidden={!showSamplePlan}
+              style={{ overflow: 'hidden', transition: 'max-height 320ms ease, opacity 240ms ease', maxHeight: showSamplePlan ? '1000px' : '0px', opacity: showSamplePlan ? 1 : 0 }}
+            >
+              <h3 style={{ fontSize: 18, fontWeight: 600, textAlign: 'center', margin: '16px 0 8px', color: 'var(--ds-text)' }}>{t(sampleTitleKey)}</h3>
+              <EmblaCarousel funnelKey={resolvedFunnel} />
             </div>
           </div>
-        </div>
-      </section>
 
-      <section style={{ marginTop: 40, textAlign: 'center' }}>
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
-          <hr style={{ width: '100%', maxWidth: 400, border: '1px solid #000' }} />
-        </div>
+          {/* Join athletes count */}
+          <div style={{ textAlign: 'center', marginBottom: 20 }}>
+            <div
+              style={{ fontSize: 15, lineHeight: 1.5, color: 'rgba(244,244,245,0.7)' }}
+              dangerouslySetInnerHTML={{ __html: t.raw(joinAthletesKey).replace('{count}', (totalOpenedCheckouts ?? 0).toString()) }}
+            />
+          </div>
 
-        <p
-          style={{
-            fontSize: 24,
-            lineHeight: 1.5,
-            margin: '16px 0',
-            fontFamily: 'inherit',
-          }}
-          dangerouslySetInnerHTML={{
-            __html: t.raw(joinAthletesKey).replace('{count}', (totalOpenedCheckouts !== null ? totalOpenedCheckouts : 0).toString())
-          }}
-        />
+          {/* No subscription note */}
+          <div style={{ textAlign: 'center', fontSize: 12, color: 'rgba(244,244,245,0.4)', padding: '10px 12px', background: 'rgba(255,255,255,0.02)', borderRadius: 8, marginBottom: 14, border: '0.5px solid rgba(255,255,255,0.07)' }}>
+            <strong style={{ color: '#4cc87a' }}>{t('pricingSectionNoSub')}</strong>
+          </div>
 
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 24, marginBottom: 24 }}>
-          <hr style={{ width: '100%', maxWidth: 400, border: '1px solid #000' }} />
-        </div>
-      </section>
+          {/* Checkout form */}
+          <CheckoutForm
+            sessionId={sessionId ?? 'default'}
+            funnelKey={resolvedFunnel}
+            locale={locale as AppLocale}
+            checkoutProvider={checkoutProviderProp ?? effectiveMarket.checkoutProvider}
+            marketCurrency={effectiveMarket.currency}
+            separatorText={reportFormT('orText')}
+            paymentNoteHtml={String(reportFormT.raw('paymentNote'))}
+          />
+          <div style={{ marginTop: 16 }}>
+            <DetailsSection diet_goal={String(answers?.diet_goal ?? '')} />
+          </div>
 
-      <section style={{ marginTop: 48 }}>
-        <AnswersSummary sid={sessionId ?? 'default'} funnelSlug={funnelSlug} />
-      </section>
+          {/* Report count */}
+          <div style={{ marginTop: 16, padding: '14px', borderRadius: 8, border: '0.5px solid rgba(255,255,255,0.07)', background: 'rgba(255,255,255,0.02)', textAlign: 'center' }}>
+            <div style={{ fontSize: 20, fontWeight: 700, color: 'var(--ds-text)' }}>
+              {reportCount !== null ? `${reportCount} ${t('reportNote1')}` : '...'}
+            </div>
+            <div style={{ fontSize: 14, color: 'rgba(244,244,245,0.45)', marginTop: 2 }}>{t('reportNote2')}</div>
+          </div>
+        </section>
 
-      <section style={{ marginTop: 48 }} id="form-section">
-        <CheckoutForm
-          sessionId={sessionId ?? 'default'}
-          funnelKey={resolvedFunnel}
-          locale={locale as AppLocale}
-          checkoutProvider={checkoutProviderProp ?? effectiveMarket.checkoutProvider}
-          marketCurrency={effectiveMarket.currency}
-          separatorText={reportFormT('orText')}
-          paymentNoteHtml={String(reportFormT.raw('paymentNote'))}
-        />
-        <div style={{ marginTop: 24 }}>
-          <DetailsSection diet_goal={String(answers?.diet_goal ?? '')} />
-        </div>
-      </section>
-
-      <div className="reports-wrap" style={{ textAlign: 'center', marginTop: 8 }}>
-        <div className="reports-box">
-          <span className="reports-highlight">
-            {reportCount !== null ? `${reportCount} ${t('reportNote1')}` : '...'}
-          </span>
-          <br />
-          <span className="reports-note">{t('reportNote2')}</span>
-        </div>
+        {/* ── 7. GUARANTEE ── */}
+        <section style={{ ...S.sec, ...S.secBorder }}>
+          <div style={{ background: 'rgba(76,200,122,0.06)', border: '0.5px solid rgba(76,200,122,0.2)', borderRadius: 14, padding: 22, textAlign: 'center' }}>
+            <div style={{ width: 54, height: 54, borderRadius: '50%', background: 'rgba(76,200,122,0.12)', margin: '0 auto 14px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <svg width="26" height="26" fill="none" viewBox="0 0 24 24" stroke="#4cc87a" strokeWidth="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <div style={{ fontWeight: 800, fontSize: 18, marginBottom: 10, color: 'var(--ds-text)' }}>{t('guarantee.title')}</div>
+            <div
+              style={{ fontSize: 13, color: 'rgba(244,244,245,0.6)', lineHeight: 1.75 }}
+              dangerouslySetInnerHTML={{ __html: t.raw('guarantee.text') }}
+            />
+          </div>
+        </section>
       </div>
 
-      <div style={{ marginTop: 48, marginBottom: 48 }}>
-      </div>
-      <section style={{ marginTop: 48 }}>
-        {config.showFaq && (faqSection)}
-        {config.showContactBox && (
-        <div
-          style={{
-            margin: '24px auto 48px',
-            maxWidth: 400,
-            background: '#fff',
-            border: '4px solid #000',
-            borderRadius: 16,
-            padding: '28px 24px 24px 24px',
-            boxSizing: 'border-box',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-            fontFamily: "inherit",
-            textAlign: 'center',
-            position: 'relative',
-          }}
-        >
-          <h2 style={{ fontSize: 22, fontWeight: 700, margin: '0 0 14px 0', lineHeight: 1.2 }}>
-            {contactBox.title}
-          </h2>
-          <div style={{ fontSize: 17, marginBottom: 14 }}>
-            {contactBox.emailIntro}
-            <br />
-            <a
-              href={`mailto:${contactBox.emailAddress}`}
-              style={{ color: '#0077ff', fontWeight: 700, textDecoration: 'none' }}
-            >
-              {contactBox.emailAddress}
-            </a>
-          </div>
-          <div style={{ fontSize: 15, color: '#333', marginTop: 12, opacity: 0.85 }}>
-            {contactBox.responseTime}
-          </div>
-        </div>
-        )}
-      </section>
-        <div style={{ maxWidth: 400, margin: '0px auto 32px', textAlign: 'center' }}>
+      {/* ── 8. TRUST / REVIEWS (full-bleed) ── */}
+      {trustSection}
+
+      <div style={{ maxWidth: 430, margin: '0 auto', boxSizing: 'border-box' }}>
+        {/* ── 9. FINAL CTA ── */}
+        <section style={{ ...S.sec, ...S.secBorder, textAlign: 'center' }}>
+          <h2 style={{ fontWeight: 800, fontSize: 26, lineHeight: 1.15, marginBottom: 6, color: 'var(--ds-text)' }}>{t('finalCta.title')}</h2>
+          <p style={{ fontSize: 13, color: 'rgba(244,244,245,0.4)', marginBottom: 22 }}>{t('finalCta.subtitle')}</p>
+
           <button
             type="button"
-            className="btn btn-primary funnel-choice-btn"
+            className={`${btnPrimaryVisual} w-full cursor-pointer p-5 text-xl`}
             onClick={() => {
-              const el = document.getElementById('form-section');
+              const el = document.getElementById('form-section')
               if (el) {
-                const yOffset = -80;
-                const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
+                const y = el.getBoundingClientRect().top + window.pageYOffset - 80
+                window.scrollTo({ top: y, behavior: 'smooth' })
               }
-            }}
-            style={{
-              padding: '20px',
-              fontSize: 20,
-              width: '100%',
-              cursor: 'pointer',
             }}
           >
             {t('ctaButton.label')}
           </button>
-        </div>
 
-        <footer style={{ textAlign: 'center', marginTop: 0, marginBottom: 16, fontSize: 18, fontFamily: 'inherit' }}>
-            <div style={{ marginBottom: 8 }}>
-              <a href={privacyUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#222', textDecoration: 'none', display: 'block', marginBottom: 16 }}>
-                {privacyLabel}
-              </a>
-              <a href={termsUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#222', textDecoration: 'none', display: 'block' }}>
-                {termsLabel}
-              </a>
+          {/* Trust row */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 18, marginTop: 14, flexWrap: 'wrap' }}>
+            {(['trust1', 'trust2', 'trust3'] as const).map((key) => (
+              <div key={key} style={{ display: 'flex', alignItems: 'center', gap: 5, fontSize: 10, color: 'rgba(244,244,245,0.4)' }}>
+                <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#4cc87a', flexShrink: 0 }} />
+                {t(`finalCta.${key}`)}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── 10. ANSWERS SUMMARY ── */}
+        <section style={{ ...S.sec, ...S.secBorder }}>
+          <AnswersSummary sid={sessionId ?? 'default'} funnelSlug={funnelSlug} />
+        </section>
+
+        {/* ── 11. FAQ + CONTACT ── */}
+        <section style={{ ...S.sec, ...S.secBorder }}>
+          {config.showFaq && faqSection}
+          {config.showContactBox && (
+            <div style={{ margin: '24px auto 0', background: 'var(--ds-card-bg)', border: '0.5px solid rgba(255,255,255,0.07)', borderRadius: 16, padding: '28px 24px 24px', boxSizing: 'border-box', textAlign: 'center' }}>
+              <h2 style={{ fontSize: 20, fontWeight: 700, margin: '0 0 14px', lineHeight: 1.2, color: 'var(--ds-text)' }}>{contactBox.title}</h2>
+              <div style={{ fontSize: 16, marginBottom: 14, color: 'rgba(244,244,245,0.7)' }}>
+                {contactBox.emailIntro}
+                <br />
+                <a href={`mailto:${supportEmail}`} style={{ color: 'var(--ds-primary)', fontWeight: 700, textDecoration: 'none' }}>
+                  {supportEmail}
+                </a>
+              </div>
+              <div style={{ fontSize: 13, color: 'rgba(244,244,245,0.45)', marginTop: 12 }}>{contactBox.responseTime}</div>
             </div>
+          )}
+        </section>
 
-        </footer>
+        {/* ── 12. FOOTER CTA + LINKS ── */}
+        <section style={{ ...S.sec, ...S.secBorder }}>
+          <button
+            type="button"
+            className={`${btnPrimaryVisual} w-full cursor-pointer p-5 text-xl`}
+            onClick={() => {
+              const el = document.getElementById('form-section')
+              if (el) {
+                const y = el.getBoundingClientRect().top + window.pageYOffset - 80
+                window.scrollTo({ top: y, behavior: 'smooth' })
+              }
+            }}
+          >
+            {t('ctaButton.label')}
+          </button>
+
+          <footer style={{ textAlign: 'center', marginTop: 24, marginBottom: 8, fontSize: 15 }}>
+            <a href={privacyUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(244,244,245,0.4)', textDecoration: 'none', display: 'block', marginBottom: 12 }}>
+              {privacyLabel}
+            </a>
+            <a href={termsUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(244,244,245,0.4)', textDecoration: 'none', display: 'block' }}>
+              {termsLabel}
+            </a>
+          </footer>
+        </section>
       </div>
     </>
   )

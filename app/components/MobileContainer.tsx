@@ -6,7 +6,7 @@ interface MobileContainerProps {
 
 const MobileContainer: React.FC<MobileContainerProps> = ({ children }) => {
   return (
-    <div className="mx-auto w-full max-w-[480px] min-h-screen bg-background border-x border-[#18181B] shadow-2xl flex flex-col relative overflow-hidden">
+    <div className="relative mx-auto flex min-h-screen w-full max-w-[480px] flex-col overflow-hidden border-x border-border bg-background shadow-2xl">
       {children}
     </div>
   );

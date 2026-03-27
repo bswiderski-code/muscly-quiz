@@ -5,8 +5,8 @@ export type SkipRule = {
   skip: StepId[]
 }
 
-// Steps that are disabled/hidden in the quiz
-export const DISABLED_STEPS: StepId[] = ['physique_goal']
+// Steps that are disabled/hidden in the quiz (filtered out of `order` in funnelDefinitions)
+export const DISABLED_STEPS: StepId[] = []
 
 // Equipment options disabled globally
 export const DISABLED_EQUIPMENT: string[] = ['pullup_bar', 'dip_bar']
@@ -14,31 +14,32 @@ export const DISABLED_EQUIPMENT: string[] = ['pullup_bar', 'dip_bar']
 // The order in which funnel steps are presented
 export const FUNNEL_STEPS_ORDER: readonly StepId[] = [
   'gender',
+  'age',
+  'attention_pitstop',
   'diet_goal',
-  'height',
+  'bodyfat',
+  'dream_physique',
+  'great_decision_pitstop',
   'weight',
   'weight_goal',
-  'age',
-  'bodyfat',
-  'bmi',
+  'height',
   'activity',
+  'effects_pitstop',
+  'difficulty',
+  'difficulty_pitstop',
   'location',
   'equipment',
-  'pushups',
-  'pullups',
-  'difficulty',
-  'cardio',
-  'experience',
-  'priority',
   'frequency',
   'duration',
-  'fitness',
+  'priority',
+  'cardio',
+  'pushups',
+  'pullups',
   'sleep',
-  'physique_goal',
+  'name',
 ]
 
 // Steps to skip depending on previous answers
 export const FUNNEL_SKIP_RULES: SkipRule[] = [
   { trigger: [{ step: 'location', value: 'gym' }], skip: ['equipment', 'pushups', 'pullups'] },
-  { trigger: [{ step: 'location', value: 'house' }], skip: ['difficulty'] },
 ]

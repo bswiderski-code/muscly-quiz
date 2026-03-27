@@ -7,6 +7,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { trackPurchase } from '@/lib/analytics';
 import { getSupportEmail } from '@/lib/i18n/emailUtils';
 import { MAIN_SITE_URL } from '@/config/site';
+import { btnPrimary } from '@/app/components/ui/buttonClasses';
 
 const ZamowieniePageContent = () => {
   const t = useTranslations('OrderPage');
@@ -231,7 +232,7 @@ const ZamowieniePageContent = () => {
           <div style={{ margin: '18px 0 0 0', display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
             <button
               type="button"
-              className="btn btn-primary"
+              className={btnPrimary}
               onClick={() => {
                 window.location.href = `${MAIN_SITE_URL}/${locale}/`;
               }}

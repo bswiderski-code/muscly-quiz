@@ -3,17 +3,6 @@ import createNextIntlPlugin from 'next-intl/plugin';
 
 const withNextIntl = createNextIntlPlugin();
 
-const devEnv =
-  process.env.NODE_ENV !== 'production'
-    ? {
-      // Dev-only: allow spoofing domain-based configuration while running on a different host.
-      // Example:
-      // DEV_URL=your-dev-host.com
-      // SPOOFED=antrenortanc.ro
-      DEV_URL: process.env.DEV_URL,
-    }
-    : {};
-
 const securityHeaders = [
   // Prevent clickjacking / iframe embedding
   { key: 'X-Frame-Options', value: 'DENY' },
@@ -28,7 +17,6 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  env: devEnv,
   experimental: {},
   async headers() {
     return [

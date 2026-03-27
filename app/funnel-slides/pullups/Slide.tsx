@@ -16,7 +16,7 @@ const PULLUPS_OPTIONS = ['0', '1-3', '4-6', '7-10', '10+'] as const;
 export default function Page() {
   const funnel = useCurrentFunnel();
   const t = useTranslations('PullupsStep');
-  const { idx, total, value, select, goPrev } = useStepController(stepId);
+  const { idx, total, value, select, goPrev, goNext } = useStepController(stepId);
   const [isValid, setIsValid] = useState<boolean>(true);
 
   const options: SelectOption[] = useMemo(() => {
